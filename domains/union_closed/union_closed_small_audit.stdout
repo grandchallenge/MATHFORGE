@@ -1,0 +1,5 @@
+n=0: union_closed=2, nontrivial=0, violations=0
+n=1: union_closed=4, nontrivial=2, violations=0
+n=2: union_closed=14, nontrivial=12, violations=0
+n=3: union_closed=122, nontrivial=120, violations=0
+n=4: union_closed=4960, nontrivial=4958, violations=0

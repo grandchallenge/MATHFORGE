@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathforge.example/schemas/forge_run_ledger.schema.json",
+  "title": "MATHFORGE reconnaissance run ledger",
+  "type": "object",
+  "required": ["run_id", "domain", "command", "status", "artifacts"],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 1 },
+    "domain": { "type": "string", "minLength": 1 },
+    "command": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "running", "completed", "failed"]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}
