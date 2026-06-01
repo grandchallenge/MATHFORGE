@@ -1,0 +1,28 @@
+name: Forge checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  reconnaissance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Recompute small-family audit
+        run: python domains/union_closed/enumerate_small_families.py
+      - name: Confirm committed audit is reproducible
+        run: git diff --exit-code
+      - name: Parse JSON artifacts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in Path(".").rglob("*.json"):
+              json.loads(path.read_text(encoding="utf-8"))
+              print(f"valid json: {path}")
+          PY
