@@ -1,0 +1,22 @@
+witness_request:
+  request_id: ALG-WITNESS-REQUEST-TEMPLATE
+  problem_family: polynomial_algebra
+  desired_witness_kind: groebner_basis_candidate
+  coefficient_domain: QQ
+  variable_universe:
+    universe: finite
+    names: []
+  monomial_order: lex
+  external_backends:
+    - SageMath
+    - SymPy
+    - Singular
+  inputs:
+    generators: []
+    target: []
+    side_conditions: []
+  handoff:
+    target_repository: grandchallenge/MATHCERT
+    target_schema: schemas/algebraic_certificate.schema.json
+    trust_status: external_witness_recorded
+  notes: "MATHFORGE records discovery artifacts. MATHCERT owns certification."
