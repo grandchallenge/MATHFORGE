@@ -1,0 +1,18 @@
+{
+  "title": "MATHFORGE Algebraic Witness",
+  "type": "object",
+  "required": ["witness_id", "schema_version", "witness_kind", "problem", "witness", "handoff"],
+  "properties": {
+    "witness_id": {"type": "string"},
+    "schema_version": {"const": "0.1.0"},
+    "witness_kind": {"type": "string"},
+    "coefficient_domain": {"type": "string"},
+    "variables": {"type": "object"},
+    "monomial_order": {"type": "string"},
+    "external_backend": {"type": "object"},
+    "problem": {"type": "object"},
+    "witness": {"type": "object"},
+    "handoff": {"type": "object"},
+    "references": {"type": "array"}
+  }
+}
