@@ -1,0 +1,37 @@
+{
+  "witness_id": "GB-WITNESS-DEMO-001",
+  "schema_version": "0.1.0",
+  "claim_id": "ALG-GB-DEMO-C001",
+  "witness_kind": "polynomial_identity",
+  "coefficient_domain": "QQ",
+  "variables": {
+    "universe": "finite",
+    "names": ["x", "y"],
+    "index_type": "Fin 2"
+  },
+  "monomial_order": "lex",
+  "external_backend": {
+    "name": "SymPy",
+    "version": "fixture",
+    "command": "expand((x + y)^2 - (x^2 + 2*x*y + y^2))",
+    "output_sha256": "6492d9116f7c5d39d3606ba89d1f64a09443fce12cb779290e3fa8dbdaad5bcd"
+  },
+  "problem": {
+    "statement": "(x + y)^2 = x^2 + 2xy + y^2 over QQ[x,y]",
+    "side_conditions": []
+  },
+  "witness": {
+    "normal_form": [],
+    "meaning": "The symbolic difference reduces to the zero polynomial."
+  },
+  "handoff": {
+    "mathcert_certificate_kind": "polynomial_identity",
+    "trust_status": "ready_for_mathcert",
+    "mathcert_schema": "MATHCERT/schemas/algebraic_certificate.schema.json",
+    "notes": "Toy fixture matching MATHCERT GB-DEMO-001."
+  },
+  "references": [
+    "https://arxiv.org/pdf/2602.12772",
+    "https://arxiv.org/pdf/2604.13514"
+  ]
+}
