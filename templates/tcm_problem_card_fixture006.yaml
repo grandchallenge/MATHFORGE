@@ -1,0 +1,32 @@
+route_family: SEMIRING-CONTRACTION/TCM
+fixture: TCM-FIXTURE-006
+status: candidate
+source_pillar: MATHFORGE
+handoff_pillar: MATHSOLVE
+certification_pillar: MATHCERT
+
+claim:
+  kind: finite_pseudo_boolean_optimization
+  statement: "The fixture assignment OPB instance has optimum value 85."
+  claim_boundary: "Candidate until MATHCERT replay accepts the certificate."
+
+finite_domain:
+  variables: "x_i_j for 0 <= i,j < 5"
+  domain: boolean
+  constraints:
+    - "each row chooses exactly one column"
+    - "each column is chosen exactly once"
+
+encoding:
+  target_format: OPB
+  semantic_correspondence: "A feasible assignment is a permutation. The objective is the sum of selected weights."
+
+certificate_plan:
+  witness_shape: selected_cols
+  expected_certificate: primal_witness_plus_assignment_dual_upper_bound
+  checker_target: MATHCERT PB replay checker
+
+claim_discipline:
+  tcm_trace_status: evidence_only
+  soft_tropical_status: guidance_only
+  lean_stub_status: import_scaffold_only
