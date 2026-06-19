@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <entry>
+    <id>https://arxiv.org/abs/2306.12351v2</id>
+    <published>2023-06-21T00:00:00Z</published>
+    <title>Progress on the union-closed conjecture</title>
+    <author><name>Stijn Cambie</name></author>
+    <category term="math.CO"/>
+    <arxiv:doi>10.1000/example</arxiv:doi>
+  </entry>
+</feed>

@@ -1,0 +1,1 @@
+"""MATHFORGE discovery adapters."""

@@ -79,14 +79,18 @@ def main() -> None:
         "counting_convention": COUNTING_CONVENTION,
         "results": results,
     }
-    out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-    digest = hashlib.sha256(out.read_bytes()).hexdigest()
+    audit_bytes = (json.dumps(payload, indent=2) + "\n").encode("utf-8")
+    out.write_bytes(audit_bytes)
+    digest = hashlib.sha256(audit_bytes).hexdigest()
+    snapshot = "certificates/exact/source/union_closed_small_audit.json"
     certificate = {
         "certificate_type": "union_closed_small_universe_audit",
         "generator_version": GENERATOR_VERSION,
         "counting_convention": COUNTING_CONVENTION,
         "source_audit": "MATHFORGE/domains/union_closed/union_closed_small_audit.json",
+        "source_audit_snapshot": snapshot,
         "source_audit_sha256": digest,
+        "source_audit_snapshot_sha256": digest,
         "results": [
             {
                 "universe_size": r["universe_size"],
@@ -99,9 +103,11 @@ def main() -> None:
     }
     cert_out = Path(__file__).parents[2] / ".." / "MATHCERT" / "certificates" / "exact"
     cert_out.mkdir(parents=True, exist_ok=True)
-    (cert_out / "union_closed_n_le_4.json").write_text(
-        json.dumps(certificate, indent=2) + "\n", encoding="utf-8"
-    )
+    snapshot_out = cert_out / "source" / "union_closed_small_audit.json"
+    snapshot_out.parent.mkdir(parents=True, exist_ok=True)
+    snapshot_out.write_bytes(audit_bytes)
+    certificate_bytes = (json.dumps(certificate, indent=2) + "\n").encode("utf-8")
+    (cert_out / "union_closed_n_le_4.json").write_bytes(certificate_bytes)
     for r in results:
         print(
             f"n={r['n']}: union_closed={r['union_closed_families']}, "
