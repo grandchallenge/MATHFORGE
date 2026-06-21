@@ -8,6 +8,18 @@ MATHFORGE owns discovery, source reconstruction, candidate generation, and
 reconnaissance. Programme concepts and relationships remain canonical in
 `MATH-PROGRAMME`; provider results are evidence only.
 
+## Programme links
+
+MATH-PROGRAMME is the front door and policy source for this pillar.
+
+- [MATH-PROGRAMME Pages home](https://grandchallenge.github.io/MATH-PROGRAMME/)
+- [Programme Atlas](https://grandchallenge.github.io/MATH-PROGRAMME/PROGRAMME_ATLAS/)
+- [Three-pillar architecture overview](https://github.com/grandchallenge/MATH-PROGRAMME/blob/main/ARCHITECTURE_OVERVIEW.md)
+- [MATHFORGE pillar doctrine](https://github.com/grandchallenge/MATH-PROGRAMME/blob/main/MATHFORGE_SPEC.md)
+- [Cross-pillar lanes](https://grandchallenge.github.io/MATH-PROGRAMME/CROSS_PILLAR_LANES/)
+- [Groebner and EXPSPACE doctrine](https://grandchallenge.github.io/MATH-PROGRAMME/GROEBNER_EXPSPACE_DOCTRINE/)
+- [Claim-boundary doctrine](https://grandchallenge.github.io/MATH-PROGRAMME/CLAIM_BOUNDARY_DOCTRINE/)
+
 ## Algebraic witness export
 
 MATHFORGE now includes an algebraic-witness export lane for polynomial subclaims. The lane is deliberately downstream-compatible with the MATHCERT algebraic certificate lane:
