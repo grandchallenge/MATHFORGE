@@ -8,6 +8,19 @@ The governing doctrine is:
 
 > MATHFORGE may discover. MATHCERT must certify.
 
+## Programme links
+
+Read this lane through the programme front door and the shared doctrine pages:
+
+- [MATH-PROGRAMME Pages home](https://grandchallenge.github.io/MATH-PROGRAMME/)
+- [Programme Atlas](https://grandchallenge.github.io/MATH-PROGRAMME/PROGRAMME_ATLAS/)
+- [MATHFORGE pillar doctrine](https://github.com/grandchallenge/MATH-PROGRAMME/blob/main/MATHFORGE_SPEC.md)
+- [Cross-pillar lanes](https://grandchallenge.github.io/MATH-PROGRAMME/CROSS_PILLAR_LANES/)
+- [Computational Algebraic Geometry Lane](https://grandchallenge.github.io/MATH-PROGRAMME/COMPUTATIONAL_ALGEBRAIC_GEOMETRY_LANE/)
+- [Groebner and EXPSPACE doctrine](https://grandchallenge.github.io/MATH-PROGRAMME/GROEBNER_EXPSPACE_DOCTRINE/)
+- [Claim-boundary doctrine](https://grandchallenge.github.io/MATH-PROGRAMME/CLAIM_BOUNDARY_DOCTRINE/)
+- [Resource Budget Policy](https://grandchallenge.github.io/MATH-PROGRAMME/RESOURCE_BUDGET_POLICY/)
+
 ## Covered witness classes
 
 MATHFORGE may emit witnesses for:
