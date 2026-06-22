@@ -34,6 +34,21 @@ MATHFORGE may use SageMath, SymPy, Singular, Magma, or custom exact arithmetic t
 
 See `docs/algebraic_witness_export.md`.
 
+## Tropical weight witness export
+
+MATHFORGE also has a TROPIC-GROEBNER witness lane for sampled tropical weights, weighted initial forms, and monomial-witness route records.
+
+```text
+support / valuation probe
+  -> candidate weight
+  -> term-score table
+  -> initial-form witness
+  -> MATHSOLVE route decision
+  -> MATHCERT tropical_initial_ideal certificate
+```
+
+See `docs/tropical_weight_witness_export.md` and `witnesses/TROPIC_GROEBNER_001_TG001_B.json`.
+
 ## Discovery
 
 ```text
