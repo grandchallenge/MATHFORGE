@@ -1,0 +1,56 @@
+{
+  "witness_id": "TROPIC-GROEBNER-001-TG001-C",
+  "schema_version": "0.1.0",
+  "witness_kind": "tropical_weight_probe",
+  "coefficient_domain": "QQ",
+  "valuation": "trivial",
+  "variables": {
+    "universe": "finite",
+    "names": ["x", "y"],
+    "index_type": "Fin 2"
+  },
+  "monomial_order": "weight_refined_lex",
+  "external_backend": {
+    "name": "Custom",
+    "version": "fixture",
+    "command": "manual exact term-score replay"
+  },
+  "problem": {
+    "statement": "For f=x+y+1 over QQ and weight w=(-1,0), record the tropical initial-form witness x and monomial rejection.",
+    "generators": [
+      [
+        {"c": [1, 1], "e": [[0, 1]]},
+        {"c": [1, 1], "e": [[1, 1]]},
+        {"c": [1, 1], "e": []}
+      ]
+    ],
+    "side_conditions": [
+      "trivial coefficient valuation",
+      "minimum-score initial-form convention",
+      "sampled-weight witness only"
+    ]
+  },
+  "witness": {
+    "weight": [[-1, 1], [0, 1]],
+    "term_scores": {
+      "x": [-1, 1],
+      "y": [0, 1],
+      "1": [0, 1]
+    },
+    "minimal_terms": ["x"],
+    "initial_form": "x",
+    "contains_monomial": true,
+    "monomial_witness": "x",
+    "route_hint": "rejected"
+  },
+  "handoff": {
+    "mathsolve_route": "TROPIC_GROEBNER_CAMPAIGN",
+    "mathcert_certificate_kind": "tropical_initial_ideal",
+    "trust_status": "external_witness_recorded"
+  },
+  "references": [
+    "grandchallenge/MATH-PROGRAMME docs/TROPIC_GROEBNER_ROUTE.md",
+    "grandchallenge/MATHSOLVE docs/tropic_groebner_orchestration.md",
+    "grandchallenge/MATHCERT docs/tropical_initial_ideal_certificates.md"
+  ]
+}
