@@ -29,7 +29,7 @@ MATHFORGE may emit witnesses for:
 - normal-form and remainder computations;
 - ideal membership;
 - ideal equality;
-- Gröbner-basis candidates;
+- Groebner-basis candidates;
 - radical-membership candidates;
 - elimination outputs;
 - finite truncations of infinite-variable or growing-family algebraic systems.
