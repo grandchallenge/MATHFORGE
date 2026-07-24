@@ -20,7 +20,7 @@ class NSCIFalseProofFixtureTests(unittest.TestCase):
         self.assertEqual(len(ids), 14)
         self.assertEqual(len(ids), len(set(ids)))
         self.assertEqual(set(ids), {f"FP-{index:03d}" for index in range(1, 15)})
-        self.assertIn("does not refute", self.payload["claim_boundary"].lower())
+        self.assertIn("do not refute", self.payload["claim_boundary"].lower())
 
     def test_fp001_exact_l2_not_l4_witness(self) -> None:
         alpha = Fraction(1, 3)
