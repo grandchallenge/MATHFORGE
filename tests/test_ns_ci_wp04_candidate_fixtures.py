@@ -11,6 +11,16 @@ class NSCIWP04CandidateFixtureTests(unittest.TestCase):
         self.assertGreater(Fraction(5, 2) - 2, 0)
         self.assertLess(Fraction(1, 1) - 2, 0)
 
+    def test_a2_source_bounds_do_not_close_at_exponent_two(self) -> None:
+        # The audited source gives the schematic pointwise bounds
+        # Lambda^2 <= f <= Lambda^(5/2) for the low-mode criterion f.
+        # With Lambda(t)=t^(-9/20), Lambda^2 is integrable but the upper
+        # envelope Lambda^(5/2) is not. The source inequalities alone
+        # therefore cannot prove that Lambda in L^2 implies f in L^1.
+        alpha = Fraction(9, 20)
+        self.assertLess(2 * alpha, 1)
+        self.assertGreaterEqual(Fraction(5, 2) * alpha, 1)
+
     def test_a2_naive_product_of_l1_coefficients_can_diverge(self) -> None:
         # f(t)=g(t)=t^(-2/3) are each integrable on (0,1), while
         # f(t)g(t)=t^(-4/3) is not. This rejects a closure that combines
