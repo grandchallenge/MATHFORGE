@@ -1,0 +1,170 @@
+schema_version: 1.0.0
+campaign_id: NS-CI-001
+audit_date: '2026-07-23'
+claim_boundary: >-
+  This ledger records sources and hypothesis correspondences. It does not prove
+  universal critical integrability, global regularity, or novelty.
+
+sources:
+  - source_id: NS-CI-SRC-CLAY-FEFFERMAN
+    title: Existence and Smoothness of the Navier-Stokes Equation
+    authors:
+      - Charles L. Fefferman
+    source_type: official_problem_statement
+    primary_or_secondary: primary
+    canonical_url: https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf
+    theorem_location: statements (A)-(D), pages 1-2
+    language: English
+    domain:
+      - R3
+      - T3
+    forcing:
+      R3_positive_branch: identically_zero
+      T3_positive_branch: identically_zero
+    initial_data:
+      R3: smooth divergence-free and rapidly decreasing with every derivative as in condition (4)
+      T3: smooth divergence-free and periodic as in condition (8)
+    solution_class: globally smooth velocity and pressure; bounded kinetic energy required in the R3 branch
+    claim_used:
+      - Defines the official positive and breakdown branches.
+      - Shows that compactly supported smooth data form only a subclass of the R3 positive-branch data.
+      - Records local smooth existence and the finite maximal-time alternative as known background.
+      - Records global weak existence and unknown weak uniqueness as known background.
+    audit_state: AUDITED
+    limitations:
+      - The official statement does not itself formulate the L4_t L6_x criterion.
+      - A claimed equivalence must supply the weak-solution, conditional-regularity, and data-class bridges.
+
+  - source_id: NS-CI-SRC-LERAY-1934
+    title: Sur le mouvement d'un liquide visqueux emplissant l'espace
+    authors:
+      - Jean Leray
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://doi.org/10.1007/BF01517137
+    bibliographic_record: Acta Mathematica 63 (1934), 193-248
+    language: French
+    domain:
+      - R3
+    claim_used:
+      - Historical source for global weak solutions, local regular solutions, singular-time analysis, and weak-strong uniqueness mechanisms.
+    audit_state: PRIMARY_SOURCE_IDENTIFIED_THEOREM_LOCATIONS_PENDING
+    limitations:
+      - Exact original theorem locations and notation translation are not yet entered.
+      - Operational use in WP00 relies on the modern reconstruction NS-CI-SRC-OZANSKI-POOLEY until the historical extraction is complete.
+
+  - source_id: NS-CI-SRC-OZANSKI-POOLEY
+    title: Leray's fundamental work on the Navier-Stokes equations - a modern review
+    authors:
+      - Wojciech S. Ozanski
+      - Benjamin C. Pooley
+    source_type: research_review_with_proofs
+    primary_or_secondary: authoritative_reconstruction
+    canonical_url: https://arxiv.org/abs/1708.09787
+    bibliographic_record: Chapter in Partial Differential Equations in Fluid Mechanics, 2018
+    language: English
+    domain:
+      - R3
+    initial_data: divergence-free smooth data, H1 data, or L2 intersect Lp data with p greater than 3 for the local strong theory
+    solution_class:
+      - local strong solution
+      - global weak solution
+      - weak-strong uniqueness
+    claim_used:
+      - Supplies an operational modern reconstruction of local strong existence.
+      - Supplies global weak existence and weak-strong uniqueness.
+      - Supplies blow-up lower bounds for gradient and Lp norms at a finite maximal time.
+    audit_state: AUDITED_AT_STATEMENT_LEVEL
+    limitations:
+      - This is not a substitute for exact historical attribution to Leray.
+      - Detailed theorem-number extraction remains for the final Archivist pass.
+
+  - source_id: NS-CI-SRC-PRODI-1959
+    title: Un teorema di unicita per le equazioni di Navier-Stokes
+    authors:
+      - Giovanni Prodi
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://doi.org/10.1007/BF02410664
+    bibliographic_record: Annali di Matematica Pura ed Applicata 48 (1959), 173-182
+    theorem_location: theorem on page 181 of the journal pagination
+    language: Italian
+    domain: arbitrary open subset of R3 in the generalized mixed problem considered by the paper
+    solution_class: generalized solutions in Prodi's stated function-space framework
+    space_time_hypothesis: u belongs to L^(2p/(p-3))(0,tau; L^p(Omega)) for 3 less than p less than or equal to infinity
+    instantiated_pair: p=6 gives time exponent 4
+    conclusion: uniqueness within Prodi's generalized solution framework for the same data
+    audit_state: AUDITED_WITH_FORMULATION_GAP
+    limitations:
+      - Prodi's generalized solution setup is not silently identified with the modern Leray-Hopf definition.
+      - The paper proves uniqueness; the modern strong-solution conclusion is obtained through later formulations and local theory.
+
+  - source_id: NS-CI-SRC-SERRIN-1962
+    title: On the Interior Regularity of Weak Solutions of the Navier-Stokes Equations
+    authors:
+      - James Serrin
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://doi.org/10.1007/BF00253344
+    bibliographic_record: Archive for Rational Mechanics and Analysis 9 (1962), 187-195
+    language: English
+    claim_used:
+      - Historical source for the modern Prodi-Serrin regularity range.
+    audit_state: METADATA_AUDITED_THEOREM_TEXT_NOT_EXTRACTED
+    limitations:
+      - The full theorem body was not available through the audited public endpoint.
+      - Exact original hypotheses must not be inferred solely from later summaries.
+
+  - source_id: NS-CI-SRC-LADYZHENSKAYA-1967
+    title: On the uniqueness and on the smoothness of weak solutions of the Navier-Stokes equations
+    authors:
+      - O. A. Ladyzhenskaya
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://www.mathnet.ru/eng/znsl2228
+    bibliographic_record: Zap. Nauchn. Sem. LOMI 5 (1967), 169-185
+    language: Russian
+    claim_used:
+      - Historical source in the Ladyzhenskaya-Prodi-Serrin theorem chain.
+    audit_state: METADATA_AND_FULL_TEXT_LOCATION_AUDITED_TRANSLATION_PENDING
+    limitations:
+      - Exact theorem extraction requires a Russian-language mathematical review.
+
+  - source_id: NS-CI-SRC-OPERATIONAL-LPS-2024
+    title: A Priori Estimates for Solutions to Landau Equation Under Prodi-Serrin Like Criteria
+    authors:
+      - R. Alonso
+      - V. Bagland
+      - L. Desvillettes
+      - B. Lods
+    source_type: research_article_with_explicit_classical_theorem_statement
+    primary_or_secondary: operational_secondary_statement
+    canonical_url: https://doi.org/10.1007/s00205-024-01992-y
+    theorem_location: Theorem 1.1
+    language: English
+    domain:
+      - R3
+    solution_class: two Leray-Hopf weak solutions with the same initial datum
+    space_time_hypothesis: u belongs to L^r([0,T];L^q(R3)), 2/r + 3/q = 1, q in (3,infinity]
+    instantiated_pair: r=4 and q=6
+    conclusion:
+      - uniqueness on the interval
+      - strong solution on [0,T] when the initial datum belongs to H1
+      - strong solution on [t_star,T] for every positive t_star when the initial datum belongs to L2
+    audit_state: OPERATIONAL_STATEMENT_AUDITED
+    limitations:
+      - The theorem is restated as classical background in a paper whose main subject is the Landau equation.
+      - Historical priority and original wording remain governed by the Prodi, Serrin, and Ladyzhenskaya records.
+
+  - source_id: NS-CI-SRC-CLAY-STATUS
+    title: Navier-Stokes Equation
+    authors:
+      - Clay Mathematics Institute
+    source_type: official_status_page
+    primary_or_secondary: official
+    canonical_url: https://www.claymath.org/millennium/navier-stokes-equation/
+    claim_used:
+      - Confirms that the basic global existence and uniqueness questions remain without an accepted proof.
+    audit_state: AUDITED_CURRENT_2026-07-23
+    limitations:
+      - Specific claimed solutions are triaged only when they enter the campaign; absence from this ledger is not an independent refutation.
