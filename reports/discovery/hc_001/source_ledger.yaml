@@ -1,0 +1,191 @@
+schema_version: 1.0.0
+campaign_id: HC-001
+work_package_id: HC-WP00
+audit_date: '2026-07-24'
+claim_boundary: >-
+  This ledger normalizes sources, hypotheses, and logical relationships. It does
+  not prove the Hodge conjecture, establish a new known case, or convert a
+  neighboring conjecture into algebraicity.
+
+sources:
+  - source_id: HC-SRC-CLAY-DELIGNE
+    title: The Hodge Conjecture
+    authors: [Pierre Deligne]
+    source_type: official_problem_description
+    primary_or_secondary: official
+    canonical_url: https://www.claymath.org/wp-content/uploads/2022/06/hodge.pdf
+    theorem_location: pages 1-4, especially Conjecture 1.1 and sections 1.2-1.5
+    language: English
+    domain: smooth projective algebraic varieties over C
+    coefficient_ring: Q
+    cohomology: singular cohomology embedded in complex cohomology with Hodge decomposition
+    cycle_object: codimension-p algebraic cycles modulo the kernel needed for the cohomology class; operationally CH^p(X) tensor Q
+    claim_used:
+      - Canonical rational Hodge statement.
+      - Algebraic cycle classes have Hodge type (p,p).
+      - Lefschetz (1,1) establishes the divisor case.
+      - Integral and unrestricted compact-Kahler analogues are false.
+      - Hodge-locus algebraicity is distinct from cycle algebraicity.
+      - Kunneth components and inverse Lefschetz operators define important Hodge classes.
+      - Tate, absolute-Hodge, and motivated formulations are neighboring structures, not silent equivalents.
+    audit_state: AUDITED
+    limitations:
+      - The official essay is authoritative for formulation and programme context, not a complete modern bibliography of every known special case.
+
+  - source_id: HC-SRC-HODGE-1950
+    title: The topological invariants of algebraic varieties
+    authors: [W. V. D. Hodge]
+    source_type: conference_article
+    primary_or_secondary: primary
+    bibliographic_record: Proceedings of the International Congress of Mathematicians, Cambridge, Massachusetts, 1950, volume 1, pages 182-192
+    claim_used:
+      - Historical formulation of the conjectural algebraicity of rational Hodge classes.
+    audit_state: PRIMARY_IDENTIFIED_THEOREM_BODY_EXTRACTION_PENDING
+    limitations:
+      - Exact notation and passage concordance with the modern cycle-class formulation remain Archivist debt.
+
+  - source_id: HC-SRC-KODAIRA-SPENCER-1953
+    title: Divisor Class Groups on Algebraic Varieties
+    authors: [Kunihiko Kodaira, D. C. Spencer]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://www.pnas.org/doi/10.1073/pnas.39.8.872
+    bibliographic_record: Proceedings of the National Academy of Sciences 39 (1953), 872-877
+    claim_used:
+      - Primary divisor-class source supporting the Lefschetz (1,1) boundary case.
+    audit_state: METADATA_AND_STATEMENT_FAMILY_AUDITED_THEOREM_LOCATOR_PENDING
+    limitations:
+      - Final theorem-number and modern Picard/c1 translation should be recorded before historical attribution is called complete.
+
+  - source_id: HC-SRC-ATIYAH-HIRZEBRUCH-1962
+    title: Analytic cycles on complex manifolds
+    authors: [M. F. Atiyah, F. Hirzebruch]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://doi.org/10.1016/0040-9383(62)90001-3
+    bibliographic_record: Topology 1 (1962), 25-45
+    claim_used:
+      - Cohomology operations impose necessary conditions on integral analytic-cycle classes.
+      - Projective examples show that the naive integral Hodge conjecture is false.
+    audit_state: PRIMARY_METADATA_AND_CORE_RESULT_AUDITED
+    limitations:
+      - The exact counterexample family and torsion/refined-integral distinctions require theorem-level extraction in WP01/WP02.
+      - Failure of the naive integral statement must not be generalized to every refined integral cycle question.
+
+  - source_id: HC-SRC-KAHLER-ZUCKER-APPENDIX
+    title: Counterexample to the unrestricted compact-Kahler analytic-cycle analogue
+    authors: [Steven Zucker]
+    source_type: appendix_or_embedded_primary_source
+    primary_or_secondary: primary_cited_by_official_statement
+    claim_used:
+      - The projectivity hypothesis cannot be replaced by arbitrary compact Kahler without changing truth value.
+    audit_state: OFFICIAL_RESULT_AUDITED_EXACT_BIBLIOGRAPHIC_LOCATOR_PENDING
+    limitations:
+      - The exact appendix host publication and theorem locator remain Archivist debt.
+
+  - source_id: HC-SRC-VOISIN-2002
+    title: A counterexample to the Hodge conjecture extended to Kahler varieties
+    authors: [Claire Voisin]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://doi.org/10.1155/S1073792802104076
+    preprint_url: https://arxiv.org/abs/math/0112247
+    bibliographic_record: International Mathematics Research Notices 2002, no. 20, 1057-1075
+    claim_used:
+      - Rational Hodge classes on compact Kahler manifolds need not be generated by Chern classes of analytic coherent sheaves.
+    audit_state: ABSTRACT_AND_METADATA_AUDITED
+    limitations:
+      - This stronger Chern-generation failure should not be conflated with every possible analytic-cycle formulation.
+
+  - source_id: HC-SRC-GROTHENDIECK-1969
+    title: Hodge's general conjecture is false for trivial reasons
+    authors: [Alexander Grothendieck]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://doi.org/10.1016/0040-9383(69)90016-0
+    bibliographic_record: Topology 8 (1969), 299-303
+    claim_used:
+      - Corrects the formulation of the generalized Hodge conjecture and separates coniveau/support questions from the classical cycle-class surjectivity claim.
+    audit_state: PRIMARY_METADATA_AUDITED_THEOREM_EXTRACTION_PENDING
+    limitations:
+      - The corrected generalized formulation and implication direction require exact passage extraction before promotion beyond the statement lattice.
+
+  - source_id: HC-SRC-CDK-1995
+    title: On the locus of Hodge classes
+    authors: [Eduardo Cattani, Pierre Deligne, Aroldo Kaplan]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://publications.ias.edu/node/451
+    bibliographic_record: Journal of the American Mathematical Society 8 (1995), 483-506
+    claim_used:
+      - In an algebraic family, the locus where a fixed integral class remains of Hodge type is algebraic.
+    audit_state: PRIMARY_ABSTRACT_AND_METADATA_AUDITED
+    limitations:
+      - Algebraicity of the parameter locus does not establish algebraicity of the cohomology class as a cycle.
+
+  - source_id: HC-SRC-ZUCKER-CUBIC-1977
+    title: The Hodge conjecture for cubic fourfolds
+    authors: [Steven Zucker]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: http://www.numdam.org/item/CM_1977__34_2_199_0/
+    bibliographic_record: Compositio Mathematica 34 (1977), 199-209
+    variety_class: smooth cubic hypersurfaces of complex dimension four
+    codimension: 2
+    coefficient_ring: Q
+    claim_used:
+      - A genuine dimension-four codimension-two known case.
+    audit_state: PRIMARY_FULL_TEXT_LOCATION_AUDITED
+    limitations:
+      - This special class does not settle arbitrary fourfolds.
+
+  - source_id: HC-SRC-DELIGNE-ABSOLUTE-1980
+    title: Hodge cycles on abelian varieties
+    authors: [Pierre Deligne]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: https://publications.ias.edu/node/441
+    bibliographic_record: Hodge Cycles, Motives, and Shimura Varieties, Lecture Notes in Mathematics 900 (1982), based on 1980 work
+    claim_used:
+      - Hodge classes on abelian varieties are absolute Hodge.
+    audit_state: PRIMARY_METADATA_AND_RESULT_AUDITED
+    limitations:
+      - Absolute Hodge is a stability/property substitute; it is not the conclusion that the class is algebraic.
+
+  - source_id: HC-SRC-ANDRE-1996
+    title: Pour une theorie inconditionnelle des motifs
+    authors: [Yves Andre]
+    source_type: research_article
+    primary_or_secondary: primary
+    canonical_url: http://www.numdam.org/item/PMIHES_1996__83__5_0/
+    bibliographic_record: Publications Mathematiques de l'IHES 83 (1996), 5-49
+    claim_used:
+      - Motivated cycles provide an unconditional semisimple motivic framework under a broadened correspondence class.
+    audit_state: PRIMARY_METADATA_AUDITED
+    limitations:
+      - Motivated is not synonymous with algebraic; promotion requires an explicit bridge.
+
+  - source_id: HC-SRC-TATE-1965
+    title: Algebraic cycles and poles of zeta functions
+    authors: [John Tate]
+    source_type: conference_article
+    primary_or_secondary: primary
+    bibliographic_record: Arithmetical Algebraic Geometry, Purdue University, 1963, published 1965, pages 93-110
+    claim_used:
+      - Foundational arithmetic analogue relating algebraic cycles and Galois-invariant l-adic classes.
+    audit_state: PRIMARY_IDENTIFIED_THEOREM_BODY_EXTRACTION_PENDING
+    limitations:
+      - No reduction-modulo-p, specialization, or lifting equivalence with the complex Hodge conjecture is admitted without explicit hypotheses.
+
+  - source_id: HC-SRC-CLAY-STATUS
+    title: Hodge Conjecture
+    authors: [Clay Mathematics Institute]
+    source_type: official_status_page
+    primary_or_secondary: official
+    canonical_url: https://www.claymath.org/millennium/hodge-conjecture/
+    claim_used:
+      - Confirms current unsolved status.
+      - States that the conjecture is known in dimensions below four and unknown in dimension four.
+    audit_state: AUDITED_CURRENT_2026-07-24
+    limitations:
+      - The status page is not a complete known-case bibliography.
