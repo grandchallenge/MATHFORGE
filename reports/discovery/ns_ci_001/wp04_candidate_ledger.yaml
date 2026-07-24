@@ -1,0 +1,32 @@
+schema_version: 1.0.0
+campaign_id: NS-CI-001
+work_package_id: NS-CI-WP04
+programme_tracker: grandchallenge/MATH-PROGRAMME#61
+forge_tracker: grandchallenge/MATHFORGE#18
+state: PRIOR_ART_AUDIT_ACTIVE
+novelty_claim_allowed: false
+shortlist_limit: 3
+
+required_fields:
+  - exact_statement
+  - domain
+  - data_class
+  - solution_class
+  - quantifiers
+  - added_hypothesis
+  - scaling_class
+  - nearest_known_theorem
+  - source_ids
+  - source_audit_state
+  - wp01_fixture_map
+  - failure_modes
+  - novelty_disposition
+  - recommendation
+
+candidates:
+  - {id: NS-CI-R014-A, family: dyadic_frequency_envelope, state: UNSOURCED}
+  - {id: NS-CI-R014-B, family: geometric_depletion, state: UNSOURCED}
+  - {id: NS-CI-R014-C, family: concentration_or_sparsity, state: UNSOURCED}
+  - {id: NS-CI-R014-D, family: flux_or_commutator_compensation, state: UNSOURCED}
+  - {id: NS-CI-R014-E, family: compact_support_extension, state: UNSOURCED}
+  - {id: NS-CI-R014-F, family: symmetry_or_structural_class, state: UNSOURCED}
