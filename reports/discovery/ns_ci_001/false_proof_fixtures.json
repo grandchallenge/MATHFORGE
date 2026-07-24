@@ -89,7 +89,7 @@
       "id": "FP-010",
       "title": "Numerical boundedness overclaim",
       "false_claim": "Finite measured integrals at finite resolutions imply continuum regularity.",
-      "exact_test": "Require a resolution-uniform bound, verified critical-norm error, convergence to the relevant weak class, and subgrid concentration control.",
+      "exact_test": "A fixed finite-dimensional approximation does not supply a resolution-uniform bound, verified critical-norm error, convergence to every Leray-Hopf solution, or exclusion of subgrid concentration.",
       "expected_outcome": "reject_without_verified_uniformity",
       "failure_class": "NUMERICAL_OVERCLAIM",
       "protects": ["CLAIM_BOUNDARY"]
