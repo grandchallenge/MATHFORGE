@@ -26,19 +26,16 @@ class NSCIFalseProofFixtureTests(unittest.TestCase):
         alpha = Fraction(1, 3)
         self.assertLess(2 * alpha, 1, "t^(-alpha) must be square-integrable")
         self.assertGreaterEqual(4 * alpha, 1, "t^(-alpha) must fail fourth-power integrability")
-        # Integral_0^1 t^(-2/3) dt = 1 / (1 - 2/3) = 3.
         self.assertEqual(Fraction(1, 1) / (1 - 2 * alpha), 3)
         self.assertEqual(self.fixtures["FP-001"]["expected_outcome"], "reject")
 
     def test_fp002_energy_interpolation_geometry(self) -> None:
-        # Interpolate (q,p)=(infinity,2) with (2,6).
         theta_for_q4 = Fraction(1, 2)
         inverse_q = theta_for_q4 / 2
         inverse_p = (1 - theta_for_q4) / 2 + theta_for_q4 / 6
         self.assertEqual(inverse_q, Fraction(1, 4))
         self.assertEqual(inverse_p, Fraction(1, 3))
 
-        # Requiring p=6 forces theta=1 and hence q=2.
         theta_for_p6 = Fraction(1, 1)
         self.assertEqual((1 - theta_for_p6) / 2 + theta_for_p6 / 6, Fraction(1, 6))
         self.assertEqual(theta_for_p6 / 2, Fraction(1, 2))
@@ -56,6 +53,12 @@ class NSCIFalseProofFixtureTests(unittest.TestCase):
         self.assertEqual(smoothing_exponent, 1)
         self.assertEqual(4 * smoothing_exponent, 4)
         self.assertIn("epsilon^(-4)", self.fixtures["FP-008"]["exact_test"])
+
+    def test_fp010_is_scoped_to_fixed_approximations(self) -> None:
+        exact_test = self.fixtures["FP-010"]["exact_test"].lower()
+        self.assertIn("fixed finite-dimensional approximation", exact_test)
+        self.assertIn("resolution-uniform", exact_test)
+        self.assertIn("subgrid concentration", exact_test)
 
     def test_fp012_exponent_order_is_not_interchangeable(self) -> None:
         critical_sum = Fraction(2, 4) + Fraction(3, 6)
