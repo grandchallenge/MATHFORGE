@@ -421,7 +421,7 @@ The measured critical integral remains finite on increasingly fine simulations, 
 
 ### Exact obstruction
 
-Every standard finite-dimensional discretization evolves by a finite system of ordinary differential equations over its interval of numerical existence. A reported finite sum approximating `I_T` does not provide:
+A fixed finite-dimensional Galerkin truncation or fully discrete approximation produces a finite reported value over its verified simulation interval. Such a value does not provide:
 
 - a resolution-uniform upper bound;
 - a verified truncation error in the critical norm;
@@ -439,11 +439,11 @@ Numerical regularity claims without certified continuum error bounds.
 
 ### Does not rule out
 
-Use of simulations to falsify proposed mechanisms, identify concentration regimes, or test scaling diagnostics.
+Verified a posteriori numerical analysis under its stated hypotheses, or simulations used to falsify proposed mechanisms, identify concentration regimes, or test scaling diagnostics.
 
 ### Nearest viable route
 
-Define a resolution-uniform observable and a verified convergence theorem before assigning evidentiary weight to the numerical trend.
+Define a resolution-uniform observable and a verified convergence theorem before assigning continuum evidentiary weight to the numerical trend.
 
 ---
 
@@ -530,7 +530,7 @@ An interior Serrin theorem immediately supplies the full global `\mathbb R^3` co
 
 ### Exact gap
 
-Interior regularity controls compact subsets away from boundaries in space-time. The campaign also requires:
+Interior regularity controls compact subsets away from the parabolic boundary. The campaign also requires:
 
 - behavior at the initial time;
 - whole-space integrability and decay;
