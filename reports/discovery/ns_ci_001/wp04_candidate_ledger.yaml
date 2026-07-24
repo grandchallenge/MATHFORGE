@@ -1,11 +1,31 @@
-schema_version: 1.0.0
+schema_version: 1.1.0
 campaign_id: NS-CI-001
 work_package_id: NS-CI-WP04
 programme_tracker: grandchallenge/MATH-PROGRAMME#61
 forge_tracker: grandchallenge/MATHFORGE#18
-state: PRIOR_ART_AUDIT_ACTIVE
+state: INITIAL_PRIOR_ART_TRIAGE_COMPLETE
 novelty_claim_allowed: false
 shortlist_limit: 3
+shortlist:
+  - NS-CI-R014-A2
+  - NS-CI-R014-D1
+  - NS-CI-R014-E1
+
+source_ledger:
+  WP04-S-A1: {family: dissipation_wavenumber, audit_state: PRIMARY_SOURCE_EXTRACTED}
+  WP04-S-A2: {family: frequency_localized_lps, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-A3: {family: high_frequency_vorticity, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-B1: {family: vorticity_direction, audit_state: PRIMARY_THEOREM_ROLE_AUDITED}
+  WP04-S-B2: {family: vorticity_direction_refinement, audit_state: PRIMARY_SOURCE_IDENTIFIED}
+  WP04-S-B3: {family: discrete_direction_refinement, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-C1: {family: geometric_sparseness, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-C2: {family: sparseness_and_scaling_gap, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-D1: {family: commutator_estimates, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-E1: {family: selected_global_class_stability, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-E2: {family: rescaled_weak_stability, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-F1: {family: classical_axisymmetric_regimes, audit_state: CLASSICAL_FAMILY_AUDITED}
+  WP04-S-F2: {family: recent_axisymmetric_swirl_claim, audit_state: CLAIM_TRIAGE_REQUIRED}
+  WP04-S-F3: {family: related_recent_global_claims, audit_state: CLAIM_TRIAGE_REQUIRED}
 
 required_fields:
   - exact_statement
@@ -24,9 +44,88 @@ required_fields:
   - recommendation
 
 candidates:
-  - {id: NS-CI-R014-A, family: dyadic_frequency_envelope, state: UNSOURCED}
-  - {id: NS-CI-R014-B, family: geometric_depletion, state: UNSOURCED}
-  - {id: NS-CI-R014-C, family: concentration_or_sparsity, state: UNSOURCED}
-  - {id: NS-CI-R014-D, family: flux_or_commutator_compensation, state: UNSOURCED}
-  - {id: NS-CI-R014-E, family: compact_support_extension, state: UNSOURCED}
-  - {id: NS-CI-R014-F, family: symmetry_or_structural_class, state: UNSOURCED}
+  - id: NS-CI-R014-A
+    family: generic_dyadic_frequency_envelope
+    state: REPLACED
+    source_ids: [WP04-S-A1, WP04-S-A2, WP04-S-A3]
+    disposition: Generic frequency-localized regularity family is crowded and underspecified.
+    replacement: NS-CI-R014-A2
+
+  - id: NS-CI-R014-A2
+    family: critical_dissipation_wavenumber_integrability
+    state: PROVISIONAL_SHORTLIST
+    exact_statement: Lambda in L2_t implies finite L4_t L6_x critical integral.
+    scaling_class: CRITICAL
+    nearest_known_theorem: Lambda in L5/2_t is sufficient for regularity; every Leray-Hopf solution has Lambda in L1_t.
+    source_ids: [WP04-S-A1]
+    wp01_fixture_map: [FP-001_CLEAR, FP-003_CLEAR, FP-009_CLEAR, FP-010_CLEAR]
+    failure_modes: [conversion_to_equivalent_besov_or_lps_regularity, hidden_uniform_h1]
+    novelty_disposition: UNDETERMINED_NO_CLAIM
+    recommendation: SHORTLIST
+
+  - id: NS-CI-R014-B
+    family: generic_geometric_depletion
+    state: REJECTED
+    source_ids: [WP04-S-B1, WP04-S-B2, WP04-S-B3]
+    disposition: Established vorticity-direction regularity family; generic formulation is classical or underspecified.
+    route_termination: ALREADY_CLASSICAL_OR_HIDDEN_REGULARITY
+
+  - id: NS-CI-R014-C
+    family: generic_concentration_or_sparsity
+    state: REJECTED
+    source_ids: [WP04-S-C1, WP04-S-C2]
+    disposition: Established sparseness criteria already exist and audited sources warn against scaling-gap overclaim.
+    route_termination: ALREADY_CLASSICAL_AND_SCALING_GAP_UNCLOSED
+
+  - id: NS-CI-R014-D
+    family: generic_flux_or_commutator_compensation
+    state: REPLACED
+    source_ids: [WP04-S-D1]
+    disposition: Analytic substrate exists, but the generic candidate lacks a uniform scale-summable closure statement.
+    replacement: NS-CI-R014-D1
+
+  - id: NS-CI-R014-D1
+    family: uniform_shell_flux_compensation
+    state: PROVISIONAL_SHORTLIST
+    exact_statement: An independently checkable shell-flux or commutator hypothesis implies a uniform compensated enstrophy inequality with theta less than one and a in L1_t.
+    scaling_class: TO_BE_CERTIFIED
+    nearest_known_theorem: Kato-Ponce commutator estimates provide substrate but not the required uniform continuum closure.
+    source_ids: [WP04-S-D1]
+    wp01_fixture_map: [FP-007_TARGETED, FP-008_TARGETED, FP-010_CLEAR_IF_UNIFORM]
+    failure_modes: [tautological_interface, a_encodes_target_norm, nonuniform_cutoff_constant]
+    novelty_disposition: UNDETERMINED_NO_CLAIM
+    recommendation: SHORTLIST_WITH_FORMULATION_DEBT
+
+  - id: NS-CI-R014-E
+    family: generic_compact_support_extension
+    state: REPLACED
+    source_ids: [WP04-S-E1, WP04-S-E2]
+    disposition: Density alone does not identify every Leray-Hopf limit; unrestricted stability may be as hard as global regularity.
+    replacement: NS-CI-R014-E1
+
+  - id: NS-CI-R014-E1
+    family: uniform_compact_support_to_schwartz_bridge
+    state: PROVISIONAL_SHORTLIST
+    exact_statement: Uniform critical-integrability bounds under compactly supported approximation of a fixed Schwartz datum pass to a strong limit and then to every Leray-Hopf solution by weak-strong uniqueness.
+    scaling_class: LOGICAL_BRIDGE_NOT_PRIMARY_SCALING_TARGET
+    nearest_known_theorem: Stability results exist for selected global classes but do not provide the universal extension bridge.
+    source_ids: [WP04-S-E1, WP04-S-E2]
+    wp01_fixture_map: [FP-009_TARGETED, FP-013_CLEAR_IF_QUANTIFIERS_EXPLICIT, FP-014_CLEAR_IF_UNIVERSAL_IDENTIFICATION]
+    failure_modes: [uniform_bound_assumes_original_theorem, topology_too_weak, failure_to_identify_all_weak_solutions]
+    novelty_disposition: UNDETERMINED_NO_CLAIM
+    recommendation: SHORTLIST_AS_BRIDGE_THEOREM
+
+  - id: NS-CI-R014-F
+    family: generic_symmetry_or_structural_class
+    state: REJECTED
+    source_ids: [WP04-S-F1]
+    disposition: Classical regimes are already known or too remote from the full problem.
+    route_termination: CLASSICAL_OR_LOW_LEVERAGE
+
+  - id: NS-CI-R014-F-CLAIM-2026
+    family: recent_axisymmetric_swirl_and_full_system_claims
+    state: CLAIM_TRIAGE_REQUIRED
+    source_ids: [WP04-S-F2, WP04-S-F3]
+    disposition: Recent unreviewed claims require a separate adversarial proof audit before any status change.
+    novelty_disposition: NOT_ACCEPTED_NOT_REJECTED
+    recommendation: DIVERT_TO_CLAIMED_PROOF_AUDIT
