@@ -51,13 +51,18 @@ class NSCIWP04CandidateFixtureTests(unittest.TestCase):
         self.assertNotEqual(n, n + m)
 
     def test_e1_pointwise_bounds_do_not_imply_uniform_bound(self) -> None:
-        # Each approximant may have a finite bound K_n while sup_n K_n is
-        # infinite. The bridge requires exists K_T, forall n, not the
-        # reversed quantifier order.
-        pointwise_bounds = list(range(1, 101))
-        self.assertTrue(all(bound < float("inf") for bound in pointwise_bounds))
-        self.assertEqual(max(pointwise_bounds), 100)
-        self.assertGreater(max(pointwise_bounds), pointwise_bounds[0])
+        # K_n=n is finite for every n, but for every proposed uniform K
+        # the index n=K+1 violates K_n<=K. This models the invalid swap
+        # from (forall n, exists K_n) to (exists K, forall n).
+        def pointwise_bound(index: int) -> int:
+            return index
+
+        for proposed_uniform_bound in (1, 10, 100, 10_000):
+            violating_index = proposed_uniform_bound + 1
+            self.assertLess(
+                proposed_uniform_bound,
+                pointwise_bound(violating_index),
+            )
 
     def test_shortlist_has_three_distinct_roles(self) -> None:
         shortlist = {
