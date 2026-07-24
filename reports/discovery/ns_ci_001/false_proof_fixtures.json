@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "campaign_id": "NS-CI-001",
+  "work_package_id": "NS-CI-WP01",
+  "claim_boundary": "These fixtures certify failures of specified arguments only. They do not refute universal critical integrability.",
+  "fixtures": [
+    {
+      "id": "FP-001",
+      "title": "Reversed finite-measure inclusion",
+      "false_claim": "L2(0,T) implies L4(0,T) because T is finite.",
+      "exact_test": "For f(t)=t^(-1/3) on (0,1), verify integral f^2=3 and integral f^4 diverges.",
+      "expected_outcome": "reject",
+      "failure_class": "FUNCTION_SPACE_INCLUSION",
+      "protects": ["NS-CI-O005"]
+    },
+    {
+      "id": "FP-002",
+      "title": "Incorrect energy interpolation endpoint",
+      "false_claim": "Interpolation of L-infinity_t L2_x and L2_t L6_x yields L4_t L6_x.",
+      "exact_test": "Set 1/q=theta/2 and 1/p=(1-theta)/2+theta/6. q=4 gives theta=1/2 and p=3; p=6 gives theta=1 and q=2.",
+      "expected_outcome": "reject",
+      "failure_class": "INTERPOLATION_GEOMETRY",
+      "protects": ["NS-CI-C004", "NS-CI-T013"]
+    },
+    {
+      "id": "FP-003",
+      "title": "Hidden uniform H1 bound",
+      "false_claim": "The product of the known L2_tL6_x norm with a harmless supremum proves the target.",
+      "exact_test": "Identify the missing factor as the unproved L-infinity_t L6_x norm, implied by L-infinity_t H1_x.",
+      "expected_outcome": "reject",
+      "failure_class": "HIDDEN_ASSUMPTION",
+      "protects": ["NS-CI-L010"]
+    },
+    {
+      "id": "FP-004",
+      "title": "Circular Gronwall closure",
+      "false_claim": "The H1 Gronwall bound can be fed back to prove the integral controlling that same bound.",
+      "exact_test": "Reduce the proposed closure to X <= K exp(cX) and verify that it gives no finite upper bound on X.",
+      "expected_outcome": "reject",
+      "failure_class": "CIRCULAR_REASONING",
+      "protects": ["NS-CI-L010", "NS-CI-T013"]
+    },
+    {
+      "id": "FP-005",
+      "title": "Inadmissible minus-Laplacian test",
+      "false_claim": "Every Leray-Hopf solution may be directly tested by -Delta u.",
+      "exact_test": "Check whether Delta u belongs to L2_tL2_x and whether the time derivative pairing defining d/dt ||grad u||2^2 is available in the Leray-Hopf class.",
+      "expected_outcome": "reject",
+      "failure_class": "TEST_FUNCTION_ADMISSIBILITY",
+      "protects": ["NS-CI-L008"]
+    },
+    {
+      "id": "FP-006",
+      "title": "Pressure cancellation without admissibility",
+      "false_claim": "Formal pressure cancellation makes the H1 test valid at weak regularity.",
+      "exact_test": "Separate the smooth algebraic identity from the existence of the pressure pairing and admissibility of Delta u.",
+      "expected_outcome": "reject",
+      "failure_class": "FORMAL_MANIPULATION",
+      "protects": ["NS-CI-L008"]
+    },
+    {
+      "id": "FP-007",
+      "title": "Nonuniform Galerkin bound",
+      "false_claim": "Finiteness for each cutoff N passes to the continuum.",
+      "exact_test": "Use ||P_<=N v||6 <= C N ||v||2 to obtain I_T(P_<=N u) <= C T N^4 sup_t ||u||2^4.",
+      "expected_outcome": "reject_without_uniform_bound",
+      "failure_class": "CUTOFF_NONUNIFORMITY",
+      "protects": ["NS-CI-T013"]
+    },
+    {
+      "id": "FP-008",
+      "title": "Nonuniform mollification bound",
+      "false_claim": "Mollified critical norms pass to the limit by smoothness alone.",
+      "exact_test": "Use ||rho_epsilon*u||6 <= C epsilon^(-1)||u||2 to obtain an epsilon^(-4) loss in the fourth-power integral.",
+      "expected_outcome": "reject_without_compensating_estimate",
+      "failure_class": "REGULARIZATION_NONUNIFORMITY",
+      "protects": ["NS-CI-T013"]
+    },
+    {
+      "id": "FP-009",
+      "title": "Compact-support promotion",
+      "false_claim": "A theorem for C_c-infinity data covers all rapidly decreasing smooth data.",
+      "exact_test": "Verify strict inclusion C_c-infinity subsetneq Schwartz and require a uniform solution-stability and critical-norm extension theorem.",
+      "expected_outcome": "reject_without_extension_bridge",
+      "failure_class": "DATA_CLASS_DRIFT",
+      "protects": ["NS-CI-B011", "NS-CI-R-COMPACT"]
+    },
+    {
+      "id": "FP-010",
+      "title": "Numerical boundedness overclaim",
+      "false_claim": "Finite measured integrals at finite resolutions imply continuum regularity.",
+      "exact_test": "Require a resolution-uniform bound, verified critical-norm error, convergence to the relevant weak class, and subgrid concentration control.",
+      "expected_outcome": "reject_without_verified_uniformity",
+      "failure_class": "NUMERICAL_OVERCLAIM",
+      "protects": ["CLAIM_BOUNDARY"]
+    },
+    {
+      "id": "FP-011",
+      "title": "Formalized assumption overclaim",
+      "false_claim": "A kernel-checked implication from an assumed universal estimate is a proof of that estimate.",
+      "exact_test": "Inspect the theorem assumptions and provenance; the open estimate must remain visible as an imported assumption.",
+      "expected_outcome": "reject_as_analytic_proof",
+      "failure_class": "TRUST_BOUNDARY_ERASURE",
+      "protects": ["CERTIFICATION_BOUNDARY"]
+    },
+    {
+      "id": "FP-012",
+      "title": "Exponent-order confusion",
+      "false_claim": "L4_tL6_x and L6_tL4_x represent the same Serrin pair.",
+      "exact_test": "Compute 2/4+3/6=1 and 2/6+3/4=13/12.",
+      "expected_outcome": "reject",
+      "failure_class": "NOTATION_DRIFT",
+      "protects": ["NS-CI-D001", "NS-CI-L008"]
+    },
+    {
+      "id": "FP-013",
+      "title": "Interior-to-global theorem drift",
+      "false_claim": "Interior regularity alone supplies the global whole-space continuation theorem.",
+      "exact_test": "Check initial-time, whole-space decay, global energy, and uniqueness hypotheses separately.",
+      "expected_outcome": "reject_without_patching",
+      "failure_class": "THEOREM_SCOPE_DRIFT",
+      "protects": ["NS-CI-L008", "NS-CI-L010"]
+    },
+    {
+      "id": "FP-014",
+      "title": "Existential-to-universal solution drift",
+      "false_claim": "One selected regular weak solution proves the statement for every Leray-Hopf solution.",
+      "exact_test": "Require a matching weak-strong uniqueness theorem that identifies all weak solutions on the interval.",
+      "expected_outcome": "reject_without_uniqueness_bridge",
+      "failure_class": "QUANTIFIER_DRIFT",
+      "protects": ["NS-CI-B011"]
+    }
+  ]
+}
