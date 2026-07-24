@@ -1,0 +1,129 @@
+schema_version: 1.0.0
+campaign_id: HC-001
+work_package_id: HC-WP00
+next_package: HC-WP01
+claim_boundary: >-
+  These fixtures identify invalid semantic or mathematical moves. Rejecting a
+  route is not evidence against the Hodge conjecture and does not establish a
+  replacement mechanism.
+
+fixtures:
+  - fixture_id: HC-FP-001
+    name: integral-coefficient substitution
+    tempting_move: Replace CH^p tensor Q and H^(2p)(X,Q) by integral coefficients.
+    exact_failure: The naive integral Hodge conjecture is false in general; torsion and cohomology operations obstruct integral cycle realization.
+    rules_out: Any proof that silently strengthens the coefficient ring from Q to Z.
+    does_not_rule_out: Rational Hodge, torsion-free integral variants, or special-variety integral theorems.
+    spine_node: HC-O008
+
+  - fixture_id: HC-FP-002
+    name: complex-type-implies-rational
+    tempting_move: Treat every class in H^(p,p)(X) as a rational Hodge class.
+    exact_failure: Hodge type is a complex-linear condition; the conjecture only addresses the intersection with H^(2p)(X,Q).
+    rules_out: Dimension counts over C presented as rational generation.
+    does_not_rule_out: Arguments that separately prove rationality or start with a rational class.
+    spine_node: HC-D001
+
+  - fixture_id: HC-FP-003
+    name: extrapolate-Lefschetz-11
+    tempting_move: Apply the divisor theorem unchanged in higher codimension.
+    exact_failure: Line bundles and the exponential sequence control degree two; no analogous general surjectivity statement exists for CH^p when p>1.
+    rules_out: Proofs that replace a codimension-p cycle problem by Picard-group language without a bridge.
+    does_not_rule_out: Reductions to divisors on auxiliary spaces when the push-pull correspondence is proved algebraic.
+    spine_node: HC-K006
+
+  - fixture_id: HC-FP-004
+    name: inverse-Lefschetz-assumed-algebraic
+    tempting_move: Use the inverse hard-Lefschetz operator as an algebraic correspondence.
+    exact_failure: Hard Lefschetz supplies a cohomological inverse; algebraicity of that inverse is a standard-conjecture-type statement and is open in general.
+    rules_out: Hidden use of an algebraic star operator or inverse correspondence.
+    does_not_rule_out: Cases where the correspondence is independently constructed.
+    spine_node: HC-O011
+
+  - fixture_id: HC-FP-005
+    name: Kunneth-projectors-assumed
+    tempting_move: Decompose the diagonal using algebraic Kunneth projectors.
+    exact_failure: The cohomological Kunneth components are Hodge classes, but their algebraicity is itself a major consequence sought from Hodge/standard conjectures.
+    rules_out: Circular motive decompositions.
+    does_not_rule_out: Varieties with independently known Chow-Kunneth projectors.
+    spine_node: HC-O011
+
+  - fixture_id: HC-FP-006
+    name: algebraic-Hodge-locus-implies-algebraic-class
+    tempting_move: Invoke Cattani-Deligne-Kaplan to conclude a Hodge class is algebraic.
+    exact_failure: CDK proves algebraicity of the parameter locus where the class remains Hodge, not existence of a cycle representing the class.
+    rules_out: Parameter-space algebraicity promoted to cycle-class surjectivity.
+    does_not_rule_out: Combining the locus theorem with an independent cycle construction.
+    spine_node: HC-O012
+
+  - fixture_id: HC-FP-007
+    name: deformation-without-variational-bridge
+    tempting_move: Start with an algebraic class on one fiber and transport it because it stays of type (p,p).
+    exact_failure: Flat transport preserves cohomology, not automatically algebraic cycles; the missing statement is variational Hodge or a proved spread/specialization theorem.
+    rules_out: Silent generic-to-special or special-to-generic transfer.
+    does_not_rule_out: Families with an explicit relative cycle.
+    spine_node: HC-O013
+
+  - fixture_id: HC-FP-008
+    name: numerical-period-certification
+    tempting_move: Recognize a period relation to high precision and declare exact rational Hodge and algebraic-cycle equality.
+    exact_failure: Floating-point relation detection neither proves exact rationality nor exhausts the algebraic cycle image.
+    rules_out: Numerical evidence presented as theorem-grade surjectivity.
+    does_not_rule_out: Certified algebraic-number calculations followed by exact geometric construction.
+    spine_node: HC-O014
+
+  - fixture_id: HC-FP-009
+    name: Tate-without-lifting
+    tempting_move: Reduce modulo p, prove a Tate-class statement, and lift an algebraic cycle to characteristic zero.
+    exact_failure: Specialization, comparison, field of definition, semisimplicity, and cycle-lifting steps are separate hypotheses and can fail or remain open.
+    rules_out: Unqualified Hodge-Tate equivalence.
+    does_not_rule_out: A fully audited good-reduction and lifting theorem.
+    spine_node: HC-O015
+
+  - fixture_id: HC-FP-010
+    name: Chern-character-generation-confusion
+    tempting_move: Use a topological K-theory or cohomological Chern character decomposition to conclude generation by algebraic cycles.
+    exact_failure: Topological vector bundles or formal cohomology operations need not arise from algebraic coherent sheaves or algebraic cycles.
+    rules_out: Topological K-theory surjectivity promoted to algebraic K-theory/cycle surjectivity.
+    does_not_rule_out: Algebraic vector bundles with explicitly algebraic Chern classes.
+    spine_node: HC-O016
+
+  - fixture_id: HC-FP-011
+    name: Abel-Jacobi-completeness
+    tempting_move: Vanishing or control of the Abel-Jacobi invariant is treated as a complete algebraicity detector.
+    exact_failure: Abel-Jacobi detects only part of the homologically trivial cycle structure and does not produce cycles for arbitrary Hodge classes.
+    rules_out: Intermediate Jacobian tests presented as sufficient in general.
+    does_not_rule_out: Special classes where a completeness theorem is proved.
+    spine_node: HC-O017
+
+  - fixture_id: HC-FP-012
+    name: projective-to-Kahler-substitution
+    tempting_move: Replace smooth projective by compact Kahler because Hodge decomposition still holds.
+    exact_failure: General compact-Kahler analogues are false; projectivity supplies algebraic geometry not contained in the Hodge decomposition alone.
+    rules_out: Proofs using only formal Hodge decomposition while claiming the projective theorem.
+    does_not_rule_out: Restricted Kahler classes with additional algebraic structure.
+    spine_node: HC-O009
+
+  - fixture_id: HC-FP-013
+    name: absolute-or-motivated-promoted-to-algebraic
+    tempting_move: Conclude that an absolute Hodge or motivated class is represented by an algebraic cycle.
+    exact_failure: These notions deliberately enlarge or stabilize the class of available correspondences; the bridge back to algebraic cycles is the missing conjectural content.
+    rules_out: Terminological substitution for algebraicity.
+    does_not_rule_out: Cases where algebraicity is separately proved.
+    spine_node: HC-O018
+
+  - fixture_id: HC-FP-014
+    name: generic-fiber-to-all-fibers
+    tempting_move: Prove generation on a very general fiber and extend it to every special fiber.
+    exact_failure: Picard/Hodge ranks and algebraic cycles can jump on special loci; specialization and monodromy do not give the claimed surjectivity automatically.
+    rules_out: Quantifier drift from very general to every.
+    does_not_rule_out: A proper specialization theorem with controlled cycle classes.
+    spine_node: HC-O019
+
+  - fixture_id: HC-FP-015
+    name: effectivity-strengthening
+    tempting_move: Demand one irreducible effective subvariety representing the class.
+    exact_failure: The classical conjecture permits rational linear combinations, including subtraction and denominators.
+    rules_out: Rejection of a valid cycle combination merely because it is not effective.
+    does_not_rule_out: Independent effectivity theorems for positive classes.
+    spine_node: HC-B005
