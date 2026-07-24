@@ -1,0 +1,163 @@
+schema_version: 1.2.0
+campaign_id: NS-CI-001
+work_package_id: NS-CI-WP04
+programme_tracker: grandchallenge/MATH-PROGRAMME#61
+forge_tracker: grandchallenge/MATHFORGE#18
+state: INITIAL_PRIOR_ART_TRIAGE_COMPLETE_A2_BOUNDARY_REFINED
+novelty_claim_allowed: false
+shortlist_limit: 3
+shortlist: [NS-CI-R014-A2, NS-CI-R014-D1, NS-CI-R014-E1]
+provisional_lead: NS-CI-R014-A2
+claimed_proof_tracker: grandchallenge/MATHFORGE#20
+
+source_ledger:
+  WP04-S-A1:
+    family: dissipation_wavenumber
+    domain: R3
+    forcing: unforced
+    audit_state: PRIMARY_THEOREM_AND_PROOF_EXTRACTED
+    exact_outputs:
+      - Lambda_in_L5/2_implies_regularity
+      - every_Leray_Hopf_has_Lambda_in_L1
+      - Lambda_squared_lesssim_low_mode_f_lesssim_Lambda_to_5/2
+      - source_states_gap_between_L1_and_L5/2
+  WP04-S-A2: {family: frequency_localized_lps, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-A3: {family: high_frequency_vorticity, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-A4:
+    family: determining_wavenumber
+    domain: T3
+    forcing: forced
+    audit_state: SCOPED_NOT_A2_MATCH
+    note: 2026 determining-wavenumber average bound uses a different object and theorem role.
+  WP04-S-B1: {family: vorticity_direction, audit_state: PRIMARY_THEOREM_ROLE_AUDITED}
+  WP04-S-B2: {family: vorticity_direction_refinement, audit_state: PRIMARY_SOURCE_IDENTIFIED}
+  WP04-S-B3: {family: discrete_direction_refinement, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-C1: {family: geometric_sparseness, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-C2: {family: sparseness_and_scaling_gap, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-D1: {family: commutator_estimates, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-E1: {family: selected_global_class_stability, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-E2: {family: rescaled_weak_stability, audit_state: PRIMARY_SOURCE_AUDITED}
+  WP04-S-F1: {family: classical_axisymmetric_regimes, audit_state: CLASSICAL_FAMILY_AUDITED}
+  WP04-S-F2: {family: recent_axisymmetric_swirl_claim, audit_state: CLAIM_TRIAGE_REQUIRED}
+  WP04-S-F3: {family: related_recent_global_claims, audit_state: CLAIM_TRIAGE_REQUIRED}
+
+search_audit:
+  exact_a2_query_state: TARGETED_SEARCH_NO_EXACT_MATCH_FOUND
+  searched_roles:
+    - dissipation_wavenumber_L2_regulariy
+    - Lambda_in_L2_Navier_Stokes
+    - citations_of_Lambda_in_L5/2_criterion
+    - later_determining_wavenumber_results
+  bounded_conclusion: No exact whole-space Lambda-in-L2 criterion was located; this is not a novelty claim.
+
+required_fields:
+  - exact_statement
+  - domain
+  - data_class
+  - solution_class
+  - quantifiers
+  - added_hypothesis
+  - scaling_class
+  - nearest_known_theorem
+  - source_ids
+  - source_audit_state
+  - wp01_fixture_map
+  - failure_modes
+  - novelty_disposition
+  - recommendation
+
+candidates:
+  - id: NS-CI-R014-A
+    family: generic_dyadic_frequency_envelope
+    state: REPLACED
+    source_ids: [WP04-S-A1, WP04-S-A2, WP04-S-A3]
+    disposition: Generic frequency-localized regularity family is crowded and underspecified.
+    replacement: NS-CI-R014-A2
+
+  - id: NS-CI-R014-A2
+    family: critical_dissipation_wavenumber_integrability
+    state: PROVISIONAL_LEAD
+    exact_statement:
+      primary_route: Lambda in L2_t implies low_mode_f in L1_t.
+      target_route: Lambda in L2_t implies finite L4_t L6_x critical integral.
+    scaling_class: CRITICAL
+    nearest_known_theorem: Lambda in L5/2_t is sufficient for regularity; every Leray-Hopf solution has Lambda in L1_t.
+    source_ids: [WP04-S-A1, WP04-S-A4]
+    source_audit_state: TARGETED_SEARCH_NO_EXACT_MATCH_FOUND
+    wp01_fixture_map: [FP-001_CLEAR, FP-003_ACTIVE_RISK, FP-004_ACTIVE_RISK, FP-009_CLEAR, FP-010_CLEAR]
+    exact_obstructions:
+      - source_bounds_allow_Lambda_squared_integrable_but_Lambda_to_5/2_nonintegrable
+      - product_of_two_L1_time_coefficients_need_not_be_L1
+    failure_modes:
+      - conversion_to_equivalent_besov_or_lps_regularity
+      - hidden_uniform_h1
+      - multiplication_of_unrelated_L1_coefficients
+      - nonuniform_time_dependent_frequency_split
+    novelty_disposition: UNDETERMINED_NO_CLAIM
+    recommendation: PROVISIONAL_LEAD
+
+  - id: NS-CI-R014-B
+    family: generic_geometric_depletion
+    state: REJECTED
+    source_ids: [WP04-S-B1, WP04-S-B2, WP04-S-B3]
+    disposition: Established vorticity-direction regularity family; generic formulation is classical or underspecified.
+    route_termination: ALREADY_CLASSICAL_OR_HIDDEN_REGULARITY
+
+  - id: NS-CI-R014-C
+    family: generic_concentration_or_sparsity
+    state: REJECTED
+    source_ids: [WP04-S-C1, WP04-S-C2]
+    disposition: Established sparseness criteria exist and audited sources warn against scaling-gap overclaim.
+    route_termination: ALREADY_CLASSICAL_AND_SCALING_GAP_UNCLOSED
+
+  - id: NS-CI-R014-D
+    family: generic_flux_or_commutator_compensation
+    state: REPLACED
+    source_ids: [WP04-S-D1]
+    disposition: Analytic substrate exists, but the generic candidate lacks a uniform scale-summable closure statement.
+    replacement: NS-CI-R014-D1
+
+  - id: NS-CI-R014-D1
+    family: uniform_shell_flux_compensation
+    state: PROVISIONAL_SHORTLIST
+    exact_statement: An independently checkable shell-flux or commutator hypothesis implies a uniform compensated enstrophy inequality with theta less than one and a in L1_t.
+    scaling_class: CRITICAL_IF_CUTOFF_COVARIANT
+    source_ids: [WP04-S-D1]
+    wp01_fixture_map: [FP-007_TARGETED, FP-008_TARGETED, FP-010_CLEAR_IF_UNIFORM]
+    failure_modes: [tautological_interface, a_encodes_target_norm, nonuniform_cutoff_constant]
+    novelty_disposition: UNDETERMINED_NO_CLAIM
+    recommendation: SHORTLIST_WITH_FORMULATION_DEBT
+
+  - id: NS-CI-R014-E
+    family: generic_compact_support_extension
+    state: REPLACED
+    source_ids: [WP04-S-E1, WP04-S-E2]
+    disposition: Density alone does not identify every Leray-Hopf limit; unrestricted stability may be as hard as global regularity.
+    replacement: NS-CI-R014-E1
+
+  - id: NS-CI-R014-E1
+    family: uniform_compact_support_to_schwartz_bridge
+    state: PROVISIONAL_SHORTLIST
+    exact_statement: Uniform critical-integrability bounds under compactly supported approximation of a fixed Schwartz datum pass to a strong limit and every Leray-Hopf solution by weak-strong uniqueness.
+    scaling_class: LOGICAL_BRIDGE_NOT_PRIMARY_SCALING_TARGET
+    source_ids: [WP04-S-E1, WP04-S-E2]
+    wp01_fixture_map: [FP-009_TARGETED, FP-013_CLEAR_IF_QUANTIFIERS_EXPLICIT, FP-014_CLEAR_IF_UNIVERSAL_IDENTIFICATION]
+    failure_modes: [uniform_bound_assumes_original_theorem, topology_too_weak, failure_to_identify_all_weak_solutions]
+    novelty_disposition: UNDETERMINED_NO_CLAIM
+    recommendation: SHORTLIST_AS_BRIDGE_THEOREM
+
+  - id: NS-CI-R014-F
+    family: generic_symmetry_or_structural_class
+    state: REJECTED
+    source_ids: [WP04-S-F1]
+    disposition: Classical regimes are already known or too remote from the full problem.
+    route_termination: CLASSICAL_OR_LOW_LEVERAGE
+
+  - id: NS-CI-R014-F-CLAIM-2026
+    family: recent_axisymmetric_swirl_and_full_system_claims
+    state: CLAIM_TRIAGE_REQUIRED
+    source_ids: [WP04-S-F2, WP04-S-F3]
+    tracker: grandchallenge/MATHFORGE#20
+    disposition: Recent unreviewed claims require separate adversarial proof audit before any status change.
+    novelty_disposition: NOT_ACCEPTED_NOT_REJECTED
+    recommendation: DIVERT_TO_CLAIMED_PROOF_AUDIT
