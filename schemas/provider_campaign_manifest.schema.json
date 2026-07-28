@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/provider_campaign_manifest.schema.json",
+  "title": "MATHFORGE Provider Campaign Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "campaign_id",
+    "title",
+    "coverage_mode",
+    "provider_repository",
+    "programme",
+    "handoff_packet",
+    "artifacts",
+    "source_records",
+    "status_records",
+    "fixtures",
+    "failed_routes",
+    "provenance",
+    "downstream_references",
+    "non_certification_statement"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "manifest_id": {"type": "string", "pattern": "^MF-[A-Z0-9-]+-MANIFEST$"},
+    "campaign_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "coverage_mode": {"enum": ["native", "retrospective"]},
+    "provider_repository": {"const": "grandchallenge/MATHFORGE"},
+    "programme": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "paths"],
+      "properties": {
+        "repository": {"const": "grandchallenge/MATH-PROGRAMME"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "issue": {"type": ["integer", "null"], "minimum": 1},
+        "paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "handoff_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["problem_card", "source_map", "status_triage", "reconnaissance_ledger", "failure_risks", "suggested_wp01", "certification_route_sketch"],
+      "properties": {
+        "problem_card": {"$ref": "#/$defs/packet_component"},
+        "source_map": {"$ref": "#/$defs/packet_component"},
+        "status_triage": {"$ref": "#/$defs/packet_component"},
+        "reconnaissance_ledger": {"$ref": "#/$defs/packet_component"},
+        "failure_risks": {"$ref": "#/$defs/packet_component"},
+        "suggested_wp01": {"$ref": "#/$defs/packet_component"},
+        "certification_route_sketch": {"$ref": "#/$defs/packet_component"}
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact_id", "kind", "ownership", "path", "claim_boundary"],
+        "properties": {
+          "artifact_id": {"type": "string", "minLength": 3},
+          "kind": {"type": "string", "minLength": 3},
+          "ownership": {"enum": ["MATHFORGE", "MATH-PROGRAMME"]},
+          "path": {"type": "string", "minLength": 1},
+          "claim_boundary": {"type": "string", "minLength": 10},
+          "integrity": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["algorithm", "value"],
+            "properties": {
+              "algorithm": {"enum": ["git_blob_sha1", "sha256"]},
+              "value": {"type": "string", "pattern": "^([0-9a-f]{40}|[0-9a-f]{64})$"}
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"ownership": {"const": "MATHFORGE"}}},
+            "then": {"required": ["integrity"]}
+          }
+        ]
+      }
+    },
+    "source_records": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "status_records": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "fixtures": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "failed_routes": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "provider_debt": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at", "created_by", "source_commits"],
+      "properties": {
+        "created_at": {"type": "string", "format": "date"},
+        "created_by": {"type": "string", "minLength": 2},
+        "source_commits": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9a-f]{40}$"}}
+      }
+    },
+    "downstream_references": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["programme", "mathsolve", "mathcert"],
+      "properties": {
+        "programme": {"type": "array", "items": {"type": "string"}},
+        "mathsolve": {"type": "array", "items": {"type": "string"}},
+        "mathcert": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "non_certification_statement": {"type": "string", "minLength": 30}
+  },
+  "$defs": {
+    "packet_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "references", "reason"],
+      "properties": {
+        "state": {"enum": ["present", "referenced", "not_applicable", "deferred", "waived"]},
+        "references": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string", "minLength": 3}
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id", "summary", "references"],
+      "properties": {
+        "record_id": {"type": "string", "minLength": 3},
+        "summary": {"type": "string", "minLength": 3},
+        "references": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

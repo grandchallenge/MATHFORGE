@@ -1,160 +1,181 @@
-# MATHFORGE_SPEC.md
+# SPEC.md
 
 ## Purpose
 
-MATHFORGE is the discovery and exploration pillar of the Grand Challenge mathematical platform. It finds candidate problems, reconstructs their source context, generates examples, performs finite searches, clusters related questions, and produces problem cards suitable for MATHSOLVE intake.
+MATHFORGE is the discovery and exploration pillar of the Grand Challenge mathematical platform. It finds candidate problems, reconstructs source context, performs status and prior-art audits, generates examples and bounded witnesses, compares representations, records failed routes, and emits provenance-bearing handoff packets for MATHSOLVE.
 
-MATHFORGE is deliberately not a certification layer. It may propose. It may speculate. It may search. It may fail. It may produce conjectural structure. It must not promote a conjectural result into a theorem.
+MATHFORGE is not a certification layer. It may propose, search, speculate, and fail. It must not promote conjectural or externally generated evidence into a theorem.
 
-## Motto
+## Authority and ownership
 
-> MATHFORGE finds the ore.
+`grandchallenge/MATH-PROGRAMME/MATHFORGE_SPEC.md` is the canonical programme doctrine. This repository implements that doctrine.
 
-## Responsibilities
+MATHFORGE owns provider work:
 
-MATHFORGE owns:
+1. problem intake;
+2. source reconstruction and source-lock support;
+3. current-status and claim triage;
+4. domain clustering;
+5. reconnaissance computation;
+6. representation and encoding search;
+7. reduction-system reconnaissance;
+8. conjecture and candidate-route mining;
+9. false-proof, failed-route, and danger labelling;
+10. discovery normalization;
+11. prior-art and novelty-prohibition audits;
+12. provider manifests and handoff packets.
 
-1. **Problem intake** from ResearchMath-style datasets, Open Problem Garden, arXiv, survey papers, books, problem lists, seminars, and user-curated programmes.
-2. **Source reconstruction**: locate the original source, author, date, problem formulation, and surrounding context.
-3. **Status triage**: classify candidate status as open, solved, partially solved, unknown, malformed, duplicate, or stale.
-4. **Domain clustering**: group adjacent problems into coherent research neighbourhoods.
-5. **Reconnaissance computation**: enumerate small cases, search for examples/counterexamples, build toy models, and generate ledgers.
-6. **Conjecture mining**: produce candidate patterns, reductions, or formulations for MATHSOLVE to evaluate.
-7. **Danger labelling**: flag likely false folklore, unstable source status, extraction errors, or problems requiring specialist audit.
-8. **Discovery normalization**: query approved providers and emit provider-neutral records with query provenance, identifiers, and content hashes.
-9. **Mapping proposals**: propose versioned external classifications without changing the programme knowledge graph.
+MATH-PROGRAMME owns campaign authority, theorem-spine state, promotion decisions, and canonical claim status. MATHSOLVE owns controlled theorem obligations and tactics. MATHCERT owns replay and formal certification.
+
+Provider results remain evidence until admitted by MATH-PROGRAMME and, where applicable, checked by MATHCERT.
 
 ## Non-responsibilities
 
 MATHFORGE does not:
 
 - certify mathematical truth;
-- assert that an open problem is still open without current audit;
 - declare a proof complete;
-- hide failed searches;
-- conflate numerical evidence with proof;
-- alter MATHCERT ledgers.
+- assert that an open problem remains open without a dated audit;
+- hide failed searches or resource exhaustion;
+- conflate finite or numerical evidence with a universal theorem;
+- treat a CAS transcript as a certificate;
+- infer semantic equivalence from an encoding without a correspondence audit;
+- alter MATH-PROGRAMME claim ledgers or MATHCERT certification records.
+
+## Provider campaign manifest
+
+Every active MATH-PROGRAMME campaign must have exactly one MATHFORGE provider campaign manifest or an approved Programme waiver.
+
+Provider manifests live under `provider_manifests/` and validate against `schemas/provider_campaign_manifest.schema.json`.
+
+A manifest records:
+
+- the canonical campaign identifier;
+- native or retrospective provider coverage;
+- immutable Programme source references;
+- MATHFORGE-owned artifacts and their content identities;
+- the required handoff packet;
+- source, status, fixture, failed-route, provenance, and downstream-reference records;
+- an explicit non-certification statement.
+
+A retrospective manifest does not copy authoritative Programme text. It indexes the immutable Programme commit and paths that predated the provider contract, records the missing native Forge work, and establishes the provider boundary for future stages.
+
+## Required handoff packet
+
+Each manifest contains the following logical packet, whether represented by one artifact or several:
+
+```text
+PROBLEM_CARD
+SOURCE_MAP
+STATUS_TRIAGE
+RECONNAISSANCE_LEDGER
+FAILURE_RISKS
+SUGGESTED_WP01
+CERTIFICATION_ROUTE_SKETCH
+```
+
+Each packet component has one of these states:
+
+- `present`: implemented as a MATHFORGE artifact;
+- `referenced`: indexed at an immutable external Programme source;
+- `not_applicable`: inapplicable with an explicit reason;
+- `deferred`: provider debt remains visible and blocks the dependent promotion;
+- `waived`: allowed only by an approved Programme waiver.
+
+## Artifact identity
+
+A local MATHFORGE artifact record must include:
+
+- repository-relative path;
+- artifact kind;
+- ownership;
+- claim boundary;
+- content identity using Git blob SHA-1 or SHA-256.
+
+CI recomputes the identity and fails closed on a mismatch, missing artifact, unregistered manifest, duplicate campaign, unresolved local reference, malformed external commit, or incomplete packet.
+
+## Provider coverage registry
+
+`governance/provider_coverage.json` is the current active-campaign inventory. Every entry names either:
+
+- a provider manifest, or
+- an approved waiver with approver, reason, scope, and review date.
+
+The registry and manifest set must agree exactly. Unregistered manifests and uncovered campaigns fail CI.
 
 ## Inputs
 
-A MATHFORGE domain may ingest:
+MATHFORGE may ingest:
+
+- official problem statements;
+- primary literature and authoritative reconstructions;
+- surveys and bibliographies;
+- existing code and formal libraries;
+- exact finite examples and counterexamples;
+- symbolic, SAT/SMT, interval, and numerical outputs;
+- polynomial, toric, and reduction-system encodings;
+- user-curated research programmes.
+
+## Discovery outputs
+
+MATHFORGE may emit:
 
 ```text
-problem datasets
-papers and surveys
-known theorem lists
-existing code repositories
-formal libraries
-finite examples
-counterexamples
-symbolic computations
-SAT/SMT encodings
-interval search outputs
-human notes
+PROBLEM_CARD
+SOURCE_LEDGER
+HYPOTHESIS_MATRIX
+STATUS_AUDIT
+FALSE_PROOF_ATLAS
+FAILED_ROUTE_LEDGER
+PRIOR_ART_LEDGER
+CANDIDATE_SHORTLIST
+RECONNAISSANCE_LEDGER
+ALGEBRAIC_ENCODING_CARD
+TERM_ORDER_SWEEP
+ELIMINATION_MAP
+RESULTANT_FEASIBILITY_PROBE
+QUOTIENT_ALGEBRA_MODEL
+REAL_ROOT_ISOLATION_LEDGER
+LOCAL_SINGULARITY_CARD
+SYZYGY_DEPENDENCY_MAP
+CRITICAL_PAIR_LEDGER
+SPARSE_SUPPORT_FORECAST
+PARAMETRIC_BRANCH_LEDGER
+RESOURCE_LEDGER
+CANDIDATE_WITNESS
+CERTIFICATION_ROUTE_SKETCH
 ```
 
-## Outputs
-
-Every MATHFORGE candidate should emit a problem card:
-
-```yaml
-problem_id: MF-UC-0001
-title: Frankl union-closed sets conjecture
-domain_id: UC
-status_signal: open-signal
-source_urls:
-  - https://en.wikipedia.org/wiki/Union-closed_sets_conjecture
-  - https://arxiv.org/abs/2306.12351
-knowledge_graph_refs:
-  - UC-CONJECTURE-FRANKL
-classification_mapping_refs:
-  - UC-MAP-MSC-05D05
-  - UC-MAP-MSC-06A12
-  - UC-MAP-ARXIV-MATH-CO
-discovery_provenance:
-  source_ids:
-    - msc2020_skos
-    - zbmath_open
-  reviewed_at: 2026-06-14
-  reviewed_by: programme-maintainer
-forge_outputs:
-  - exact enumeration n <= 4
-  - equivalent formulation notes
-risk_flags:
-  - attractive false-proof target
-  - many known special cases
-recommended_wp01: WP01 status spine
-recommended_certification_route: Lean definitions + finite-family verifier
-```
-
-## Required directory structure
-
-```text
-MATHFORGE/
-  README.md
-  SPEC.md
-  forge/
-    intake/
-      researchmath14k/
-      openproblemgarden/
-      arxiv/
-    domains/
-      union_closed/
-      erdos_straus/
-      hadamard/
-      alon_tarsi/
-      osp_recoupling/
-      lax_pairs/
-      billiards/
-      convex_symplectic/
-    reports/
-      problem_cards/
-      status_triage/
-      reconnaissance/
-  schemas/
-    candidate_problem.schema.json
-    discovery_record.schema.json
-    forge_run_ledger.schema.json
-  discovery/
-    search.py
-    adapters.py
-  tests/
-    fixtures/
-    test_discovery.py
-```
+Each output must preserve source provenance, side conditions, backend and resource details where relevant, failed routes, and a non-certification status.
 
 ## Quality gates
 
-A MATHFORGE artifact may pass to MATHSOLVE only if it includes:
+A MATHFORGE handoff may pass to MATHSOLVE only when:
 
-1. Problem statement in source language or reconstructed form.
-2. Source trail with at least one primary or reputable secondary source.
-3. Preliminary status classification.
-4. Domain classification.
-5. Reason for Grand Challenge relevance.
-6. Failure-mode notes.
-7. Candidate first Work Package.
-8. Stable knowledge graph and classification mapping references.
-9. Discovery provenance for externally sourced candidates.
+1. the problem statement and scope are explicit;
+2. primary or reputable source provenance is recorded;
+3. current status is dated and qualified;
+4. formulation, quantifier, and data-class boundaries are explicit;
+5. failed routes and false-proof risks are visible;
+6. the next Work Package recommendation is bounded;
+7. the certification route is sketched without claiming certification;
+8. local artifacts are content-addressed;
+9. the provider manifest is registered;
+10. the relevant Programme campaign imports the manifest at a stable Forge commit and verifies its hash.
 
-## Grand Challenge expectations
+## Promotion gate
 
-A MATHFORGE output should be generous with possibility but severe with status. The right tone is not “we found a solvable problem.” The right tone is “we found a problem neighbourhood whose structure may support disciplined attack.”
+Before MATH-PROGRAMME promotes WP00, WP01, a prior-art package, or a restricted-target selection, it must possess either:
 
-## MATHFORGE-to-MATHSOLVE handoff packet
+- a stable MATHFORGE commit, provider-manifest path, and verified manifest hash; or
+- an approved, scoped waiver.
 
-Each handoff contains:
+Missing provider coverage is a blocking governance defect. It may not be repaired by copying provider work into MATH-PROGRAMME without a Forge record.
 
-```text
-PROBLEM_CARD.md
-SOURCE_MAP.md
-STATUS_TRIAGE.md
-RECONNAISSANCE_LEDGER.json
-FAILURE_RISKS.md
-SUGGESTED_WP01.md
-CERTIFICATION_ROUTE_SKETCH.md
-```
+## Grand Challenge posture
 
-## First domain: Union-Closed Sets
+MATHFORGE should be generous with possibility and severe with status.
 
-The first active domain is `union_closed`. MATHFORGE begins with exact enumeration of small universes, source reconstruction, equivalent formulations, known special-case discovery, and candidate Lean-friendly definitions. It must not pretend that small enumeration informs the asymptotic conjecture except as a validation of definitions and tooling.
+The correct statement is not “the search solved the problem.” It is:
+
+> Under this source, encoding, scope, and resource contract, MATHFORGE produced this candidate artifact for controlled downstream evaluation.

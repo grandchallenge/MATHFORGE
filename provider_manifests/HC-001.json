@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-HC-001-MANIFEST",
+  "campaign_id": "HC-001",
+  "title": "Hodge conjecture provider coverage",
+  "coverage_mode": "native",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "d4bfa07ab4b742d19e6e091903dfaf0508b245d5",
+    "issue": 65,
+    "paths": ["campaigns/hodge_conjecture", "reviews/hodge_conjecture"]
+  },
+  "handoff_packet": {
+    "problem_card": {"state": "present", "references": ["reports/discovery/hc_001/source_ledger.yaml"], "reason": "Native provider record exists."},
+    "source_map": {"state": "present", "references": ["reports/discovery/hc_001/source_ledger.yaml"], "reason": "Native source or provenance record exists."},
+    "status_triage": {"state": "present", "references": ["reports/discovery/hc_001/source_ledger.yaml"], "reason": "Native dated status boundary exists."},
+    "reconnaissance_ledger": {"state": "present", "references": ["reports/discovery/hc_001/source_ledger.yaml"], "reason": "Native finite, fixture, or candidate ledger exists."},
+    "failure_risks": {"state": "present", "references": ["reports/discovery/hc_001/source_ledger.yaml"], "reason": "Native false-proof or risk boundary exists."},
+    "suggested_wp01": {"state": "present", "references": ["reports/discovery/hc_001/source_ledger.yaml"], "reason": "Provider record identifies the bounded next lane."},
+    "certification_route_sketch": {"state": "present", "references": ["reports/discovery/hc_001/source_ledger.yaml"], "reason": "Provider record preserves the downstream proof boundary."}
+  },
+  "artifacts": [
+    {
+      "artifact_id": "HC-SOURCE-LEDGER",
+      "kind": "source_ledger",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/hc_001/source_ledger.yaml",
+      "integrity": {"algorithm": "git_blob_sha1", "value": "35c153f792962c0639ad99118efe2d93373c4abc"},
+      "claim_boundary": "The ledger normalizes sources and formulations; it does not prove the Hodge conjecture or establish a new known case."
+    }
+  ],
+  "source_records": [{"record_id": "HC-001-SOURCE", "summary": "Native Forge source or discovery record is registered.", "references": ["reports/discovery/hc_001/source_ledger.yaml"]}],
+  "status_records": [{"record_id": "HC-001-STATUS", "summary": "Status is bounded by the registered provider artifacts and Programme claim ledger.", "references": ["campaigns/hodge_conjecture", "reviews/hodge_conjecture"]}],
+  "fixtures": [{"record_id": "HC-001-FIXTURES", "summary": "Native finite or adversarial fixtures are registered where available.", "references": ["reports/discovery/hc_001/source_ledger.yaml"]}],
+  "failed_routes": [{"record_id": "HC-001-FAILED", "summary": "Failure risks remain explicit and are not promoted into negative theorem claims.", "references": ["reports/discovery/hc_001/source_ledger.yaml"]}],
+  "provenance": {"created_at": "2026-07-28", "created_by": "MF-GOV-WP00", "source_commits": ["db0ac437860662ae6646e259ddbb2fe22cff0cb2"]},
+  "downstream_references": {"programme": ["https://github.com/grandchallenge/MATH-PROGRAMME/issues/65"], "mathsolve": ["https://github.com/grandchallenge/MATHSOLVE/issues/62"], "mathcert": ["https://github.com/grandchallenge/MATHCERT/issues/23"]},
+  "provider_debt": [],
+  "non_certification_statement": "This manifest records MATHFORGE provider evidence and provenance only. It does not certify, prove, or promote the campaign target."
+}
