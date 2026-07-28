@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-YM-001-MANIFEST",
+  "campaign_id": "YM-001",
+  "title": "Yang-Mills existence and mass-gap provider coverage",
+  "coverage_mode": "retrospective",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "fa0c933e432ac4726798d70807e2ab4d0e359daa",
+    "issue": null,
+    "paths": ["YM-WP00-source-normalization-equivalence-audit.md"]
+  },
+  "handoff_packet": {
+    "problem_card": {"state": "referenced", "references": ["YM-WP00-source-normalization-equivalence-audit.md"], "reason": "Authoritative campaign definition predates the provider-manifest contract."},
+    "source_map": {"state": "referenced", "references": ["YM-WP00-source-normalization-equivalence-audit.md"], "reason": "Source audit remains authoritative in the pinned Programme commit."},
+    "status_triage": {"state": "referenced", "references": ["YM-WP00-source-normalization-equivalence-audit.md"], "reason": "Status and claim boundaries are indexed without copying Programme text."},
+    "reconnaissance_ledger": {"state": "deferred", "references": [], "reason": "No native Forge reconnaissance ledger existed before this retrospective registration."},
+    "failure_risks": {"state": "referenced", "references": ["YM-WP00-source-normalization-equivalence-audit.md"], "reason": "Existing Programme audit records the principal false-proof and barrier boundaries."},
+    "suggested_wp01": {"state": "referenced", "references": ["YM-WP00-source-normalization-equivalence-audit.md"], "reason": "The pinned Programme campaign records the authorized successor lane."},
+    "certification_route_sketch": {"state": "referenced", "references": ["YM-WP00-source-normalization-equivalence-audit.md"], "reason": "The pinned Programme campaign contains the MATHCERT handoff boundary."}
+  },
+  "artifacts": [
+    {"artifact_id": "YM-001-PROGRAMME-INDEX-01", "kind": "retrospective_programme_reference", "ownership": "MATH-PROGRAMME", "path": "YM-WP00-source-normalization-equivalence-audit.md", "claim_boundary": "This path remains Programme-owned authoritative text; MATHFORGE indexes it without copying or changing claim status."}
+  ],
+  "source_records": [{"record_id": "YM-001-SOURCE-RETRO", "summary": "The pinned Programme WP00 source package is indexed retrospectively.", "references": ["YM-WP00-source-normalization-equivalence-audit.md"]}],
+  "status_records": [{"record_id": "YM-001-STATUS-RETRO", "summary": "Programme promotion and claim state remain authoritative at the pinned commit.", "references": ["YM-WP00-source-normalization-equivalence-audit.md"]}],
+  "fixtures": [],
+  "failed_routes": [{"record_id": "YM-001-NATIVE-DEBT", "summary": "Native Forge fixtures and failed-route ledgers were not established before this retrospective manifest.", "references": []}],
+  "provenance": {"created_at": "2026-07-28", "created_by": "MF-GOV-WP00", "source_commits": ["fa0c933e432ac4726798d70807e2ab4d0e359daa"]},
+  "downstream_references": {"programme": ["YM-WP00-source-normalization-equivalence-audit.md"], "mathsolve": [], "mathcert": []},
+  "provider_debt": [{"record_id": "YM-001-DEBT-NATIVE", "summary": "Future discovery, prior-art, WP01, and target-selection work must originate in MATHFORGE or carry an approved waiver.", "references": []}],
+  "non_certification_statement": "This retrospective manifest indexes immutable Programme artifacts. It does not duplicate their content, change authority, certify a theorem, or imply that native Forge work was completed."
+}
