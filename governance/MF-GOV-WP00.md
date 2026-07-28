@@ -4,13 +4,13 @@
 
 - Status: implemented provider-governance remediation.
 - Scope: MATHFORGE specification, active-campaign coverage, handoff schema, recursive validation, retrospective provider registration, and Programme import prerequisites.
-- Strongest supported claim: the seven active research campaigns listed in `governance/provider_coverage.json` have a registered MATHFORGE manifest; native and retrospective coverage are distinguished.
+- Strongest supported claim: the eight active research campaigns listed in `governance/provider_coverage.json` have a registered MATHFORGE manifest; native and retrospective coverage are distinguished.
 - Claims not made: no retrospective manifest asserts that native Forge work occurred, no provider artifact proves a campaign theorem, and no novelty claim is introduced.
-- First downstream obligation: MATH-PROGRAMME must import these manifests at the exact merged Forge commit and verify their SHA-256 identities.
+- First downstream obligation: MATH-PROGRAMME must import these manifests at the exact merged Forge commit and verify their content identities.
 
 ## Audit determination
 
-MATHFORGE was conceptually correct but operationally optional. Union-Closed, Navier-Stokes, and Hodge had native provider work. BSD, P versus NP, Riemann, and Yang-Mills had substantial Programme-owned source and governance packages without a stable Forge provider record.
+MATHFORGE was conceptually correct but operationally optional. Union-Closed, Navier-Stokes, and Hodge had native provider work. BSD, P versus NP, Riemann, Yang-Mills, and Odd Zeta had substantial or newly instantiated Programme-owned source and governance packages without a stable Forge provider record.
 
 This package repairs the provider boundary without copying authoritative Programme text.
 
@@ -25,6 +25,7 @@ This package repairs the provider boundary without copying authoritative Program
 | PNP-001 | retrospective | Immutable Programme WP00 paths indexed; future discovery work must originate in Forge. |
 | RH-001 | retrospective | Immutable Programme WP00 paths indexed; future discovery work must originate in Forge. |
 | YM-001 | retrospective | Immutable Programme WP00 path indexed; future discovery work must originate in Forge. |
+| OZ-001 | retrospective | Incomplete Programme intake and source-lock package indexed; source acquisition remains gated. |
 
 ## Handoff contract
 
