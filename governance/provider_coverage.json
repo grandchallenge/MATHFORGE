@@ -9,6 +9,7 @@
     {"campaign_id": "BSD-001", "title": "Birch-Swinnerton-Dyer provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/BSD-001.json"},
     {"campaign_id": "PNP-001", "title": "P versus NP provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/PNP-001.json"},
     {"campaign_id": "RH-001", "title": "Riemann Hypothesis provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/RH-001.json"},
-    {"campaign_id": "YM-001", "title": "Yang-Mills existence and mass-gap provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/YM-001.json"}
+    {"campaign_id": "YM-001", "title": "Yang-Mills existence and mass-gap provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/YM-001.json"},
+    {"campaign_id": "OZ-001", "title": "Odd zeta irrationality provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/OZ-001.json"}
   ]
 }

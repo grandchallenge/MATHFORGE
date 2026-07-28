@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-OZ-001-MANIFEST",
+  "campaign_id": "OZ-001",
+  "title": "Odd zeta irrationality provider coverage",
+  "coverage_mode": "retrospective",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "b6547a554b68793b5cee8dddf88ea8690b6d6b8e",
+    "issue": null,
+    "paths": [
+      "campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_INTAKE_AND_SOURCE_LOCK.md",
+      "campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/01_INTAKE_SOURCE_LOCK.yaml",
+      "campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/tools/validate_intake_manifest.py"
+    ]
+  },
+  "handoff_packet": {
+    "problem_card": {"state": "referenced", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_INTAKE_AND_SOURCE_LOCK.md"], "reason": "The governed intake predates this provider registration."},
+    "source_map": {"state": "referenced", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/01_INTAKE_SOURCE_LOCK.yaml"], "reason": "The Programme intake manifest remains authoritative and explicitly incomplete."},
+    "status_triage": {"state": "referenced", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_INTAKE_AND_SOURCE_LOCK.md"], "reason": "The pinned Programme contract preserves the incomplete source-lock state."},
+    "reconnaissance_ledger": {"state": "deferred", "references": [], "reason": "No new mechanism generation or numerical reconnaissance is authorized before source acquisition."},
+    "failure_risks": {"state": "referenced", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_INTAKE_AND_SOURCE_LOCK.md"], "reason": "The intake contract records missing bridge and source-completeness risks."},
+    "suggested_wp01": {"state": "deferred", "references": [], "reason": "OZ-WP01 remains gated until the authoritative source bundle is locked."},
+    "certification_route_sketch": {"state": "referenced", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/01_INTAKE_SOURCE_LOCK.yaml"], "reason": "The intake namespace reserves Lean, certificate, and computation records without certifying them."}
+  },
+  "artifacts": [
+    {"artifact_id": "OZ-001-PROGRAMME-INDEX-01", "kind": "retrospective_programme_reference", "ownership": "MATH-PROGRAMME", "path": "campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_INTAKE_AND_SOURCE_LOCK.md", "claim_boundary": "This Programme-owned intake contract proves no formula, congruence, Lean correspondence, novelty claim, or irrationality conclusion."},
+    {"artifact_id": "OZ-001-PROGRAMME-INDEX-02", "kind": "retrospective_programme_reference", "ownership": "MATH-PROGRAMME", "path": "campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/01_INTAKE_SOURCE_LOCK.yaml", "claim_boundary": "This manifest records unresolved source acquisition and stable namespaces; it is not a completed source lock."},
+    {"artifact_id": "OZ-001-PROGRAMME-INDEX-03", "kind": "retrospective_programme_reference", "ownership": "MATH-PROGRAMME", "path": "campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/tools/validate_intake_manifest.py", "claim_boundary": "The validator checks intake structure and readiness only; it does not validate mathematical claims."
+    }
+  ],
+  "source_records": [{"record_id": "OZ-001-SOURCE-RETRO", "summary": "The incomplete Programme intake and source-lock package is indexed at its immutable merge commit.", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/01_INTAKE_SOURCE_LOCK.yaml"]}],
+  "status_records": [{"record_id": "OZ-001-STATUS-RETRO", "summary": "Source lock is structurally instantiated but incomplete; successor work remains gated.", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_INTAKE_AND_SOURCE_LOCK.md"]}],
+  "fixtures": [],
+  "failed_routes": [{"record_id": "OZ-001-NATIVE-DEBT", "summary": "Native Forge source acquisition and literature normalization must begin only from the authoritative bundle defined by the intake docket.", "references": []}],
+  "provenance": {"created_at": "2026-07-28", "created_by": "MF-GOV-WP00", "source_commits": ["b6547a554b68793b5cee8dddf88ea8690b6d6b8e"]},
+  "downstream_references": {"programme": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_INTAKE_AND_SOURCE_LOCK.md"], "mathsolve": [], "mathcert": []},
+  "provider_debt": [{"record_id": "OZ-001-DEBT-SOURCE-LOCK", "summary": "Acquire and hash the authoritative manuscript, Lean, certificate, computation, and literature bundle before any successor lane.", "references": ["campaigns/odd_zeta/OZ_WP00_SOURCE_NORMALIZATION_EQUIVALENCE/01_INTAKE_SOURCE_LOCK.yaml"]}],
+  "non_certification_statement": "This retrospective manifest indexes an incomplete intake contract. It does not claim source-lock completion, mathematical verification, novelty, or irrationality of any odd zeta value."
+}
