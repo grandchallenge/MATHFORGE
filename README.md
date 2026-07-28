@@ -63,3 +63,14 @@ under ignored `.cache/discovery/`; only reviewed normalized records belong in
 `reports/discovery/`.
 
 Thank you to arXiv for use of its open access interoperability.
+
+## Provider campaign manifests
+
+MATHFORGE provider coverage is fail-closed.
+
+- `governance/MF-GOV-WP00.md` records the coverage and handoff audit.
+- `governance/provider_coverage.json` lists every active campaign and its provider manifest or approved waiver.
+- `provider_manifests/` contains native and retrospective provider records.
+- `schemas/provider_campaign_manifest.schema.json` defines the recursive handoff contract.
+
+MATH-PROGRAMME imports these manifests by exact MATHFORGE commit and verified SHA-256. A retrospective manifest indexes immutable Programme artifacts without copying their authority into Forge.
