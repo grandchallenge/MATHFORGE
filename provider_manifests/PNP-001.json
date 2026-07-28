@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-PNP-001-MANIFEST",
+  "campaign_id": "PNP-001",
+  "title": "P versus NP provider coverage",
+  "coverage_mode": "retrospective",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "000aada57740f20d6613a2cd6bafc07a56290355",
+    "issue": null,
+    "paths": [
+      "PNP-WP00-source-definition-equivalence-audit.md",
+      "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md",
+      "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"
+    ]
+  },
+  "handoff_packet": {
+    "problem_card": {"state": "referenced", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"], "reason": "Authoritative campaign definition predates the provider-manifest contract."},
+    "source_map": {"state": "referenced", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"], "reason": "Source audit remains authoritative in the pinned Programme commit."},
+    "status_triage": {"state": "referenced", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"], "reason": "Status and claim boundaries are indexed without copying Programme text."},
+    "reconnaissance_ledger": {"state": "deferred", "references": [], "reason": "No native Forge reconnaissance ledger existed before this retrospective registration."},
+    "failure_risks": {"state": "referenced", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"], "reason": "Existing Programme audit records the principal false-proof and barrier boundaries."},
+    "suggested_wp01": {"state": "referenced", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"], "reason": "The pinned Programme campaign records the authorized successor lane."},
+    "certification_route_sketch": {"state": "referenced", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"], "reason": "The pinned Programme campaign contains the MATHCERT handoff boundary."}
+  },
+  "artifacts": [
+    {"artifact_id": "PNP-001-PROGRAMME-INDEX-01", "kind": "retrospective_programme_reference", "ownership": "MATH-PROGRAMME", "path": "PNP-WP00-source-definition-equivalence-audit.md", "claim_boundary": "This path remains Programme-owned authoritative text; MATHFORGE indexes it without copying or changing claim status."},
+    {"artifact_id": "PNP-001-PROGRAMME-INDEX-02", "kind": "retrospective_programme_reference", "ownership": "MATH-PROGRAMME", "path": "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "claim_boundary": "This path remains Programme-owned authoritative text; MATHFORGE indexes it without copying or changing claim status."},
+    {"artifact_id": "PNP-001-PROGRAMME-INDEX-03", "kind": "retrospective_programme_reference", "ownership": "MATH-PROGRAMME", "path": "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md", "claim_boundary": "This path remains Programme-owned authoritative text; MATHFORGE indexes it without copying or changing claim status."}
+  ],
+  "source_records": [{"record_id": "PNP-001-SOURCE-RETRO", "summary": "The pinned Programme WP00 source package is indexed retrospectively.", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"]}],
+  "status_records": [{"record_id": "PNP-001-STATUS-RETRO", "summary": "Programme promotion and claim state remain authoritative at the pinned commit.", "references": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"]}],
+  "fixtures": [],
+  "failed_routes": [{"record_id": "PNP-001-NATIVE-DEBT", "summary": "Native Forge fixtures and failed-route ledgers were not established before this retrospective manifest.", "references": []}],
+  "provenance": {"created_at": "2026-07-28", "created_by": "MF-GOV-WP00", "source_commits": ["000aada57740f20d6613a2cd6bafc07a56290355"]},
+  "downstream_references": {"programme": ["PNP-WP00-source-definition-equivalence-audit.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/00_CHARTER.md", "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"], "mathsolve": [], "mathcert": []},
+  "provider_debt": [{"record_id": "PNP-001-DEBT-NATIVE", "summary": "Future discovery, prior-art, WP01, and target-selection work must originate in MATHFORGE or carry an approved waiver.", "references": []}],
+  "non_certification_statement": "This retrospective manifest indexes immutable Programme artifacts. It does not duplicate their content, change authority, certify a theorem, or imply that native Forge work was completed."
+}
