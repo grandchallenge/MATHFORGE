@@ -27,63 +27,71 @@ MATHFORGE may emit witnesses for:
 
 - polynomial identities;
 - normal-form and remainder computations;
-- ideal membership;
+- ideal membership and non-membership;
 - ideal equality;
 - Groebner-basis candidates;
 - radical-membership candidates;
 - elimination outputs;
-- finite truncations of infinite-variable or growing-family algebraic systems.
+- finite truncations of growing algebraic systems;
+- sampled tropical initial-ideal records.
 
-## Required payload
+## Admission contract
 
-Every exported algebraic witness should record:
+Every governed witness must use `schemas/algebraic_witness.schema.json`, version `0.2.0`, and must be registered in `governance/algebraic_witness_registry.json` by exact Git blob identity.
 
-- `witness_id`;
-- `claim_id` or provisional claim target;
-- witness kind;
-- coefficient domain;
-- variable universe;
-- monomial order;
-- external backend;
-- source polynomials;
-- target expression or ideal statement;
-- witness data;
-- side conditions;
-- hash/provenance metadata;
-- intended MATHCERT certificate kind.
+The record must state:
 
-The schema lives at `schemas/algebraic_witness.schema.json`.
+- the local claim and local-scope justification;
+- coefficient domain, variable universe, variable count, and monomial order;
+- exact backend identity, command, and output digest;
+- input polynomial count and maximum input degree;
+- maximum variables, degree, runtime, basis size, and intermediate-term count;
+- expected witness and fallback route;
+- observed execution status and resource use;
+- a failure ledger, including the fallback taken for unsuccessful runs;
+- intended MATHCERT certificate kind and current trust status.
+
+A record with `global_open_problem_encoding: true` is inadmissible. MATHFORGE must not encode an entire open problem as one unbounded symbolic search.
+
+## Fail-closed rules
+
+The validator rejects:
+
+- unregistered or missing witness files;
+- duplicate witness IDs or paths;
+- changed files at an unchanged registry digest;
+- variable-count or degree drift;
+- runtime, basis-size, or intermediate-term budget overruns;
+- unsuccessful runs without a failure-ledger entry;
+- non-completed runs marked `ready_for_mathcert`;
+- schemas or records that omit the fallback route or expected witness.
+
+A failed or exhausted search remains useful evidence only when the failure and fallback are recorded.
 
 ## Trust status
 
-MATHFORGE outputs should normally use one of these statuses:
+MATHFORGE outputs use one of these statuses:
 
 | Status | Meaning |
 | --- | --- |
-| `external_output_only` | A backend produced a result, but no artifact is stable yet. |
-| `external_witness_recorded` | A witness artifact has been serialized and hashed. |
-| `script_replayed` | A MATHFORGE script replayed lightweight shape/provenance checks. |
-| `ready_for_mathcert` | The witness is ready to be translated into a MATHCERT algebraic certificate. |
+| `external_output_only` | A backend produced a result, but no stable witness is admitted. |
+| `external_witness_recorded` | A content-addressed witness exists. |
+| `script_replayed` | MATHFORGE replayed bounded shape and provenance checks. |
+| `ready_for_mathcert` | A completed, budget-conforming witness is ready for Cert intake. |
+| `blocked` | The route failed, exceeded a budget, or lacks a valid handoff. |
 
 No MATHFORGE status means `certified`.
 
-## Relationship to MATHCERT
+## Relationship to MATHSOLVE and MATHCERT
 
-MATHFORGE witness exports should be transformable into MATHCERT algebraic certificates with minimal loss. The MATHCERT side owns the trusted boundary:
-
-- external CAS output is evidence;
-- exported witnesses are durable evidence;
-- replay scripts are audit evidence;
-- Lean-checked lemmas are certification.
-
-## Future work
-
-The next useful implementation step is a small adapter package:
+MATHFORGE witness exports should be transformable into a MATHSOLVE tactic record and then into a MATHCERT certificate packet with minimal loss.
 
 ```text
-SageMath/SymPy/Singular output
-  -> MATHFORGE witness JSON
-  -> MATHSOLVE tactic record
-  -> MATHCERT certificate JSON
-  -> Lean theorem/check result
+external symbolic backend
+  -> content-addressed MATHFORGE witness
+  -> bounded MATHSOLVE tactic record
+  -> MATHCERT certificate packet
+  -> exact replay or kernel-checked result
 ```
+
+External CAS output is evidence. Exported witnesses are durable evidence. MATHCERT owns the adjudication and proof boundary.
