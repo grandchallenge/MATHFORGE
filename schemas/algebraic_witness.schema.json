@@ -1,18 +1,156 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/mathforge-algebraic-witness.schema.json",
   "title": "MATHFORGE Algebraic Witness",
   "type": "object",
-  "required": ["witness_id", "schema_version", "witness_kind", "problem", "witness", "handoff"],
+  "additionalProperties": false,
+  "required": [
+    "witness_id",
+    "schema_version",
+    "claim_id",
+    "witness_kind",
+    "coefficient_domain",
+    "variables",
+    "monomial_order",
+    "external_backend",
+    "problem",
+    "search_contract",
+    "execution",
+    "witness",
+    "failure_ledger",
+    "handoff",
+    "references"
+  ],
   "properties": {
-    "witness_id": {"type": "string"},
-    "schema_version": {"const": "0.1.0"},
-    "witness_kind": {"type": "string"},
-    "coefficient_domain": {"type": "string"},
-    "variables": {"type": "object"},
-    "monomial_order": {"type": "string"},
-    "external_backend": {"type": "object"},
-    "problem": {"type": "object"},
-    "witness": {"type": "object"},
-    "handoff": {"type": "object"},
-    "references": {"type": "array"}
+    "witness_id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]+$"},
+    "schema_version": {"const": "0.2.0"},
+    "claim_id": {"type": "string", "minLength": 1},
+    "witness_kind": {
+      "enum": [
+        "polynomial_identity",
+        "normal_form",
+        "ideal_membership",
+        "ideal_nonmembership",
+        "ideal_equality",
+        "grobner_basis_candidate",
+        "radical_membership",
+        "elimination",
+        "finite_truncation",
+        "tropical_initial_ideal"
+      ]
+    },
+    "coefficient_domain": {"type": "string", "minLength": 1},
+    "variables": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["universe", "names", "variable_count"],
+      "properties": {
+        "universe": {"enum": ["finite", "finite_truncation"]},
+        "names": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "variable_count": {"type": "integer", "minimum": 1},
+        "index_type": {"type": "string", "minLength": 1}
+      }
+    },
+    "monomial_order": {"enum": ["lex", "grlex", "grevlex", "block", "other"]},
+    "external_backend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "command", "output_sha256"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1, "not": {"enum": ["latest", "stable", "unknown"]}},
+        "command": {"type": "string", "minLength": 1},
+        "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "local_scope_justification", "side_conditions", "input_polynomial_count", "maximum_input_degree"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "local_scope_justification": {"type": "string", "minLength": 20},
+        "side_conditions": {"type": "array", "items": {"type": "string"}},
+        "input_polynomial_count": {"type": "integer", "minimum": 1},
+        "maximum_input_degree": {"type": "integer", "minimum": 0},
+        "global_open_problem_encoding": {"const": false}
+      }
+    },
+    "search_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_variables",
+        "max_total_degree",
+        "timeout_seconds",
+        "max_basis_polynomials",
+        "max_intermediate_terms",
+        "fallback_route",
+        "expected_witness"
+      ],
+      "properties": {
+        "max_variables": {"type": "integer", "minimum": 1},
+        "max_total_degree": {"type": "integer", "minimum": 0},
+        "timeout_seconds": {"type": "integer", "minimum": 1},
+        "max_basis_polynomials": {"type": "integer", "minimum": 1},
+        "max_intermediate_terms": {"type": "integer", "minimum": 1},
+        "fallback_route": {"type": "string", "minLength": 10},
+        "expected_witness": {"type": "string", "minLength": 10}
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "elapsed_seconds", "basis_polynomials", "peak_intermediate_terms", "termination_reason"],
+      "properties": {
+        "status": {"enum": ["not_run", "completed", "failed", "timed_out", "budget_exhausted"]},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "basis_polynomials": {"type": "integer", "minimum": 0},
+        "peak_intermediate_terms": {"type": "integer", "minimum": 0},
+        "termination_reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["meaning"],
+      "properties": {
+        "meaning": {"type": "string", "minLength": 1}
+      }
+    },
+    "failure_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ledger_id", "entries"],
+      "properties": {
+        "ledger_id": {"type": "string", "minLength": 1},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["failure_id", "kind", "description", "fallback_taken"],
+            "properties": {
+              "failure_id": {"type": "string", "minLength": 1},
+              "kind": {"enum": ["backend_error", "timeout", "budget_exhausted", "invalid_scope", "invalid_witness", "other"]},
+              "description": {"type": "string", "minLength": 1},
+              "fallback_taken": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mathcert_certificate_kind", "trust_status", "mathcert_schema", "notes"],
+      "properties": {
+        "mathcert_certificate_kind": {"type": "string", "minLength": 1},
+        "trust_status": {"enum": ["external_output_only", "external_witness_recorded", "script_replayed", "ready_for_mathcert", "blocked"]},
+        "mathcert_schema": {"type": "string", "minLength": 1},
+        "notes": {"type": "string", "minLength": 1}
+      }
+    },
+    "references": {"type": "array", "items": {"type": "string", "minLength": 1}}
   }
 }

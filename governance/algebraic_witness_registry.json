@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "MF-ALGEBRAIC-WITNESS-REGISTRY",
+  "witnesses": [
+    {
+      "witness_id": "GB-WITNESS-DEMO-001",
+      "path": "examples/algebraic_witnesses/GB-WITNESS-DEMO-001.json",
+      "git_blob_sha1": "a1e3a0eb61702430516f5961bbc4e44332f677ce",
+      "schema_path": "schemas/algebraic_witness.schema.json",
+      "execution_status": "completed",
+      "trust_status": "ready_for_mathcert"
+    }
+  ]
+}

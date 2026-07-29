@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
 MANIFEST_DIR = ROOT / "provider_manifests"
 COVERAGE_PATH = ROOT / "governance" / "provider_coverage.json"
+ALGEBRAIC_WITNESS_DIR = ROOT / "examples" / "algebraic_witnesses"
+ALGEBRAIC_WITNESS_REGISTRY = ROOT / "governance" / "algebraic_witness_registry.json"
 
 
 def load_json(path: Path) -> Any:
@@ -96,6 +98,96 @@ def legacy_artifact_errors() -> list[str]:
     return errors
 
 
+def algebraic_witness_errors() -> list[str]:
+    errors: list[str] = []
+    label = str(ALGEBRAIC_WITNESS_REGISTRY.relative_to(ROOT))
+    if not ALGEBRAIC_WITNESS_REGISTRY.is_file():
+        return [f"{label}: missing governed witness registry"]
+
+    registry = load_json(ALGEBRAIC_WITNESS_REGISTRY)
+    errors.extend(validate(registry, "algebraic_witness_registry.schema.json", label))
+    entries = registry.get("witnesses", []) if isinstance(registry, dict) else []
+    registered_paths = [str(entry.get("path", "")) for entry in entries if isinstance(entry, dict)]
+    registered_ids = [str(entry.get("witness_id", "")) for entry in entries if isinstance(entry, dict)]
+    if len(registered_paths) != len(set(registered_paths)):
+        errors.append(f"{label}: duplicate witness path")
+    if len(registered_ids) != len(set(registered_ids)):
+        errors.append(f"{label}: duplicate witness_id")
+
+    discovered = {
+        path.relative_to(ROOT).as_posix()
+        for path in ALGEBRAIC_WITNESS_DIR.rglob("*.json")
+    }
+    registered = set(registered_paths)
+    if not discovered:
+        errors.append("algebraic witness coverage: zero witnesses discovered")
+    for missing in sorted(registered - discovered):
+        errors.append(f"algebraic witness coverage: registered witness is missing: {missing}")
+    for orphan in sorted(discovered - registered):
+        errors.append(f"algebraic witness coverage: unregistered witness: {orphan}")
+
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        relative = str(entry.get("path", ""))
+        path = ROOT / relative
+        if not path.is_file():
+            continue
+        actual_blob = git_blob_sha1(path)
+        if actual_blob != entry.get("git_blob_sha1"):
+            errors.append(
+                f"{relative}: git_blob_sha1 mismatch; expected {entry.get('git_blob_sha1')}, found {actual_blob}"
+            )
+        witness = load_json(path)
+        errors.extend(validate(witness, "algebraic_witness.schema.json", relative))
+        if witness.get("witness_id") != entry.get("witness_id"):
+            errors.append(f"{relative}: witness_id does not match registry")
+
+        variables = witness.get("variables", {})
+        names = variables.get("names", []) if isinstance(variables, dict) else []
+        variable_count = variables.get("variable_count") if isinstance(variables, dict) else None
+        if variable_count != len(names):
+            errors.append(f"{relative}: variables.variable_count must equal len(variables.names)")
+
+        contract = witness.get("search_contract", {})
+        problem = witness.get("problem", {})
+        execution = witness.get("execution", {})
+        failure_ledger = witness.get("failure_ledger", {})
+        handoff = witness.get("handoff", {})
+        if isinstance(contract, dict) and isinstance(variables, dict):
+            if isinstance(variable_count, int) and variable_count > contract.get("max_variables", -1):
+                errors.append(f"{relative}: variable count exceeds search budget")
+        if isinstance(contract, dict) and isinstance(problem, dict):
+            degree = problem.get("maximum_input_degree")
+            if isinstance(degree, int) and degree > contract.get("max_total_degree", -1):
+                errors.append(f"{relative}: input degree exceeds search budget")
+        if isinstance(contract, dict) and isinstance(execution, dict):
+            elapsed = execution.get("elapsed_seconds")
+            if isinstance(elapsed, (int, float)) and elapsed > contract.get("timeout_seconds", -1):
+                errors.append(f"{relative}: elapsed time exceeds search budget")
+            basis_size = execution.get("basis_polynomials")
+            if isinstance(basis_size, int) and basis_size > contract.get("max_basis_polynomials", -1):
+                errors.append(f"{relative}: basis size exceeds search budget")
+            peak_terms = execution.get("peak_intermediate_terms")
+            if isinstance(peak_terms, int) and peak_terms > contract.get("max_intermediate_terms", -1):
+                errors.append(f"{relative}: intermediate-term count exceeds search budget")
+
+        status = execution.get("status") if isinstance(execution, dict) else None
+        trust_status = handoff.get("trust_status") if isinstance(handoff, dict) else None
+        failure_entries = failure_ledger.get("entries", []) if isinstance(failure_ledger, dict) else []
+        if status != entry.get("execution_status"):
+            errors.append(f"{relative}: execution status does not match registry")
+        if trust_status != entry.get("trust_status"):
+            errors.append(f"{relative}: trust status does not match registry")
+        if status in {"failed", "timed_out", "budget_exhausted"} and not failure_entries:
+            errors.append(f"{relative}: unsuccessful execution requires a failure-ledger entry")
+        if status != "completed" and trust_status == "ready_for_mathcert":
+            errors.append(f"{relative}: incomplete execution cannot be ready for MATHCERT")
+        if trust_status == "ready_for_mathcert" and status != "completed":
+            errors.append(f"{relative}: ready_for_mathcert requires completed execution")
+    return errors
+
+
 def provider_contract_errors() -> list[str]:
     errors: list[str] = []
     coverage = load_json(COVERAGE_PATH)
@@ -156,10 +248,10 @@ def provider_contract_errors() -> list[str]:
         if not isinstance(programme.get("commit"), str) or len(programme["commit"]) != 40:
             errors.append(f"{relative}: Programme commit must be a full 40-character identity")
 
-    for label, values in (("manifest_id", manifest_ids), ("campaign_id", manifest_campaigns)):
+    for duplicate_label, values in (("manifest_id", manifest_ids), ("campaign_id", manifest_campaigns)):
         duplicates = sorted({value for value in values if values.count(value) > 1})
         for duplicate in duplicates:
-            errors.append(f"provider manifests: duplicate {label} {duplicate}")
+            errors.append(f"provider manifests: duplicate {duplicate_label} {duplicate}")
 
     manifest_campaign_set = set(manifest_campaigns)
     registry_manifest_set = {
@@ -174,6 +266,7 @@ def provider_contract_errors() -> list[str]:
 
 def main() -> int:
     errors = legacy_artifact_errors()
+    errors.extend(algebraic_witness_errors())
     errors.extend(provider_contract_errors())
     for schema in sorted((ROOT / "schemas").glob("*.json")):
         Draft202012Validator.check_schema(load_json(schema))
@@ -181,7 +274,9 @@ def main() -> int:
         print("\n".join(errors), file=sys.stderr)
         print(f"MATHFORGE validation failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
-    print("MATHFORGE JSON, discovery, provider coverage, artifact identity, and handoff contracts are valid")
+    print(
+        "MATHFORGE JSON, algebraic witness budgets, failure ledgers, discovery, provider coverage, artifact identity, and handoff contracts are valid"
+    )
     return 0
 
 
