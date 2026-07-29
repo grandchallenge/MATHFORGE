@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: Cite an immutable MATHFORGE snapshot and exact commit.
+title: MATHFORGE
+type: software
+authors:
+  - name: Grand Challenge Labs
+repository-code: https://github.com/grandchallenge/MATHFORGE
+license: MIT
