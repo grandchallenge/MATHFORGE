@@ -1,34 +1,59 @@
 {
   "witness_id": "GB-WITNESS-DEMO-001",
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "claim_id": "ALG-GB-DEMO-C001",
   "witness_kind": "polynomial_identity",
   "coefficient_domain": "QQ",
   "variables": {
     "universe": "finite",
     "names": ["x", "y"],
+    "variable_count": 2,
     "index_type": "Fin 2"
   },
   "monomial_order": "lex",
   "external_backend": {
     "name": "SymPy",
-    "version": "fixture",
+    "version": "fixture-locked",
     "command": "expand((x + y)^2 - (x^2 + 2*x*y + y^2))",
     "output_sha256": "6492d9116f7c5d39d3606ba89d1f64a09443fce12cb779290e3fa8dbdaad5bcd"
   },
   "problem": {
     "statement": "(x + y)^2 = x^2 + 2xy + y^2 over QQ[x,y]",
-    "side_conditions": []
+    "local_scope_justification": "This is one bounded polynomial identity in two variables, not an encoding of a wider open problem.",
+    "side_conditions": [],
+    "input_polynomial_count": 1,
+    "maximum_input_degree": 2,
+    "global_open_problem_encoding": false
+  },
+  "search_contract": {
+    "max_variables": 2,
+    "max_total_degree": 2,
+    "timeout_seconds": 5,
+    "max_basis_polynomials": 4,
+    "max_intermediate_terms": 128,
+    "fallback_route": "Normalize the identity directly in the target proof assistant.",
+    "expected_witness": "A zero normal form for the polynomial difference."
+  },
+  "execution": {
+    "status": "completed",
+    "elapsed_seconds": 0,
+    "basis_polynomials": 0,
+    "peak_intermediate_terms": 6,
+    "termination_reason": "The expanded difference was the zero polynomial."
   },
   "witness": {
     "normal_form": [],
     "meaning": "The symbolic difference reduces to the zero polynomial."
   },
+  "failure_ledger": {
+    "ledger_id": "GB-WITNESS-DEMO-001-FAILURES",
+    "entries": []
+  },
   "handoff": {
     "mathcert_certificate_kind": "polynomial_identity",
     "trust_status": "ready_for_mathcert",
     "mathcert_schema": "MATHCERT/schemas/algebraic_certificate.schema.json",
-    "notes": "Toy fixture matching MATHCERT GB-DEMO-001."
+    "notes": "Toy fixture matching MATHCERT GB-DEMO-001. MATHCERT still owns replay and certification."
   },
   "references": [
     "https://arxiv.org/pdf/2602.12772",
