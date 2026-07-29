@@ -1,0 +1,8 @@
+changelog:
+  categories:
+    - title: Candidate snapshots
+      labels: ["pillar:forge"]
+    - title: Maintenance
+      labels: ["dependencies", "maintenance"]
+    - title: Other changes
+      labels: ["*"]
