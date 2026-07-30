@@ -50,6 +50,14 @@ jobs:
           /tmp/elan-init -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
+      - name: Restore pinned replay build cache
+        uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57
+        with:
+          path: |
+            upstream/formal-conjectures/.lake/build
+            ~/.cache/mathlib
+          key: formal-conjectures-85f863718beeec7b58a3a1926ee92e3472bc2020-lean4.27.0-${{ runner.os }}
+
       - name: Restore pinned mathlib cache and build extractor environment
         working-directory: upstream/formal-conjectures
         run: |
@@ -76,7 +84,15 @@ jobs:
             --exclude=docstring,statement,moduleDocstrings \
             > ../../replay/FC-GDM-002-FULL-INVENTORY.json
 
-      - name: Resolve containing immutable benchmark tag
+      - name: Build deterministic inventory screen
+        run: |
+          set -euo pipefail
+          python formal_sources/formal_conjectures/screen_inventory.py \
+            --inventory replay/FC-GDM-002-FULL-INVENTORY.json \
+            --upstream-commit 85f863718beeec7b58a3a1926ee92e3472bc2020 \
+            --output replay/FC-GDM-002-INVENTORY-SCREEN.json
+
+      - name: Resolve immutable benchmark tag relation
         run: |
           set -euo pipefail
           python formal_sources/formal_conjectures/resolve_benchmark_tag.py \
