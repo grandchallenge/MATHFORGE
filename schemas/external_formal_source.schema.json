@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/external_formal_source.schema.json",
+  "title": "MATHFORGE external formal source lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_lock_id",
+    "source_id",
+    "title",
+    "repository",
+    "revision",
+    "toolchain",
+    "extraction",
+    "selection",
+    "licensing",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "source_lock_id": {"type": "string", "pattern": "^MF-FORMAL-[A-Z0-9-]+-LOCK$"},
+    "source_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_name", "url"],
+      "properties": {
+        "full_name": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "url": {"type": "string", "format": "uri"}
+      }
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref_kind", "commit", "retrieved_at", "artifact_blobs"],
+      "properties": {
+        "ref_kind": {"enum": ["commit", "immutable_tag"]},
+        "ref": {"type": ["string", "null"]},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieved_at": {"type": "string", "format": "date-time"},
+        "artifact_blobs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "git_blob_sha1", "role"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+              "role": {"enum": ["toolchain", "dependency_lock", "extractor", "statement_source", "documentation"]}
+            }
+          }
+        }
+      }
+    },
+    "toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean_toolchain", "mathlib_revision"],
+      "properties": {
+        "lean_toolchain": {"type": "string", "minLength": 3},
+        "mathlib_revision": {"type": "string", "minLength": 3}
+      }
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["extractor_path", "extractor_git_blob_sha1", "commands", "output_schema", "digest_contract"],
+      "properties": {
+        "extractor_path": {"type": "string", "minLength": 1},
+        "extractor_git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "commands": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "output_schema": {"const": "schemas/formal_statement_snapshot.schema.json"},
+        "digest_contract": {"const": "sha256-canonical-json-v1"}
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_id", "paths"],
+      "properties": {
+        "scope_id": {"type": "string", "minLength": 3},
+        "paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^FormalConjectures/.+\\.lean$"}
+        }
+      }
+    },
+    "licensing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["software", "materials", "third_party_review_required"],
+      "properties": {
+        "software": {"type": "string", "minLength": 3},
+        "materials": {"type": "string", "minLength": 3},
+        "third_party_review_required": {"type": "boolean"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 40}
+  }
+}
