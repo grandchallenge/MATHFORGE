@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "MF-EXTERNAL-FORMAL-SOURCES",
+  "sources": [
+    {
+      "source_id": "FC-GDM-001",
+      "source_lock_path": "formal_sources/formal_conjectures/source_lock.json",
+      "adapter_path": "formal_sources/formal_conjectures/intake.py",
+      "snapshot_paths": [
+        "formal_sources/formal_conjectures/snapshots/FC-GDM-001-RH-NS-PILOT.json"
+      ],
+      "concordance_paths": [
+        "formal_sources/formal_conjectures/concordance/RH-001.json",
+        "formal_sources/formal_conjectures/concordance/NS-CI-001.json"
+      ],
+      "status": "active"
+    }
+  ]
+}
