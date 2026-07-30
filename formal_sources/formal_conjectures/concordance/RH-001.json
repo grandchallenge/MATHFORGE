@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "concordance_id": "MF-FC-RH-001-CONCORDANCE",
+  "campaign_id": "RH-001",
+  "source_lock_id": "MF-FORMAL-FC-GDM-001-LOCK",
+  "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-001-RH-NS-PILOT",
+  "upstream_statement": {
+    "repository": "google-deepmind/formal-conjectures",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "theorem": "RiemannHypothesis.riemannHypothesis",
+    "module": "FormalConjectures.Millenium.RiemannHypothesis",
+    "path": "FormalConjectures/Millenium/RiemannHypothesis.lean",
+    "git_blob_sha1": "c8d38bef385eb15661c3daf7449625b66b019b2a"
+  },
+  "programme_target": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "d94e3f4a622fab73e569a17f005f153f1627235a",
+    "paths": [
+      "RH-WP00-source-normalization-equivalence-audit.md",
+      "campaigns/riemann_hypothesis/WP00_SOURCE_NORMALIZATION_EQUIVALENCE/00_CHARTER.md",
+      "campaigns/riemann_hypothesis/WP00_SOURCE_NORMALIZATION_EQUIVALENCE/02_FUNCTION_AND_ZERO_LOCK.md"
+    ],
+    "summary": "Every nontrivial zero of the meromorphically continued Riemann zeta function has real part one half, with trivial zeros and the pole at one excluded."
+  },
+  "relation": "exact",
+  "relation_direction": "bidirectional",
+  "equivalence_basis": "human-source-review",
+  "review_state": "reviewed",
+  "status_authority": {
+    "authority": "grandchallenge/MATH-PROGRAMME",
+    "upstream_category_is_advisory": true,
+    "statement": "MATH-PROGRAMME retains current-status and promotion authority. The upstream research-open category is evidence only."
+  },
+  "findings": [
+    {
+      "finding_id": "RH-FC-001",
+      "severity": "info",
+      "summary": "The upstream theorem targets the same critical-line condition as the Programme lock.",
+      "evidence": [
+        "FormalConjectures/Millenium/RiemannHypothesis.lean:RiemannHypothesis.riemannHypothesis",
+        "campaigns/riemann_hypothesis/WP00_SOURCE_NORMALIZATION_EQUIVALENCE/02_FUNCTION_AND_ZERO_LOCK.md#zero-taxonomy"
+      ]
+    },
+    {
+      "finding_id": "RH-FC-002",
+      "severity": "info",
+      "summary": "The upstream theorem delegates the zero and exclusion conventions to mathlib's RiemannHypothesis type.",
+      "evidence": [
+        "FormalConjectures/Millenium/RiemannHypothesis.lean:57-61",
+        "campaigns/riemann_hypothesis/WP00_SOURCE_NORMALIZATION_EQUIVALENCE/02_FUNCTION_AND_ZERO_LOCK.md#the-zeta-function"
+      ]
+    },
+    {
+      "finding_id": "RH-FC-003",
+      "severity": "caution",
+      "summary": "Exactness is a reviewed semantic concordance, not a Lean theorem connecting a Programme-owned formal definition to the upstream declaration.",
+      "evidence": [
+        "formal_sources/formal_conjectures/source_lock.json",
+        "formal_sources/formal_conjectures/snapshots/FC-GDM-001-RH-NS-PILOT.json"
+      ]
+    }
+  ],
+  "obligations": [
+    "Replay the pinned upstream extractor before using a changed Formal Conjectures revision.",
+    "Promote a Lean equivalence theorem only if MATH-PROGRAMME later adopts a separate Programme-owned formal target definition.",
+    "Keep current-status and proof claims under Programme and MATHCERT review rather than upstream category metadata."
+  ],
+  "claim_boundary": "This concordance records a human-reviewed formulation match. It does not prove the Riemann Hypothesis, certify the upstream file, or transfer current-status authority from MATH-PROGRAMME."
+}
