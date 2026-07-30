@@ -1,0 +1,124 @@
+name: Formal Conjectures replay
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/formal-conjectures-replay.yml"
+      - "formal_sources/formal_conjectures/**"
+      - "schemas/**formal**"
+      - "tests/**formal**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: formal-conjectures-replay-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Checkout MATHFORGE
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Checkout pinned Formal Conjectures revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: google-deepmind/formal-conjectures
+          ref: 85f863718beeec7b58a3a1926ee92e3472bc2020
+          path: upstream/formal-conjectures
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify pinned upstream commit
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream/formal-conjectures rev-parse HEAD)" = "85f863718beeec7b58a3a1926ee92e3472bc2020"
+
+      - name: Install pinned elan bootstrap
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Restore pinned mathlib cache and build extractor environment
+        working-directory: upstream/formal-conjectures
+        run: |
+          set -euo pipefail
+          lake exe cache get
+          lake build FormalConjecturesAnswerPostpone
+
+      - name: Replay selected governed extraction
+        run: |
+          set -euo pipefail
+          mkdir -p replay
+          python formal_sources/formal_conjectures/intake.py intake \
+            --source-lock formal_sources/formal_conjectures/source_locks/FC-GDM-002.json \
+            --checkout upstream/formal-conjectures \
+            --output replay/FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json \
+            --generated-at 2026-07-30T12:15:00Z \
+            --skip-build
+
+      - name: Replay repository-wide metadata inventory
+        working-directory: upstream/formal-conjectures
+        run: |
+          set -euo pipefail
+          lake exe extract_names FormalConjectures \
+            --exclude=docstring,statement,moduleDocstrings \
+            > ../../replay/FC-GDM-002-FULL-INVENTORY.json
+
+      - name: Resolve containing immutable benchmark tag
+        run: |
+          set -euo pipefail
+          python formal_sources/formal_conjectures/resolve_benchmark_tag.py \
+            --repository upstream/formal-conjectures \
+            --commit 85f863718beeec7b58a3a1926ee92e3472bc2020 \
+            --output replay/FC-GDM-002-TAG-RESOLUTION.json
+
+      - name: Record replay identities
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path("replay")
+          records = []
+          for path in sorted(root.glob("*.json")):
+              data = path.read_bytes()
+              parsed = json.loads(data)
+              records.append({
+                  "path": path.as_posix(),
+                  "byte_length": len(data),
+                  "sha256": hashlib.sha256(data).hexdigest(),
+                  "problem_count": len(parsed.get("problems", [])) if isinstance(parsed, dict) else None,
+                  "statement_count": len(parsed.get("statements", [])) if isinstance(parsed, dict) else None,
+              })
+          manifest = {
+              "schema_version": "1.0.0",
+              "upstream_repository": "google-deepmind/formal-conjectures",
+              "upstream_commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+              "lean_toolchain": "leanprover/lean4:v4.27.0",
+              "mathlib_revision": "v4.27.0",
+              "records": records,
+          }
+          (root / "REPLAY_MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Upload exact replay bundle
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: formal-conjectures-expanded-replay
+          path: replay
+          if-no-files-found: error
+          retention-days: 14
