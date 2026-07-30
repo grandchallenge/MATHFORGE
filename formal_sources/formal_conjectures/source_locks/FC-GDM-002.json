@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "source_id": "FC-GDM-002",
+  "title": "Google DeepMind Formal Conjectures active-campaign expansion lock",
+  "repository": {
+    "full_name": "google-deepmind/formal-conjectures",
+    "url": "https://github.com/google-deepmind/formal-conjectures"
+  },
+  "revision": {
+    "ref_kind": "commit",
+    "ref": null,
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "retrieved_at": "2026-07-30T12:15:00Z",
+    "artifact_blobs": [
+      {
+        "path": "lean-toolchain",
+        "git_blob_sha1": "2bb276aae9b280aaa44fa3c21d2be1d4bc0c9862",
+        "role": "toolchain"
+      },
+      {
+        "path": "lakefile.toml",
+        "git_blob_sha1": "6844ad2a4401ff3e1ce9352942d62b425210f993",
+        "role": "dependency_lock"
+      },
+      {
+        "path": "scripts/extract_names.lean",
+        "git_blob_sha1": "448d9649cdb01660e7aa13b33fc65b66205f6a9e",
+        "role": "extractor"
+      },
+      {
+        "path": "FormalConjectures/Wikipedia/UnionClosed.lean",
+        "git_blob_sha1": "b693d7d96203e976c145d6fc957c84d898ebc0dc",
+        "role": "statement_source"
+      },
+      {
+        "path": "FormalConjectures/Millenium/PvsNP.lean",
+        "git_blob_sha1": "255b60b9fc875a38481b1fbaba7f4b9c8928da70",
+        "role": "statement_source"
+      },
+      {
+        "path": "FormalConjectures/Wikipedia/RiemannZetaValues.lean",
+        "git_blob_sha1": "1a0893bc6c14662003e0f5368961ec2bd9688cdd",
+        "role": "statement_source"
+      },
+      {
+        "path": "FormalConjectures/Wikipedia/EllipticCurveRank.lean",
+        "git_blob_sha1": "63b538269af3f1a12d407916bfbe3daffa646473",
+        "role": "statement_source"
+      },
+      {
+        "path": "FormalConjectures/Wikipedia/Mills.lean",
+        "git_blob_sha1": "d317bb643d73d7089589913788f47e7ebd825de5",
+        "role": "statement_source"
+      }
+    ]
+  },
+  "toolchain": {
+    "lean_toolchain": "leanprover/lean4:v4.27.0",
+    "mathlib_revision": "v4.27.0"
+  },
+  "extraction": {
+    "extractor_path": "scripts/extract_names.lean",
+    "extractor_git_blob_sha1": "448d9649cdb01660e7aa13b33fc65b66205f6a9e",
+    "commands": [
+      "lake exe cache get",
+      "lake build FormalConjecturesAnswerPostpone",
+      "lake exe extract_names <selected-path>",
+      "lake exe extract_names FormalConjectures --exclude=docstring,statement,moduleDocstrings"
+    ],
+    "output_schema": "schemas/formal_statement_snapshot.schema.json",
+    "digest_contract": "sha256-canonical-json-v1"
+  },
+  "selection": {
+    "scope_id": "ACTIVE-CAMPAIGN-EXPANSION",
+    "paths": [
+      "FormalConjectures/Wikipedia/UnionClosed.lean",
+      "FormalConjectures/Millenium/PvsNP.lean",
+      "FormalConjectures/Wikipedia/RiemannZetaValues.lean",
+      "FormalConjectures/Wikipedia/EllipticCurveRank.lean",
+      "FormalConjectures/Wikipedia/Mills.lean"
+    ]
+  },
+  "licensing": {
+    "software": "Apache-2.0",
+    "materials": "CC-BY-4.0 with Wikipedia-derived material subject to CC-BY-SA-4.0 and per-source third-party terms retained",
+    "third_party_review_required": true
+  },
+  "claim_boundary": "This expanded lock establishes immutable source and extraction identities for direct, adjacent, and negative-coverage screening only. It does not establish semantic equivalence, current status, proof, novelty, or certification."
+}
