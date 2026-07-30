@@ -1,0 +1,74 @@
+{
+  "problems": [
+    {
+      "theorem": "RiemannHypothesis.riemannHypothesis",
+      "module": "FormalConjectures.Millenium.RiemannHypothesis",
+      "category": "research open",
+      "subjects": ["11"],
+      "statement": "RiemannHypothesis",
+      "docstring": "The Riemann Hypothesis: all non-trivial zeros of the Riemann zeta function have real part one half.",
+      "formalProofKind": null,
+      "formalProofLink": null,
+      "hasSorryFreeProof": false,
+      "answerKinds": [],
+      "fileFirstAdded": null,
+      "fileLastModified": null
+    },
+    {
+      "theorem": "NavierStokes.navier_stokes_existence_and_smoothness_R3",
+      "module": "FormalConjectures.Millenium.NavierStokes",
+      "category": "research open",
+      "subjects": ["35"],
+      "statement": "forall (nu : Real), nu > 0 -> forall (u0 : R3 -> R3), InitialVelocityConditionDecay u0 -> exists v p, NavierStokesExistenceAndSmoothnessRn nu u0 0 v p",
+      "docstring": "(A) Existence and smoothness of Navier-Stokes solutions on R3.",
+      "formalProofKind": null,
+      "formalProofLink": null,
+      "hasSorryFreeProof": false,
+      "answerKinds": [],
+      "fileFirstAdded": null,
+      "fileLastModified": null
+    },
+    {
+      "theorem": "NavierStokes.navier_stokes_existence_and_smoothness_periodic",
+      "module": "FormalConjectures.Millenium.NavierStokes",
+      "category": "research open",
+      "subjects": ["35"],
+      "statement": "forall (nu : Real), nu > 0 -> forall (u0 : R3 -> R3), InitialVelocityConditionPeriodic u0 -> exists v p, NavierStokesExistenceAndSmoothnessPeriodic nu u0 0 v p",
+      "docstring": "(B) Existence and smoothness of Navier-Stokes solutions on the three-torus.",
+      "formalProofKind": null,
+      "formalProofLink": null,
+      "hasSorryFreeProof": false,
+      "answerKinds": [],
+      "fileFirstAdded": null,
+      "fileLastModified": null
+    },
+    {
+      "theorem": "NavierStokes.navier_stokes_breakdown_R3",
+      "module": "FormalConjectures.Millenium.NavierStokes",
+      "category": "research open",
+      "subjects": ["35"],
+      "statement": "forall (nu : Real), nu > 0 -> exists u0 f, InitialVelocityConditionDecay u0 and ForceConditionDecay f and not exists v p, NavierStokesExistenceAndSmoothnessRn nu u0 f v p",
+      "docstring": "(C) Breakdown of Navier-Stokes solutions on R3.",
+      "formalProofKind": null,
+      "formalProofLink": null,
+      "hasSorryFreeProof": false,
+      "answerKinds": [],
+      "fileFirstAdded": null,
+      "fileLastModified": null
+    },
+    {
+      "theorem": "NavierStokes.navier_stokes_breakdown_periodic",
+      "module": "FormalConjectures.Millenium.NavierStokes",
+      "category": "research open",
+      "subjects": ["35"],
+      "statement": "forall (nu : Real), nu > 0 -> exists u0 f, InitialVelocityConditionPeriodic u0 and ForceConditionPeriodic f and not exists v p, NavierStokesExistenceAndSmoothnessPeriodic nu u0 f v p",
+      "docstring": "(D) Breakdown of Navier-Stokes solutions on the three-torus.",
+      "formalProofKind": null,
+      "formalProofLink": null,
+      "hasSorryFreeProof": false,
+      "answerKinds": [],
+      "fileFirstAdded": null,
+      "fileLastModified": null
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/formal_statement_snapshot.schema.json",
+  "title": "MATHFORGE formal statement snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "source_lock_id",
+    "source_id",
+    "source_repository",
+    "source_commit",
+    "scope",
+    "generated_at",
+    "digest_contract",
+    "snapshot_sha256",
+    "statements",
+    "non_certification_statement"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "snapshot_id": {"type": "string", "pattern": "^MF-FORMAL-SNAPSHOT-[A-Z0-9-]+$"},
+    "source_lock_id": {"type": "string", "pattern": "^MF-FORMAL-[A-Z0-9-]+-LOCK$"},
+    "source_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+    "source_repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_id", "paths"],
+      "properties": {
+        "scope_id": {"type": "string", "minLength": 3},
+        "paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "generated_at": {"type": "string", "format": "date-time"},
+    "digest_contract": {"const": "sha256-canonical-json-v1"},
+    "snapshot_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "statements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "statement_id",
+          "theorem",
+          "module",
+          "source_path",
+          "source_git_blob_sha1",
+          "category",
+          "subjects",
+          "statement",
+          "docstring",
+          "formal_proof",
+          "has_sorry_free_proof",
+          "answer_kinds",
+          "file_first_added",
+          "file_last_modified",
+          "review_state",
+          "claim_boundary"
+        ],
+        "properties": {
+          "statement_id": {"type": "string", "pattern": "^FC:[A-Za-z0-9_.]+$"},
+          "theorem": {"type": "string", "minLength": 1},
+          "module": {"type": "string", "pattern": "^FormalConjectures\\."},
+          "source_path": {"type": "string", "pattern": "^FormalConjectures/.+\\.lean$"},
+          "source_git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "category": {"enum": ["research open", "research solved", "textbook", "API", "test"]},
+          "subjects": {"type": "array", "items": {"type": "string", "pattern": "^[0-9]{1,2}$"}},
+          "statement": {"type": "string", "minLength": 1},
+          "docstring": {"type": ["string", "null"]},
+          "formal_proof": {
+            "oneOf": [
+              {"type": "null"},
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind", "link"],
+                "properties": {
+                  "kind": {"enum": ["formal_conjectures", "lean4", "other_system"]},
+                  "link": {"type": "string", "format": "uri"}
+                }
+              }
+            ]
+          },
+          "has_sorry_free_proof": {"type": "boolean"},
+          "answer_kinds": {"type": "array", "items": {"enum": ["Prop", "non-Prop"]}},
+          "file_first_added": {"type": ["string", "null"], "format": "date-time"},
+          "file_last_modified": {"type": ["string", "null"], "format": "date-time"},
+          "review_state": {"enum": ["unreviewed", "source-verified", "concordance-reviewed", "rejected"]},
+          "claim_boundary": {"type": "string", "minLength": 40}
+        }
+      }
+    },
+    "non_certification_statement": {"type": "string", "minLength": 40}
+  }
+}
