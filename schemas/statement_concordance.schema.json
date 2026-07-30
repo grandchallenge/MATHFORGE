@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/statement_concordance.schema.json",
+  "title": "MATHFORGE external formal statement concordance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "concordance_id",
+    "campaign_id",
+    "source_lock_id",
+    "snapshot_id",
+    "upstream_statement",
+    "programme_target",
+    "relation",
+    "relation_direction",
+    "equivalence_basis",
+    "review_state",
+    "status_authority",
+    "findings",
+    "obligations",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "concordance_id": {"type": "string", "pattern": "^MF-FC-[A-Z0-9-]+-CONCORDANCE$"},
+    "campaign_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+    "source_lock_id": {"type": "string", "pattern": "^MF-FORMAL-[A-Z0-9-]+-LOCK$"},
+    "snapshot_id": {"type": "string", "pattern": "^MF-FORMAL-SNAPSHOT-[A-Z0-9-]+$"},
+    "upstream_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "theorem", "module", "path", "git_blob_sha1"],
+      "properties": {
+        "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "theorem": {"type": "string", "minLength": 1},
+        "module": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "programme_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "paths", "summary"],
+      "properties": {
+        "repository": {"const": "grandchallenge/MATH-PROGRAMME"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "summary": {"type": "string", "minLength": 20}
+      }
+    },
+    "relation": {"enum": ["exact", "definitionally-equivalent", "proved-equivalent", "one-way-implication", "special-case", "strengthening", "weakening", "adjacent", "incompatible", "unresolved"]},
+    "relation_direction": {"enum": ["bidirectional", "upstream-to-programme", "programme-to-upstream", "not-applicable", "unresolved"]},
+    "equivalence_basis": {"enum": ["lean-kernel", "formal-proof", "human-source-review", "programme-audit", "unresolved"]},
+    "review_state": {"enum": ["draft", "reviewed", "adversarially-reviewed", "rejected"]},
+    "status_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "upstream_category_is_advisory", "statement"],
+      "properties": {
+        "authority": {"const": "grandchallenge/MATH-PROGRAMME"},
+        "upstream_category_is_advisory": {"const": true},
+        "statement": {"type": "string", "minLength": 30}
+      }
+    },
+    "findings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finding_id", "severity", "summary", "evidence"],
+        "properties": {
+          "finding_id": {"type": "string", "minLength": 3},
+          "severity": {"enum": ["info", "caution", "blocking"]},
+          "summary": {"type": "string", "minLength": 10},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "obligations": {"type": "array", "items": {"type": "string", "minLength": 10}},
+    "claim_boundary": {"type": "string", "minLength": 40}
+  }
+}
