@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "coverage_record_id": "MF-FC-BSD-001-COVERAGE",
+  "campaign_id": "BSD-001",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "inventory_evidence": {
+    "screen_path": "formal_sources/formal_conjectures/replays/FC-GDM-002/FC-GDM-002-INVENTORY-SCREEN.json",
+    "inventory_sha256": "2693de3b83c0990b0e7c62ab5032698c6dde6de0942441ba7d6cdb035625e687",
+    "problem_count": 3232,
+    "replay_bundle_path": "formal_sources/formal_conjectures/replays/FC-GDM-002/formal-conjectures-expanded-replay.zip",
+    "replay_bundle_sha256": "1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb",
+    "inventory_member": "FC-GDM-002-FULL-INVENTORY.json"
+  },
+  "disposition": "adjacency-only",
+  "candidates": [
+    {
+      "theorem": "EllipticCurveRank.RatEllipticCurve.unbounded_rank_conjecture",
+      "module": "FormalConjectures.Wikipedia.EllipticCurveRank",
+      "path": "FormalConjectures/Wikipedia/EllipticCurveRank.lean",
+      "category": "research open",
+      "relation": "adjacent",
+      "note": "This is an algebraic-rank unboundedness conjecture and contains no L-function order, analytic-rank equality, leading-term formula, or Tate-Shafarevich finiteness statement."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "BSD-FC-001",
+      "severity": "info",
+      "summary": "The selected file provides elliptic-curve rank infrastructure and rank-distribution conjectures.",
+      "evidence": [
+        "FormalConjectures/Wikipedia/EllipticCurveRank.lean"
+      ]
+    },
+    {
+      "finding_id": "BSD-FC-002",
+      "severity": "blocking",
+      "summary": "No selected theorem states the Birch-Swinnerton-Dyer analytic-rank equality or refined leading-term formula.",
+      "evidence": [
+        "BSD-WP00-source-normalization-equivalence-audit.md",
+        "EllipticCurveRank.RatEllipticCurve.unbounded_rank_conjecture"
+      ]
+    }
+  ],
+  "obligations": [
+    "Do not import elliptic-curve rank adjacency as BSD coverage.",
+    "Require an exact L-function and order-at-one statement before direct concordance."
+  ],
+  "status_authority": {
+    "authority": "grandchallenge/MATH-PROGRAMME",
+    "upstream_category_is_advisory": true,
+    "statement": "MATH-PROGRAMME retains current-status, scope, and promotion authority; this source screen is evidence only."
+  },
+  "review_state": "adversarially-reviewed",
+  "claim_boundary": "This record admits adjacency only. It does not formalize or prove rank BSD, strong BSD, finiteness of Sha, or any leading-term formula."
+}

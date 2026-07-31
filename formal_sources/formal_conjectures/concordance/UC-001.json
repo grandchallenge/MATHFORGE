@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "concordance_id": "MF-FC-UC-001-CONCORDANCE",
+  "campaign_id": "UC-001",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION",
+  "upstream_statement": {
+    "repository": "google-deepmind/formal-conjectures",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "theorem": "UnionClosed.union_closed",
+    "module": "FormalConjectures.Wikipedia.UnionClosed",
+    "path": "FormalConjectures/Wikipedia/UnionClosed.lean",
+    "git_blob_sha1": "b693d7d96203e976c145d6fc957c84d898ebc0dc"
+  },
+  "programme_target": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "945381eec1aee5d6c84ff72f3cfa4c7199d57bd6",
+    "paths": [
+      "DOMAIN_01_UNION_CLOSED_MASTER_PLAN.md",
+      "DOMAIN_REGISTRY.yaml"
+    ],
+    "summary": "Every finite nontrivial union-closed set family has an element present in at least half of its members."
+  },
+  "relation": "exact",
+  "relation_direction": "bidirectional",
+  "equivalence_basis": "human-source-review",
+  "review_state": "adversarially-reviewed",
+  "status_authority": {
+    "authority": "grandchallenge/MATH-PROGRAMME",
+    "upstream_category_is_advisory": true,
+    "statement": "MATH-PROGRAMME retains current-status, scope, and promotion authority; upstream categories are source metadata only."
+  },
+  "findings": [
+    {
+      "finding_id": "UC-FC-001",
+      "severity": "info",
+      "summary": "The upstream declaration uses a finite family of finite sets and pairwise union closure, matching the Programme formulation.",
+      "evidence": [
+        "FormalConjectures/Wikipedia/UnionClosed.lean:UnionClosed.union_closed",
+        "DOMAIN_01_UNION_CLOSED_MASTER_PLAN.md#problem-statement"
+      ]
+    },
+    {
+      "finding_id": "UC-FC-002",
+      "severity": "info",
+      "summary": "The exceptional singleton family containing only the empty set is excluded explicitly in both formulations.",
+      "evidence": [
+        "h_ne_singleton_empty : A != {empty}",
+        "DOMAIN_01_UNION_CLOSED_MASTER_PLAN.md:finite nontrivial union-closed family"
+      ]
+    },
+    {
+      "finding_id": "UC-FC-003",
+      "severity": "caution",
+      "summary": "The Lean declaration carries a nonempty carrier instance and extends harmlessly to the empty family; a Programme-owned kernel equivalence theorem remains absent.",
+      "evidence": [
+        "[Nonempty n]",
+        "A != {empty}",
+        "formal_sources/formal_conjectures/snapshots/FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json"
+      ]
+    }
+  ],
+  "obligations": [
+    "Preserve rational half-frequency counting without coercion ambiguity.",
+    "Do not treat the upstream sorry-bearing declaration as a proof.",
+    "Construct a Programme-owned Lean equivalence theorem before any kernel-level equivalence claim."
+  ],
+  "claim_boundary": "This record admits a human-reviewed statement match only. It does not prove Frankl's conjecture, certify the upstream declaration, or transfer status authority."
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "concordance_id": "MF-FC-OZ-001-ZUDILIN-5-11-CONCORDANCE",
+  "campaign_id": "OZ-001",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION",
+  "upstream_statement": {
+    "repository": "google-deepmind/formal-conjectures",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "theorem": "RiemannZetaValues.exists_irrational_of_five_seven_nine_eleven",
+    "module": "FormalConjectures.Wikipedia.RiemannZetaValues",
+    "path": "FormalConjectures/Wikipedia/RiemannZetaValues.lean",
+    "git_blob_sha1": "1a0893bc6c14662003e0f5368961ec2bd9688cdd"
+  },
+  "programme_target": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "945381eec1aee5d6c84ff72f3cfa4c7199d57bd6",
+    "paths": [
+      "campaigns/odd_zeta/OZ_WP02_THEOREM_OBLIGATION_LEDGER/THEOREM_LEDGER.yaml",
+      "campaigns/odd_zeta/OZ_WP02_THEOREM_OBLIGATION_LEDGER/README.md"
+    ],
+    "summary": "The Programme ledger records the known stronger-index-range statement that at least one of zeta(5), zeta(7), ..., zeta(33) is irrational, without deriving any individual irrationality conclusion."
+  },
+  "relation": "strengthening",
+  "relation_direction": "upstream-to-programme",
+  "equivalence_basis": "programme-audit",
+  "review_state": "adversarially-reviewed",
+  "status_authority": {
+    "authority": "grandchallenge/MATH-PROGRAMME",
+    "upstream_category_is_advisory": true,
+    "statement": "MATH-PROGRAMME retains current-status, scope, and promotion authority; upstream categories are source metadata only."
+  },
+  "findings": [
+    {
+      "finding_id": "OZ-ZUD-001",
+      "severity": "info",
+      "summary": "The upstream finite disjunction uses the exact four-element set {5,7,9,11}.",
+      "evidence": [
+        "RiemannZetaValues.exists_irrational_of_five_seven_nine_eleven"
+      ]
+    },
+    {
+      "finding_id": "OZ-ZUD-002",
+      "severity": "info",
+      "summary": "A nonempty intersection with the irrational-value set preserves an existential disjunction and does not select a member.",
+      "evidence": [
+        "({5,7,9,11} intersect irrational_indices).Nonempty"
+      ]
+    },
+    {
+      "finding_id": "OZ-ZUD-003",
+      "severity": "caution",
+      "summary": "The four-index disjunction is logically stronger than the Programme baseline over odd indices 5 through 33, but the declaration contains sorry.",
+      "evidence": [
+        "OZ-THM-T001",
+        "has_sorry_free_proof=false"
+      ]
+    }
+  ],
+  "obligations": [
+    "Do not infer irrationality of zeta(5), zeta(7), zeta(9), or zeta(11) individually.",
+    "Preserve the exact finite index set and existential quantifier.",
+    "Replay a proof independently before assigning proof effect."
+  ],
+  "claim_boundary": "This record identifies a stronger finite disjunction at the statement level only. It does not prove that disjunction, select an irrational value, or create a new Programme theorem claim."
+}

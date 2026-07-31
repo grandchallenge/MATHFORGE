@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "ledger_id": "MF-FC-GDM-001-TO-FC-GDM-002-UPDATE",
+  "update_kind": "scope_expansion_same_revision",
+  "old_source": {
+    "source_id": "FC-GDM-001",
+    "source_lock_id": "MF-FORMAL-FC-GDM-001-LOCK",
+    "repository": "google-deepmind/formal-conjectures",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-001-RH-NS-PILOT"
+  },
+  "new_source": {
+    "source_id": "FC-GDM-002",
+    "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+    "repository": "google-deepmind/formal-conjectures",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION"
+  },
+  "tag_resolution": {
+    "path": "formal_sources/formal_conjectures/replays/FC-GDM-002/FC-GDM-002-TAG-RESOLUTION.json",
+    "resolution": "commit_only_required",
+    "selected_tag": null
+  },
+  "scope_delta": {
+    "added_paths": [
+      "FormalConjectures/Wikipedia/UnionClosed.lean",
+      "FormalConjectures/Millenium/PvsNP.lean",
+      "FormalConjectures/Wikipedia/RiemannZetaValues.lean",
+      "FormalConjectures/Wikipedia/EllipticCurveRank.lean",
+      "FormalConjectures/Wikipedia/Mills.lean"
+    ],
+    "removed_paths": [],
+    "changed_blob_paths": []
+  },
+  "theorem_delta": {
+    "added": [
+      "ComplexityTheory.NP_ne_coNP",
+      "ComplexityTheory.P_ne_NP",
+      "ComplexityTheory.P_subset_NP",
+      "ComplexityTheory.P_subset_coNP",
+      "ComplexityTheory.coP_eq_P",
+      "EllipticCurveRank.RatEllipticCurve.avg_rank_lt_0885",
+      "EllipticCurveRank.RatEllipticCurve.card_heightLE_div_pow_five_div_six_tensto",
+      "EllipticCurveRank.RatEllipticCurve.finite_twentyone_lt_finrank",
+      "EllipticCurveRank.RatEllipticCurve.half_rank_zero_and_half_rank_one",
+      "EllipticCurveRank.RatEllipticCurve.rank_height_count_asymptotic",
+      "EllipticCurveRank.RatEllipticCurve.twentyone_le_rank_height_count_asymptotic",
+      "EllipticCurveRank.RatEllipticCurve.unbounded_rank_conjecture",
+      "EllipticCurveRank.WeierstrassCurve.instIsEllipticRatElkies28",
+      "EllipticCurveRank.WeierstrassCurve.instIsEllipticRatElkiesKlagsbrun29",
+      "EllipticCurveRank.WeierstrassCurve.rank_elkies28",
+      "EllipticCurveRank.WeierstrassCurve.rank_elkiesKlagsbrun29",
+      "EllipticCurveRank.WeierstrassCurve.twentyeight_le_rank_elkies28",
+      "EllipticCurveRank.WeierstrassCurve.twentynine_le_rank_elkiesKlagsbrun29",
+      "EllipticCurveRank.WeierstrassCurve.Δ_elkies28",
+      "EllipticCurveRank.WeierstrassCurve.Δ_elkiesKlagsbrun29",
+      "EllipticCurveRank.instFiniteIntPointBaseChangeOfNumberFieldOfIsElliptic_formalConjectures",
+      "Mills.exists'",
+      "Mills.exists_least",
+      "Mills.irrational",
+      "Mills.lower_bound_of_RH",
+      "RiemannZetaValues.exists_irrational_of_five_seven_nine_eleven",
+      "RiemannZetaValues.infinite_irrational_at_odd",
+      "RiemannZetaValues.irrational_eleven",
+      "RiemannZetaValues.irrational_five",
+      "RiemannZetaValues.irrational_nine",
+      "RiemannZetaValues.irrational_odd",
+      "RiemannZetaValues.irrational_seven",
+      "RiemannZetaValues.irrational_three",
+      "UnionClosed.isUnionClosed_powerset",
+      "UnionClosed.isUnionClosed_univ",
+      "UnionClosed.union_closed",
+      "UnionClosed.union_closed.variants.cardinality_even_of_union_closed_tight",
+      "UnionClosed.union_closed.variants.family_card",
+      "UnionClosed.union_closed.variants.sharpness",
+      "UnionClosed.union_closed.variants.singleton_mem",
+      "UnionClosed.union_closed.variants.univ_card",
+      "UnionClosed.union_closed.variants.univ_card_two",
+      "UnionClosed.union_closed.variants.yu"
+    ],
+    "removed": [],
+    "renamed": [],
+    "category_changes": [],
+    "statement_changes": []
+  },
+  "concordance_impact": [
+    {
+      "campaign_id": "UC-001",
+      "disposition": "direct statement concordance admitted",
+      "artifact_paths": [
+        "formal_sources/formal_conjectures/concordance/UC-001.json"
+      ]
+    },
+    {
+      "campaign_id": "PNP-001",
+      "disposition": "direct candidate admitted with unresolved definition-level concordance",
+      "artifact_paths": [
+        "formal_sources/formal_conjectures/concordance/PNP-001.json"
+      ]
+    },
+    {
+      "campaign_id": "OZ-001",
+      "disposition": "separate theorem-lattice records admitted without proof effect",
+      "artifact_paths": [
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA3.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA5.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA7.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA9.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA11.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ODD-UNIVERSAL.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ODD-INFINITUDE.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZUDILIN-5-11.json"
+      ]
+    },
+    {
+      "campaign_id": "BSD-001",
+      "disposition": "adjacency-only",
+      "artifact_paths": [
+        "formal_sources/formal_conjectures/coverage/BSD-001.json"
+      ]
+    },
+    {
+      "campaign_id": "HC-001",
+      "disposition": "negative coverage at pinned revision",
+      "artifact_paths": [
+        "formal_sources/formal_conjectures/coverage/HC-001.json"
+      ]
+    },
+    {
+      "campaign_id": "YM-001",
+      "disposition": "lexical false positives rejected",
+      "artifact_paths": [
+        "formal_sources/formal_conjectures/coverage/YM-001.json"
+      ]
+    }
+  ],
+  "replay_evidence": {
+    "workflow_run_id": 30544600547,
+    "artifact_id": 8761186970,
+    "artifact_sha256": "1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb",
+    "manifest_path": "formal_sources/formal_conjectures/replays/FC-GDM-002/REPLAY_MANIFEST.json"
+  },
+  "review_state": "adversarially-reviewed",
+  "claim_boundary": "This ledger records a same-revision governed scope expansion. Added theorem records are extraction evidence only; no upstream status, proof, novelty, or certification effect is imported."
+}
