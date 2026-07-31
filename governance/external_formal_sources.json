@@ -46,7 +46,6 @@
         "formal_sources/formal_conjectures/update_ledgers/FC-GDM-001-TO-FC-GDM-002.json"
       ],
       "replay_paths": [
-        "formal_sources/formal_conjectures/replays/FC-GDM-002/formal-conjectures-expanded-replay.zip",
         "formal_sources/formal_conjectures/replays/FC-GDM-002/FC-GDM-002-INVENTORY-SCREEN.json",
         "formal_sources/formal_conjectures/replays/FC-GDM-002/FC-GDM-002-TAG-RESOLUTION.json",
         "formal_sources/formal_conjectures/replays/FC-GDM-002/REPLAY_MANIFEST.json"
