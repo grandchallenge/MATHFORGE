@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION",
   "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
   "source_id": "FC-GDM-002",
@@ -16,9 +16,11 @@
     ]
   },
   "replay_bundle": {
-    "path": "formal_sources/formal_conjectures/replays/FC-GDM-002/formal-conjectures-expanded-replay.zip",
-    "git_blob_sha1": "0c8ce12a81c8e40a3873a3b7ac73ee1232013f3f",
-    "sha256": "1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb"
+    "repository": "grandchallenge/MATHFORGE",
+    "workflow_run_id": 30544600547,
+    "artifact_id": 8761186970,
+    "artifact_name": "formal-conjectures-expanded-replay",
+    "archive_sha256": "1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb"
   },
   "snapshot_member": {
     "name": "FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json",
@@ -27,5 +29,5 @@
   },
   "statement_count": 43,
   "canonical_snapshot_sha256": "2b6bda841d15b022ec8c66bc332177d1283ca791f5d5f6e82323c304d1e6fdf6",
-  "claim_boundary": "This reference identifies a normalized statement snapshot stored byte-for-byte inside the pinned replay bundle. It does not import upstream status, prove a theorem, or provide certification."
+  "claim_boundary": "This reference identifies a normalized statement snapshot produced by the pinned successful replay artifact. It does not import upstream status, prove a theorem, or provide certification."
 }
