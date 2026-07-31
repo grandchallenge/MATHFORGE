@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "coverage_record_id": "MF-FC-YM-001-COVERAGE",
+  "campaign_id": "YM-001",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "inventory_evidence": {
+    "screen_path": "formal_sources/formal_conjectures/replays/FC-GDM-002/FC-GDM-002-INVENTORY-SCREEN.json",
+    "inventory_sha256": "2693de3b83c0990b0e7c62ab5032698c6dde6de0942441ba7d6cdb035625e687",
+    "problem_count": 3232,
+    "replay_bundle_path": "formal_sources/formal_conjectures/replays/FC-GDM-002/formal-conjectures-expanded-replay.zip",
+    "replay_bundle_sha256": "1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb",
+    "inventory_member": "FC-GDM-002-FULL-INVENTORY.json"
+  },
+  "disposition": "lexical-false-positive",
+  "candidates": [
+    {
+      "theorem": "Erdos1128.erdos_1128.prikryMills",
+      "module": "FormalConjectures.ErdosProblems.\u00ab1128\u00bb",
+      "path": "FormalConjectures/ErdosProblems/\u00ab1128\u00bb.lean",
+      "category": "research solved",
+      "relation": "lexical-false-positive",
+      "note": "The match is caused solely by the token Mills and concerns a number-theory theorem or a named combinatorial result, not Yang-Mills gauge theory or a mass gap."
+    },
+    {
+      "theorem": "Erdos1128.erdos_1128.variants.prikryMills_explicit",
+      "module": "FormalConjectures.ErdosProblems.\u00ab1128\u00bb",
+      "path": "FormalConjectures/ErdosProblems/\u00ab1128\u00bb.lean",
+      "category": "research solved",
+      "relation": "lexical-false-positive",
+      "note": "The match is caused solely by the token Mills and concerns a number-theory theorem or a named combinatorial result, not Yang-Mills gauge theory or a mass gap."
+    },
+    {
+      "theorem": "Mills.exists'",
+      "module": "FormalConjectures.Wikipedia.Mills",
+      "path": "FormalConjectures/Wikipedia/Mills.lean",
+      "category": "research solved",
+      "relation": "lexical-false-positive",
+      "note": "The match is caused solely by the token Mills and concerns a number-theory theorem or a named combinatorial result, not Yang-Mills gauge theory or a mass gap."
+    },
+    {
+      "theorem": "Mills.exists_least",
+      "module": "FormalConjectures.Wikipedia.Mills",
+      "path": "FormalConjectures/Wikipedia/Mills.lean",
+      "category": "research solved",
+      "relation": "lexical-false-positive",
+      "note": "The match is caused solely by the token Mills and concerns a number-theory theorem or a named combinatorial result, not Yang-Mills gauge theory or a mass gap."
+    },
+    {
+      "theorem": "Mills.irrational",
+      "module": "FormalConjectures.Wikipedia.Mills",
+      "path": "FormalConjectures/Wikipedia/Mills.lean",
+      "category": "research solved",
+      "relation": "lexical-false-positive",
+      "note": "The match is caused solely by the token Mills and concerns a number-theory theorem or a named combinatorial result, not Yang-Mills gauge theory or a mass gap."
+    },
+    {
+      "theorem": "Mills.lower_bound_of_RH",
+      "module": "FormalConjectures.Wikipedia.Mills",
+      "path": "FormalConjectures/Wikipedia/Mills.lean",
+      "category": "research solved",
+      "relation": "lexical-false-positive",
+      "note": "The match is caused solely by the token Mills and concerns a number-theory theorem or a named combinatorial result, not Yang-Mills gauge theory or a mass gap."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "YM-FC-001",
+      "severity": "info",
+      "summary": "All inventory hits arose from the lexical token Mills.",
+      "evidence": [
+        "FC-GDM-002-INVENTORY-SCREEN.json:YM-001"
+      ]
+    },
+    {
+      "finding_id": "YM-FC-002",
+      "severity": "blocking",
+      "summary": "None of the hits states quantum Yang-Mills existence, Osterwalder-Schrader axioms, four-dimensional gauge theory, or a positive mass gap.",
+      "evidence": [
+        "FormalConjectures/Wikipedia/Mills.lean",
+        "FormalConjectures/ErdosProblems/1128.lean"
+      ]
+    }
+  ],
+  "obligations": [
+    "Reject Mills-number and Prikry-Mills records as YM-001 evidence.",
+    "Require gauge-field, quantum-field-theory, and mass-gap semantics for any future candidate."
+  ],
+  "status_authority": {
+    "authority": "grandchallenge/MATH-PROGRAMME",
+    "upstream_category_is_advisory": true,
+    "statement": "MATH-PROGRAMME retains current-status, scope, and promotion authority; this source screen is evidence only."
+  },
+  "review_state": "adversarially-reviewed",
+  "claim_boundary": "The replay found lexical false positives only. This record does not establish any Yang-Mills formulation, proof, construction, or mass-gap evidence."
+}

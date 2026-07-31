@@ -4,24 +4,96 @@
   "title": "MATHFORGE external formal source registry",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "registry_id", "sources"],
+  "required": [
+    "schema_version",
+    "registry_id",
+    "sources"
+  ],
   "properties": {
-    "schema_version": {"const": "1.0.0"},
-    "registry_id": {"const": "MF-EXTERNAL-FORMAL-SOURCES"},
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "registry_id": {
+      "const": "MF-EXTERNAL-FORMAL-SOURCES"
+    },
     "sources": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["source_id", "source_lock_path", "adapter_path", "snapshot_paths", "concordance_paths", "status"],
+        "required": [
+          "source_id",
+          "source_lock_path",
+          "adapter_path",
+          "snapshot_paths",
+          "concordance_paths",
+          "coverage_paths",
+          "update_ledger_paths",
+          "replay_paths",
+          "status"
+        ],
         "properties": {
-          "source_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
-          "source_lock_path": {"type": "string", "minLength": 1},
-          "adapter_path": {"type": "string", "minLength": 1},
-          "snapshot_paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-          "concordance_paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-          "status": {"enum": ["active", "suspended", "retired"]}
+          "source_id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]+$"
+          },
+          "source_lock_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "adapter_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "snapshot_paths": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "concordance_paths": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "coverage_paths": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "update_ledger_paths": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "replay_paths": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "enum": [
+              "active",
+              "suspended",
+              "retired"
+            ]
+          }
         }
       }
     }

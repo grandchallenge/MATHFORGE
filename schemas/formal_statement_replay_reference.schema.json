@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/formal_statement_replay_reference.schema.json",
+  "title": "MATHFORGE replay-backed formal statement snapshot reference",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "source_lock_id",
+    "source_id",
+    "source_repository",
+    "source_commit",
+    "scope",
+    "replay_bundle",
+    "snapshot_member",
+    "statement_count",
+    "canonical_snapshot_sha256",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.1.0"},
+    "snapshot_id": {"type": "string", "pattern": "^MF-FORMAL-SNAPSHOT-[A-Z0-9-]+$"},
+    "source_lock_id": {"type": "string", "pattern": "^MF-FORMAL-[A-Z0-9-]+-LOCK$"},
+    "source_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+    "source_repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_id", "paths"],
+      "properties": {
+        "scope_id": {"type": "string", "minLength": 3},
+        "paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "replay_bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "workflow_run_id",
+        "artifact_id",
+        "artifact_name",
+        "archive_sha256"
+      ],
+      "properties": {
+        "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "workflow_run_id": {"type": "integer", "minimum": 1},
+        "artifact_id": {"type": "integer", "minimum": 1},
+        "artifact_name": {"type": "string", "minLength": 1},
+        "archive_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "snapshot_member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "byte_length", "sha256"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[^/]+\\.json$"},
+        "byte_length": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "statement_count": {"type": "integer", "minimum": 1},
+    "canonical_snapshot_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim_boundary": {"type": "string", "minLength": 40}
+  }
+}

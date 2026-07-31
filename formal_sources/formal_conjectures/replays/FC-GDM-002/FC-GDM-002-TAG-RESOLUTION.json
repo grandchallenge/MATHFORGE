@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "google-deepmind/formal-conjectures",
+  "pinned_commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+  "exact_benchmark_tags": [],
+  "containing_benchmark_tags": [],
+  "selected_tag": null,
+  "selected_tag_commit": null,
+  "resolution": "commit_only_required",
+  "lock_recommendation": "exact_commit",
+  "reason": "No fetched immutable benchmark tag contains the pinned revision."
+}

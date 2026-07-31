@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "concordance_id": "MF-FC-PNP-001-CONCORDANCE",
+  "campaign_id": "PNP-001",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION",
+  "upstream_statement": {
+    "repository": "google-deepmind/formal-conjectures",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "theorem": "ComplexityTheory.P_ne_NP",
+    "module": "FormalConjectures.Millenium.PvsNP",
+    "path": "FormalConjectures/Millenium/PvsNP.lean",
+    "git_blob_sha1": "255b60b9fc875a38481b1fbaba7f4b9c8928da70"
+  },
+  "programme_target": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "945381eec1aee5d6c84ff72f3cfa4c7199d57bd6",
+    "paths": [
+      "PNP-WP00-source-definition-equivalence-audit.md",
+      "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"
+    ],
+    "summary": "The canonical challenge asks whether deterministic polynomial-time decision languages equal verifier-form NP under a fixed finite encoding and total Turing-machine model."
+  },
+  "relation": "unresolved",
+  "relation_direction": "unresolved",
+  "equivalence_basis": "programme-audit",
+  "review_state": "adversarially-reviewed",
+  "status_authority": {
+    "authority": "grandchallenge/MATH-PROGRAMME",
+    "upstream_category_is_advisory": true,
+    "statement": "MATH-PROGRAMME retains current-status, scope, and promotion authority; upstream categories are source metadata only."
+  },
+  "findings": [
+    {
+      "finding_id": "PNP-FC-001",
+      "severity": "info",
+      "summary": "The upstream theorem has the expected class-separation orientation P != NP.",
+      "evidence": [
+        "ComplexityTheory.P_ne_NP",
+        "PNP-WP00-source-definition-equivalence-audit.md#charter-lock"
+      ]
+    },
+    {
+      "finding_id": "PNP-FC-002",
+      "severity": "blocking",
+      "summary": "The extracted statement does not expose the imported definitions of P, NP, machine execution, finite encodings, totality, or polynomial bounds.",
+      "evidence": [
+        "ComplexityTheory.P != ComplexityTheory.NP",
+        "campaigns/p_vs_np/WP00_SOURCE_DEFINITION_EQUIVALENCE/02_MACHINE_AND_ENCODING_LOCK.md"
+      ]
+    },
+    {
+      "finding_id": "PNP-FC-003",
+      "severity": "caution",
+      "summary": "Syntactic agreement at the class-symbol level is insufficient for theorem-level semantic equivalence.",
+      "evidence": [
+        "formal_sources/formal_conjectures/snapshots/FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json"
+      ]
+    }
+  ],
+  "obligations": [
+    "Audit the imported ComplexityTheory definitions against the Programme machine-and-encoding lock.",
+    "Verify total halting, malformed-input handling, input-size accounting, and the polynomial definition.",
+    "Retain the relation as unresolved until a definition-level or proved equivalence is available."
+  ],
+  "claim_boundary": "This record does not identify the upstream class definitions with the Programme lock and does not prove P != NP. It records a direct candidate whose semantic concordance remains unresolved."
+}

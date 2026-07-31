@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/formal_source_coverage_record.schema.json",
+  "title": "MATHFORGE external formal-source coverage record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "coverage_record_id",
+    "campaign_id",
+    "source_lock_id",
+    "inventory_evidence",
+    "disposition",
+    "candidates",
+    "findings",
+    "obligations",
+    "status_authority",
+    "review_state",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "coverage_record_id": {
+      "type": "string",
+      "pattern": "^MF-FC-[A-Z0-9-]+-COVERAGE$"
+    },
+    "campaign_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]+$"
+    },
+    "source_lock_id": {
+      "type": "string",
+      "pattern": "^MF-FORMAL-[A-Z0-9-]+-LOCK$"
+    },
+    "inventory_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "screen_path",
+        "replay_bundle_path",
+        "replay_bundle_sha256",
+        "inventory_member",
+        "inventory_sha256",
+        "problem_count"
+      ],
+      "properties": {
+        "screen_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inventory_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "problem_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "replay_bundle_path": {
+          "type": "string",
+          "pattern": "^formal_sources/.+\\.zip$"
+        },
+        "replay_bundle_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "inventory_member": {
+          "type": "string",
+          "pattern": "^[^/]+\\.json$"
+        }
+      }
+    },
+    "disposition": {
+      "enum": [
+        "direct",
+        "adjacency-only",
+        "negative",
+        "lexical-false-positive"
+      ]
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "theorem",
+          "module",
+          "path",
+          "category",
+          "relation",
+          "note"
+        ],
+        "properties": {
+          "theorem": {
+            "type": "string",
+            "minLength": 1
+          },
+          "module": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "direct",
+              "adjacent",
+              "lexical-false-positive"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "finding_id",
+          "severity",
+          "summary",
+          "evidence"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 3
+          },
+          "severity": {
+            "enum": [
+              "info",
+              "caution",
+              "blocking"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 10
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "obligations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    },
+    "status_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority",
+        "upstream_category_is_advisory",
+        "statement"
+      ],
+      "properties": {
+        "authority": {
+          "const": "grandchallenge/MATH-PROGRAMME"
+        },
+        "upstream_category_is_advisory": {
+          "const": true
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 30
+        }
+      }
+    },
+    "review_state": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "adversarially-reviewed",
+        "rejected"
+      ]
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 40
+    }
+  }
+}

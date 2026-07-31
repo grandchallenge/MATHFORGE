@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.1.0",
+  "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "source_id": "FC-GDM-002",
+  "source_repository": "google-deepmind/formal-conjectures",
+  "source_commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+  "scope": {
+    "scope_id": "ACTIVE-CAMPAIGN-EXPANSION",
+    "paths": [
+      "FormalConjectures/Wikipedia/UnionClosed.lean",
+      "FormalConjectures/Millenium/PvsNP.lean",
+      "FormalConjectures/Wikipedia/RiemannZetaValues.lean",
+      "FormalConjectures/Wikipedia/EllipticCurveRank.lean",
+      "FormalConjectures/Wikipedia/Mills.lean"
+    ]
+  },
+  "replay_bundle": {
+    "repository": "grandchallenge/MATHFORGE",
+    "workflow_run_id": 30544600547,
+    "artifact_id": 8761186970,
+    "artifact_name": "formal-conjectures-expanded-replay",
+    "archive_sha256": "1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb"
+  },
+  "snapshot_member": {
+    "name": "FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json",
+    "byte_length": 52589,
+    "sha256": "e7534f913160cc9cef4eb80a735c44b7b1a8ea4273f0f5236d82cc7b9dab042b"
+  },
+  "statement_count": 43,
+  "canonical_snapshot_sha256": "2b6bda841d15b022ec8c66bc332177d1283ca791f5d5f6e82323c304d1e6fdf6",
+  "claim_boundary": "This reference identifies a normalized statement snapshot produced by the pinned successful replay artifact. It does not import upstream status, prove a theorem, or provide certification."
+}

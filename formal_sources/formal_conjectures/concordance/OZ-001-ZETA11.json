@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "concordance_id": "MF-FC-OZ-001-ZETA11-CONCORDANCE",
+  "campaign_id": "OZ-001",
+  "source_lock_id": "MF-FORMAL-FC-GDM-002-LOCK",
+  "snapshot_id": "MF-FORMAL-SNAPSHOT-FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION",
+  "upstream_statement": {
+    "repository": "google-deepmind/formal-conjectures",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "theorem": "RiemannZetaValues.irrational_eleven",
+    "module": "FormalConjectures.Wikipedia.RiemannZetaValues",
+    "path": "FormalConjectures/Wikipedia/RiemannZetaValues.lean",
+    "git_blob_sha1": "1a0893bc6c14662003e0f5368961ec2bd9688cdd"
+  },
+  "programme_target": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "945381eec1aee5d6c84ff72f3cfa4c7199d57bd6",
+    "paths": [
+      "campaigns/odd_zeta/OZ_WP02_THEOREM_OBLIGATION_LEDGER/THEOREM_LEDGER.yaml",
+      "campaigns/odd_zeta/OZ_WP02_THEOREM_OBLIGATION_LEDGER/README.md"
+    ],
+    "summary": "The Programme separates known finite disjunctions, individual odd-zeta irrationality claims, infinitude results, and universal odd-value irrationality from its current Apéry-structure target lanes."
+  },
+  "relation": "adjacent",
+  "relation_direction": "not-applicable",
+  "equivalence_basis": "programme-audit",
+  "review_state": "adversarially-reviewed",
+  "status_authority": {
+    "authority": "grandchallenge/MATH-PROGRAMME",
+    "upstream_category_is_advisory": true,
+    "statement": "MATH-PROGRAMME retains current-status, scope, and promotion authority; upstream categories are source metadata only."
+  },
+  "findings": [
+    {
+      "finding_id": "OZ-ZETA11-001",
+      "severity": "info",
+      "summary": "Individual irrationality of zeta(11) is not authorized as a Programme conclusion.",
+      "evidence": [
+        "RiemannZetaValues.irrational_eleven",
+        "campaigns/odd_zeta/OZ_WP02_THEOREM_OBLIGATION_LEDGER/THEOREM_LEDGER.yaml"
+      ]
+    },
+    {
+      "finding_id": "OZ-ZETA11-002",
+      "severity": "caution",
+      "summary": "The upstream category and sorry metadata do not provide proof or current-status authority.",
+      "evidence": [
+        "research open",
+        "has_sorry_free_proof=false"
+      ]
+    }
+  ],
+  "obligations": [
+    "Keep this statement separate from all other odd-zeta quantifier scopes.",
+    "Require primary-source and proof replay before importing any solved-status effect.",
+    "Do not infer a new irrationality conclusion for the active Programme campaign."
+  ],
+  "claim_boundary": "This concordance preserves one upstream odd-zeta statement as separately scoped source evidence. It does not prove the statement or change the Programme campaign disposition."
+}

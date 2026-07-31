@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "registry_id": "MF-EXTERNAL-FORMAL-SOURCES",
   "sources": [
     {
@@ -12,6 +12,43 @@
       "concordance_paths": [
         "formal_sources/formal_conjectures/concordance/RH-001.json",
         "formal_sources/formal_conjectures/concordance/NS-CI-001.json"
+      ],
+      "coverage_paths": [],
+      "update_ledger_paths": [],
+      "replay_paths": [],
+      "status": "active"
+    },
+    {
+      "source_id": "FC-GDM-002",
+      "source_lock_path": "formal_sources/formal_conjectures/source_locks/FC-GDM-002.json",
+      "adapter_path": "formal_sources/formal_conjectures/intake.py",
+      "snapshot_paths": [
+        "formal_sources/formal_conjectures/snapshots/FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.replay.json"
+      ],
+      "concordance_paths": [
+        "formal_sources/formal_conjectures/concordance/UC-001.json",
+        "formal_sources/formal_conjectures/concordance/PNP-001.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA3.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA5.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA7.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA9.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZETA11.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ODD-UNIVERSAL.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ODD-INFINITUDE.json",
+        "formal_sources/formal_conjectures/concordance/OZ-001-ZUDILIN-5-11.json"
+      ],
+      "coverage_paths": [
+        "formal_sources/formal_conjectures/coverage/BSD-001.json",
+        "formal_sources/formal_conjectures/coverage/HC-001.json",
+        "formal_sources/formal_conjectures/coverage/YM-001.json"
+      ],
+      "update_ledger_paths": [
+        "formal_sources/formal_conjectures/update_ledgers/FC-GDM-001-TO-FC-GDM-002.json"
+      ],
+      "replay_paths": [
+        "formal_sources/formal_conjectures/replays/FC-GDM-002/FC-GDM-002-INVENTORY-SCREEN.json",
+        "formal_sources/formal_conjectures/replays/FC-GDM-002/FC-GDM-002-TAG-RESOLUTION.json",
+        "formal_sources/formal_conjectures/replays/FC-GDM-002/REPLAY_MANIFEST.json"
       ],
       "status": "active"
     }
