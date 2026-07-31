@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "upstream_repository": "google-deepmind/formal-conjectures",
+  "upstream_commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+  "lean_toolchain": "leanprover/lean4:v4.27.0",
+  "mathlib_revision": "v4.27.0",
+  "records": [
+    {
+      "path": "replay/FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json",
+      "byte_length": 52589,
+      "sha256": "e7534f913160cc9cef4eb80a735c44b7b1a8ea4273f0f5236d82cc7b9dab042b",
+      "problem_count": 0,
+      "statement_count": 43
+    },
+    {
+      "path": "replay/FC-GDM-002-FULL-INVENTORY.json",
+      "byte_length": 1255363,
+      "sha256": "2693de3b83c0990b0e7c62ab5032698c6dde6de0942441ba7d6cdb035625e687",
+      "problem_count": 3232,
+      "statement_count": 0
+    },
+    {
+      "path": "replay/FC-GDM-002-INVENTORY-SCREEN.json",
+      "byte_length": 2926,
+      "sha256": "42924e2d64af4a521d2eb7d8f6ace257bc985a833315995746f168a49fb4c587",
+      "problem_count": 0,
+      "statement_count": 0
+    },
+    {
+      "path": "replay/FC-GDM-002-TAG-RESOLUTION.json",
+      "byte_length": 430,
+      "sha256": "cb36d1abb7a08984220f9b2c4fc7fe51a2341368bc6f7945497caadba5ae36b6",
+      "problem_count": 0,
+      "statement_count": 0
+    }
+  ]
+}

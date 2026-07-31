@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/formal_source_update_ledger.schema.json",
+  "title": "MATHFORGE external formal-source update ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "ledger_id",
+    "update_kind",
+    "old_source",
+    "new_source",
+    "tag_resolution",
+    "scope_delta",
+    "theorem_delta",
+    "concordance_impact",
+    "replay_evidence",
+    "review_state",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "ledger_id": {
+      "type": "string",
+      "pattern": "^MF-FC-[A-Z0-9-]+-UPDATE$"
+    },
+    "update_kind": {
+      "enum": [
+        "revision_update",
+        "scope_expansion_same_revision",
+        "metadata_only"
+      ]
+    },
+    "old_source": {
+      "$ref": "#/$defs/source"
+    },
+    "new_source": {
+      "$ref": "#/$defs/source"
+    },
+    "tag_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "resolution",
+        "selected_tag"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolution": {
+          "enum": [
+            "immutable_tag",
+            "commit_only_required"
+          ]
+        },
+        "selected_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "scope_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "added_paths",
+        "removed_paths",
+        "changed_blob_paths"
+      ],
+      "properties": {
+        "added_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "removed_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "changed_blob_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "theorem_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "added",
+        "removed",
+        "renamed",
+        "category_changes",
+        "statement_changes"
+      ],
+      "properties": {
+        "added": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "removed": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "renamed": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "category_changes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "statement_changes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "concordance_impact": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "campaign_id",
+          "disposition",
+          "artifact_paths"
+        ],
+        "properties": {
+          "campaign_id": {
+            "type": "string",
+            "minLength": 2
+          },
+          "disposition": {
+            "type": "string",
+            "minLength": 3
+          },
+          "artifact_paths": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "replay_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workflow_run_id",
+        "artifact_id",
+        "artifact_sha256",
+        "manifest_path"
+      ],
+      "properties": {
+        "workflow_run_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "artifact_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "manifest_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "review_state": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "adversarially-reviewed"
+      ]
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 40
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_lock_id",
+        "repository",
+        "commit",
+        "snapshot_id"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 2
+        },
+        "source_lock_id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^[^/]+/[^/]+$"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 3
+        }
+      }
+    }
+  }
+}

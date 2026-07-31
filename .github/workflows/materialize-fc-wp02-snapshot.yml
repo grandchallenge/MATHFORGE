@@ -1,0 +1,54 @@
+name: Materialize FC-WP02 snapshot
+
+on:
+  push:
+    branches:
+      - agent/fc-wp02-admission-staging
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: agent/fc-wp02-admission-staging
+
+      - name: Extract exact replay snapshot
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import zipfile
+          from pathlib import Path
+
+          bundle = Path('formal_sources/formal_conjectures/replays/FC-GDM-002/formal-conjectures-expanded-replay.zip')
+          expected_bundle = '1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb'
+          expected_member = 'e7534f913160cc9cef4eb80a735c44b7b1a8ea4273f0f5236d82cc7b9dab042b'
+          member = 'FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json'
+          target = Path('formal_sources/formal_conjectures/snapshots') / member
+
+          if hashlib.sha256(bundle.read_bytes()).hexdigest() != expected_bundle:
+              raise SystemExit('replay bundle digest mismatch')
+          with zipfile.ZipFile(bundle) as archive:
+              data = archive.read(member)
+          if len(data) != 52589 or hashlib.sha256(data).hexdigest() != expected_member:
+              raise SystemExit('snapshot member identity mismatch')
+          target.parent.mkdir(parents=True, exist_ok=True)
+          target.write_bytes(data)
+          Path('.github/workflows/materialize-fc-wp02-snapshot.yml').unlink()
+          PY
+
+      - name: Commit exact snapshot and remove one-use workflow
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add formal_sources/formal_conjectures/snapshots/FC-GDM-002-ACTIVE-CAMPAIGN-EXPANSION.json
+          git add .github/workflows/materialize-fc-wp02-snapshot.yml
+          git commit -m 'materialize replayed Formal Conjectures snapshot'
+          git push origin HEAD:agent/fc-wp02-admission-staging

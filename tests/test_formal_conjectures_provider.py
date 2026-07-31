@@ -90,34 +90,43 @@ class FormalConjecturesProviderTests(unittest.TestCase):
         discovered_locks = {
             path.relative_to(ROOT).as_posix()
             for path in (ROOT / "formal_sources").glob("*/source_lock.json")
+        } | {
+            path.relative_to(ROOT).as_posix()
+            for path in (ROOT / "formal_sources").glob("*/source_locks/*.json")
         }
         self.assertEqual(registered_locks, discovered_locks)
 
-        registered_snapshots = {
-            path for entry in registry["sources"] for path in entry["snapshot_paths"]
-        }
-        discovered_snapshots = {
-            path.relative_to(ROOT).as_posix()
-            for path in (ROOT / "formal_sources").glob("*/snapshots/*.json")
-        }
-        self.assertEqual(registered_snapshots, discovered_snapshots)
-
-        registered_concordances = {
-            path for entry in registry["sources"] for path in entry["concordance_paths"]
-        }
-        discovered_concordances = {
-            path.relative_to(ROOT).as_posix()
-            for path in (ROOT / "formal_sources").glob("*/concordance/*.json")
-        }
-        self.assertEqual(registered_concordances, discovered_concordances)
+        keys_and_globs = (
+            ("snapshot_paths", ("*/snapshots/*.json",)),
+            ("concordance_paths", ("*/concordance/*.json",)),
+            ("coverage_paths", ("*/coverage/*.json",)),
+            ("update_ledger_paths", ("*/update_ledgers/*.json",)),
+            ("replay_paths", ("*/replays/*/*.json", "*/replays/*/*.zip")),
+        )
+        for key, patterns in keys_and_globs:
+            registered = {path for entry in registry["sources"] for path in entry[key]}
+            discovered = {
+                path.relative_to(ROOT).as_posix()
+                for pattern in patterns
+                for path in (ROOT / "formal_sources").glob(pattern)
+            }
+            self.assertEqual(registered, discovered, key)
 
         for entry in registry["sources"]:
             self.assertTrue((ROOT / entry["source_lock_path"]).is_file())
             self.assertTrue((ROOT / entry["adapter_path"]).is_file())
             lock = json.loads((ROOT / entry["source_lock_path"]).read_text(encoding="utf-8"))
             self.assertEqual(lock["source_id"], entry["source_id"])
-            for relative in entry["snapshot_paths"] + entry["concordance_paths"]:
-                self.assertTrue((ROOT / relative).is_file())
+            artifact_keys = (
+                "snapshot_paths",
+                "concordance_paths",
+                "coverage_paths",
+                "update_ledger_paths",
+                "replay_paths",
+            )
+            for key in artifact_keys:
+                for relative in entry[key]:
+                    self.assertTrue((ROOT / relative).is_file(), relative)
 
 
 if __name__ == "__main__":

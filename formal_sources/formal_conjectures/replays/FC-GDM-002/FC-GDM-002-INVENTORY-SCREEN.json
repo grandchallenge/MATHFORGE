@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "screen_id": "MF-FC-GDM-002-FULL-INVENTORY-SCREEN",
+  "upstream_repository": "google-deepmind/formal-conjectures",
+  "upstream_commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+  "inventory": {
+    "byte_length": 1255363,
+    "sha256": "2693de3b83c0990b0e7c62ab5032698c6dde6de0942441ba7d6cdb035625e687",
+    "problem_count": 3232
+  },
+  "searches": [
+    {
+      "campaign_id": "HC-001",
+      "query_terms": [
+        "hodge",
+        "cycleclass",
+        "cycle_class",
+        "algebraiccycle",
+        "algebraic_cycle"
+      ],
+      "hits": []
+    },
+    {
+      "campaign_id": "YM-001",
+      "query_terms": [
+        "yangmills",
+        "yang_mills",
+        "massgap",
+        "mass_gap",
+        "mills"
+      ],
+      "hits": [
+        {
+          "theorem": "Erdos1128.erdos_1128.prikryMills",
+          "module": "FormalConjectures.ErdosProblems.\u00ab1128\u00bb",
+          "source_path": "FormalConjectures/ErdosProblems/\u00ab1128\u00bb.lean",
+          "category": "research solved",
+          "matched_terms": [
+            "mills"
+          ]
+        },
+        {
+          "theorem": "Erdos1128.erdos_1128.variants.prikryMills_explicit",
+          "module": "FormalConjectures.ErdosProblems.\u00ab1128\u00bb",
+          "source_path": "FormalConjectures/ErdosProblems/\u00ab1128\u00bb.lean",
+          "category": "research solved",
+          "matched_terms": [
+            "mills"
+          ]
+        },
+        {
+          "theorem": "Mills.exists'",
+          "module": "FormalConjectures.Wikipedia.Mills",
+          "source_path": "FormalConjectures/Wikipedia/Mills.lean",
+          "category": "research solved",
+          "matched_terms": [
+            "mills"
+          ]
+        },
+        {
+          "theorem": "Mills.exists_least",
+          "module": "FormalConjectures.Wikipedia.Mills",
+          "source_path": "FormalConjectures/Wikipedia/Mills.lean",
+          "category": "research solved",
+          "matched_terms": [
+            "mills"
+          ]
+        },
+        {
+          "theorem": "Mills.irrational",
+          "module": "FormalConjectures.Wikipedia.Mills",
+          "source_path": "FormalConjectures/Wikipedia/Mills.lean",
+          "category": "research solved",
+          "matched_terms": [
+            "mills"
+          ]
+        },
+        {
+          "theorem": "Mills.lower_bound_of_RH",
+          "module": "FormalConjectures.Wikipedia.Mills",
+          "source_path": "FormalConjectures/Wikipedia/Mills.lean",
+          "category": "research solved",
+          "matched_terms": [
+            "mills"
+          ]
+        }
+      ]
+    }
+  ],
+  "claim_boundary": "This screen reports exact keyword hits in the replayed extractor inventory. A zero-hit result is not proof of mathematical absence, and a lexical hit is not semantic coverage.",
+  "screen_sha256": "8468da4c7efd0d4bc8448848a273c38704fff8dc0c5a72bc28b733ec4a7ebfec"
+}
