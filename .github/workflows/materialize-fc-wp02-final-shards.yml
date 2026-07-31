@@ -1,0 +1,65 @@
+name: Materialize FC-WP02 final replay shards
+
+on:
+  push:
+    branches:
+      - agent/formal-conjectures-expanded-intake
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: agent/formal-conjectures-expanded-intake
+
+      - name: Download and verify passed replay artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api /repos/${GITHUB_REPOSITORY}/actions/artifacts/8761186970/zip > /tmp/replay.zip
+          echo '1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb  /tmp/replay.zip' | sha256sum --check --strict
+
+      - name: Materialize exact final inventory shards
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import base64
+          import gzip
+          import hashlib
+          import zipfile
+          from pathlib import Path
+
+          with zipfile.ZipFile('/tmp/replay.zip') as archive:
+              data = archive.read('FC-GDM-002-FULL-INVENTORY.json')
+          assert len(data) == 1255363
+          assert hashlib.sha256(data).hexdigest() == '2693de3b83c0990b0e7c62ab5032698c6dde6de0942441ba7d6cdb035625e687'
+          compressed = gzip.compress(data, compresslevel=9, mtime=0)
+          assert len(compressed) == 62319
+          assert hashlib.sha256(compressed).hexdigest() == '3e847ebb231b9204231778ddb8f39e60d64205fe940e9bf7a423e76ddfdcab41'
+          encoded = base64.b64encode(compressed).decode('ascii')
+          shards = [encoded[i:i + 10000] for i in range(0, len(encoded), 10000)]
+          assert len(shards) == 9
+          root = Path('formal_sources/formal_conjectures/replays/FC-GDM-002/shards')
+          root.mkdir(parents=True, exist_ok=True)
+          for index in (7, 8):
+              (root / f'inventory-{index:03d}.b64').write_text(shards[index] + '\n', encoding='ascii')
+          Path('.github/workflows/materialize-fc-wp02-final-shards.yml').unlink()
+          PY
+
+      - name: Commit verified shards and remove one-use workflow
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add formal_sources/formal_conjectures/replays/FC-GDM-002/shards/inventory-007.b64
+          git add formal_sources/formal_conjectures/replays/FC-GDM-002/shards/inventory-008.b64
+          git add .github/workflows/materialize-fc-wp02-final-shards.yml
+          git commit -m 'materialize exact final replay shards'
+          git push origin HEAD:agent/formal-conjectures-expanded-intake
