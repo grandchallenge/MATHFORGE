@@ -8,15 +8,21 @@
 
 ## Replay record
 
-GitHub Actions run `30544600547` completed the pinned Lean build, selected extraction, full 3,232-problem inventory, deterministic coverage screen, and benchmark-tag resolution. Artifact `8761186970` has archive digest `sha256:1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb`.
-
-The selected normalized snapshot contains 43 statements and has canonical payload digest:
+GitHub Actions run `30544600547` completed the pinned Lean build, selected extraction, full 3,232-problem inventory, deterministic coverage screen, and benchmark-tag resolution. Artifact `8761186970`, named `formal-conjectures-expanded-replay`, has archive SHA-256:
 
 ```text
-2b6bda841d15b022ec8c66bc332177d1283ca791f5d5f6e82323c304d1e6fdf6
+1c74747519c17f873f323198a92104538667092f3274a667a09e1a6b219a7bcb
 ```
 
-The exact Actions artifact is retained as `replays/FC-GDM-002/formal-conjectures-expanded-replay.zip`. Its archive SHA-256 is fixed above. The full 3,232-problem inventory and the normalized 43-statement snapshot remain inside that immutable bundle. A compact replay reference, the reviewed screen, tag resolution, and manifest are committed separately. Tests open the bundle and validate the snapshot against the formal-statement schema, source lock, member digest, byte length, and canonical payload digest.
+The selected normalized snapshot contains 43 statements. Its exact member identity is:
+
+```text
+byte_length: 52589
+sha256: e7534f913160cc9cef4eb80a735c44b7b1a8ea4273f0f5236d82cc7b9dab042b
+canonical_snapshot_sha256: 2b6bda841d15b022ec8c66bc332177d1283ca791f5d5f6e82323c304d1e6fdf6
+```
+
+The Actions artifact is the replay object. The repository commits its immutable artifact reference, replay manifest, reviewed inventory screen, benchmark-tag decision, source lock, update ledger, concordances, and coverage records. It does not commit a duplicate binary ZIP. The dedicated replay workflow regenerates the selected snapshot and full inventory from the pinned upstream commit and fails closed on source, extractor, dependency, or statement drift.
 
 ## Tag resolution
 
