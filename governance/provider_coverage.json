@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "audit_id": "MF-GOV-WP00",
-  "reviewed_at": "2026-07-31",
+  "reviewed_at": "2026-08-01",
   "active_campaigns": [
     {"campaign_id": "UC-001", "title": "Union-Closed Sets provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/UC-001.json"},
     {"campaign_id": "NS-CI-001", "title": "Critical Navier-Stokes integrability provider coverage", "disposition": "manifest", "manifest_path": "provider_manifests/NS-CI-001.json"},
@@ -19,6 +19,13 @@
       "lifecycle": "candidate",
       "disposition": "manifest",
       "manifest_path": "provider_manifests/VGSE-001.json"
+    },
+    {
+      "campaign_id": "OPENAI-TEN-PROOFS-001",
+      "title": "OpenAI Selected Proofs external formalization candidate provider coverage",
+      "lifecycle": "candidate",
+      "disposition": "manifest",
+      "manifest_path": "provider_manifests/OPENAI-TEN-PROOFS-001.json"
     }
   ]
 }

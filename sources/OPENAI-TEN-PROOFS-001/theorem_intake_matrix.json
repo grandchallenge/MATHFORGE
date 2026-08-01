@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENAI-TEN-PROOFS-001-THEOREM-INTAKE-MATRIX",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "source_commit": "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
+  "admission_granularity": "result_family",
+  "result_families": [
+    {
+      "result_id": "OTP-A-SPHERE-PACKING",
+      "advertised_result": "Sharp Cohn–Elkies sphere-packing bounds",
+      "comparator_config": "ComparatorChallenges/A_SpherePacking.json",
+      "solution_module": "SpherePacking",
+      "theorem_names": [
+        "PackingBounds.FullMain.exact_limit",
+        "PackingBounds.FullMain.exact_binary_exponent",
+        "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper",
+        "PackingBounds.sharpFullCohnElkiesManuscriptConclusions"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "custom packing-density and admissible-function boundary; asymptotic normalization"
+    },
+    {
+      "result_id": "OTP-B1-BINARY-CODES",
+      "advertised_result": "Improved binary-code bounds",
+      "comparator_config": "ComparatorChallenges/B_BinaryCodes.json",
+      "solution_module": "MetricCodes",
+      "theorem_names": [
+        "MetricCodes.Hamming.binaryRate_lt_classicalRate",
+        "MetricCodes.Hamming.exists_binaryRate_improvement",
+        "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate",
+        "MetricCodes.MRRW.strict_mrrw2",
+        "MetricCodes.Johnson.binaryRate_lt_mrrw",
+        "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "rate normalization, strictness domain, and comparator baseline"
+    },
+    {
+      "result_id": "OTP-B2-SPHERICAL-CODES",
+      "advertised_result": "Spherical-code hierarchy and geometric bounds",
+      "comparator_config": "ComparatorChallenges/B_SphericalCodes.json",
+      "solution_module": "MetricCodes",
+      "theorem_names": [
+        "MetricCodes.Spherical.kissing_variationalRate_lt",
+        "MetricCodes.Spherical.packingExponent_gt",
+        "MetricCodes.Spherical.classicalPackingObjective_lt_packingExponent",
+        "MetricCodes.Spherical.classicalPackingExponent_lt_packingExponent",
+        "MetricCodes.Spherical.HigherHierarchy.hierarchyPackingExponent_eq_criticalBinaryExponent",
+        "MetricCodes.Spherical.HigherHierarchy.hierarchyKissingExponent_lt_published",
+        "SpherePacking.packingConstant_sharp_binary_asymptotic_upper"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "hierarchy definition, asymptotic exponent, and cross-module bridge"
+    },
+    {
+      "result_id": "OTP-C-PERMANENT",
+      "advertised_result": "Permanent formula and arithmetic-circuit lower bounds",
+      "comparator_config": "ComparatorChallenges/C_PermanentFormulaLowerBound.json",
+      "solution_module": "Permanent",
+      "theorem_names": [
+        "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
+        "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "formula and circuit model, field, uniformity, and asymptotic lower-bound strength"
+    },
+    {
+      "result_id": "OTP-D-NON-SOFIC",
+      "advertised_result": "Existence of a finitely presented non-sofic group",
+      "comparator_config": "ComparatorChallenges/D_NonSoficGroup.json",
+      "solution_module": "NonSoficGroup",
+      "theorem_names": [
+        "SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "custom soficity predicate, finite presentation witness, and imported group-theoretic boundary"
+    },
+    {
+      "result_id": "OTP-E-CONNES-RIGIDITY",
+      "advertised_result": "Counterexample to Connes's rigidity conjecture",
+      "comparator_config": "ComparatorChallenges/E_ConnesRigidity.json",
+      "solution_module": "ConnesRigidity",
+      "theorem_names": [
+        "ConnesRigidity.connesRigidityAssertion_false"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "custom tracial group-factor isomorphism, normality, property T, ICC, and conjecture boundary"
+    },
+    {
+      "result_id": "OTP-F-EHRHART",
+      "advertised_result": "Sharp Ehrhart volume inequality",
+      "comparator_config": "ComparatorChallenges/F_EhrhartVolumeInequality.json",
+      "solution_module": "EhrhartVolumeInequality",
+      "theorem_names": [
+        "Ehrhart.Volume.ehrhart_volume_inequality_for_sets",
+        "Ehrhart.SimplexVolume.exists_centeredBody_sharp",
+        "Ehrhart.SimplexVolume.barycenter_centeredSimplex",
+        "Ehrhart.SimplexVolume.normalizedVolume_centeredSimplex"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "convex-body hypotheses, centering, volume normalization, and sharpness witness"
+    },
+    {
+      "result_id": "OTP-G-QUANTUM-PARALLEL-REPETITION",
+      "advertised_result": "Quantum parallel repetition",
+      "comparator_config": "ComparatorChallenges/G_QuantumParallelRepetition.json",
+      "solution_module": "QuantumParallelRepetition",
+      "theorem_names": [
+        "QuantumParallelRepetition.distributionUniformExponential",
+        "QuantumParallelRepetition.standardQuantumParallelRepetition"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "game model, entangled value, repetition operation, and quantitative decay"
+    },
+    {
+      "result_id": "OTP-H-GAPCVP",
+      "advertised_result": "Closest-vector and related decoding hardness",
+      "comparator_config": "ComparatorChallenges/H_GapCVP.json",
+      "solution_module": "GapCVP",
+      "theorem_names": [
+        "GapCVP.Comparator.gapCVP400IsNPHard",
+        "GapCVP.Comparator.binaryNearestCodewordIsNPHard",
+        "GapCVP.Comparator.binarySyndromeDecodingIsNPHard",
+        "GapCVP.Comparator.finitePNormGapCVPIsNPHard"
+      ],
+      "definition_names": [
+        "GapCVP.Comparator.gapCVP400Promise",
+        "GapCVP.Comparator.binaryNearestCodewordPromise",
+        "GapCVP.Comparator.binarySyndromeDecodingPromise",
+        "GapCVP.Comparator.finitePGapCVPPromise"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "NP-hardness encoding, reductions, promise problems, norms, and malformed input behavior"
+    },
+    {
+      "result_id": "OTP-I-RAMSEY",
+      "advertised_result": "Multicolor triangle Ramsey numbers",
+      "comparator_config": "ComparatorChallenges/I_MulticolorTriangleRamsey.json",
+      "solution_module": "MulticolorTriangleRamsey",
+      "theorem_names": [
+        "ErdosProblems.MulticolourTriangleRamsey.erdos_183",
+        "ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit",
+        "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients",
+        "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "Ramsey-number definition, logarithm base, asymptotic quantifiers, and Erdos problem identity"
+    },
+    {
+      "result_id": "OTP-J1-COMPACTNESS",
+      "advertised_result": "Counterexample to the compactness conjecture",
+      "comparator_config": "ComparatorChallenges/J_CompactnessConjecture.json",
+      "solution_module": "CompactnessAndDegeneracy",
+      "theorem_names": [
+        "CompactnessConjecture.quantitativeCompactnessCounterexample",
+        "CompactnessConjecture.compactnessCounterexample_bigO",
+        "CompactnessConjecture.not_erdos_180"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "conjecture encoding, quantitative family, asymptotic counterexample, and Erdos problem identity"
+    },
+    {
+      "result_id": "OTP-J2-TWO-DEGENERATE",
+      "advertised_result": "Counterexample for two-degenerate graphs",
+      "comparator_config": "ComparatorChallenges/J_TwoDegenerateGraphs.json",
+      "solution_module": "CompactnessAndDegeneracy",
+      "theorem_names": [
+        "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample",
+        "TwoDegenerateGraphs.not_erdos_146"
+      ],
+      "source_reference": null,
+      "source_concordance": "missing",
+      "semantic_risk": "two-degeneracy predicate, extremal normalization, counterexample quantifiers, and Erdos problem identity"
+    }
+  ],
+  "global_blockers": [
+    "The upstream formalization metadata contains no source records.",
+    "The default Lake build references undeclared target ConnesRigidity2.",
+    "The ComparatorChallenges library references missing root ComparatorChallenges.C_PermanentSuperquadraticStandalone.",
+    "No theorem-level trusted axiom report has been independently replayed.",
+    "No result family has independent source-statement equivalence or vacuity review."
+  ],
+  "disposition": {
+    "kernel_correctness": "not_verified",
+    "statement_fidelity": "not_verified",
+    "source_provenance": "missing",
+    "independent_adjudication": "not_performed",
+    "admitted_result_count": 0
+  },
+  "claim_boundary": "This matrix enumerates advertised result families and their declared Comparator targets. It does not establish that the solution modules build, that the Comparator checks pass, that the Lean statements match any paper, or that any mathematical result is certified."
+}
