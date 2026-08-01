@@ -76,8 +76,12 @@
       "theorem_names": [
         "SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
+      "source_reference": {
+        "official_manuscript": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf#page=79",
+        "official_reasoning_notes": "https://cdn.openai.com/pdf/reasoning-walkthroughs.pdf#page=16",
+        "provider_record": "sources/NSOF-001/source_revision_concordance.json"
+      },
+      "source_concordance": "partial_official_source_acquired_main_theorem_and_stronger_notes_target_distinguished",
       "semantic_risk": "custom soficity predicate, finite presentation witness, and imported group-theoretic boundary"
     },
     {
@@ -185,16 +189,16 @@
     }
   ],
   "global_blockers": [
-    "The upstream formalization metadata contains no source records.",
+    "The upstream formalization metadata contains no source records; MATHFORGE independently acquired official sources for OTP-D-NON-SOFIC only.",
     "The default Lake build references undeclared target ConnesRigidity2.",
     "The ComparatorChallenges library references missing root ComparatorChallenges.C_PermanentSuperquadraticStandalone.",
     "No theorem-level trusted axiom report has been independently replayed.",
-    "No result family has independent source-statement equivalence or vacuity review."
+    "OTP-D-NON-SOFIC has an official-source map but not independent statement equivalence, nonvacuity review, or trusted replay; the other eleven result families still lack independent source acquisition."
   ],
   "disposition": {
     "kernel_correctness": "not_verified",
     "statement_fidelity": "not_verified",
-    "source_provenance": "missing",
+    "source_provenance": "partial_one_of_twelve_officially_acquired",
     "independent_adjudication": "not_performed",
     "admitted_result_count": 0
   },

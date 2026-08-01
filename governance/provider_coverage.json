@@ -26,6 +26,13 @@
       "lifecycle": "candidate",
       "disposition": "manifest",
       "manifest_path": "provider_manifests/OPENAI-TEN-PROOFS-001.json"
+    },
+    {
+      "campaign_id": "NSOF-001",
+      "title": "Nonsofic-groups official source and screenshot-concordance candidate provider coverage",
+      "lifecycle": "candidate",
+      "disposition": "manifest",
+      "manifest_path": "provider_manifests/NSOF-001.json"
     }
   ]
 }
