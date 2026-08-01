@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-NS-CI-R014-ANALYTIC-AUDIT-02",
+  "campaign_id": "NS-CI-001",
+  "tracker_issue": 20,
+  "work_package_issue": 48,
+  "source_lock": {
+    "pull_request": 45,
+    "exact_head_sha": "cd064e92d82c7426b42234c075b48553173e0625",
+    "merge_commit_sha": "53336812a5b8f806d907d3e7fcbc79f11bca45b8",
+    "record_path": "reports/discovery/ns_ci_001/source_byte_lock_2026.json",
+    "exact_versions": [
+      "2605.01875v3",
+      "2605.01873v2",
+      "2605.09797v2",
+      "2606.07869v1"
+    ]
+  },
+  "prior_audit": {
+    "pull_request": 47,
+    "exact_head_sha": "6d231803faeef6b4f70c75c6918740f4b6e1a010",
+    "record_path": "reports/discovery/ns_ci_001/analytic_blocker_audit_01.json",
+    "inherited_blocked_obligations": ["R014-O05", "R014-O06", "R014-O10", "R014-O11"]
+  },
+  "method": {
+    "review_type": "line_addressable_packet_order_import_and_version_concordance_audit",
+    "clear_rule": "A local algebraic replay may be recorded as verified without clearing its end-to-end proof obligation. An obligation is clear only after all premises, source imports, topology changes, and downstream uses are independently checked.",
+    "falsity_boundary": "A packing, import, or statement-concordance gap establishes incompleteness of the submitted route only. It does not prove the advertised theorem false."
+  },
+  "findings": [
+    {
+      "finding_id": "R014-AF-005",
+      "obligations": ["R014-O09"],
+      "lane": "FULL-THREE-DIMENSIONAL",
+      "status": "blocked_exact_gap",
+      "failure_class": "UNPROVED_INTERSCALE_PACKING_AND_WELL_FOUNDEDNESS",
+      "title": "Per-scale overlap does not establish finite packing or a minimal packet across vanishing scales",
+      "sources": [
+        {
+          "versioned_arxiv_id": "2606.07869v1",
+          "location": "Appendix B, Lemmas B.8-B.9",
+          "html_url": "https://arxiv.org/html/2606.07869v1",
+          "html_lines": "4313-4336"
+        },
+        {
+          "versioned_arxiv_id": "2605.01873v2",
+          "location": "Lemma 5.2 proof",
+          "html_url": "https://arxiv.org/html/2605.01873v2",
+          "html_lines": "536-538"
+        },
+        {
+          "versioned_arxiv_id": "2605.09797v2",
+          "location": "Proposition 14.1",
+          "html_url": "https://arxiv.org/html/2605.09797v2",
+          "html_lines": "1135-1142"
+        }
+      ],
+      "observed_text_relation": "The June manuscript proves bounded overlap only within each dyadic scale and then states that summing over scales preserves bounded overlap because descendants represent new threshold or ledger events. Part II states that dyadic scale ranges are finite before a baseline is reached. The combined paper chooses the smallest parabolic scale and uses a diagonal sequence to claim canonical minimality.",
+      "blocking_gap": "A Vitali bound at each fixed scale does not imply a uniform overlap or packing bound after summing over infinitely many nested scales. A finite measure may charge the same nested region at every scale, so packets can each carry the same positive mass without consuming disjoint budget. No Carleson packing estimate, disjoint charging rule, strict resource decrement, or lower scale cutoff is proved. Likewise, a set of positive radii approaching zero need not contain a smallest radius; a diagonal approximately minimal sequence does not imply that no strictly smaller comparable-score descendant exists.",
+      "minimal_repair": [
+        "Prove a cross-scale Carleson packing inequality or assign each funded packet a disjoint measurable charge.",
+        "Define a strictly decreasing well-founded resource for every permitted descendant operation.",
+        "Prove the asserted finite dyadic-scale range or state an explicit positive lower scale bound compatible with the singular-limit argument.",
+        "Replace smallest-scale selection by an attained minimum theorem or formulate and propagate an approximate-minimality error through every descendant contradiction."
+      ],
+      "may_mark_clear": false
+    },
+    {
+      "finding_id": "R014-AF-006",
+      "obligations": ["R014-O08"],
+      "lane": "AXISYMMETRIC-SWIRL",
+      "status": "not_clear",
+      "failure_class": "IMPORTED_CONTINUATION_THEOREM_HYPOTHESIS_MATCH",
+      "title": "The local vorticity-Morrey continuation criterion lacks an exact imported-source match",
+      "source": {
+        "versioned_arxiv_id": "2606.07869v1",
+        "location": "Theorem 16.5 and Proposition 16.6",
+        "html_url": "https://arxiv.org/html/2606.07869v1",
+        "html_lines": "2157-2208"
+      },
+      "observed_text_relation": "The manuscript introduces a local vorticity-Morrey continuation criterion as a classical consequence of Calderon-Zygmund recovery, Morrey-Campanato control, pressure estimates, and interior Stokes regularity. It then routes score decay through that criterion to local smoothness.",
+      "blocking_gap": "No exact external theorem is cited and the internal proof is only a qualitative sketch. The statement does not specify the pressure and local harmonic-field hypotheses, the time regularity needed to bootstrap, the meaning and scale of the corresponding local enstrophy dissipation, or the quantitative Morrey-to-Holder implication. The criterion may be valid, but the imported theorem and hypothesis correspondence required for governed replay is not established.",
+      "minimal_repair": [
+        "Cite an exact local regularity theorem whose hypotheses and conclusion match Theorem 16.5, or provide a complete proof.",
+        "State the pressure decomposition and local harmonic-field bounds on the nested cylinders.",
+        "Define the enstrophy-dissipation assumption with its scale factors and show Proposition 16.6 supplies it.",
+        "Quantify the Morrey-Campanato exponent, spatial Holder control, and parabolic bootstrap used to reach smoothness."
+      ],
+      "may_mark_clear": false
+    },
+    {
+      "finding_id": "R014-AF-007",
+      "obligations": ["R014-O12"],
+      "lane": "BOTH",
+      "status": "blocked_statement_concordance",
+      "failure_class": "CROSS_VERSION_THEOREM_AND_MECHANISM_DRIFT",
+      "title": "The May Part I theorem and June successor lack an explicit theorem-level concordance",
+      "sources": [
+        {
+          "versioned_arxiv_id": "2605.01875v3",
+          "location": "Theorem 2.1 and guide to the two local mechanisms",
+          "html_url": "https://arxiv.org/html/2605.01875v3",
+          "html_lines": "242-254"
+        },
+        {
+          "versioned_arxiv_id": "2606.07869v1",
+          "location": "Theorem 1.1 and typed-zero-output architecture",
+          "html_url": "https://arxiv.org/html/2606.07869v1",
+          "html_lines": "341-346, 3690-3718"
+        }
+      ],
+      "observed_text_relation": "The May Part I theorem is stated for smooth axisymmetric data in H1 and centers the strict full-Dirichlet bridge plus source-descendant mechanism. The June successor states the main theorem for compactly supported smooth data and closes its terminal typed-zero-output branch through an energy seed and 14/5 subcritical collapse, retaining the strict bridge as a backup.",
+      "blocking_gap": "The source family contains no theorem-by-theorem map identifying which May statements are imported unchanged, strengthened, narrowed, superseded, or replaced in June. The data class changes, the terminal mechanism changes, and the full-system manuscripts refer to a companion Part I theorem without pinning the exact statement and revision used at the handoff. Consequently source-to-theorem correspondence and nonvacuity cannot be audited per result family.",
+      "minimal_repair": [
+        "Provide a versioned concordance table for every load-bearing theorem and lemma used by Part II.",
+        "Record exact initial-data, solution-class, axis-trace, and continuation hypotheses in each version.",
+        "Mark each May mechanism as retained, superseded, or used only as a backup in the June successor.",
+        "Pin the exact Part I theorem consumed by each full-system handoff and prove its hypotheses from the terminal object."
+      ],
+      "may_mark_clear": false
+    }
+  ],
+  "verified_sublemmas": [
+    {
+      "verification_id": "R014-VS-001",
+      "obligation": "R014-O07",
+      "status": "local_algebraic_replay_passed_obligation_not_clear",
+      "checks": [
+        "For spatial dimension d=5, the parabolic energy exponent 2(d+2)/d equals 14/5.",
+        "For p=14/5 in three dimensions, the Sobolev conjugate p*=3p/(3-p) equals 42.",
+        "The mixed Serrin quantity 2/(14/5)+3/42 equals 11/14, which is strictly less than 1."
+      ],
+      "source": {
+        "versioned_arxiv_id": "2606.07869v1",
+        "location": "Lemmas 34.4-34.5",
+        "html_url": "https://arxiv.org/html/2606.07869v1",
+        "html_lines": "3606-3645"
+      },
+      "remaining_dependencies": [
+        "R014-AF-001: the local energy-dual source topology is not specified.",
+        "R014-AF-002: the first-threshold condition is not shown to supply the energy seed.",
+        "The localization and compactness hypotheses must be checked independently."
+      ],
+      "may_clear_obligation": false
+    }
+  ],
+  "obligation_disposition": {
+    "R014-O05": "blocked_exact_gap_inherited",
+    "R014-O06": "blocked_exact_gap_inherited",
+    "R014-O07": "not_clear_conditional_sublemma_verified",
+    "R014-O08": "not_clear_imported_theorem_match",
+    "R014-O09": "blocked_exact_gap",
+    "R014-O10": "blocked_exact_gap_inherited",
+    "R014-O11": "blocked_exact_gap_inherited",
+    "R014-O12": "blocked_statement_concordance",
+    "R014-O01_to_O04": "unreviewed_blocking",
+    "proof_obligation_clear_count": 0
+  },
+  "lane_disposition": {
+    "axisymmetric_claim": "INCOMPLETE_WITH_EXACT_GAPS",
+    "full_system_claim": "INCOMPLETE_WITH_EXACT_GAPS",
+    "may_change_programme_theorem_status": false,
+    "may_route_to_mathsolve": false,
+    "may_route_to_mathcert": false,
+    "may_promote_global_regularity_claim": false
+  },
+  "claim_boundary": "This audit records a cross-scale packet-order gap, an imported-theorem correspondence debt, a cross-version statement-concordance gap, and a conditional local exponent replay. It does not prove either advertised theorem false and does not authorize any Programme, MATHSOLVE, MATHCERT, publication, priority, or solved-problem promotion."
+}
