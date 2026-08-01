@@ -1,9 +1,80 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "record_id": "MF-OPENAI-TEN-PROOFS-001-THEOREM-INTAKE-MATRIX",
   "candidate_id": "OPENAI-TEN-PROOFS-001",
-  "source_commit": "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
   "admission_granularity": "result_family",
+  "source_identity": {
+    "current_official_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "current_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "deterministic_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "previous_disconnected_intake_root": "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
+    "common_ancestor_with_previous": false,
+    "official_manuscript": {
+      "byte_length": 2266052,
+      "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"
+    },
+    "official_reasoning_notes": {
+      "byte_length": 441468,
+      "sha256": "13b95999f060c0be2142089cfb8b17b75e9231c3c1f3fa0980445ff1b35f0b3b"
+    }
+  },
+  "trusted_replay": {
+    "performed_on": "2026-08-01",
+    "lean": {
+      "version": "4.32.0",
+      "commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35"
+    },
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+    "comparator_commit": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f",
+    "lean4export_commit": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+    "lean4checker_commit": "b7398199245524275543dec6113229c9bb4902e5",
+    "target_overlay": {
+      "state": "audited",
+      "removed_nonexistent_roots": [
+        "ConnesRigidity2",
+        "ComparatorChallenges.C_PermanentSuperquadraticStandalone"
+      ],
+      "patch_sha256": "124b0349679d6af473a17ab245725ce706317f5841625990fe3046dd462eceab"
+    },
+    "corrected_target_set": {
+      "state": "passed",
+      "job_count": 8710,
+      "log_sha256": "b442c5b3fabdaa4c1ce8cc292cb2fb71e0ad7227d0ac5a5f5295e21eab626687"
+    },
+    "aggregate_all_import": {
+      "state": "failed",
+      "failure": "SpherePacking and MetricCodes both contribute replicate_to_periodic_packing",
+      "log_sha256": "632099162cd6d13ec88eb0eaef73a7a247591bafb8fe8177f15deb428546460b"
+    },
+    "theorem_axiom_reports": {
+      "state": "passed",
+      "theorem_count": 41,
+      "permitted_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "summary_sha256": "2df8dcf6210b9b46156e3136b359d4db70ffdd7abcc9f8d0082e9ff5b7bc63aa"
+    },
+    "comparator_summary": {
+      "state": "passed",
+      "configuration_count": 12,
+      "configuration_pass_count": 12,
+      "lean_kernel_accept_count": 12,
+      "required_nanoda_count": 9,
+      "required_nanoda_accept_count": 9,
+      "suite_summary_sha256": "332da664bc0c66c19793256ef1af74c1a80ba6baea6172e0709dc377a565f789"
+    },
+    "runtime_tcb": {
+      "lean_location_shim_sha256": "f6936292823fd174697191e278520950350e34ff4a17d8eef410405c93a1d57e",
+      "af_unix_seccomp_launcher_sha256": "2c6c969a04fc9ecdf9733fcf5b2d4b9113533d65db2ea7ddfe84e260f4928ffb",
+      "landrun_binary_sha256": "91651f9b63dd35b25fb557edda7658162e5cb284a469aeb5a897bee2ebe05295",
+      "nanoda_commit": "ddfac2bf5a7b56cb46e141494427ff3dd55963c7",
+      "nanoda_binary_sha256": "f92fb21c4754c6d3515a547850cc4e474da1d5dde2ad17ff51809457ec8e9282",
+      "landrun_argv_adapter_sha256": "414a8b58d2add14aff2b63f098e74cbfcddf97f0a26a5915fea836c6694809bb",
+      "landrun_revision": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4d"
+    }
+  },
   "result_families": [
     {
       "result_id": "OTP-A-SPHERE-PACKING",
@@ -16,9 +87,13 @@
         "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper",
         "PackingBounds.sharpFullCohnElkiesManuscriptConclusions"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "custom packing-density and admissible-function boundary; asymptotic normalization"
+      "source_references": ["Official manuscript chapter 1, Theorems 1.1–1.2"],
+      "source_statement_relation": "Headline relation is aligned, but FullAdmissible, density, and normalization were not certified definition by definition.",
+      "nonvacuity_status": "No independently elaborated admissible-domain witness.",
+      "semantic_risk": "custom packing-density and admissible-function boundary; asymptotic normalization",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-B1-BINARY-CODES",
@@ -33,9 +108,13 @@
         "MetricCodes.Johnson.binaryRate_lt_mrrw",
         "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "rate normalization, strictness domain, and comparator baseline"
+      "source_references": ["Official manuscript chapter 2, Theorem 1.1"],
+      "source_statement_relation": "The source supports the strict improvement; the six internal rate and baseline targets exceed the single cited statement.",
+      "nonvacuity_status": "The interval is inhabited, but variational feasible-set nonemptiness was not independently checked.",
+      "semantic_risk": "rate normalization, strictness domain, variational feasible set, and comparator baseline",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-B2-SPHERICAL-CODES",
@@ -51,9 +130,13 @@
         "MetricCodes.Spherical.HigherHierarchy.hierarchyKissingExponent_lt_published",
         "SpherePacking.packingConstant_sharp_binary_asymptotic_upper"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "hierarchy definition, asymptotic exponent, and cross-module bridge"
+      "source_references": ["Official manuscript chapter 2, Theorem 1.2 and corollaries"],
+      "source_statement_relation": "The source supports the hierarchy and published exponent; the exact decimal and cross-module normalization remain unchecked.",
+      "nonvacuity_status": "The hierarchy and feasible-domain witness were not independently checked.",
+      "semantic_risk": "hierarchy definition, feasible domain, asymptotic exponent, decimal provenance, and cross-module bridge",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-C-PERMANENT",
@@ -64,25 +147,31 @@
         "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
         "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "formula and circuit model, field, uniformity, and asymptotic lower-bound strength"
+      "source_references": ["Official manuscript chapter 5, Theorems 1.2–1.3"],
+      "source_statement_relation": "The two formula bounds align with Theorems 1.2–1.3. The advertised Theorem 1.1 circuit lower bound is absent from the Comparator configuration.",
+      "nonvacuity_status": "Both targets are conditional on a formula representing the permanent; no target constructs one.",
+      "semantic_risk": "formula-versus-circuit model mismatch, representation premise, field, uniformity, and advertised-result coverage",
+      "replay_gate": "clear",
+      "source_gate": "blocked",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-D-NON-SOFIC",
       "advertised_result": "Existence of a finitely presented non-sofic group",
       "comparator_config": "ComparatorChallenges/D_NonSoficGroup.json",
       "solution_module": "NonSoficGroup",
-      "theorem_names": [
-        "SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"
+      "theorem_names": ["SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"],
+      "source_references": [
+        "Official manuscript chapter 3, Theorem 1.1",
+        "Official reasoning notes, Section 3.11",
+        "sources/NSOF-001/source_revision_concordance.json"
       ],
-      "source_reference": {
-        "official_manuscript": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf#page=79",
-        "official_reasoning_notes": "https://cdn.openai.com/pdf/reasoning-walkthroughs.pdf#page=16",
-        "provider_record": "sources/NSOF-001/source_revision_concordance.json"
-      },
-      "source_concordance": "partial_official_source_acquired_main_theorem_and_stronger_notes_target_distinguished",
-      "semantic_risk": "custom soficity predicate, finite presentation witness, and imported group-theoretic boundary"
+      "source_statement_relation": "The main manuscript proves a non-sofic binary Leavitt unit group; the stronger finitely presented existential is routed to reasoning-notes Section 3.11 and is not conflated with the main theorem.",
+      "nonvacuity_status": "The existential target is logically direct.",
+      "semantic_risk": "custom soficity predicate, finite-presentation witness semantics, imported group-theoretic boundary, and leaked-revision identity",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-E-CONNES-RIGIDITY",
@@ -90,11 +179,16 @@
       "comparator_config": "ComparatorChallenges/E_ConnesRigidity.json",
       "solution_module": "ConnesRigidity",
       "theorem_names": [
-        "ConnesRigidity.connesRigidityAssertion_false"
+        "ConnesRigidity2.exists_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors",
+        "ConnesRigidity2.exists_infinite_pairwise_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "custom tracial group-factor isomorphism, normality, property T, ICC, and conjecture boundary"
+      "source_references": ["Official manuscript chapter 4, Theorem 1.2"],
+      "source_statement_relation": "The source aligns with the two current existential targets. The previous intake target ConnesRigidity.connesRigidityAssertion_false is stale and removed.",
+      "nonvacuity_status": "The existential targets are logically direct.",
+      "semantic_risk": "tracial group-factor isomorphism encoding, normality, property T, ICC, and conjecture boundary",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-F-EHRHART",
@@ -107,9 +201,13 @@
         "Ehrhart.SimplexVolume.barycenter_centeredSimplex",
         "Ehrhart.SimplexVolume.normalizedVolume_centeredSimplex"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "convex-body hypotheses, centering, volume normalization, and sharpness witness"
+      "source_references": ["Official manuscript chapter 8, Theorem 1.1"],
+      "source_statement_relation": "The inequality and centered-simplex sharpness package align at headline level.",
+      "nonvacuity_status": "Explicit sharpness and body existentials are present.",
+      "semantic_risk": "convex-body hypotheses, centering, normalized-volume semantics, and sharpness witness",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-G-QUANTUM-PARALLEL-REPETITION",
@@ -120,9 +218,13 @@
         "QuantumParallelRepetition.distributionUniformExponential",
         "QuantumParallelRepetition.standardQuantumParallelRepetition"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "game model, entangled value, repetition operation, and quantitative decay"
+      "source_references": ["Official manuscript chapter 6, Theorem 1.1"],
+      "source_statement_relation": "The quantitative exponential form aligns at headline level.",
+      "nonvacuity_status": "No checked game witness establishes the positive-gap premise in the target package.",
+      "semantic_risk": "game model, entangled value, repetition operation, positive-gap premise, and quantitative decay",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-H-GAPCVP",
@@ -141,9 +243,13 @@
         "GapCVP.Comparator.binarySyndromeDecodingPromise",
         "GapCVP.Comparator.finitePGapCVPPromise"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "NP-hardness encoding, reductions, promise problems, norms, and malformed input behavior"
+      "source_references": ["Official manuscript chapter 7"],
+      "source_statement_relation": "The source aligns at headline exponent level, but the four promise definitions are definition holes.",
+      "nonvacuity_status": "Nonvacuity cannot be accepted while the promise definitions remain holes.",
+      "semantic_risk": "NP-hardness encoding, reductions, promise definitions, norms, malformed-input behavior, and required additional human verifier",
+      "replay_gate": "clear",
+      "source_gate": "blocked",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-I-RAMSEY",
@@ -156,9 +262,13 @@
         "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients",
         "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "Ramsey-number definition, logarithm base, asymptotic quantifiers, and Erdos problem identity"
+      "source_references": ["Official manuscript chapter 9, Theorem 1.1"],
+      "source_statement_relation": "The asymptotic result is supported; the exact Lean constant 1/(6*exp 38) is not stated in the main theorem.",
+      "nonvacuity_status": "The domain k ≥ 2 is inhabited; exact encoding and constant provenance remain partial.",
+      "semantic_risk": "Ramsey-number definition, logarithm base, asymptotic quantifiers, exact constant provenance, and Erdos problem identity",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-J1-COMPACTNESS",
@@ -170,9 +280,13 @@
         "CompactnessConjecture.compactnessCounterexample_bigO",
         "CompactnessConjecture.not_erdos_180"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "conjecture encoding, quantitative family, asymptotic counterexample, and Erdos problem identity"
+      "source_references": ["Official manuscript chapter 10, Theorem 1.1"],
+      "source_statement_relation": "The source supports the 1/48 counterexample at headline level.",
+      "nonvacuity_status": "Direct counterexample existentials are present.",
+      "semantic_risk": "custom compactness encoding, quantitative family, Big-O semantics, counterexample quantifiers, and Erdos problem identity",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     },
     {
       "result_id": "OTP-J2-TWO-DEGENERATE",
@@ -183,24 +297,34 @@
         "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample",
         "TwoDegenerateGraphs.not_erdos_146"
       ],
-      "source_reference": null,
-      "source_concordance": "missing",
-      "semantic_risk": "two-degeneracy predicate, extremal normalization, counterexample quantifiers, and Erdos problem identity"
+      "source_references": ["Official manuscript chapter 10, Theorem 1.2"],
+      "source_statement_relation": "The source supports the exponent improvement at headline level.",
+      "nonvacuity_status": "Direct extremal existentials are present.",
+      "semantic_risk": "two-degeneracy predicate, extremal normalization, counterexample quantifiers, and Erdos problem identity",
+      "replay_gate": "clear",
+      "source_gate": "not_clear",
+      "may_route_to_solve": false
     }
   ],
   "global_blockers": [
-    "The upstream formalization metadata contains no source records; MATHFORGE independently acquired official sources for OTP-D-NON-SOFIC only.",
-    "The default Lake build references undeclared target ConnesRigidity2.",
-    "The ComparatorChallenges library references missing root ComparatorChallenges.C_PermanentSuperquadraticStandalone.",
-    "No theorem-level trusted axiom report has been independently replayed.",
-    "OTP-D-NON-SOFIC has an official-source map but not independent statement equivalence, nonvacuity review, or trusted replay; the other eleven result families still lack independent source acquisition."
+    "The aggregate All.lean import fails because SpherePacking and MetricCodes both contribute replicate_to_periodic_packing.",
+    "No result family has a governed source-to-Lean semantic and nonvacuity disposition clearing the source gate.",
+    "OTP-C-PERMANENT omits the advertised circuit-lower-bound target from its Comparator configuration.",
+    "OTP-H-GAPCVP contains four definition holes and requires an additional human verifier.",
+    "MATHFORGE PR #37 lacks a submitted non-author maintainer review or acknowledgement."
   ],
   "disposition": {
-    "kernel_correctness": "not_verified",
-    "statement_fidelity": "not_verified",
-    "source_provenance": "partial_one_of_twelve_officially_acquired",
-    "independent_adjudication": "not_performed",
-    "admitted_result_count": 0
+    "kernel_replay": "clear_for_corrected_target_set_12_of_12",
+    "theorem_axiom_reports": "clear_41_of_41",
+    "aggregate_all_import": "failed",
+    "source_concordance": "clear_0_of_12",
+    "source_gate_clear_count": 0,
+    "admitted_result_count": 0,
+    "solve_handoffs_opened": 0,
+    "independent_governance": "blocked_non_author_review_absent",
+    "may_route_any_result": false,
+    "may_adjudicate_in_mathcert": false,
+    "may_promote_claims": false
   },
-  "claim_boundary": "This matrix enumerates advertised result families and their declared Comparator targets. It does not establish that the solution modules build, that the Comparator checks pass, that the Lean statements match any paper, or that any mathematical result is certified."
+  "claim_boundary": "This matrix records exact replay evidence and result-family source-concordance dispositions. It does not establish source-to-Lean equivalence, nonvacuity, mathematical truth, novelty, priority, admission, certification, or claim-promotion authority."
 }
