@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-NS-CI-R014-ANALYTIC-AUDIT-01-SOURCE-LOCK-ADOPTION",
+  "campaign_id": "NS-CI-001",
+  "analytic_audit_record": "reports/discovery/ns_ci_001/analytic_blocker_audit_01.json",
+  "source_lock": {
+    "pull_request": 45,
+    "exact_head_sha": "cd064e92d82c7426b42234c075b48553173e0625",
+    "merge_commit_sha": "53336812a5b8f806d907d3e7fcbc79f11bca45b8",
+    "merged_at_utc": "2026-08-01T17:01:16Z",
+    "submitted_review": {
+      "state": "APPROVED",
+      "reviewer": "jimsteeg",
+      "submitted_at_utc": "2026-08-01T17:01:02Z",
+      "reviewer_differs_from_author": true
+    },
+    "record_path": "reports/discovery/ns_ci_001/source_byte_lock_2026.json",
+    "exact_versions": [
+      "2605.01875v3",
+      "2605.01873v2",
+      "2605.09797v2",
+      "2606.07869v1"
+    ]
+  },
+  "adoption": {
+    "state": "governed_source_lock_adopted_for_analytic_audit",
+    "analytic_audit_base": "main",
+    "source_revision_substitution_permitted": false,
+    "newer_source_requires_new_lock": true
+  },
+  "gate_effect": {
+    "source_bytes_locked": true,
+    "proof_obligation_clear_count": 0,
+    "may_change_programme_theorem_status": false,
+    "may_route_to_mathsolve": false,
+    "may_route_to_mathcert": false,
+    "may_promote_global_regularity_claim": false
+  },
+  "claim_boundary": "This adoption record binds the analytic audit to the independently reviewed and protected-merged source-byte lock. It does not validate a proof step, clear an analytic obligation, establish a Navier--Stokes regularity result, alter Programme theorem status, open a Solve or Cert route, or authorize a solved-problem claim."
+}
