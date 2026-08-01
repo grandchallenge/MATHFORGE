@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/ten_proofs_semantic_audit.schema.json",
+  "title": "OpenAI ten-proofs result-family semantic audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "candidate_id",
+    "result_family",
+    "authority",
+    "source",
+    "lean",
+    "definition_concordance",
+    "hypothesis_concordance",
+    "conclusion_concordance",
+    "nonvacuity",
+    "scope_exclusions",
+    "disposition",
+    "activation",
+    "route_effect",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"type": "string", "pattern": "^MF-OTP-SEMANTIC-WP01-[A-Z0-9-]+$"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "result_family": {
+      "enum": ["OTP-F-EHRHART", "OTP-J1-COMPACTNESS", "OTP-J2-TWO-DEGENERATE"]
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["forge_evidence_merge", "official_root", "official_tree", "theorem_matrix_blob", "review_remedy_merge", "semantic_tracker"],
+      "properties": {
+        "forge_evidence_merge": {"const": "72452f4579749448169cacf9f2ab22a4df2bb182"},
+        "official_root": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "official_tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
+        "theorem_matrix_blob": {"const": "2d8b24c32c804c4f5ca0f5f5ad1185199d35664b"},
+        "review_remedy_merge": {"const": "bffb7d63476d79e86665ec5a74d554794e24357e"},
+        "semantic_tracker": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/50"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document", "sha256", "chapter", "theorem", "pdf_page_index", "printed_page", "line_locator", "normalized_statement"],
+      "properties": {
+        "document": {"const": "Ten Advances in Mathematics and Theoretical Computer Science"},
+        "sha256": {"const": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"},
+        "chapter": {"type": "integer", "enum": [8, 10]},
+        "theorem": {"type": "string", "pattern": "^Theorem 1\\.[12]"},
+        "pdf_page_index": {"type": "integer", "minimum": 0},
+        "printed_page": {"type": "integer", "minimum": 1},
+        "line_locator": {"type": "string", "minLength": 12},
+        "normalized_statement": {"type": "string", "minLength": 120}
+      }
+    },
+    "lean": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["challenge_path", "challenge_blob", "solution_module", "solution_path", "solution_blob", "comparator_config_path", "comparator_config_blob", "theorem_names", "replay_gate"],
+      "properties": {
+        "challenge_path": {"type": "string", "pattern": "^ComparatorChallenges/.+\\.lean$"},
+        "challenge_blob": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "solution_module": {"type": "string", "minLength": 3},
+        "solution_path": {"type": "string", "pattern": "^[A-Za-z].+\\.lean$"},
+        "solution_blob": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "comparator_config_path": {"type": "string", "pattern": "^ComparatorChallenges/.+\\.json$"},
+        "comparator_config_blob": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "theorem_names": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 8}
+        },
+        "replay_gate": {"const": "clear"}
+      }
+    },
+    "definition_concordance": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"$ref": "#/$defs/concordance_item"}
+    },
+    "hypothesis_concordance": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/concordance_item"}
+    },
+    "conclusion_concordance": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"$ref": "#/$defs/concordance_item"}
+    },
+    "nonvacuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "witness_theorems", "reason"],
+      "properties": {
+        "state": {"const": "clear"},
+        "witness_theorems": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 8}
+        },
+        "reason": {"type": "string", "minLength": 80}
+      }
+    },
+    "scope_exclusions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 20}
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_state", "source_gate_before_activation", "source_gate_after_activation", "reason"],
+      "properties": {
+        "semantic_state": {"const": "candidate_clear_pending_independent_review"},
+        "source_gate_before_activation": {"const": "not_clear"},
+        "source_gate_after_activation": {"const": "clear"},
+        "reason": {"type": "string", "minLength": 120}
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "effect_is_retroactive", "head_change_requires_reapproval"],
+      "properties": {
+        "condition": {"const": "protected merge after exact-head CI and non-author specialist APPROVED review"},
+        "effect_is_retroactive": {"const": false},
+        "head_change_requires_reapproval": {"const": true}
+      }
+    },
+    "route_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["may_route_before_activation", "eligible_after_activation", "aggregate_route_permitted", "mathcert_adjudication_authorized"],
+      "properties": {
+        "may_route_before_activation": {"const": false},
+        "eligible_after_activation": {"const": true},
+        "aggregate_route_permitted": {"const": false},
+        "mathcert_adjudication_authorized": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 180}
+  },
+  "$defs": {
+    "concordance_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_concept", "lean_encoding", "status", "analysis"],
+      "properties": {
+        "source_concept": {"type": "string", "minLength": 3},
+        "lean_encoding": {"type": "string", "minLength": 3},
+        "status": {"enum": ["exact", "equivalent", "stronger_lean", "scoped"]},
+        "analysis": {"type": "string", "minLength": 40}
+      }
+    }
+  }
+}
