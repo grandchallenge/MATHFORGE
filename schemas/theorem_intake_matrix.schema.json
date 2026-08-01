@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/theorem_intake_matrix.schema.json",
+  "title": "MATHFORGE External Formalization Theorem Intake Matrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "candidate_id",
+    "admission_granularity",
+    "source_identity",
+    "trusted_replay",
+    "result_families",
+    "global_blockers",
+    "disposition",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "record_id": {"const": "MF-OPENAI-TEN-PROOFS-001-THEOREM-INTAKE-MATRIX"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "admission_granularity": {"const": "result_family"},
+    "source_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "current_official_root",
+        "current_tree",
+        "deterministic_archive_sha256",
+        "previous_disconnected_intake_root",
+        "common_ancestor_with_previous",
+        "official_manuscript",
+        "official_reasoning_notes"
+      ],
+      "properties": {
+        "current_official_root": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "current_tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "deterministic_archive_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "previous_disconnected_intake_root": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "common_ancestor_with_previous": {"const": false},
+        "official_manuscript": {"$ref": "#/$defs/byte_artifact"},
+        "official_reasoning_notes": {"$ref": "#/$defs/byte_artifact"}
+      }
+    },
+    "trusted_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "performed_on",
+        "lean",
+        "mathlib_commit",
+        "comparator_commit",
+        "lean4export_commit",
+        "lean4checker_commit",
+        "target_overlay",
+        "corrected_target_set",
+        "aggregate_all_import",
+        "theorem_axiom_reports",
+        "comparator_summary",
+        "runtime_tcb"
+      ],
+      "properties": {
+        "performed_on": {"type": "string", "format": "date"},
+        "lean": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version", "commit"],
+          "properties": {
+            "version": {"const": "4.32.0"},
+            "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+          }
+        },
+        "mathlib_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "comparator_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "lean4export_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "lean4checker_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "target_overlay": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "removed_nonexistent_roots", "patch_sha256"],
+          "properties": {
+            "state": {"const": "audited"},
+            "removed_nonexistent_roots": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "uniqueItems": true,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "patch_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "corrected_target_set": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "job_count", "log_sha256"],
+          "properties": {
+            "state": {"const": "passed"},
+            "job_count": {"const": 8710},
+            "log_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "aggregate_all_import": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "failure", "log_sha256"],
+          "properties": {
+            "state": {"const": "failed"},
+            "failure": {"type": "string", "minLength": 10},
+            "log_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "theorem_axiom_reports": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "theorem_count", "permitted_axioms", "summary_sha256"],
+          "properties": {
+            "state": {"const": "passed"},
+            "theorem_count": {"const": 41},
+            "permitted_axioms": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "uniqueItems": true,
+              "items": {"enum": ["propext", "Classical.choice", "Quot.sound"]}
+            },
+            "summary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "comparator_summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state",
+            "configuration_count",
+            "configuration_pass_count",
+            "lean_kernel_accept_count",
+            "required_nanoda_count",
+            "required_nanoda_accept_count",
+            "suite_summary_sha256"
+          ],
+          "properties": {
+            "state": {"const": "passed"},
+            "configuration_count": {"const": 12},
+            "configuration_pass_count": {"const": 12},
+            "lean_kernel_accept_count": {"const": 12},
+            "required_nanoda_count": {"const": 9},
+            "required_nanoda_accept_count": {"const": 9},
+            "suite_summary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "runtime_tcb": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "lean_location_shim_sha256",
+            "af_unix_seccomp_launcher_sha256",
+            "landrun_revision",
+            "landrun_binary_sha256",
+            "nanoda_commit",
+            "nanoda_binary_sha256",
+            "landrun_argv_adapter_sha256"
+          ],
+          "properties": {
+            "lean_location_shim_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "af_unix_seccomp_launcher_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "landrun_revision": {"type": "string", "pattern": "^[0-9a-f]{40,64}$"},
+            "landrun_binary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "nanoda_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "nanoda_binary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "landrun_argv_adapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      }
+    },
+    "result_families": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/result_family"}
+    },
+    "global_blockers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 10}
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kernel_replay",
+        "theorem_axiom_reports",
+        "aggregate_all_import",
+        "source_concordance",
+        "source_gate_clear_count",
+        "admitted_result_count",
+        "solve_handoffs_opened",
+        "independent_governance",
+        "may_route_any_result",
+        "may_adjudicate_in_mathcert",
+        "may_promote_claims"
+      ],
+      "properties": {
+        "kernel_replay": {"const": "clear_for_corrected_target_set_12_of_12"},
+        "theorem_axiom_reports": {"const": "clear_41_of_41"},
+        "aggregate_all_import": {"const": "failed"},
+        "source_concordance": {"const": "clear_0_of_12"},
+        "source_gate_clear_count": {"const": 0},
+        "admitted_result_count": {"const": 0},
+        "solve_handoffs_opened": {"const": 0},
+        "independent_governance": {"const": "blocked_non_author_review_absent"},
+        "may_route_any_result": {"const": false},
+        "may_adjudicate_in_mathcert": {"const": false},
+        "may_promote_claims": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 50}
+  },
+  "$defs": {
+    "byte_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["byte_length", "sha256"],
+      "properties": {
+        "byte_length": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "result_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_id",
+        "advertised_result",
+        "comparator_config",
+        "solution_module",
+        "theorem_names",
+        "source_references",
+        "source_statement_relation",
+        "nonvacuity_status",
+        "semantic_risk",
+        "replay_gate",
+        "source_gate",
+        "may_route_to_solve"
+      ],
+      "properties": {
+        "result_id": {"type": "string", "pattern": "^OTP-[A-Z0-9-]+$"},
+        "advertised_result": {"type": "string", "minLength": 3},
+        "comparator_config": {"type": "string", "pattern": "^ComparatorChallenges/.+\\.json$"},
+        "solution_module": {"type": "string", "minLength": 1},
+        "theorem_names": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3}
+        },
+        "definition_names": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3}
+        },
+        "source_references": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3}
+        },
+        "source_statement_relation": {"type": "string", "minLength": 20},
+        "nonvacuity_status": {"type": "string", "minLength": 10},
+        "semantic_risk": {"type": "string", "minLength": 10},
+        "replay_gate": {"const": "clear"},
+        "source_gate": {"enum": ["not_clear", "blocked"]},
+        "may_route_to_solve": {"const": false}
+      }
+    }
+  }
+}

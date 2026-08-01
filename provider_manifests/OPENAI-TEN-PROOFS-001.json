@@ -7,7 +7,7 @@
   "provider_repository": "grandchallenge/MATHFORGE",
   "programme": {
     "repository": "grandchallenge/MATH-PROGRAMME",
-    "commit": "50a2d20a21caa20570042a021842580d31d6d2d4",
+    "commit": "496762bf9c8df828110022f8a843ab50a0aecd55",
     "issue": 198,
     "paths": [
       "governance/cross_repository_authority_matrix.json",
@@ -18,54 +18,49 @@
   "handoff_packet": {
     "problem_card": {
       "state": "referenced",
-      "references": [
-        "https://github.com/grandchallenge/MATH-PROGRAMME/issues/198"
-      ],
-      "reason": "The Programme tracker defines a candidate-only external formalization intake rather than an active mathematical campaign."
+      "references": ["https://github.com/grandchallenge/MATH-PROGRAMME/issues/198"],
+      "reason": "The Programme tracker governs a candidate-only external formalization intake and preserves result-family admission granularity."
     },
     "source_map": {
       "state": "present",
       "references": [
         "sources/OPENAI-TEN-PROOFS-001/source_lock.json",
-        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+        "sources/NSOF-001/source_revision_concordance.json"
       ],
-      "reason": "The exact Git identity, deterministic archive digest, dependencies, twelve result families, and declared Comparator targets are recorded."
+      "reason": "The initial disconnected root, current official root, official manuscript and reasoning-note identities, twelve result families, and source loci are recorded separately."
     },
     "status_triage": {
       "state": "present",
-      "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json"
-      ],
-      "reason": "Source identity is verified while kernel correctness, statement fidelity, provenance concordance, and independent adjudication remain separate open gates."
+      "references": ["sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"],
+      "reason": "Trusted replay is clear for all twelve configured families, the aggregate All.lean import fails, and the governed source and nonvacuity gate is clear for zero families."
     },
     "reconnaissance_ledger": {
       "state": "present",
-      "references": [
-        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
-      ],
-      "reason": "The ledger enumerates each advertised result family, solution module, theorem declarations, definitions where applicable, and primary semantic risks."
+      "references": ["sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"],
+      "reason": "The schema-backed ledger records each advertised family, current Comparator targets, theorem declarations, source locus, statement relation, nonvacuity state, semantic risk, and route prohibition."
     },
     "failure_risks": {
       "state": "present",
       "references": [
         "sources/OPENAI-TEN-PROOFS-001/source_lock.json",
-        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+        "https://github.com/grandchallenge/MATHFORGE/issues/38"
       ],
-      "reason": "The default-target defects, missing source registry, disconnected root history, runner limitation, and unperformed Comparator and axiom replays are explicit."
+      "reason": "The disconnected intake identity, audited overlay, broken aggregate import, source-semantic gaps, definition holes, omitted advertised target, and missing non-author review remain explicit."
     },
     "suggested_wp01": {
       "state": "deferred",
       "references": [
-        "https://github.com/grandchallenge/MATHSOLVE/issues/90"
+        "https://github.com/grandchallenge/MATHSOLVE/issues/90",
+        "https://github.com/grandchallenge/MATHFORGE/issues/38"
       ],
-      "reason": "Solve-owned theorem concordance remains blocked until provider evidence merges and exact-head replay succeeds."
+      "reason": "No result-level Solve handoff may open until that family clears both trusted replay and governed source, semantic-equivalence, and nonvacuity review."
     },
     "certification_route_sketch": {
       "state": "referenced",
-      "references": [
-        "https://github.com/grandchallenge/MATHCERT/issues/43"
-      ],
-      "reason": "MATHCERT holds a pre-route candidate with may_adjudicate false and no certification output."
+      "references": ["https://github.com/grandchallenge/MATHCERT/issues/43"],
+      "reason": "MATHCERT remains a pre-route candidate with no adjudication authority and no certification output."
     }
   },
   "artifacts": [
@@ -74,7 +69,7 @@
       "kind": "external_git_source_lock",
       "ownership": "MATHFORGE",
       "path": "sources/OPENAI-TEN-PROOFS-001/source_lock.json",
-      "claim_boundary": "The record verifies an external Git identity and bounded observations only; it does not certify any theorem.",
+      "claim_boundary": "The record preserves the independently verified initial disconnected Git source identity and bounded observations; it does not certify any theorem.",
       "integrity": {
         "algorithm": "sha256",
         "value": "f41cf3cd2b567390b204b99b2a5da738f3243417dc538869df55fe5d614097a7"
@@ -85,39 +80,38 @@
       "kind": "candidate_theorem_intake_matrix",
       "ownership": "MATHFORGE",
       "path": "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
-      "claim_boundary": "The matrix enumerates advertised result families and Comparator targets without admitting or certifying them.",
+      "claim_boundary": "The matrix records exact replay and fail-closed source-concordance dispositions without admitting or certifying any result family.",
       "integrity": {
         "algorithm": "sha256",
-        "value": "aa46f03edc9154679776a4d4dee80d03a84bcddc282fbc02bc6be11ebfeb8413"
+        "value": "56cf03c4082268ff6ac5f17060100f1cf5609955c752a824510817edfe3334bc"
       }
     }
   ],
   "source_records": [
     {
-      "record_id": "OPENAI-TEN-PROOFS-001-GIT-ROOT",
-      "summary": "The independently acquired subject is root commit 6fefffdbab0dfa726fcfde6cefae23aa7a1888f3 with tree 79e6a50b1e391bdddb18b42be3e886c1d9784ed3.",
+      "record_id": "OPENAI-TEN-PROOFS-001-INITIAL-DISCONNECTED-ROOT",
+      "summary": "The initial independently acquired source lock is root commit 6fefffdbab0dfa726fcfde6cefae23aa7a1888f3 with tree 79e6a50b1e391bdddb18b42be3e886c1d9784ed3; it is disconnected from the current official root and is retained as history rather than current target identity.",
+      "references": ["sources/OPENAI-TEN-PROOFS-001/source_lock.json"]
+    },
+    {
+      "record_id": "OPENAI-TEN-PROOFS-001-CURRENT-OFFICIAL-ROOT",
+      "summary": "The audited current official source is openai/ten-proofs@e62211d28e3a9131950c89caa6542cfe5eff3bca with tree 2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365 and deterministic archive SHA-256 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f.",
       "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json"
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+        "https://github.com/grandchallenge/MATHFORGE/issues/34"
       ]
     },
     {
-      "record_id": "OPENAI-TEN-PROOFS-001-ARCHIVE",
-      "summary": "The deterministic 377251840-byte Git tar archive has SHA-256 630e10ec7f8b08ce3416fba967e6d1e4c7599677e38fd4af24fc0c68a9a5bac2 and contains 6129 tracked files.",
+      "record_id": "OPENAI-TEN-PROOFS-001-OFFICIAL-WRITTEN-SOURCES",
+      "summary": "The official manuscript is 2,266,052 bytes with SHA-256 f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53; the official reasoning notes are 441,468 bytes with SHA-256 13b95999f060c0be2142089cfb8b17b75e9231c3c1f3fa0980445ff1b35f0b3b.",
       "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json"
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+        "sources/NSOF-001/source_revision_concordance.json"
       ]
     },
     {
-      "record_id": "OPENAI-TEN-PROOFS-001-UPSTREAM-SOURCE-GAP",
-      "summary": "Upstream formalization.yaml advertises twelve main-result families but records an empty sources list and agent-reviewed status.",
-      "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json",
-        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
-      ]
-    },
-    {
-      "record_id": "OPENAI-TEN-PROOFS-001-NSOF-OFFICIAL-SOURCE",
-      "summary": "MATHFORGE independently acquired and hashed the official manuscript and reasoning notes for OTP-D-NON-SOFIC; the main paper theorem and stronger finite-presentation target are explicitly distinguished.",
+      "record_id": "OPENAI-TEN-PROOFS-001-NSOF-THEOREM-BOUNDARY",
+      "summary": "The non-sofic main-paper theorem and the stronger finitely presented existential in official reasoning-notes Section 3.11 remain explicitly distinguished.",
       "references": [
         "sources/NSOF-001/source_revision_concordance.json",
         "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
@@ -126,81 +120,97 @@
   ],
   "status_records": [
     {
-      "record_id": "OPENAI-TEN-PROOFS-001-PROVIDER-STATUS",
-      "summary": "Exact source identity is provider-verified; all twelve result families remain unadmitted candidate external formalizations.",
+      "record_id": "OPENAI-TEN-PROOFS-001-TRUSTED-REPLAY",
+      "summary": "Corrected target-set elaboration passed with 8,710 jobs; all 12 Comparator configurations and Lean-kernel checks passed; all 9 required Nanoda checks passed; all 41 theorem reports contain exactly propext, Classical.choice, and Quot.sound.",
       "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json"
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+        "https://github.com/grandchallenge/MATHFORGE/issues/34"
+      ]
+    },
+    {
+      "record_id": "OPENAI-TEN-PROOFS-001-SOURCE-GATE",
+      "summary": "The source, semantic-equivalence, and nonvacuity gate is clear for zero of twelve result families; ten remain partial or not clear and two are blocked.",
+      "references": ["sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"]
+    },
+    {
+      "record_id": "OPENAI-TEN-PROOFS-001-GOVERNANCE-BLOCK",
+      "summary": "PR #37 lacks a submitted non-author maintainer review; no author-account post-merge record substitutes for that independent action.",
+      "references": [
+        "https://github.com/grandchallenge/MATHFORGE/pull/37",
+        "https://github.com/grandchallenge/MATHFORGE/issues/38"
       ]
     }
   ],
   "fixtures": [
     {
       "record_id": "OPENAI-TEN-PROOFS-001-DECLARATION-MATRIX",
-      "summary": "Twelve result-family records preserve the advertised title, Comparator configuration, solution module, target declarations, and known semantic-risk boundary.",
-      "references": [
-        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
-      ]
+      "summary": "Twelve schema-validated result-family records preserve current Comparator targets, 41 theorem declarations, source loci, nonvacuity states, semantic risks, and fail-closed route fields.",
+      "references": ["sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"]
     }
   ],
   "failed_routes": [
     {
-      "record_id": "OPENAI-TEN-PROOFS-001-DEFAULT-BUILD-FAILED",
-      "summary": "The clean-room default lake build stops because defaultTargets names undeclared target ConnesRigidity2.",
+      "record_id": "OPENAI-TEN-PROOFS-001-ALL-IMPORT-FAILED",
+      "summary": "The non-default All.lean aggregate import fails because SpherePacking and MetricCodes both contribute replicate_to_periodic_packing; individual and corrected default roots elaborate.",
       "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json",
-        "https://github.com/grandchallenge/MATHFORGE/issues/35"
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+        "https://github.com/grandchallenge/MATHFORGE/issues/38"
       ]
     },
     {
-      "record_id": "OPENAI-TEN-PROOFS-001-COMPARATOR-ROOT-MISSING",
-      "summary": "The ComparatorChallenges library names missing root ComparatorChallenges.C_PermanentSuperquadraticStandalone.",
+      "record_id": "OPENAI-TEN-PROOFS-001-SOURCE-ROUTE-BLOCKED",
+      "summary": "No result family clears source-to-Lean statement equivalence and nonvacuity review, so zero MATHSOLVE handoffs are authorized.",
       "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json"
-      ]
-    },
-    {
-      "record_id": "OPENAI-TEN-PROOFS-001-AGGREGATE-PROMOTION-REJECTED",
-      "summary": "Repository-wide build or aggregate branding cannot substitute for result-level source concordance and independent adjudication.",
-      "references": [
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
         "https://github.com/grandchallenge/MATH-PROGRAMME/issues/198"
+      ]
+    },
+    {
+      "record_id": "OPENAI-TEN-PROOFS-001-INDEPENDENT-REVIEW-BLOCKED",
+      "summary": "Formal non-author review remains absent for the already-merged provider PR #37 and is required on the corrective package.",
+      "references": [
+        "https://github.com/grandchallenge/MATHFORGE/pull/37",
+        "https://github.com/grandchallenge/MATHFORGE/issues/38"
       ]
     }
   ],
   "provider_debt": [
     {
-      "record_id": "OPENAI-TEN-PROOFS-001-REPLAY-DEBT",
-      "summary": "A known-good Lean 4.32.0 runner must replay all declared valid libraries, every Comparator configuration, and theorem-level axiom reports.",
-      "references": [
-        "sources/OPENAI-TEN-PROOFS-001/source_lock.json"
-      ]
+      "record_id": "OPENAI-TEN-PROOFS-001-UPSTREAM-AGGREGATE-DEBT",
+      "summary": "Repair or obtain an upstream disposition for the All.lean namespace collision without rewriting the accepted individual-root replay result.",
+      "references": ["https://github.com/grandchallenge/MATHFORGE/issues/38"]
     },
     {
       "record_id": "OPENAI-TEN-PROOFS-001-CONCORDANCE-DEBT",
-      "summary": "Eleven result families still require source acquisition; OTP-D-NON-SOFIC and every other result still require normalized statement comparison, nonvacuity analysis, and an independent disposition.",
+      "summary": "Complete definition-by-definition statement equivalence and nonvacuity review for each of the twelve result families, with special blockers for permanent coverage and GapCVP definition holes.",
       "references": [
         "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
         "https://github.com/grandchallenge/MATHSOLVE/issues/90"
+      ]
+    },
+    {
+      "record_id": "OPENAI-TEN-PROOFS-001-REVIEW-DEBT",
+      "summary": "Obtain a formal non-author review of the corrective exact head and a retrospective acknowledgement of PR #37 procedural debt.",
+      "references": [
+        "https://github.com/grandchallenge/MATHFORGE/issues/38",
+        "https://github.com/grandchallenge/MATHFORGE/pull/37"
       ]
     }
   ],
   "provenance": {
     "created_at": "2026-08-01",
-    "created_by": "MF-OPENAI-TEN-PROOFS-WP00",
+    "created_by": "OTP-EVIDENCE-CORR-001",
     "source_commits": [
       "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
-      "50a2d20a21caa20570042a021842580d31d6d2d4"
+      "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+      "496762bf9c8df828110022f8a843ab50a0aecd55",
+      "0f90812dceb38a24f2c7c20f457b94c6cb02f853"
     ]
   },
   "downstream_references": {
-    "programme": [
-      "https://github.com/grandchallenge/MATH-PROGRAMME/issues/198"
-    ],
-    "mathsolve": [
-      "https://github.com/grandchallenge/MATHSOLVE/issues/90"
-    ],
-    "mathcert": [
-      "https://github.com/grandchallenge/MATHCERT/issues/43"
-    ]
+    "programme": ["https://github.com/grandchallenge/MATH-PROGRAMME/issues/198"],
+    "mathsolve": ["https://github.com/grandchallenge/MATHSOLVE/issues/90"],
+    "mathcert": ["https://github.com/grandchallenge/MATHCERT/issues/43"]
   },
-  "non_certification_statement": "This manifest verifies and classifies an exact external formalization source and its bounded replay observations only. It does not establish kernel correctness, Comparator success, theorem-source equivalence, nonvacuity, mathematical truth, novelty, priority, patentability, product performance, or commercial value; it does not admit the corpus or any result family to the active GCL portfolio."
+  "non_certification_statement": "This manifest records exact provider identities, trusted replay outcomes, source-concordance gaps, and route prohibitions. It does not establish source-to-Lean equivalence, nonvacuity, mathematical truth, novelty, priority, patentability, product performance, commercial value, active Programme admission, MATHSOLVE handoff authority, or MATHCERT adjudication."
 }
