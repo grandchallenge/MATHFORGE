@@ -16,7 +16,7 @@
   },
   "remedy_contract": {
     "tracker_issue": 40,
-    "attestation_pull_request": null,
+    "attestation_pull_request": 41,
     "required_event": "APPROVED",
     "reviewer_must_differ_from_original_author": true,
     "reviewer_role": "MATHFORGE maintainer",
