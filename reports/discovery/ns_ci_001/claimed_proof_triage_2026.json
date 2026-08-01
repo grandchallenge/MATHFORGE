@@ -1,0 +1,254 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-NS-CI-R014-CLAIM-TRIAGE-2026",
+  "campaign_id": "NS-CI-001",
+  "tracker_issue": 20,
+  "source_lock_state": "metadata_locked_pdf_bytes_and_tex_digests_pending",
+  "scope_correction": {
+    "issue_listed_sources": [
+      "arXiv:2606.07869",
+      "arXiv:2605.01875",
+      "arXiv:2605.09797"
+    ],
+    "required_companion_added": "arXiv:2605.01873",
+    "reason": "arXiv:2605.01875 is the axisymmetric Part I manuscript; arXiv:2605.01873 is its separately posted full-system Part II companion. The combined full-system manuscript is arXiv:2605.09797."
+  },
+  "sources": [
+    {
+      "source_id": "NS-CI-R014-S1",
+      "arxiv_id": "2605.01875",
+      "version": 3,
+      "title": "Large-Data Global Regularity for Three-Dimensional Navier--Stokes I: A Direct First-Threshold Continuation Proof for the Axisymmetric Swirl Class",
+      "author": "Rishad Shahmurov",
+      "submitted_utc": "2026-05-03T13:38:14Z",
+      "current_version_utc": "2026-05-15T17:47:16Z",
+      "page_count": 31,
+      "claim_scope": "axisymmetric_with_swirl_global_continuation",
+      "abstract_claim_status": "claimed_proof_unverified",
+      "pdf_sha256": null,
+      "tex_sha256": null
+    },
+    {
+      "source_id": "NS-CI-R014-S2",
+      "arxiv_id": "2605.01873",
+      "version": 2,
+      "title": "Large-Data Global Regularity for Three-Dimensional Navier--Stokes II: A Direct First-Threshold Continuation Proof for the Full System",
+      "author": "Rishad Shahmurov",
+      "submitted_utc": "2026-05-03T13:37:06Z",
+      "current_version_utc": "2026-05-05T12:35:15Z",
+      "page_count": 17,
+      "claim_scope": "full_three_dimensional_reduction_and_continuation",
+      "abstract_claim_status": "claimed_proof_unverified",
+      "pdf_sha256": null,
+      "tex_sha256": null
+    },
+    {
+      "source_id": "NS-CI-R014-S3",
+      "arxiv_id": "2605.09797",
+      "version": 2,
+      "title": "A Classical Two-Part First-Threshold Proof of Global Smoothness for Navier--Stokes: Axisymmetric Swirl Closure and Full-System Reduction",
+      "author": "Rishad Shahmurov",
+      "submitted_utc": "2026-05-10T22:34:36Z",
+      "current_version_utc": "2026-05-15T17:14:47Z",
+      "page_count": 43,
+      "claim_scope": "combined_axisymmetric_and_full_system_global_smoothness",
+      "abstract_claim_status": "claimed_proof_unverified",
+      "pdf_sha256": null,
+      "tex_sha256": null
+    },
+    {
+      "source_id": "NS-CI-R014-S4",
+      "arxiv_id": "2606.07869",
+      "version": 1,
+      "title": "Global Regularity for Axisymmetric Navier--Stokes Flows with Swirl",
+      "author": "Rishad Shahmurov",
+      "submitted_utc": "2026-06-05T22:01:14Z",
+      "current_version_utc": "2026-06-05T22:01:14Z",
+      "page_count": 99,
+      "claim_scope": "axisymmetric_with_swirl_global_smoothness_successor",
+      "abstract_claim_status": "claimed_proof_unverified",
+      "pdf_sha256": null,
+      "tex_sha256": null
+    }
+  ],
+  "theorem_lanes": [
+    {
+      "lane_id": "AXISYMMETRIC-SWIRL",
+      "sources": ["NS-CI-R014-S1", "NS-CI-R014-S3", "NS-CI-R014-S4"],
+      "must_be_audited_independently": true
+    },
+    {
+      "lane_id": "FULL-THREE-DIMENSIONAL",
+      "sources": ["NS-CI-R014-S2", "NS-CI-R014-S3"],
+      "must_be_audited_independently": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "R014-O01",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Cylindrical equation and sign dictionary",
+      "requirement": "Re-derive every equation for Gamma, F, G, A, W, U and all viscosity, transport, stretching, and derivative-source signs from the three-dimensional equations.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O02",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Physical and lifted measure concordance",
+      "requirement": "Track r dr dz dtheta, dr dz, and dmu5=r^3 dr dz through every pairing; prove that no estimate silently changes measure or drops an r-weight.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O03",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Axis trace and Hardy hypotheses",
+      "requirement": "Prove the required vanishing, trace, regularity, and integrability at r=0 before invoking Hardy formulas for Gamma, W/r, u_theta/r, or omega_theta/r.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O04",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Weighted integration by parts",
+      "requirement": "Justify all axis, infinity, cutoff, and time-endpoint boundary terms under the stated solution class and approximating procedure.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O05",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Source-pairing closure",
+      "requirement": "Verify the identity partial_z(F^2)=2 Gamma W/r^3 and the conversion of its G-pairing under dmu5, then check every Hölder, Sobolev, Hardy, and absorption exponent and constant.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O06",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Zero-output energy seeding",
+      "requirement": "Check that the small-threshold energy-seeding lemma does not assume the L-infinity_t L2(dmu5) or L2_t H1(dmu5) control it is used to prove and that all vanishing channels are exhaustive.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O07",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Five-dimensional subcritical gain",
+      "requirement": "Verify the parabolic Sobolev step from L-infinity_t L2_x intersect L2_t H1_x to L^(14/5) in five spatial dimensions, including localization and measure equivalence.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O08",
+      "lane": "AXISYMMETRIC-SWIRL",
+      "title": "Physical reconstruction and continuation",
+      "requirement": "Prove that the controlled lifted variables reconstruct all physical vorticity and velocity-gradient components required by the invoked continuation theorem, with matching initial-data and solution-class hypotheses.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O09",
+      "lane": "FULL-THREE-DIMENSIONAL",
+      "title": "Finite-threshold packet selection",
+      "requirement": "Verify existence of the first threshold, compactness of selected packets, finite-overlap bounds, descendant termination, and uniformity of constants under all rescalings and cutoffs.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O10",
+      "lane": "FULL-THREE-DIMENSIONAL",
+      "title": "Zero-final-defect rigidity",
+      "requirement": "Prove that zero final defect forces exactly the stated constant-frame locally two-dimensional or fixed-axis azimuthal alternatives; exclude unlisted mixtures, moving axes, and weak-limit defects.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O11",
+      "lane": "FULL-THREE-DIMENSIONAL",
+      "title": "Axisymmetric handoff concordance",
+      "requirement": "Show that the full-system terminal object satisfies every regularity, trace, finite-energy, axis-compatibility, and solution-class hypothesis of the axisymmetric theorem without circular use of the desired full-system conclusion.",
+      "status": "unreviewed_blocking"
+    },
+    {
+      "id": "R014-O12",
+      "lane": "BOTH",
+      "title": "Version and theorem correspondence",
+      "requirement": "Map each theorem and lemma across 2605.01875v3, 2605.01873v2, 2605.09797v2, and 2606.07869v1; record superseded statements, changed hypotheses, and imported dependencies.",
+      "status": "unreviewed_blocking"
+    }
+  ],
+  "manuscript_specific_fixtures": [
+    {
+      "id": "R014-FP-001",
+      "false_claim": "An estimate proved in unweighted dr dz automatically holds in dmu5=r^3 dr dz or in the physical measure r dr dz dtheta.",
+      "exact_test": "Require an explicit density conversion and verify every power of r before applying Holder or integration by parts.",
+      "expected_outcome": "reject_without_measure_concordance",
+      "failure_class": "CYLINDRICAL_MEASURE_DRIFT"
+    },
+    {
+      "id": "R014-FP-002",
+      "false_claim": "Smoothness away from the axis eliminates all r=0 boundary terms.",
+      "exact_test": "Check axis traces and the limit of every weighted flux on r=epsilon before epsilon tends to zero.",
+      "expected_outcome": "reject_without_axis_trace_control",
+      "failure_class": "AXIS_BOUNDARY_DISPOSAL"
+    },
+    {
+      "id": "R014-FP-003",
+      "false_claim": "Finite energy alone makes u_theta/r, omega_theta/r, and W/r square-integrable in every measure used by the proof.",
+      "exact_test": "Derive the required quotient integrability from axis compatibility and the stated data class rather than assuming it.",
+      "expected_outcome": "reject_without_singular_variable_bound",
+      "failure_class": "NEAR_AXIS_SINGULARITY"
+    },
+    {
+      "id": "R014-FP-004",
+      "false_claim": "The source identity partial_z(F^2)=2 Gamma W/r^3 closes the G energy estimate by itself.",
+      "exact_test": "After multiplying by G dmu5, verify the exact unweighted integral 2 integral G Gamma W dr dz and prove the subsequent Hardy and axial Sobolev bounds with uniform constants.",
+      "expected_outcome": "reject_without_quantitative_absorption",
+      "failure_class": "SOURCE_PAIRING_OVERCLAIM"
+    },
+    {
+      "id": "R014-FP-005",
+      "false_claim": "The five-dimensional energy class yields any desired spacetime exponent.",
+      "exact_test": "The energy-class parabolic exponent in five spatial dimensions is exactly 2(5+2)/5=14/5; reject stronger unstated gains.",
+      "expected_outcome": "accept_only_exact_14_over_5_gain",
+      "failure_class": "PARABOLIC_EXPONENT_DRIFT"
+    },
+    {
+      "id": "R014-FP-006",
+      "false_claim": "A zero-output branch may seed the energy estimate using control obtained later from that same branch.",
+      "exact_test": "Topologically order every premise of the energy-seeding lemma and reject any cycle through G energy, compactness, or continuation.",
+      "expected_outcome": "reject_if_dependency_cycle_exists",
+      "failure_class": "CIRCULAR_ENERGY_SEEDING"
+    },
+    {
+      "id": "R014-FP-007",
+      "false_claim": "Finite-overlap descendants imply termination without a strictly decreasing integer or coercive score.",
+      "exact_test": "Exhibit the well-founded quantity, decrement, and uniform lower bound preventing an infinite cascade.",
+      "expected_outcome": "reject_without_well_founded_descent",
+      "failure_class": "DESCENDANT_NONTERMINATION"
+    },
+    {
+      "id": "R014-FP-008",
+      "false_claim": "Weak compactness passes all nonlinear packet, pressure, and vortex-stretching terms to the endpoint.",
+      "exact_test": "Identify the strong convergence or compensated compactness required for each nonlinear product.",
+      "expected_outcome": "reject_without_nonlinear_limit_bridge",
+      "failure_class": "COMPACTNESS_GAP"
+    },
+    {
+      "id": "R014-FP-009",
+      "false_claim": "A concentrated frame distribution must be either locally two-dimensional or axisymmetric about one fixed axis.",
+      "exact_test": "Prove the classification and exclude mixtures, moving axes, multi-axis concentration, and loss of orientation in weak limits.",
+      "expected_outcome": "reject_without_rigidity_theorem",
+      "failure_class": "SYMMETRY_PROMOTION"
+    },
+    {
+      "id": "R014-FP-010",
+      "false_claim": "Validity of the axisymmetric theorem automatically proves the full three-dimensional theorem.",
+      "exact_test": "Audit the full-system reduction independently and require a hypothesis-complete handoff to the axisymmetric theorem.",
+      "expected_outcome": "reject_without_full_system_reduction",
+      "failure_class": "RESTRICTED_TO_GLOBAL_DRIFT"
+    }
+  ],
+  "disposition": {
+    "axisymmetric_claim": "UNRESOLVED",
+    "full_system_claim": "UNRESOLVED",
+    "source_bytes_locked": false,
+    "proof_obligation_clear_count": 0,
+    "may_change_programme_theorem_status": false,
+    "may_route_to_mathcert": false,
+    "may_promote_global_regularity_claim": false
+  },
+  "claim_boundary": "This record locks current arXiv metadata, corrects the manuscript family, and defines blocking proof obligations and adversarial fixtures. It does not authenticate PDF or TeX byte identities, validate any proof step, establish axisymmetric or full three-dimensional regularity, change Programme theorem status, authorize MATHCERT adjudication, or promote a solved-problem claim."
+}
