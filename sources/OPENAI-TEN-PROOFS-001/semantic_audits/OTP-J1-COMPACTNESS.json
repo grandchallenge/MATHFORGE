@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-SEMANTIC-WP01-COMPACTNESS",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-J1-COMPACTNESS",
+  "authority": {
+    "forge_evidence_merge": "72452f4579749448169cacf9f2ab22a4df2bb182",
+    "official_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "official_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "theorem_matrix_blob": "2d8b24c32c804c4f5ca0f5f5ad1185199d35664b",
+    "review_remedy_merge": "bffb7d63476d79e86665ec5a74d554794e24357e",
+    "semantic_tracker": "https://github.com/grandchallenge/MATHFORGE/issues/50"
+  },
+  "source": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+    "chapter": 10,
+    "theorem": "Theorem 1.1",
+    "pdf_page_index": 236,
+    "printed_page": 235,
+    "line_locator": "parsed P236 L19757-L19791",
+    "normalized_statement": "There exists a finite nonempty family F of connected bipartite finite simple graphs, every member containing a cycle, such that ex(n,F)=O(n^(4/3-1/48)) while for every member H of F one has ex(n,H)=Omega(n^(4/3)). Consequently no member controls the family extremal number up to a constant factor, so the corrected Erdos-Simonovits compactness conjecture fails."
+  },
+  "lean": {
+    "challenge_path": "ComparatorChallenges/J_CompactnessConjecture.lean",
+    "challenge_blob": "0e9c50d24422cc1016e1621b88bece204056ce33",
+    "solution_module": "CompactnessAndDegeneracy",
+    "solution_path": "CompactnessAndDegeneracy.lean",
+    "solution_blob": "39fc24a0060b335475af960944baf6b85c3add98",
+    "comparator_config_path": "ComparatorChallenges/J_CompactnessConjecture.json",
+    "comparator_config_blob": "c484ab6f83edebc64c660c06d2ddb7263380084f",
+    "theorem_names": [
+      "CompactnessConjecture.quantitativeCompactnessCounterexample",
+      "CompactnessConjecture.compactnessCounterexample_bigO",
+      "CompactnessConjecture.not_erdos_180"
+    ],
+    "replay_gate": "clear"
+  },
+  "definition_concordance": [
+    {
+      "source_concept": "finite simple undirected graph",
+      "lean_encoding": "FiniteGraph with graph : SimpleGraph (Fin order)",
+      "status": "equivalent",
+      "analysis": "Mathlib SimpleGraph is loopless and symmetric, and the Fin vertex type makes each stored graph finite with an explicit order."
+    },
+    {
+      "source_concept": "F-free host graph",
+      "lean_encoding": "FamilyFree family host := forall forbidden in family, forbidden.graph.Free host",
+      "status": "exact",
+      "analysis": "At the pinned mathlib revision, H.Free G is the predicate used by extremalNumber for a host G containing no copy of H; the argument order is therefore source-correct rather than reversed."
+    },
+    {
+      "source_concept": "family extremal number ex(n,F)",
+      "lean_encoding": "familyExtremal family n is the supremum of edge counts over all family-free graphs on Fin n",
+      "status": "equivalent",
+      "analysis": "Because the type of simple graphs on Fin n is finite, the Finset supremum is the maximum edge count in the source definition of ex(n,F)."
+    },
+    {
+      "source_concept": "every family member contains a cycle",
+      "lean_encoding": "IsCyclicFamily family := forall forbidden in family, not forbidden.graph.IsAcyclic",
+      "status": "equivalent",
+      "analysis": "For finite simple graphs, failure of acyclicity is exactly the existence of a cycle, matching the corrected compactness-conjecture domain."
+    },
+    {
+      "source_concept": "compactness up to a constant factor",
+      "lean_encoding": "IsCompactFamily family := exists forbidden in family, exists C>0, eventually ex(n,forbidden) <= C*familyExtremal family n",
+      "status": "exact",
+      "analysis": "This has the source quantifier order, positive constant, selected family member, inequality direction, and sufficiently-large-n interpretation through the atTop filter."
+    },
+    {
+      "source_concept": "corrected compactness conjecture",
+      "lean_encoding": "CompactnessConjectureStatement quantifies over every nonempty cyclic finite family and concludes IsCompactFamily",
+      "status": "exact",
+      "analysis": "The formal statement excludes the elementary acyclic counterexamples and captures the corrected source formulation rather than the historically original version."
+    }
+  ],
+  "hypothesis_concordance": [
+    {
+      "source_concept": "finite nonempty family",
+      "lean_encoding": "family : Finset FiniteGraph with family.Nonempty",
+      "status": "exact",
+      "analysis": "The family is intrinsically finite and theorem-level nonemptiness is explicit, so the existential cannot be discharged by the empty family."
+    },
+    {
+      "source_concept": "connected bipartite cyclic members",
+      "lean_encoding": "for every forbidden in family: Connected, IsBipartite, and not IsAcyclic",
+      "status": "exact",
+      "analysis": "All three structural restrictions in source Theorem 1.1 are carried memberwise and are not weakened to a property of only one graph."
+    },
+    {
+      "source_concept": "positive asymptotic constants",
+      "lean_encoding": "exists c C : Real with 0<c and 0<C",
+      "status": "exact",
+      "analysis": "The quantitative theorem exposes positive lower- and upper-bound constants and does not allow zero constants to make either asymptotic claim vacuous."
+    }
+  ],
+  "conclusion_concordance": [
+    {
+      "source_concept": "family upper bound O(n^(4/3-1/48))",
+      "lean_encoding": "compactnessCounterexample_bigO uses IsBigO atTop for familyExtremal with exponent 4/3-1/48",
+      "status": "exact",
+      "analysis": "The asymptotic filter, exponent, direction, and family extremal function agree with the source theorem; the quantitative companion also records the equivalent power-16 bound with exponent 21."
+    },
+    {
+      "source_concept": "memberwise lower bound Omega(n^(4/3))",
+      "lean_encoding": "UniformMemberLower family c gives eventually c*n^(4/3) <= extremalNumber n forbidden for every member",
+      "status": "equivalent",
+      "analysis": "The source permits constants depending on each member. Since the family is finite, a common positive minimum constant and common threshold exist, so the uniform Lean form is an equivalent finite-family strengthening."
+    },
+    {
+      "source_concept": "failure of compactness",
+      "lean_encoding": "not IsCompactFamily family and not CompactnessConjectureStatement",
+      "status": "exact",
+      "analysis": "The result explicitly negates both the property for the constructed family and the universal corrected conjecture, matching the source consequence."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear",
+    "witness_theorems": [
+      "CompactnessConjecture.quantitativeCompactnessCounterexample",
+      "CompactnessConjecture.compactnessCounterexample_bigO"
+    ],
+    "reason": "The Comparator-checked existential theorems produce a nonempty finite family, positive constants, memberwise connected/bipartite/cyclic witnesses, an upper asymptotic bound, and positive lower asymptotic bounds. The theorem therefore cannot succeed from an empty family, zero constant, or empty member domain."
+  },
+  "scope_exclusions": [
+    "This audit does not certify the paper's explicit combinatorial construction separately from the already kernel-checked existential theorem.",
+    "No claim is made about alternative historical formulations of compactness outside the corrected cyclic-family statement encoded here."
+  ],
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "source_gate_before_activation": "not_clear",
+    "source_gate_after_activation": "clear",
+    "reason": "The formal definitions reproduce the corrected compactness conjecture, including the H-free orientation and asymptotic quantifiers. The checked existential theorem supplies all source structural properties and nonzero asymptotic witnesses, while the only apparent strengthening—a uniform lower constant—is equivalent for a finite family."
+  },
+  "activation": {
+    "condition": "protected merge after exact-head CI and non-author specialist APPROVED review",
+    "effect_is_retroactive": false,
+    "head_change_requires_reapproval": true
+  },
+  "route_effect": {
+    "may_route_before_activation": false,
+    "eligible_after_activation": true,
+    "aggregate_route_permitted": false,
+    "mathcert_adjudication_authorized": false
+  },
+  "claim_boundary": "This record is a candidate semantic and nonvacuity clearance for the exact compactness result family only. It does not independently certify the combinatorial proof, adjudicate the theorem in MATHCERT, admit or certify the aggregate corpus, or authorize novelty, priority, publication, patentability, product, or commercial claims."
+}
