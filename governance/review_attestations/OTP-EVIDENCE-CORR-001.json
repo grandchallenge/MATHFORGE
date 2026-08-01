@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-REVIEW-REMEDY-001",
+  "campaign_id": "OPENAI-TEN-PROOFS-001",
+  "subject": {
+    "repository": "grandchallenge/MATHFORGE",
+    "pull_request": 39,
+    "head_sha": "6dcf5d64f221f67a3f498578775a3ffb034801ff",
+    "merge_commit_sha": "72452f4579749448169cacf9f2ab22a4df2bb182",
+    "original_author": "fyremael"
+  },
+  "historical_finding": {
+    "submitted_review_count": 0,
+    "review_gate_satisfied_at_merge": false,
+    "history_may_be_rewritten": false
+  },
+  "remedy_contract": {
+    "tracker_issue": 40,
+    "attestation_pull_request": 41,
+    "required_event": "APPROVED",
+    "reviewer_must_differ_from_original_author": true,
+    "reviewer_role": "MATHFORGE maintainer",
+    "conversation_comment_is_sufficient": false,
+    "reaction_is_sufficient": false,
+    "merge_action_is_sufficient": false,
+    "reapproval_required_after_head_change": true,
+    "required_review_assertions": [
+      "reviewer_independence",
+      "exact_subject_identity_reviewed",
+      "pr39_evidence_and_fail_closed_routes_accepted",
+      "retrospective_nature_and_historical_variance_acknowledged",
+      "no_mathematical_or_downstream_gate_promotion"
+    ]
+  },
+  "activation": {
+    "state": "proposed_until_non_author_approval_and_protected_merge",
+    "condition": "attestation PR receives a non-author maintainer APPROVED review on its final exact head and is then protected-merged",
+    "effect_is_retroactive": false
+  },
+  "gate_effect": {
+    "independent_governance_after_activation": "prospectively_remediated_by_retrospective_attestation",
+    "source_gate_clear_count": 0,
+    "admitted_result_count": 0,
+    "solve_handoffs_opened": 0,
+    "may_adjudicate_in_mathcert": false,
+    "may_promote_claims": false
+  },
+  "claim_boundary": "This instrument can remedy only the independent-governance blocker prospectively after a non-author maintainer APPROVED review and protected merge of the final attestation head. It does not alter the historical PR #39 timeline, establish source-to-Lean equivalence or nonvacuity, certify any theorem, admit any result family, open a MATHSOLVE handoff, authorize MATHCERT adjudication, or promote mathematical, novelty, priority, publication, institutional, or commercial claims."
+}
