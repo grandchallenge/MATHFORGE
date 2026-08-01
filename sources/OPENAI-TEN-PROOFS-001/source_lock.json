@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENAI-TEN-PROOFS-001-SOURCE-LOCK",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "lifecycle": "candidate_external_formalization",
+  "verified_at": "2026-08-01",
+  "acquisition": {
+    "method": "independent_git_clone",
+    "repository": "https://github.com/openai/ten-proofs",
+    "requested_commit": "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
+    "resolved_commit": "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
+    "commit_tree": "79e6a50b1e391bdddb18b42be3e886c1d9784ed3",
+    "commit_parent_count": 0,
+    "commit_subject": ".",
+    "commit_time": "2026-08-01T01:06:17-07:00"
+  },
+  "archive_identity": {
+    "construction": "git archive --format=tar --prefix=openai-ten-proofs-6fefffdb/ 6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
+    "sha256": "630e10ec7f8b08ce3416fba967e6d1e4c7599677e38fd4af24fc0c68a9a5bac2",
+    "byte_length": 377251840,
+    "tracked_file_count": 6129,
+    "tracked_blob_bytes": 372094447,
+    "archive_redistributed": false
+  },
+  "declared_environment": {
+    "lean_toolchain": "leanprover/lean4:v4.32.0",
+    "mathlib_input_revision": "v4.32.0",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+    "comparator_input_revision": "v4.32.0",
+    "comparator_commit": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f",
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "upstream_metadata": {
+    "project_name": "Selected Proofs",
+    "formalization_main_result_count": 12,
+    "lettered_package_count": 10,
+    "formalization_sources_count": 0,
+    "formalization_review_status": "agent-reviewed",
+    "written_presentations_found_outside_dependency_tree": false
+  },
+  "solution_source_scan": {
+    "scope": "all tracked *.lean files excluding ComparatorChallenges/**",
+    "sorry_files": 0,
+    "admit_files": 0,
+    "custom_axiom_files": 0,
+    "unsafe_declaration_files": 0,
+    "opaque_declaration_files": 0,
+    "interpretation": "Textual absence is not kernel replay, axiom closure, statement fidelity, or mathematical certification."
+  },
+  "clean_room_replay": {
+    "default_lake_build": {
+      "state": "failed_configuration",
+      "failure": "package 'selected-proofs' has no target 'ConnesRigidity2'",
+      "source_location": "lakefile.toml defaultTargets"
+    },
+    "comparator_library_configuration": {
+      "state": "failed_configuration",
+      "failure": "ComparatorChallenges roots includes missing module ComparatorChallenges.C_PermanentSuperquadraticStandalone",
+      "source_location": "lakefile.toml ComparatorChallenges roots"
+    },
+    "explicit_valid_target_build": {
+      "state": "runner_blocked",
+      "failure": "Lean 4.32.0 executable reported 'failed to locate application' while elaborating dependencies",
+      "attribution": "runner_or_toolchain_installation_not_source_proof_failure"
+    },
+    "comparator_checks": {
+      "state": "not_run",
+      "reason": "Kernel build prerequisites did not complete."
+    },
+    "theorem_axiom_reports": {
+      "state": "not_run",
+      "reason": "No trusted elaborated environment was produced."
+    }
+  },
+  "history_observation": {
+    "current_commit_is_root": true,
+    "earlier_indexed_commit": "0fd01b1c427a4af86493c983550dba485a0911d8",
+    "common_ancestor_with_current": false,
+    "interpretation": "The current exact root must be treated as a new source identity; prior indexed paths cannot substitute for it."
+  },
+  "disposition": {
+    "source_identity": "provider_verified",
+    "kernel_correctness": "not_verified",
+    "statement_fidelity": "not_verified",
+    "source_provenance": "incomplete_sources_empty",
+    "independent_adjudication": "not_performed",
+    "may_route_to_solve": false,
+    "may_adjudicate_in_mathcert": false,
+    "may_promote_claims": false
+  },
+  "trackers": {
+    "mathforge": "https://github.com/grandchallenge/MATHFORGE/issues/35",
+    "programme": "https://github.com/grandchallenge/MATH-PROGRAMME/issues/198",
+    "mathsolve": "https://github.com/grandchallenge/MATHSOLVE/issues/90",
+    "mathcert": "https://github.com/grandchallenge/MATHCERT/issues/43"
+  },
+  "claim_boundary": "This record verifies an exact external Git source identity and records bounded replay observations. It does not certify any Lean theorem, establish equivalence to an informal or published theorem, admit any result to a GCL campaign, or authorize novelty, priority, patentability, or commercial claims."
+}
