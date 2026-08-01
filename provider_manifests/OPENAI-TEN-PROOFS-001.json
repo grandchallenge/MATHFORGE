@@ -88,7 +88,7 @@
       "claim_boundary": "The matrix enumerates advertised result families and Comparator targets without admitting or certifying them.",
       "integrity": {
         "algorithm": "sha256",
-        "value": "5518d1ecaec3b3291b94cf40b03831bb35f82953919bf7da94b6f84bf5ab4e9d"
+        "value": "aa46f03edc9154679776a4d4dee80d03a84bcddc282fbc02bc6be11ebfeb8413"
       }
     }
   ],
@@ -112,6 +112,14 @@
       "summary": "Upstream formalization.yaml advertises twelve main-result families but records an empty sources list and agent-reviewed status.",
       "references": [
         "sources/OPENAI-TEN-PROOFS-001/source_lock.json",
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
+      ]
+    },
+    {
+      "record_id": "OPENAI-TEN-PROOFS-001-NSOF-OFFICIAL-SOURCE",
+      "summary": "MATHFORGE independently acquired and hashed the official manuscript and reasoning notes for OTP-D-NON-SOFIC; the main paper theorem and stronger finite-presentation target are explicitly distinguished.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
         "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
       ]
     }
@@ -168,7 +176,7 @@
     },
     {
       "record_id": "OPENAI-TEN-PROOFS-001-CONCORDANCE-DEBT",
-      "summary": "Every advertised result requires a source paper and theorem revision, a normalized statement comparison, nonvacuity analysis, and an independent disposition.",
+      "summary": "Eleven result families still require source acquisition; OTP-D-NON-SOFIC and every other result still require normalized statement comparison, nonvacuity analysis, and an independent disposition.",
       "references": [
         "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
         "https://github.com/grandchallenge/MATHSOLVE/issues/90"

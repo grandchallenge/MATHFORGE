@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-NSOF-001-MANIFEST",
+  "campaign_id": "NSOF-001",
+  "title": "Nonsofic-groups official source and screenshot-concordance candidate provider coverage",
+  "coverage_mode": "native",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "5f53182658a0bb03b654dd7fd2aa4c27335c6a31",
+    "issue": 195,
+    "paths": [
+      "governance/campaign_admission_registry.json",
+      "governance/umbrella_runtime_contract_v4.json",
+      "ci/campaign_admission_control.py"
+    ]
+  },
+  "handoff_packet": {
+    "problem_card": {
+      "state": "referenced",
+      "references": [
+        "https://github.com/grandchallenge/MATH-PROGRAMME/issues/195",
+        "https://github.com/grandchallenge/MATHFORGE/issues/34"
+      ],
+      "reason": "The protected Programme registry and Forge tracker define NSOF-001 as an intake-only, non-active candidate."
+    },
+    "source_map": {
+      "state": "present",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json"
+      ],
+      "reason": "The official manuscript, reasoning notes, current Lean root, prior disconnected Lean root, bibliography, notation, and screenshot-to-release comparison are content-addressed."
+    },
+    "status_triage": {
+      "state": "present",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json"
+      ],
+      "reason": "Official source identity is separated from leaked-draft revision identity, theorem-source equivalence, kernel replay, mathematical certification, and campaign admission."
+    },
+    "reconnaissance_ledger": {
+      "state": "referenced",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+        "https://github.com/grandchallenge/MATHSOLVE/issues/89"
+      ],
+      "reason": "The exact paper theorem, stronger reasoning-notes route, declared Lean target, and semantic risks are distinguished for Solve reconstruction."
+    },
+    "failure_risks": {
+      "state": "present",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json"
+      ],
+      "reason": "The record preserves the title mismatch, unavailable screenshot abstract/layout evidence, disconnected Git roots, stronger-target granularity gap, and unperformed trusted replay."
+    },
+    "suggested_wp01": {
+      "state": "deferred",
+      "references": [
+        "https://github.com/grandchallenge/MATHSOLVE/issues/89"
+      ],
+      "reason": "The provider packet is available for Programme review, but MATHFORGE cannot self-admit NSOF-001 or authorize theorem reconstruction."
+    },
+    "certification_route_sketch": {
+      "state": "referenced",
+      "references": [
+        "https://github.com/grandchallenge/MATHCERT/issues/42"
+      ],
+      "reason": "MATHCERT #42 remains a pre-route candidate with no adjudication authority."
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "NSOF-001-SOURCE-CONCORDANCE",
+      "kind": "source_revision_concordance",
+      "ownership": "MATHFORGE",
+      "path": "sources/NSOF-001/source_revision_concordance.json",
+      "claim_boundary": "This record authenticates official source bytes and classifies screenshot, paper, reasoning-notes, and Lean concordance without certifying a theorem or identifying the leaked revision.",
+      "integrity": {
+        "algorithm": "sha256",
+        "value": "26bca1c033502f1a6c54c974c9afe026e3e9e18ea1535235571e5f5cf7dd8413"
+      }
+    }
+  ],
+  "source_records": [
+    {
+      "record_id": "NSOF-001-OFFICIAL-MANUSCRIPT",
+      "summary": "The independently acquired 2266052-byte official OpenAI PDF has SHA-256 f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53 and contains the complete 17-page NSOF chapter on printed pages 77-93.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "https://cdn.openai.com/pdf/ten-proofs-oai.pdf"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-OFFICIAL-REASONING-NOTES",
+      "summary": "The independently acquired 441468-byte official reasoning-notes PDF has SHA-256 13b95999f060c0be2142089cfb8b17b75e9231c3c1f3fa0980445ff1b35f0b3b and gives the finite-presentation extraction in Chapter 3, Section 3.11.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "https://cdn.openai.com/pdf/reasoning-walkthroughs.pdf"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-CURRENT-LEAN-ROOT",
+      "summary": "Current official root e62211d28e3a9131950c89caa6542cfe5eff3bca and tree 2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365 yield a deterministic 21022720-byte archive with SHA-256 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "https://github.com/openai/ten-proofs"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-REVISION-HISTORY",
+      "summary": "The current official Lean root and previously locked root 6fefffdbab0dfa726fcfde6cefae23aa7a1888f3 have no common ancestor and remain separate preserved source identities.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "sources/OPENAI-TEN-PROOFS-001/source_lock.json"
+      ]
+    }
+  ],
+  "status_records": [
+    {
+      "record_id": "NSOF-001-PROVIDER-STATUS",
+      "summary": "The official release identity, manuscript digest, and current Lean revision are provider-verified; the leaked screenshot's exact source revision is not verified, so source-revision concordance remains incomplete and NSOF-001 remains non-active.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "governance/campaign_admission_registry.json"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "record_id": "NSOF-001-SOURCE-TRANSCRIPTION",
+      "summary": "The chapter title, Theorem 1.1, Leavitt-algebra presentation, elementary-group notation, page ranges, and 31-entry bibliography are acquired-source transcriptions or bounded paraphrases; only the screenshot title and attribution are screenshot transcriptions.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-LEAN-TARGET-BOUNDARY",
+      "summary": "The Lean target asserts existence of a finitely presented non-sofic group and aligns with reasoning-notes Section 3.11, not verbatim with the main paper's Theorem 1.1 about the binary Leavitt unit group.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"
+      ]
+    }
+  ],
+  "failed_routes": [
+    {
+      "record_id": "NSOF-001-SCREENSHOT-REVISION-IDENTITY-REJECTED",
+      "summary": "Subject and attribution concordance cannot be inflated into byte, page-layout, title, or leaked-draft revision identity because the screenshot title differs and no screenshot abstract or full page is preserved.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-PAPER-THEOREM-INFLATION-REJECTED",
+      "summary": "The finitely presented existence target cannot be cited as the verbatim statement of paper Theorem 1.1; its official informal source is reasoning-notes Section 3.11.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-SOURCE-TO-CERT-REJECTED",
+      "summary": "Provider authentication cannot substitute for trusted Lean replay, source-equivalence review, mathematical certification, or Programme admission.",
+      "references": [
+        "https://github.com/grandchallenge/MATHCERT/issues/42"
+      ]
+    }
+  ],
+  "provider_debt": [
+    {
+      "record_id": "NSOF-001-TRUSTED-REPLAY-DEBT",
+      "summary": "A known-good Lean 4.32.0 environment must replay the NSOF solution and Comparator target and emit theorem-level axiom reports.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "https://github.com/grandchallenge/MATHSOLVE/issues/89"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-SEMANTIC-CONCORDANCE-DEBT",
+      "summary": "Solve and Cert must review the custom Sofic predicate, finite-test construction, finite-presentation witness, nonvacuity, and every cited group-theoretic dependency before adjudication.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json",
+        "https://github.com/grandchallenge/MATHSOLVE/issues/89",
+        "https://github.com/grandchallenge/MATHCERT/issues/42"
+      ]
+    },
+    {
+      "record_id": "NSOF-001-LEAKED-REVISION-DEBT",
+      "summary": "Recovering the standalone leaked draft bytes would be required to establish title, pagination, layout, abstract, and digest identity between the screenshot and that draft.",
+      "references": [
+        "sources/NSOF-001/source_revision_concordance.json"
+      ]
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-01",
+    "created_by": "MF-NSOF-WP00",
+    "source_commits": [
+      "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+      "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
+      "5f53182658a0bb03b654dd7fd2aa4c27335c6a31"
+    ]
+  },
+  "downstream_references": {
+    "programme": [
+      "https://github.com/grandchallenge/MATH-PROGRAMME/issues/195",
+      "https://github.com/grandchallenge/MATH-PROGRAMME/pull/197"
+    ],
+    "mathsolve": [
+      "https://github.com/grandchallenge/MATHSOLVE/issues/89"
+    ],
+    "mathcert": [
+      "https://github.com/grandchallenge/MATHCERT/issues/42"
+    ]
+  },
+  "non_certification_statement": "This manifest authenticates and classifies official source evidence only. It does not establish leaked-draft revision identity, kernel correctness, Comparator success, theorem-source equivalence, nonvacuity, mathematical truth, novelty, priority, publication precedence, or promotional authority, and it does not admit NSOF-001 to the active GCL portfolio."
+}

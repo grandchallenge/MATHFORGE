@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-NSOF-WP00-SOURCE-CONCORDANCE",
+  "campaign_id": "NSOF-001",
+  "verified_at": "2026-08-01",
+  "verified_at_utc": "2026-08-01T10:09:29Z",
+  "intake_evidence": {
+    "artifact_class": "screenshot",
+    "sha256": "531d8b044623569e43949f094985c083e07cf3c0c6a7b6db6e0b5c3339b57420",
+    "byte_length": 408154,
+    "dimensions_pixels": [820, 513],
+    "transcribed_visible_title": "NONSOFIC GROUPS EXIST",
+    "transcribed_visible_attribution": "OPENAI",
+    "other_screenshot_text_available_for_this_audit": false,
+    "provenance_corroboration": "https://x.com/ElliotGlazer/status/2083388640890351662"
+  },
+  "official_release": {
+    "release_page": {
+      "url": "https://openai.com/index/ten-advances-in-mathematics/",
+      "publisher": "OpenAI",
+      "publication_date": "2026-08-01",
+      "result_label": "Non-sofic groups"
+    },
+    "complete_manuscript": {
+      "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+      "acquisition_method": "independent_https_download",
+      "http_response_date_utc": "2026-08-01T10:01:31Z",
+      "media_type": "application/pdf",
+      "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+      "byte_length": 2266052,
+      "page_count": 249,
+      "pdf_version": "1.5",
+      "document_title": "Ten Advances in Mathematics and Theoretical Computer Science",
+      "document_author": "OpenAI",
+      "pdf_creation_date": "2026-08-01T06:49:09Z",
+      "http_last_modified": "2026-08-01T06:52:38Z",
+      "http_etag": "0x8DEEF9979F7BD53"
+    },
+    "reasoning_notes": {
+      "url": "https://cdn.openai.com/pdf/reasoning-walkthroughs.pdf",
+      "acquisition_method": "independent_https_download",
+      "http_response_date_utc": "2026-08-01T10:01:33Z",
+      "media_type": "application/pdf",
+      "sha256": "13b95999f060c0be2142089cfb8b17b75e9231c3c1f3fa0980445ff1b35f0b3b",
+      "byte_length": 441468,
+      "page_count": 62,
+      "pdf_version": "1.5",
+      "document_title": "How the Ideas Came Together: Mathematical Discovery Notes",
+      "pdf_creation_date": "2026-08-01T06:42:14Z",
+      "http_last_modified": "2026-08-01T06:47:43Z",
+      "http_etag": "0x8DEEF98CA01B566"
+    },
+    "tex_source": {
+      "state": "not_published_on_release_page",
+      "acquired": false
+    },
+    "supplements": [
+      "reasoning_notes",
+      "lean_repository"
+    ]
+  },
+  "manuscript_scope": {
+    "chapter": 3,
+    "title": "A Counterexample to the Soficity Conjecture",
+    "printed_page_range": "77-93",
+    "physical_pdf_page_range": "79-95",
+    "chapter_page_count": 17,
+    "sections": [
+      "1. Introduction",
+      "2. An expander-matching criterion",
+      "3. The binary Leavitt configuration",
+      "References"
+    ],
+    "abstract_locator": "physical PDF page 79 (printed page 77), immediately below the chapter title",
+    "abstract_summary": "The chapter says the binary Leavitt algebra's unit group is non-sofic, using property-(T) expander decomposition, a centralizer obstruction, expander matching, and a Thompson-group contradiction.",
+    "theorem_1_1": "The unit group L_{F_2}(1, 2)^× is not sofic.",
+    "theorem_locator": "physical PDF page 80 (printed page 78)",
+    "proof_endpoint_locator": "physical PDF page 94 (printed page 92)",
+    "paper_claim_granularity": "The theorem concerns the countable unit group; the proof constructs a finitely generated non-sofic subgroup G and then passes non-soficity to the unit group.",
+    "finitely_presented_claim_in_main_chapter": false,
+    "finitely_presented_claim_note": "The main chapter calls G finitely generated. It does not state the existence of a finitely presented non-sofic group as Theorem 1.1."
+  },
+  "definitions_notation_and_constants": {
+    "sofic_approximation": "Maps p_n:H->Sym(Y_n) with identity, asymptotic multiplication in normalized Hamming distance, and asymptotic freeness for each nonidentity element.",
+    "binary_leavitt_algebra": "R=L_{F_2}(1,2)=F_2<s_0,s_1,t_0,t_1 | t_i s_j=delta_ij, s_0 t_0+s_1 t_1=1>.",
+    "unit_group": "R^× is the group of x in R admitting y in R with xy=yx=1.",
+    "elementary_group": "For the nine-word complete prefix code D, G=EL_D(R)=Theta_D(EL_9(R)) is a subgroup of R^×.",
+    "property_t_subgroup": "For the three-word prefix block alpha, Gamma=EL_alpha(R) is isomorphic to EL_3(R) and is a subgroup of G.",
+    "obstruction_group": "J=V_1000 is a copy of Thompson's group V, commuting with Gamma and not LEF.",
+    "quantified_main_criterion": "Proposition 2.3 assumes property-(T) groups Gamma<=G, finitely many compressors t_i generating G with Gamma, and a finitely generated commuting subgroup J satisfying the listed nesting and trivial-intersection conditions; soficity of G would imply J is LEF.",
+    "named_constants": [
+      "The sofic approximation error is quantified through normalized Hamming distance tending to zero.",
+      "The expander constants gamma and lambda are chosen with 0<lambda<gamma.",
+      "The argument uses the fixed nine-leaf prefix code D and the rank-three subgroup Gamma."
+    ],
+    "screenshot_notation_concordance": "No notation beyond the screenshot title and attribution is preserved in the governed intake record, so the displayed elementary-group and Leavitt-algebra expressions cannot be compared character-for-character to the screenshot. The official expressions above are source transcriptions, not screenshot transcriptions."
+  },
+  "stronger_finite_presentation_route": {
+    "official_reasoning_notes_locator": "Chapter 3, Section 3.11, printed page 14",
+    "reasoning_notes_disposition": "The notes derive an infinite finitely presented non-sofic group H_F from a failed finite soficity test for G, after enlarging F to contain generators of G.",
+    "lean_repository": "https://github.com/openai/ten-proofs",
+    "lean_commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "lean_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "lean_commit_parent_count": 0,
+    "lean_commit_time": "2026-08-01T10:02:08Z",
+    "lean_archive": {
+      "construction": "git archive --format=tar --prefix=openai-ten-proofs-e62211d2/ e62211d28e3a9131950c89caa6542cfe5eff3bca",
+      "sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+      "byte_length": 21022720,
+      "tracked_file_count": 43,
+      "tracked_blob_bytes": 20980823
+    },
+    "solution_module": {
+      "path": "NonSoficGroup.lean",
+      "sha256": "0dfd4e1bd9fae091f7d2c65f98a2e3a48d73a20656de263e604261740803c155",
+      "byte_length": 1348939,
+      "target": "SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"
+    },
+    "comparator_challenge": {
+      "lean_path": "ComparatorChallenges/D_NonSoficGroup.lean",
+      "lean_sha256": "346774c20eea754cf9bb2aaeffda8facae5aad74109bb70699e416f9da9c4adf",
+      "json_path": "ComparatorChallenges/D_NonSoficGroup.json",
+      "json_sha256": "08c8e3666435ebfd1a946643f51221780f433224748debef6264e15953a66459"
+    },
+    "declared_environment": {
+      "lean_toolchain": "leanprover/lean4:v4.32.0",
+      "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+      "comparator_commit": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f"
+    },
+    "concordance": "The Lean target matches the stronger Section 3.11 claim at the level of result type, but it is not a verbatim formalization of Theorem 1.1 in the main chapter. Independent trusted replay and semantic equivalence review remain outstanding."
+  },
+  "upstream_revision_history": {
+    "previously_locked_disconnected_root": "6fefffdbab0dfa726fcfde6cefae23aa7a1888f3",
+    "previously_locked_tree": "79e6a50b1e391bdddb18b42be3e886c1d9784ed3",
+    "current_official_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "current_official_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "common_ancestor": false,
+    "disposition": "Both identities are preserved. The current official root is a new source identity and does not silently replace the earlier locked archive."
+  },
+  "screenshot_to_source_concordance": {
+    "screenshot_and_pdf_byte_identical": false,
+    "byte_identity_applicable": false,
+    "attribution": "concordant_openai",
+    "subject": "concordant_nonsofic_groups",
+    "title": "partial_renamed_release",
+    "title_evidence": "The screenshot says NONSOFIC GROUPS EXIST; the official release labels the result Non-sofic groups; the official chapter is titled A Counterexample to the Soficity Conjecture.",
+    "abstract_text": "not_comparable_no_abstract_text_preserved_from_screenshot",
+    "pagination_and_layout": "not_comparable_no_full_screenshot_page_or_source_page_identity_preserved",
+    "source_digest": "not_comparable_different_artifact_classes",
+    "revision_identity": "not_established",
+    "overall": "official_subject_and_attribution_concordant_but_leaked_revision_identity_unproven"
+  },
+  "bibliography": {
+    "entry_count": 31,
+    "scope": "Complete Chapter 3 reference list as cited in the official manuscript; identifiers with explicit versions preserve the cited version. Individual dependency bytes were not acquired in this work package.",
+    "entries": [
+      {"citation_key": "AL07", "as_cited": "D. Aldous and R. Lyons, Processes on unimodular random networks, Electron. J. Probab. 12 (2007), 1454-1508, arXiv:math/0603062."},
+      {"citation_key": "BQ17", "as_cited": "C. Bleak and M. Quick, The infinite simple group V of Richard J. Thompson: presentations by permutations, Groups Geom. Dyn. 11 (2017), 1401-1436, arXiv:1511.02123."},
+      {"citation_key": "BB20", "as_cited": "L. Bowen and P. Burton, Flexible stability and nonsoficity, Trans. Amer. Math. Soc. 373 (2020), 4469-4481, doi:10.1090/tran/8047."},
+      {"citation_key": "BC25", "as_cited": "L. Bowen and M. Chapman, Surjunctivity does not characterize cosoficity of invariant random subgroups, preprint, 2025, arXiv:2511.06586."},
+      {"citation_key": "BCLV24", "as_cited": "L. Bowen, M. Chapman, A. Lubotzky, and T. Vidick, The Aldous-Lyons conjecture I: Subgroup tests, preprint, 2024, arXiv:2408.00110."},
+      {"citation_key": "BCV25", "as_cited": "L. Bowen, M. Chapman, and T. Vidick, The Aldous-Lyons conjecture II: Undecidability, preprint, 2025, arXiv:2501.00173."},
+      {"citation_key": "BFF24", "as_cited": "H. Bradford and F. Fournier-Facio, Hopfian wreath products and the stable finiteness conjecture, Math. Z. 308 (2024), article no. 58, doi:10.1007/s00209-024-03589-3."},
+      {"citation_key": "BS16", "as_cited": "N. Brownlowe and A. P. W. Sorensen, L2,Z tensor L2,Z does not embed in L2,Z, J. Algebra 456 (2016), 1-22, doi:10.1016/j.jalgebra.2016.01.040."},
+      {"citation_key": "CFP96", "as_cited": "J. W. Cannon, W. J. Floyd, and W. R. Parry, Introductory notes on Richard Thompson's groups, Enseign. Math. (2) 42 (1996), no. 3-4, 215-256, available online."},
+      {"citation_key": "CDL24", "as_cited": "M. Chapman, Y. Dikstein, and A. Lubotzky, Conditional non-soficity of p-adic Deligne extensions: On a theorem of Gohla and Thom, preprint, 2024, arXiv:2410.02913."},
+      {"citation_key": "DCGLT20", "as_cited": "M. De Chiffre, L. Glebsky, A. Lubotzky, and A. Thom, Stability, cohomology vanishing, and nonapproximable groups, Forum Math. Sigma 8 (2020), article no. e18, doi:10.1017/fms.2020.5."},
+      {"citation_key": "Dog23", "as_cited": "A. Dogon, Flexible Hilbert-Schmidt stability versus hyperlinearity for property (T) groups, Math. Z. 305 (2023), article no. 58, doi:10.1007/s00209-023-03387-3."},
+      {"citation_key": "DV26", "as_cited": "A. Dogon and I. Vigdorovich, Hyperlinearity, stability and asymptotic spectral gap of higher rank lattices, preprint, 2026, arXiv:2506.20843v2."},
+      {"citation_key": "ES05", "as_cited": "G. Elek and E. Szabo, Hyperlinearity, essentially free actions and L2-invariants: The sofic property, Math. Ann. 332 (2005), 421-441, arXiv:math/0408400."},
+      {"citation_key": "ES06", "as_cited": "G. Elek and E. Szabo, On sofic groups, J. Group Theory 9 (2006), 161-171, arXiv:math/0305352."},
+      {"citation_key": "EJ10", "as_cited": "M. Ershov and A. Jaikin-Zapirain, Property (T) for noncommutative universal lattices, Invent. Math. 179 (2010), 303-347, arXiv:0809.4095."},
+      {"citation_key": "Gel18", "as_cited": "T. Gelander, A view on invariant random subgroups and lattices, Proceedings of the ICM 2018, vol. II, 1339-1362, arXiv:1807.06979."},
+      {"citation_key": "GT24", "as_cited": "L. Gohla and A. Thom, High-dimensional expansion and soficity of groups, preprint, 2024, arXiv:2403.09582."},
+      {"citation_key": "Gro99", "as_cited": "M. Gromov, Endomorphisms of symbolic algebraic varieties, J. Eur. Math. Soc. 1 (1999), 109-197."},
+      {"citation_key": "HO17", "as_cited": "U. Haagerup and K. K. Olesen, Non-inner amenability of the Thompson groups T and V, J. Funct. Anal. 272 (2017), 4838-4852, doi:10.1016/j.jfa.2017.02.003."},
+      {"citation_key": "JNVWY20", "as_cited": "Z. Ji, A. Natarajan, T. Vidick, J. Wright, and H. Yuen, MIP*=RE, preprint, 2020, arXiv:2001.04383."},
+      {"citation_key": "KT26", "as_cited": "H. V. Khanh and V. H. Thanh, Matrix generators for the unit groups of L_K(1,d), preprint, 2026, arXiv:2607.10351."},
+      {"citation_key": "Kun19", "as_cited": "G. Kun, On sofic approximations of property (T) groups, preprint, 2019, arXiv:1606.04471v5."},
+      {"citation_key": "KT19", "as_cited": "G. Kun and A. Thom, Inapproximability of actions and Kazhdan's property (T), preprint, 2019, arXiv:1901.03963."},
+      {"citation_key": "Lea62", "as_cited": "W. G. Leavitt, The module type of a ring, Trans. Amer. Math. Soc. 103 (1962), 113-130, doi:10.1090/S0002-9947-1962-0132764-X."},
+      {"citation_key": "Man25", "as_cited": "A. Manzoor, Invariant random subgroups, soficity, and Luck's determinant conjecture, preprint, 2025, arXiv:2508.15154."},
+      {"citation_key": "NT22", "as_cited": "M. Nitsche and A. Thom, Universal solvability of group equations, J. Group Theory 25 (2022), 1-10, arXiv:1811.07737."},
+      {"citation_key": "Pes08", "as_cited": "V. G. Pestov, Hyperlinear and sofic groups: A brief guide, Bull. Symbolic Logic 14 (2008), 449-480, arXiv:0804.3968."},
+      {"citation_key": "Tho08", "as_cited": "A. Thom, Sofic groups and diophantine approximation, Comm. Pure Appl. Math. 61 (2008), 1155-1171, arXiv:math/0701294."},
+      {"citation_key": "VG97", "as_cited": "A. M. Vershik and E. I. Gordon, Groups that are locally embeddable in the class of finite groups, Algebra i Analiz 9 (1997), no. 1, 71-97; English transl., St. Petersburg Math. J. 9 (1998), 49-67, Math-Net.Ru aa751."},
+      {"citation_key": "Wei00", "as_cited": "B. Weiss, Sofic groups and dynamical systems, Sankhya Ser. A 62 (2000), 350-359."}
+    ]
+  },
+  "dependency_manifest": {
+    "paper_dependencies": "The 31-entry Chapter 3 bibliography is preserved above. Dependency bytes and theorem-level source validation were not acquired in WP00.",
+    "formal_dependencies": [
+      {"name": "Lean", "revision": "v4.32.0"},
+      {"name": "mathlib", "revision": "81a5d257c8e410db227a6665ed08f64fea08e997"},
+      {"name": "Comparator", "revision": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f"}
+    ],
+    "handoff_blockers": [
+      "Trusted Lean and Comparator replay has not been completed.",
+      "The custom Sofic predicate and finite-presentation witness require semantic review.",
+      "The leaked screenshot revision cannot be proved identical to the official release.",
+      "The stronger finite-presentation target must be concordanced to reasoning-notes Section 3.11 rather than mislabeled as paper Theorem 1.1."
+    ]
+  },
+  "disposition": {
+    "source_status": "official_complete_manuscript_acquired",
+    "official_release_identity": "provider_verified",
+    "manuscript_digest": "provider_verified",
+    "lean_revision_identity": "provider_verified",
+    "screenshot_subject_and_attribution": "provider_corroborated",
+    "screenshot_revision_identity": "not_verified",
+    "source_revision_concordance_complete": false,
+    "theorem_source_concordance": "partial_main_theorem_and_stronger_notes_route_distinguished",
+    "kernel_correctness": "not_verified",
+    "mathematical_certification": "not_performed",
+    "campaign_admission": "not_authorized",
+    "may_route_to_solve": false,
+    "may_adjudicate_in_mathcert": false,
+    "may_promote_nonsoficity_claim": false
+  },
+  "claim_boundary": "This record authenticates official source bytes, preserves exact revision identities, and classifies source concordance. It does not prove the manuscript or Lean development correct, establish leaked-draft byte identity, admit NSOF-001, authorize a Solve or Cert handoff, or support novelty, priority, publicity, or promotional claims."
+}
