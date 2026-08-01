@@ -16,6 +16,9 @@ MANIFEST_DIR = ROOT / "provider_manifests"
 COVERAGE_PATH = ROOT / "governance" / "provider_coverage.json"
 ALGEBRAIC_WITNESS_DIR = ROOT / "examples" / "algebraic_witnesses"
 ALGEBRAIC_WITNESS_REGISTRY = ROOT / "governance" / "algebraic_witness_registry.json"
+THEOREM_INTAKE_MATRIX = (
+    ROOT / "sources" / "OPENAI-TEN-PROOFS-001" / "theorem_intake_matrix.json"
+)
 
 
 def load_json(path: Path) -> Any:
@@ -41,6 +44,123 @@ def validate(instance: Any, schema_name: str, label: str) -> list[str]:
         f"{label}: {error.json_path}: {error.message}"
         for error in sorted(validator.iter_errors(instance), key=lambda item: list(item.path))
     ]
+
+
+def theorem_intake_matrix_instance_errors(
+    matrix: Any, label: str = "theorem intake matrix"
+) -> list[str]:
+    errors = validate(matrix, "theorem_intake_matrix.schema.json", label)
+    if not isinstance(matrix, dict):
+        return errors
+
+    families = matrix.get("result_families", [])
+    if not isinstance(families, list):
+        return errors
+
+    result_ids = [
+        family.get("result_id")
+        for family in families
+        if isinstance(family, dict)
+    ]
+    if len(result_ids) != len(set(result_ids)):
+        errors.append(f"{label}: duplicate result_id")
+
+    theorem_count = sum(
+        len(family.get("theorem_names", []))
+        for family in families
+        if isinstance(family, dict)
+        and isinstance(family.get("theorem_names", []), list)
+    )
+    if theorem_count != 41:
+        errors.append(f"{label}: theorem target count must be 41, found {theorem_count}")
+
+    replay_clear = sum(
+        family.get("replay_gate") == "clear"
+        for family in families
+        if isinstance(family, dict)
+    )
+    source_clear = sum(
+        family.get("source_gate") == "clear"
+        for family in families
+        if isinstance(family, dict)
+    )
+    route_count = sum(
+        family.get("may_route_to_solve") is True
+        for family in families
+        if isinstance(family, dict)
+    )
+    if replay_clear != 12:
+        errors.append(f"{label}: replay-clear count must be 12, found {replay_clear}")
+    if source_clear != 0:
+        errors.append(f"{label}: source-clear count must be 0, found {source_clear}")
+    if route_count != 0:
+        errors.append(f"{label}: route-enabled count must be 0, found {route_count}")
+
+    for family in families:
+        if not isinstance(family, dict):
+            continue
+        if family.get("may_route_to_solve") is True and (
+            family.get("replay_gate") != "clear"
+            or family.get("source_gate") != "clear"
+        ):
+            errors.append(
+                f"{label}: {family.get('result_id')} routes without both gates clear"
+            )
+
+    disposition = matrix.get("disposition", {})
+    if isinstance(disposition, dict):
+        if disposition.get("source_gate_clear_count") != source_clear:
+            errors.append(f"{label}: source_gate_clear_count does not match families")
+        if disposition.get("solve_handoffs_opened") != route_count:
+            errors.append(f"{label}: solve_handoffs_opened does not match families")
+
+    source_identity = matrix.get("source_identity", {})
+    if isinstance(source_identity, dict):
+        current_root = source_identity.get("current_official_root")
+        previous_root = source_identity.get("previous_disconnected_intake_root")
+        if current_root == previous_root:
+            errors.append(f"{label}: current and disconnected roots must remain distinct")
+        if source_identity.get("common_ancestor_with_previous") is not False:
+            errors.append(f"{label}: disconnected-root ancestry must remain false")
+
+    connes = next(
+        (
+            family
+            for family in families
+            if isinstance(family, dict)
+            and family.get("result_id") == "OTP-E-CONNES-RIGIDITY"
+        ),
+        None,
+    )
+    expected_connes = [
+        "ConnesRigidity2.exists_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors",
+        "ConnesRigidity2.exists_infinite_pairwise_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors",
+    ]
+    if connes is None or connes.get("theorem_names") != expected_connes:
+        errors.append(f"{label}: current Connes Comparator targets are not pinned exactly")
+
+    replay = matrix.get("trusted_replay", {})
+    if isinstance(replay, dict):
+        all_import = replay.get("aggregate_all_import", {})
+        if not isinstance(all_import, dict) or all_import.get("state") != "failed":
+            errors.append(f"{label}: aggregate All.lean failure must remain explicit")
+        axiom_report = replay.get("theorem_axiom_reports", {})
+        permitted = (
+            set(axiom_report.get("permitted_axioms", []))
+            if isinstance(axiom_report, dict)
+            else set()
+        )
+        if permitted != {"propext", "Classical.choice", "Quot.sound"}:
+            errors.append(f"{label}: permitted axiom set drifted")
+
+    return errors
+
+
+def theorem_intake_matrix_errors() -> list[str]:
+    label = str(THEOREM_INTAKE_MATRIX.relative_to(ROOT))
+    if not THEOREM_INTAKE_MATRIX.is_file():
+        return [f"{label}: missing governed theorem intake matrix"]
+    return theorem_intake_matrix_instance_errors(load_json(THEOREM_INTAKE_MATRIX), label)
 
 
 def git_blob_sha1(path: Path) -> str:
@@ -274,6 +394,7 @@ def provider_contract_errors() -> list[str]:
 def main() -> int:
     errors = legacy_artifact_errors()
     errors.extend(algebraic_witness_errors())
+    errors.extend(theorem_intake_matrix_errors())
     errors.extend(provider_contract_errors())
     for schema in sorted((ROOT / "schemas").glob("*.json")):
         Draft202012Validator.check_schema(load_json(schema))
@@ -282,7 +403,7 @@ def main() -> int:
         print(f"MATHFORGE validation failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
     print(
-        "MATHFORGE JSON, algebraic witness budgets, failure ledgers, discovery, provider coverage, artifact identity, and handoff contracts are valid"
+        "MATHFORGE JSON, algebraic witness budgets, failure ledgers, discovery, theorem intake, provider coverage, artifact identity, and handoff contracts are valid"
     )
     return 0
 
