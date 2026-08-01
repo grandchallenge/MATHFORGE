@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-NS-CI-R014-ANALYTIC-AUDIT-01",
+  "campaign_id": "NS-CI-001",
+  "tracker_issue": 20,
+  "work_package_issue": 46,
+  "source_lock": {
+    "source_lock_pr": 45,
+    "source_lock_head": "cd064e92d82c7426b42234c075b48553173e0625",
+    "record_path": "reports/discovery/ns_ci_001/source_byte_lock_2026.json",
+    "exact_versions": [
+      "2605.01875v3",
+      "2605.01873v2",
+      "2605.09797v2",
+      "2606.07869v1"
+    ]
+  },
+  "method": {
+    "review_type": "line_addressable_adversarial_dependency_audit",
+    "status_vocabulary": [
+      "unreviewed_blocking",
+      "blocked_exact_gap",
+      "not_clear",
+      "clear"
+    ],
+    "clear_rule": "A finding may be clear only after the exact missing definition or implication is supplied, independently replayed against the locked source version, and accepted by non-author review.",
+    "falsity_boundary": "A blocked_exact_gap disposition means that the submitted proof does not presently supply a checkable load-bearing derivation. It does not prove the advertised theorem false."
+  },
+  "findings": [
+    {
+      "finding_id": "R014-AF-001",
+      "obligations": ["R014-O05", "R014-O06"],
+      "lane": "AXISYMMETRIC-SWIRL",
+      "status": "blocked_exact_gap",
+      "failure_class": "UNSPECIFIED_DUAL_TEST_SPACE",
+      "title": "The source-shape dual test class is not mathematically specified",
+      "source": {
+        "source_id": "NS-CI-R014-S4",
+        "versioned_arxiv_id": "2606.07869v1",
+        "location": "Definition 4.5 and Proposition 4.6",
+        "html_url": "https://arxiv.org/html/2606.07869v1",
+        "html_lines": "621-649"
+      },
+      "observed_text_relation": "The manuscript defines B_J^dual as a supremum over tests with norm in X(Q), describes X(Q) only as the local energy-dual test class, and says the exact choice is fixed so that the defining dual inequality holds. Proposition 4.6 then treats smallness or largeness in that class as a routing alternative.",
+      "blocking_gap": "No explicit norm for X(Q), admissible test set, completion or density statement, parabolic scaling law, localization convention, or proved relation to the later local energy-dual compactness topology is supplied. Consequently the battery magnitude, threshold comparison, dilation invariance, and implication from zero battery to source compactness cannot be independently evaluated.",
+      "minimal_repair": [
+        "Define X(Q) as an explicit normed test space, including boundary and cutoff conditions.",
+        "Prove its parabolic scaling and the dual pairing estimate with constants uniform over the selected packet family.",
+        "State the battery threshold in that norm and prove the routing alternative without relying on the definition alone.",
+        "Prove that B_J^dual=0 yields the exact source convergence used in the Aubin-Lions step."
+      ],
+      "may_mark_clear": false
+    },
+    {
+      "finding_id": "R014-AF-002",
+      "obligations": ["R014-O06"],
+      "lane": "AXISYMMETRIC-SWIRL",
+      "status": "blocked_exact_gap",
+      "failure_class": "MISSING_THRESHOLD_TO_MASS_BRIDGE",
+      "title": "First-threshold parent smallness is not connected to the energy-seed hypothesis",
+      "source": {
+        "source_id": "NS-CI-R014-S4",
+        "versioned_arxiv_id": "2606.07869v1",
+        "locations": [
+          "Definition 6.5, lines 764-770",
+          "Lemma 34.3, lines 3532-3544",
+          "Corollary 34.8, lines 3713-3718",
+          "Definition B.6, lines 4299-4308"
+        ],
+        "html_url": "https://arxiv.org/html/2606.07869v1"
+      },
+      "observed_text_relation": "The first-threshold rule is stated through the coupled score Q_R and typed-ledger thresholds. Lemma 34.3 separately assumes the spacetime parent-mass bound integral integral G^2 dmu5 dt <= epsilon_*. Corollary 34.8 and Lemma 35.6 assert that parent threshold smallness supplies this assumption.",
+      "blocking_gap": "The cited dependency chain contains no quantitative proposition deriving the Lemma 34.3 spacetime mass hypothesis from the parent score bound, with the relevant parent-child geometry, r-weight conversion, time length, normalization, and constant hierarchy. The final contradiction uses that unproved implication directly.",
+      "minimal_repair": [
+        "State a score-to-parent-mass lemma on the exact normalized parent cylinder.",
+        "Track the conversion between the score's radial weight and dmu5=r^3 dr dz.",
+        "Include the parabolic time factor and parent-child scale ratio.",
+        "Choose q_* relative to epsilon_* and prove the inequality before invoking Lemma 34.3."
+      ],
+      "may_mark_clear": false
+    },
+    {
+      "finding_id": "R014-AF-003",
+      "obligations": ["R014-O10"],
+      "lane": "FULL-THREE-DIMENSIONAL",
+      "status": "blocked_exact_gap",
+      "failure_class": "UNPROVED_EQUALITY_CASE_CLASSIFICATION",
+      "title": "The active-frame equality set is asserted rather than classified",
+      "source": {
+        "source_ids": ["NS-CI-R014-S2", "NS-CI-R014-S3"],
+        "versioned_arxiv_ids": ["2605.01873v2", "2605.09797v2"],
+        "locations": [
+          "2605.01873v2 Lemma 4.4, lines 361-384",
+          "2605.01873v2 Lemma 4.5, lines 385-411",
+          "2605.09797v2 Lemma 17.4, lines 1264-1271"
+        ],
+        "html_urls": [
+          "https://arxiv.org/html/2605.01873v2",
+          "https://arxiv.org/html/2605.09797v2"
+        ]
+      },
+      "observed_text_relation": "The manuscripts say that coefficient-one equality cases or vanishing phase, stall, and parity residuals give exactly two rigid families: a constant frame and a physical m=1 azimuthal orbit. The proof invokes finite-dimensional label algebra and compactness.",
+      "blocking_gap": "The active transfer coefficient is not given as an explicit function on the stated frame space, the equality equations are not derived, and the claim that no third equality family exists is asserted in prose. Compactness can produce a positive gap only after the exact zero set has been proved; it cannot establish the zero-set classification itself.",
+      "minimal_repair": [
+        "Specify the frame variables, admissibility constraints, and normalized transfer coefficient explicitly.",
+        "Derive the coefficient-one equality equations from incompressibility and the Biot-Savart interaction.",
+        "Classify all solutions modulo rigid rotation and prove that only the constant-frame and physical m=1 orbit families occur.",
+        "Only then apply compactness to obtain the quantitative separation constant."
+      ],
+      "may_mark_clear": false
+    },
+    {
+      "finding_id": "R014-AF-004",
+      "obligations": ["R014-O11"],
+      "lane": "FULL-THREE-DIMENSIONAL",
+      "status": "blocked_exact_gap",
+      "failure_class": "INCOMPLETE_AXISYMMETRIC_HANDOFF",
+      "title": "Active-frame support is not sufficient to establish the full Part I endpoint class",
+      "source": {
+        "source_ids": ["NS-CI-R014-S2", "NS-CI-R014-S3", "NS-CI-R014-S4"],
+        "versioned_arxiv_ids": ["2605.01873v2", "2605.09797v2", "2606.07869v1"],
+        "locations": [
+          "2605.01873v2 Theorem 4.7, lines 457-476",
+          "2605.09797v2 Lemma 18.3 and Theorem 18.4, lines 1301-1324",
+          "2606.07869v1 Definition 36.1 and Theorem 36.2, lines 3830-3853"
+        ]
+      },
+      "observed_text_relation": "The full-system lane infers that support in the azimuthal rigid family and zero passive or exterior defects make the whole terminal velocity axisymmetric with swirl. The axisymmetric manuscript then states that weak endpoint passage preserves the required axis parity and that every nonflat reduced endpoint is admissible.",
+      "blocking_gap": "The cited steps do not provide the quantitative compactness and reconstruction theorem needed to pass from active-frame information to full velocity equivariance, remove all residual non-axisymmetric modes, preserve a single fixed axis through the sequence, and establish the axis traces, lifted finite-energy bounds, local energy inequality, and solution-class hypotheses required by Part I. In particular, the statement that smooth approximant parity passes in the local weak topology is not accompanied by a trace-compactness argument for divided variables.",
+      "minimal_repair": [
+        "State the exact convergence topology for velocity, vorticity, strain, pressure, and divided axisymmetric variables.",
+        "Prove fixed-axis selection and strong enough convergence to eliminate residual angular modes.",
+        "Prove trace and Hardy compactness at r=0 for Gamma, q, G, A, and W.",
+        "Verify every row of the Part I hypothesis ledger with a source theorem and uniform bound."
+      ],
+      "may_mark_clear": false
+    }
+  ],
+  "obligation_disposition": {
+    "R014-O05": "blocked_exact_gap",
+    "R014-O06": "blocked_exact_gap",
+    "R014-O10": "blocked_exact_gap",
+    "R014-O11": "blocked_exact_gap",
+    "all_other_obligations": "unreviewed_blocking",
+    "proof_obligation_clear_count": 0
+  },
+  "lane_disposition": {
+    "axisymmetric_claim": "INCOMPLETE_WITH_EXACT_GAPS",
+    "full_system_claim": "INCOMPLETE_WITH_EXACT_GAPS",
+    "may_change_programme_theorem_status": false,
+    "may_route_to_mathsolve": false,
+    "may_route_to_mathcert": false,
+    "may_promote_global_regularity_claim": false
+  },
+  "claim_boundary": "This audit identifies missing load-bearing definitions and implications in the locked manuscript versions. It does not prove that either advertised theorem is false. The findings remain subject to independent analytic review, and no Programme, MATHSOLVE, MATHCERT, publication, priority, or promotional state is advanced."
+}
