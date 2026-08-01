@@ -1,0 +1,60 @@
+name: NS-CI R014 source lock
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/ns-ci-r014-source-lock.yml"
+      - "reports/discovery/ns_ci_001/claimed_proof_triage_2026.json"
+      - "tools/verify_ns_ci_r014_source_lock.py"
+      - "tests/test_ns_ci_r014_source_lock.py"
+
+permissions:
+  contents: read
+
+jobs:
+  acquire-and-verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Assert exact subject checkout
+        env:
+          SUBJECT_SHA: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$SUBJECT_SHA"
+      - name: Acquire exact arXiv PDF and TeX/e-print bytes
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ns-ci-r014
+          for versioned_id in \
+            2605.01875v3 \
+            2605.01873v2 \
+            2605.09797v2 \
+            2606.07869v1
+          do
+            curl --fail --location --retry 4 --retry-delay 2 \
+              --silent --show-error \
+              --user-agent 'GCL-MATHFORGE/1.0 source-integrity audit' \
+              "https://arxiv.org/pdf/${versioned_id}" \
+              --output "/tmp/ns-ci-r014/${versioned_id}.pdf"
+            curl --fail --location --retry 4 --retry-delay 2 \
+              --silent --show-error \
+              --user-agent 'GCL-MATHFORGE/1.0 source-integrity audit' \
+              "https://arxiv.org/e-print/${versioned_id}" \
+              --output "/tmp/ns-ci-r014/${versioned_id}.eprint"
+          done
+      - name: Verify acquired bytes against governed ledger
+        run: |
+          python tools/verify_ns_ci_r014_source_lock.py \
+            --input-dir /tmp/ns-ci-r014 \
+            --record reports/discovery/ns_ci_001/claimed_proof_triage_2026.json \
+            | tee /tmp/ns-ci-r014-source-acquisition.json
+      - name: Upload non-copyright verification record
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ns-ci-r014-source-acquisition
+          path: /tmp/ns-ci-r014-source-acquisition.json
+          if-no-files-found: error
+          retention-days: 30
