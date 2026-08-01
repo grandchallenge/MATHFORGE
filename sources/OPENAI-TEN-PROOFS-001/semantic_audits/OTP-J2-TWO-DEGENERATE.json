@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-SEMANTIC-WP01-TWO-DEGENERATE",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-J2-TWO-DEGENERATE",
+  "authority": {
+    "forge_evidence_merge": "72452f4579749448169cacf9f2ab22a4df2bb182",
+    "official_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "official_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "theorem_matrix_blob": "2d8b24c32c804c4f5ca0f5f5ad1185199d35664b",
+    "review_remedy_merge": "bffb7d63476d79e86665ec5a74d554794e24357e",
+    "semantic_tracker": "https://github.com/grandchallenge/MATHFORGE/issues/50"
+  },
+  "source": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+    "chapter": 10,
+    "theorem": "Theorem 1.2",
+    "pdf_page_index": 236,
+    "printed_page": 235,
+    "line_locator": "parsed P236-P237 L19792-L19822",
+    "normalized_statement": "There exist a fixed finite connected bipartite 2-degenerate graph H and positive real constants c and epsilon such that ex(n,H) is at least c*n^(3/2+epsilon) for all sufficiently large natural n. This refutes the conjectured O(n^(3/2)) bound for fixed bipartite 2-degenerate graphs and hence the r=2 case of the general degeneracy conjecture."
+  },
+  "lean": {
+    "challenge_path": "ComparatorChallenges/J_TwoDegenerateGraphs.lean",
+    "challenge_blob": "dd22ce141dd0a860ecdccfda291c0f3a480a1d70",
+    "solution_module": "CompactnessAndDegeneracy",
+    "solution_path": "CompactnessAndDegeneracy.lean",
+    "solution_blob": "39fc24a0060b335475af960944baf6b85c3add98",
+    "comparator_config_path": "ComparatorChallenges/J_TwoDegenerateGraphs.json",
+    "comparator_config_blob": "d8a542b5ce620b686cb24a6756360e76c5d2b1c1",
+    "theorem_names": [
+      "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample",
+      "TwoDegenerateGraphs.not_erdos_146"
+    ],
+    "replay_gate": "clear"
+  },
+  "definition_concordance": [
+    {
+      "source_concept": "finite simple undirected graph",
+      "lean_encoding": "H : SimpleGraph (Fin q)",
+      "status": "equivalent",
+      "analysis": "The Fin q carrier makes H finite, while mathlib SimpleGraph supplies a loopless symmetric adjacency relation corresponding to a finite simple undirected graph."
+    },
+    {
+      "source_concept": "degree within a nonempty subgraph",
+      "lean_encoding": "neighborsWithin G s v = s.filter (G.Adj v)",
+      "status": "equivalent",
+      "analysis": "For a vertex v in the finite vertex subset s, the cardinality of neighborsWithin is exactly the degree of v in the induced subgraph on s."
+    },
+    {
+      "source_concept": "r-degenerate graph",
+      "lean_encoding": "IsDegenerate r G requires every nonempty finite vertex subset to contain a vertex with at most r neighbors in that subset",
+      "status": "equivalent",
+      "analysis": "On a finite graph, quantifying over nonempty vertex subsets is equivalent to quantifying over nonempty subgraphs for the standard degeneracy condition."
+    },
+    {
+      "source_concept": "2-degenerate graph",
+      "lean_encoding": "IsTwoDegenerate H abbreviates IsDegenerate 2 H",
+      "status": "exact",
+      "analysis": "The parameter is fixed to two without an implicit coercion or a weakened average-degree condition."
+    },
+    {
+      "source_concept": "extremal number ex(n,H)",
+      "lean_encoding": "SimpleGraph.extremalNumber n H",
+      "status": "exact",
+      "analysis": "At the pinned mathlib revision, extremalNumber is the maximum edge count among H-free simple graphs on n vertices, matching the source convention."
+    },
+    {
+      "source_concept": "general degeneracy conjecture",
+      "lean_encoding": "DegeneracyConjectureStatement quantifies over r>0 and bipartite r-degenerate H and asserts IsBigO ex(n,H) n^(2-1/r)",
+      "status": "exact",
+      "analysis": "The formal statement preserves the universal graph and r quantifiers, positivity of r, bipartiteness, degeneracy premise, exponent, and sufficiently-large-n asymptotic meaning."
+    }
+  ],
+  "hypothesis_concordance": [
+    {
+      "source_concept": "fixed connected graph",
+      "lean_encoding": "exists q and H : SimpleGraph (Fin q) with H.Connected",
+      "status": "exact",
+      "analysis": "The graph is selected existentially once and does not depend on n, and connectedness is an explicit conjunct."
+    },
+    {
+      "source_concept": "bipartite 2-degenerate",
+      "lean_encoding": "H.IsBipartite and IsTwoDegenerate H",
+      "status": "exact",
+      "analysis": "Both structural source hypotheses are explicit and attached to the same fixed graph H."
+    },
+    {
+      "source_concept": "positive constants",
+      "lean_encoding": "exists c epsilon : Real with 0<c and 0<epsilon",
+      "status": "exact",
+      "analysis": "The lower-bound coefficient and exponent gain are forced positive, preventing a zero coefficient or nonpositive epsilon from trivializing the counterexample."
+    },
+    {
+      "source_concept": "additional bipartition degree property",
+      "lean_encoding": "every two-coloring side has maximum degree greater than two",
+      "status": "stronger_lean",
+      "analysis": "This extra conjunct is not needed for source Theorem 1.2, but it strengthens the witness and does not weaken, alter, or condition the connected bipartite 2-degenerate counterexample claim."
+    }
+  ],
+  "conclusion_concordance": [
+    {
+      "source_concept": "super-n^(3/2) lower bound",
+      "lean_encoding": "eventually c*(n:Real)^(3/2+epsilon) <= extremalNumber n H",
+      "status": "exact",
+      "analysis": "The inequality direction, positive coefficient, positive exponent gain, fixed graph, and atTop sufficiently-large-n quantifier match the source theorem."
+    },
+    {
+      "source_concept": "refutation of the degeneracy conjecture",
+      "lean_encoding": "not_erdos_146 : not DegeneracyConjectureStatement",
+      "status": "exact",
+      "analysis": "The direct negation follows from the r=2 witness and targets the same asymptotic conjecture encoded with exponent 2-1/r."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear",
+    "witness_theorems": [
+      "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample"
+    ],
+    "reason": "The Comparator-checked existential theorem supplies a concrete finite carrier size, a fixed graph satisfying connectedness, bipartiteness, and 2-degeneracy, positive c and epsilon, and an eventual lower bound. No empty graph family, zero constant, or empty asymptotic domain can satisfy the target vacuously."
+  },
+  "scope_exclusions": [
+    "The additional coloring-side degree property is recorded only as a stronger witness property and is not attributed to the source theorem statement.",
+    "This audit does not independently certify the explicit probabilistic or combinatorial construction underlying the checked existential theorem."
+  ],
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "source_gate_before_activation": "not_clear",
+    "source_gate_after_activation": "clear",
+    "reason": "The formal definitions of degeneracy and extremal number match the source conventions, and the checked existential theorem preserves every source structural hypothesis and the exact super-n^(3/2) asymptotic lower bound with positive witnesses. The one additional Lean conjunct strengthens rather than weakens the source claim."
+  },
+  "activation": {
+    "condition": "protected merge after exact-head CI and non-author specialist APPROVED review",
+    "effect_is_retroactive": false,
+    "head_change_requires_reapproval": true
+  },
+  "route_effect": {
+    "may_route_before_activation": false,
+    "eligible_after_activation": true,
+    "aggregate_route_permitted": false,
+    "mathcert_adjudication_authorized": false
+  },
+  "claim_boundary": "This record is a candidate semantic and nonvacuity clearance for the exact two-degenerate result family only. It does not independently certify the construction proof, adjudicate the theorem in MATHCERT, admit or certify the aggregate corpus, or authorize novelty, priority, publication, patentability, product, or commercial claims."
+}
