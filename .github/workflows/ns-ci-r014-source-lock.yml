@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/ns-ci-r014-source-lock.yml"
       - "reports/discovery/ns_ci_001/claimed_proof_triage_2026.json"
+      - "reports/discovery/ns_ci_001/source_byte_lock_2026.json"
       - "tools/verify_ns_ci_r014_source_lock.py"
       - "tests/test_ns_ci_r014_source_lock.py"
 
@@ -45,11 +46,11 @@ jobs:
               "https://arxiv.org/e-print/${versioned_id}" \
               --output "/tmp/ns-ci-r014/${versioned_id}.eprint"
           done
-      - name: Verify acquired bytes against governed ledger
+      - name: Verify acquired bytes against governed source lock
         run: |
           python tools/verify_ns_ci_r014_source_lock.py \
             --input-dir /tmp/ns-ci-r014 \
-            --record reports/discovery/ns_ci_001/claimed_proof_triage_2026.json \
+            --record reports/discovery/ns_ci_001/source_byte_lock_2026.json \
             | tee /tmp/ns-ci-r014-source-acquisition.json
       - name: Upload non-copyright verification record
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
