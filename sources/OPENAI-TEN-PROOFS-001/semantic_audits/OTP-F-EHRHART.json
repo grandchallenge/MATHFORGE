@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-SEMANTIC-WP01-EHRHART",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-F-EHRHART",
+  "authority": {
+    "forge_evidence_merge": "72452f4579749448169cacf9f2ab22a4df2bb182",
+    "official_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "official_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "theorem_matrix_blob": "2d8b24c32c804c4f5ca0f5f5ad1185199d35664b",
+    "review_remedy_merge": "bffb7d63476d79e86665ec5a74d554794e24357e",
+    "semantic_tracker": "https://github.com/grandchallenge/MATHFORGE/issues/50"
+  },
+  "source": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+    "chapter": 8,
+    "theorem": "Theorem 1.1",
+    "pdf_page_index": 219,
+    "printed_page": 218,
+    "line_locator": "parsed P219 L18214-L18229",
+    "normalized_statement": "For every positive dimension n, a full-dimensional compact convex body K in real n-space with barycenter zero and with zero as its only interior lattice point has ordinary Euclidean volume at most (n+1)^n/n!. The bound is attained by the translated dilation (n+1)Delta_n-(1,...,1). No classification of all equality cases is asserted."
+  },
+  "lean": {
+    "challenge_path": "ComparatorChallenges/F_EhrhartVolumeInequality.lean",
+    "challenge_blob": "915f4d4230c36581fb0123763c30fd329ac5aeb8",
+    "solution_module": "EhrhartVolumeInequality",
+    "solution_path": "EhrhartVolumeInequality.lean",
+    "solution_blob": "312c65cbdd80b4b6db39ce0ce73de128a8584a9d",
+    "comparator_config_path": "ComparatorChallenges/F_EhrhartVolumeInequality.json",
+    "comparator_config_blob": "374e80eca19e6265508843a76a51710f9d32f94c",
+    "theorem_names": [
+      "Ehrhart.Volume.ehrhart_volume_inequality_for_sets",
+      "Ehrhart.SimplexVolume.exists_centeredBody_sharp",
+      "Ehrhart.SimplexVolume.barycenter_centeredSimplex",
+      "Ehrhart.SimplexVolume.normalizedVolume_centeredSimplex"
+    ],
+    "replay_gate": "clear"
+  },
+  "definition_concordance": [
+    {
+      "source_concept": "real n-space",
+      "lean_encoding": "Ehrhart.Space n = Fin n -> Real",
+      "status": "equivalent",
+      "analysis": "A function on Fin n is the standard coordinate model of real n-dimensional Euclidean space used by mathlib's canonical volume measure."
+    },
+    {
+      "source_concept": "ordinary Euclidean volume",
+      "lean_encoding": "normalizedVolume K = ((volume : Measure (Space n)) K).toReal",
+      "status": "equivalent",
+      "analysis": "The name normalizedVolume is potentially misleading, but the definition is the canonical finite-dimensional Lebesgue volume converted from ENNReal to Real, with no extra factorial or lattice normalization."
+    },
+    {
+      "source_concept": "barycenter",
+      "lean_encoding": "(normalizedVolume K)^-1 • integral x in K, x dvolume",
+      "status": "equivalent",
+      "analysis": "This is the usual centroid formula. The theorem's compactness and nonempty-interior hypotheses ensure the finite positive-volume regime relevant to the source statement."
+    },
+    {
+      "source_concept": "full-dimensional convex body",
+      "lean_encoding": "Convex Real S, IsCompact S, and (interior S).Nonempty",
+      "status": "equivalent",
+      "analysis": "In finite-dimensional real coordinate space, nonempty interior is the standard full-dimensional condition; the set-level theorem separately carries convexity and compactness."
+    },
+    {
+      "source_concept": "only interior lattice point is zero",
+      "lean_encoding": "interiorLatticePoints S = {0}",
+      "status": "exact",
+      "analysis": "integerPoint casts coordinatewise from Fin n -> Int and membership is taken in the topological interior, matching int(K) intersection Z^n = {0}."
+    },
+    {
+      "source_concept": "sharp constant",
+      "lean_encoding": "sharpConstant n = ((n : Real)+1)^n / n.factorial",
+      "status": "exact",
+      "analysis": "The Lean expression is the source constant (n+1)^n/n! with the dimension represented as a positive natural number."
+    },
+    {
+      "source_concept": "centered simplex witness",
+      "lean_encoding": "centeredSimplex n = simplexDilation n '' standardSimplex n",
+      "status": "equivalent",
+      "analysis": "simplexDilation sends x to (n+1)x-1 coordinatewise, which is precisely the source witness (n+1)Delta_n-(1,...,1)."
+    }
+  ],
+  "hypothesis_concordance": [
+    {
+      "source_concept": "positive dimension",
+      "lean_encoding": "hn : 0 < n",
+      "status": "exact",
+      "analysis": "The Lean theorem explicitly excludes dimension zero, matching the ordinary positive-dimensional statement and the sharpness witness theorem."
+    },
+    {
+      "source_concept": "compact convex full-dimensional body",
+      "lean_encoding": "hconvex, hcompact, hinterior",
+      "status": "equivalent",
+      "analysis": "The three hypotheses decompose the source phrase into exact structural predicates without dropping boundedness, closure, convexity, or full dimensionality."
+    },
+    {
+      "source_concept": "centered with unique interior lattice point",
+      "lean_encoding": "hcentered : barycenter S = 0 and hlattice : interiorLatticePoints S = {0}",
+      "status": "exact",
+      "analysis": "Both source restrictions are explicit theorem hypotheses rather than hidden fields or consequences of an unrelated predicate."
+    }
+  ],
+  "conclusion_concordance": [
+    {
+      "source_concept": "Ehrhart volume upper bound",
+      "lean_encoding": "normalizedVolume S <= ((n : Real)+1)^n / n.factorial",
+      "status": "exact",
+      "analysis": "After the volume-definition correspondence, the Lean inequality has the same direction, dimension dependence, exponent, and denominator as source Theorem 1.1."
+    },
+    {
+      "source_concept": "sharpness by the centered simplex",
+      "lean_encoding": "exists_centeredBody_sharp together with barycenter_centeredSimplex and normalizedVolume_centeredSimplex",
+      "status": "equivalent",
+      "analysis": "The direct existential theorem supplies a CenteredBody with exact sharp volume, while the named simplex lemmas identify the advertised witness and its barycenter and volume."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear",
+    "witness_theorems": [
+      "Ehrhart.SimplexVolume.exists_centeredBody_sharp",
+      "Ehrhart.SimplexVolume.normalizedVolume_centeredSimplex"
+    ],
+    "reason": "The Comparator-checked existential theorem constructs a CenteredBody for every positive n and asserts exact equality with the sharp constant. Thus the theorem domain is inhabited and the bound is not vacuously true through an empty body class."
+  },
+  "scope_exclusions": [
+    "No uniqueness or classification of all equality cases is certified; the source explicitly leaves that refinement open.",
+    "This audit does not independently replay the internal analytic proof beyond the already-clear kernel and Comparator gates."
+  ],
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "source_gate_before_activation": "not_clear",
+    "source_gate_after_activation": "clear",
+    "reason": "The source theorem, all load-bearing definitions, hypotheses, inequality, and sharpness witness have direct or equivalent Lean encodings, and a checked explicit witness clears nonvacuity. The only excluded source discussion is the unproved classification of all equality cases, which the Lean targets do not claim."
+  },
+  "activation": {
+    "condition": "protected merge after exact-head CI and non-author specialist APPROVED review",
+    "effect_is_retroactive": false,
+    "head_change_requires_reapproval": true
+  },
+  "route_effect": {
+    "may_route_before_activation": false,
+    "eligible_after_activation": true,
+    "aggregate_route_permitted": false,
+    "mathcert_adjudication_authorized": false
+  },
+  "claim_boundary": "This record is a candidate semantic and nonvacuity clearance for the exact Ehrhart result family only. It does not certify the proof independently of MATHCERT, classify equality cases, admit the aggregate corpus, authorize an aggregate handoff, or promote novelty, priority, publication, patentability, product, or commercial claims."
+}
