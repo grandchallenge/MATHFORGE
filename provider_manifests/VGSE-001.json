@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-VGSE-001-MANIFEST",
+  "campaign_id": "VGSE-001",
+  "title": "Varchenko-Galashin structural enumeration candidate provider coverage",
+  "coverage_mode": "native",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "50a2d20a21caa20570042a021842580d31d6d2d4",
+    "issue": 170,
+    "paths": [
+      "governance/campaign_admission_registry.json",
+      "governance/umbrella_runtime_contract_v4.json",
+      "governance/five_repository_conformance_seventh_pass_closure.json"
+    ]
+  },
+  "handoff_packet": {
+    "problem_card": {
+      "state": "referenced",
+      "references": ["governance/campaign_admission_registry.json"],
+      "reason": "The protected Programme registry defines VGSE-001 as a non-active candidate."
+    },
+    "source_map": {
+      "state": "present",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"],
+      "reason": "Independent author-hosted and arXiv v2 acquisitions are hashed and concordanced."
+    },
+    "status_triage": {
+      "state": "present",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"],
+      "reason": "Source verification is separated from mathematical certification and campaign admission."
+    },
+    "reconnaissance_ledger": {
+      "state": "referenced",
+      "references": ["https://github.com/grandchallenge/MATHSOLVE/pull/85"],
+      "reason": "The bounded numerical reconstruction remains Solve-owned evidence."
+    },
+    "failure_risks": {
+      "state": "present",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"],
+      "reason": "The record identifies byte inequality, reconstruction choices, and non-certification boundaries."
+    },
+    "suggested_wp01": {
+      "state": "deferred",
+      "references": [],
+      "reason": "No successor mathematical or physical lane is authorized by source verification alone."
+    },
+    "certification_route_sketch": {
+      "state": "referenced",
+      "references": ["https://github.com/grandchallenge/MATHCERT/issues/41"],
+      "reason": "MATHCERT #41 remains pre-route until Programme admission and an exact Solve handoff."
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "VGSE-001-SOURCE-CONCORDANCE",
+      "kind": "source_revision_concordance",
+      "ownership": "MATHFORGE",
+      "path": "sources/VGSE-001/source_revision_concordance.json",
+      "claim_boundary": "This record verifies source bytes and textual revision concordance only; it does not certify mathematical or geometric claims or admit the campaign.",
+      "integrity": {
+        "algorithm": "sha256",
+        "value": "8021be6bf9f8a3d8f38b543f8369d2b234c8fb8c0c7788153d9f6c6bb52c8350"
+      }
+    }
+  ],
+  "source_records": [
+    {
+      "record_id": "VGSE-001-AUTHOR-PDF",
+      "summary": "The independently downloaded author-hosted PDF has SHA-256 e513789426ae6247438920bfc80cfba6bd9c32dc6799a4f7873d806a865f95de, byte length 1317147, and 78 pages.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"]
+    },
+    {
+      "record_id": "VGSE-001-ARXIV-V2",
+      "summary": "The independently downloaded arXiv 2410.09574v2 PDF has SHA-256 f5aefb71dd0d662679e85cd0c7f96d1bbbc029a6b5cd2f1cfaa06286cc718e34, byte length 1723597, and 78 pages.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"]
+    },
+    {
+      "record_id": "VGSE-001-REVISION-CONCORDANCE",
+      "summary": "The PDFs are not byte-identical, but their normalized extracted text is identical after removal of the arXiv stamp and neutralization of the recorded June 3/4 display-date difference.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"]
+    }
+  ],
+  "status_records": [
+    {
+      "record_id": "VGSE-001-PROVIDER-STATUS",
+      "summary": "The candidate source identifier is provider-verified and revision-concordant; VGSE-001 remains a non-active Programme candidate.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json", "governance/campaign_admission_registry.json"]
+    }
+  ],
+  "fixtures": [
+    {
+      "record_id": "VGSE-001-TRANSCRIBED-FIXTURE",
+      "summary": "Example B.1 matrix C, the five affine lines, beta(C)=5, Proposition B.2, and the rounded Figure 16 drawings are source-transcribed or source-extracted data.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"]
+    },
+    {
+      "record_id": "VGSE-001-RECONSTRUCTION-BOUNDARY",
+      "summary": "Graph topology, numerical weights, matchings, eliminant, roots, discrete-holomorphic solves, primitives, generated embeddings, and equivalence matching are reconstruction outputs rather than source facts.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json", "https://github.com/grandchallenge/MATHSOLVE/pull/85"]
+    }
+  ],
+  "failed_routes": [
+    {
+      "record_id": "VGSE-001-BYTE-EQUALITY-REJECTED",
+      "summary": "The author-hosted PDF and arXiv v2 PDF are not byte-identical; their separate identities must be preserved.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json"]
+    },
+    {
+      "record_id": "VGSE-001-SOURCE-TO-CERT-REJECTED",
+      "summary": "Provider verification cannot be used as a substitute for exact or interval mathematical certification.",
+      "references": ["https://github.com/grandchallenge/MATHCERT/issues/41"]
+    }
+  ],
+  "provider_debt": [
+    {
+      "record_id": "VGSE-001-THEOREM-HYPOTHESIS-DEBT",
+      "summary": "MATHCERT must independently audit the genericity, saturation, divisor-exclusion, and critical-point-count hypotheses before adjudication.",
+      "references": ["sources/VGSE-001/source_revision_concordance.json", "https://github.com/grandchallenge/MATHCERT/issues/41"]
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-07-31",
+    "created_by": "MF-VGSE-0001",
+    "source_commits": [
+      "50a2d20a21caa20570042a021842580d31d6d2d4",
+      "709c7d3f388b8df75c87a247f80424e560c31e72"
+    ]
+  },
+  "downstream_references": {
+    "programme": ["https://github.com/grandchallenge/MATH-PROGRAMME/issues/170"],
+    "mathsolve": ["https://github.com/grandchallenge/MATHSOLVE/pull/85", "https://github.com/grandchallenge/MATHSOLVE/issues/84"],
+    "mathcert": ["https://github.com/grandchallenge/MATHCERT/issues/41"]
+  },
+  "non_certification_statement": "This manifest verifies and classifies source evidence only. It does not certify a root count, graph weights, boundary measurement, discrete-holomorphic system, primitive, t-embedding, equivalence match, rigid mechanism, manufactured structure, novelty, priority, patentability, product performance, or commercial value, and it does not admit VGSE-001 to the active portfolio."
+}

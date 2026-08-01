@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-VGSE-0001-SOURCE-CONCORDANCE",
+  "campaign_id": "VGSE-001",
+  "verified_at": "2026-07-31",
+  "acquisition": {
+    "method": "independent_https_download",
+    "author_pdf": {
+      "url": "https://www.math.ucla.edu/~galashin/papers/t_embeddings_v2.pdf",
+      "sha256": "e513789426ae6247438920bfc80cfba6bd9c32dc6799a4f7873d806a865f95de",
+      "byte_length": 1317147,
+      "pages": 78,
+      "pdf_version": "1.7",
+      "producer": "pdfTeX-1.40.29"
+    },
+    "arxiv_v2_pdf": {
+      "url": "https://arxiv.org/pdf/2410.09574v2",
+      "arxiv_id": "2410.09574v2",
+      "sha256": "f5aefb71dd0d662679e85cd0c7f96d1bbbc029a6b5cd2f1cfaa06286cc718e34",
+      "byte_length": 1723597,
+      "pages": 78,
+      "pdf_version": "1.7",
+      "producer": "pikepdf 8.15.1"
+    }
+  },
+  "revision_concordance": {
+    "byte_identical": false,
+    "normalization": "pdftotext-layout; remove arXiv:2410.09574v2 stamp; neutralize June 3/4, 2026 display-date difference; remove Unicode whitespace",
+    "normalized_text_sha256": "74d58d4465166fc5035e5064a2c1cabc8b0f1e62cdcf82f7b41c6af65492cba4",
+    "normalized_text_identical": true,
+    "bibliographic_identity": {
+      "title": "Amplituhedra and origami, I: tree level",
+      "author": "Pavel Galashin",
+      "arxiv_id": "2410.09574v2",
+      "arxiv_revision_date": "2026-06-03",
+      "page_count": 78,
+      "figure_count": 16
+    },
+    "scope_checked": [
+      "Appendix B",
+      "Example B.1",
+      "Proposition B.2",
+      "Example B.3",
+      "Remark B.4",
+      "Problem B.5",
+      "Figure 16",
+      "reference Var95",
+      "reference OT95"
+    ]
+  },
+  "source_transcription": {
+    "directly_stated": [
+      "the Example B.1 parameters k=3 and n=6",
+      "the Example B.1 matrix C",
+      "the five projectivized affine lines",
+      "the statement beta(C)=5",
+      "Proposition B.2 and its generic-boundary hypothesis",
+      "the five rounded Figure 16 t-embedding drawings with a common kami boundary",
+      "Remark B.4's warning that not all algebraic pairs give t-immersions",
+      "the citations Var95 and OT95"
+    ],
+    "extracted_from_source_graphics": [
+      "rounded Figure 16 vector paths",
+      "rounded face incidences and colors",
+      "rounded common boundary coordinates"
+    ],
+    "not_source_transcribed": [
+      "the reconstructed reduced bipartite graph topology",
+      "the positive numerical graph weights and Kasteleyn representative",
+      "the enumeration of 31 almost-perfect matchings",
+      "the eliminant and saturated numerical root witnesses",
+      "the discrete-holomorphic linear-system solutions",
+      "the integrated Kenyon-Smirnov primitives",
+      "the independently generated planar t-embeddings",
+      "the generated-to-source equivalence matching"
+    ]
+  },
+  "theorem_chain": [
+    {
+      "citation_key": "Var95",
+      "citation": "A. Varchenko, Critical points of the product of powers of linear functions and families of bases of singular vectors, Compositio Mathematica 97(3):385-401, 1995.",
+      "role": "conjecture and master-function background",
+      "verification_state": "bibliography_concordant"
+    },
+    {
+      "citation_key": "OT95",
+      "citation": "Peter Orlik and Hiroaki Terao, The number of critical points of a product of powers of linear functions, Inventiones Mathematicae 120(1):1-14, 1995.",
+      "doi": "10.1007/BF01241120",
+      "role": "the critical-point count invoked in Proposition B.2",
+      "verification_state": "bibliography_concordant_theorem_hypotheses_pending_mathcert"
+    }
+  ],
+  "disposition": {
+    "author_pdf_identity": "provider_verified",
+    "arxiv_revision_identity": "provider_verified",
+    "revision_concordance": "provider_verified_textual_concordance_not_byte_identity",
+    "mathematical_certification": "not_performed",
+    "campaign_admission": "not_authorized",
+    "commercial_claims": "prohibited"
+  }
+}

@@ -193,10 +193,17 @@ def provider_contract_errors() -> list[str]:
     coverage = load_json(COVERAGE_PATH)
     errors.extend(validate(coverage, "provider_coverage.schema.json", str(COVERAGE_PATH.relative_to(ROOT))))
 
-    entries = coverage.get("active_campaigns", [])
+    active_entries = coverage.get("active_campaigns", [])
+    candidate_entries = coverage.get("candidate_campaigns", [])
+    entries = [*active_entries, *candidate_entries]
     campaign_ids = [entry.get("campaign_id") for entry in entries]
     if len(campaign_ids) != len(set(campaign_ids)):
         errors.append("governance/provider_coverage.json: duplicate campaign_id")
+    active_ids = {entry.get("campaign_id") for entry in active_entries}
+    candidate_ids = {entry.get("campaign_id") for entry in candidate_entries}
+    overlap = sorted(active_ids & candidate_ids)
+    for campaign_id in overlap:
+        errors.append(f"governance/provider_coverage.json: campaign is both active and candidate: {campaign_id}")
 
     registered = {
         entry["manifest_path"]

@@ -1,0 +1,53 @@
+name: VGSE source intake
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/vgse-source-intake.yml"
+      - "sources/VGSE-001/**"
+      - "provider_manifests/VGSE-001.json"
+      - "tools/verify_vgse_source_concordance.py"
+      - "tests/test_vgse_source_concordance.py"
+      - "governance/provider_coverage.json"
+      - "schemas/provider_coverage.schema.json"
+      - "ci/validate_forge.py"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Assert exact subject checkout
+        env:
+          SUBJECT_SHA: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$SUBJECT_SHA"
+      - name: Acquire independent source bytes
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            https://www.math.ucla.edu/~galashin/papers/t_embeddings_v2.pdf \
+            --output /tmp/vgse-author.pdf
+          curl --fail --location --retry 3 --silent --show-error \
+            https://arxiv.org/pdf/2410.09574v2 \
+            --output /tmp/vgse-arxiv-v2.pdf
+      - name: Verify bytes, PDF structure, and revision concordance
+        run: |
+          python tools/verify_vgse_source_concordance.py \
+            --author-pdf /tmp/vgse-author.pdf \
+            --arxiv-pdf /tmp/vgse-arxiv-v2.pdf \
+            --record sources/VGSE-001/source_revision_concordance.json \
+            | tee /tmp/vgse-source-verification.json
+      - name: Upload non-copyright verification record
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: vgse-source-verification
+          path: /tmp/vgse-source-verification.json
+          if-no-files-found: error
+          retention-days: 30

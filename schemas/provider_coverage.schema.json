@@ -4,7 +4,7 @@
   "title": "MATHFORGE Provider Coverage Registry",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "audit_id", "reviewed_at", "active_campaigns"],
+  "required": ["schema_version", "audit_id", "reviewed_at", "active_campaigns", "candidate_campaigns"],
   "properties": {
     "schema_version": {"const": "1.0.0"},
     "audit_id": {"const": "MF-GOV-WP00"},
@@ -37,6 +37,21 @@
           {"if": {"properties": {"disposition": {"const": "manifest"}}}, "then": {"required": ["manifest_path"], "not": {"required": ["waiver"]}}},
           {"if": {"properties": {"disposition": {"const": "waiver"}}}, "then": {"required": ["waiver"], "not": {"required": ["manifest_path"]}}}
         ]
+      }
+    },
+    "candidate_campaigns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["campaign_id", "title", "lifecycle", "disposition", "manifest_path"],
+        "properties": {
+          "campaign_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+          "title": {"type": "string", "minLength": 3},
+          "lifecycle": {"const": "candidate"},
+          "disposition": {"const": "manifest"},
+          "manifest_path": {"type": "string", "minLength": 1}
+        }
       }
     }
   }
