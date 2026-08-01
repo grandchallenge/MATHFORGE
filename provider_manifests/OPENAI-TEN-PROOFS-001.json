@@ -83,7 +83,7 @@
       "claim_boundary": "The matrix records exact replay and fail-closed source-concordance dispositions without admitting or certifying any result family.",
       "integrity": {
         "algorithm": "sha256",
-        "value": "362611ce30e77996b9f5c32d867c2074ff0ae9db469f0aa40f0f3153fcab52ed"
+        "value": "56cf03c4082268ff6ac5f17060100f1cf5609955c752a824510817edfe3334bc"
       }
     }
   ],
