@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_source_revision_audit.schema.json",
+  "title": "OpenAI ten-proofs bounded source-revision audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "record_id",
+    "candidate_id",
+    "audit_scope",
+    "authority",
+    "admitted_manuscript",
+    "observed_manuscript",
+    "reasoning_notes",
+    "comparison_method",
+    "families",
+    "disposition",
+    "activation",
+    "route_controls",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "openai_ten_proofs_source_revision_audit"},
+    "record_id": {"const": "MF-OTP-SOURCE-REVISION-AUDIT-001"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "audit_scope": {"const": "three_result_family_theorem_loci"},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tracker_issue", "admitted_semantic_merge", "official_lean_root", "official_lean_tree"],
+      "properties": {
+        "tracker_issue": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/52"},
+        "admitted_semantic_merge": {"const": "cb0a203c36a9ef33270d62ab369df7bc27d3b242"},
+        "official_lean_root": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "official_lean_tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"}
+      }
+    },
+    "admitted_manuscript": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "bytes", "sha256", "retained_bytes_available"],
+      "properties": {
+        "url": {"const": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf"},
+        "bytes": {"const": 2266052},
+        "sha256": {"const": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"},
+        "retained_bytes_available": {"const": false}
+      }
+    },
+    "observed_manuscript": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "observed_at", "bytes", "sha256", "page_count", "pdf_creation_time_utc"],
+      "properties": {
+        "url": {"const": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf"},
+        "observed_at": {"const": "2026-08-02"},
+        "bytes": {"const": 2266371},
+        "sha256": {"const": "64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6"},
+        "page_count": {"const": 249},
+        "pdf_creation_time_utc": {"const": "2026-08-01T08:29:21Z"}
+      }
+    },
+    "reasoning_notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bytes", "sha256", "relation"],
+      "properties": {
+        "bytes": {"const": 441468},
+        "sha256": {"const": "13b95999f060c0be2142089cfb8b17b75e9231c3c1f3fa0980445ff1b35f0b3b"},
+        "relation": {"const": "byte_identical_to_admitted"}
+      }
+    },
+    "comparison_method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_whole_document_byte_diff_performed", "reason", "current_revision_evidence", "admitted_revision_evidence", "permitted_inference"],
+      "properties": {
+        "exact_whole_document_byte_diff_performed": {"const": false},
+        "reason": {"type": "string", "minLength": 1},
+        "current_revision_evidence": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "admitted_revision_evidence": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "permitted_inference": {"type": "string", "minLength": 1}
+      }
+    },
+    "families": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["result_family", "semantic_record", "source_locus", "admitted_normalized_statement", "current_revision_findings", "current_revision_locus_concordance"],
+        "properties": {
+          "result_family": {"enum": ["OTP-F-EHRHART", "OTP-J1-COMPACTNESS", "OTP-J2-TWO-DEGENERATE"]},
+          "semantic_record": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "git_blob_sha1"],
+            "properties": {
+              "path": {"type": "string", "pattern": "^sources/OPENAI-TEN-PROOFS-001/semantic_audits/OTP-(F-EHRHART|J1-COMPACTNESS|J2-TWO-DEGENERATE)\\.json$"},
+              "git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+            }
+          },
+          "source_locus": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["chapter", "theorem", "pdf_page_index", "printed_page"],
+            "properties": {
+              "chapter": {"enum": [8, 10]},
+              "theorem": {"enum": ["Theorem 1.1", "Theorem 1.2"]},
+              "pdf_page_index": {"enum": [219, 236]},
+              "printed_page": {"enum": [218, 235]}
+            }
+          },
+          "admitted_normalized_statement": {"type": "string", "minLength": 1},
+          "current_revision_findings": {
+            "type": "object",
+            "minProperties": 4,
+            "maxProperties": 4,
+            "additionalProperties": {
+              "anyOf": [
+                {"type": "string", "minLength": 1},
+                {"type": "boolean"}
+              ]
+            },
+            "required": ["theorem_statement_relation", "proof_body_compared_in_full"],
+            "properties": {
+              "theorem_statement_relation": {"const": "equivalent_to_admitted_normalized_statement"},
+              "proof_body_compared_in_full": {"const": false},
+              "sharpness_witness_relation": {"const": "equivalent_to_admitted_normalized_statement"},
+              "scope_exclusion_preserved": {"type": "string", "minLength": 1},
+              "corrected_conjecture_context_relation": {"const": "equivalent_to_admitted_semantic_record"},
+              "connected_bipartite_cyclic_family_scope_preserved": {"const": true},
+              "degeneracy_definition_context_relation": {"const": "equivalent_to_admitted_semantic_record"},
+              "fixed_connected_bipartite_two_degenerate_scope_preserved": {"const": true}
+            }
+          },
+          "current_revision_locus_concordance": {"const": "candidate_clear_pending_protected_review"}
+        }
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["whole_document_byte_equivalence", "whole_document_semantic_equivalence", "family_locus_candidate_clear_count", "family_locus_clear_count_before_activation", "family_locus_clear_count_after_activation", "unexamined_result_family_count", "provider_manifest_updated"],
+      "properties": {
+        "whole_document_byte_equivalence": {"const": "not_established"},
+        "whole_document_semantic_equivalence": {"const": "not_established"},
+        "family_locus_candidate_clear_count": {"const": 3},
+        "family_locus_clear_count_before_activation": {"const": 0},
+        "family_locus_clear_count_after_activation": {"const": 3},
+        "unexamined_result_family_count": {"const": 9},
+        "provider_manifest_updated": {"const": false}
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "head_change_requires_reapproval", "effect"],
+      "properties": {
+        "condition": {"const": "exact-head Forge CI, non-author specialist APPROVED review, and protected merge"},
+        "head_change_requires_reapproval": {"const": true},
+        "effect": {"type": "string", "minLength": 1}
+      }
+    },
+    "route_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["may_route_before_activation", "route_registered_by_this_record", "aggregate_route_permitted", "mathcert_adjudication_authorized", "cert_output_authorized", "mathematical_claim_promoted"],
+      "properties": {
+        "may_route_before_activation": {"const": false},
+        "route_registered_by_this_record": {"const": false},
+        "aggregate_route_permitted": {"const": false},
+        "mathcert_adjudication_authorized": {"const": false},
+        "cert_output_authorized": {"const": false},
+        "mathematical_claim_promoted": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
