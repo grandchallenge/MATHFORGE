@@ -45,7 +45,7 @@ class OpenAITenProofsSourceRevisionAuditTests(unittest.TestCase):
             ),
         )
 
-    def test_current_audit_passes(self) -> None:
+    def test_current_audit_and_manifest_binding_pass(self) -> None:
         self.assertEqual(self.errors(), [])
 
     def test_silent_repin_is_rejected(self) -> None:
@@ -83,7 +83,7 @@ class OpenAITenProofsSourceRevisionAuditTests(unittest.TestCase):
         audit["families"][2]["current_revision_findings"]["proof_body_compared_in_full"] = True
         self.assertTrue(self.errors(audit=audit))
 
-    def test_premature_activation_is_rejected(self) -> None:
+    def test_audit_record_activation_state_mutation_is_rejected(self) -> None:
         audit = copy.deepcopy(self.audit)
         audit["families"][1]["current_revision_locus_concordance"] = "clear"
         self.assertTrue(self.errors(audit=audit))
@@ -98,8 +98,18 @@ class OpenAITenProofsSourceRevisionAuditTests(unittest.TestCase):
         audit["disposition"]["family_locus_clear_count_before_activation"] = 3
         self.assertTrue(self.errors(audit=audit))
 
-    def test_premature_provider_manifest_repin_is_rejected(self) -> None:
-        text = self.provider_manifest_text + MODULE.OBSERVED_SHA
+    def test_provider_manifest_missing_observed_revision_is_rejected(self) -> None:
+        text = self.provider_manifest_text.replace(MODULE.OBSERVED_SHA, "0" * 64)
+        self.assertTrue(self.errors(provider_manifest_text=text))
+
+    def test_provider_manifest_missing_audit_merge_is_rejected(self) -> None:
+        text = self.provider_manifest_text.replace(MODULE.AUDIT_MERGE, "0" * 40)
+        self.assertTrue(self.errors(provider_manifest_text=text))
+
+    def test_provider_manifest_missing_route_prohibition_is_rejected(self) -> None:
+        text = self.provider_manifest_text.replace(
+            "register a Solve or Cert route", "permit route registration"
+        )
         self.assertTrue(self.errors(provider_manifest_text=text))
 
 
