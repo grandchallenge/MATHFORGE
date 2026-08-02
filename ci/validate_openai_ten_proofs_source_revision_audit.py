@@ -17,6 +17,8 @@ MANIFEST_PATH = ROOT / "provider_manifests/OPENAI-TEN-PROOFS-001.json"
 
 ADMITTED_SHA = "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"
 OBSERVED_SHA = "64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6"
+AUDIT_MERGE = "a498ef40b7652b55bf121b5682604e259b8d3073"
+AUDIT_BLOB = "80d473b1b545fd9ca05fc5200bcf70ff5f9fcb05"
 EXPECTED_AUTHORITY = {
     "tracker_issue": "https://github.com/grandchallenge/MATHFORGE/issues/52",
     "admitted_semantic_merge": "cb0a203c36a9ef33270d62ab369df7bc27d3b242",
@@ -180,7 +182,7 @@ def validation_errors(
         if findings.get("proof_body_compared_in_full") is not False:
             errors.append(f"{family}: full proof-body comparison falsely asserted")
         if item.get("current_revision_locus_concordance") != "candidate_clear_pending_protected_review":
-            errors.append(f"{family}: activation state inflated")
+            errors.append(f"{family}: audit record activation state drift")
 
     if audit.get("disposition") != EXPECTED_DISPOSITION:
         errors.append("audit disposition drift or inflation")
@@ -196,8 +198,16 @@ def validation_errors(
         provider_manifest_text = MANIFEST_PATH.read_text(encoding="utf-8")
     if ADMITTED_SHA not in provider_manifest_text:
         errors.append("provider manifest lost admitted manuscript identity")
-    if OBSERVED_SHA in provider_manifest_text:
-        errors.append("provider manifest silently repinned before audit activation")
+    if OBSERVED_SHA not in provider_manifest_text:
+        errors.append("provider manifest did not register observed manuscript revision")
+    if AUDIT_MERGE not in provider_manifest_text:
+        errors.append("provider manifest did not bind audit merge")
+    if AUDIT_BLOB not in provider_manifest_text:
+        errors.append("provider manifest did not bind audit blob")
+    if "whole-document semantic equivalence remain not established" not in provider_manifest_text:
+        errors.append("provider manifest lost whole-document semantic limitation")
+    if "register a Solve or Cert route" not in provider_manifest_text:
+        errors.append("provider manifest lost route prohibition")
     return errors
 
 
@@ -208,7 +218,7 @@ def main() -> int:
         print(f"source revision audit validation failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
     print(
-        "validated bounded current-revision concordance candidates for Ehrhart, Compactness, and Two-degenerate; whole-document equivalence and all route authority remain blocked"
+        "validated the protected three-locus source revision audit and its bounded provider-manifest registration; whole-document equivalence and route authority remain blocked"
     )
     return 0
 
