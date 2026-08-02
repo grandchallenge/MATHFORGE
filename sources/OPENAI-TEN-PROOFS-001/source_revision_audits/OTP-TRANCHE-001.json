@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "openai_ten_proofs_source_revision_audit",
+  "record_id": "MF-OTP-SOURCE-REVISION-AUDIT-001",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "audit_scope": "three_result_family_theorem_loci",
+  "authority": {
+    "tracker_issue": "https://github.com/grandchallenge/MATHFORGE/issues/52",
+    "admitted_semantic_merge": "cb0a203c36a9ef33270d62ab369df7bc27d3b242",
+    "official_lean_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "official_lean_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"
+  },
+  "admitted_manuscript": {
+    "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+    "bytes": 2266052,
+    "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+    "retained_bytes_available": false
+  },
+  "observed_manuscript": {
+    "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+    "observed_at": "2026-08-02",
+    "bytes": 2266371,
+    "sha256": "64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6",
+    "page_count": 249,
+    "pdf_creation_time_utc": "2026-08-01T08:29:21Z"
+  },
+  "reasoning_notes": {
+    "bytes": 441468,
+    "sha256": "13b95999f060c0be2142089cfb8b17b75e9231c3c1f3fa0980445ff1b35f0b3b",
+    "relation": "byte_identical_to_admitted"
+  },
+  "comparison_method": {
+    "exact_whole_document_byte_diff_performed": false,
+    "reason": "The admitted 2266052-byte PDF was hashed but not retained in the repository or a Forge workflow artifact. The audit therefore does not infer whole-document equivalence from the 319-byte size delta.",
+    "current_revision_evidence": [
+      "independent MATHCERT reacquisition and hash receipt",
+      "current official PDF parsed text",
+      "visual inspection of printed pages 218, 234, 235, and 236"
+    ],
+    "admitted_revision_evidence": [
+      "content-addressed semantic records merged at cb0a203c36a9ef33270d62ab369df7bc27d3b242",
+      "their normalized theorem statements, page locators, definition audits, and scope exclusions"
+    ],
+    "permitted_inference": "Current-revision concordance may be determined only for the three recorded theorem loci and their load-bearing statement context."
+  },
+  "families": [
+    {
+      "result_family": "OTP-F-EHRHART",
+      "semantic_record": {
+        "path": "sources/OPENAI-TEN-PROOFS-001/semantic_audits/OTP-F-EHRHART.json",
+        "git_blob_sha1": "a3dc4de4c38a80b7aec1fae6506b08e14d2e58bb"
+      },
+      "source_locus": {
+        "chapter": 8,
+        "theorem": "Theorem 1.1",
+        "pdf_page_index": 219,
+        "printed_page": 218
+      },
+      "admitted_normalized_statement": "For every positive dimension n, a full-dimensional compact convex body K in real n-space with barycenter zero and with zero as its only interior lattice point has ordinary Euclidean volume at most (n+1)^n/n!. The bound is attained by the translated dilation (n+1)Delta_n-(1,...,1). No classification of all equality cases is asserted.",
+      "current_revision_findings": {
+        "theorem_statement_relation": "equivalent_to_admitted_normalized_statement",
+        "sharpness_witness_relation": "equivalent_to_admitted_normalized_statement",
+        "scope_exclusion_preserved": "The current text still states that classification of all equality cases is not determined.",
+        "proof_body_compared_in_full": false
+      },
+      "current_revision_locus_concordance": "candidate_clear_pending_protected_review"
+    },
+    {
+      "result_family": "OTP-J1-COMPACTNESS",
+      "semantic_record": {
+        "path": "sources/OPENAI-TEN-PROOFS-001/semantic_audits/OTP-J1-COMPACTNESS.json",
+        "git_blob_sha1": "659396358d0d999c00011645f72602f30ccf6b0e"
+      },
+      "source_locus": {
+        "chapter": 10,
+        "theorem": "Theorem 1.1",
+        "pdf_page_index": 236,
+        "printed_page": 235
+      },
+      "admitted_normalized_statement": "There exists a finite nonempty family F of connected bipartite finite simple graphs, every member containing a cycle, such that ex(n,F)=O(n^(4/3-1/48)) while for every member H of F one has ex(n,H)=Omega(n^(4/3)). Consequently no member controls the family extremal number up to a constant factor, so the corrected Erdos-Simonovits compactness conjecture fails.",
+      "current_revision_findings": {
+        "theorem_statement_relation": "equivalent_to_admitted_normalized_statement",
+        "corrected_conjecture_context_relation": "equivalent_to_admitted_semantic_record",
+        "connected_bipartite_cyclic_family_scope_preserved": true,
+        "proof_body_compared_in_full": false
+      },
+      "current_revision_locus_concordance": "candidate_clear_pending_protected_review"
+    },
+    {
+      "result_family": "OTP-J2-TWO-DEGENERATE",
+      "semantic_record": {
+        "path": "sources/OPENAI-TEN-PROOFS-001/semantic_audits/OTP-J2-TWO-DEGENERATE.json",
+        "git_blob_sha1": "7bd168c46921f64364b20021b6315d68f0fde7d0"
+      },
+      "source_locus": {
+        "chapter": 10,
+        "theorem": "Theorem 1.2",
+        "pdf_page_index": 236,
+        "printed_page": 235
+      },
+      "admitted_normalized_statement": "There exist a fixed finite connected bipartite 2-degenerate graph H and positive real constants c and epsilon such that ex(n,H) is at least c*n^(3/2+epsilon) for all sufficiently large natural n. This refutes the conjectured O(n^(3/2)) bound for fixed bipartite 2-degenerate graphs and hence the r=2 case of the general degeneracy conjecture.",
+      "current_revision_findings": {
+        "theorem_statement_relation": "equivalent_to_admitted_normalized_statement",
+        "degeneracy_definition_context_relation": "equivalent_to_admitted_semantic_record",
+        "fixed_connected_bipartite_two_degenerate_scope_preserved": true,
+        "proof_body_compared_in_full": false
+      },
+      "current_revision_locus_concordance": "candidate_clear_pending_protected_review"
+    }
+  ],
+  "disposition": {
+    "whole_document_byte_equivalence": "not_established",
+    "whole_document_semantic_equivalence": "not_established",
+    "family_locus_candidate_clear_count": 3,
+    "family_locus_clear_count_before_activation": 0,
+    "family_locus_clear_count_after_activation": 3,
+    "unexamined_result_family_count": 9,
+    "provider_manifest_updated": false
+  },
+  "activation": {
+    "condition": "exact-head Forge CI, non-author specialist APPROVED review, and protected merge",
+    "head_change_requires_reapproval": true,
+    "effect": "After activation, the mutable-PDF source-revision blocker is cleared only for OTP-F-EHRHART, OTP-J1-COMPACTNESS, and OTP-J2-TWO-DEGENERATE at the recorded theorem loci."
+  },
+  "route_controls": {
+    "may_route_before_activation": false,
+    "route_registered_by_this_record": false,
+    "aggregate_route_permitted": false,
+    "mathcert_adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_claim_promoted": false
+  },
+  "claim_boundary": "This candidate audit compares the current official PDF only at the three recorded theorem loci against content-addressed admitted semantic records. It does not establish whole-document byte or semantic equivalence, compare the proof bodies in full, update the provider manifest, register a route, adjudicate a theorem, issue a Cert output, certify the aggregate corpus, or promote mathematical, novelty, priority, publication, patentability, product, or commercial claims."
+}
