@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "external_downstream_certification_observation",
+  "observation_id": "MF-OTP-CERT-STATE-OBS-FORGE-001",
+  "tracker_issue": "https://github.com/grandchallenge/MATHFORGE/issues/56",
+  "subject": "OPENAI-TEN-PROOFS-001",
+  "supersession": {
+    "supersedes_downstream_summary_only": true,
+    "historical_provider_manifest": {
+      "path": "provider_manifests/OPENAI-TEN-PROOFS-001.json",
+      "git_blob_sha1": "fe1dab478e4ef9d6ddfe1b94a289fe7b51f58472",
+      "mutation_prohibited": true
+    }
+  },
+  "forge_authority": {
+    "owns_source_identity": true,
+    "owns_semantic_nonvacuity": true,
+    "owns_source_revision_loci": true,
+    "owns_cert_route": false,
+    "owns_adjudication": false,
+    "owns_cert_output": false,
+    "semantic_records": [
+      {
+        "result_family": "OTP-F-EHRHART",
+        "path": "sources/OPENAI-TEN-PROOFS-001/semantic_audits/OTP-F-EHRHART.json",
+        "git_blob_sha1": "a3dc4de4c38a80b7aec1fae6506b08e14d2e58bb"
+      },
+      {
+        "result_family": "OTP-J1-COMPACTNESS",
+        "path": "sources/OPENAI-TEN-PROOFS-001/semantic_audits/OTP-J1-COMPACTNESS.json",
+        "git_blob_sha1": "659396358d0d999c00011645f72602f30ccf6b0e"
+      },
+      {
+        "result_family": "OTP-J2-TWO-DEGENERATE",
+        "path": "sources/OPENAI-TEN-PROOFS-001/semantic_audits/OTP-J2-TWO-DEGENERATE.json",
+        "git_blob_sha1": "7bd168c46921f64364b20021b6315d68f0fde7d0"
+      }
+    ],
+    "source_revision_audit": {
+      "path": "sources/OPENAI-TEN-PROOFS-001/source_revision_audits/OTP-TRANCHE-001.json",
+      "git_blob_sha1": "80d473b1b545fd9ca05fc5200bcf70ff5f9fcb05"
+    }
+  },
+  "mathcert_authority": {
+    "repository": "grandchallenge/MATHCERT",
+    "execution_merge": "1d5b1e6514787005ed75e363df7ea953dcd9391a",
+    "documentary_closure_merge": "150344d25b50895203c59f4193a8e97bb1cbbf81",
+    "closure_exact_reviewed_head": "207df8462f427e0c41604614ebe1a291ad89273f",
+    "closure_review_id": 4840018727,
+    "closure_human_steward_disposition_comment": 5160923732,
+    "route_registry": {
+      "path": "governance/certification_routes.json",
+      "git_blob_sha1": "0487c3ebf702229741f16a544d68af25cf994e41"
+    },
+    "certificate": {
+      "certificate_id": "MC-OTP-F-EHRHART-QUAL-001",
+      "path": "certificates/formal_sources/MC-OTP-F-EHRHART-001.json",
+      "git_blob_sha1": "27a855c949b67e71372c7f0d6601d80125d33968"
+    },
+    "post_merge_attestation": {
+      "path": "governance/post_merge_attestations/OTP-F-EHRHART-CERT-OUTPUT-EXEC-001.v1.json",
+      "git_blob_sha1": "d8b36ffdb3b5e732b385c9bac5576aa96dd1fcbe"
+    },
+    "successor_closure": {
+      "path": "governance/result_family_output_execution_closures/OTP-F-EHRHART.json",
+      "git_blob_sha1": "c50a397a84873b358a54db2e602058da103b75e8"
+    }
+  },
+  "observed_family_state": [
+    {
+      "result_family": "OTP-F-EHRHART",
+      "route_state": "qualified",
+      "adjudication_count": 1,
+      "restricted_cert_output_count": 1,
+      "disposition": "qualified_encoded_targets_only",
+      "mathematical_target_proved": false
+    },
+    {
+      "result_family": "OTP-J1-COMPACTNESS",
+      "route_state": "submitted",
+      "adjudication_count": 0,
+      "restricted_cert_output_count": 0,
+      "disposition": null,
+      "mathematical_target_proved": false
+    },
+    {
+      "result_family": "OTP-J2-TWO-DEGENERATE",
+      "route_state": "submitted",
+      "adjudication_count": 0,
+      "restricted_cert_output_count": 0,
+      "disposition": null,
+      "mathematical_target_proved": false
+    }
+  ],
+  "aggregate_output_count": 0,
+  "mathematical_targets_marked_proved": 0,
+  "preserved_limitations": {
+    "whole_document_byte_equivalence": "not_established_between_all_revisions",
+    "whole_document_semantic_equivalence": "not_established",
+    "proof_body_compared_in_full": false,
+    "blocked_repair_lanes": ["OTP-C-PERMANENT", "OTP-H-GAPCVP"],
+    "all_lean_state": "failed_namespace_collision",
+    "unexamined_result_family_count": 9,
+    "aggregate_ten_proofs_authority": false
+  },
+  "effect": "external_downstream_observation_only_no_forge_cert_authority",
+  "claim_boundary": "This Forge successor records an externally governed MATHCERT state while preserving Forge ownership of source identity, semantic and nonvacuity findings, and source-revision loci. It does not create or own a Cert route, adjudication, disposition, certificate, proof, or aggregate authority; alter the protected provider manifest or semantic records; mark any mathematical target proved; classify all equality cases; establish whole-document equivalence; compare proof bodies in full; qualify Compactness or Two-degenerate; repair Permanent, GapCVP, or All.lean; or authorize novelty, priority, publication, patentability, product, or commercial claims."
+}
