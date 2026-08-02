@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_downstream_observation.schema.json",
+  "title": "OpenAI Ten Proofs Forge downstream observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "observation_id",
+    "tracker_issue",
+    "subject",
+    "supersession",
+    "forge_authority",
+    "mathcert_authority",
+    "observed_family_state",
+    "aggregate_output_count",
+    "mathematical_targets_marked_proved",
+    "preserved_limitations",
+    "effect",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "external_downstream_certification_observation"},
+    "observation_id": {"const": "MF-OTP-CERT-STATE-OBS-FORGE-001"},
+    "tracker_issue": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/56"},
+    "subject": {"const": "OPENAI-TEN-PROOFS-001"},
+    "supersession": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supersedes_downstream_summary_only", "historical_provider_manifest"],
+      "properties": {
+        "supersedes_downstream_summary_only": {"const": true},
+        "historical_provider_manifest": {
+          "const": {
+            "path": "provider_manifests/OPENAI-TEN-PROOFS-001.json",
+            "git_blob_sha1": "fe1dab478e4ef9d6ddfe1b94a289fe7b51f58472",
+            "mutation_prohibited": true
+          }
+        }
+      }
+    },
+    "forge_authority": {"type": "object", "additionalProperties": false, "required": ["owns_source_identity", "owns_semantic_nonvacuity", "owns_source_revision_loci", "owns_cert_route", "owns_adjudication", "owns_cert_output", "semantic_records", "source_revision_audit"], "properties": {
+      "owns_source_identity": {"const": true},
+      "owns_semantic_nonvacuity": {"const": true},
+      "owns_source_revision_loci": {"const": true},
+      "owns_cert_route": {"const": false},
+      "owns_adjudication": {"const": false},
+      "owns_cert_output": {"const": false},
+      "semantic_records": {"type": "array", "minItems": 3, "maxItems": 3},
+      "source_revision_audit": {"type": "object"}
+    }},
+    "mathcert_authority": {"type": "object", "additionalProperties": false, "required": ["repository", "execution_merge", "documentary_closure_merge", "closure_exact_reviewed_head", "closure_review_id", "closure_human_steward_disposition_comment", "route_registry", "certificate", "post_merge_attestation", "successor_closure"], "properties": {
+      "repository": {"const": "grandchallenge/MATHCERT"},
+      "execution_merge": {"const": "1d5b1e6514787005ed75e363df7ea953dcd9391a"},
+      "documentary_closure_merge": {"const": "150344d25b50895203c59f4193a8e97bb1cbbf81"},
+      "closure_exact_reviewed_head": {"const": "207df8462f427e0c41604614ebe1a291ad89273f"},
+      "closure_review_id": {"const": 4840018727},
+      "closure_human_steward_disposition_comment": {"const": 5160923732},
+      "route_registry": {"type": "object"},
+      "certificate": {"type": "object"},
+      "post_merge_attestation": {"type": "object"},
+      "successor_closure": {"type": "object"}
+    }},
+    "observed_family_state": {"type": "array", "minItems": 3, "maxItems": 3},
+    "aggregate_output_count": {"const": 0},
+    "mathematical_targets_marked_proved": {"const": 0},
+    "preserved_limitations": {"type": "object"},
+    "effect": {"const": "external_downstream_observation_only_no_forge_cert_authority"},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  }
+}
