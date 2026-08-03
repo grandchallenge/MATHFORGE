@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "MF-OTP-A-SPHERE-PACKING-REPLAY-001",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-A-SPHERE-PACKING",
+  "execution": {
+    "repository": "grandchallenge/MATHFORGE",
+    "pull_request": 61,
+    "execution_head": "88ca25d3059d52e43a3979db68527c50f939dd72",
+    "workflow_name": "OTP Sphere Packing semantic replay",
+    "workflow_run": 30780539287,
+    "interface_job": 91584136380,
+    "replay_job": 91584136417,
+    "conclusion": "success"
+  },
+  "source_identity": {
+    "repository": "openai/ten-proofs",
+    "commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "lean_toolchain": "leanprover/lean4:v4.32.0",
+    "lean_compiler_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35"
+  },
+  "governed_files": [
+    {
+      "path": "SpherePacking.lean",
+      "sha256": "f96e02d52538786a629c8c4d39b95c167fe87027fb13c7a06091d08abea908a1"
+    },
+    {
+      "path": "ComparatorChallenges/A_SpherePacking.lean",
+      "sha256": "50cb73be0e1f28247a155cae143ddbbf7168dae216aaa65112e62f5f0eaa3ce1"
+    },
+    {
+      "path": "ComparatorChallenges/A_SpherePacking.json",
+      "sha256": "f952d88af50b26cb738b9b6d508929e5f20066db14d3394e71a6de1def8ea424"
+    }
+  ],
+  "dependency_locks": {
+    "Comparator": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f",
+    "mathlib": "81a5d257c8e410db227a6665ed08f64fea08e997",
+    "lean4export": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+    "Lean4Checker": "b7398199245524275543dec6113229c9bb4902e5"
+  },
+  "results": {
+    "solution_module_build": {
+      "command": "lake build SpherePacking",
+      "jobs": 8656,
+      "conclusion": "success"
+    },
+    "challenge_interface_elaboration": {
+      "command": "lake env lean ComparatorChallenges/A_SpherePacking.lean",
+      "conclusion": "success",
+      "challenge_placeholder_warnings": [155, 163, 176, 189],
+      "warning_interpretation": "The four sorry warnings occur in the challenge interface placeholders and are not solution-module proof debt."
+    }
+  },
+  "governance_boundary": {
+    "replay_gate": "clear",
+    "semantic_gate": "not_clear",
+    "nonvacuity_gate": "not_clear",
+    "may_route_to_solve": false,
+    "may_route_to_cert": false,
+    "mathematical_target_proved": false,
+    "aggregate_authority": false
+  },
+  "claim_boundary": "This receipt establishes exact-source checkout, pinned-toolchain execution, isolated solution-module build, and challenge-interface elaboration only. It does not establish source-statement equivalence, the nonemptiness of the FullAdmissible quantified domain, mathematical correctness of the advertised theorem, a Solve handoff, a Cert route, adjudication, qualification, output, proof promotion, or aggregate ten-proofs authority."
+}
