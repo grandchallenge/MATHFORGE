@@ -95,15 +95,15 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Install repository-pinned Lean toolchain
-        uses: leanprover/lean-action@8dd5d0978ba1c4ec4ae0835a93f88d946799944f
-        with:
-          lake-package-directory: upstream
-          auto-config: "false"
-          build: "false"
-          test: "false"
-          lint: "false"
-          use-mathlib-cache: "false"
-          use-github-cache: "false"
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --proto '=https' --tlsv1.2 -fsSL \
+            https://raw.githubusercontent.com/leanprover/elan/464c9d28395000a2a0128e07081e4956d50eced2/elan-init.sh \
+            -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install leanprover/lean4:v4.32.0
       - name: Verify source and toolchain identity
         shell: bash
         run: |
@@ -112,6 +112,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "e62211d28e3a9131950c89caa6542cfe5eff3bca"
           test "$(cat lean-toolchain)" = "leanprover/lean4:v4.32.0"
           git rev-parse HEAD^{tree}
+          elan show
           lean --version
           lake --version
           sha256sum SpherePacking.lean ComparatorChallenges/A_SpherePacking.lean ComparatorChallenges/A_SpherePacking.json
