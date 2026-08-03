@@ -1,0 +1,123 @@
+name: OTP Sphere Packing semantic replay
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/otp-sphere-packing-semantic-replay.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inspect-source-interface:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out exact official source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/ten-proofs
+          ref: e62211d28e3a9131950c89caa6542cfe5eff3bca
+          path: upstream
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Extract governed Sphere Packing interface
+        shell: python
+        run: |
+          from __future__ import annotations
+          import hashlib, json, re
+          from pathlib import Path
+
+          root = Path("upstream")
+          names = [
+              "PackingBounds.FullMain.exact_limit",
+              "PackingBounds.FullMain.explicit_expansion",
+              "PackingBounds.FullMain.final_base2_step",
+              "PackingBounds.FullMain.full_dimension_free_bound",
+          ]
+          tokens = [
+              "FullAdmissible", "exact_limit", "explicit_expansion",
+              "final_base2_step", "full_dimension_free_bound",
+              "0.15997", ".15997", "0.4325", ".4325",
+              "Cohn", "Elkies", "dimension 5", "Dimension 5",
+              "lambert", "Lambert", "density", "log2",
+          ]
+          report = {
+              "official_commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+              "files": {},
+              "governed_names": names,
+          }
+          for rel in ["SpherePacking.lean", "ComparatorChallenges/A_SpherePacking.lean", "ComparatorChallenges/A_SpherePacking.json", "README.md", "lean-toolchain"]:
+              path = root / rel
+              data = path.read_bytes()
+              text = data.decode("utf-8")
+              lines = text.splitlines()
+              hits = []
+              for i, line in enumerate(lines, 1):
+                  if any(token in line for token in tokens):
+                      lo, hi = max(1, i - 2), min(len(lines), i + 8)
+                      hits.append({
+                          "line": i,
+                          "context": [f"{j}:{lines[j-1]}" for j in range(lo, hi + 1)],
+                      })
+              declarations = []
+              for i, line in enumerate(lines, 1):
+                  if re.match(r"^\s*(def|abbrev|structure|class|theorem|lemma)\b", line):
+                      if any(key in line for key in ["FullAdmissible", "exact_limit", "explicit_expansion", "final_base2_step", "full_dimension_free_bound", "real_lambertw_exp_ineq"]):
+                          lo, hi = i, min(len(lines), i + 20)
+                          declarations.append([f"{j}:{lines[j-1]}" for j in range(lo, hi + 1)])
+              report["files"][rel] = {
+                  "bytes": len(data),
+                  "sha256": hashlib.sha256(data).hexdigest(),
+                  "line_count": len(lines),
+                  "token_hits": hits,
+                  "declarations": declarations,
+              }
+          print("SPHERE_PACKING_INTERFACE_BEGIN")
+          print(json.dumps(report, indent=2, sort_keys=True))
+          print("SPHERE_PACKING_INTERFACE_END")
+
+  isolated-lean-replay:
+    runs-on: ubuntu-24.04
+    container: leanprover/lean4:v4.32.0
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact official source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/ten-proofs
+          ref: e62211d28e3a9131950c89caa6542cfe5eff3bca
+          path: upstream
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify source identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          test "$(git rev-parse HEAD)" = "e62211d28e3a9131950c89caa6542cfe5eff3bca"
+          git rev-parse HEAD^{tree}
+          sha256sum SpherePacking.lean ComparatorChallenges/A_SpherePacking.lean ComparatorChallenges/A_SpherePacking.json
+      - name: Fetch locked mathlib cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          lake exe cache get
+      - name: Build isolated solution module
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          lake build SpherePacking
+      - name: Elaborate isolated challenge interface
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          lake env lean ComparatorChallenges/A_SpherePacking.lean
