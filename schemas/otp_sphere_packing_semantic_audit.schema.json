@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/otp_sphere_packing_semantic_audit.schema.json",
+  "title": "OTP-A Sphere Packing semantic and nonvacuity audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "candidate_id",
+    "result_family",
+    "authority",
+    "source_scope",
+    "replay",
+    "lean_interface",
+    "comparator_metadata",
+    "definition_concordance",
+    "hypothesis_concordance",
+    "conclusion_concordance",
+    "nonvacuity",
+    "blockers",
+    "disposition",
+    "downstream_effect",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"const": "MF-OTP-A-SPHERE-PACKING-SEMANTIC-001"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "result_family": {"const": "OTP-A-SPHERE-PACKING"},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protected_base",
+        "official_root",
+        "official_tree",
+        "forge_replay_merge",
+        "review_remedy_merge",
+        "tranche_one_semantic_merge",
+        "source_revision_audit_merge",
+        "provider_manifest_merge",
+        "tracker",
+        "human_authorization_comment"
+      ],
+      "properties": {
+        "protected_base": {"const": "da79f89388099749d6a93e03c4364fc018a19197"},
+        "official_root": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "official_tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
+        "forge_replay_merge": {"const": "72452f4579749448169cacf9f2ab22a4df2bb182"},
+        "review_remedy_merge": {"const": "bffb7d63476d79e86665ec5a74d554794e24357e"},
+        "tranche_one_semantic_merge": {"const": "cb0a203c36a9ef33270d62ab369df7bc27d3b242"},
+        "source_revision_audit_merge": {"const": "a498ef40b7652b55bf121b5682604e259b8d3073"},
+        "provider_manifest_merge": {"const": "0ea98866de3066e6a44ea1ca2cf93ade8a9e1c15"},
+        "tracker": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/58"},
+        "human_authorization_comment": {"type": "integer", "minimum": 1}
+      }
+    },
+    "source_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document",
+        "document_sha256",
+        "advertised_family",
+        "advertised_scope",
+        "exact_theorem_locus_state",
+        "whole_document_byte_equivalence",
+        "whole_document_semantic_equivalence",
+        "proof_body_compared_in_full"
+      ],
+      "properties": {
+        "document": {"const": "Ten Advances in Mathematics and Theoretical Computer Science"},
+        "document_sha256": {"const": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"},
+        "advertised_family": {"const": "Sphere Packing"},
+        "advertised_scope": {"const": "high-dimensional sphere-packing density upper bound"},
+        "exact_theorem_locus_state": {"const": "not_independently_locked_for_this_family"},
+        "whole_document_byte_equivalence": {"const": false},
+        "whole_document_semantic_equivalence": {"const": false},
+        "proof_body_compared_in_full": {"const": false}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_path", "execution_head", "workflow_run", "interface_job", "replay_job", "state", "solution_build_jobs"],
+      "properties": {
+        "receipt_path": {"const": "sources/OPENAI-TEN-PROOFS-001/replay_receipts/OTP-A-SPHERE-PACKING-REPLAY-001.json"},
+        "execution_head": {"const": "88ca25d3059d52e43a3979db68527c50f939dd72"},
+        "workflow_run": {"const": 30780539287},
+        "interface_job": {"const": 91584136380},
+        "replay_job": {"const": 91584136417},
+        "state": {"const": "clear"},
+        "solution_build_jobs": {"const": 8656}
+      }
+    },
+    "lean_interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["solution_path", "solution_sha256", "challenge_path", "challenge_sha256", "config_path", "config_sha256", "predicate", "governed_theorems"],
+      "properties": {
+        "solution_path": {"const": "SpherePacking.lean"},
+        "solution_sha256": {"const": "f96e02d52538786a629c8c4d39b95c167fe87027fb13c7a06091d08abea908a1"},
+        "challenge_path": {"const": "ComparatorChallenges/A_SpherePacking.lean"},
+        "challenge_sha256": {"const": "50cb73be0e1f28247a155cae143ddbbf7168dae216aaa65112e62f5f0eaa3ce1"},
+        "config_path": {"const": "ComparatorChallenges/A_SpherePacking.json"},
+        "config_sha256": {"const": "f952d88af50b26cb738b9b6d508929e5f20066db14d3394e71a6de1def8ea424"},
+        "predicate": {"const": "PackingBounds.FullAdmissible"},
+        "governed_theorems": {
+          "const": [
+            "PackingBounds.FullMain.exact_limit",
+            "PackingBounds.FullMain.explicit_expansion",
+            "PackingBounds.FullMain.final_base2_step",
+            "PackingBounds.FullMain.full_dimension_free_bound"
+          ]
+        }
+      }
+    },
+    "comparator_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declared_historical_commit", "declared_target", "current_target_set_match", "state", "effect"],
+      "properties": {
+        "declared_historical_commit": {"const": "2db010918c505b1d578d509946ae9ab785215877"},
+        "declared_target": {"const": "PackingBounds.LambertW.real_lambertw_exp_ineq"},
+        "current_target_set_match": {"const": false},
+        "state": {"const": "identity_mismatch_unresolved"},
+        "effect": {"const": "blocks_semantic_clearance"}
+      }
+    },
+    "definition_concordance": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/finding"}},
+    "hypothesis_concordance": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/finding"}},
+    "conclusion_concordance": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/finding"}},
+    "nonvacuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "witness_theorems", "missing_obligation", "effect"],
+      "properties": {
+        "state": {"const": "not_clear"},
+        "witness_theorems": {"const": []},
+        "missing_obligation": {"const": "construct or identify a checked FullAdmissible family inhabiting the quantified domains used by the four FullMain targets"},
+        "effect": {"const": "blocks_semantic_clearance"}
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "exact manuscript theorem locus not independently locked for OTP-A",
+          "Comparator metadata names a historical Lambert-W auxiliary declaration rather than the current four FullMain targets",
+          "FullAdmissible quantified-domain nonvacuity is not established"
+        ]
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["technical_replay", "semantic_state", "source_gate", "result", "next_gate"],
+      "properties": {
+        "technical_replay": {"const": "clear"},
+        "semantic_state": {"const": "replay_clear_semantic_clearance_withheld"},
+        "source_gate": {"const": "not_clear"},
+        "result": {"const": "blocked_pending_target_identity_and_nonvacuity"},
+        "next_gate": {"const": "repair target identity, lock the exact source theorem locus, and establish FullAdmissible nonvacuity before a new exact-head semantic audit"}
+      }
+    },
+    "downstream_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["may_handoff_to_solve", "may_route_to_cert", "may_adjudicate", "may_issue_output", "mathematical_target_proved", "may_promote_claim", "aggregate_authority"],
+      "properties": {
+        "may_handoff_to_solve": {"const": false},
+        "may_route_to_cert": {"const": false},
+        "may_adjudicate": {"const": false},
+        "may_issue_output": {"const": false},
+        "mathematical_target_proved": {"const": false},
+        "may_promote_claim": {"const": false},
+        "aggregate_authority": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 240}
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_concept", "lean_encoding", "status", "analysis"],
+      "properties": {
+        "source_concept": {"type": "string", "minLength": 3},
+        "lean_encoding": {"type": "string", "minLength": 3},
+        "status": {"enum": ["interface_clear", "conditional", "scoped", "not_established", "mismatch"]},
+        "analysis": {"type": "string", "minLength": 50}
+      }
+    }
+  }
+}
