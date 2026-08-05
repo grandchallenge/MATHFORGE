@@ -1,0 +1,242 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "MF-EUCLID-GCD-E2E-001-WP00",
+  "campaign_id": "EUCLID-GCD-E2E-001",
+  "stage": "FORGE_INTAKE_AND_HANDOFF",
+  "authority_state": "candidate_provider_handoff",
+  "governing_authorization": {
+    "programme_repository": "grandchallenge/MATH-PROGRAMME",
+    "programme_protected_head": "2f9d8e718814de957b6c999ae0579c5303a7c285",
+    "programme_issue": 237,
+    "forge_issue": 63
+  },
+  "problem_card": {
+    "title": "Certified Euclidean algorithm and Bézout witness exemplar",
+    "domain": "elementary_number_theory",
+    "normalized_statement": "For natural numbers a and b, not both zero, a valid certificate reports a positive natural d, a complete Euclidean division trace ending in zero, and integers x and y satisfying x*a + y*b = d. The certification stage must prove that every accepted certificate has d = Nat.gcd a b.",
+    "quantifiers": {
+      "a": "natural number",
+      "b": "natural number",
+      "precondition": "a != 0 or b != 0",
+      "d": "positive natural number",
+      "x": "integer",
+      "y": "integer"
+    },
+    "input_contract": {
+      "supported": "a,b in Nat with (a,b) != (0,0)",
+      "excluded": [
+        "a = 0 and b = 0"
+      ],
+      "normalization": "reported d must be positive"
+    },
+    "object_certificate_separation": {
+      "sought_object": "the greatest common divisor d of a and b",
+      "construction": "the Euclidean algorithm trace",
+      "witness": "integer Bézout coefficients x and y",
+      "certificate": "provider-bound JSON containing inputs, full trace, d, x, y, and claim scope"
+    }
+  },
+  "source_map": [
+    {
+      "source_id": "EUCLID-GCD-E2E-001-MODERN",
+      "kind": "programme_authorized_normalization",
+      "locator": "grandchallenge/MATH-PROGRAMME#237",
+      "status": "governing_modern_statement",
+      "support_scope": "modern natural-number gcd certificate target"
+    },
+    {
+      "source_id": "EUCLID-BOOK-VII-CONTEXT-PENDING",
+      "kind": "historical_context",
+      "locator": "grandchallenge/MATH-PROGRAMME#239",
+      "status": "deferred_pending_exact_source_lock",
+      "support_scope": "historical context only; does not support attribution of the modern extended-Euclidean or integer Bézout statement to Euclid"
+    }
+  ],
+  "status_triage": {
+    "mathematical_status": "classical_theorem",
+    "forge_status": "candidate_ready_for_protected_review",
+    "novelty_status": "not_claimed",
+    "priority_status": "not_claimed",
+    "historical_attribution_status": "modern_statement_separated_from_pending_historical_concordance"
+  },
+  "reconnaissance_ledger": {
+    "instance": {
+      "a": 252,
+      "b": 105,
+      "candidate_d": 21
+    },
+    "euclidean_trace": [
+      {
+        "dividend": 252,
+        "divisor": 105,
+        "quotient": 2,
+        "remainder": 42
+      },
+      {
+        "dividend": 105,
+        "divisor": 42,
+        "quotient": 2,
+        "remainder": 21
+      },
+      {
+        "dividend": 42,
+        "divisor": 21,
+        "quotient": 2,
+        "remainder": 0
+      }
+    ],
+    "bezout_witness": {
+      "x": -2,
+      "y": 5,
+      "equation": "-2*252 + 5*105 = 21"
+    },
+    "evidence_class": "exact_candidate_computation",
+    "theorem_effect": "none_until_independent_check_and_formal_certification"
+  },
+  "failure_risks": [
+    {
+      "risk_id": "EGR-001",
+      "summary": "A quotient or remainder may be altered while retaining a plausible-looking trace.",
+      "required_rejection": "verify every division equation"
+    },
+    {
+      "risk_id": "EGR-002",
+      "summary": "The remainder sequence may fail strict descent.",
+      "required_rejection": "require 0 <= r < divisor before the terminal step"
+    },
+    {
+      "risk_id": "EGR-003",
+      "summary": "A trace may be truncated before terminal zero.",
+      "required_rejection": "require the terminal remainder to be zero"
+    },
+    {
+      "risk_id": "EGR-004",
+      "summary": "The reported divisor may not equal the last positive remainder.",
+      "required_rejection": "bind d to the terminal positive divisor"
+    },
+    {
+      "risk_id": "EGR-005",
+      "summary": "Bézout coefficients may be changed independently of the trace.",
+      "required_rejection": "recompute x*a + y*b exactly"
+    },
+    {
+      "risk_id": "EGR-006",
+      "summary": "Inputs may be substituted after witness generation.",
+      "required_rejection": "bind the certificate to exact inputs and provider identities"
+    },
+    {
+      "risk_id": "EGR-007",
+      "summary": "The undefined normalization case (0,0) may be silently widened.",
+      "required_rejection": "reject a = 0 and b = 0"
+    },
+    {
+      "risk_id": "EGR-008",
+      "summary": "A negative or zero d may be accepted as normalized gcd.",
+      "required_rejection": "require d > 0"
+    },
+    {
+      "risk_id": "EGR-009",
+      "summary": "Candidate computation may be mislabeled as certification.",
+      "required_rejection": "retain candidate_only authority until MATHCERT disposition"
+    },
+    {
+      "risk_id": "EGR-010",
+      "summary": "Modern Bézout language may be falsely attributed verbatim to Euclid.",
+      "required_rejection": "require exact historical-modern concordance before documentary attribution"
+    }
+  ],
+  "suggested_wp01": {
+    "owner": "MATHSOLVE",
+    "issue": 101,
+    "objective": "implement deterministic extended Euclid and emit the exact candidate certificate",
+    "resource_contract": {
+      "arithmetic": "unbounded Python integers",
+      "network": "forbidden",
+      "randomness": "forbidden",
+      "expected_trace_steps_for_fixture": 3
+    }
+  },
+  "certification_route_sketch": {
+    "owner": "MATHCERT",
+    "issue": 87,
+    "independence_requirement": "checker must not import or execute the MATHSOLVE producer",
+    "checks": [
+      "provider identity",
+      "input concordance",
+      "division equations",
+      "strict remainder descent",
+      "terminal zero",
+      "positive normalization",
+      "divisibility",
+      "Bézout equality",
+      "Lean soundness theorem",
+      "concrete Nat.gcd 252 105 = 21 replay"
+    ]
+  },
+  "solve_handoff": {
+    "handoff_id": "MF-HANDOFF-EUCLID-GCD-E2E-001",
+    "target_repository": "grandchallenge/MATHSOLVE",
+    "target_issue": 101,
+    "state": "candidate_pending_protected_forge_merge",
+    "inputs": {
+      "a": 252,
+      "b": 105
+    },
+    "required_output": {
+      "d": 21,
+      "trace_fields": [
+        "dividend",
+        "divisor",
+        "quotient",
+        "remainder"
+      ],
+      "bezout_fields": [
+        "x",
+        "y"
+      ],
+      "authority_state": "candidate_only"
+    },
+    "forbidden_claims": [
+      "certificate accepted",
+      "theorem certified",
+      "novel algorithm",
+      "first formalization",
+      "verbatim Euclidean Bézout theorem"
+    ]
+  },
+  "chaidez_documentary_contract": {
+    "opening": "begin with gcd(252,105) and the three exact divisions",
+    "labels": [
+      "theorem",
+      "candidate evidence",
+      "certificate obligation",
+      "historical context",
+      "nonclaim"
+    ],
+    "authoritative_surfaces": [
+      "typeset statement",
+      "exact trace",
+      "source map",
+      "claim boundary",
+      "technical appendix"
+    ],
+    "pedagogical_only_surfaces": [
+      "future illuminated plates"
+    ],
+    "edition_sequence": [
+      "source_lock",
+      "historical_modern_concordance",
+      "semantic_web_reader",
+      "edition_record_and_native_plates",
+      "atomic_manifest_admission"
+    ]
+  },
+  "claim_boundary": {
+    "certifies_mathematics": false,
+    "certifies_candidate_witness": false,
+    "claims_novelty": false,
+    "claims_priority": false,
+    "claims_historical_verbatim_equivalence": false,
+    "statement": "This Forge package fixes the modern target, concrete candidate evidence, risks, and downstream contract. It does not certify the gcd, the trace, the Bézout witness, any historical equivalence, novelty, or priority."
+  }
+}
