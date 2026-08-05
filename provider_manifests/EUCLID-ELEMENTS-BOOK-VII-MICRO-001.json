@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-EUCLID-ELEMENTS-BOOK-VII-MICRO-001-MANIFEST",
+  "campaign_id": "EUCLID-ELEMENTS-BOOK-VII-MICRO-001",
+  "title": "Heath 1908 Book VII exact-byte source lock and bounded concordance",
+  "coverage_mode": "native",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "6dd51c29b8bcbac812bcf7a4e803b693ac8be69c",
+    "issue": 239,
+    "paths": ["MATHFORGE_SPEC.md", "CLAIM_LEDGER_STANDARD.md"]
+  },
+  "handoff_packet": {
+    "problem_card": {
+      "state": "referenced",
+      "references": ["grandchallenge/MATH-PROGRAMME#239"],
+      "reason": "Programme issue #239 fixes the source-lock-first documentary obligation and historical boundary."
+    },
+    "source_map": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/provenance",
+        "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/heath_1908_book_vii_selected_statements.txt"
+      ],
+      "reason": "The public-domain scan provenance and exact repository transcription surface are separately identified."
+    },
+    "status_triage": {
+      "state": "present",
+      "references": ["sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/authority_boundaries"],
+      "reason": "Candidate source authority, modern-extension exclusions, and blocked documentary surfaces are explicit."
+    },
+    "reconnaissance_ledger": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/admitted_loci",
+        "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/concordance"
+      ],
+      "reason": "Eight historical loci are fixed with proposition-level modern concordance."
+    },
+    "failure_risks": {
+      "state": "present",
+      "references": ["tests/test_euclid_book_vii_source_lock.py"],
+      "reason": "Twenty-two focused tests reject source, domain, attribution, licensing, and authority drift."
+    },
+    "suggested_wp01": {
+      "state": "deferred",
+      "references": ["grandchallenge/MATH-PROGRAMME#239"],
+      "reason": "The semantic web reader may be designed only after protected source-lock merge and readback."
+    },
+    "certification_route_sketch": {
+      "state": "not_applicable",
+      "references": [],
+      "reason": "This historical documentary source-lock operation does not open MATHSOLVE or MATHCERT routes."
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "MF-EUCLID-BOOK-VII-SOURCE-TEXT",
+      "kind": "exact_utf8_historical_statement_transcription",
+      "ownership": "MATHFORGE",
+      "path": "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/heath_1908_book_vii_selected_statements.txt",
+      "claim_boundary": "Exact bytes govern the eight selected historical statement loci only; no proof-body or modern theorem authority is created.",
+      "integrity": {"algorithm": "sha256", "value": "66d3d62cb75cccc0d705fa06c8845f3d9c2c61952f9994862d54c7679517e6d0"}
+    },
+    {
+      "artifact_id": "MF-EUCLID-BOOK-VII-SOURCE-LOCK",
+      "kind": "source_lock_and_historical_modern_concordance",
+      "ownership": "MATHFORGE",
+      "path": "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json",
+      "claim_boundary": "Binds provenance, exact transcription identity, eight loci, bounded concordance, and documentary prohibitions without activating the edition.",
+      "integrity": {"algorithm": "git_blob_sha1", "value": "287126ea40b30cdbb66bd2e489bde6076a51bcf7"}
+    },
+    {
+      "artifact_id": "MF-EUCLID-BOOK-VII-SCHEMA",
+      "kind": "closed_json_schema",
+      "ownership": "MATHFORGE",
+      "path": "schemas/euclid_book_vii_source_lock.schema.json",
+      "claim_boundary": "Constrains the candidate source lock and concordance shape and exact authority flags only.",
+      "integrity": {"algorithm": "git_blob_sha1", "value": "18b7e7ca5a310a6b3cd74afabd1699abd6fe5028"}
+    },
+    {
+      "artifact_id": "MF-EUCLID-BOOK-VII-VALIDATOR",
+      "kind": "fail_closed_semantic_validator",
+      "ownership": "MATHFORGE",
+      "path": "ci/validate_euclid_book_vii_source_lock.py",
+      "claim_boundary": "Checks exact bytes, metadata, loci, translations, modern exclusions, and documentary boundaries; it does not certify mathematical truth.",
+      "integrity": {"algorithm": "git_blob_sha1", "value": "b46a08130bd507a51f887ad22b7444dc10fc6a93"}
+    },
+    {
+      "artifact_id": "MF-EUCLID-BOOK-VII-TESTS",
+      "kind": "adversarial_mutation_suite",
+      "ownership": "MATHFORGE",
+      "path": "tests/test_euclid_book_vii_source_lock.py",
+      "claim_boundary": "Demonstrates bounded fail-closed rejection for source and authority mutations; it is not a historical proof or theorem certificate.",
+      "integrity": {"algorithm": "git_blob_sha1", "value": "9bc10c2a62548f10cafcbee25425b7cc2431d3f0"}
+    },
+    {
+      "artifact_id": "MF-EUCLID-BOOK-VII-DOC",
+      "kind": "chaidez_oriented_source_note",
+      "ownership": "MATHFORGE",
+      "path": "docs/EUCLID_ELEMENTS_BOOK_VII_MICRO_001_FORGE.md",
+      "claim_boundary": "Explains the source and concordance package while preserving reader, edition, plate, and modern-attribution boundaries.",
+      "integrity": {"algorithm": "git_blob_sha1", "value": "4fda02c6e35d5608e7001d14ad5839b0c112a2b2"}
+    }
+  ],
+  "source_records": [
+    {
+      "record_id": "EUCLID-HEATH-1908-VOL2-SCAN",
+      "summary": "Public-domain mechanical scan of Heath Volume II, with Commons, original-file, historical revision, and Internet Archive provenance.",
+      "references": ["sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/provenance"]
+    },
+    {
+      "record_id": "EUCLID-HEATH-1908-BOOK-VII-TRANSCRIPTION",
+      "summary": "Exact repository UTF-8 transcription surface for eight selected statements and the VII.2 porism.",
+      "references": [
+        "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/heath_1908_book_vii_selected_statements.txt",
+        "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/source_artifact"
+      ]
+    },
+    {
+      "record_id": "EUCLID-BOOK-VII-BOUNDED-CONCORDANCE",
+      "summary": "Historical terminology and modern normalization are separated locus by locus, with unsupported extensions explicit.",
+      "references": ["sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/concordance"]
+    }
+  ],
+  "status_records": [
+    {
+      "record_id": "EUCLID-BOOK-VII-SOURCE-LOCK-STATUS",
+      "summary": "Candidate exact-byte source lock pending exact-head review and protected merge; no reader or edition authority.",
+      "references": [
+        "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/authority_state",
+        "grandchallenge/MATHFORGE#67"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "record_id": "EUCLID-BOOK-VII-EIGHT-LOCUS-CLUSTER",
+      "summary": "Definitions 1, 2, 3, 5, 12, 14 and Propositions 1, 2 only, with the VII.2 porism attached.",
+      "references": ["sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/source_lock_and_concordance.json#/admitted_loci"]
+    }
+  ],
+  "failed_routes": [
+    {
+      "record_id": "EUCLID-BOOK-VII-ATTRIBUTION-AND-AUTHORITY-MUTATIONS",
+      "summary": "Source substitution, domain widening, modern theorem attribution, licensing removal, and reader or plate activation fail closed.",
+      "references": ["tests/test_euclid_book_vii_source_lock.py"]
+    }
+  ],
+  "provider_debt": [
+    {
+      "record_id": "EUCLID-BOOK-VII-PROTECTED-RECEIPT",
+      "summary": "Stable source-lock authority awaits exact-head review, Human Steward disposition, protected merge, and post-merge readback.",
+      "references": ["grandchallenge/MATHFORGE#67"]
+    },
+    {
+      "record_id": "EUCLID-BOOK-VII-DOCUMENTARY-READER",
+      "summary": "Reader, edition record, accessible plates, navigation, and atomic documentary manifest admission remain downstream Programme work.",
+      "references": ["grandchallenge/MATH-PROGRAMME#239"]
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-05",
+    "created_by": "Human Steward authorized Stage 3 source-lock execution",
+    "source_commits": [
+      "183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+      "6dd51c29b8bcbac812bcf7a4e803b693ac8be69c",
+      "af5398a05f17789a061ab0d23c2b47f0cc952fff"
+    ]
+  },
+  "downstream_references": {
+    "programme": ["grandchallenge/MATH-PROGRAMME#237", "grandchallenge/MATH-PROGRAMME#239"],
+    "mathsolve": [],
+    "mathcert": []
+  },
+  "non_certification_statement": "This manifest provides candidate historical source identity and bounded concordance only. It does not certify a modern theorem, establish historical-modern equivalence, attribute extended Euclid, Bézout, or linear Diophantine solvability verbatim to Euclid, or activate a documentary reader, edition, plate, or manifest admission."
+}

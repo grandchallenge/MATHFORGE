@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/euclid_book_vii_source_lock.schema.json",
+  "title": "EUCLID-ELEMENTS-BOOK-VII-MICRO-001 source lock and concordance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "campaign_id",
+    "tracker_issue",
+    "authority_state",
+    "protected_prerequisites",
+    "edition",
+    "provenance",
+    "source_artifact",
+    "admitted_loci",
+    "statements",
+    "concordance",
+    "modern_extensions",
+    "authority_boundaries",
+    "next_gate",
+    "target_disposition"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"const": "MF-EUCLID-BOOK-VII-MICRO-001-SOURCE-LOCK"},
+    "campaign_id": {"const": "EUCLID-ELEMENTS-BOOK-VII-MICRO-001"},
+    "tracker_issue": {"const": 67},
+    "authority_state": {"const": "candidate_exact_byte_source_lock_and_concordance_pending_exact_head_review_and_protected_merge"},
+    "protected_prerequisites": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage1_programme_closeout", "stage2_programme_closeout", "forge_protected_base"],
+      "properties": {
+        "stage1_programme_closeout": {"const": "183ff2a0adfbe5bd0ffd5f2e638089b94b868c54"},
+        "stage2_programme_closeout": {"const": "6dd51c29b8bcbac812bcf7a4e803b693ac8be69c"},
+        "forge_protected_base": {"const": "af5398a05f17789a061ab0d23c2b47f0cc952fff"}
+      }
+    },
+    "edition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_title", "volume", "book_coverage", "author", "translator_editor", "textual_basis", "publisher", "publication_year", "language"],
+      "properties": {
+        "work_title": {"const": "The Thirteen Books of Euclid's Elements"},
+        "volume": {"const": "II"},
+        "book_coverage": {"const": "Books III-IX"},
+        "author": {"const": "Euclid"},
+        "translator_editor": {"const": "Thomas Little Heath"},
+        "textual_basis": {"const": "Translated from the text of J. L. Heiberg"},
+        "publisher": {"const": "Cambridge University Press"},
+        "publication_year": {"const": 1908},
+        "language": {"const": "English"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commons_file_page", "commons_page_revision", "original_file_url", "internet_archive_identifier", "file_history_timestamp_utc", "published_page_count", "published_size_display", "mime_type", "whole_scan_sha256_recorded", "whole_scan_role", "public_domain", "transcription_cross_checks"],
+      "properties": {
+        "commons_file_page": {"const": "https://commons.wikimedia.org/wiki/File:The_thirteen_books_of_Euclid%27s_Elements_Volume_II.pdf"},
+        "commons_page_revision": {"const": "https://commons.wikimedia.org/w/index.php?title=File:The_thirteen_books_of_Euclid%27s_Elements_Volume_II.pdf&oldid=1026927021"},
+        "original_file_url": {"const": "https://upload.wikimedia.org/wikipedia/commons/7/79/The_thirteen_books_of_Euclid%27s_Elements_Volume_II.pdf"},
+        "internet_archive_identifier": {"const": "thirteenbookseu01heibgoog"},
+        "file_history_timestamp_utc": {"const": "2025-05-02T07:34:00Z"},
+        "published_page_count": {"const": 575},
+        "published_size_display": {"const": "8.58 MB"},
+        "mime_type": {"const": "application/pdf"},
+        "whole_scan_sha256_recorded": {"const": false},
+        "whole_scan_role": {"const": "provenance_only_not_governed_byte_surface"},
+        "public_domain": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "basis", "mark_url", "commons_statement_required"],
+          "properties": {
+            "status": {"const": "public_domain"},
+            "basis": {"type": "string", "minLength": 40},
+            "mark_url": {"const": "https://creativecommons.org/publicdomain/mark/1.0/"},
+            "commons_statement_required": {"const": true}
+          }
+        },
+        "transcription_cross_checks": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "https://geometor.github.io/euclid/heath/VII/index.html"},
+            {"const": "https://www.perseus.tufts.edu/hopper/text?doc=Euc.+7&fromdoc=Perseus%3Atext%3A1999.01.0086"}
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "source_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "encoding", "line_endings", "final_newline", "byte_length", "sha256", "authority_role", "transcription_method", "scope"],
+      "properties": {
+        "path": {"const": "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/heath_1908_book_vii_selected_statements.txt"},
+        "encoding": {"const": "UTF-8"},
+        "line_endings": {"const": "LF"},
+        "final_newline": {"const": true},
+        "byte_length": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "authority_role": {"const": "governed_exact_byte_historical_statement_surface"},
+        "transcription_method": {"type": "string", "minLength": 40},
+        "scope": {"const": "Eight admitted loci plus the VII.2 porism; no proof-body transcription."}
+      }
+    },
+    "admitted_loci": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "VII.def.1"}, {"const": "VII.def.2"}, {"const": "VII.def.3"}, {"const": "VII.def.5"},
+        {"const": "VII.def.12"}, {"const": "VII.def.14"}, {"const": "VII.1"}, {"const": "VII.2"}
+      ],
+      "items": false,
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "statements": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["locus", "kind", "exact_text"],
+        "properties": {
+          "locus": {"enum": ["VII.def.1", "VII.def.2", "VII.def.3", "VII.def.5", "VII.def.12", "VII.def.14", "VII.1", "VII.2"]},
+          "kind": {"enum": ["definition", "proposition"]},
+          "exact_text": {"type": "string", "minLength": 10},
+          "attached_porism": {"type": "string", "minLength": 20}
+        }
+      }
+    },
+    "concordance": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["locus", "historical_object_domain", "modern_normalization", "relationship", "preserved_assumptions", "introduced_assumptions", "unsupported_extensions"],
+        "properties": {
+          "locus": {"enum": ["VII.def.1", "VII.def.2", "VII.def.3", "VII.def.5", "VII.def.12", "VII.def.14", "VII.1", "VII.2"]},
+          "historical_object_domain": {"type": "string", "minLength": 20},
+          "modern_normalization": {"type": "string", "minLength": 20},
+          "relationship": {"enum": ["bounded_interpretive_translation", "bounded_domain_translation", "bounded_divisibility_translation", "bounded_multiplicity_translation", "bounded_coprimality_normalization", "bounded_common_divisor_normalization", "constructive_coprimality_analogue", "constructive_greatest_common_measure_analogue"]},
+          "preserved_assumptions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}},
+          "introduced_assumptions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}},
+          "unsupported_extensions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}}
+        }
+      }
+    },
+    "modern_extensions": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["extension_id", "classification", "source_support", "statement"],
+        "properties": {
+          "extension_id": {"enum": ["MODERN-REMAINDER-EUCLID", "MODERN-EXTENDED-EUCLID", "MODERN-BEZOUT", "MODERN-LINEAR-DIOPHANTINE"]},
+          "classification": {"enum": ["later_algorithmic_normalization", "later_derived_extension"]},
+          "source_support": {"enum": ["not_verbatim_in_admitted_loci", "not_present_in_admitted_loci"]},
+          "statement": {"type": "string", "minLength": 15}
+        }
+      }
+    },
+    "authority_boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_exact_byte_lock_prepared", "protected_source_lock_effective", "historical_modern_equivalence", "modern_extended_euclid_verbatim_euclid", "bezout_identity_verbatim_euclid", "linear_diophantine_theorem_verbatim_euclid", "documentary_reader_authorized", "edition_record_authorized", "documentary_manifest_admission_authorized", "plates_authority", "programme_stage3_activated", "claims_novelty", "claims_priority", "claims_first_formalization", "certifies_modern_mathematics"],
+      "properties": {
+        "candidate_exact_byte_lock_prepared": {"const": true},
+        "protected_source_lock_effective": {"const": false},
+        "historical_modern_equivalence": {"const": false},
+        "modern_extended_euclid_verbatim_euclid": {"const": false},
+        "bezout_identity_verbatim_euclid": {"const": false},
+        "linear_diophantine_theorem_verbatim_euclid": {"const": false},
+        "documentary_reader_authorized": {"const": false},
+        "edition_record_authorized": {"const": false},
+        "documentary_manifest_admission_authorized": {"const": false},
+        "plates_authority": {"const": "pedagogical_orientation_only"},
+        "programme_stage3_activated": {"const": false},
+        "claims_novelty": {"const": false},
+        "claims_priority": {"const": false},
+        "claims_first_formalization": {"const": false},
+        "certifies_modern_mathematics": {"const": false}
+      }
+    },
+    "next_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "requires", "programme_reader_may_begin_after_this_candidate"],
+      "properties": {
+        "operation": {"const": "protected MATHFORGE source-lock and concordance admission"},
+        "requires": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "exact-head Forge checks"}, {"const": "GCL conformance"}, {"const": "independent non-author historical-mathematics review"},
+            {"const": "Human Steward exact-head disposition"}, {"const": "merge-commit-only protected merge"}, {"const": "post-merge readback"}
+          ],
+          "items": false,
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "programme_reader_may_begin_after_this_candidate": {"const": false}
+      }
+    },
+    "target_disposition": {"const": "EUCLID_BOOK_VII_HEATH_1908_SOURCE_LOCK_AND_BOUNDED_CONCORDANCE"}
+  }
+}
