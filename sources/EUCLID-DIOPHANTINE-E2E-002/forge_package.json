@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "MF-EUCLID-DIOPHANTINE-E2E-002-WP00",
+  "campaign_id": "EUCLID-DIOPHANTINE-E2E-002",
+  "stage": "FORGE_INTAKE_AND_HANDOFF",
+  "authority_state": "candidate_provider_handoff",
+  "governing_authorization": {
+    "programme_repository": "grandchallenge/MATH-PROGRAMME",
+    "programme_protected_head": "183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+    "programme_issue": 238,
+    "forge_issue": 65
+  },
+  "protected_stage1_reuse": {
+    "forge": {
+      "repository": "grandchallenge/MATHFORGE",
+      "merge_commit": "3622bac82a39cdb9e82ec463919d9e6927c1ec0e",
+      "package_path": "sources/EUCLID-GCD-E2E-001/forge_package.json"
+    },
+    "solve": {
+      "repository": "grandchallenge/MATHSOLVE",
+      "merge_commit": "3a8493aa322f0e640c921b8824c4d7f88a8c057d",
+      "certificate_path": "certificates/EUCLID-GCD-E2E-001.json"
+    },
+    "cert": {
+      "repository": "grandchallenge/MATHCERT",
+      "merge_commit": "78b69e6a3461a83f4893d61c421b1570c08a9ba6",
+      "output_path": "governance/certification_outputs/EUCLID-GCD-E2E-001.json",
+      "disposition": "CERTIFIED_CHECKER_SOUNDNESS_AND_CONCRETE_GCD_INSTANCE"
+    },
+    "programme": {
+      "repository": "grandchallenge/MATH-PROGRAMME",
+      "merge_commit": "183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+      "closeout_path": "governance/euclid_gcd_e2e_001_closeout.json",
+      "disposition": "EUCLID_GCD_E2E_STAGE_1_PROTECTED_CLOSEOUT_AND_PUBLIC_PROOF_TRACE"
+    },
+    "reuse_policy": "consume the protected normalized gcd and Bézout trust spine; do not introduce a competing gcd definition or duplicate the Stage 1 Euclidean trace contract"
+  },
+  "problem_card": {
+    "title": "Certified linear Diophantine solvability extension",
+    "domain": "elementary_number_theory",
+    "normalized_statement": "For integers a, b, and c, with (a,b) != (0,0), there exist integers x and y satisfying a*x + b*y = c if and only if gcd(|a|,|b|) divides |c|.",
+    "quantifiers": {
+      "a": "integer",
+      "b": "integer",
+      "c": "integer",
+      "x": "integer",
+      "y": "integer",
+      "precondition": "a != 0 or b != 0"
+    },
+    "input_contract": {
+      "supported": "a,b,c in Int with (a,b) != (0,0)",
+      "excluded": [
+        "a = 0 and b = 0"
+      ],
+      "gcd_normalization": "d = gcd(|a|,|b|) is a positive natural number",
+      "target_normalization": "divisibility is checked against |c|",
+      "zero_target_policy": "c = 0 is solvable by x = 0 and y = 0, and every positive d divides 0"
+    },
+    "object_certificate_separation": {
+      "sought_object": "whether the linear equation has an integer solution",
+      "constructive_witness": "integers x and y satisfying a*x + b*y = c",
+      "unsatisfiable_obstruction": "a nonzero remainder r in |c| = q*d + r with 0 < r < d",
+      "candidate_output": "provider-bound JSON emitted by MATHSOLVE",
+      "certificate_disposition": "independent MATHCERT acceptance or rejection"
+    }
+  },
+  "source_map": [
+    {
+      "source_id": "EUCLID-DIOPHANTINE-E2E-002-MODERN",
+      "kind": "programme_authorized_normalization",
+      "locator": "grandchallenge/MATH-PROGRAMME#238",
+      "status": "governing_modern_statement",
+      "support_scope": "classical two-variable linear Diophantine solvability theorem"
+    },
+    {
+      "source_id": "EUCLID-GCD-E2E-001-PROTECTED",
+      "kind": "protected_programme_dependency",
+      "locator": "grandchallenge/MATH-PROGRAMME@183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+      "status": "protected_reuse_required",
+      "support_scope": "normalized gcd, Bézout witness, accepted-certificate soundness, and exact authority chain"
+    },
+    {
+      "source_id": "EUCLID-BOOK-VII-CONTEXT-PENDING",
+      "kind": "historical_context",
+      "locator": "grandchallenge/MATH-PROGRAMME#239",
+      "status": "deferred_pending_exact_source_lock",
+      "support_scope": "historical context only; does not support verbatim attribution of the modern integer solvability equivalence to Euclid"
+    }
+  ],
+  "status_triage": {
+    "mathematical_status": "classical_theorem",
+    "forge_status": "candidate_ready_for_protected_review",
+    "novelty_status": "not_claimed",
+    "priority_status": "not_claimed",
+    "historical_attribution_status": "modern_statement_separated_from_pending_historical_concordance",
+    "arbitrary_diophantine_completeness_status": "not_claimed"
+  },
+  "reconnaissance_ledger": {
+    "positive_exemplar": {
+      "inputs": {
+        "a": 252,
+        "b": 105,
+        "c": 84
+      },
+      "protected_gcd": 21,
+      "protected_bezout": {
+        "x": -2,
+        "y": 5,
+        "equation": "-2*252 + 5*105 = 21"
+      },
+      "scale_factor": 4,
+      "candidate_solution": {
+        "x": -8,
+        "y": 20,
+        "equation": "-8*252 + 20*105 = 84"
+      },
+      "divisibility": {
+        "absolute_target": 84,
+        "quotient": 4,
+        "remainder": 0
+      }
+    },
+    "negative_exemplar": {
+      "inputs": {
+        "a": 252,
+        "b": 105,
+        "c": 20
+      },
+      "protected_gcd": 21,
+      "divisibility_obstruction": {
+        "absolute_target": 20,
+        "quotient": 0,
+        "remainder": 20,
+        "equation": "20 = 0*21 + 20"
+      },
+      "obstruction_meaning": "the nonzero remainder proves that 21 does not divide 20; a solution would force every common divisor of 252 and 105 to divide 20"
+    },
+    "evidence_class": "exact_candidate_computation_and_divisibility_obstruction",
+    "theorem_effect": "none_until_independent_check_and_formal_certification"
+  },
+  "failure_risks": [
+    {
+      "risk_id": "DIO-001",
+      "summary": "Absolute-value or sign normalization may drift.",
+      "required_rejection": "bind d to gcd(|a|,|b|) and divisibility to |c|"
+    },
+    {
+      "risk_id": "DIO-002",
+      "summary": "The excluded (0,0) coefficient case may be silently widened.",
+      "required_rejection": "reject a = 0 and b = 0"
+    },
+    {
+      "risk_id": "DIO-003",
+      "summary": "The c = 0 case may be incorrectly rejected or treated as exceptional search failure.",
+      "required_rejection": "retain the explicit zero-target solution and divisibility rule"
+    },
+    {
+      "risk_id": "DIO-004",
+      "summary": "A protected Bézout witness may be scaled by the wrong factor.",
+      "required_rejection": "verify c = k*d and x = k*x0, y = k*y0 for the constructive route"
+    },
+    {
+      "risk_id": "DIO-005",
+      "summary": "Inputs or target may be substituted after witness production.",
+      "required_rejection": "bind a, b, c and all Stage 1 identities exactly"
+    },
+    {
+      "risk_id": "DIO-006",
+      "summary": "A false nonzero remainder may be presented as an obstruction.",
+      "required_rejection": "verify |c| = q*d + r and 0 < r < d"
+    },
+    {
+      "risk_id": "DIO-007",
+      "summary": "A competing gcd definition or duplicate Euclidean trace contract may fork the trust spine.",
+      "required_rejection": "require protected Stage 1 reuse and prohibit replacement definitions"
+    },
+    {
+      "risk_id": "DIO-008",
+      "summary": "Timeout, failed search, or producer error may be mislabeled unsatisfiable.",
+      "required_rejection": "accept unsatisfiability only from a checked divisibility obstruction"
+    },
+    {
+      "risk_id": "DIO-009",
+      "summary": "Candidate producer output may self-certify.",
+      "required_rejection": "retain candidate_only authority until an independent MATHCERT disposition"
+    },
+    {
+      "risk_id": "DIO-010",
+      "summary": "The modern integer equivalence may be over-attributed to Euclid or inflated into arbitrary Diophantine completeness.",
+      "required_rejection": "preserve historical and theorem-scope nonclaims"
+    }
+  ],
+  "suggested_wp01": {
+    "owner": "MATHSOLVE",
+    "issue": 103,
+    "objective": "emit deterministic constructive witnesses or exact divisibility obstructions while consuming the protected Stage 1 gcd contract",
+    "resource_contract": {
+      "arithmetic": "unbounded Python integers",
+      "network": "forbidden",
+      "randomness": "forbidden",
+      "timeout_as_unsat": "forbidden",
+      "evidence_forms": [
+        "constructive_solution",
+        "divisibility_obstruction"
+      ]
+    }
+  },
+  "certification_route_sketch": {
+    "owner": "MATHCERT",
+    "issue": 89,
+    "independence_requirement": "checker must not import or execute the MATHSOLVE producer",
+    "checks": [
+      "protected Stage 1 identity",
+      "input and sign concordance",
+      "not-both-zero precondition",
+      "constructive equation",
+      "scale-factor relation",
+      "exact quotient-remainder obstruction",
+      "nonzero bounded remainder",
+      "zero-target policy",
+      "Lean solvability equivalence",
+      "positive and negative concrete replays"
+    ]
+  },
+  "solve_handoff": {
+    "handoff_id": "MF-HANDOFF-EUCLID-DIOPHANTINE-E2E-002",
+    "target_repository": "grandchallenge/MATHSOLVE",
+    "target_issue": 103,
+    "state": "candidate_pending_protected_forge_merge",
+    "protected_dependency": "grandchallenge/MATH-PROGRAMME@183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+    "cases": [
+      {
+        "case_id": "DIO-POS-252-105-84",
+        "inputs": {
+          "a": 252,
+          "b": 105,
+          "c": 84
+        },
+        "required_evidence": "constructive_solution"
+      },
+      {
+        "case_id": "DIO-NEG-252-105-20",
+        "inputs": {
+          "a": 252,
+          "b": 105,
+          "c": 20
+        },
+        "required_evidence": "divisibility_obstruction"
+      }
+    ],
+    "required_output": {
+      "common_fields": [
+        "a",
+        "b",
+        "c",
+        "normalized_gcd",
+        "stage1_provenance",
+        "authority_state"
+      ],
+      "constructive_fields": [
+        "scale_factor",
+        "x",
+        "y"
+      ],
+      "obstruction_fields": [
+        "absolute_target",
+        "quotient",
+        "remainder"
+      ],
+      "authority_state": "candidate_only"
+    },
+    "forbidden_claims": [
+      "certificate accepted",
+      "theorem certified",
+      "arbitrary Diophantine completeness",
+      "novel theorem",
+      "first formalization",
+      "verbatim Euclidean linear Diophantine theorem",
+      "unsatisfiable because search failed"
+    ]
+  },
+  "chaidez_documentary_contract": {
+    "opening": "begin with the positive 252x + 105y = 84 construction and the negative 252x + 105y = 20 obstruction",
+    "labels": [
+      "theorem",
+      "constructive candidate evidence",
+      "divisibility obstruction",
+      "certificate obligation",
+      "historical context",
+      "nonclaim"
+    ],
+    "authoritative_surfaces": [
+      "typeset statement",
+      "exact equations",
+      "protected dependency map",
+      "source map",
+      "claim boundary",
+      "technical appendix"
+    ],
+    "pedagogical_only_surfaces": [
+      "future illuminated plates"
+    ],
+    "edition_sequence": [
+      "source_lock",
+      "historical_modern_concordance",
+      "semantic_web_reader",
+      "edition_record_and_native_plates",
+      "atomic_manifest_admission"
+    ]
+  },
+  "claim_boundary": {
+    "certifies_mathematics": false,
+    "certifies_constructive_witness": false,
+    "certifies_unsatisfiable_obstruction": false,
+    "claims_arbitrary_diophantine_completeness": false,
+    "claims_novelty": false,
+    "claims_priority": false,
+    "claims_historical_verbatim_equivalence": false,
+    "statement": "This Forge package fixes the modern theorem, protected Stage 1 reuse, two candidate exemplars, failure modes, and downstream contracts. It does not certify solvability or unsolvability, arbitrary Diophantine completeness, historical equivalence, novelty, or priority."
+  },
+  "target_disposition": "FORGE_ADMITTED_LINEAR_DIOPHANTINE_SOLVABILITY_EXTENSION"
+}
