@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-EUCLID-DIOPHANTINE-E2E-002-MANIFEST",
+  "campaign_id": "EUCLID-DIOPHANTINE-E2E-002",
+  "title": "Linear Diophantine solvability end-to-end extension",
+  "coverage_mode": "native",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+    "issue": 238,
+    "paths": [
+      "MATHFORGE_SPEC.md",
+      "CLAIM_LEDGER_STANDARD.md"
+    ]
+  },
+  "handoff_packet": {
+    "problem_card": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/problem_card",
+        "docs/EUCLID_DIOPHANTINE_E2E_002_FORGE.md"
+      ],
+      "reason": "The modern integer theorem, sign normalization, zero-target policy, and object/evidence distinctions are explicit."
+    },
+    "source_map": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/source_map"
+      ],
+      "reason": "The Programme-authorized modern theorem and protected Stage 1 dependency are separated from deferred historical concordance."
+    },
+    "status_triage": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/status_triage"
+      ],
+      "reason": "The theorem is classical while Forge authority remains candidate provider evidence only."
+    },
+    "reconnaissance_ledger": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/reconnaissance_ledger"
+      ],
+      "reason": "One constructive and one obstruction exemplar are exact and separately classified."
+    },
+    "failure_risks": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/failure_risks"
+      ],
+      "reason": "Ten sign, identity, evidence, attribution, and authority failure classes are retained."
+    },
+    "suggested_wp01": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/suggested_wp01",
+        "grandchallenge/MATHSOLVE#103"
+      ],
+      "reason": "The deterministic two-form producer is bounded and separately authorized."
+    },
+    "certification_route_sketch": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/certification_route_sketch",
+        "grandchallenge/MATHCERT#89"
+      ],
+      "reason": "Independent checking and Lean equivalence obligations are explicit without claiming certification."
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "MF-EUCLID-DIOPHANTINE-E2E-002-PACKAGE",
+      "kind": "forge_intake_handoff_package",
+      "ownership": "MATHFORGE",
+      "path": "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json",
+      "claim_boundary": "Fixes the modern theorem, protected dependency, candidate exemplars, risk ledger, and downstream route without certifying mathematics.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "e89d5b7c611aaa4a7fdea716742e993eaa283da1"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-DIOPHANTINE-E2E-002-SCHEMA",
+      "kind": "closed_json_schema",
+      "ownership": "MATHFORGE",
+      "path": "schemas/euclid_diophantine_forge_package.schema.json",
+      "claim_boundary": "Constrains the Forge record shape, exact exemplars, protected identities, and non-certification flags only.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "9367fbf1afa2f9ec63b52a9f7a4d95db395d7a5f"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-DIOPHANTINE-E2E-002-VALIDATOR",
+      "kind": "semantic_validator",
+      "ownership": "MATHFORGE",
+      "path": "ci/validate_euclid_diophantine_forge.py",
+      "claim_boundary": "Validates the Forge target, arithmetic exemplars, Stage 1 reuse, and authority boundaries; it is not the independent MATHCERT checker.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "159e7ed7cebbd7298204b7630e568dbfdad8b53e"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-DIOPHANTINE-E2E-002-TESTS",
+      "kind": "adversarial_mutation_suite",
+      "ownership": "MATHFORGE",
+      "path": "tests/test_euclid_diophantine_forge.py",
+      "claim_boundary": "Shows bounded rejection behavior for the Forge package; it does not establish the universal theorem.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "6796f6d129eeeede5ffd26ba491c5e4c78da76a0"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-DIOPHANTINE-E2E-002-DOC",
+      "kind": "chaidez_oriented_provider_note",
+      "ownership": "MATHFORGE",
+      "path": "docs/EUCLID_DIOPHANTINE_E2E_002_FORGE.md",
+      "claim_boundary": "Explains constructive and obstruction routes while preserving source-lock, theorem-scope, and pedagogical-plate boundaries.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "c98a8616dd245f73a9ccf3e3c8d783e965a5b478"
+      }
+    }
+  ],
+  "source_records": [
+    {
+      "record_id": "EUCLID-DIOPHANTINE-E2E-002-MODERN",
+      "summary": "Programme-authorized modern two-variable linear Diophantine solvability statement.",
+      "references": [
+        "grandchallenge/MATH-PROGRAMME#238",
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/problem_card"
+      ]
+    },
+    {
+      "record_id": "EUCLID-GCD-E2E-001-PROTECTED",
+      "summary": "Protected Stage 1 gcd and Bézout trust spine is mandatory and may not be duplicated.",
+      "references": [
+        "grandchallenge/MATH-PROGRAMME@183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/protected_stage1_reuse"
+      ]
+    },
+    {
+      "record_id": "EUCLID-BOOK-VII-CONTEXT-PENDING",
+      "summary": "Historical Book VII context remains deferred pending exact source lock and proposition-level concordance.",
+      "references": [
+        "grandchallenge/MATH-PROGRAMME#239",
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/source_map/2"
+      ]
+    }
+  ],
+  "status_records": [
+    {
+      "record_id": "EUCLID-DIOPHANTINE-E2E-002-STATUS",
+      "summary": "Classical theorem; candidate Forge provider package; no arbitrary-Diophantine completeness, novelty, priority, or historical-verbatim claim.",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/status_triage"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "record_id": "DIO-POS-252-105-84",
+      "summary": "Constructive candidate from scaling the protected Bézout witness by four.",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/reconnaissance_ledger/positive_exemplar"
+      ]
+    },
+    {
+      "record_id": "DIO-NEG-252-105-20",
+      "summary": "Candidate unsatisfiability obstruction from the nonzero remainder of 20 modulo 21.",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/reconnaissance_ledger/negative_exemplar"
+      ]
+    }
+  ],
+  "failed_routes": [
+    {
+      "record_id": "EUCLID-DIOPHANTINE-E2E-002-MALFORMED-EVIDENCE-CLASSES",
+      "summary": "Sign drift, identity substitution, bad scaling, false obstruction, timeout-as-unsat, self-certification, and scope inflation must fail closed.",
+      "references": [
+        "sources/EUCLID-DIOPHANTINE-E2E-002/forge_package.json#/failure_risks",
+        "tests/test_euclid_diophantine_forge.py"
+      ]
+    }
+  ],
+  "provider_debt": [
+    {
+      "record_id": "EUCLID-DIOPHANTINE-E2E-002-PROTECTED-RECEIPT",
+      "summary": "Stable downstream identity awaits protected Forge merge and post-merge readback.",
+      "references": [
+        "grandchallenge/MATHFORGE#65"
+      ]
+    },
+    {
+      "record_id": "EUCLID-DIOPHANTINE-E2E-002-SOLVE-CERT",
+      "summary": "Deterministic candidate production and independent Cert disposition remain downstream obligations.",
+      "references": [
+        "grandchallenge/MATHSOLVE#103",
+        "grandchallenge/MATHCERT#89"
+      ]
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-05",
+    "created_by": "Human Steward authorized Stage 2 execution",
+    "source_commits": [
+      "3622bac82a39cdb9e82ec463919d9e6927c1ec0e",
+      "3a8493aa322f0e640c921b8824c4d7f88a8c057d",
+      "78b69e6a3461a83f4893d61c421b1570c08a9ba6",
+      "183ff2a0adfbe5bd0ffd5f2e638089b94b868c54"
+    ]
+  },
+  "downstream_references": {
+    "programme": [
+      "grandchallenge/MATH-PROGRAMME#237",
+      "grandchallenge/MATH-PROGRAMME#238",
+      "grandchallenge/MATH-PROGRAMME#239"
+    ],
+    "mathsolve": [
+      "grandchallenge/MATHSOLVE#103"
+    ],
+    "mathcert": [
+      "grandchallenge/MATHCERT#89"
+    ]
+  },
+  "non_certification_statement": "This native MATHFORGE manifest admits a source-conscious modern theorem, protected Stage 1 reuse, exact constructive and obstruction candidates, risk ledger, and downstream handoff only. It does not certify solvability or unsolvability, arbitrary Diophantine completeness, historical equivalence, novelty, or priority."
+}
