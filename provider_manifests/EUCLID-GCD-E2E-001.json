@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-EUCLID-GCD-E2E-001-MANIFEST",
+  "campaign_id": "EUCLID-GCD-E2E-001",
+  "title": "Euclidean algorithm and Bézout witness end-to-end exemplar",
+  "coverage_mode": "native",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "2f9d8e718814de957b6c999ae0579c5303a7c285",
+    "issue": 237,
+    "paths": [
+      "MATHFORGE_SPEC.md",
+      "CLAIM_LEDGER_STANDARD.md"
+    ]
+  },
+  "handoff_packet": {
+    "problem_card": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/problem_card",
+        "docs/EUCLID_GCD_E2E_001_FORGE.md"
+      ],
+      "reason": "The modern quantified target, normalization, concrete instance, and object/certificate distinction are explicit."
+    },
+    "source_map": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/source_map"
+      ],
+      "reason": "The Programme-authorized modern statement is separated from deferred Book VII historical concordance."
+    },
+    "status_triage": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/status_triage"
+      ],
+      "reason": "The theorem is classical while Forge authority remains candidate provider evidence only."
+    },
+    "reconnaissance_ledger": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/reconnaissance_ledger"
+      ],
+      "reason": "The exact 252 and 105 Euclidean trace and Bézout candidate are recorded."
+    },
+    "failure_risks": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/failure_risks"
+      ],
+      "reason": "Ten exact certificate and attribution failure classes are retained."
+    },
+    "suggested_wp01": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/suggested_wp01",
+        "grandchallenge/MATHSOLVE#101"
+      ],
+      "reason": "The deterministic extended-Euclid Solve obligation is bounded and separately authorized."
+    },
+    "certification_route_sketch": {
+      "state": "present",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/certification_route_sketch",
+        "grandchallenge/MATHCERT#87"
+      ],
+      "reason": "Independent checking and Lean soundness obligations are explicit without claiming certification."
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "MF-EUCLID-GCD-E2E-001-PACKAGE",
+      "kind": "forge_intake_handoff_package",
+      "ownership": "MATHFORGE",
+      "path": "sources/EUCLID-GCD-E2E-001/forge_package.json",
+      "claim_boundary": "Fixes the modern target, candidate computation, risk ledger, downstream route, and documentary order without certifying mathematics.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "079b68fb5651e0d2eee0a7b2002454d34673d84c"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-GCD-E2E-001-SCHEMA",
+      "kind": "closed_json_schema",
+      "ownership": "MATHFORGE",
+      "path": "schemas/euclid_gcd_forge_package.schema.json",
+      "claim_boundary": "Constrains the Forge record shape and non-certification flags only.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "2f1c319fdfefd4189af4f564b551dcecaa9b9c89"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-GCD-E2E-001-VALIDATOR",
+      "kind": "semantic_validator",
+      "ownership": "MATHFORGE",
+      "path": "ci/validate_euclid_gcd_forge.py",
+      "claim_boundary": "Validates candidate evidence, exact arithmetic, risk coverage, and authority boundaries; it is not the independent MATHCERT checker.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "cb7210c794519c0012d9c721cc85bf66a8d3f5e9"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-GCD-E2E-001-TESTS",
+      "kind": "adversarial_mutation_suite",
+      "ownership": "MATHFORGE",
+      "path": "tests/test_euclid_gcd_forge.py",
+      "claim_boundary": "Shows bounded rejection behavior for the Forge package; it does not establish the universal theorem.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "8c63d456c97403ff49759bf2fff3ffee7e07c93e"
+      }
+    },
+    {
+      "artifact_id": "MF-EUCLID-GCD-E2E-001-DOC",
+      "kind": "chaidez_oriented_provider_note",
+      "ownership": "MATHFORGE",
+      "path": "docs/EUCLID_GCD_E2E_001_FORGE.md",
+      "claim_boundary": "Explains the concrete task and trust path while preserving the documentary source-lock and pedagogical-plate boundaries.",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "a2c36391591345273a8c1d71412fbc0ff8485462"
+      }
+    }
+  ],
+  "source_records": [
+    {
+      "record_id": "EUCLID-GCD-E2E-001-MODERN",
+      "summary": "Programme-authorized modern natural-number gcd certificate statement.",
+      "references": [
+        "grandchallenge/MATH-PROGRAMME#237",
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/problem_card"
+      ]
+    },
+    {
+      "record_id": "EUCLID-BOOK-VII-CONTEXT-PENDING",
+      "summary": "Historical Book VII context is deferred pending exact source lock and proposition-level concordance.",
+      "references": [
+        "grandchallenge/MATH-PROGRAMME#239",
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/source_map/1"
+      ]
+    }
+  ],
+  "status_records": [
+    {
+      "record_id": "EUCLID-GCD-E2E-001-STATUS",
+      "summary": "Classical theorem; candidate Forge provider package; no novelty, priority, or historical-verbatim claim.",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/status_triage"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "record_id": "EUCLID-GCD-252-105",
+      "summary": "Exact candidate trace for gcd(252,105)=21 with Bézout coefficients (-2,5).",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/reconnaissance_ledger"
+      ]
+    }
+  ],
+  "failed_routes": [
+    {
+      "record_id": "EUCLID-GCD-E2E-001-MALFORMED-CERTIFICATE-CLASSES",
+      "summary": "Altered trace, descent, terminal, witness, identity, normalization, authority, and attribution paths must fail closed.",
+      "references": [
+        "sources/EUCLID-GCD-E2E-001/forge_package.json#/failure_risks",
+        "tests/test_euclid_gcd_forge.py"
+      ]
+    }
+  ],
+  "provider_debt": [
+    {
+      "record_id": "EUCLID-GCD-E2E-001-PROTECTED-RECEIPT",
+      "summary": "Stable downstream identity awaits protected Forge merge and post-merge readback.",
+      "references": [
+        "grandchallenge/MATHFORGE#63"
+      ]
+    },
+    {
+      "record_id": "EUCLID-GCD-E2E-001-SOLVE-CERT",
+      "summary": "Deterministic Solve witness and independent Cert disposition remain downstream obligations.",
+      "references": [
+        "grandchallenge/MATHSOLVE#101",
+        "grandchallenge/MATHCERT#87"
+      ]
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-05",
+    "created_by": "Human Steward authorized implementation",
+    "source_commits": [
+      "2f9d8e718814de957b6c999ae0579c5303a7c285",
+      "da79f89388099749d6a93e03c4364fc018a19197"
+    ]
+  },
+  "downstream_references": {
+    "programme": [
+      "grandchallenge/MATH-PROGRAMME#237",
+      "grandchallenge/MATH-PROGRAMME#238",
+      "grandchallenge/MATH-PROGRAMME#239"
+    ],
+    "mathsolve": [
+      "grandchallenge/MATHSOLVE#101"
+    ],
+    "mathcert": [
+      "grandchallenge/MATHCERT#87"
+    ]
+  },
+  "non_certification_statement": "This native MATHFORGE manifest admits a source-conscious modern problem statement, exact candidate trace, risk ledger, and downstream handoff only. It does not certify the gcd theorem, accept the candidate witness, establish historical equivalence, or support novelty or priority."
+}
