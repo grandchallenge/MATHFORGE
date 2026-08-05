@@ -35,5 +35,7 @@ jobs:
         run: python ci/validate_forge.py
       - name: Validate EUCLID-GCD-E2E-001 provider package
         run: python ci/validate_euclid_gcd_forge.py
+      - name: Validate EUCLID-DIOPHANTINE-E2E-002 provider package
+        run: python ci/validate_euclid_diophantine_forge.py
       - name: Run discovery and adversarial contract tests
         run: python -m unittest discover -s tests -v
