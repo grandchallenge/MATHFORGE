@@ -1,0 +1,325 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-EUCLID-BOOK-VII-MICRO-001-SOURCE-LOCK",
+  "campaign_id": "EUCLID-ELEMENTS-BOOK-VII-MICRO-001",
+  "tracker_issue": 67,
+  "authority_state": "candidate_exact_byte_source_lock_and_concordance_pending_exact_head_review_and_protected_merge",
+  "protected_prerequisites": {
+    "stage1_programme_closeout": "183ff2a0adfbe5bd0ffd5f2e638089b94b868c54",
+    "stage2_programme_closeout": "6dd51c29b8bcbac812bcf7a4e803b693ac8be69c",
+    "forge_protected_base": "af5398a05f17789a061ab0d23c2b47f0cc952fff"
+  },
+  "edition": {
+    "work_title": "The Thirteen Books of Euclid's Elements",
+    "volume": "II",
+    "book_coverage": "Books III-IX",
+    "author": "Euclid",
+    "translator_editor": "Thomas Little Heath",
+    "textual_basis": "Translated from the text of J. L. Heiberg",
+    "publisher": "Cambridge University Press",
+    "publication_year": 1908,
+    "language": "English"
+  },
+  "provenance": {
+    "commons_file_page": "https://commons.wikimedia.org/wiki/File:The_thirteen_books_of_Euclid%27s_Elements_Volume_II.pdf",
+    "commons_page_revision": "https://commons.wikimedia.org/w/index.php?title=File:The_thirteen_books_of_Euclid%27s_Elements_Volume_II.pdf&oldid=1026927021",
+    "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/The_thirteen_books_of_Euclid%27s_Elements_Volume_II.pdf",
+    "internet_archive_identifier": "thirteenbookseu01heibgoog",
+    "file_history_timestamp_utc": "2025-05-02T07:34:00Z",
+    "published_page_count": 575,
+    "published_size_display": "8.58 MB",
+    "mime_type": "application/pdf",
+    "whole_scan_sha256_recorded": false,
+    "whole_scan_role": "provenance_only_not_governed_byte_surface",
+    "public_domain": {
+      "status": "public_domain",
+      "basis": "Mechanical scan of a public-domain 1908 original; Commons identifies the file as free of known copyright restrictions.",
+      "mark_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commons_statement_required": true
+    },
+    "transcription_cross_checks": [
+      "https://geometor.github.io/euclid/heath/VII/index.html",
+      "https://www.perseus.tufts.edu/hopper/text?doc=Euc.+7&fromdoc=Perseus%3Atext%3A1999.01.0086"
+    ]
+  },
+  "source_artifact": {
+    "path": "sources/EUCLID-ELEMENTS-BOOK-VII-MICRO-001/heath_1908_book_vii_selected_statements.txt",
+    "encoding": "UTF-8",
+    "line_endings": "LF",
+    "final_newline": true,
+    "byte_length": 1492,
+    "sha256": "66d3d62cb75cccc0d705fa06c8845f3d9c2c61952f9994862d54c7679517e6d0",
+    "authority_role": "governed_exact_byte_historical_statement_surface",
+    "transcription_method": "Manual exact statement transcription from the selected Heath edition, cross-checked against two independent text presentations.",
+    "scope": "Eight admitted loci plus the VII.2 porism; no proof-body transcription."
+  },
+  "admitted_loci": [
+    "VII.def.1",
+    "VII.def.2",
+    "VII.def.3",
+    "VII.def.5",
+    "VII.def.12",
+    "VII.def.14",
+    "VII.1",
+    "VII.2"
+  ],
+  "statements": [
+    {
+      "locus": "VII.def.1",
+      "kind": "definition",
+      "exact_text": "An unit is that by virtue of which each of the things that exist is called one."
+    },
+    {
+      "locus": "VII.def.2",
+      "kind": "definition",
+      "exact_text": "A number is a multitude composed of units."
+    },
+    {
+      "locus": "VII.def.3",
+      "kind": "definition",
+      "exact_text": "A number is a part of a number, the less of the greater, when it measures the greater;"
+    },
+    {
+      "locus": "VII.def.5",
+      "kind": "definition",
+      "exact_text": "The greater number is a multiple of the less when it is measured by the less."
+    },
+    {
+      "locus": "VII.def.12",
+      "kind": "definition",
+      "exact_text": "Numbers prime to one another are those which are measured by an unit alone as a common measure."
+    },
+    {
+      "locus": "VII.def.14",
+      "kind": "definition",
+      "exact_text": "Numbers composite to one another are those which are measured by some number as a common measure."
+    },
+    {
+      "locus": "VII.1",
+      "kind": "proposition",
+      "exact_text": "Two unequal numbers being set out, and the less being continually subtracted in turn from the greater, if the number which is left never measures the one before it until an unit is left, the original numbers will be prime to one another."
+    },
+    {
+      "locus": "VII.2",
+      "kind": "proposition",
+      "exact_text": "Given two numbers not prime to one another, to find their greatest common measure.",
+      "attached_porism": "From this it is manifest that, if a number measure two numbers, it will also measure their greatest common measure."
+    }
+  ],
+  "concordance": [
+    {
+      "locus": "VII.def.1",
+      "historical_object_domain": "A unit is treated as the principle by which something is called one; it is not itself classified here as a number.",
+      "modern_normalization": "Use a distinguished unit corresponding to the multiplicative identity only as an explicit interpretive bridge.",
+      "relationship": "bounded_interpretive_translation",
+      "preserved_assumptions": [
+        "unit is distinct from Euclidean number"
+      ],
+      "introduced_assumptions": [
+        "a modern arithmetic carrier with a distinguished multiplicative identity"
+      ],
+      "unsupported_extensions": [
+        "identifying all modern uses of the integer 1 with Euclid's ontology of unit"
+      ]
+    },
+    {
+      "locus": "VII.def.2",
+      "historical_object_domain": "A Euclidean number is a multitude composed of units.",
+      "modern_normalization": "Represent admitted Euclidean numbers by positive natural numbers greater than one.",
+      "relationship": "bounded_domain_translation",
+      "preserved_assumptions": [
+        "number is discrete",
+        "number is composed of units",
+        "unit is not silently absorbed into the historical number domain"
+      ],
+      "introduced_assumptions": [
+        "modern natural-number notation",
+        "representation by a cardinal value"
+      ],
+      "unsupported_extensions": [
+        "zero",
+        "negative integers",
+        "signed coefficients",
+        "all natural numbers without preserving the unit distinction"
+      ]
+    },
+    {
+      "locus": "VII.def.3",
+      "historical_object_domain": "The lesser number is a part of the greater when it measures the greater.",
+      "modern_normalization": "For positive representatives m < n, interpret 'm measures n' as existence of a positive natural k with n = k*m.",
+      "relationship": "bounded_divisibility_translation",
+      "preserved_assumptions": [
+        "lesser-to-greater orientation",
+        "positive-number domain",
+        "exact measuring relation"
+      ],
+      "introduced_assumptions": [
+        "multiplication notation",
+        "existential multiplier k"
+      ],
+      "unsupported_extensions": [
+        "signed divisibility",
+        "zero divisors",
+        "dropping the strict lesser-to-greater condition from the historical definition"
+      ]
+    },
+    {
+      "locus": "VII.def.5",
+      "historical_object_domain": "The greater is a multiple of the less when it is measured by the less.",
+      "modern_normalization": "For positive representatives m <= n, interpret n as a multiple of m when n = k*m for a positive natural k.",
+      "relationship": "bounded_multiplicity_translation",
+      "preserved_assumptions": [
+        "positive-number domain",
+        "measurer and measured orientation"
+      ],
+      "introduced_assumptions": [
+        "modern multiplication notation",
+        "explicit multiplier"
+      ],
+      "unsupported_extensions": [
+        "negative multiples",
+        "zero multiple",
+        "ring-theoretic divisibility"
+      ]
+    },
+    {
+      "locus": "VII.def.12",
+      "historical_object_domain": "Two Euclidean numbers are prime to one another when their only common measure is a unit.",
+      "modern_normalization": "For admitted positive representatives a and b, interpret the condition as gcd(a,b) = 1.",
+      "relationship": "bounded_coprimality_normalization",
+      "preserved_assumptions": [
+        "common-measure semantics",
+        "unit-only common measure",
+        "positive-number domain"
+      ],
+      "introduced_assumptions": [
+        "a modern normalized gcd function",
+        "equality to the natural number 1"
+      ],
+      "unsupported_extensions": [
+        "signed-integer gcd conventions",
+        "Bézout coefficients",
+        "linear Diophantine solvability"
+      ]
+    },
+    {
+      "locus": "VII.def.14",
+      "historical_object_domain": "Two Euclidean numbers are composite to one another when some number is a common measure.",
+      "modern_normalization": "For admitted positive representatives a and b, interpret the condition as existence of a common divisor greater than one, equivalently gcd(a,b) > 1 within the bounded modern model.",
+      "relationship": "bounded_common_divisor_normalization",
+      "preserved_assumptions": [
+        "common measure is a number rather than a unit",
+        "positive-number domain"
+      ],
+      "introduced_assumptions": [
+        "modern order and gcd notation"
+      ],
+      "unsupported_extensions": [
+        "factorization uniqueness",
+        "signed common divisors",
+        "arbitrary commutative-ring gcds"
+      ]
+    },
+    {
+      "locus": "VII.1",
+      "historical_object_domain": "For two unequal Euclidean numbers, alternating repeated subtraction that reaches a unit before a remainder measures its predecessor establishes that the originals are prime to one another.",
+      "modern_normalization": "For positive unequal representatives, a repeated-subtraction Euclidean process terminating at 1 supplies a coprimality certificate.",
+      "relationship": "constructive_coprimality_analogue",
+      "preserved_assumptions": [
+        "unequal positive inputs",
+        "alternating subtraction",
+        "terminal unit condition"
+      ],
+      "introduced_assumptions": [
+        "algorithmic trace terminology",
+        "modern certificate terminology"
+      ],
+      "unsupported_extensions": [
+        "remainder-division algorithm as verbatim text",
+        "complexity bound",
+        "extended Euclidean coefficients",
+        "Bézout identity"
+      ]
+    },
+    {
+      "locus": "VII.2",
+      "historical_object_domain": "For two Euclidean numbers not prime to one another, repeated subtraction constructs their greatest common measure; the porism states that every common measure measures that greatest common measure.",
+      "modern_normalization": "For positive representatives with a non-unit common divisor, the construction corresponds to computing a greatest common divisor; together with VII.1 it supplies a bounded historical bridge to modern gcd reasoning.",
+      "relationship": "constructive_greatest_common_measure_analogue",
+      "preserved_assumptions": [
+        "two positive Euclidean numbers",
+        "not prime to one another",
+        "greatest common measure under measuring relation",
+        "porism on all common measures"
+      ],
+      "introduced_assumptions": [
+        "modern gcd terminology",
+        "functional normalization of the greatest common divisor"
+      ],
+      "unsupported_extensions": [
+        "universal zero-input convention",
+        "signed inputs",
+        "remainder-division implementation as verbatim text",
+        "extended Euclid",
+        "Bézout coefficients",
+        "linear Diophantine solvability theorem"
+      ]
+    }
+  ],
+  "modern_extensions": [
+    {
+      "extension_id": "MODERN-REMAINDER-EUCLID",
+      "classification": "later_algorithmic_normalization",
+      "source_support": "not_verbatim_in_admitted_loci",
+      "statement": "Division-with-remainder Euclidean algorithm."
+    },
+    {
+      "extension_id": "MODERN-EXTENDED-EUCLID",
+      "classification": "later_derived_extension",
+      "source_support": "not_present_in_admitted_loci",
+      "statement": "Production of coefficients x and y with ax + by = gcd(a,b)."
+    },
+    {
+      "extension_id": "MODERN-BEZOUT",
+      "classification": "later_derived_extension",
+      "source_support": "not_present_in_admitted_loci",
+      "statement": "Bézout identity over integers."
+    },
+    {
+      "extension_id": "MODERN-LINEAR-DIOPHANTINE",
+      "classification": "later_derived_extension",
+      "source_support": "not_present_in_admitted_loci",
+      "statement": "Integer solvability of ax + by = c iff gcd(|a|,|b|) divides |c|."
+    }
+  ],
+  "authority_boundaries": {
+    "candidate_exact_byte_lock_prepared": true,
+    "protected_source_lock_effective": false,
+    "historical_modern_equivalence": false,
+    "modern_extended_euclid_verbatim_euclid": false,
+    "bezout_identity_verbatim_euclid": false,
+    "linear_diophantine_theorem_verbatim_euclid": false,
+    "documentary_reader_authorized": false,
+    "edition_record_authorized": false,
+    "documentary_manifest_admission_authorized": false,
+    "plates_authority": "pedagogical_orientation_only",
+    "programme_stage3_activated": false,
+    "claims_novelty": false,
+    "claims_priority": false,
+    "claims_first_formalization": false,
+    "certifies_modern_mathematics": false
+  },
+  "next_gate": {
+    "operation": "protected MATHFORGE source-lock and concordance admission",
+    "requires": [
+      "exact-head Forge checks",
+      "GCL conformance",
+      "independent non-author historical-mathematics review",
+      "Human Steward exact-head disposition",
+      "merge-commit-only protected merge",
+      "post-merge readback"
+    ],
+    "programme_reader_may_begin_after_this_candidate": false
+  },
+  "target_disposition": "EUCLID_BOOK_VII_HEATH_1908_SOURCE_LOCK_AND_BOUNDED_CONCORDANCE"
+}

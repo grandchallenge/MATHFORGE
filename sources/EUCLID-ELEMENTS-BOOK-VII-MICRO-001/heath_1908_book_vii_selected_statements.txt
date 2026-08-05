@@ -1,0 +1,36 @@
+EUCLID, ELEMENTS, BOOK VII: SELECTED HEATH 1908 STATEMENTS
+
+Edition: The Thirteen Books of Euclid's Elements, Volume II, Books III-IX.
+Translator and editor: Thomas Little Heath.
+Textual basis: translated from the text of J. L. Heiberg.
+Publisher: Cambridge University Press.
+Publication year: 1908.
+Artifact normalization: UTF-8; LF line endings; one final newline.
+Authority scope: exact historical statement transcription for the eight admitted loci only.
+
+[VII.def.1]
+An unit is that by virtue of which each of the things that exist is called one.
+
+[VII.def.2]
+A number is a multitude composed of units.
+
+[VII.def.3]
+A number is a part of a number, the less of the greater, when it measures the greater;
+
+[VII.def.5]
+The greater number is a multiple of the less when it is measured by the less.
+
+[VII.def.12]
+Numbers prime to one another are those which are measured by an unit alone as a common measure.
+
+[VII.def.14]
+Numbers composite to one another are those which are measured by some number as a common measure.
+
+[VII.1]
+Two unequal numbers being set out, and the less being continually subtracted in turn from the greater, if the number which is left never measures the one before it until an unit is left, the original numbers will be prime to one another.
+
+[VII.2]
+Given two numbers not prime to one another, to find their greatest common measure.
+
+[VII.2.porism]
+From this it is manifest that, if a number measure two numbers, it will also measure their greatest common measure.
