@@ -80,6 +80,13 @@
       "lifecycle": "candidate",
       "disposition": "manifest",
       "manifest_path": "provider_manifests/EUCLID-GCD-E2E-001.json"
+    },
+    {
+      "campaign_id": "EUCLID-DIOPHANTINE-E2E-002",
+      "title": "Linear Diophantine solvability end-to-end extension",
+      "lifecycle": "candidate",
+      "disposition": "manifest",
+      "manifest_path": "provider_manifests/EUCLID-DIOPHANTINE-E2E-002.json"
     }
   ]
 }
