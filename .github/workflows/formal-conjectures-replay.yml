@@ -22,12 +22,12 @@ jobs:
     timeout-minutes: 90
     steps:
       - name: Checkout MATHFORGE
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
 
       - name: Checkout pinned Formal Conjectures revision
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: google-deepmind/formal-conjectures
           ref: 85f863718beeec7b58a3a1926ee92e3472bc2020
@@ -51,7 +51,7 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Restore pinned replay build cache
-        uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: |
             upstream/formal-conjectures/.lake/build
@@ -132,7 +132,7 @@ jobs:
           PY
 
       - name: Upload exact replay bundle
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: formal-conjectures-expanded-replay
           path: replay
