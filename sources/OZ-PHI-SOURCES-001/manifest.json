@@ -1,0 +1,13 @@
+{
+  "$schema":"manifest.schema.json",
+  "schema_version":"1.0.0",
+  "record_id":"MF-OZ-PHI-SOURCES-001",
+  "forge_issue":69,
+  "authority":{"forge_base":"49071febcacd9c84fe4ff268d4e11d7e0c4ff0e5","programme_issue":305,"programme_merge":"d5f6b8babd385c13eca09accef5f14087e29d5aa","upstream_repository":"rain-1/-odd-zeta-values-moremath","upstream_commit":"6cc0bf07137815ceeef0d9f340559f85352391e5","upstream_tree":"be780558454b704bdd016a3070d698c2e106e2b8","source_blobs":{"ledger":{"path":"work/PHI_SOURCE_LEDGER.md","blob":"fcb12d96bd0583c4f2074aee663dd4ce36fb970c"},"producer":{"path":"work/z5eps/eps60_phi_source.py","blob":"506b059d64f481618013bc8858b3d411c860f8a9"},"holdout_producer":{"path":"work/z5eps/eps60b_phi_holdouts.py","blob":"fb47fb257cd085745c2540a6cfd557218993eb74"},"results":{"path":"work/z5eps/eps60_results.json","blob":"3f81a2a218e981928a938cb116cf5323d9fe6e75"},"holdout_results":{"path":"work/z5eps/eps60b_results.json","blob":"27bb3be2b71f25ed39c8e88b7aa5f65d61f45e5c"}}},
+  "family_partition":{"eisenstein_source_claims":["A","B","C","D","E","F","alpha","gamma","delta","epsilon","zeta","eta"],"no_fit_in_stated_basis":["s7","s10","s18"]},
+  "replay":{"closed_form_laws_independently_evaluated":true,"coefficient_range":[1,60],"producer_fit_solver_reused":false,"recurrence_to_phi_regenerated":false,"modularity_hypotheses_certified":false,"sturm_promotion_certified":false},
+  "disposition":"SOURCE_IDENTIFICATION_PARTIALLY_ADMITTED_WITH_BLOCKERS",
+  "blockers":["independent recurrence-to-Phi regeneration through the held-out q-series range","family-by-family modularity/weight/level/character certification","Sturm-bound promotion only after modularity hypotheses are discharged"],
+  "proof_effect":"NONE","promotion_effect":"NONE",
+  "nonclaims":{"all_twelve_theorem_grade":false,"cooper_three_excluded_universally":false,"mathsolve_authorized":false,"mathcert_authorized":false,"irrationality_theorem":false,"novelty_assessed":false,"publication_claim":false,"commercial_claim":false}
+}
