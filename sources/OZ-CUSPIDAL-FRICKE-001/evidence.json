@@ -1,0 +1,5 @@
+{
+  "d1":{"B_prefix":["0","1","37/4","818/9","141587/144"],"all_scaled_integer":true,"denominator_range":[1,40],"witness_sha256":"9a5098a5276afe28a91ebb92437bfef1dc51c6bc8a4f0203f4ccc525bb4fe8e5"},
+  "level6":{"B_prefix":["0","1","67/4","12515/36","1170901/144"],"all_scaled_integer":true,"denominator_range":[1,40],"w_prefix":["1","17","433","12257","364321"],"witness_sha256":"9ac7a3d3b374158376c58e3e66cc76750623e7365d83a6ef6220e63578d1f66d"},
+  "newform":{"f6_q1_q8":[1,-2,-3,4,6,6,-16,-8],"fstar_q1_q8":[1,-6,-3,12,6,18,-16,-24]}
+}
