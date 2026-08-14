@@ -45,6 +45,36 @@ class OpenAITenProofsPermanentReplayTests(unittest.TestCase):
         record["protected_source"]["deterministic_archive_sha256"] = "0" * 64
         self.assertTrue(self.errors(record=record))
 
+    def test_archival_reassertion_cannot_be_disabled(self) -> None:
+        record = copy.deepcopy(self.record)
+        record["protected_source"]["archival_reassertion_policy"]["permitted"] = False
+        self.assertTrue(self.errors(record=record))
+
+    def test_new_carrier_identity_is_explicitly_permitted(self) -> None:
+        policy = self.record["protected_source"]["archival_reassertion_policy"]
+        self.assertIs(policy["new_carrier_commit_identity_permitted"], True)
+        self.assertEqual(self.errors(), [])
+
+    def test_historical_provenance_cannot_be_dropped(self) -> None:
+        record = copy.deepcopy(self.record)
+        record["protected_source"]["archival_reassertion_policy"]["historical_provenance_must_be_preserved"] = False
+        self.assertTrue(self.errors(record=record))
+
+    def test_reasserted_tree_match_cannot_be_relaxed(self) -> None:
+        record = copy.deepcopy(self.record)
+        record["protected_source"]["archival_reassertion_policy"]["protected_tree_must_match"] = False
+        self.assertTrue(self.errors(record=record))
+
+    def test_reasserted_archive_match_cannot_be_relaxed(self) -> None:
+        record = copy.deepcopy(self.record)
+        record["protected_source"]["archival_reassertion_policy"]["deterministic_archive_sha256_must_match"] = False
+        self.assertTrue(self.errors(record=record))
+
+    def test_later_upstream_revision_cannot_be_substituted_as_carrier(self) -> None:
+        record = copy.deepcopy(self.record)
+        record["protected_source"]["archival_reassertion_policy"]["later_upstream_revision_substitution_permitted"] = True
+        self.assertTrue(self.errors(record=record))
+
     def test_fetch_failure_cannot_be_promoted_to_success(self) -> None:
         record = copy.deepcopy(self.record)
         record["attempt"]["fetch_result"] = "success"
@@ -80,9 +110,19 @@ class OpenAITenProofsPermanentReplayTests(unittest.TestCase):
         record["disposition"]["fresh_family_replay_clear"] = True
         self.assertTrue(self.errors(record=record))
 
+    def test_source_reassertion_lane_cannot_be_silently_closed(self) -> None:
+        record = copy.deepcopy(self.record)
+        record["disposition"]["source_reassertion_operation_may_begin"] = False
+        self.assertTrue(self.errors(record=record))
+
     def test_semantic_audit_premature_opening_is_rejected(self) -> None:
         record = copy.deepcopy(self.record)
         record["disposition"]["semantic_audit_may_begin"] = True
+        self.assertTrue(self.errors(record=record))
+
+    def test_source_reassertion_authority_cannot_be_removed(self) -> None:
+        record = copy.deepcopy(self.record)
+        record["route_controls"]["source_reassertion_authorized"] = False
         self.assertTrue(self.errors(record=record))
 
     def test_semantic_authority_insertion_is_rejected(self) -> None:
