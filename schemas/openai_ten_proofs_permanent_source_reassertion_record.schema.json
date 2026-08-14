@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_permanent_source_reassertion_record.schema.json",
+  "title": "OpenAI Ten Proofs Permanent source reassertion record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "record_id",
+    "result_family",
+    "tracker_issue",
+    "historical_provenance",
+    "recovery_source",
+    "verification",
+    "permanent_family_files",
+    "gcl_archival_carrier",
+    "candidate_disposition",
+    "governed_admission_status",
+    "route_controls",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "openai_ten_proofs_permanent_source_reassertion_record"},
+    "record_id": {"const": "MF-OTP-C-PERMANENT-SOURCE-REASSERT-001"},
+    "result_family": {"const": "OTP-C-PERMANENT"},
+    "tracker_issue": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/77"},
+    "historical_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "tree", "deterministic_archive_sha256"],
+      "properties": {
+        "repository": {"const": "openai/ten-proofs"},
+        "commit": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
+        "deterministic_archive_sha256": {"const": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"}
+      }
+    },
+    "recovery_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "retrieved_commit", "retrieved_tree", "authority_basis", "mirror_name_creates_authority"],
+      "properties": {
+        "repository": {"const": "utensil/ten-proofs"},
+        "retrieved_commit": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "retrieved_tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
+        "authority_basis": {"const": "content_addressed_identity_only"},
+        "mirror_name_creates_authority": {"const": false}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workflow_run_id", "workflow_job_id", "workflow_head", "commit_match", "tree_match", "archive_construction", "archive_byte_length", "archive_sha256", "archive_match"],
+      "properties": {
+        "workflow_run_id": {"const": 31793161649},
+        "workflow_job_id": {"const": 94744374901},
+        "workflow_head": {"const": "c0f5e19f248c7d2e460abb4478794c35e630b0cf"},
+        "commit_match": {"const": true},
+        "tree_match": {"const": true},
+        "archive_construction": {"const": "git archive --format=tar --prefix=openai-ten-proofs-e62211d2/ e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "archive_byte_length": {"const": 21022720},
+        "archive_sha256": {"const": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
+        "archive_match": {"const": true}
+      }
+    },
+    "permanent_family_files": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "git_blob_sha1", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "gcl_archival_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "release_id", "release_tag", "release_target", "prerelease", "immutable", "source_asset", "manifest_asset", "file_sha256_asset", "file_git_tree_asset"],
+      "properties": {
+        "repository": {"const": "grandchallenge/MATHFORGE"},
+        "release_id": {"const": 370507312},
+        "release_tag": {"const": "otp-c-permanent-source-e62211d2-candidate-001"},
+        "release_target": {"const": "40c38eb6a716acb10145ba42f0c9c768490a7e71"},
+        "prerelease": {"const": true},
+        "immutable": {"const": true},
+        "source_asset": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["asset_id", "name", "byte_length", "digest"],
+          "properties": {
+            "asset_id": {"const": 514295009},
+            "name": {"const": "openai-ten-proofs-e62211d2.tar"},
+            "byte_length": {"const": 21022720},
+            "digest": {"const": "sha256:3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"}
+          }
+        },
+        "manifest_asset": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["asset_id", "name", "digest"],
+          "properties": {
+            "asset_id": {"const": 514295007},
+            "name": {"const": "source-reassertion-candidate.json"},
+            "digest": {"const": "sha256:859a899189ff3616a690ed52df1fd5a8d59245fd372ff4a3b58c01ff17a532b0"}
+          }
+        },
+        "file_sha256_asset": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["asset_id", "name", "digest"],
+          "properties": {
+            "asset_id": {"const": 514295010},
+            "name": {"const": "otp-c-permanent-file-sha256.txt"},
+            "digest": {"const": "sha256:27f28c5a88ea74fb28eaee36d756f855330fbe6fbe24f6fd901277750dfbf9e4"}
+          }
+        },
+        "file_git_tree_asset": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["asset_id", "name", "digest"],
+          "properties": {
+            "asset_id": {"const": 514295008},
+            "name": {"const": "otp-c-permanent-file-git-tree.txt"},
+            "digest": {"const": "sha256:b7eff46b80063022167b7ab78ea243ac0418ac71bc8f7e478f0fac7a48e71ea2"}
+          }
+        }
+      }
+    },
+    "candidate_disposition": {"const": "PROTECTED_SOURCE_BITSET_REASSERTED_ON_GCL_ARCHIVAL_CARRIER__NO_SEMANTIC_CHANGE"},
+    "governed_admission_status": {"const": "pending_exact_head_review"},
+    "route_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fresh_family_replay_may_begin", "fresh_family_replay_clear", "semantic_nonvacuity_audit_authorized", "solve_handoff_authorized", "cert_route_authorized", "mathcert_adjudication_authorized", "cert_output_authorized", "mathematical_target_proved", "aggregate_authority_permitted"],
+      "properties": {
+        "fresh_family_replay_may_begin": {"const": true},
+        "fresh_family_replay_clear": {"const": false},
+        "semantic_nonvacuity_audit_authorized": {"const": false},
+        "solve_handoff_authorized": {"const": false},
+        "cert_route_authorized": {"const": false},
+        "mathcert_adjudication_authorized": {"const": false},
+        "cert_output_authorized": {"const": false},
+        "mathematical_target_proved": {"const": false},
+        "aggregate_authority_permitted": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
