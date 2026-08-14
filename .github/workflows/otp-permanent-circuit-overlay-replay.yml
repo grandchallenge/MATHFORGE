@@ -111,7 +111,7 @@ jobs:
         run: |
           set -euo pipefail
           lake build Permanent
-          lake build "ComparatorChallenges.$CHALLENGE_STEM"
+          lake env lean "ComparatorChallenges/$CHALLENGE_STEM.lean"
           cat > GCLPermanentCircuitAxioms.lean <<'EOF'
           import Permanent
           #print axioms PermanentRollout.permanent_circuit_loglog_lower_bound
