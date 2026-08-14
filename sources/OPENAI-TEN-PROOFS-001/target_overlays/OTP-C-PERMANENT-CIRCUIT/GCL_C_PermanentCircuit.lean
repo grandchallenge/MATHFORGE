@@ -64,4 +64,17 @@ theorem permanent_circuit_loglog_lower_bound {n : ℕ} (hn : 2 ^ 16 ≤ n) :
       (circuitComplexity (permanent n) : ℝ) := by
   sorry
 
+theorem permanent_circuit_loglog_bigOmega :
+    ∃ c : ℝ, 0 < c ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
+      c * (n : ℝ) ^ 2 * Real.logb 2 (Real.logb 2 (n : ℝ)) ≤
+        (circuitComplexity (permanent n) : ℝ) := by
+  sorry
+
+theorem permanent_complexity_ratio_tendsto_atTop :
+    Filter.Tendsto
+      (fun n : ℕ =>
+        (circuitComplexity (permanent n) : ℝ) / (n : ℝ) ^ 2)
+      Filter.atTop Filter.atTop := by
+  sorry
+
 end PermanentRollout
