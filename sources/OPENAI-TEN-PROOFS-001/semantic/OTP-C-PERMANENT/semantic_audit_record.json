@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "openai_ten_proofs_permanent_semantic_nonvacuity_audit",
+  "operation_id": "OTP-C-PERMANENT-SEMANTIC-001",
+  "tracker_issue": 79,
+  "family_boundary": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED",
+  "predecessors": {
+    "repair_merge": "40c38eb6a716acb10145ba42f0c9c768490a7e71",
+    "source_reassertion_merge": "8696665805a776b537d7b469a24b88e887152466",
+    "fresh_replay_merge": "e6bfb856ec9aa6a43601e2ea6eb4047cb84ce297",
+    "reviewed_replay_head": "397338ea77f7617cc80745be2f612f10a4bdeff4",
+    "fresh_replay_run": 31793518288,
+    "fresh_replay_job": 94745449727
+  },
+  "protected_lean_source": {
+    "historical_commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "deterministic_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "challenge_path": "ComparatorChallenges/C_PermanentFormulaLowerBound.lean",
+    "challenge_git_blob_sha1": "ca71c280479f12a4249b0dc63b6e1af27bdb32ff",
+    "challenge_sha256": "fc97578bcbb072ff82383e4c903107130ba3dd1a2209235ab32270c7df37f83d",
+    "lean_toolchain": "leanprover/lean4:v4.32.0",
+    "later_upstream_revision_substituted": false
+  },
+  "manuscript_source": {
+    "historical_admitted_revision": {
+      "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+      "byte_length": 2266052,
+      "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+      "retained_bytes_available": false
+    },
+    "permanent_theorem_locus_pin_candidate": {
+      "url": "https://cdn.openai.com/pdf/ten-proofs-oai-original.pdf",
+      "document_title": "Ten Advances in Mathematics and Theoretical Computer Science",
+      "page_count": 249,
+      "chapter": 5,
+      "chapter_title": "Circuit and Formula Lower Bounds for the Permanent",
+      "pdf_pages": [113, 114, 115],
+      "theorems": ["Theorem 1.2", "Theorem 1.3"],
+      "official_original_endpoint_reacquired": true,
+      "load_bearing_text_parsed": true,
+      "byte_identity_to_historical_admitted_revision_verified": false,
+      "whole_document_semantic_equivalence_to_historical_admitted_revision_established": false,
+      "role_after_activation": "permanent_specific_official_original_theorem_locus_pin"
+    },
+    "historical_whole_document_byte_equivalence_established": false,
+    "historical_whole_document_semantic_equivalence_established": false,
+    "claim": "The Permanent semantic comparison is pinned only to the reacquired official-original Chapter 5 theorem locus. It does not assert that the presently served original PDF is byte-identical to the historically admitted PDF digest."
+  },
+  "nonvacuity_witness": {
+    "path": "sources/OPENAI-TEN-PROOFS-001/semantic/OTP-C-PERMANENT/PermanentFormulaNonvacuity.lean",
+    "git_blob_sha1": "e756c8476bac1795f3fb8ca0b7235d3a4a5c59ea",
+    "lean_run": 31799810487,
+    "lean_job": 94764884248,
+    "lean_version": "4.32.0",
+    "exact_replay_clear": true,
+    "all_dimensions": true,
+    "division_nodes_introduced_by_embedding": false,
+    "theorems": [
+      "PermanentFormulaLowerBound.Nonvacuity.formula_eval_surjective",
+      "PermanentFormulaLowerBound.Nonvacuity.formulaToRational_valid",
+      "PermanentFormulaLowerBound.Nonvacuity.formulaToRational_eval",
+      "PermanentFormulaLowerBound.Nonvacuity.formulaToRational_variableLeaves",
+      "PermanentFormulaLowerBound.Nonvacuity.permanent_divisionFree_formula_nonvacuous",
+      "PermanentFormulaLowerBound.Nonvacuity.permanent_rational_formula_nonvacuous"
+    ]
+  },
+  "targets": [
+    {
+      "target": "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
+      "source_theorem": "Theorem 1.2",
+      "source_variable_leaf_constant": 128,
+      "source_gate_constant": 256,
+      "encoded_gate_bound": false,
+      "encoded_total_leaves_or_vertices_consequence": false,
+      "coordinates": [
+        {"name": "quantified_objects", "classification": "EXACT_MATCH", "note": "Natural dimension n and a division-free arithmetic formula computing the n by n permanent."},
+        {"name": "ambient_algebraic_structure", "classification": "EXACT_MATCH", "note": "Source and Lean both use exact symbolic computation over complex coefficients."},
+        {"name": "computational_formula_model", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Rooted-tree variables/constants with binary add, subtract, multiply correspond to Lean Formula.var/const/add/sub/mul."},
+        {"name": "representation_predicate", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Computes per_n corresponds to Formula.eval f = permanentPolynomial n in MvPolynomial."},
+        {"name": "validity_predicate", "classification": "EXACT_MATCH", "note": "No separate validity predicate is required for division-free formulas in either statement."},
+        {"name": "dimension_threshold", "classification": "EXACT_MATCH", "note": "n >= 32 is encoded as 32 <= n."},
+        {"name": "complexity_size_measure", "classification": "EXACT_MATCH", "note": "L_var counts repeated variable-labelled leaves; Formula.variableLeaves does the same."},
+        {"name": "numerical_lower_bound_expression", "classification": "EXACT_MATCH", "note": "The encoded variable-leaf conclusion has n^4 and denominator constant 128."},
+        {"name": "logarithm_convention_base", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Source log_2 n is represented by Real.logb 2 n."},
+        {"name": "source_side_conditions", "classification": "EXACT_MATCH", "note": "No additional depth, degree, fan-out, monotonicity, or multilinearity condition is imposed on the formula target."},
+        {"name": "finite_n_scope", "classification": "EXACT_MATCH", "note": "Both are finite-n statements for every n at or above 32, not merely asymptotic statements."},
+        {"name": "nonvacuity_existence", "classification": "EXACT_MATCH", "note": "The exact Lean witness proves a Formula representative of permanentPolynomial n exists for every n."}
+      ],
+      "source_conclusion_projection": {
+        "classification": "JUSTIFIED_WEAKENING",
+        "note": "The Lean target encodes only the variable-leaf lower bound. The source theorem's separate internal-gate bound with constant 256 and its total-leaves/vertices consequence are not encoded."
+      },
+      "state_before_activation": "SEMANTIC_PARTIAL__CHARACTERIZED_GAPS",
+      "candidate_exit_state_after_activation": "SEMANTIC_AND_NONVACUITY_CLEAR"
+    },
+    {
+      "target": "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound",
+      "source_theorem": "Theorem 1.3",
+      "source_variable_leaf_constant": 192,
+      "source_gate_constant": 384,
+      "encoded_gate_bound": false,
+      "encoded_total_leaves_or_vertices_consequence": false,
+      "coordinates": [
+        {"name": "quantified_objects", "classification": "EXACT_MATCH", "note": "Natural dimension n and a valid arithmetic formula with division computing the n by n permanent."},
+        {"name": "ambient_algebraic_structure", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Source C(x_ij) is represented by FractionRing of the complex multivariate polynomial ring."},
+        {"name": "computational_formula_model", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Rooted-tree variables/constants and binary add, subtract, multiply, divide correspond to Lean RationalFormula constructors."},
+        {"name": "representation_predicate", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Computes per_n corresponds to equality with the algebraMap image of permanentPolynomial n in the fraction ring."},
+        {"name": "validity_predicate", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Source requires each denominator to be a nonzero rational function; RationalFormula.Valid recursively requires eval denominator != 0 in the fraction ring."},
+        {"name": "dimension_threshold", "classification": "EXACT_MATCH", "note": "n >= 32 is encoded as 32 <= n."},
+        {"name": "complexity_size_measure", "classification": "EXACT_MATCH", "note": "L_var counts repeated variable-labelled leaves; RationalFormula.variableLeaves does the same."},
+        {"name": "numerical_lower_bound_expression", "classification": "EXACT_MATCH", "note": "The encoded variable-leaf conclusion has n^4 and denominator constant 192."},
+        {"name": "logarithm_convention_base", "classification": "DEFINITIONAL_OR_NOTATION_TRANSPORT", "note": "Source log_2 n is represented by Real.logb 2 n."},
+        {"name": "source_side_conditions", "classification": "EXACT_MATCH", "note": "Validity is symbolic nonzeroness in the rational-function field; neither source nor Lean requires every denominator to remain nonzero under each numerical specialization."},
+        {"name": "finite_n_scope", "classification": "EXACT_MATCH", "note": "Both are finite-n statements for every n at or above 32, not merely asymptotic statements."},
+        {"name": "nonvacuity_existence", "classification": "EXACT_MATCH", "note": "The exact Lean witness embeds a division-free representative without division nodes, proves RationalFormula.Valid, and preserves evaluation for every n."}
+      ],
+      "source_conclusion_projection": {
+        "classification": "JUSTIFIED_WEAKENING",
+        "note": "The Lean target encodes only the variable-leaf lower bound. The source theorem's separate internal-gate bound with constant 384 and its total-leaves/vertices consequence are not encoded."
+      },
+      "state_before_activation": "SEMANTIC_PARTIAL__CHARACTERIZED_GAPS",
+      "candidate_exit_state_after_activation": "SEMANTIC_AND_NONVACUITY_CLEAR"
+    }
+  ],
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "requires_human_steward_disposition": true,
+    "head_change_requires_reapproval": true,
+    "effect": "Protected admission activates the Permanent-specific official-original Chapter 5 theorem-locus pin and the two encoded variable-leaf targets only. Historical whole-document byte equivalence remains unestablished."
+  },
+  "candidate_family_disposition": "PERMANENT_FORMULA_VARIABLE_LEAF_BOUNDS__SEMANTIC_AND_NONVACUITY_CLEAR__CIRCUIT_AND_GATE_BOUNDS_NOT_ENCODED",
+  "route_controls": {
+    "arithmetic_circuit_coverage": false,
+    "source_gate_bound_coverage": false,
+    "source_total_leaves_vertices_coverage": false,
+    "historical_pdf_byte_equivalence": false,
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate record governs only the source-semantic and nonvacuity clearance of the two encoded Permanent variable-leaf formula targets. It pins the reacquired official-original Chapter 5 theorem locus without asserting byte identity to the historically admitted PDF. It does not encode the source circuit theorem, the separate formula gate-count bounds, or the total-leaves/vertices consequences; and it creates no Solve, MATHCERT, adjudication, Cert-output, proof, aggregate, novelty, priority, publication, patentability, product, or commercial authority."
+}
