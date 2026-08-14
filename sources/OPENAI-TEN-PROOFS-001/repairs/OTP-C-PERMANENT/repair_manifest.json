@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "openai_ten_proofs_permanent_repair_manifest",
+  "record_id": "MF-OTP-C-PERMANENT-REPAIR-001",
+  "result_family": "OTP-C-PERMANENT",
+  "repair_strategy": "bounded_reclassification",
+  "proposed_family_boundary": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED",
+  "authority": {
+    "tracker_issue": "https://github.com/grandchallenge/MATHFORGE/issues/59",
+    "diagnostic_comment_id": 5291141426,
+    "activation_comment_id": 5291306737,
+    "implementation_base": "5b463c09f984fb5a821882e62de27324e7c51d19",
+    "official_lean_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "official_lean_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "deterministic_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "theorem_intake_matrix": {
+      "path": "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+      "git_blob_sha1": "2d8b24c32c804c4f5ca0f5f5ad1185199d35664b"
+    },
+    "admitted_manuscript": {
+      "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+      "byte_length": 2266052
+    }
+  },
+  "non_authoritative_current_upstream_observation": {
+    "repository": "openai/ten-proofs",
+    "observed_head": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "comparator_config_path": "ComparatorChallenges/C_PermanentFormulaLowerBound.json",
+    "comparator_config_git_blob_sha1": "662595032dced7ea0bb4d0ee43c3b1d20ecb4c2b",
+    "challenge_path": "ComparatorChallenges/C_PermanentFormulaLowerBound.lean",
+    "challenge_git_blob_sha1": "ca71c280479f12a4249b0dc63b6e1af27bdb32ff",
+    "formalization_manifest_path": "formalization.yaml",
+    "formalization_manifest_git_blob_sha1": "63d31d019f0bcff6052191d3aac71d4191f34131",
+    "repins_protected_authority": false
+  },
+  "advertised_claims": [
+    {
+      "claim_id": "OTP-C-PERMANENT-CIRCUIT",
+      "source_locus": {
+        "chapter": 5,
+        "theorem": "Theorem 1.1"
+      },
+      "claim_class": "arithmetic_circuit_lower_bound",
+      "encoded_target_status": "absent",
+      "encoded_target": null,
+      "representation_premise_required": true,
+      "dimension_domain": "n >= 2^16",
+      "coverage_after_reclassification": false
+    },
+    {
+      "claim_id": "OTP-C-PERMANENT-DIVISION-FREE-FORMULA",
+      "source_locus": {
+        "chapter": 5,
+        "theorem": "Theorem 1.2"
+      },
+      "claim_class": "division_free_formula_lower_bound",
+      "encoded_target_status": "present_conditional",
+      "encoded_target": "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
+      "representation_premise_required": true,
+      "dimension_domain": "n >= 32",
+      "required_hypotheses": [
+        "hn : 32 <= n",
+        "f : Formula (Fin n × Fin n) ℂ",
+        "hf : Formula.eval f = permanentPolynomial n"
+      ],
+      "conclusion_shape": "n^4 / (128 * log_2 n) <= Formula.variableLeaves f",
+      "coverage_after_reclassification": true
+    },
+    {
+      "claim_id": "OTP-C-PERMANENT-RATIONAL-FORMULA",
+      "source_locus": {
+        "chapter": 5,
+        "theorem": "Theorem 1.3"
+      },
+      "claim_class": "rational_formula_lower_bound",
+      "encoded_target_status": "present_conditional",
+      "encoded_target": "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound",
+      "representation_premise_required": true,
+      "dimension_domain": "n >= 32",
+      "required_hypotheses": [
+        "hn : 32 <= n",
+        "f : RationalFormula (Fin n × Fin n) ℂ",
+        "hvalid : RationalFormula.Valid f",
+        "hf : RationalFormula.eval f = algebraMap _ _ (permanentPolynomial n)"
+      ],
+      "conclusion_shape": "n^4 / (192 * log_2 n) <= RationalFormula.variableLeaves f",
+      "coverage_after_reclassification": true
+    }
+  ],
+  "encoded_target_inventory": {
+    "comparator_config": "ComparatorChallenges/C_PermanentFormulaLowerBound.json",
+    "solution_module": "Permanent",
+    "targets": [
+      "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
+      "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"
+    ],
+    "target_count": 2,
+    "circuit_target_count": 0
+  },
+  "coverage_disposition": {
+    "advertised_claim_count": 3,
+    "encoded_formula_target_count": 2,
+    "encoded_circuit_target_count": 0,
+    "formula_targets_conditional": true,
+    "targets_construct_representing_formula": false,
+    "circuit_lower_bound_coverage": false,
+    "may_advertise_circuit_lower_bound_coverage": false,
+    "reclassified_advertised_result": "Permanent formula lower bounds only",
+    "repair_outcome": "restricted_family_reclassification_candidate"
+  },
+  "nonvacuity_obligations": [
+    {
+      "obligation": "division_free_formula_class",
+      "status": "pending_semantic_audit"
+    },
+    {
+      "obligation": "rational_formula_validity",
+      "status": "pending_semantic_audit"
+    },
+    {
+      "obligation": "carrier_complex_numbers",
+      "status": "pending_semantic_audit"
+    },
+    {
+      "obligation": "matrix_variable_family_Fin_n_times_Fin_n",
+      "status": "pending_semantic_audit"
+    },
+    {
+      "obligation": "dimension_domain_n_ge_32",
+      "status": "pending_semantic_audit"
+    },
+    {
+      "obligation": "formula_represents_permanent_predicate",
+      "status": "pending_semantic_audit"
+    },
+    {
+      "obligation": "future_circuit_model_if_reopened",
+      "status": "outside_reclassification_scope"
+    },
+    {
+      "obligation": "future_circuit_size_measure_if_reopened",
+      "status": "outside_reclassification_scope"
+    },
+    {
+      "obligation": "future_circuit_asymptotic_domain_if_reopened",
+      "status": "outside_reclassification_scope"
+    }
+  ],
+  "acceptance_criteria": {
+    "closed_schema_required": true,
+    "fail_closed_identity_validation_required": true,
+    "missing_circuit_claim_must_remain_explicit": true,
+    "formula_conditions_must_remain_explicit": true,
+    "circuit_coverage_must_remain_false": true,
+    "fresh_full_replay_required_after_protected_repair": true,
+    "family_semantic_nonvacuity_audit_required_after_protected_repair": true
+  },
+  "route_controls": {
+    "semantic_clearance_authorized": false,
+    "solve_handoff_authorized": false,
+    "cert_route_authorized": false,
+    "mathcert_adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "aggregate_authority_permitted": false,
+    "mathematical_target_proved": false
+  },
+  "activation": {
+    "candidate_status": "implementation_candidate_pending_exact_head_review",
+    "required_before_protected_merge": [
+      "exact-head Forge checks",
+      "GCL conformance",
+      "non-author complexity/algebra specialist APPROVED review",
+      "separate Human Steward exact-head disposition"
+    ],
+    "head_change_requires_reapproval": true
+  },
+  "claim_boundary": "This repair candidate records that the protected Permanent-family encoding contains exactly two conditional formula lower-bound targets and no encoded arithmetic-circuit lower-bound target. It proposes a restricted-family reclassification only. It does not prove a Permanent lower bound, validate the source proof, clear semantic or nonvacuity obligations, create a Solve handoff or Cert route, adjudicate a target, issue a Cert output, or authorize aggregate, novelty, priority, publication, patentability, product, or commercial claims."
+}
