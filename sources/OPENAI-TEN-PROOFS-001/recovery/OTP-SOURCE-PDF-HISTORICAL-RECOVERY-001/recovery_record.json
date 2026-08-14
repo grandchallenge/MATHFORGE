@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "historical_pdf_recovery_record",
+  "operation_id": "OTP-SOURCE-PDF-HISTORICAL-RECOVERY-001",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "exit_state": "OPEN_WITH_CHARACTERIZED_HISTORICAL_PDF_RECOVERY_BLOCKER",
+  "historical_identity": {
+    "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+    "byte_length": 2266052,
+    "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+    "acquired_at_utc": "2026-08-01T10:01:31Z",
+    "pdf_creation_date_utc": "2026-08-01T06:49:09Z",
+    "http_last_modified_utc": "2026-08-01T06:52:38Z",
+    "http_etag": "0x8DEEF9979F7BD53",
+    "page_count": 249,
+    "pdf_version": "1.5"
+  },
+  "protected_evidence": {
+    "first_acquisition_pr": 37,
+    "first_acquisition_head": "b9b02ec75ad867e9a65de384133e74de7fa66d86",
+    "first_acquisition_merge": "0f90812dceb38a24f2c7c20f457b94c6cb02f853",
+    "source_revision_issue": 52,
+    "permanent_semantic_merge": "60f6e06c957139447bf5943eed731941b22ac608",
+    "permanent_semantic_record_blob": "3e04bd16bd8a91eaf9b6702de89fcdcc72f61099"
+  },
+  "search_surface": [
+    {
+      "locus": "MATHFORGE PR 37 tree",
+      "result": "no_pdf_payload",
+      "detail": "The six-file PR records the independently recomputed manuscript identity but contains no PDF file."
+    },
+    {
+      "locus": "MATHFORGE PR 37 Forge checks run 30695425232",
+      "result": "no_artifacts",
+      "detail": "GitHub reports zero retained workflow artifacts."
+    },
+    {
+      "locus": "MATHFORGE PR 37 GCL conformance run 30695425436",
+      "result": "evidence_only",
+      "detail": "Retained artifacts are gcl-scorecard-evidence (10170 bytes) and gcl-policy-evidence (292 bytes), not the 2266052-byte manuscript."
+    },
+    {
+      "locus": "MATHFORGE PR 37 VGSE source intake run 30695425309",
+      "result": "unrelated_tiny_artifact",
+      "detail": "The retained vgse-source-verification artifact is 174 bytes."
+    },
+    {
+      "locus": "MATHFORGE release assets",
+      "result": "no_historical_pdf_asset",
+      "detail": "Current retained releases contain the separately governed Permanent Lean-source archive and unrelated project releases, not the historical manuscript payload."
+    },
+    {
+      "locus": "MATHCERT family replay evidence run 30726486167",
+      "result": "evidence_only",
+      "detail": "Retained result-family evidence bundles are kilobyte-scale replay records rather than manuscript bytes."
+    },
+    {
+      "locus": "repository and public exact-identity search",
+      "result": "no_candidate_payload",
+      "detail": "Searches by the protected SHA-256, exact byte length, and historical filename found documentary references but no retrievable candidate payload."
+    }
+  ],
+  "known_source_drift": {
+    "detected_at": "2026-08-02",
+    "later_byte_length": 2266371,
+    "later_sha256": "64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6",
+    "byte_delta": 319,
+    "may_substitute_for_historical_payload": false
+  },
+  "acceptance_gate": {
+    "required_byte_length": 2266052,
+    "required_sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+    "both_required": true,
+    "semantic_or_theorem_locus_match_sufficient": false,
+    "filename_or_current_official_status_sufficient": false
+  },
+  "reopening_requirements": [
+    "Produce an actual candidate PDF payload, not metadata or theorem text alone.",
+    "Independently recompute byte length and SHA-256 from that payload.",
+    "Require exact equality to 2266052 bytes and f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53.",
+    "If matched, place the exact bytes on a GCL-controlled immutable archival carrier and record carrier identity separately from historical provenance."
+  ],
+  "downstream_independence": {
+    "invalidates_protected_lean_source": false,
+    "invalidates_permanent_semantic_nonvacuity_clearance": false,
+    "blocks_routing_of_already_cleared_variable_leaf_targets": false,
+    "creates_whole_document_semantic_equivalence": false
+  },
+  "claim_boundary": "This record characterizes failure to recover the historically admitted 2266052-byte PDF after bounded repository, workflow-artifact, release-asset, replay-evidence, and exact-identity searches. It does not assert that the bytes are irrecoverable in principle, does not equate any later/current PDF with the historical digest, does not invalidate protected theorem-locus semantic clearance, and creates no mathematical, Solve, MATHCERT, adjudication, Cert-output, aggregate, novelty, priority, publication, patentability, product, or commercial authority."
+}
