@@ -1,0 +1,173 @@
+name: OTP Permanent source reassertion
+
+on:
+  push:
+    branches:
+      - agent/otp-c-permanent-source-reassert-001
+    paths:
+      - ".github/workflows/otp-permanent-source-reassert.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify-and-reassert:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      HISTORICAL_COMMIT: e62211d28e3a9131950c89caa6542cfe5eff3bca
+      PROTECTED_TREE: 2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365
+      PROTECTED_ARCHIVE_SHA256: 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f
+      ARCHIVE_PREFIX: openai-ten-proofs-e62211d2/
+      MIRROR_REPOSITORY: utensil/ten-proofs
+      RELEASE_TAG: otp-c-permanent-source-e62211d2-candidate-001
+      RELEASE_TARGET: 40c38eb6a716acb10145ba42f0c9c768490a7e71
+    steps:
+      - name: Check out preserved independent mirror at exact historical commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: utensil/ten-proofs
+          ref: e62211d28e3a9131950c89caa6542cfe5eff3bca
+          path: source
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify historical commit and protected tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          actual_commit="$(git rev-parse HEAD)"
+          actual_tree="$(git rev-parse HEAD^{tree})"
+          printf 'historical_commit=%s\nprotected_tree=%s\n' "$actual_commit" "$actual_tree"
+          test "$actual_commit" = "$HISTORICAL_COMMIT"
+          test "$actual_tree" = "$PROTECTED_TREE"
+          git show -s --format='author=%an <%ae>%ncommitter=%cn <%ce>%nauthor_date=%aI%ncommit_date=%cI%nsubject=%s' HEAD
+
+      - name: Reconstruct deterministic protected archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C source archive \
+            --format=tar \
+            --prefix="$ARCHIVE_PREFIX" \
+            "$HISTORICAL_COMMIT" \
+            > openai-ten-proofs-e62211d2.tar
+          actual_sha="$(sha256sum openai-ten-proofs-e62211d2.tar | awk '{print $1}')"
+          actual_bytes="$(wc -c < openai-ten-proofs-e62211d2.tar | tr -d ' ')"
+          printf 'archive_sha256=%s\narchive_bytes=%s\n' "$actual_sha" "$actual_bytes"
+          test "$actual_sha" = "$PROTECTED_ARCHIVE_SHA256"
+
+      - name: Record Permanent-family file identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          sha256sum \
+            Permanent.lean \
+            ComparatorChallenges/C_PermanentFormulaLowerBound.lean \
+            ComparatorChallenges/C_PermanentFormulaLowerBound.json \
+            lean-toolchain \
+            lake-manifest.json \
+            > ../otp-c-permanent-file-sha256.txt
+          git ls-tree "$HISTORICAL_COMMIT" -- \
+            Permanent.lean \
+            ComparatorChallenges/C_PermanentFormulaLowerBound.lean \
+            ComparatorChallenges/C_PermanentFormulaLowerBound.json \
+            lean-toolchain \
+            lake-manifest.json \
+            > ../otp-c-permanent-file-git-tree.txt
+          cat ../otp-c-permanent-file-sha256.txt
+          cat ../otp-c-permanent-file-git-tree.txt
+
+      - name: Build archival-carrier manifest
+        shell: python
+        run: |
+          from __future__ import annotations
+          import hashlib, json, os
+          from pathlib import Path
+
+          archive = Path("openai-ten-proofs-e62211d2.tar")
+          digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+          manifest = {
+              "schema_version": "1.0.0",
+              "record_type": "otp_c_permanent_source_reassertion_candidate",
+              "historical_provenance": {
+                  "repository": "openai/ten-proofs",
+                  "commit": os.environ["HISTORICAL_COMMIT"],
+                  "tree": os.environ["PROTECTED_TREE"],
+              },
+              "recovery_source": {
+                  "repository": os.environ["MIRROR_REPOSITORY"],
+                  "retrieved_commit": os.environ["HISTORICAL_COMMIT"],
+                  "content_identity_basis": "exact Git commit and tree equality; mirror name is not authority",
+              },
+              "deterministic_archive": {
+                  "construction": f"git archive --format=tar --prefix={os.environ['ARCHIVE_PREFIX']} {os.environ['HISTORICAL_COMMIT']}",
+                  "sha256": digest,
+                  "expected_sha256": os.environ["PROTECTED_ARCHIVE_SHA256"],
+                  "byte_length": archive.stat().st_size,
+                  "identity_match": digest == os.environ["PROTECTED_ARCHIVE_SHA256"],
+              },
+              "gcl_candidate_carrier": {
+                  "repository": "grandchallenge/MATHFORGE",
+                  "release_tag": os.environ["RELEASE_TAG"],
+                  "release_target": os.environ["RELEASE_TARGET"],
+                  "asset": archive.name,
+                  "status": "prerelease_candidate_pending_governed_admission",
+              },
+              "authority": {
+                  "fresh_family_replay_clear": False,
+                  "semantic_nonvacuity_audit_authorized": False,
+                  "solve_handoff_authorized": False,
+                  "cert_route_authorized": False,
+                  "mathematical_target_proved": False,
+              },
+              "claim_boundary": "This candidate recovers and content-verifies the protected source bit set and places it on a GCL-controlled archival release carrier. It does not by itself clear fresh replay, semantics, nonvacuity, Solve/Cert routing, adjudication, proof status, or aggregate authority.",
+          }
+          if not manifest["deterministic_archive"]["identity_match"]:
+              raise SystemExit("protected archive digest mismatch")
+          Path("source-reassertion-candidate.json").write_text(
+              json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          print(Path("source-reassertion-candidate.json").read_text(encoding="utf-8"))
+
+      - name: Create or update GCL archival prerelease carrier
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo grandchallenge/MATHFORGE >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" \
+              openai-ten-proofs-e62211d2.tar \
+              source-reassertion-candidate.json \
+              otp-c-permanent-file-sha256.txt \
+              otp-c-permanent-file-git-tree.txt \
+              --repo grandchallenge/MATHFORGE \
+              --clobber
+          else
+            gh release create "$RELEASE_TAG" \
+              --repo grandchallenge/MATHFORGE \
+              --target "$RELEASE_TARGET" \
+              --title "OTP-C-PERMANENT protected source archival candidate e62211d2" \
+              --notes "Content-addressed archival candidate for MATHFORGE #77. Historical provenance: openai/ten-proofs@e62211d28e3a9131950c89caa6542cfe5eff3bca. Protected tree: 2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365. Protected deterministic archive SHA-256: 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f. Prerelease status creates no replay, semantic, Solve/Cert, proof, or aggregate authority." \
+              --prerelease \
+              openai-ten-proofs-e62211d2.tar \
+              source-reassertion-candidate.json \
+              otp-c-permanent-file-sha256.txt \
+              otp-c-permanent-file-git-tree.txt
+          fi
+
+      - name: Read back release assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view "$RELEASE_TAG" \
+            --repo grandchallenge/MATHFORGE \
+            --json tagName,isPrerelease,targetCommitish,assets,url \
+            > release-readback.json
+          cat release-readback.json
