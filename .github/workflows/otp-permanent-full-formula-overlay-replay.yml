@@ -111,7 +111,7 @@ jobs:
         run: |
           set -euo pipefail
           lake build Permanent
-          lake build "ComparatorChallenges.$CHALLENGE_STEM"
+          lake env lean "ComparatorChallenges/$CHALLENGE_STEM.lean"
           cat > GCLPermanentFullFormulaAxioms.lean <<'EOF'
           import Permanent
           #print axioms PermanentFormulaLowerBound.permanent_divisionFree_formula_lower_bound
