@@ -2,7 +2,9 @@
   "challenge_module": "ComparatorChallenges.C_PermanentFormulaLowerBound",
   "solution_module": "Permanent",
   "theorem_names": [
-    "PermanentRollout.permanent_circuit_loglog_lower_bound"
+    "PermanentRollout.permanent_circuit_loglog_lower_bound",
+    "PermanentRollout.permanent_circuit_loglog_bigOmega",
+    "PermanentRollout.permanent_complexity_ratio_tendsto_atTop"
   ],
   "permitted_axioms": [
     "propext",
