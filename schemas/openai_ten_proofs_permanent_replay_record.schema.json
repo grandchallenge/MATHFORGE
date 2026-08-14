@@ -20,7 +20,7 @@
     "claim_boundary"
   ],
   "properties": {
-    "schema_version": {"const": "1.0.0"},
+    "schema_version": {"const": "1.1.0"},
     "record_type": {"const": "openai_ten_proofs_permanent_replay_record"},
     "record_id": {"const": "MF-OTP-C-PERMANENT-REPLAY-001"},
     "result_family": {"const": "OTP-C-PERMANENT"},
@@ -39,13 +39,33 @@
     "protected_source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["repository", "commit", "tree", "deterministic_archive_sha256", "silent_repin_permitted"],
+      "required": ["repository", "commit", "tree", "deterministic_archive_sha256", "silent_repin_permitted", "archival_reassertion_policy"],
       "properties": {
         "repository": {"const": "openai/ten-proofs"},
         "commit": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
         "tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
         "deterministic_archive_sha256": {"const": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
-        "silent_repin_permitted": {"const": false}
+        "silent_repin_permitted": {"const": false},
+        "archival_reassertion_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "permitted",
+            "new_carrier_commit_identity_permitted",
+            "historical_provenance_must_be_preserved",
+            "protected_tree_must_match",
+            "deterministic_archive_sha256_must_match",
+            "later_upstream_revision_substitution_permitted"
+          ],
+          "properties": {
+            "permitted": {"const": true},
+            "new_carrier_commit_identity_permitted": {"const": true},
+            "historical_provenance_must_be_preserved": {"const": true},
+            "protected_tree_must_match": {"const": true},
+            "deterministic_archive_sha256_must_match": {"const": true},
+            "later_upstream_revision_substitution_permitted": {"const": false}
+          }
+        }
       }
     },
     "attempt": {
@@ -89,30 +109,32 @@
     "disposition": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["state", "blocker_class", "fresh_family_replay_clear", "semantic_audit_may_begin", "reason"],
+      "required": ["state", "blocker_class", "fresh_family_replay_clear", "source_reassertion_operation_may_begin", "semantic_audit_may_begin", "reason"],
       "properties": {
         "state": {"const": "OPEN_WITH_CHARACTERIZED_REPLAY_BLOCKER"},
-        "blocker_class": {"const": "protected_source_reacquisition"},
+        "blocker_class": {"const": "protected_source_bitset_reacquisition"},
         "fresh_family_replay_clear": {"const": false},
+        "source_reassertion_operation_may_begin": {"const": true},
         "semantic_audit_may_begin": {"const": false},
         "reason": {"type": "string", "minLength": 1}
       }
     },
     "reopening_requirements": {
       "type": "array",
-      "minItems": 4,
-      "maxItems": 4,
+      "minItems": 5,
+      "maxItems": 5,
       "items": {"type": "string", "minLength": 1}
     },
     "route_controls": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "semantic_clearance_authorized", "semantic_nonvacuity_audit_authorized", "solve_handoff_authorized",
+        "source_reassertion_authorized", "semantic_clearance_authorized", "semantic_nonvacuity_audit_authorized", "solve_handoff_authorized",
         "cert_route_authorized", "mathcert_adjudication_authorized", "cert_output_authorized",
         "mathematical_target_proved", "aggregate_authority_permitted"
       ],
       "properties": {
+        "source_reassertion_authorized": {"const": true},
         "semantic_clearance_authorized": {"const": false},
         "semantic_nonvacuity_audit_authorized": {"const": false},
         "solve_handoff_authorized": {"const": false},
