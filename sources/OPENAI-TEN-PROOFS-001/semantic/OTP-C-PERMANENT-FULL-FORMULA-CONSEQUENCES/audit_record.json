@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "permanent_full_formula_consequences_audit",
+  "operation_id": "OTP-C-PERMANENT-FULL-FORMULA-CONSEQUENCES-001",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "status": "FULL_FORMULA_SOURCE_CONSEQUENCES_CLEAR_CANDIDATE",
+  "protected_predecessor": {
+    "semantic_merge": "60f6e06c957139447bf5943eed731941b22ac608",
+    "semantic_record_blob": "3e04bd16bd8a91eaf9b6702de89fcdcc72f61099",
+    "source_commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "source_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "source_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "permanent_lean_sha256": "3bd469c20bc2277a13be3f9353ce47ad0c2070a330355daa78a9e59f1ca1d3c6"
+  },
+  "source_projection": {
+    "coefficient_field": "complex",
+    "dimension_threshold": 32,
+    "log_base": 2,
+    "division_free": {
+      "source_theorem": "Theorem 1.2",
+      "variable_leaf_constant": 128,
+      "leaf_count_constant": 128,
+      "vertex_count_constant": 128,
+      "internal_gate_constant": 256
+    },
+    "rational": {
+      "source_theorem": "Theorem 1.3",
+      "variable_leaf_constant": 192,
+      "leaf_count_constant": 192,
+      "vertex_count_constant": 192,
+      "internal_gate_constant": 384
+    }
+  },
+  "lean_targets": [
+    {
+      "name": "PermanentFormulaLowerBound.permanent_divisionFree_formula_lower_bound",
+      "model": "division_free_formula_tree",
+      "conclusions": ["variableLeaves", "leafCount", "vertexCount", "internalGateCount"],
+      "source_classification": "EXACT_FULL_FORMULA_CONSEQUENCE_MATCH"
+    },
+    {
+      "name": "PermanentFormulaLowerBound.permanent_rational_formula_lower_bound",
+      "model": "valid_rational_formula_tree",
+      "conclusions": ["variableLeaves", "leafCount", "vertexCount", "internalGateCount"],
+      "source_classification": "EXACT_FULL_FORMULA_CONSEQUENCE_MATCH"
+    }
+  ],
+  "structural_semantics": {
+    "formula_measures_defined_in_protected_source": ["variableLeaves", "leafCount", "internalGateCount", "vertexCount"],
+    "tree_identities_present": ["leafCount_eq_internalGateCount_add_one", "vertexCount_eq_leafCount_add_internalGateCount"],
+    "new_mathematical_proof_required": false,
+    "reason": "The protected Permanent.lean source already proves both full conjunction theorems; this operation exposes and certifies them as governed Comparator targets."
+  },
+  "nonvacuity": {
+    "reused_from_protected_semantic_merge": true,
+    "division_free_witness": "PermanentFormulaLowerBound.Nonvacuity.permanent_divisionFree_formula_nonvacuous",
+    "rational_witness": "PermanentFormulaLowerBound.Nonvacuity.permanent_rational_formula_nonvacuous",
+    "witness_blob": "e756c8476bac1795f3fb8ca0b7235d3a4a5c59ea"
+  },
+  "exact_overlay_replay": {
+    "run": 31807864648,
+    "job": 94791029992,
+    "lean_version": "4.32.0",
+    "challenge_slot": "ComparatorChallenges.C_PermanentFormulaLowerBound",
+    "ephemeral_overlay_only": true,
+    "immutable_archive_modified": false,
+    "lean_default_kernel": "accepted",
+    "nanoda_kernel": "accepted",
+    "comparator": "accepted",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"],
+    "marker": "PERMANENT_FULL_FORMULA_CONSEQUENCES_EXACT_OVERLAY_REPLAY_CLEAR"
+  },
+  "coverage": {
+    "theorem_1_2_full_formula_consequences": true,
+    "theorem_1_3_full_formula_consequences": true,
+    "source_theorem_1_1_circuit_complexity": false,
+    "historical_pdf_byte_equivalence": false,
+    "solve_handoff_for_new_targets": false,
+    "mathcert_route_for_new_targets": false,
+    "adjudication": false,
+    "cert_output": false,
+    "mathematical_target_proved_promoted": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "candidate_disposition": "PERMANENT_FORMULA_FULL_SOURCE_CONSEQUENCES_CLEAR__128_256_192_384_AND_LEAF_VERTEX_BOUNDS_ENCODED__CIRCUIT_SEPARATE",
+  "claim_boundary": "This record certifies the exact source-to-Lean target exposure and replay of the full formula-size conclusions already proved in the protected Permanent.lean source for Theorems 1.2 and 1.3: variable leaves, total leaves, total vertices, and internal arithmetic gates with constants 128/256 and 192/384 at n >= 32 and log base 2. It does not encode or clear source Theorem 1.1 arithmetic-circuit complexity, recover historical PDF bytes, create a Solve handoff or MATHCERT route for these new targets, adjudicate a theorem, issue a Cert output, promote mathematical-target proof status, or create aggregate authority."
+}
