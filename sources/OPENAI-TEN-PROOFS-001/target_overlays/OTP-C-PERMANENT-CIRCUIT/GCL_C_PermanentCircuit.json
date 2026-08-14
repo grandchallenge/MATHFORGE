@@ -1,0 +1,13 @@
+{
+  "challenge_module": "ComparatorChallenges.GCL_C_PermanentCircuit",
+  "solution_module": "Permanent",
+  "theorem_names": [
+    "PermanentRollout.permanent_circuit_loglog_lower_bound"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
