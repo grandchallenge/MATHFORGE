@@ -1,0 +1,152 @@
+name: OTP Permanent family replay
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/otp-permanent-family-replay.yml"
+      - "sources/OPENAI-TEN-PROOFS-001/replays/OTP-C-PERMANENT/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inspect-source-interface:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out replay branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Verify protected repair boundary
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path("sources/OPENAI-TEN-PROOFS-001/repairs/OTP-C-PERMANENT/repair_manifest.json").read_text(encoding="utf-8"))
+          assert manifest["repair_outcome"] == "restricted_reclassification"
+          assert manifest["classification"] == "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"
+          assert manifest["coverage_summary"]["encoded_formula_target_count"] == 2
+          assert manifest["coverage_summary"]["encoded_circuit_target_count"] == 0
+          assert manifest["coverage_summary"]["circuit_lower_bound_coverage"] is False
+          assert manifest["route_controls"]["semantic_clearance_authorized"] is False
+          assert manifest["route_controls"]["solve_handoff_authorized"] is False
+          assert manifest["route_controls"]["cert_route_authorized"] is False
+      - name: Check out exact official source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/ten-proofs
+          ref: e62211d28e3a9131950c89caa6542cfe5eff3bca
+          path: upstream
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Extract governed Permanent interface
+        shell: python
+        run: |
+          from __future__ import annotations
+          import hashlib, json, re
+          from pathlib import Path
+
+          root = Path("upstream")
+          expected = {
+              "official_commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+              "official_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+              "targets": [
+                  "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
+                  "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound",
+              ],
+          }
+          files = [
+              "Permanent.lean",
+              "ComparatorChallenges/C_PermanentFormulaLowerBound.lean",
+              "ComparatorChallenges/C_PermanentFormulaLowerBound.json",
+              "lean-toolchain",
+          ]
+          report = {**expected, "files": {}}
+          tokens = [
+              "permanent_divisionFree_formula_logarithmic_lower_bound",
+              "permanent_rational_formula_logarithmic_lower_bound",
+              "permanentPolynomial",
+              "Formula.eval f = permanentPolynomial n",
+              "RationalFormula.Valid f",
+              "RationalFormula.eval f =",
+              "variableLeaves",
+              "32 <= n",
+          ]
+          for rel in files:
+              path = root / rel
+              data = path.read_bytes()
+              text = data.decode("utf-8")
+              lines = text.splitlines()
+              hits = []
+              for i, line in enumerate(lines, 1):
+                  if any(token in line for token in tokens):
+                      lo, hi = max(1, i - 2), min(len(lines), i + 12)
+                      hits.append({"line": i, "context": [f"{j}:{lines[j-1]}" for j in range(lo, hi + 1)]})
+              report["files"][rel] = {
+                  "bytes": len(data),
+                  "sha256": hashlib.sha256(data).hexdigest(),
+                  "line_count": len(lines),
+                  "token_hits": hits,
+              }
+          print("OTP_PERMANENT_INTERFACE_BEGIN")
+          print(json.dumps(report, indent=2, sort_keys=True))
+          print("OTP_PERMANENT_INTERFACE_END")
+
+  isolated-family-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact official source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/ten-proofs
+          ref: e62211d28e3a9131950c89caa6542cfe5eff3bca
+          path: upstream
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install repository-pinned Lean toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --proto '=https' --tlsv1.2 -fsSL \
+            https://raw.githubusercontent.com/leanprover/elan/464c9d28395000a2a0128e07081e4956d50eced2/elan-init.sh \
+            -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install leanprover/lean4:v4.32.0
+      - name: Verify source and toolchain identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          test "$(git rev-parse HEAD)" = "e62211d28e3a9131950c89caa6542cfe5eff3bca"
+          test "$(git rev-parse HEAD^{tree})" = "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"
+          test "$(cat lean-toolchain)" = "leanprover/lean4:v4.32.0"
+          elan show
+          lean --version
+          lake --version
+          sha256sum Permanent.lean ComparatorChallenges/C_PermanentFormulaLowerBound.lean ComparatorChallenges/C_PermanentFormulaLowerBound.json
+      - name: Fetch locked mathlib cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          lake exe cache get
+      - name: Build isolated Permanent solution module
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          lake build Permanent
+      - name: Elaborate isolated Permanent challenge interface
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream
+          lake env lean ComparatorChallenges/C_PermanentFormulaLowerBound.lean
