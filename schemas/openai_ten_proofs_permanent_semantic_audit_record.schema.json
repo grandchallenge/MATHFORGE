@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_permanent_semantic_audit_record.schema.json",
+  "title": "OpenAI Ten Proofs Permanent semantic/nonvacuity audit record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "operation_id",
+    "tracker_issue",
+    "family_boundary",
+    "predecessors",
+    "protected_lean_source",
+    "manuscript_source",
+    "nonvacuity_witness",
+    "targets",
+    "activation",
+    "candidate_family_disposition",
+    "route_controls",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "openai_ten_proofs_permanent_semantic_nonvacuity_audit"},
+    "operation_id": {"const": "OTP-C-PERMANENT-SEMANTIC-001"},
+    "tracker_issue": {"const": 79},
+    "family_boundary": {"const": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"},
+    "predecessors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repair_merge", "source_reassertion_merge", "fresh_replay_merge", "reviewed_replay_head", "fresh_replay_run", "fresh_replay_job"],
+      "properties": {
+        "repair_merge": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "source_reassertion_merge": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "fresh_replay_merge": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "reviewed_replay_head": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "fresh_replay_run": {"type": "integer", "minimum": 1},
+        "fresh_replay_job": {"type": "integer", "minimum": 1}
+      }
+    },
+    "protected_lean_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["historical_commit", "tree", "deterministic_archive_sha256", "challenge_path", "challenge_git_blob_sha1", "challenge_sha256", "lean_toolchain", "later_upstream_revision_substituted"],
+      "properties": {
+        "historical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "deterministic_archive_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "challenge_path": {"type": "string", "minLength": 1},
+        "challenge_git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "challenge_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "lean_toolchain": {"type": "string", "minLength": 1},
+        "later_upstream_revision_substituted": {"type": "boolean"}
+      }
+    },
+    "manuscript_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["historical_admitted_revision", "permanent_theorem_locus_pin_candidate", "historical_whole_document_byte_equivalence_established", "historical_whole_document_semantic_equivalence_established", "claim"],
+      "properties": {
+        "historical_admitted_revision": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url", "byte_length", "sha256", "retained_bytes_available"],
+          "properties": {
+            "url": {"type": "string", "format": "uri"},
+            "byte_length": {"type": "integer", "minimum": 1},
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "retained_bytes_available": {"type": "boolean"}
+          }
+        },
+        "permanent_theorem_locus_pin_candidate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url", "document_title", "page_count", "chapter", "chapter_title", "pdf_pages", "theorems", "official_original_endpoint_reacquired", "load_bearing_text_parsed", "normalized_load_bearing_source", "byte_identity_to_historical_admitted_revision_verified", "whole_document_semantic_equivalence_to_historical_admitted_revision_established", "role_after_activation"],
+          "properties": {
+            "url": {"type": "string", "format": "uri"},
+            "document_title": {"type": "string", "minLength": 1},
+            "page_count": {"type": "integer", "minimum": 1},
+            "chapter": {"type": "integer", "minimum": 1},
+            "chapter_title": {"type": "string", "minLength": 1},
+            "pdf_pages": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+            "theorems": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "minLength": 1}},
+            "official_original_endpoint_reacquired": {"type": "boolean"},
+            "load_bearing_text_parsed": {"type": "boolean"},
+            "normalized_load_bearing_source": {
+              "const": {
+                "model": {
+                  "compute_semantics": "exact symbolic polynomial computation over C",
+                  "formula_tree": true,
+                  "inputs": ["individual variables", "arbitrary complex constants"],
+                  "division_free_internal_gates": ["+", "-", "*"],
+                  "variable_leaf_measure": "Lvar counts variable-labelled leaves with repeated occurrences separately",
+                  "division_semantics": "formulas with division are interpreted in C(x_ij)",
+                  "validity": "every denominator is a nonzero element of C(x_ij)",
+                  "final_output": "equals the polynomial being computed",
+                  "intermediate_rational_functions_may_be_nonpolynomial": true
+                },
+                "theorem_1_2": {
+                  "threshold": "n >= 32",
+                  "formula_model": "division-free arithmetic formula computing per_n",
+                  "variable_leaf_bound": "Lvar(Phi) >= n^4 / (128 log_2 n)",
+                  "gate_bound": "G(Phi) >= n^4 / (256 log_2 n)",
+                  "leaf_vertex_extension": true
+                },
+                "theorem_1_3": {
+                  "threshold": "n >= 32",
+                  "formula_model": "valid arithmetic formula with division computing per_n",
+                  "variable_leaf_bound": "Lvar(Phi) >= n^4 / (192 log_2 n)",
+                  "gate_bound": "G(Phi) >= n^4 / (384 log_2 n)",
+                  "leaf_vertex_extension": true
+                }
+              }
+            },
+            "byte_identity_to_historical_admitted_revision_verified": {"type": "boolean"},
+            "whole_document_semantic_equivalence_to_historical_admitted_revision_established": {"type": "boolean"},
+            "role_after_activation": {"type": "string", "minLength": 1}
+          }
+        },
+        "historical_whole_document_byte_equivalence_established": {"type": "boolean"},
+        "historical_whole_document_semantic_equivalence_established": {"type": "boolean"},
+        "claim": {"type": "string", "minLength": 1}
+      }
+    },
+    "nonvacuity_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "git_blob_sha1", "lean_run", "lean_job", "lean_version", "exact_replay_clear", "all_dimensions", "division_nodes_introduced_by_embedding", "theorems"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "lean_run": {"type": "integer", "minimum": 1},
+        "lean_job": {"type": "integer", "minimum": 1},
+        "lean_version": {"type": "string", "minLength": 1},
+        "exact_replay_clear": {"type": "boolean"},
+        "all_dimensions": {"type": "boolean"},
+        "division_nodes_introduced_by_embedding": {"type": "boolean"},
+        "theorems": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/target"}
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requires_exact_head_forge_ci", "requires_exact_head_gcl_conformance", "requires_exact_head_codeql", "requires_non_author_approved_review", "requires_human_steward_disposition", "head_change_requires_reapproval", "effect"],
+      "properties": {
+        "requires_exact_head_forge_ci": {"type": "boolean"},
+        "requires_exact_head_gcl_conformance": {"type": "boolean"},
+        "requires_exact_head_codeql": {"type": "boolean"},
+        "requires_non_author_approved_review": {"type": "boolean"},
+        "requires_human_steward_disposition": {"type": "boolean"},
+        "head_change_requires_reapproval": {"type": "boolean"},
+        "effect": {"type": "string", "minLength": 1}
+      }
+    },
+    "candidate_family_disposition": {"type": "string", "minLength": 1},
+    "route_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["arithmetic_circuit_coverage", "source_gate_bound_coverage", "source_total_leaves_vertices_coverage", "historical_pdf_byte_equivalence", "solve_handoff_authorized", "mathcert_route_authorized", "adjudication_authorized", "cert_output_authorized", "mathematical_target_proved", "aggregate_openai_ten_proofs_authority"],
+      "properties": {
+        "arithmetic_circuit_coverage": {"type": "boolean"},
+        "source_gate_bound_coverage": {"type": "boolean"},
+        "source_total_leaves_vertices_coverage": {"type": "boolean"},
+        "historical_pdf_byte_equivalence": {"type": "boolean"},
+        "solve_handoff_authorized": {"type": "boolean"},
+        "mathcert_route_authorized": {"type": "boolean"},
+        "adjudication_authorized": {"type": "boolean"},
+        "cert_output_authorized": {"type": "boolean"},
+        "mathematical_target_proved": {"type": "boolean"},
+        "aggregate_openai_ten_proofs_authority": {"type": "boolean"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "classification": {
+      "enum": [
+        "EXACT_MATCH",
+        "DEFINITIONAL_OR_NOTATION_TRANSPORT",
+        "JUSTIFIED_STRENGTHENING",
+        "JUSTIFIED_WEAKENING",
+        "UNRESOLVED_SEMANTIC_GAP",
+        "DISQUALIFYING_MISMATCH"
+      ]
+    },
+    "coordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "classification", "note"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "classification": {"$ref": "#/$defs/classification"},
+        "note": {"type": "string", "minLength": 1}
+      }
+    },
+    "projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "note"],
+      "properties": {
+        "classification": {"const": "JUSTIFIED_WEAKENING"},
+        "note": {"type": "string", "minLength": 1}
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "source_theorem", "source_variable_leaf_constant", "source_gate_constant", "encoded_gate_bound", "encoded_total_leaves_or_vertices_consequence", "coordinates", "source_conclusion_projection", "state_before_activation", "candidate_exit_state_after_activation"],
+      "properties": {
+        "target": {"type": "string", "minLength": 1},
+        "source_theorem": {"type": "string", "minLength": 1},
+        "source_variable_leaf_constant": {"type": "integer", "minimum": 1},
+        "source_gate_constant": {"type": "integer", "minimum": 1},
+        "encoded_gate_bound": {"type": "boolean"},
+        "encoded_total_leaves_or_vertices_consequence": {"type": "boolean"},
+        "coordinates": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/coordinate"}},
+        "source_conclusion_projection": {"$ref": "#/$defs/projection"},
+        "state_before_activation": {"enum": ["SEMANTIC_PARTIAL__CHARACTERIZED_GAPS", "SEMANTIC_AND_NONVACUITY_CLEAR", "SEMANTIC_CLEAR__NONVACUITY_BLOCKED", "SEMANTIC_MISMATCH__TARGET_NOT_ADMISSIBLE"]},
+        "candidate_exit_state_after_activation": {"enum": ["SEMANTIC_PARTIAL__CHARACTERIZED_GAPS", "SEMANTIC_AND_NONVACUITY_CLEAR", "SEMANTIC_CLEAR__NONVACUITY_BLOCKED", "SEMANTIC_MISMATCH__TARGET_NOT_ADMISSIBLE"]}
+      }
+    }
+  }
+}
