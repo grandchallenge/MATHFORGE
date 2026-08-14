@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "openai_ten_proofs_permanent_replay_record",
+  "record_id": "MF-OTP-C-PERMANENT-REPLAY-001",
+  "result_family": "OTP-C-PERMANENT",
+  "tracker_issue": "https://github.com/grandchallenge/MATHFORGE/issues/75",
+  "predecessor": {
+    "repair_issue": 59,
+    "repair_pull_request": 74,
+    "repair_merge": "40c38eb6a716acb10145ba42f0c9c768490a7e71",
+    "family_boundary": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"
+  },
+  "protected_source": {
+    "repository": "openai/ten-proofs",
+    "commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "deterministic_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "silent_repin_permitted": false
+  },
+  "attempt": {
+    "pull_request": 76,
+    "workflow_name": "OTP Permanent family replay",
+    "workflow_run_id": 31790528636,
+    "workflow_head": "bdf5051112ae91ba0213ecbdd34221faf44b2902",
+    "replay_job_id": 94736176787,
+    "runner_os": "ubuntu-24.04",
+    "checkout_action": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+    "fetch_depth": 0,
+    "fetch_attempt_count": 3,
+    "fetch_result": "failure",
+    "fetch_error": "fatal: remote error: upload-pack: not our ref e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "source_checkout_completed": false,
+    "toolchain_install_reached": false,
+    "solution_build_reached": false,
+    "challenge_elaboration_reached": false
+  },
+  "reacquisition_audit": {
+    "gcl_repository_search": "metadata_only_no_retained_source_bytes_found",
+    "public_exact_commit_search": "no_exact_commit_or_tree_copy_found",
+    "retained_deterministic_archive_bytes_found": false,
+    "later_upstream_head_substituted": false
+  },
+  "disposition": {
+    "state": "OPEN_WITH_CHARACTERIZED_REPLAY_BLOCKER",
+    "blocker_class": "protected_source_reacquisition",
+    "fresh_family_replay_clear": false,
+    "semantic_audit_may_begin": false,
+    "reason": "The protected official source commit is no longer advertised by openai/ten-proofs and the exact commit cannot be fetched. No retained exact source bytes or exact-tree copy were found in the bounded reacquisition audit."
+  },
+  "reopening_requirements": [
+    "recover the exact protected commit e62211d28e3a9131950c89caa6542cfe5eff3bca from an authoritative or content-verified retained source",
+    "verify tree 2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "verify deterministic archive SHA-256 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "rerun the full governed Permanent-family replay without substituting a later upstream root"
+  ],
+  "route_controls": {
+    "semantic_clearance_authorized": false,
+    "semantic_nonvacuity_audit_authorized": false,
+    "solve_handoff_authorized": false,
+    "cert_route_authorized": false,
+    "mathcert_adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_authority_permitted": false
+  },
+  "claim_boundary": "This record characterizes failure to reacquire the protected source revision required for a fresh OTP-C-PERMANENT family replay. It is not a Lean/compiler failure, a mathematical refutation, semantic clearance, nonvacuity clearance, circuit-lower-bound coverage, Solve/Cert authority, adjudication, proof promotion, or aggregate certification."
+}
