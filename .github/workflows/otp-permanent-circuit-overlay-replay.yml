@@ -22,7 +22,8 @@ jobs:
       PROTECTED_ARCHIVE_SHA256: 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f
       PROTECTED_ARCHIVE_BYTES: "21022720"
       OVERLAY_ROOT: sources/OPENAI-TEN-PROOFS-001/target_overlays/OTP-C-PERMANENT-CIRCUIT
-      CHALLENGE_STEM: GCL_C_PermanentCircuit
+      OVERLAY_STEM: GCL_C_PermanentCircuit
+      REGISTERED_STEM: C_PermanentFormulaLowerBound
     steps:
       - name: Checkout MATHFORGE overlay
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -42,8 +43,8 @@ jobs:
           tar -xf "$SOURCE_ASSET" -C source --strip-components=1
           test "$(sha256sum source/Permanent.lean | awk '{print $1}')" = \
             "3bd469c20bc2277a13be3f9353ce47ad0c2070a330355daa78a9e59f1ca1d3c6"
-          cp "$OVERLAY_ROOT/$CHALLENGE_STEM.lean" "source/ComparatorChallenges/$CHALLENGE_STEM.lean"
-          cp "$OVERLAY_ROOT/$CHALLENGE_STEM.json" "source/ComparatorChallenges/$CHALLENGE_STEM.json"
+          cp "$OVERLAY_ROOT/$OVERLAY_STEM.lean" "source/ComparatorChallenges/$REGISTERED_STEM.lean"
+          cp "$OVERLAY_ROOT/$OVERLAY_STEM.json" "source/ComparatorChallenges/$REGISTERED_STEM.json"
 
       - name: Install pinned Lean toolchain
         shell: bash
@@ -69,19 +70,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p tools "$RUNNER_TEMP/otp-bin"
-
           git clone --filter=blob:none https://github.com/leanprover/lean4export.git tools/lean4export
           git -C tools/lean4export checkout --detach 4e7915201d3f9f04470d9eae002fa695f7cdc589
           (cd tools/lean4export && lake build)
-
           git clone --filter=blob:none https://github.com/ammkrn/nanoda_lib.git tools/nanoda
           git -C tools/nanoda checkout --detach ddfac2bf5a7b56cb46e141494427ff3dd55963c7
           (cd tools/nanoda && cargo build --release --locked)
-
           git clone --filter=blob:none https://github.com/Zouuup/landrun.git tools/landrun
           git -C tools/landrun checkout --detach 811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
           (cd tools/landrun && go build -trimpath -o "$RUNNER_TEMP/otp-bin/landrun-real" ./cmd/landrun)
-
           cat > "$RUNNER_TEMP/otp-bin/landrun" <<'EOF'
           #!/usr/bin/env bash
           set -euo pipefail
@@ -98,7 +95,6 @@ jobs:
           exit 64
           EOF
           chmod +x "$RUNNER_TEMP/otp-bin/landrun" "$RUNNER_TEMP/otp-bin/landrun-real"
-
           echo "$RUNNER_TEMP/otp-bin" >> "$GITHUB_PATH"
           echo "COMPARATOR_LANDRUN=$RUNNER_TEMP/otp-bin/landrun" >> "$GITHUB_ENV"
           echo "COMPARATOR_LANDRUN_REAL=$RUNNER_TEMP/otp-bin/landrun-real" >> "$GITHUB_ENV"
@@ -111,7 +107,7 @@ jobs:
         run: |
           set -euo pipefail
           lake build Permanent
-          lake env lean "ComparatorChallenges/$CHALLENGE_STEM.lean"
+          lake env lean "ComparatorChallenges/$REGISTERED_STEM.lean"
           cat > GCLPermanentCircuitAxioms.lean <<'EOF'
           import Permanent
           #print axioms PermanentRollout.permanent_circuit_loglog_lower_bound
@@ -119,7 +115,7 @@ jobs:
           lake env lean GCLPermanentCircuitAxioms.lean | tee /tmp/axioms.log
           rm GCLPermanentCircuitAxioms.lean
           ! grep -E "sorryAx|prohibited" /tmp/axioms.log
-          lake exe comparator "ComparatorChallenges/$CHALLENGE_STEM.json" | tee /tmp/comparator.log
+          lake exe comparator "ComparatorChallenges/$REGISTERED_STEM.json" | tee /tmp/comparator.log
           grep -Fq "Lean default kernel accepts the solution" /tmp/comparator.log
           grep -Fq "Nanoda kernel accepts the solution" /tmp/comparator.log
           grep -Fq "Your solution is okay!" /tmp/comparator.log
