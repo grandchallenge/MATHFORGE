@@ -1,0 +1,75 @@
+name: OTP Permanent semantic source API probe
+
+on:
+  push:
+    branches:
+      - agent/otp-c-permanent-semantic-001
+    paths:
+      - ".github/workflows/otp-permanent-semantic-introspect.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-api-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      RELEASE_TAG: otp-c-permanent-source-e62211d2-candidate-001
+      SOURCE_ASSET: openai-ten-proofs-e62211d2.tar
+      PROTECTED_ARCHIVE_SHA256: 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f
+      PROTECTED_ARCHIVE_BYTES: "21022720"
+    steps:
+      - name: Download and verify exact protected archive
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release download "$RELEASE_TAG" --repo grandchallenge/MATHFORGE --pattern "$SOURCE_ASSET"
+          test "$(sha256sum "$SOURCE_ASSET" | awk '{print $1}')" = "$PROTECTED_ARCHIVE_SHA256"
+          test "$(wc -c < "$SOURCE_ASSET" | tr -d ' ')" = "$PROTECTED_ARCHIVE_BYTES"
+          mkdir source
+          tar -xf "$SOURCE_ASSET" -C source --strip-components=1
+
+      - name: Emit exact Permanent API contexts
+        shell: python
+        run: |
+          from pathlib import Path
+          root = Path('source')
+          pats = [
+              'inductive Formula', 'namespace Formula', 'def Formula', 'Formula.eval',
+              'variableLeaves', 'inductive RationalFormula', 'namespace RationalFormula',
+              'RationalFormula.Valid', 'RationalFormula.eval', 'permanentPolynomial',
+              'PermanentFormulaLowerBound', 'permanent_divisionFree_formula_logarithmic_lower_bound',
+              'permanent_rational_formula_logarithmic_lower_bound'
+          ]
+          hits = []
+          for p in root.rglob('*.lean'):
+              try:
+                  lines = p.read_text(encoding='utf-8').splitlines()
+              except Exception:
+                  continue
+              for i, line in enumerate(lines):
+                  if any(pat in line for pat in pats):
+                      hits.append((p, i, lines))
+          print('API_HIT_COUNT', len(hits))
+          seen = set()
+          for p, i, lines in hits:
+              key=(str(p), i)
+              if key in seen: continue
+              seen.add(key)
+              print(f'\n=== {p.relative_to(root)}:{i+1} ===')
+              lo=max(0,i-8); hi=min(len(lines),i+16)
+              for j in range(lo,hi):
+                  print(f'{j+1:5d}: {lines[j]}')
+
+      - name: Emit imports and declaration index
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '=== Permanent imports ==='
+          head -n 40 source/Permanent.lean
+          echo '=== declaration index ==='
+          grep -R -n -E '^(inductive|structure|def|theorem|lemma|abbrev|namespace).*Formula|^(inductive|structure|def|theorem|lemma|abbrev|namespace).*Rational|permanentPolynomial|variableLeaves' source --include='*.lean' | head -n 300 || true
