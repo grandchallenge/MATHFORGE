@@ -12,15 +12,15 @@
     "tracker_issue",
     "predecessor",
     "protected_source",
-    "attempt",
-    "reacquisition_audit",
+    "prior_failed_reacquisition",
+    "source_carrier",
+    "successful_replay",
     "disposition",
-    "reopening_requirements",
     "route_controls",
     "claim_boundary"
   ],
   "properties": {
-    "schema_version": {"const": "1.1.0"},
+    "schema_version": {"const": "2.0.0"},
     "record_type": {"const": "openai_ten_proofs_permanent_replay_record"},
     "record_id": {"const": "MF-OTP-C-PERMANENT-REPLAY-001"},
     "result_family": {"const": "OTP-C-PERMANENT"},
@@ -39,102 +39,106 @@
     "protected_source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["repository", "commit", "tree", "deterministic_archive_sha256", "silent_repin_permitted", "archival_reassertion_policy"],
+      "required": ["historical_repository", "historical_commit", "tree", "deterministic_archive_sha256", "deterministic_archive_byte_length", "later_upstream_revision_substituted"],
       "properties": {
-        "repository": {"const": "openai/ten-proofs"},
-        "commit": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "historical_repository": {"const": "openai/ten-proofs"},
+        "historical_commit": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
         "tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
         "deterministic_archive_sha256": {"const": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
-        "silent_repin_permitted": {"const": false},
-        "archival_reassertion_policy": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "permitted",
-            "new_carrier_commit_identity_permitted",
-            "historical_provenance_must_be_preserved",
-            "protected_tree_must_match",
-            "deterministic_archive_sha256_must_match",
-            "later_upstream_revision_substitution_permitted"
-          ],
-          "properties": {
-            "permitted": {"const": true},
-            "new_carrier_commit_identity_permitted": {"const": true},
-            "historical_provenance_must_be_preserved": {"const": true},
-            "protected_tree_must_match": {"const": true},
-            "deterministic_archive_sha256_must_match": {"const": true},
-            "later_upstream_revision_substitution_permitted": {"const": false}
-          }
-        }
+        "deterministic_archive_byte_length": {"const": 21022720},
+        "later_upstream_revision_substituted": {"const": false}
       }
     },
-    "attempt": {
+    "prior_failed_reacquisition": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "pull_request", "workflow_name", "workflow_run_id", "workflow_head", "replay_job_id",
-        "runner_os", "checkout_action", "fetch_depth", "fetch_attempt_count", "fetch_result",
-        "fetch_error", "source_checkout_completed", "toolchain_install_reached",
-        "solution_build_reached", "challenge_elaboration_reached"
-      ],
+      "required": ["workflow_run_id", "replay_job_id", "fetch_attempt_count", "fetch_error", "compiler_or_theorem_failure_inferred", "superseded_by_content_addressed_reassertion"],
+      "properties": {
+        "workflow_run_id": {"const": 31790528636},
+        "replay_job_id": {"const": 94736176787},
+        "fetch_attempt_count": {"const": 3},
+        "fetch_error": {"const": "fatal: remote error: upload-pack: not our ref e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "compiler_or_theorem_failure_inferred": {"const": false},
+        "superseded_by_content_addressed_reassertion": {"const": true}
+      }
+    },
+    "source_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "source_reassertion_issue", "source_reassertion_pull_request", "release_id", "release_tag", "release_target", "immutable", "asset_id", "asset_name", "asset_byte_length", "asset_digest", "content_identity_matches_protected_source"],
+      "properties": {
+        "repository": {"const": "grandchallenge/MATHFORGE"},
+        "source_reassertion_issue": {"const": 77},
+        "source_reassertion_pull_request": {"const": 78},
+        "release_id": {"const": 370507312},
+        "release_tag": {"const": "otp-c-permanent-source-e62211d2-candidate-001"},
+        "release_target": {"const": "40c38eb6a716acb10145ba42f0c9c768490a7e71"},
+        "immutable": {"const": true},
+        "asset_id": {"const": 514295009},
+        "asset_name": {"const": "openai-ten-proofs-e62211d2.tar"},
+        "asset_byte_length": {"const": 21022720},
+        "asset_digest": {"const": "sha256:3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
+        "content_identity_matches_protected_source": {"const": true}
+      }
+    },
+    "successful_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pull_request", "workflow_name", "workflow_run_id", "workflow_head", "replay_job_id", "runner_os", "lean_toolchain", "archive_download_verified", "permanent_family_file_identities_verified", "comparator_inventory_verified", "locked_dependency_cache_fetched", "permanent_solution_module_built", "permanent_challenge_elaborated", "clearance_marker_emitted", "target_inventory"],
       "properties": {
         "pull_request": {"const": 76},
-        "workflow_name": {"const": "OTP Permanent family replay"},
-        "workflow_run_id": {"const": 31790528636},
-        "workflow_head": {"const": "bdf5051112ae91ba0213ecbdd34221faf44b2902"},
-        "replay_job_id": {"const": 94736176787},
+        "workflow_name": {"const": "OTP Permanent GCL archival replay"},
+        "workflow_run_id": {"const": 31793518288},
+        "workflow_head": {"const": "eef48558cadb0f955e5db8e02d46d49fe1305bfe"},
+        "replay_job_id": {"const": 94745449727},
         "runner_os": {"const": "ubuntu-24.04"},
-        "checkout_action": {"const": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"},
-        "fetch_depth": {"const": 0},
-        "fetch_attempt_count": {"const": 3},
-        "fetch_result": {"const": "failure"},
-        "fetch_error": {"const": "fatal: remote error: upload-pack: not our ref e62211d28e3a9131950c89caa6542cfe5eff3bca"},
-        "source_checkout_completed": {"const": false},
-        "toolchain_install_reached": {"const": false},
-        "solution_build_reached": {"const": false},
-        "challenge_elaboration_reached": {"const": false}
-      }
-    },
-    "reacquisition_audit": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["gcl_repository_search", "public_exact_commit_search", "retained_deterministic_archive_bytes_found", "later_upstream_head_substituted"],
-      "properties": {
-        "gcl_repository_search": {"const": "metadata_only_no_retained_source_bytes_found"},
-        "public_exact_commit_search": {"const": "no_exact_commit_or_tree_copy_found"},
-        "retained_deterministic_archive_bytes_found": {"const": false},
-        "later_upstream_head_substituted": {"const": false}
+        "lean_toolchain": {"const": "leanprover/lean4:v4.32.0"},
+        "archive_download_verified": {"const": true},
+        "permanent_family_file_identities_verified": {"const": true},
+        "comparator_inventory_verified": {"const": true},
+        "locked_dependency_cache_fetched": {"const": true},
+        "permanent_solution_module_built": {"const": true},
+        "permanent_challenge_elaborated": {"const": true},
+        "clearance_marker_emitted": {"const": true},
+        "target_inventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["solution_module", "targets", "target_count", "circuit_target_count", "formula_targets_conditional"],
+          "properties": {
+            "solution_module": {"const": "Permanent"},
+            "targets": {
+              "type": "array",
+              "prefixItems": [
+                {"const": "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound"},
+                {"const": "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"}
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "target_count": {"const": 2},
+            "circuit_target_count": {"const": 0},
+            "formula_targets_conditional": {"const": true}
+          }
+        }
       }
     },
     "disposition": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["state", "blocker_class", "fresh_family_replay_clear", "source_reassertion_operation_may_begin", "semantic_audit_may_begin", "reason"],
+      "required": ["state", "fresh_family_replay_clear", "source_reacquisition_blocker_cleared", "semantic_nonvacuity_audit_may_be_governed_next", "semantic_nonvacuity_audit_performed"],
       "properties": {
-        "state": {"const": "OPEN_WITH_CHARACTERIZED_REPLAY_BLOCKER"},
-        "blocker_class": {"const": "protected_source_bitset_reacquisition"},
-        "fresh_family_replay_clear": {"const": false},
-        "source_reassertion_operation_may_begin": {"const": true},
-        "semantic_audit_may_begin": {"const": false},
-        "reason": {"type": "string", "minLength": 1}
+        "state": {"const": "FRESH_FAMILY_REPLAY_CLEAR__SEMANTIC_AUDIT_NOT_YET_PERFORMED"},
+        "fresh_family_replay_clear": {"const": true},
+        "source_reacquisition_blocker_cleared": {"const": true},
+        "semantic_nonvacuity_audit_may_be_governed_next": {"const": true},
+        "semantic_nonvacuity_audit_performed": {"const": false}
       }
-    },
-    "reopening_requirements": {
-      "type": "array",
-      "minItems": 5,
-      "maxItems": 5,
-      "items": {"type": "string", "minLength": 1}
     },
     "route_controls": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "source_reassertion_authorized", "semantic_clearance_authorized", "semantic_nonvacuity_audit_authorized", "solve_handoff_authorized",
-        "cert_route_authorized", "mathcert_adjudication_authorized", "cert_output_authorized",
-        "mathematical_target_proved", "aggregate_authority_permitted"
-      ],
+      "required": ["semantic_clearance_authorized", "semantic_nonvacuity_audit_authorized", "solve_handoff_authorized", "cert_route_authorized", "mathcert_adjudication_authorized", "cert_output_authorized", "mathematical_target_proved", "aggregate_authority_permitted"],
       "properties": {
-        "source_reassertion_authorized": {"const": true},
         "semantic_clearance_authorized": {"const": false},
         "semantic_nonvacuity_audit_authorized": {"const": false},
         "solve_handoff_authorized": {"const": false},
