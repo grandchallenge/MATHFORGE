@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_permanent_replay_record.schema.json",
+  "title": "OpenAI Ten Proofs Permanent replay record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "record_id",
+    "result_family",
+    "tracker_issue",
+    "predecessor",
+    "protected_source",
+    "attempt",
+    "reacquisition_audit",
+    "disposition",
+    "reopening_requirements",
+    "route_controls",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "openai_ten_proofs_permanent_replay_record"},
+    "record_id": {"const": "MF-OTP-C-PERMANENT-REPLAY-001"},
+    "result_family": {"const": "OTP-C-PERMANENT"},
+    "tracker_issue": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/75"},
+    "predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repair_issue", "repair_pull_request", "repair_merge", "family_boundary"],
+      "properties": {
+        "repair_issue": {"const": 59},
+        "repair_pull_request": {"const": 74},
+        "repair_merge": {"const": "40c38eb6a716acb10145ba42f0c9c768490a7e71"},
+        "family_boundary": {"const": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"}
+      }
+    },
+    "protected_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "tree", "deterministic_archive_sha256", "silent_repin_permitted"],
+      "properties": {
+        "repository": {"const": "openai/ten-proofs"},
+        "commit": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
+        "deterministic_archive_sha256": {"const": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
+        "silent_repin_permitted": {"const": false}
+      }
+    },
+    "attempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pull_request", "workflow_name", "workflow_run_id", "workflow_head", "replay_job_id",
+        "runner_os", "checkout_action", "fetch_depth", "fetch_attempt_count", "fetch_result",
+        "fetch_error", "source_checkout_completed", "toolchain_install_reached",
+        "solution_build_reached", "challenge_elaboration_reached"
+      ],
+      "properties": {
+        "pull_request": {"const": 76},
+        "workflow_name": {"const": "OTP Permanent family replay"},
+        "workflow_run_id": {"const": 31790528636},
+        "workflow_head": {"const": "bdf5051112ae91ba0213ecbdd34221faf44b2902"},
+        "replay_job_id": {"const": 94736176787},
+        "runner_os": {"const": "ubuntu-24.04"},
+        "checkout_action": {"const": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"},
+        "fetch_depth": {"const": 0},
+        "fetch_attempt_count": {"const": 3},
+        "fetch_result": {"const": "failure"},
+        "fetch_error": {"const": "fatal: remote error: upload-pack: not our ref e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "source_checkout_completed": {"const": false},
+        "toolchain_install_reached": {"const": false},
+        "solution_build_reached": {"const": false},
+        "challenge_elaboration_reached": {"const": false}
+      }
+    },
+    "reacquisition_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gcl_repository_search", "public_exact_commit_search", "retained_deterministic_archive_bytes_found", "later_upstream_head_substituted"],
+      "properties": {
+        "gcl_repository_search": {"const": "metadata_only_no_retained_source_bytes_found"},
+        "public_exact_commit_search": {"const": "no_exact_commit_or_tree_copy_found"},
+        "retained_deterministic_archive_bytes_found": {"const": false},
+        "later_upstream_head_substituted": {"const": false}
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "blocker_class", "fresh_family_replay_clear", "semantic_audit_may_begin", "reason"],
+      "properties": {
+        "state": {"const": "OPEN_WITH_CHARACTERIZED_REPLAY_BLOCKER"},
+        "blocker_class": {"const": "protected_source_reacquisition"},
+        "fresh_family_replay_clear": {"const": false},
+        "semantic_audit_may_begin": {"const": false},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "reopening_requirements": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "route_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic_clearance_authorized", "semantic_nonvacuity_audit_authorized", "solve_handoff_authorized",
+        "cert_route_authorized", "mathcert_adjudication_authorized", "cert_output_authorized",
+        "mathematical_target_proved", "aggregate_authority_permitted"
+      ],
+      "properties": {
+        "semantic_clearance_authorized": {"const": false},
+        "semantic_nonvacuity_audit_authorized": {"const": false},
+        "solve_handoff_authorized": {"const": false},
+        "cert_route_authorized": {"const": false},
+        "mathcert_adjudication_authorized": {"const": false},
+        "cert_output_authorized": {"const": false},
+        "mathematical_target_proved": {"const": false},
+        "aggregate_authority_permitted": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
