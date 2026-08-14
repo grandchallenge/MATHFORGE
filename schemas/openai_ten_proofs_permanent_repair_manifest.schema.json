@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_permanent_repair_manifest.schema.json",
+  "title": "OpenAI Ten Proofs Permanent Repair Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "record_id",
+    "result_family",
+    "repair_strategy",
+    "proposed_family_boundary",
+    "authority",
+    "non_authoritative_current_upstream_observation",
+    "advertised_claims",
+    "encoded_target_inventory",
+    "coverage_disposition",
+    "nonvacuity_obligations",
+    "acceptance_criteria",
+    "route_controls",
+    "activation",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "openai_ten_proofs_permanent_repair_manifest"},
+    "record_id": {"const": "MF-OTP-C-PERMANENT-REPAIR-001"},
+    "result_family": {"const": "OTP-C-PERMANENT"},
+    "repair_strategy": {"const": "bounded_reclassification"},
+    "proposed_family_boundary": {"const": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"},
+    "authority": {"$ref": "#/$defs/authority"},
+    "non_authoritative_current_upstream_observation": {"$ref": "#/$defs/upstreamObservation"},
+    "advertised_claims": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/claim"}
+    },
+    "encoded_target_inventory": {"$ref": "#/$defs/inventory"},
+    "coverage_disposition": {"$ref": "#/$defs/coverage"},
+    "nonvacuity_obligations": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {"$ref": "#/$defs/nonvacuity"}
+    },
+    "acceptance_criteria": {"$ref": "#/$defs/acceptance"},
+    "route_controls": {"$ref": "#/$defs/routeControls"},
+    "activation": {"$ref": "#/$defs/activation"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "sourceLocus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapter", "theorem"],
+      "properties": {
+        "chapter": {"const": 5},
+        "theorem": {"enum": ["Theorem 1.1", "Theorem 1.2", "Theorem 1.3"]}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tracker_issue",
+        "diagnostic_comment_id",
+        "activation_comment_id",
+        "implementation_base",
+        "official_lean_root",
+        "official_lean_tree",
+        "deterministic_archive_sha256",
+        "theorem_intake_matrix",
+        "admitted_manuscript"
+      ],
+      "properties": {
+        "tracker_issue": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/59"},
+        "diagnostic_comment_id": {"const": 5291141426},
+        "activation_comment_id": {"const": 5291306737},
+        "implementation_base": {"pattern": "^[0-9a-f]{40}$"},
+        "official_lean_root": {"pattern": "^[0-9a-f]{40}$"},
+        "official_lean_tree": {"pattern": "^[0-9a-f]{40}$"},
+        "deterministic_archive_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "theorem_intake_matrix": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "git_blob_sha1"],
+          "properties": {
+            "path": {"const": "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json"},
+            "git_blob_sha1": {"pattern": "^[0-9a-f]{40}$"}
+          }
+        },
+        "admitted_manuscript": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sha256", "byte_length"],
+          "properties": {
+            "sha256": {"pattern": "^[0-9a-f]{64}$"},
+            "byte_length": {"type": "integer", "minimum": 1}
+          }
+        }
+      }
+    },
+    "upstreamObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "observed_head",
+        "comparator_config_path",
+        "comparator_config_git_blob_sha1",
+        "challenge_path",
+        "challenge_git_blob_sha1",
+        "formalization_manifest_path",
+        "formalization_manifest_git_blob_sha1",
+        "repins_protected_authority"
+      ],
+      "properties": {
+        "repository": {"const": "openai/ten-proofs"},
+        "observed_head": {"pattern": "^[0-9a-f]{40}$"},
+        "comparator_config_path": {"const": "ComparatorChallenges/C_PermanentFormulaLowerBound.json"},
+        "comparator_config_git_blob_sha1": {"pattern": "^[0-9a-f]{40}$"},
+        "challenge_path": {"const": "ComparatorChallenges/C_PermanentFormulaLowerBound.lean"},
+        "challenge_git_blob_sha1": {"pattern": "^[0-9a-f]{40}$"},
+        "formalization_manifest_path": {"const": "formalization.yaml"},
+        "formalization_manifest_git_blob_sha1": {"pattern": "^[0-9a-f]{40}$"},
+        "repins_protected_authority": {"const": false}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "source_locus",
+        "claim_class",
+        "encoded_target_status",
+        "encoded_target",
+        "representation_premise_required",
+        "dimension_domain",
+        "coverage_after_reclassification"
+      ],
+      "properties": {
+        "claim_id": {
+          "enum": [
+            "OTP-C-PERMANENT-CIRCUIT",
+            "OTP-C-PERMANENT-DIVISION-FREE-FORMULA",
+            "OTP-C-PERMANENT-RATIONAL-FORMULA"
+          ]
+        },
+        "source_locus": {"$ref": "#/$defs/sourceLocus"},
+        "claim_class": {
+          "enum": [
+            "arithmetic_circuit_lower_bound",
+            "division_free_formula_lower_bound",
+            "rational_formula_lower_bound"
+          ]
+        },
+        "encoded_target_status": {"enum": ["absent", "present_conditional"]},
+        "encoded_target": {"type": ["string", "null"]},
+        "representation_premise_required": {"const": true},
+        "dimension_domain": {"enum": ["n >= 2^16", "n >= 32"]},
+        "required_hypotheses": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": {"type": "string", "minLength": 5}
+        },
+        "conclusion_shape": {"type": "string", "minLength": 20},
+        "coverage_after_reclassification": {"type": "boolean"}
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comparator_config", "solution_module", "targets", "target_count", "circuit_target_count"],
+      "properties": {
+        "comparator_config": {"const": "ComparatorChallenges/C_PermanentFormulaLowerBound.json"},
+        "solution_module": {"const": "Permanent"},
+        "targets": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "target_count": {"const": 2},
+        "circuit_target_count": {"const": 0}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "advertised_claim_count",
+        "encoded_formula_target_count",
+        "encoded_circuit_target_count",
+        "formula_targets_conditional",
+        "targets_construct_representing_formula",
+        "circuit_lower_bound_coverage",
+        "may_advertise_circuit_lower_bound_coverage",
+        "reclassified_advertised_result",
+        "repair_outcome"
+      ],
+      "properties": {
+        "advertised_claim_count": {"const": 3},
+        "encoded_formula_target_count": {"const": 2},
+        "encoded_circuit_target_count": {"const": 0},
+        "formula_targets_conditional": {"const": true},
+        "targets_construct_representing_formula": {"const": false},
+        "circuit_lower_bound_coverage": {"const": false},
+        "may_advertise_circuit_lower_bound_coverage": {"const": false},
+        "reclassified_advertised_result": {"const": "Permanent formula lower bounds only"},
+        "repair_outcome": {"const": "restricted_family_reclassification_candidate"}
+      }
+    },
+    "nonvacuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["obligation", "status"],
+      "properties": {
+        "obligation": {"type": "string", "minLength": 5},
+        "status": {"enum": ["pending_semantic_audit", "outside_reclassification_scope"]}
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "closed_schema_required",
+        "fail_closed_identity_validation_required",
+        "missing_circuit_claim_must_remain_explicit",
+        "formula_conditions_must_remain_explicit",
+        "circuit_coverage_must_remain_false",
+        "fresh_full_replay_required_after_protected_repair",
+        "family_semantic_nonvacuity_audit_required_after_protected_repair"
+      ],
+      "properties": {
+        "closed_schema_required": {"const": true},
+        "fail_closed_identity_validation_required": {"const": true},
+        "missing_circuit_claim_must_remain_explicit": {"const": true},
+        "formula_conditions_must_remain_explicit": {"const": true},
+        "circuit_coverage_must_remain_false": {"const": true},
+        "fresh_full_replay_required_after_protected_repair": {"const": true},
+        "family_semantic_nonvacuity_audit_required_after_protected_repair": {"const": true}
+      }
+    },
+    "routeControls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic_clearance_authorized",
+        "solve_handoff_authorized",
+        "cert_route_authorized",
+        "mathcert_adjudication_authorized",
+        "cert_output_authorized",
+        "aggregate_authority_permitted",
+        "mathematical_target_proved"
+      ],
+      "properties": {
+        "semantic_clearance_authorized": {"const": false},
+        "solve_handoff_authorized": {"const": false},
+        "cert_route_authorized": {"const": false},
+        "mathcert_adjudication_authorized": {"const": false},
+        "cert_output_authorized": {"const": false},
+        "aggregate_authority_permitted": {"const": false},
+        "mathematical_target_proved": {"const": false}
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_status", "required_before_protected_merge", "head_change_requires_reapproval"],
+      "properties": {
+        "candidate_status": {"const": "implementation_candidate_pending_exact_head_review"},
+        "required_before_protected_merge": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "head_change_requires_reapproval": {"const": true}
+      }
+    }
+  }
+}
