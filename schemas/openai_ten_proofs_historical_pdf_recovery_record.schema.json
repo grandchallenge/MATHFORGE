@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/mathforge/openai_ten_proofs_historical_pdf_recovery_record.schema.json",
+  "title": "OpenAI Ten Proofs historical PDF recovery record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","record_type","operation_id","candidate_id","exit_state","historical_identity","protected_evidence","search_surface","known_source_drift","acceptance_gate","reopening_requirements","downstream_independence","claim_boundary"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "historical_pdf_recovery_record"},
+    "operation_id": {"const": "OTP-SOURCE-PDF-HISTORICAL-RECOVERY-001"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "exit_state": {"const": "OPEN_WITH_CHARACTERIZED_HISTORICAL_PDF_RECOVERY_BLOCKER"},
+    "historical_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["url","byte_length","sha256","acquired_at_utc","pdf_creation_date_utc","http_last_modified_utc","http_etag","page_count","pdf_version"],
+      "properties": {
+        "url": {"const": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf"},
+        "byte_length": {"const": 2266052},
+        "sha256": {"const": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"},
+        "acquired_at_utc": {"const": "2026-08-01T10:01:31Z"},
+        "pdf_creation_date_utc": {"const": "2026-08-01T06:49:09Z"},
+        "http_last_modified_utc": {"const": "2026-08-01T06:52:38Z"},
+        "http_etag": {"const": "0x8DEEF9979F7BD53"},
+        "page_count": {"const": 249},
+        "pdf_version": {"const": "1.5"}
+      }
+    },
+    "protected_evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["first_acquisition_pr","first_acquisition_head","first_acquisition_merge","source_revision_issue","permanent_semantic_merge","permanent_semantic_record_blob"],
+      "properties": {
+        "first_acquisition_pr": {"const": 37},
+        "first_acquisition_head": {"const": "b9b02ec75ad867e9a65de384133e74de7fa66d86"},
+        "first_acquisition_merge": {"const": "0f90812dceb38a24f2c7c20f457b94c6cb02f853"},
+        "source_revision_issue": {"const": 52},
+        "permanent_semantic_merge": {"const": "60f6e06c957139447bf5943eed731941b22ac608"},
+        "permanent_semantic_record_blob": {"const": "3e04bd16bd8a91eaf9b6702de89fcdcc72f61099"}
+      }
+    },
+    "search_surface": {
+      "type": "array", "minItems": 7,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["locus","result","detail"],
+        "properties": {
+          "locus": {"type": "string", "minLength": 8},
+          "result": {"enum": ["no_pdf_payload","no_artifacts","evidence_only","unrelated_tiny_artifact","no_historical_pdf_asset","no_candidate_payload"]},
+          "detail": {"type": "string", "minLength": 30}
+        }
+      }
+    },
+    "known_source_drift": {
+      "type": "object", "additionalProperties": false,
+      "required": ["detected_at","later_byte_length","later_sha256","byte_delta","may_substitute_for_historical_payload"],
+      "properties": {
+        "detected_at": {"const": "2026-08-02"},
+        "later_byte_length": {"const": 2266371},
+        "later_sha256": {"const": "64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6"},
+        "byte_delta": {"const": 319},
+        "may_substitute_for_historical_payload": {"const": false}
+      }
+    },
+    "acceptance_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required_byte_length","required_sha256","both_required","semantic_or_theorem_locus_match_sufficient","filename_or_current_official_status_sufficient"],
+      "properties": {
+        "required_byte_length": {"const": 2266052},
+        "required_sha256": {"const": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"},
+        "both_required": {"const": true},
+        "semantic_or_theorem_locus_match_sufficient": {"const": false},
+        "filename_or_current_official_status_sufficient": {"const": false}
+      }
+    },
+    "reopening_requirements": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 30}},
+    "downstream_independence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["invalidates_protected_lean_source","invalidates_permanent_semantic_nonvacuity_clearance","blocks_routing_of_already_cleared_variable_leaf_targets","creates_whole_document_semantic_equivalence"],
+      "properties": {
+        "invalidates_protected_lean_source": {"const": false},
+        "invalidates_permanent_semantic_nonvacuity_clearance": {"const": false},
+        "blocks_routing_of_already_cleared_variable_leaf_targets": {"const": false},
+        "creates_whole_document_semantic_equivalence": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 400}
+  }
+}
