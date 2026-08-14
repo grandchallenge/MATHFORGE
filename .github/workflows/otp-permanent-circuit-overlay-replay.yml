@@ -101,7 +101,7 @@ jobs:
           echo "COMPARATOR_LEAN4EXPORT=$GITHUB_WORKSPACE/tools/lean4export/.lake/build/bin/lean4export" >> "$GITHUB_ENV"
           echo "COMPARATOR_NANODA=$GITHUB_WORKSPACE/tools/nanoda/target/release/nanoda_bin" >> "$GITHUB_ENV"
 
-      - name: Exact protected circuit solution and overlay replay
+      - name: Exact protected circuit solution and full-surface overlay replay
         working-directory: source
         shell: bash
         run: |
@@ -111,6 +111,8 @@ jobs:
           cat > GCLPermanentCircuitAxioms.lean <<'EOF'
           import Permanent
           #print axioms PermanentRollout.permanent_circuit_loglog_lower_bound
+          #print axioms PermanentRollout.permanent_circuit_loglog_bigOmega
+          #print axioms PermanentRollout.permanent_complexity_ratio_tendsto_atTop
           EOF
           lake env lean GCLPermanentCircuitAxioms.lean | tee /tmp/axioms.log
           rm GCLPermanentCircuitAxioms.lean
@@ -119,4 +121,4 @@ jobs:
           grep -Fq "Lean default kernel accepts the solution" /tmp/comparator.log
           grep -Fq "Nanoda kernel accepts the solution" /tmp/comparator.log
           grep -Fq "Your solution is okay!" /tmp/comparator.log
-          echo "PERMANENT_CIRCUIT_THEOREM_1_1_EXACT_OVERLAY_REPLAY_CLEAR"
+          echo "PERMANENT_CIRCUIT_THEOREM_1_1_FULL_SURFACE_EXACT_OVERLAY_REPLAY_CLEAR"
