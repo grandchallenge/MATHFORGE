@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "openai_ten_proofs_permanent_source_reassertion_record",
+  "record_id": "MF-OTP-C-PERMANENT-SOURCE-REASSERT-001",
+  "result_family": "OTP-C-PERMANENT",
+  "tracker_issue": "https://github.com/grandchallenge/MATHFORGE/issues/77",
+  "historical_provenance": {
+    "repository": "openai/ten-proofs",
+    "commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "deterministic_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"
+  },
+  "recovery_source": {
+    "repository": "utensil/ten-proofs",
+    "retrieved_commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "retrieved_tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "authority_basis": "content_addressed_identity_only",
+    "mirror_name_creates_authority": false
+  },
+  "verification": {
+    "workflow_run_id": 31793161649,
+    "workflow_job_id": 94744374901,
+    "workflow_head": "c0f5e19f248c7d2e460abb4478794c35e630b0cf",
+    "commit_match": true,
+    "tree_match": true,
+    "archive_construction": "git archive --format=tar --prefix=openai-ten-proofs-e62211d2/ e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "archive_byte_length": 21022720,
+    "archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "archive_match": true
+  },
+  "permanent_family_files": [
+    {
+      "path": "Permanent.lean",
+      "git_blob_sha1": "11cc89429a7c630688d1510c9a6600fde08ab0b0",
+      "sha256": "3bd469c20bc2277a13be3f9353ce47ad0c2070a330355daa78a9e59f1ca1d3c6"
+    },
+    {
+      "path": "ComparatorChallenges/C_PermanentFormulaLowerBound.lean",
+      "git_blob_sha1": "ca71c280479f12a4249b0dc63b6e1af27bdb32ff",
+      "sha256": "fc97578bcbb072ff82383e4c903107130ba3dd1a2209235ab32270c7df37f83d"
+    },
+    {
+      "path": "ComparatorChallenges/C_PermanentFormulaLowerBound.json",
+      "git_blob_sha1": "662595032dced7ea0bb4d0ee43c3b1d20ecb4c2b",
+      "sha256": "f80482f4a163041e036e26bb687690559cc36504e347b0ea3df0d626cfb965bb"
+    },
+    {
+      "path": "lean-toolchain",
+      "git_blob_sha1": "94b9f495baff80fd9cb44aad8f4762cb3b2066fe",
+      "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    {
+      "path": "lake-manifest.json",
+      "git_blob_sha1": "6b9fc4f8f8f7fc389016af602b459ea916e52904",
+      "sha256": "a6faf8302fe77f77f499446c27b8829b1af8dbc7847298b682556baa2a0b135e"
+    }
+  ],
+  "gcl_archival_carrier": {
+    "repository": "grandchallenge/MATHFORGE",
+    "release_id": 370507312,
+    "release_tag": "otp-c-permanent-source-e62211d2-candidate-001",
+    "release_target": "40c38eb6a716acb10145ba42f0c9c768490a7e71",
+    "prerelease": true,
+    "immutable": true,
+    "source_asset": {
+      "asset_id": 514295009,
+      "name": "openai-ten-proofs-e62211d2.tar",
+      "byte_length": 21022720,
+      "digest": "sha256:3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"
+    },
+    "manifest_asset": {
+      "asset_id": 514295007,
+      "name": "source-reassertion-candidate.json",
+      "digest": "sha256:859a899189ff3616a690ed52df1fd5a8d59245fd372ff4a3b58c01ff17a532b0"
+    },
+    "file_sha256_asset": {
+      "asset_id": 514295010,
+      "name": "otp-c-permanent-file-sha256.txt",
+      "digest": "sha256:27f28c5a88ea74fb28eaee36d756f855330fbe6fbe24f6fd901277750dfbf9e4"
+    },
+    "file_git_tree_asset": {
+      "asset_id": 514295008,
+      "name": "otp-c-permanent-file-git-tree.txt",
+      "digest": "sha256:b7eff46b80063022167b7ab78ea243ac0418ac71bc8f7e478f0fac7a48e71ea2"
+    }
+  },
+  "candidate_disposition": "PROTECTED_SOURCE_BITSET_REASSERTED_ON_GCL_ARCHIVAL_CARRIER__NO_SEMANTIC_CHANGE",
+  "governed_admission_status": "pending_exact_head_review",
+  "route_controls": {
+    "fresh_family_replay_may_begin": true,
+    "fresh_family_replay_clear": false,
+    "semantic_nonvacuity_audit_authorized": false,
+    "solve_handoff_authorized": false,
+    "cert_route_authorized": false,
+    "mathcert_adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_authority_permitted": false
+  },
+  "claim_boundary": "This candidate records byte-identical recovery of the protected OpenAI Ten Proofs source bit set and its placement on a GCL-controlled immutable archival release asset. Historical provenance remains openai/ten-proofs@e62211d28e3a9131950c89caa6542cfe5eff3bca; the independent mirror is only a recovery carrier. The record authorizes a fresh OTP-C-PERMANENT family replay from the verified GCL archive, but does not itself clear replay, semantics, nonvacuity, circuit coverage, Solve/Cert routing, adjudication, proof status, or aggregate authority."
+}
