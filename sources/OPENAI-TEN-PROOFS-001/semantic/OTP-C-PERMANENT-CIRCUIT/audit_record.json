@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "permanent_circuit_theorem_audit",
+  "operation_id": "OTP-C-PERMANENT-CIRCUIT-001",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "status": "PERMANENT_CIRCUIT_THEOREM_1_1__SEMANTIC_AND_NONVACUITY_CLEAR_CANDIDATE",
+  "protected_source": {
+    "lean_root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "permanent_lean_sha256": "3bd469c20bc2277a13be3f9353ce47ad0c2070a330355daa78a9e59f1ca1d3c6",
+    "historical_pdf_byte_equivalence": false,
+    "historical_pdf_recovery_disposition": "HISTORICAL_PDF_RECOVERY_BLOCKER_CHARACTERIZED__EXACT_BYTES_REQUIRED_TO_REOPEN"
+  },
+  "source_theorem_1_1": {
+    "coefficient_field": "complex",
+    "model": "division_free_arithmetic_circuit_dag",
+    "input_gates": ["matrix_variable", "arbitrary_complex_scalar"],
+    "arithmetic_gates": ["add", "sub", "mul"],
+    "division_allowed": false,
+    "fanout_reuse_allowed": true,
+    "arithmetic_gate_count_only": true,
+    "input_gates_counted": false,
+    "depth_restriction": false,
+    "degree_restriction": false,
+    "fanout_restriction": false,
+    "cancellation_restriction": false,
+    "dimension_threshold": 65536,
+    "finite_bound_denominator": 144,
+    "finite_bound": "n^2 * (log_2(log_2 n) - 3) / 144 <= circuitComplexity(permanent_n)",
+    "asymptotic_consequences": [
+      "circuitComplexity(permanent_n) = Omega(n^2 log_2 log_2 n)",
+      "circuitComplexity(permanent_n) / n^2 tends to +infinity"
+    ]
+  },
+  "lean_model": {
+    "namespace": "PermanentRollout",
+    "instruction_type": "Instruction",
+    "instructions": ["input", "scalar", "add", "sub", "mul"],
+    "dag_representation": "program list with backward-bounded references",
+    "circuit_type": "ArithmeticCircuit",
+    "evaluation": "ArithmeticCircuit.polynomial",
+    "size_measure": "ArithmeticCircuit.size counts only Instruction.isArithmetic",
+    "complexity_measure": "circuitComplexity defined as sInf of attainable arithmetic-gate sizes",
+    "permanent": "PermanentRollout.permanent"
+  },
+  "target_concordance": [
+    {
+      "source_claim": "finite Theorem 1.1 lower bound",
+      "lean_theorem": "PermanentRollout.permanent_circuit_loglog_lower_bound",
+      "classification": "EXACT_MATCH",
+      "threshold": 65536,
+      "denominator": 144
+    },
+    {
+      "source_claim": "in-particular Omega(n^2 log log n) consequence",
+      "lean_theorem": "PermanentRollout.permanent_circuit_loglog_bigOmega",
+      "classification": "EXACT_FORMALIZATION_OF_ASYMPTOTIC_CONSEQUENCE"
+    },
+    {
+      "source_claim": "in-particular superquadratic ratio divergence",
+      "lean_theorem": "PermanentRollout.permanent_complexity_ratio_tendsto_atTop",
+      "classification": "EXACT_FORMALIZATION_OF_ASYMPTOTIC_CONSEQUENCE"
+    }
+  ],
+  "nonvacuity": {
+    "all_multivariate_polynomials_representable": "PermanentRollout.exists_arithmeticCircuit_polynomial",
+    "permanent_representable": "PermanentRollout.permanent_representable",
+    "complexity_minimum_attained": "PermanentRollout.circuitComplexity_attained",
+    "state": "CLEAR"
+  },
+  "exact_overlay_replay": {
+    "run": 31809287009,
+    "job": 94795718599,
+    "lean_version": "4.32.0",
+    "challenge_slot": "ComparatorChallenges.C_PermanentFormulaLowerBound",
+    "ephemeral_overlay_only": true,
+    "immutable_archive_modified": false,
+    "target_count": 3,
+    "lean_default_kernel": "accepted",
+    "nanoda_kernel": "accepted",
+    "comparator": "accepted",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"],
+    "marker": "PERMANENT_CIRCUIT_THEOREM_1_1_FULL_SURFACE_EXACT_OVERLAY_REPLAY_CLEAR"
+  },
+  "coverage": {
+    "source_theorem_1_1_finite_bound": true,
+    "source_theorem_1_1_bigomega_consequence": true,
+    "source_theorem_1_1_ratio_divergence_consequence": true,
+    "circuit_nonvacuity": true,
+    "formula_theorems_1_2_1_3_mutated": false,
+    "historical_pdf_byte_equivalence": false,
+    "solve_handoff": false,
+    "mathcert_intake_or_route": false,
+    "adjudication": false,
+    "cert_output": false,
+    "mathematical_target_proved_promoted": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "candidate_disposition": "PERMANENT_CIRCUIT_THEOREM_1_1__FULL_FINITE_AND_ASYMPTOTIC_SURFACE__SEMANTIC_AND_NONVACUITY_CLEAR",
+  "claim_boundary": "This record certifies the governed source-to-Lean exposure, nonvacuity, and exact Comparator replay of the full three-claim source Theorem 1.1 arithmetic-circuit surface already proved in the protected Permanent.lean source: the finite n >= 2^16 lower bound with denominator 144, the Omega(n^2 log log n) consequence, and divergence of circuit complexity divided by n^2. It does not alter the separately governed formula targets, recover historical PDF bytes, create a MATHSOLVE handoff or MATHCERT intake/route for the circuit targets, adjudicate or issue a Cert output, promote mathematical-target proof status, or create aggregate Ten Proofs authority."
+}

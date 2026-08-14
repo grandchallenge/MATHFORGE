@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/mathforge/openai_ten_proofs_permanent_circuit_theorem_audit.schema.json",
+  "title": "Permanent circuit theorem audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","record_type","operation_id","candidate_id","status","protected_source","source_theorem_1_1","lean_model","target_concordance","nonvacuity","exact_overlay_replay","coverage","candidate_disposition","claim_boundary"],
+  "properties": {
+    "schema_version": {"const":"1.0.0"},
+    "record_type": {"const":"permanent_circuit_theorem_audit"},
+    "operation_id": {"const":"OTP-C-PERMANENT-CIRCUIT-001"},
+    "candidate_id": {"const":"OPENAI-TEN-PROOFS-001"},
+    "status": {"const":"PERMANENT_CIRCUIT_THEOREM_1_1__SEMANTIC_AND_NONVACUITY_CLEAR_CANDIDATE"},
+    "protected_source": {
+      "type":"object","additionalProperties":false,
+      "required":["lean_root","tree","archive_sha256","permanent_lean_sha256","historical_pdf_byte_equivalence","historical_pdf_recovery_disposition"],
+      "properties":{
+        "lean_root":{"const":"e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "tree":{"const":"2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
+        "archive_sha256":{"const":"3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
+        "permanent_lean_sha256":{"const":"3bd469c20bc2277a13be3f9353ce47ad0c2070a330355daa78a9e59f1ca1d3c6"},
+        "historical_pdf_byte_equivalence":{"const":false},
+        "historical_pdf_recovery_disposition":{"const":"HISTORICAL_PDF_RECOVERY_BLOCKER_CHARACTERIZED__EXACT_BYTES_REQUIRED_TO_REOPEN"}
+      }
+    },
+    "source_theorem_1_1": {
+      "type":"object","additionalProperties":false,
+      "required":["coefficient_field","model","input_gates","arithmetic_gates","division_allowed","fanout_reuse_allowed","arithmetic_gate_count_only","input_gates_counted","depth_restriction","degree_restriction","fanout_restriction","cancellation_restriction","dimension_threshold","finite_bound_denominator","finite_bound","asymptotic_consequences"],
+      "properties":{
+        "coefficient_field":{"const":"complex"},
+        "model":{"const":"division_free_arithmetic_circuit_dag"},
+        "input_gates":{"const":["matrix_variable","arbitrary_complex_scalar"]},
+        "arithmetic_gates":{"const":["add","sub","mul"]},
+        "division_allowed":{"const":false},
+        "fanout_reuse_allowed":{"const":true},
+        "arithmetic_gate_count_only":{"const":true},
+        "input_gates_counted":{"const":false},
+        "depth_restriction":{"const":false},
+        "degree_restriction":{"const":false},
+        "fanout_restriction":{"const":false},
+        "cancellation_restriction":{"const":false},
+        "dimension_threshold":{"const":65536},
+        "finite_bound_denominator":{"const":144},
+        "finite_bound":{"const":"n^2 * (log_2(log_2 n) - 3) / 144 <= circuitComplexity(permanent_n)"},
+        "asymptotic_consequences":{"const":["circuitComplexity(permanent_n) = Omega(n^2 log_2 log_2 n)","circuitComplexity(permanent_n) / n^2 tends to +infinity"]}
+      }
+    },
+    "lean_model": {
+      "type":"object","additionalProperties":false,
+      "required":["namespace","instruction_type","instructions","dag_representation","circuit_type","evaluation","size_measure","complexity_measure","permanent"],
+      "properties":{
+        "namespace":{"const":"PermanentRollout"},
+        "instruction_type":{"const":"Instruction"},
+        "instructions":{"const":["input","scalar","add","sub","mul"]},
+        "dag_representation":{"const":"program list with backward-bounded references"},
+        "circuit_type":{"const":"ArithmeticCircuit"},
+        "evaluation":{"const":"ArithmeticCircuit.polynomial"},
+        "size_measure":{"const":"ArithmeticCircuit.size counts only Instruction.isArithmetic"},
+        "complexity_measure":{"const":"circuitComplexity defined as sInf of attainable arithmetic-gate sizes"},
+        "permanent":{"const":"PermanentRollout.permanent"}
+      }
+    },
+    "target_concordance": {
+      "type":"array","minItems":3,"maxItems":3,
+      "prefixItems":[
+        {"type":"object","additionalProperties":false,"required":["source_claim","lean_theorem","classification","threshold","denominator"],"properties":{"source_claim":{"const":"finite Theorem 1.1 lower bound"},"lean_theorem":{"const":"PermanentRollout.permanent_circuit_loglog_lower_bound"},"classification":{"const":"EXACT_MATCH"},"threshold":{"const":65536},"denominator":{"const":144}}},
+        {"type":"object","additionalProperties":false,"required":["source_claim","lean_theorem","classification"],"properties":{"source_claim":{"const":"in-particular Omega(n^2 log log n) consequence"},"lean_theorem":{"const":"PermanentRollout.permanent_circuit_loglog_bigOmega"},"classification":{"const":"EXACT_FORMALIZATION_OF_ASYMPTOTIC_CONSEQUENCE"}}},
+        {"type":"object","additionalProperties":false,"required":["source_claim","lean_theorem","classification"],"properties":{"source_claim":{"const":"in-particular superquadratic ratio divergence"},"lean_theorem":{"const":"PermanentRollout.permanent_complexity_ratio_tendsto_atTop"},"classification":{"const":"EXACT_FORMALIZATION_OF_ASYMPTOTIC_CONSEQUENCE"}}}
+      ],
+      "items":false
+    },
+    "nonvacuity": {
+      "type":"object","additionalProperties":false,
+      "required":["all_multivariate_polynomials_representable","permanent_representable","complexity_minimum_attained","state"],
+      "properties":{
+        "all_multivariate_polynomials_representable":{"const":"PermanentRollout.exists_arithmeticCircuit_polynomial"},
+        "permanent_representable":{"const":"PermanentRollout.permanent_representable"},
+        "complexity_minimum_attained":{"const":"PermanentRollout.circuitComplexity_attained"},
+        "state":{"const":"CLEAR"}
+      }
+    },
+    "exact_overlay_replay": {
+      "type":"object","additionalProperties":false,
+      "required":["run","job","lean_version","challenge_slot","ephemeral_overlay_only","immutable_archive_modified","target_count","lean_default_kernel","nanoda_kernel","comparator","axioms","marker"],
+      "properties":{
+        "run":{"const":31809287009},
+        "job":{"const":94795718599},
+        "lean_version":{"const":"4.32.0"},
+        "challenge_slot":{"const":"ComparatorChallenges.C_PermanentFormulaLowerBound"},
+        "ephemeral_overlay_only":{"const":true},
+        "immutable_archive_modified":{"const":false},
+        "target_count":{"const":3},
+        "lean_default_kernel":{"const":"accepted"},
+        "nanoda_kernel":{"const":"accepted"},
+        "comparator":{"const":"accepted"},
+        "axioms":{"const":["propext","Classical.choice","Quot.sound"]},
+        "marker":{"const":"PERMANENT_CIRCUIT_THEOREM_1_1_FULL_SURFACE_EXACT_OVERLAY_REPLAY_CLEAR"}
+      }
+    },
+    "coverage": {
+      "type":"object","additionalProperties":false,
+      "required":["source_theorem_1_1_finite_bound","source_theorem_1_1_bigomega_consequence","source_theorem_1_1_ratio_divergence_consequence","circuit_nonvacuity","formula_theorems_1_2_1_3_mutated","historical_pdf_byte_equivalence","solve_handoff","mathcert_intake_or_route","adjudication","cert_output","mathematical_target_proved_promoted","aggregate_ten_proofs_authority"],
+      "properties":{
+        "source_theorem_1_1_finite_bound":{"const":true},
+        "source_theorem_1_1_bigomega_consequence":{"const":true},
+        "source_theorem_1_1_ratio_divergence_consequence":{"const":true},
+        "circuit_nonvacuity":{"const":true},
+        "formula_theorems_1_2_1_3_mutated":{"const":false},
+        "historical_pdf_byte_equivalence":{"const":false},
+        "solve_handoff":{"const":false},
+        "mathcert_intake_or_route":{"const":false},
+        "adjudication":{"const":false},
+        "cert_output":{"const":false},
+        "mathematical_target_proved_promoted":{"const":false},
+        "aggregate_ten_proofs_authority":{"const":false}
+      }
+    },
+    "candidate_disposition":{"const":"PERMANENT_CIRCUIT_THEOREM_1_1__FULL_FINITE_AND_ASYMPTOTIC_SURFACE__SEMANTIC_AND_NONVACUITY_CLEAR"},
+    "claim_boundary":{"type":"string","minLength":500}
+  }
+}
