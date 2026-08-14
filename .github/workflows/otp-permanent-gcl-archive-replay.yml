@@ -68,7 +68,7 @@ jobs:
           assert len(cfg["theorem_names"]) == 2
           text = Path("source/ComparatorChallenges/C_PermanentFormulaLowerBound.lean").read_text(encoding="utf-8")
           for marker in [
-              "32 <= n",
+              "32 ≤ n",
               "Formula (Fin n × Fin n) ℂ",
               "Formula.eval f = permanentPolynomial n",
               "RationalFormula (Fin n × Fin n) ℂ",
