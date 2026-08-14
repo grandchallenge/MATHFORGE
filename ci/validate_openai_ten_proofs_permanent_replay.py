@@ -42,6 +42,7 @@ def validation_errors(
 
     predecessor = record.get("predecessor", {})
     protected = record.get("protected_source", {})
+    reassert = protected.get("archival_reassertion_policy", {})
     attempt = record.get("attempt", {})
     audit = record.get("reacquisition_audit", {})
     disposition = record.get("disposition", {})
@@ -50,13 +51,24 @@ def validation_errors(
     if predecessor.get("family_boundary") != EXPECTED_BOUNDARY:
         errors.append("replay predecessor boundary drift")
     if protected.get("commit") != EXPECTED_ROOT:
-        errors.append("protected replay root drift")
+        errors.append("protected historical replay root drift")
     if protected.get("tree") != EXPECTED_TREE:
         errors.append("protected replay tree drift")
     if protected.get("deterministic_archive_sha256") != EXPECTED_ARCHIVE:
         errors.append("protected replay archive drift")
     if protected.get("silent_repin_permitted") is not False:
         errors.append("silent upstream repin enabled")
+
+    expected_reassert = {
+        "permitted": True,
+        "new_carrier_commit_identity_permitted": True,
+        "historical_provenance_must_be_preserved": True,
+        "protected_tree_must_match": True,
+        "deterministic_archive_sha256_must_match": True,
+        "later_upstream_revision_substitution_permitted": False,
+    }
+    if reassert != expected_reassert:
+        errors.append("archival reassertion policy drift")
 
     if attempt.get("fetch_attempt_count") != 3:
         errors.append("fetch attempt count drift")
@@ -80,14 +92,17 @@ def validation_errors(
 
     if disposition.get("state") != "OPEN_WITH_CHARACTERIZED_REPLAY_BLOCKER":
         errors.append("replay blocker state drift")
-    if disposition.get("blocker_class") != "protected_source_reacquisition":
+    if disposition.get("blocker_class") != "protected_source_bitset_reacquisition":
         errors.append("replay blocker class drift")
     if disposition.get("fresh_family_replay_clear") is not False:
         errors.append("fresh replay falsely cleared")
+    if disposition.get("source_reassertion_operation_may_begin") is not True:
+        errors.append("content-addressed source reassertion improperly closed")
     if disposition.get("semantic_audit_may_begin") is not False:
         errors.append("semantic audit opened before replay clearance")
 
     expected_route_keys = {
+        "source_reassertion_authorized",
         "semantic_clearance_authorized",
         "semantic_nonvacuity_audit_authorized",
         "solve_handoff_authorized",
@@ -97,13 +112,26 @@ def validation_errors(
         "mathematical_target_proved",
         "aggregate_authority_permitted",
     }
-    if set(routes) != expected_route_keys or any(routes.get(key) is not False for key in expected_route_keys):
-        errors.append("replay route or claim authority inflated")
+    if set(routes) != expected_route_keys:
+        errors.append("replay route-control key set drift")
+    if routes.get("source_reassertion_authorized") is not True:
+        errors.append("content-addressed source reassertion authority removed")
+    for key in expected_route_keys - {"source_reassertion_authorized"}:
+        if routes.get(key) is not False:
+            errors.append(f"replay route or claim authority inflated: {key}")
+
+    requirements = record.get("reopening_requirements", [])
+    if len(requirements) != 5:
+        errors.append("reopening requirement count drift")
+    joined = "\n".join(requirements)
+    for marker in (EXPECTED_ROOT, EXPECTED_TREE, EXPECTED_ARCHIVE, "GCL-controlled archival carrier", "later upstream revision"):
+        if marker not in joined:
+            errors.append(f"reopening requirements missing marker: {marker}")
 
     if repair.get("proposed_family_boundary") != EXPECTED_BOUNDARY:
         errors.append("protected repair boundary no longer matches replay record")
     if repair.get("authority", {}).get("official_lean_root") != EXPECTED_ROOT:
-        errors.append("repair/replay root identity mismatch")
+        errors.append("repair/replay historical root identity mismatch")
     if repair.get("authority", {}).get("official_lean_tree") != EXPECTED_TREE:
         errors.append("repair/replay tree identity mismatch")
     coverage = repair.get("coverage_disposition", {})
@@ -121,8 +149,8 @@ def main() -> int:
         print(f"Permanent replay validation failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
     print(
-        "validated OTP-C-PERMANENT characterized source-reacquisition blocker; "
-        "fresh replay and semantic/nonvacuity audit remain closed"
+        "validated OTP-C-PERMANENT protected-bitset reacquisition blocker; "
+        "content-addressed archival reassertion is allowed, fresh replay and semantic/nonvacuity audit remain closed"
     )
     return 0
 
