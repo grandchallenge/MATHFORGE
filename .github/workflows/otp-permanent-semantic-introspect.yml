@@ -63,12 +63,13 @@ jobs:
           /tmp/elan-init -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
-      - name: Restore pinned mathlib cache
+      - name: Restore pinned mathlib cache and build protected challenge module
         working-directory: source
         shell: bash
         run: |
           set -euo pipefail
           lake exe cache get
+          lake build ComparatorChallenges.C_PermanentFormulaLowerBound
 
       - name: Exact Lean replay of nonvacuity witness
         working-directory: source
