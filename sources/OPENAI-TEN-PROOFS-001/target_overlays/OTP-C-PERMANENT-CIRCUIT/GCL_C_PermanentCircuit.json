@@ -1,5 +1,5 @@
 {
-  "challenge_module": "ComparatorChallenges.GCL_C_PermanentCircuit",
+  "challenge_module": "ComparatorChallenges.C_PermanentFormulaLowerBound",
   "solution_module": "Permanent",
   "theorem_names": [
     "PermanentRollout.permanent_circuit_loglog_lower_bound"
