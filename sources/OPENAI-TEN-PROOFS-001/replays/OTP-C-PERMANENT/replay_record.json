@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "2.0.0",
   "record_type": "openai_ten_proofs_permanent_replay_record",
   "record_id": "MF-OTP-C-PERMANENT-REPLAY-001",
   "result_family": "OTP-C-PERMANENT",
@@ -11,60 +11,69 @@
     "family_boundary": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"
   },
   "protected_source": {
-    "repository": "openai/ten-proofs",
-    "commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "historical_repository": "openai/ten-proofs",
+    "historical_commit": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
     "tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
     "deterministic_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
-    "silent_repin_permitted": false,
-    "archival_reassertion_policy": {
-      "permitted": true,
-      "new_carrier_commit_identity_permitted": true,
-      "historical_provenance_must_be_preserved": true,
-      "protected_tree_must_match": true,
-      "deterministic_archive_sha256_must_match": true,
-      "later_upstream_revision_substitution_permitted": false
+    "deterministic_archive_byte_length": 21022720,
+    "later_upstream_revision_substituted": false
+  },
+  "prior_failed_reacquisition": {
+    "workflow_run_id": 31790528636,
+    "replay_job_id": 94736176787,
+    "fetch_attempt_count": 3,
+    "fetch_error": "fatal: remote error: upload-pack: not our ref e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "compiler_or_theorem_failure_inferred": false,
+    "superseded_by_content_addressed_reassertion": true
+  },
+  "source_carrier": {
+    "repository": "grandchallenge/MATHFORGE",
+    "source_reassertion_issue": 77,
+    "source_reassertion_pull_request": 78,
+    "release_id": 370507312,
+    "release_tag": "otp-c-permanent-source-e62211d2-candidate-001",
+    "release_target": "40c38eb6a716acb10145ba42f0c9c768490a7e71",
+    "immutable": true,
+    "asset_id": 514295009,
+    "asset_name": "openai-ten-proofs-e62211d2.tar",
+    "asset_byte_length": 21022720,
+    "asset_digest": "sha256:3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "content_identity_matches_protected_source": true
+  },
+  "successful_replay": {
+    "pull_request": 76,
+    "workflow_name": "OTP Permanent GCL archival replay",
+    "workflow_run_id": 31793518288,
+    "workflow_head": "eef48558cadb0f955e5db8e02d46d49fe1305bfe",
+    "replay_job_id": 94745449727,
+    "runner_os": "ubuntu-24.04",
+    "lean_toolchain": "leanprover/lean4:v4.32.0",
+    "archive_download_verified": true,
+    "permanent_family_file_identities_verified": true,
+    "comparator_inventory_verified": true,
+    "locked_dependency_cache_fetched": true,
+    "permanent_solution_module_built": true,
+    "permanent_challenge_elaborated": true,
+    "clearance_marker_emitted": true,
+    "target_inventory": {
+      "solution_module": "Permanent",
+      "targets": [
+        "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
+        "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"
+      ],
+      "target_count": 2,
+      "circuit_target_count": 0,
+      "formula_targets_conditional": true
     }
   },
-  "attempt": {
-    "pull_request": 76,
-    "workflow_name": "OTP Permanent family replay",
-    "workflow_run_id": 31790528636,
-    "workflow_head": "bdf5051112ae91ba0213ecbdd34221faf44b2902",
-    "replay_job_id": 94736176787,
-    "runner_os": "ubuntu-24.04",
-    "checkout_action": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
-    "fetch_depth": 0,
-    "fetch_attempt_count": 3,
-    "fetch_result": "failure",
-    "fetch_error": "fatal: remote error: upload-pack: not our ref e62211d28e3a9131950c89caa6542cfe5eff3bca",
-    "source_checkout_completed": false,
-    "toolchain_install_reached": false,
-    "solution_build_reached": false,
-    "challenge_elaboration_reached": false
-  },
-  "reacquisition_audit": {
-    "gcl_repository_search": "metadata_only_no_retained_source_bytes_found",
-    "public_exact_commit_search": "no_exact_commit_or_tree_copy_found",
-    "retained_deterministic_archive_bytes_found": false,
-    "later_upstream_head_substituted": false
-  },
   "disposition": {
-    "state": "OPEN_WITH_CHARACTERIZED_REPLAY_BLOCKER",
-    "blocker_class": "protected_source_bitset_reacquisition",
-    "fresh_family_replay_clear": false,
-    "source_reassertion_operation_may_begin": true,
-    "semantic_audit_may_begin": false,
-    "reason": "The historical upstream commit is no longer fetchable. The blocker is recovery of the protected source bit set, not resurrection of the upstream ref. A recovered byte-identical payload may be reasserted on a new GCL archival carrier only after exact verification of the protected tree and deterministic archive digest."
+    "state": "FRESH_FAMILY_REPLAY_CLEAR__SEMANTIC_AUDIT_NOT_YET_PERFORMED",
+    "fresh_family_replay_clear": true,
+    "source_reacquisition_blocker_cleared": true,
+    "semantic_nonvacuity_audit_may_be_governed_next": true,
+    "semantic_nonvacuity_audit_performed": false
   },
-  "reopening_requirements": [
-    "recover the protected source bit set corresponding to historical provenance openai/ten-proofs@e62211d28e3a9131950c89caa6542cfe5eff3bca from an authoritative or content-verified retained source",
-    "verify Git tree 2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
-    "verify deterministic archive SHA-256 3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
-    "reassert the verified bit set on a GCL-controlled archival carrier while preserving the historical upstream provenance and recording the new carrier identity",
-    "rerun the full governed Permanent-family replay from the verified archival carrier without substituting a later upstream revision"
-  ],
   "route_controls": {
-    "source_reassertion_authorized": true,
     "semantic_clearance_authorized": false,
     "semantic_nonvacuity_audit_authorized": false,
     "solve_handoff_authorized": false,
@@ -74,5 +83,5 @@
     "mathematical_target_proved": false,
     "aggregate_authority_permitted": false
   },
-  "claim_boundary": "This record characterizes failure to reacquire the protected source bit set required for a fresh OTP-C-PERMANENT family replay. It permits a separately governed content-addressed source-reassertion operation on a new GCL archival carrier, provided the recovered contents exactly reproduce the protected tree and deterministic archive digest and preserve the historical upstream provenance. It does not permit substitution of a later upstream revision and does not establish replay clearance, a Lean/compiler failure, mathematical refutation, semantic clearance, nonvacuity clearance, circuit-lower-bound coverage, Solve/Cert authority, adjudication, proof promotion, or aggregate certification."
+  "claim_boundary": "This record establishes only that the full governed OTP-C-PERMANENT family replay succeeded from a GCL-controlled immutable archival carrier whose content digest exactly equals the protected historical source archive. The replay covers exactly the two conditional formula lower-bound Comparator targets and zero arithmetic-circuit targets. It does not establish source-to-Lean semantic equivalence, nonvacuity, arithmetic-circuit lower-bound coverage, Solve/Cert routing, adjudication, proof promotion, aggregate certification, novelty, priority, publication authority, patentability, product claims, or commercial claims. A separately governed family-specific semantic/nonvacuity audit is the next legitimate operation."
 }
