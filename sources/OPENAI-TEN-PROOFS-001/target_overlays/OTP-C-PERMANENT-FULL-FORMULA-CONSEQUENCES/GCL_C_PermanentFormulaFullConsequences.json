@@ -1,5 +1,5 @@
 {
-  "challenge_module": "ComparatorChallenges.GCL_C_PermanentFormulaFullConsequences",
+  "challenge_module": "ComparatorChallenges.C_PermanentFormulaLowerBound",
   "solution_module": "Permanent",
   "theorem_names": [
     "PermanentFormulaLowerBound.permanent_divisionFree_formula_lower_bound",
