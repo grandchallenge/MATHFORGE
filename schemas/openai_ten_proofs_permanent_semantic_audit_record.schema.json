@@ -73,7 +73,7 @@
         "permanent_theorem_locus_pin_candidate": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["url", "document_title", "page_count", "chapter", "chapter_title", "pdf_pages", "theorems", "official_original_endpoint_reacquired", "load_bearing_text_parsed", "byte_identity_to_historical_admitted_revision_verified", "whole_document_semantic_equivalence_to_historical_admitted_revision_established", "role_after_activation"],
+          "required": ["url", "document_title", "page_count", "chapter", "chapter_title", "pdf_pages", "theorems", "official_original_endpoint_reacquired", "load_bearing_text_parsed", "normalized_load_bearing_source", "byte_identity_to_historical_admitted_revision_verified", "whole_document_semantic_equivalence_to_historical_admitted_revision_established", "role_after_activation"],
           "properties": {
             "url": {"type": "string", "format": "uri"},
             "document_title": {"type": "string", "minLength": 1},
@@ -84,6 +84,35 @@
             "theorems": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "minLength": 1}},
             "official_original_endpoint_reacquired": {"type": "boolean"},
             "load_bearing_text_parsed": {"type": "boolean"},
+            "normalized_load_bearing_source": {
+              "const": {
+                "model": {
+                  "compute_semantics": "exact symbolic polynomial computation over C",
+                  "formula_tree": true,
+                  "inputs": ["individual variables", "arbitrary complex constants"],
+                  "division_free_internal_gates": ["+", "-", "*"],
+                  "variable_leaf_measure": "Lvar counts variable-labelled leaves with repeated occurrences separately",
+                  "division_semantics": "formulas with division are interpreted in C(x_ij)",
+                  "validity": "every denominator is a nonzero element of C(x_ij)",
+                  "final_output": "equals the polynomial being computed",
+                  "intermediate_rational_functions_may_be_nonpolynomial": true
+                },
+                "theorem_1_2": {
+                  "threshold": "n >= 32",
+                  "formula_model": "division-free arithmetic formula computing per_n",
+                  "variable_leaf_bound": "Lvar(Phi) >= n^4 / (128 log_2 n)",
+                  "gate_bound": "G(Phi) >= n^4 / (256 log_2 n)",
+                  "leaf_vertex_extension": true
+                },
+                "theorem_1_3": {
+                  "threshold": "n >= 32",
+                  "formula_model": "valid arithmetic formula with division computing per_n",
+                  "variable_leaf_bound": "Lvar(Phi) >= n^4 / (192 log_2 n)",
+                  "gate_bound": "G(Phi) >= n^4 / (384 log_2 n)",
+                  "leaf_vertex_extension": true
+                }
+              }
+            },
             "byte_identity_to_historical_admitted_revision_verified": {"type": "boolean"},
             "whole_document_semantic_equivalence_to_historical_admitted_revision_established": {"type": "boolean"},
             "role_after_activation": {"type": "string", "minLength": 1}
