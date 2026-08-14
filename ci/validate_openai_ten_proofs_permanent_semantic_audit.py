@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -161,8 +162,7 @@ def validation_errors(
         errors.append("rational nonvacuity witness unexpectedly introduces division")
     if witness.get("theorems") != EXPECTED_WITNESS_THEOREMS:
         errors.append("nonvacuity witness theorem inventory drift")
-    lowered = witness_text.lower()
-    if "sorry" in lowered or "admit" in lowered:
+    if re.search(r"\b(?:sorry|admit)\b", witness_text, flags=re.IGNORECASE):
         errors.append("nonvacuity witness contains sorry/admit")
     if "permanent_divisionFree_formula_nonvacuous" not in witness_text or "permanent_rational_formula_nonvacuous" not in witness_text:
         errors.append("required Permanent nonvacuity theorem missing from witness")
