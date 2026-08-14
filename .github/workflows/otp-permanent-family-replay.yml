@@ -29,11 +29,13 @@ jobs:
           import json
           from pathlib import Path
           manifest = json.loads(Path("sources/OPENAI-TEN-PROOFS-001/repairs/OTP-C-PERMANENT/repair_manifest.json").read_text(encoding="utf-8"))
-          assert manifest["repair_outcome"] == "restricted_reclassification"
-          assert manifest["classification"] == "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"
-          assert manifest["coverage_summary"]["encoded_formula_target_count"] == 2
-          assert manifest["coverage_summary"]["encoded_circuit_target_count"] == 0
-          assert manifest["coverage_summary"]["circuit_lower_bound_coverage"] is False
+          assert manifest["repair_strategy"] == "bounded_reclassification"
+          assert manifest["proposed_family_boundary"] == "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"
+          assert manifest["coverage_disposition"]["encoded_formula_target_count"] == 2
+          assert manifest["coverage_disposition"]["encoded_circuit_target_count"] == 0
+          assert manifest["coverage_disposition"]["circuit_lower_bound_coverage"] is False
+          assert manifest["coverage_disposition"]["formula_targets_conditional"] is True
+          assert manifest["coverage_disposition"]["targets_construct_representing_formula"] is False
           assert manifest["route_controls"]["semantic_clearance_authorized"] is False
           assert manifest["route_controls"]["solve_handoff_authorized"] is False
           assert manifest["route_controls"]["cert_route_authorized"] is False
@@ -49,7 +51,7 @@ jobs:
         shell: python
         run: |
           from __future__ import annotations
-          import hashlib, json, re
+          import hashlib, json
           from pathlib import Path
 
           root = Path("upstream")
