@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_permanent_replay_record.schema.json",
+  "title": "OpenAI Ten Proofs Permanent replay record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "record_id",
+    "result_family",
+    "tracker_issue",
+    "predecessor",
+    "protected_source",
+    "prior_failed_reacquisition",
+    "source_carrier",
+    "successful_replay",
+    "disposition",
+    "route_controls",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "record_type": {"const": "openai_ten_proofs_permanent_replay_record"},
+    "record_id": {"const": "MF-OTP-C-PERMANENT-REPLAY-001"},
+    "result_family": {"const": "OTP-C-PERMANENT"},
+    "tracker_issue": {"const": "https://github.com/grandchallenge/MATHFORGE/issues/75"},
+    "predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repair_issue", "repair_pull_request", "repair_merge", "family_boundary"],
+      "properties": {
+        "repair_issue": {"const": 59},
+        "repair_pull_request": {"const": 74},
+        "repair_merge": {"const": "40c38eb6a716acb10145ba42f0c9c768490a7e71"},
+        "family_boundary": {"const": "PERMANENT_FORMULA_LOWER_BOUNDS_ONLY__CIRCUIT_THEOREM_NOT_ENCODED"}
+      }
+    },
+    "protected_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["historical_repository", "historical_commit", "tree", "deterministic_archive_sha256", "deterministic_archive_byte_length", "later_upstream_revision_substituted"],
+      "properties": {
+        "historical_repository": {"const": "openai/ten-proofs"},
+        "historical_commit": {"const": "e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "tree": {"const": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365"},
+        "deterministic_archive_sha256": {"const": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
+        "deterministic_archive_byte_length": {"const": 21022720},
+        "later_upstream_revision_substituted": {"const": false}
+      }
+    },
+    "prior_failed_reacquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workflow_run_id", "replay_job_id", "fetch_attempt_count", "fetch_error", "compiler_or_theorem_failure_inferred", "superseded_by_content_addressed_reassertion"],
+      "properties": {
+        "workflow_run_id": {"const": 31790528636},
+        "replay_job_id": {"const": 94736176787},
+        "fetch_attempt_count": {"const": 3},
+        "fetch_error": {"const": "fatal: remote error: upload-pack: not our ref e62211d28e3a9131950c89caa6542cfe5eff3bca"},
+        "compiler_or_theorem_failure_inferred": {"const": false},
+        "superseded_by_content_addressed_reassertion": {"const": true}
+      }
+    },
+    "source_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "source_reassertion_issue", "source_reassertion_pull_request", "release_id", "release_tag", "release_target", "immutable", "asset_id", "asset_name", "asset_byte_length", "asset_digest", "content_identity_matches_protected_source"],
+      "properties": {
+        "repository": {"const": "grandchallenge/MATHFORGE"},
+        "source_reassertion_issue": {"const": 77},
+        "source_reassertion_pull_request": {"const": 78},
+        "release_id": {"const": 370507312},
+        "release_tag": {"const": "otp-c-permanent-source-e62211d2-candidate-001"},
+        "release_target": {"const": "40c38eb6a716acb10145ba42f0c9c768490a7e71"},
+        "immutable": {"const": true},
+        "asset_id": {"const": 514295009},
+        "asset_name": {"const": "openai-ten-proofs-e62211d2.tar"},
+        "asset_byte_length": {"const": 21022720},
+        "asset_digest": {"const": "sha256:3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f"},
+        "content_identity_matches_protected_source": {"const": true}
+      }
+    },
+    "successful_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pull_request", "workflow_name", "workflow_run_id", "workflow_head", "replay_job_id", "runner_os", "lean_toolchain", "archive_download_verified", "permanent_family_file_identities_verified", "comparator_inventory_verified", "locked_dependency_cache_fetched", "permanent_solution_module_built", "permanent_challenge_elaborated", "clearance_marker_emitted", "target_inventory"],
+      "properties": {
+        "pull_request": {"const": 76},
+        "workflow_name": {"const": "OTP Permanent GCL archival replay"},
+        "workflow_run_id": {"const": 31793518288},
+        "workflow_head": {"const": "eef48558cadb0f955e5db8e02d46d49fe1305bfe"},
+        "replay_job_id": {"const": 94745449727},
+        "runner_os": {"const": "ubuntu-24.04"},
+        "lean_toolchain": {"const": "leanprover/lean4:v4.32.0"},
+        "archive_download_verified": {"const": true},
+        "permanent_family_file_identities_verified": {"const": true},
+        "comparator_inventory_verified": {"const": true},
+        "locked_dependency_cache_fetched": {"const": true},
+        "permanent_solution_module_built": {"const": true},
+        "permanent_challenge_elaborated": {"const": true},
+        "clearance_marker_emitted": {"const": true},
+        "target_inventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["solution_module", "targets", "target_count", "circuit_target_count", "formula_targets_conditional"],
+          "properties": {
+            "solution_module": {"const": "Permanent"},
+            "targets": {
+              "type": "array",
+              "prefixItems": [
+                {"const": "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound"},
+                {"const": "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"}
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "target_count": {"const": 2},
+            "circuit_target_count": {"const": 0},
+            "formula_targets_conditional": {"const": true}
+          }
+        }
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "fresh_family_replay_clear", "source_reacquisition_blocker_cleared", "semantic_nonvacuity_audit_may_be_governed_next", "semantic_nonvacuity_audit_performed"],
+      "properties": {
+        "state": {"const": "FRESH_FAMILY_REPLAY_CLEAR__SEMANTIC_AUDIT_NOT_YET_PERFORMED"},
+        "fresh_family_replay_clear": {"const": true},
+        "source_reacquisition_blocker_cleared": {"const": true},
+        "semantic_nonvacuity_audit_may_be_governed_next": {"const": true},
+        "semantic_nonvacuity_audit_performed": {"const": false}
+      }
+    },
+    "route_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_clearance_authorized", "semantic_nonvacuity_audit_authorized", "solve_handoff_authorized", "cert_route_authorized", "mathcert_adjudication_authorized", "cert_output_authorized", "mathematical_target_proved", "aggregate_authority_permitted"],
+      "properties": {
+        "semantic_clearance_authorized": {"const": false},
+        "semantic_nonvacuity_audit_authorized": {"const": false},
+        "solve_handoff_authorized": {"const": false},
+        "cert_route_authorized": {"const": false},
+        "mathcert_adjudication_authorized": {"const": false},
+        "cert_output_authorized": {"const": false},
+        "mathematical_target_proved": {"const": false},
+        "aggregate_authority_permitted": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
