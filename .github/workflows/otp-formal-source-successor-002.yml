@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/otp-formal-source-successor-002.yml'
       - 'ci/otp_landrun_argv_adapter.sh'
+      - 'ci/audit_openai_ten_proofs_successor_upstream.py'
       - 'sources/OPENAI-TEN-PROOFS-001/formal_source_successors/**'
       - 'schemas/openai_ten_proofs_formal_source_successor.schema.json'
       - 'ci/validate_openai_ten_proofs_formal_source_successor.py'
@@ -19,6 +20,31 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  successor-record:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12.13'
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+      - name: Install locked validation dependency
+        run: python -m pip install -r requirements-ci.txt
+      - name: Validate closed successor record
+        run: |
+          python ci/validate_openai_ten_proofs_formal_source_successor.py
+          python -m unittest tests.test_openai_ten_proofs_formal_source_successor -v
+          python -m json.tool schemas/openai_ten_proofs_formal_source_successor.schema.json > ${{ runner.temp }}/schema.json
+          python -m json.tool sources/OPENAI-TEN-PROOFS-001/formal_source_successors/OTP-FORMAL-SOURCE-SUCCESSOR-002.json > ${{ runner.temp }}/record.json
+
   source-lock:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
@@ -34,12 +60,17 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
       - name: Assert exact upstream identity and deterministic archive
+        shell: bash
         run: |
           set -euo pipefail
           test "$(git -C upstream rev-parse HEAD)" = "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
           test "$(git -C upstream rev-parse 'HEAD^{tree}')" = "174289e4d4958cb0509874e6e53400e098213de7"
           test "$(cat upstream/lean-toolchain)" = "leanprover/lean4:v4.32.0"
+          test "$(git -C upstream hash-object lean-toolchain)" = "94b9f495baff80fd9cb44aad8f4762cb3b2066fe"
+          test "$(git -C upstream hash-object lakefile.toml)" = "f29d6b0307597932154b34b97e37fe07ec3356de"
+          test "$(git -C upstream hash-object lake-manifest.json)" = "046e8de7f46832fbf092e3fb815efae01e4a2129"
           archive_sha256="$(git -C upstream archive --format=tar HEAD | sha256sum | awk '{print $1}')"
+          test "$archive_sha256" = "64534bbf7e1a5cc5f8c902d81657fb67c3dd9991d01f8a8b9e6803b163f3f532"
           printf 'OTP_SUCCESSOR_ROOT=%s\n' "$(git -C upstream rev-parse HEAD)"
           printf 'OTP_SUCCESSOR_TREE=%s\n' "$(git -C upstream rev-parse 'HEAD^{tree}')"
           printf 'OTP_SUCCESSOR_ARCHIVE_SHA256=%s\n' "$archive_sha256"
@@ -103,6 +134,7 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
       - name: Assert exact replay TCB source identities
+        shell: bash
         run: |
           set -euo pipefail
           test "$(git -C upstream rev-parse HEAD)" = "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
@@ -112,6 +144,8 @@ jobs:
           go version
           rustc --version
           cargo --version
+      - name: Assert exact family source bytes and structural scan
+        run: python ci/audit_openai_ten_proofs_successor_upstream.py verify --root upstream --family '${{ matrix.family }}'
       - uses: grandchallenge/lean-action@138a564e38a62ce545e8d47d86a97628463aced4
         with:
           lake-package-directory: upstream
@@ -119,7 +153,17 @@ jobs:
           test: 'false'
           lint: 'false'
           use-mathlib-cache: 'true'
+      - name: Emit and validate theorem-level axiom report
+        shell: bash
+        run: |
+          set -euo pipefail
+          audit_file="${RUNNER_TEMP}/otp_axioms_${{ matrix.family }}.lean"
+          audit_log="${RUNNER_TEMP}/otp_axioms_${{ matrix.family }}.log"
+          python ci/audit_openai_ten_proofs_successor_upstream.py write-axiom-audit --root upstream --family '${{ matrix.family }}' --output "$audit_file"
+          (cd upstream && lake env lean "$audit_file") 2>&1 | tee "$audit_log"
+          python ci/audit_openai_ten_proofs_successor_upstream.py check-axiom-log --family '${{ matrix.family }}' --log "$audit_log"
       - name: Build pinned Comparator helper binaries
+        shell: bash
         run: |
           set -euo pipefail
           (cd landrun-src && go build -trimpath -o ../landrun ./cmd/landrun)
@@ -130,7 +174,10 @@ jobs:
           test -x lean4export-src/.lake/build/bin/lean4export
           test -x nanoda-src/target/release/nanoda_bin
           test -x ci/otp_landrun_argv_adapter.sh
-          sha256sum landrun lean4export-src/.lake/build/bin/lean4export nanoda-src/target/release/nanoda_bin ci/otp_landrun_argv_adapter.sh
+          test "$(sha256sum landrun | awk '{print $1}')" = "a4ba9ed1b6b53f9cfd57b9fb1e4f8f3c3ab69cf6a0147764ff70303a8306f858"
+          test "$(sha256sum lean4export-src/.lake/build/bin/lean4export | awk '{print $1}')" = "e57369980b0b81228580ce08066fb9bd738e717e002673a143f4956d217266b0"
+          test "$(sha256sum nanoda-src/target/release/nanoda_bin | awk '{print $1}')" = "60cc30add2758abce965f122b4e85f1fdd7c23607ea67680cec6721aa2ef23f0"
+          test "$(sha256sum ci/otp_landrun_argv_adapter.sh | awk '{print $1}')" = "84d900d75bdc76c2c4168484a929e448be36fca20d093c42cac15ed923fe3f1d"
       - name: Exact isolated Comparator replay — ${{ matrix.family }}
         env:
           REAL_LANDRUN: ${{ github.workspace }}/landrun
@@ -138,6 +185,7 @@ jobs:
           COMPARATOR_LEAN4EXPORT: ${{ github.workspace }}/lean4export-src/.lake/build/bin/lean4export
           COMPARATOR_NANODA: ${{ github.workspace }}/nanoda-src/target/release/nanoda_bin
         working-directory: upstream
+        shell: bash
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
