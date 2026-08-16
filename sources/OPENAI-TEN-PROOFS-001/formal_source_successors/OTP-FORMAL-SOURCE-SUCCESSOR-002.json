@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENAI-TEN-PROOFS-001-FORMAL-SOURCE-SUCCESSOR-002",
+  "operation_id": "OTP-FORMAL-SOURCE-SUCCESSOR-002",
+  "governance": {
+    "issue": 87,
+    "human_steward_authorization_comment": 5307217849,
+    "protected_base": "20a4cb716dba2586931e3eaebb079890c66044bd",
+    "publication_state": "candidate_until_protected_merge"
+  },
+  "predecessor": {
+    "root": "e62211d28e3a9131950c89caa6542cfe5eff3bca",
+    "tree": "2f8e7ac5ae7f157b6b1de636c2c343b1c7a7e365",
+    "deterministic_archive_sha256": "3022e62ffbed8f5f74d232034a703dc645e6b301879dff1e87df72979914294f",
+    "theorem_matrix": {
+      "path": "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+      "git_blob_sha1": "2d8b24c32c804c4f5ca0f5f5ad1185199d35664b"
+    },
+    "provider_manifest": {
+      "path": "provider_manifests/OPENAI-TEN-PROOFS-001.json",
+      "git_blob_sha1": "fe1dab478e4ef9d6ddfe1b94a289fe7b51f58472"
+    },
+    "history_immutable": true
+  },
+  "successor": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "commit_date": "2026-08-02T00:22:31Z",
+    "deterministic_archive_sha256": "64534bbf7e1a5cc5f8c902d81657fb67c3dd9991d01f8a8b9e6803b163f3f532",
+    "lean_toolchain": {
+      "path": "lean-toolchain",
+      "git_blob_sha1": "94b9f495baff80fd9cb44aad8f4762cb3b2066fe",
+      "value": "leanprover/lean4:v4.32.0",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35"
+    },
+    "lakefile": {
+      "path": "lakefile.toml",
+      "git_blob_sha1": "f29d6b0307597932154b34b97e37fe07ec3356de"
+    },
+    "lake_manifest": {
+      "path": "lake-manifest.json",
+      "git_blob_sha1": "046e8de7f46832fbf092e3fb815efae01e4a2129",
+      "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+      "comparator_commit": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f",
+      "lean4export_commit": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+      "lean4checker_commit": "b7398199245524275543dec6113229c9bb4902e5"
+    }
+  },
+  "replay": {
+    "evidence_head": "f8a0b92da39052ab726de12aad13c201243b6ebe",
+    "run_id": 31945652355,
+    "source_lock_job_id": 95161096598,
+    "mode": "isolated_family_comparator_not_All.lean",
+    "required_family_count": 8,
+    "outcome": "clear_8_of_8",
+    "family_jobs": {
+      "OTP-A-SPHERE-PACKING": 95161117046,
+      "OTP-B1-BINARY-CODES": 95161117069,
+      "OTP-B2-SPHERICAL-CODES": 95161117118,
+      "OTP-D-NON-SOFIC": 95161117044,
+      "OTP-E-CONNES-RIGIDITY": 95161117059,
+      "OTP-G-QUANTUM-PARALLEL-REPETITION": 95161117041,
+      "OTP-H-GAPCVP": 95161117067,
+      "OTP-I-RAMSEY": 95161117103
+    },
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "tcb": {
+      "landrun_source_commit": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+      "landrun_binary_sha256": "a4ba9ed1b6b53f9cfd57b9fb1e4f8f3c3ab69cf6a0147764ff70303a8306f858",
+      "lean4export_source_commit": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+      "lean4export_binary_sha256": "e57369980b0b81228580ce08066fb9bd738e717e002673a143f4956d217266b0",
+      "nanoda_source_commit": "ddfac2bf5a7b56cb46e141494427ff3dd55963c7",
+      "nanoda_binary_sha256": "60cc30add2758abce965f122b4e85f1fdd7c23607ea67680cec6721aa2ef23f0",
+      "landrun_argv_adapter_git_blob_sha1": "c283f58d7779c8dabca8d86adca2006899abfd74",
+      "landrun_argv_adapter_sha256": "84d900d75bdc76c2c4168484a929e448be36fca20d093c42cac15ed923fe3f1d"
+    }
+  },
+  "families": [
+    {
+      "family_id": "OTP-A-SPHERE-PACKING",
+      "config": {"path": "ComparatorChallenges/A_SpherePacking.json", "git_blob_sha1": "46b2e7b49da43fb17a7efa88652f8ee1adc01cbe"},
+      "challenge": {"path": "ComparatorChallenges/A_SpherePacking.lean", "git_blob_sha1": "2477846e1883534837340c636fd928b091509783"},
+      "solution": {"path": "SpherePacking.lean", "git_blob_sha1": "e6117934a80142a8249356fdafa797eba030e920"},
+      "theorem_names": ["PackingBounds.FullMain.exact_limit", "PackingBounds.FullMain.exact_binary_exponent", "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper", "PackingBounds.sharpFullCohnElkiesManuscriptConclusions"],
+      "definition_names": [],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "target_membership_stable_current_root_dependency_path_requires_reaudit",
+      "semantic_state": "blocked_pending_current_root_dependency_and_source_locus_audit"
+    },
+    {
+      "family_id": "OTP-B1-BINARY-CODES",
+      "config": {"path": "ComparatorChallenges/B_BinaryCodes.json", "git_blob_sha1": "b530b77972c83396c1f2aed2deccda3a12fb6cab"},
+      "challenge": {"path": "ComparatorChallenges/B_BinaryCodes.lean", "git_blob_sha1": "c9e93b1944e6806802068cf593fa6557e4267bb1"},
+      "solution": {"path": "MetricCodes.lean", "git_blob_sha1": "51628c0db81bd6cb9a79777fa601306c9d64cbc5"},
+      "theorem_names": ["MetricCodes.Hamming.binaryRate_lt_classicalRate", "MetricCodes.Hamming.exists_binaryRate_improvement", "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate", "MetricCodes.MRRW.strict_mrrw2", "MetricCodes.Johnson.binaryRate_lt_mrrw", "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement"],
+      "definition_names": [],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "target_membership_stable",
+      "semantic_state": "not_clear"
+    },
+    {
+      "family_id": "OTP-B2-SPHERICAL-CODES",
+      "config": {"path": "ComparatorChallenges/B_SphericalCodes.json", "git_blob_sha1": "b343dca9c0373f80c6304f30f261b81b371661c3"},
+      "challenge": {"path": "ComparatorChallenges/B_SphericalCodes.lean", "git_blob_sha1": "5f2bcda432b7091097ae8753cac24c08d0c10f6c"},
+      "solution": {"path": "MetricCodes.lean", "git_blob_sha1": "51628c0db81bd6cb9a79777fa601306c9d64cbc5"},
+      "theorem_names": ["MetricCodes.Johnson.main_binary_theorem", "MetricCodes.Spherical.HigherHierarchy.main_general", "MetricCodes.Spherical.HigherHierarchy.strict_hierarchy", "MetricCodes.Spherical.HigherHierarchy.NumericalMaximum.eventually_kissingNumber_lt_published"],
+      "definition_names": [],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "explicit_replacement_of_predecessor_seven_target_surface_with_four_current_targets",
+      "semantic_state": "not_clear_target_surface_drift_requires_family_audit"
+    },
+    {
+      "family_id": "OTP-D-NON-SOFIC",
+      "config": {"path": "ComparatorChallenges/D_NonSoficGroup.json", "git_blob_sha1": "af023106a83552d7fafb4f0d122f121a095f802c"},
+      "challenge": {"path": "ComparatorChallenges/D_NonSoficGroup.lean", "git_blob_sha1": "158d97224fbd51c203ff07a2f74041ffa2c6013b"},
+      "solution": {"path": "NonSoficGroup.lean", "git_blob_sha1": "dd1f8e63960300c8674fcd491007d2a628fbc6fe"},
+      "theorem_names": ["SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"],
+      "definition_names": [],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "target_membership_stable",
+      "semantic_state": "not_clear"
+    },
+    {
+      "family_id": "OTP-E-CONNES-RIGIDITY",
+      "config": {"path": "ComparatorChallenges/E_ConnesRigidity.json", "git_blob_sha1": "f5d2964be6b1a154bc12b38a0f99f0960960a2d9"},
+      "challenge": {"path": "ComparatorChallenges/E_ConnesRigidity.lean", "git_blob_sha1": "9425edabd79319cbe2943888c6ece107bdd81dfb"},
+      "solution": {"path": "ConnesRigidity.lean", "git_blob_sha1": "81cf03e3f7ccdc66815cc00c9969bcfd2341c8d6"},
+      "theorem_names": ["ConnesRigidity.exists_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors", "ConnesRigidity.exists_infinite_pairwise_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors"],
+      "definition_names": [],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "explicit_declaration_identity_change_from_ConnesRigidity2_namespace_no_alias_inferred",
+      "semantic_state": "not_clear_declaration_identity_drift_requires_family_audit"
+    },
+    {
+      "family_id": "OTP-G-QUANTUM-PARALLEL-REPETITION",
+      "config": {"path": "ComparatorChallenges/G_QuantumParallelRepetition.json", "git_blob_sha1": "c7dd59e9df9ae5d90b35f76a9d958943d8e94770"},
+      "challenge": {"path": "ComparatorChallenges/G_QuantumParallelRepetition.lean", "git_blob_sha1": "8257e7726643a8f8c08c7e91584e003ab204c589"},
+      "solution": {"path": "QuantumParallelRepetition.lean", "git_blob_sha1": "887c4378f124a5d81a3f2624b6dc34867ec409c4"},
+      "theorem_names": ["QuantumParallelRepetition.distributionUniformExponential", "QuantumParallelRepetition.standardQuantumParallelRepetition"],
+      "definition_names": [],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "target_membership_stable",
+      "semantic_state": "not_clear"
+    },
+    {
+      "family_id": "OTP-H-GAPCVP",
+      "config": {"path": "ComparatorChallenges/H_GapCVP.json", "git_blob_sha1": "fdba0e774acc6c2bd6fd450ee155975c0eda1833"},
+      "challenge": {"path": "ComparatorChallenges/H_GapCVP.lean", "git_blob_sha1": "770e202350a5c94d3f6516428ff01092cb8f8cb4"},
+      "solution": {"path": "GapCVP.lean", "git_blob_sha1": "47f3a395e4d9ec3e2892664860f26ed63421b0c9"},
+      "theorem_names": ["GapCVP.Comparator.gapCVP400IsNPHard", "GapCVP.Comparator.binaryNearestCodewordIsNPHard", "GapCVP.Comparator.binarySyndromeDecodingIsNPHard", "GapCVP.Comparator.finitePNormGapCVPIsNPHard"],
+      "definition_names": ["GapCVP.Comparator.gapCVP400Promise", "GapCVP.Comparator.binaryNearestCodewordPromise", "GapCVP.Comparator.binarySyndromeDecodingPromise", "GapCVP.Comparator.finitePGapCVPPromise"],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "four_predecessor_definition_holes_are_now_explicit_definition_bodies_but_disjointness_and_theorem_challenge_placeholders_remain",
+      "semantic_state": "blocked_structural_interfaces_present_semantic_obligations_open"
+    },
+    {
+      "family_id": "OTP-I-RAMSEY",
+      "config": {"path": "ComparatorChallenges/I_MulticolorTriangleRamsey.json", "git_blob_sha1": "ce67db0653e18a2de68f471c00b9f892b789f806"},
+      "challenge": {"path": "ComparatorChallenges/I_MulticolorTriangleRamsey.lean", "git_blob_sha1": "6a9e42d686720f4b74ddc2001006b0b7a20f11aa"},
+      "solution": {"path": "MulticolorTriangleRamsey.lean", "git_blob_sha1": "24b55f531a4d36347cd2277b1b9c7d784d91ae35"},
+      "theorem_names": ["ErdosProblems.MulticolourTriangleRamsey.erdos_183", "ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit", "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients", "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta"],
+      "definition_names": [],
+      "enable_nanoda": true,
+      "replay": "comparator_lean_kernel_nanoda_accept",
+      "drift": "target_membership_stable",
+      "semantic_state": "not_clear"
+    }
+  ],
+  "prospective_mirrors": {
+    "theorem_matrix_mode": "successor_overlay_only",
+    "provider_manifest_mode": "successor_overlay_only",
+    "predecessor_matrix_path": "sources/OPENAI-TEN-PROOFS-001/theorem_intake_matrix.json",
+    "predecessor_provider_path": "provider_manifests/OPENAI-TEN-PROOFS-001.json",
+    "successor_record_path": "sources/OPENAI-TEN-PROOFS-001/formal_source_successors/OTP-FORMAL-SOURCE-SUCCESSOR-002.json"
+  },
+  "authority": {
+    "formal_source_successor_pending_until_protected_merge": true,
+    "semantic_clearance_created": false,
+    "nonvacuity_clearance_created": false,
+    "solve_handoff_created": false,
+    "mathcert_route_created": false,
+    "adjudication_created": false,
+    "cert_output_created": false,
+    "mathematical_target_proved": false,
+    "other_family_mutation_authorized": false,
+    "aggregate_ten_proofs_authority_created": false
+  },
+  "claim_boundary": [
+    "Checker acceptance establishes only the exact replay facts recorded here.",
+    "No semantic or nonvacuity clearance is created for any of the eight families.",
+    "No Solve handoff, MATHCERT route, adjudication, output, proof promotion, or aggregate OpenAI Ten Proofs authority is created.",
+    "The protected predecessor matrix, provider manifest, semantic records, and downstream histories remain immutable evidence.",
+    "B2 target replacement, Connes declaration-identity drift, GapCVP structural changes, and the Sphere dependency blocker require independent family adjudication."
+  ]
+}

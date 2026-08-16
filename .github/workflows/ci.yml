@@ -33,6 +33,8 @@ jobs:
         run: git diff --exit-code
       - name: Validate JSON, witness budgets, provider coverage, and artifact identity
         run: python ci/validate_forge.py
+      - name: Validate OpenAI Ten Proofs formal source successor
+        run: python ci/validate_openai_ten_proofs_formal_source_successor.py
       - name: Validate EUCLID-GCD-E2E-001 provider package
         run: python ci/validate_euclid_gcd_forge.py
       - name: Validate EUCLID-DIOPHANTINE-E2E-002 provider package

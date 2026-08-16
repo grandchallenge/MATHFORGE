@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_formal_source_successor.schema.json",
+  "title": "OpenAI Ten Proofs formal source successor",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_id", "operation_id", "governance", "predecessor", "successor", "replay", "families", "prospective_mirrors", "authority", "claim_boundary"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"const": "MF-OPENAI-TEN-PROOFS-001-FORMAL-SOURCE-SUCCESSOR-002"},
+    "operation_id": {"const": "OTP-FORMAL-SOURCE-SUCCESSOR-002"},
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issue", "human_steward_authorization_comment", "protected_base", "publication_state"],
+      "properties": {
+        "issue": {"const": 87},
+        "human_steward_authorization_comment": {"const": 5307217849},
+        "protected_base": {"$ref": "#/$defs/sha1"},
+        "publication_state": {"const": "candidate_until_protected_merge"}
+      }
+    },
+    "predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root", "tree", "deterministic_archive_sha256", "theorem_matrix", "provider_manifest", "history_immutable"],
+      "properties": {
+        "root": {"$ref": "#/$defs/sha1"},
+        "tree": {"$ref": "#/$defs/sha1"},
+        "deterministic_archive_sha256": {"$ref": "#/$defs/sha256"},
+        "theorem_matrix": {"$ref": "#/$defs/path_blob"},
+        "provider_manifest": {"$ref": "#/$defs/path_blob"},
+        "history_immutable": {"const": true}
+      }
+    },
+    "successor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "root", "tree", "commit_date", "deterministic_archive_sha256", "lean_toolchain", "lakefile", "lake_manifest"],
+      "properties": {
+        "repository": {"const": "openai/ten-proofs"},
+        "root": {"$ref": "#/$defs/sha1"},
+        "tree": {"$ref": "#/$defs/sha1"},
+        "commit_date": {"type": "string", "format": "date-time"},
+        "deterministic_archive_sha256": {"$ref": "#/$defs/sha256"},
+        "lean_toolchain": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "git_blob_sha1", "value", "lean_version", "lean_commit"],
+          "properties": {
+            "path": {"const": "lean-toolchain"},
+            "git_blob_sha1": {"$ref": "#/$defs/sha1"},
+            "value": {"const": "leanprover/lean4:v4.32.0"},
+            "lean_version": {"const": "4.32.0"},
+            "lean_commit": {"$ref": "#/$defs/sha1"}
+          }
+        },
+        "lakefile": {"$ref": "#/$defs/path_blob"},
+        "lake_manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "git_blob_sha1", "mathlib_commit", "comparator_commit", "lean4export_commit", "lean4checker_commit"],
+          "properties": {
+            "path": {"const": "lake-manifest.json"},
+            "git_blob_sha1": {"$ref": "#/$defs/sha1"},
+            "mathlib_commit": {"$ref": "#/$defs/sha1"},
+            "comparator_commit": {"$ref": "#/$defs/sha1"},
+            "lean4export_commit": {"$ref": "#/$defs/sha1"},
+            "lean4checker_commit": {"$ref": "#/$defs/sha1"}
+          }
+        }
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_head", "run_id", "source_lock_job_id", "mode", "required_family_count", "outcome", "family_jobs", "permitted_axioms", "tcb"],
+      "properties": {
+        "evidence_head": {"$ref": "#/$defs/sha1"},
+        "run_id": {"type": "integer", "minimum": 1},
+        "source_lock_job_id": {"type": "integer", "minimum": 1},
+        "mode": {"const": "isolated_family_comparator_not_All.lean"},
+        "required_family_count": {"const": 8},
+        "outcome": {"const": "clear_8_of_8"},
+        "family_jobs": {
+          "type": "object",
+          "minProperties": 8,
+          "maxProperties": 8,
+          "additionalProperties": {"type": "integer", "minimum": 1}
+        },
+        "permitted_axioms": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"enum": ["propext", "Classical.choice", "Quot.sound"]}
+        },
+        "tcb": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["landrun_source_commit", "landrun_binary_sha256", "lean4export_source_commit", "lean4export_binary_sha256", "nanoda_source_commit", "nanoda_binary_sha256", "landrun_argv_adapter_git_blob_sha1", "landrun_argv_adapter_sha256"],
+          "properties": {
+            "landrun_source_commit": {"$ref": "#/$defs/sha1"},
+            "landrun_binary_sha256": {"$ref": "#/$defs/sha256"},
+            "lean4export_source_commit": {"$ref": "#/$defs/sha1"},
+            "lean4export_binary_sha256": {"$ref": "#/$defs/sha256"},
+            "nanoda_source_commit": {"$ref": "#/$defs/sha1"},
+            "nanoda_binary_sha256": {"$ref": "#/$defs/sha256"},
+            "landrun_argv_adapter_git_blob_sha1": {"$ref": "#/$defs/sha1"},
+            "landrun_argv_adapter_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      }
+    },
+    "families": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {"$ref": "#/$defs/family"}
+    },
+    "prospective_mirrors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theorem_matrix_mode", "provider_manifest_mode", "predecessor_matrix_path", "predecessor_provider_path", "successor_record_path"],
+      "properties": {
+        "theorem_matrix_mode": {"const": "successor_overlay_only"},
+        "provider_manifest_mode": {"const": "successor_overlay_only"},
+        "predecessor_matrix_path": {"type": "string", "minLength": 1},
+        "predecessor_provider_path": {"type": "string", "minLength": 1},
+        "successor_record_path": {"type": "string", "minLength": 1}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formal_source_successor_pending_until_protected_merge", "semantic_clearance_created", "nonvacuity_clearance_created", "solve_handoff_created", "mathcert_route_created", "adjudication_created", "cert_output_created", "mathematical_target_proved", "other_family_mutation_authorized", "aggregate_ten_proofs_authority_created"],
+      "properties": {
+        "formal_source_successor_pending_until_protected_merge": {"const": true},
+        "semantic_clearance_created": {"const": false},
+        "nonvacuity_clearance_created": {"const": false},
+        "solve_handoff_created": {"const": false},
+        "mathcert_route_created": {"const": false},
+        "adjudication_created": {"const": false},
+        "cert_output_created": {"const": false},
+        "mathematical_target_proved": {"const": false},
+        "other_family_mutation_authorized": {"const": false},
+        "aggregate_ten_proofs_authority_created": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "path_blob": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "git_blob_sha1"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "git_blob_sha1": {"$ref": "#/$defs/sha1"}
+      }
+    },
+    "family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family_id", "config", "challenge", "solution", "theorem_names", "definition_names", "enable_nanoda", "replay", "drift", "semantic_state"],
+      "properties": {
+        "family_id": {"enum": ["OTP-A-SPHERE-PACKING", "OTP-B1-BINARY-CODES", "OTP-B2-SPHERICAL-CODES", "OTP-D-NON-SOFIC", "OTP-E-CONNES-RIGIDITY", "OTP-G-QUANTUM-PARALLEL-REPETITION", "OTP-H-GAPCVP", "OTP-I-RAMSEY"]},
+        "config": {"$ref": "#/$defs/path_blob"},
+        "challenge": {"$ref": "#/$defs/path_blob"},
+        "solution": {"$ref": "#/$defs/path_blob"},
+        "theorem_names": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "definition_names": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "enable_nanoda": {"const": true},
+        "replay": {"const": "comparator_lean_kernel_nanoda_accept"},
+        "drift": {"type": "string", "minLength": 1},
+        "semantic_state": {"enum": ["blocked_pending_current_root_dependency_and_source_locus_audit", "not_clear", "not_clear_target_surface_drift_requires_family_audit", "not_clear_declaration_identity_drift_requires_family_audit", "blocked_structural_interfaces_present_semantic_obligations_open"]}
+      }
+    }
+  }
+}
