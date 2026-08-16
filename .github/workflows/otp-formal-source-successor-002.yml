@@ -159,6 +159,8 @@ jobs:
           set -euo pipefail
           audit_file="upstream/OTPSourceSuccessorAxiomAudit.lean"
           audit_log="${RUNNER_TEMP}/otp_axioms_${{ matrix.family }}.log"
+          solution_module="$(python -c "import json; print(json.load(open('upstream/ComparatorChallenges/${{ matrix.config }}'))['solution_module'])")"
+          (cd upstream && lake build "$solution_module")
           python ci/audit_openai_ten_proofs_successor_upstream.py write-axiom-audit --root upstream --family '${{ matrix.family }}' --output "$audit_file"
           (cd upstream && lake env lean OTPSourceSuccessorAxiomAudit.lean) 2>&1 | tee "$audit_log"
           python ci/audit_openai_ten_proofs_successor_upstream.py check-axiom-log --family '${{ matrix.family }}' --log "$audit_log"
