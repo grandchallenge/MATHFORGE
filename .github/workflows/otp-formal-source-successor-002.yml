@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/otp-formal-source-successor-002.yml'
+      - 'ci/otp_landrun_argv_adapter.sh'
       - 'sources/OPENAI-TEN-PROOFS-001/formal_source_successors/**'
       - 'schemas/openai_ten_proofs_formal_source_successor.schema.json'
       - 'ci/validate_openai_ten_proofs_formal_source_successor.py'
@@ -124,13 +125,16 @@ jobs:
           (cd landrun-src && go build -trimpath -o ../landrun ./cmd/landrun)
           (cd lean4export-src && lake build)
           (cd nanoda-src && cargo build --release --locked)
+          chmod +x ci/otp_landrun_argv_adapter.sh
           test -x landrun
           test -x lean4export-src/.lake/build/bin/lean4export
           test -x nanoda-src/target/release/nanoda_bin
-          sha256sum landrun lean4export-src/.lake/build/bin/lean4export nanoda-src/target/release/nanoda_bin
+          test -x ci/otp_landrun_argv_adapter.sh
+          sha256sum landrun lean4export-src/.lake/build/bin/lean4export nanoda-src/target/release/nanoda_bin ci/otp_landrun_argv_adapter.sh
       - name: Exact isolated Comparator replay — ${{ matrix.family }}
         env:
-          COMPARATOR_LANDRUN: ${{ github.workspace }}/landrun
+          REAL_LANDRUN: ${{ github.workspace }}/landrun
+          COMPARATOR_LANDRUN: ${{ github.workspace }}/ci/otp_landrun_argv_adapter.sh
           COMPARATOR_LEAN4EXPORT: ${{ github.workspace }}/lean4export-src/.lake/build/bin/lean4export
           COMPARATOR_NANODA: ${{ github.workspace }}/nanoda-src/target/release/nanoda_bin
         working-directory: upstream
