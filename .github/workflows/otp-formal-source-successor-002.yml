@@ -1,0 +1,143 @@
+name: OTP formal source successor 002
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/otp-formal-source-successor-002.yml'
+      - 'sources/OPENAI-TEN-PROOFS-001/formal_source_successors/**'
+      - 'schemas/openai_ten_proofs_formal_source_successor.schema.json'
+      - 'ci/validate_openai_ten_proofs_formal_source_successor.py'
+      - 'tests/test_openai_ten_proofs_formal_source_successor.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: otp-formal-source-successor-002-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-lock:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/ten-proofs
+          ref: 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6
+          path: upstream
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Assert exact upstream identity and deterministic archive
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream rev-parse HEAD)" = "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+          test "$(git -C upstream rev-parse 'HEAD^{tree}')" = "174289e4d4958cb0509874e6e53400e098213de7"
+          test "$(cat upstream/lean-toolchain)" = "leanprover/lean4:v4.32.0"
+          archive_sha256="$(git -C upstream archive --format=tar HEAD | sha256sum | awk '{print $1}')"
+          printf 'OTP_SUCCESSOR_ROOT=%s\n' "$(git -C upstream rev-parse HEAD)"
+          printf 'OTP_SUCCESSOR_TREE=%s\n' "$(git -C upstream rev-parse 'HEAD^{tree}')"
+          printf 'OTP_SUCCESSOR_ARCHIVE_SHA256=%s\n' "$archive_sha256"
+          printf 'OTP_SUCCESSOR_LEAN_TOOLCHAIN=%s\n' "$(cat upstream/lean-toolchain)"
+          git -C upstream status --porcelain=v1
+
+  family-comparator:
+    needs: source-lock
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - family: OTP-A-SPHERE-PACKING
+            config: A_SpherePacking.json
+          - family: OTP-B1-BINARY-CODES
+            config: B_BinaryCodes.json
+          - family: OTP-B2-SPHERICAL-CODES
+            config: B_SphericalCodes.json
+          - family: OTP-D-NON-SOFIC
+            config: D_NonSoficGroup.json
+          - family: OTP-E-CONNES-RIGIDITY
+            config: E_ConnesRigidity.json
+          - family: OTP-G-QUANTUM-PARALLEL-REPETITION
+            config: G_QuantumParallelRepetition.json
+          - family: OTP-H-GAPCVP
+            config: H_GapCVP.json
+          - family: OTP-I-RAMSEY
+            config: I_MulticolorTriangleRamsey.json
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/ten-proofs
+          ref: 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6
+          path: upstream
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: Zouuup/landrun
+          ref: 811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
+          path: landrun-src
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: leanprover/lean4export
+          ref: 4e7915201d3f9f04470d9eae002fa695f7cdc589
+          path: lean4export-src
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: ammkrn/nanoda_lib
+          ref: ddfac2bf5a7b56cb46e141494427ff3dd55963c7
+          path: nanoda-src
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Assert exact replay TCB source identities
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream rev-parse HEAD)" = "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+          test "$(git -C landrun-src rev-parse HEAD)" = "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+          test "$(git -C lean4export-src rev-parse HEAD)" = "4e7915201d3f9f04470d9eae002fa695f7cdc589"
+          test "$(git -C nanoda-src rev-parse HEAD)" = "ddfac2bf5a7b56cb46e141494427ff3dd55963c7"
+          go version
+          rustc --version
+          cargo --version
+      - uses: grandchallenge/lean-action@138a564e38a62ce545e8d47d86a97628463aced4
+        with:
+          lake-package-directory: upstream
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+      - name: Build pinned Comparator helper binaries
+        run: |
+          set -euo pipefail
+          (cd landrun-src && go build -trimpath -o ../landrun ./cmd/landrun)
+          (cd lean4export-src && lake build)
+          (cd nanoda-src && cargo build --release --locked)
+          test -x landrun
+          test -x lean4export-src/.lake/build/bin/lean4export
+          test -x nanoda-src/target/release/nanoda_bin
+          sha256sum landrun lean4export-src/.lake/build/bin/lean4export nanoda-src/target/release/nanoda_bin
+      - name: Exact isolated Comparator replay — ${{ matrix.family }}
+        env:
+          COMPARATOR_LANDRUN: ${{ github.workspace }}/landrun
+          COMPARATOR_LEAN4EXPORT: ${{ github.workspace }}/lean4export-src/.lake/build/bin/lean4export
+          COMPARATOR_NANODA: ${{ github.workspace }}/nanoda-src/target/release/nanoda_bin
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+          printf 'OTP_SUCCESSOR_FAMILY=%s\n' '${{ matrix.family }}'
+          printf 'OTP_SUCCESSOR_CONFIG=%s\n' '${{ matrix.config }}'
+          lake exe comparator 'ComparatorChallenges/${{ matrix.config }}'
+          printf 'OTP_SUCCESSOR_COMPARATOR=ACCEPT\n'
