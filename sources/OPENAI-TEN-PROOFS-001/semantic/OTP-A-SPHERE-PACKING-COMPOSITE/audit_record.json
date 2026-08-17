@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-A-SPHERE-PACKING-COMPOSITE-SEMANTIC-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-A-SPHERE-PACKING",
+  "audit_scope": "PackingBounds.sharpFullCohnElkiesManuscriptConclusions only",
+  "governance": {
+    "tracker_issue": 89,
+    "protected_base": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "publication_state": "candidate_until_protected_merge",
+    "history_policy": "predecessor observations remain immutable; corrected large-file retrieval diagnosis is preserved in issue history"
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_path": "sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json",
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 1,
+    "loci": [
+      "Equation (1): Fourier convention and unit-ball volume",
+      "Equations (2)-(3): admissible class A_d and LP_d normalization",
+      "Equation (4): Delta_d <= LP_d",
+      "Theorem 1.1: LP_d^(1/d) -> sqrt(e/(2*pi))",
+      "displayed consequence after Theorem 1.1: LP_d = 2^(-(alpha_*+o(1))*d), alpha_* = (1/2) log_2(2*pi/e) = 0.6044...",
+      "Theorem 3.8 / Equation (28): uniform lower bound for every F in A_d with epsilon_d -> 0",
+      "Equation (31): quotient-root lower asymptotic",
+      "proof of Theorem 1.1 / Equations (85)-(86): matching admissible upper construction and unit-ball asymptotic"
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {
+      "path": "ComparatorChallenges/A_SpherePacking.json",
+      "blob": "46b2e7b49da43fb17a7efa88652f8ee1adc01cbe"
+    },
+    "challenge": {
+      "path": "ComparatorChallenges/A_SpherePacking.lean",
+      "blob": "2477846e1883534837340c636fd928b091509783"
+    },
+    "solution": {
+      "path": "SpherePacking.lean",
+      "blob": "e6117934a80142a8249356fdafa797eba030e920",
+      "byte_length": 2096663
+    },
+    "target": "PackingBounds.sharpFullCohnElkiesManuscriptConclusions",
+    "isolated_replay": "comparator_lean_kernel_nanoda_accept",
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "definition_concordance": [
+    {
+      "source_concept": "A_d: real Schwartz functions with fhat(0)>0, fhat>=0, and f<=0 outside the unit ball",
+      "lean_encoding": "PackingBounds.FullAdmissible d",
+      "status": "equivalent",
+      "analysis": "The Lean carrier is complex-valued Schwartz with explicit real-valuedness of f and fhat; source nonnegativity of fhat already entails a real Fourier value. The sign radius is exactly 1 and fhat(0)>0 is explicit."
+    },
+    {
+      "source_concept": "f(0)/fhat(0)",
+      "lean_encoding": "PackingBounds.fullQuotient",
+      "status": "exact",
+      "analysis": "The numerator and denominator are the real parts of values already constrained to be real; the denominator is strictly positive."
+    },
+    {
+      "source_concept": "LP_d = v_d/2^d * inf_{f in A_d} f(0)/fhat(0)",
+      "lean_encoding": "PackingBounds.fullLinearProgram d",
+      "status": "exact",
+      "analysis": "The same unit-ball volume, factor 2^d, quotient and infimum normalization are used."
+    },
+    {
+      "source_concept": "radial reduction does not change the quotient infimum",
+      "lean_encoding": "radialToFull; FullAdmissible.radialization; FullAdmissible.quotient_radialization; fullQuotientSet_eq_radial; fullLinearProgram_eq_radial",
+      "status": "proved_equivalence",
+      "analysis": "Every radial admissible function embeds into the full class, and every full admissible function is radialized with quotient preserved. Consequently the full and radial quotient sets and linear programs are equal, so no radiality restriction silently strengthens the source statement."
+    }
+  ],
+  "field_audit": [
+    {
+      "field": "root_before_infimum",
+      "classification": "source_proof_reformulation",
+      "source_locus": "Equations (3), (31), (85)-(86), and proof of Theorem 1.1",
+      "lean_dependency": "manuscriptQuotientRootInf_div_sqrt_tendsto <- sharpQuotientAsymptotic; transported by fullQuotientRootSet_eq_radial",
+      "status": "clear",
+      "analysis": "This is the quotient-root asymptotic sInf(root quotient)/sqrt(d) -> 1/pi. It is a reformulation of the LP asymptotic under the exact v_d/2^d normalization, not the Fourier sign-uncertainty Theorem 1.2 despite sharing the constant 1/pi."
+    },
+    {
+      "field": "root_before_infimum_vanishing_error",
+      "classification": "derived_error_normal_form",
+      "source_locus": "same quotient-root asymptotic as root_before_infimum",
+      "lean_dependency": "exists_manuscriptQuotientRootIsLittleO <- manuscriptQuotientRootInf_eq_critical_add_error",
+      "status": "clear",
+      "analysis": "The error is defined from the normalized quotient-root sequence and tends to zero. For d>0 the displayed equality is algebraic. This adds an explicit witness function but no asymptotic strength."
+    },
+    {
+      "field": "linear_program_root",
+      "classification": "direct_source_theorem_projection",
+      "source_locus": "Theorem 1.1",
+      "lean_dependency": "sharpPackingRootAsymptotic; transported by fullLinearProgram_eq_radial",
+      "status": "clear",
+      "analysis": "The limit fullLinearProgram(d)^(1/d) -> sqrt(e/(2*pi)) is the source headline theorem under the proved full/radial equality."
+    },
+    {
+      "field": "natural_logarithmic_rate",
+      "classification": "derived_logarithmic_equivalent",
+      "source_locus": "Theorem 1.1",
+      "lean_dependency": "sharpLog_of_sharpQuotient -> sharpLogAsymptotic; transported by fullLinearProgram_eq_radial",
+      "status": "clear",
+      "analysis": "Taking logarithms of the eventually positive LP sequence gives log(LP_d)/d -> (1/2) log(e/(2*pi)). The formal proof establishes the positivity needed for the logarithm step."
+    },
+    {
+      "field": "natural_vanishing_exponential_error",
+      "classification": "derived_error_normal_form",
+      "source_locus": "Theorem 1.1",
+      "lean_dependency": "exists_manuscriptPackingIsLittleO <- manuscriptPackingRootError_tendsto and manuscriptLinearProgram_eq_packing_error_pow",
+      "status": "clear",
+      "analysis": "The field rewrites the root limit as an eventually exact d-th-power formula with an additive root error tending to zero. The error is explicitly constructed from LP_d^(1/d)-sqrt(e/(2*pi))."
+    },
+    {
+      "field": "universal_nonnegative_delta",
+      "classification": "source_lower_bound_projection_with_safe_normalization",
+      "source_locus": "Theorem 3.8 / Equation (28), supported by Equation (31)",
+      "lean_dependency": "exists_manuscriptUniversalPackingIsLittleO <- manuscriptPackingDeficit_nonneg + manuscriptUniversalQuotientBound; transported from radial to full admissibles by quotient-preserving radialization",
+      "status": "clear",
+      "analysis": "The source gives epsilon_d -> 0 uniformly for every admissible F. Lean chooses delta_d = max(0, criticalPackingBase-LP_d^(1/d)), so delta_d is nonnegative and tends to zero; replacing an arbitrary signed source error by this deficit only weakens the lower base when needed and the universal quotient bound is proved. No claim that the source itself states epsilon_d>=0 is made."
+    },
+    {
+      "field": "base_two_exponent_positive",
+      "classification": "derived_elementary_consequence",
+      "source_locus": "displayed alpha_* formula immediately after Theorem 1.1",
+      "lean_dependency": "criticalBinaryExponent_pos",
+      "status": "clear",
+      "analysis": "The source identifies alpha_*=(1/2)log_2(2*pi/e)=0.6044..., hence positivity is a consequence, not a separately advertised theorem. Lean proves positivity from exact inequalities rather than from the decimal expansion."
+    },
+    {
+      "field": "base_two_decimal_certificate",
+      "classification": "derived_formal_numerical_certificate_not_source_precision",
+      "source_locus": "exact alpha_* formula after Theorem 1.1; source prints only 0.6044...",
+      "lean_dependency": "criticalBinaryExponent_mem_Ioo_d30 <- criticalBinaryExponent_gt_d30 + criticalBinaryExponent_lt_d30",
+      "status": "clear_with_mandatory_label",
+      "analysis": "Lean proves alpha_* lies strictly between 0.604400544291677695341677307053 and 0.604400544291677695341677307054. This 30-decimal enclosure is not printed in the manuscript and must never be represented as source-authored numerical precision; it is admitted only as a checked mathematical consequence of the manuscript's exact alpha_* expression."
+    },
+    {
+      "field": "base_two_logarithmic_rate",
+      "classification": "displayed_source_consequence",
+      "source_locus": "displayed consequence after Theorem 1.1: LP_d=2^(-(alpha_*+o(1))d)",
+      "lean_dependency": "sharpBinaryLog_of_sharpQuotient -> sharpBinaryLogAsymptotic; transported by fullLinearProgram_eq_radial",
+      "status": "clear",
+      "analysis": "The normalized base-two logarithm tends to -alpha_*, exactly matching the displayed exponential-rate consequence of Theorem 1.1."
+    },
+    {
+      "field": "base_two_vanishing_exponential_error",
+      "classification": "derived_error_normal_form_of_displayed_source_consequence",
+      "source_locus": "displayed base-two consequence after Theorem 1.1",
+      "lean_dependency": "exists_manuscriptBinaryIsLittleO <- manuscriptBinaryExponentError_tendsto + eventually_manuscriptLinearProgram_eq_canonicalBinaryRpow",
+      "status": "clear",
+      "analysis": "The formal error is -(log_2 LP_d)/d-alpha_* and tends to zero; eventual positivity of LP_d allows exact reconstruction LP_d=2^(-(alpha_*+err_d)d). This is an explicit witness form of the manuscript's o(1), not a stronger rate estimate."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear_for_composite_surface",
+    "evidence": [
+      "CohnElkies.admissible_nonempty constructs an admissible function in every dimension.",
+      "radialToFull embeds each radial admissible function into FullAdmissible, so the full quotient sets are inhabited.",
+      "quotient_pos and fourier_zero_pos prevent the quotient denominator from collapsing to zero in the source regime.",
+      "fullQuotientSet_eq_radial and fullLinearProgram_eq_radial prove that the unrestricted formal surface has the same optimization values as the radial proof carrier.",
+      "eventually_linearProgram_pos_of_sharpQuotient supplies the positivity required by logarithmic/exponential normal forms."
+    ],
+    "scope_note": "This nonvacuity finding concerns the ten-field composite only. It does not by itself close the separate SpherePackingConstant-to-Delta_d packing-bridge normalization target."
+  },
+  "anti_overclaim": {
+    "theorem_1_2_used_for_any_field": false,
+    "reason": "The 1/pi quotient-root fields are not A_+(d) or A_-(d); equal constants do not create declaration equivalence.",
+    "decimal_precision_source_authored": false,
+    "composite_is_verbatim_single_source_theorem": false,
+    "composite_kind": "mixed_source_projection_and_checked_derived_consequence",
+    "proof_correctness_certified_here": false,
+    "whole_chapter_equivalence": false,
+    "whole_family_semantic_clearance": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "target_semantic_state": "candidate_clear_pending_independent_review",
+    "target_classification": "source_faithful_derived_composite_certificate",
+    "all_ten_fields_accounted_for": true,
+    "rejected_fields": [],
+    "qualified_fields": [
+      "base_two_decimal_certificate"
+    ],
+    "qualification": "The decimal interval is admitted only as a formal numerical consequence of the exact alpha_* expression, not as manuscript-authored decimal precision.",
+    "family_state_after_activation": "SEMANTIC_PARTIAL__COMPOSITE_CLEAR_PACKING_BRIDGE_NORMALIZATION_REMAINS",
+    "reason": "Every field is either a direct source projection, a displayed source consequence, a source-proof-local reformulation, or a formally checked normal form/numerical consequence that does not strengthen the source asymptotics. The bundle is therefore semantically admissible only as a derived composite certificate, never as one verbatim manuscript theorem."
+  },
+  "activation": {
+    "condition": "protected merge after exact-head CI and fresh non-author specialist APPROVED review",
+    "effect": "semantic and nonvacuity clearance for PackingBounds.sharpFullCohnElkiesManuscriptConclusions only",
+    "effect_is_retroactive": false,
+    "head_change_requires_reapproval": true
+  },
+  "claim_boundary": "This record closes the semantic/nonvacuity audit of the exact ten-field PackingBounds.sharpFullCohnElkiesManuscriptConclusions target at the pinned current formal root and August 6 source bytes, subject to protected activation. It does not certify proof correctness independently of MATHCERT, does not assert that the ten fields form one manuscript theorem, does not attribute the 30-decimal certificate to the source text, does not close the separate packing-density bridge target, does not create a Solve or Cert route, and creates no aggregate OpenAI Ten Proofs authority."
+}
