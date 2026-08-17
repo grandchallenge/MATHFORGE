@@ -113,7 +113,9 @@ def validation_errors(record=None):
     defs = r.get("definition_concordance", [])
     if len(defs) != 4 or [x.get("status") for x in defs] != EXPECTED_DEF_STATUSES:
         e.append("definition concordance drift")
-    joined = "\n".join(x.get("analysis", "") for x in defs)
+    joined = "\n".join(
+        f"{x.get('lean_encoding', '')}\n{x.get('analysis', '')}" for x in defs
+    )
     for token in ("separation 1", "radius-1/2", "limsup", "rescale_upper_packing_density", "packing_supremum_eq_unit_separation", "volume_half_ball"):
         if token not in joined:
             e.append(f"normalization evidence lost: {token}")
