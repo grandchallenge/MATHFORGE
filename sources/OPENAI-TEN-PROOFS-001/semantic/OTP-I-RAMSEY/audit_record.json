@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-I-RAMSEY-SEMANTIC-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-I-RAMSEY",
+  "governance": {
+    "tracker_issue": 93,
+    "protected_base": "0520d8bae3853798f2edca67c526133e46847a54",
+    "publication_state": "candidate_until_protected_merge",
+    "candidate_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "head_change_requires_reapproval": true
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 9,
+    "loci": [
+      "Chapter 9 defines R_k(3) as the least N for which every k-edge-colouring of K_N has a monochromatic triangle.",
+      "Theorem 1.1 states that some absolute c>0 satisfies R_k(3)>=(c*k^(1/3)/log k)^k for every integer k>=2; the manuscript does not specify c=1/(6e^38) and says absolute constants are not optimized.",
+      "Displayed consequence (4) states lim_{k->infinity} R_k(3)^(1/k)=+infinity.",
+      "Theorem 1.1 with the factorial upper bound gives k^((1/3-o(1))*k)<=R_k(3)<=k^((1+o(1))*k) and R_k(3)=k^{Theta(k)}; all Chapter 9 logarithms are natural."
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {"path": "ComparatorChallenges/I_MulticolorTriangleRamsey.json", "blob": "ce67db0653e18a2de68f471c00b9f892b789f806"},
+    "challenge": {"path": "ComparatorChallenges/I_MulticolorTriangleRamsey.lean", "blob": "6a9e42d686720f4b74ddc2001006b0b7a20f11aa"},
+    "solution": {"path": "MulticolorTriangleRamsey.lean", "blob": "24b55f531a4d36347cd2277b1b9c7d784d91ae35", "byte_length": 125769},
+    "targets": [
+      "ErdosProblems.MulticolourTriangleRamsey.erdos_183",
+      "ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit",
+      "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients",
+      "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta"
+    ],
+    "replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117103,
+      "mode": "isolated_family_comparator_not_All.lean",
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+    }
+  },
+  "definition_concordance": {
+    "colouring": "TriangleFree quantifies over every colour in Fin k and requires each colour graph CliqueFree 3, exactly encoding absence of a monochromatic triangle in a k-edge-colouring of a complete graph.",
+    "ramsey_number": "ForcesMonochromaticTriangle n k quantifies over all TopEdgeLabelings of Fin n by Fin k; triangleRamseyNumber k is Nat.sInf of the forcing set. exists_forcesMonochromaticTriangle proves the set nonempty and triangleRamseyNumber_forces proves the sInf is itself forcing, while triangleFree_lt_triangleRamseyNumber proves every triangle-free witness has smaller order. This realizes the source least-N convention.",
+    "logarithms": "The Chapter 9 manuscript states all logarithms are natural; the configured logarithmic targets use Real.log, so no log-base transport is hidden.",
+    "explicit_constant": "The manuscript leaves c unspecified. The solution independently proves quantitativeLowerBound_explicit_all with c=1/(6*exp 38), using a large-k palette-stage argument and quantitativeLowerBound_explicit_small for the finite residual k<342 range.",
+    "asymptotics": "The epsilonized log coefficient target is the natural-log form of the printed exponents 1/3-o(1) and 1+o(1); the Filter Theta target is the logarithmic reformulation of R_k(3)=k^{Theta(k)}."
+  },
+  "target_audits": [
+    {
+      "target": "ErdosProblems.MulticolourTriangleRamsey.erdos_183",
+      "classification": "source_faithful_exact_projection_of_displayed_consequence_4",
+      "source_relation": "Displayed consequence (4) is lim R_k(3)^(1/k)=+infinity.",
+      "formal_relation": "The target is Tendsto of the same real-valued k-th-root sequence atTop to atTop and is discharged exactly by divergentRamseyRoot."
+    },
+    {
+      "target": "ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit",
+      "classification": "formal_explicit_constant_strengthening_plus_source_faithful_divergence",
+      "source_relation": "The source gives an unspecified absolute c>0 for every k>=2 and the same divergence consequence; it does not print c=1/(6e^38).",
+      "formal_relation": "The solution proves quantitativeLowerBound_explicit_all for every k>=2 with c=1/(6*exp 38), then constructs this conjunction exactly as <quantitativeLowerBound_explicit_all, divergentRamseyRoot>."
+    },
+    {
+      "target": "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients",
+      "classification": "source_faithful_epsilonized_logarithmic_reformulation",
+      "source_relation": "The printed k^((1/3-o(1))*k)<=R_k(3)<=k^((1+o(1))*k) is equivalent to eventual natural-log coefficients between 1/3-epsilon and 1+epsilon for every epsilon>0.",
+      "formal_relation": "The solution derives the lower logarithmic side from quantitativeLowerBound_explicit_all and the upper side from triangleRamseyNumber_factorial_upper, with eventual positivity used before applying Real.log."
+    },
+    {
+      "target": "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta",
+      "classification": "source_faithful_logarithmic_reformulation_of_printed_theta",
+      "source_relation": "The manuscript prints R_k(3)=k^{Theta(k)}; taking natural logarithms yields log R_k(3)=Theta(k log k).",
+      "formal_relation": "The target states exactly Filter-level asymptotic equivalence of log(triangleRamseyNumber k) with k*log k, proved from explicit eventual two-sided logarithmic bounds."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear_for_all_four_targets",
+    "evidence": [
+      "The source/formal lower-bound domain k>=2 is inhabited, for example k=2.",
+      "exists_forcesMonochromaticTriangle k constructs a forcing order for every k, so the Nat.sInf defining triangleRamseyNumber is over a nonempty set.",
+      "triangleRamseyNumber_forces proves the selected sInf actually has the forcing property, closing least-N normalization rather than relying on a bare infimum definition.",
+      "triangleFree_lt_triangleRamseyNumber supplies the complementary witness direction; in the small-k lower-bound proof an empty-vertex triangle-free colouring gives 0<triangleRamseyNumber k.",
+      "The eventual and atTop targets range over an infinite natural-number filter and the solution establishes positive Ramsey values before taking logarithms or k-th roots."
+    ]
+  },
+  "proof_path_evidence": [
+    "erdos_183 is exactly divergentRamseyRoot.",
+    "erdos_problem_183_explicit is exactly the conjunction of quantitativeLowerBound_explicit_all and divergentRamseyRoot.",
+    "quantitativeLowerBound_explicit_all uses the palette-stage (H/exp 38)^k bound for large k and quantitativeLowerBound_explicit_small for k<342.",
+    "triangleRamseyNumber_log_sharp_coefficients invokes quantitativeLowerBound_explicit_all on the lower side and triangleRamseyNumber_factorial_upper on the upper side.",
+    "triangleRamseyNumber_log_isTheta is proved from explicit eventual lower and upper multiples of k*log k."
+  ],
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117103,
+    "permitted_axioms_only": ["propext", "Quot.sound", "Classical.choice"],
+    "observations": ["Comparator exported exactly the four registered Ramsey targets.", "MulticolorTriangleRamsey solution built successfully.", "Nanoda kernel accepts the solution.", "Lean default kernel accepts the solution.", "Comparator returned ACCEPT."],
+    "authority_limit": "Replay establishes exact formal-carrier and kernel-acceptance evidence only; it does not independently certify proof correctness or source-semantic equivalence."
+  },
+  "anti_overclaim": {
+    "explicit_constant_claimed_as_manuscript_constant": false,
+    "epsilon_log_target_claimed_source_verbatim": false,
+    "whole_chapter_semantic_equivalence": false,
+    "proof_bodies_compared_in_full": false,
+    "proof_correctness_certified_here": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_targets_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "candidate_family_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "basis": "All four targets match Chapter 9 at the declared boundary. The explicit 1/(6e^38) lower bound is admitted only as a formally proved strengthening of the source's unspecified-c theorem; divergence, epsilonized logarithmic coefficients, and logarithmic Theta are source-faithful projections or reformulations. The least-Ramsey-number and logarithm conventions are aligned and the relevant domains are nonvacuous.",
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "head_change_requires_reapproval": true,
+    "streamlined_exact_head_binding_allowed_if_control_plan_unchanged": true,
+    "material_control_plan_change_requires_renewed_steward_input": true,
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate is limited to current-root semantic/nonvacuity classification of the four registered OTP-I-RAMSEY targets. It preserves the source's unspecified absolute constant c and treats 1/(6e^38) only as an independently formalized explicit strengthening. It treats the epsilon logarithmic and Filter-Theta statements as source-faithful reformulations rather than verbatim manuscript text. It creates no MATHSOLVE handoff, MATHCERT route/output, independent proof certification, mathematical-proof promotion, whole-chapter equivalence, or aggregate OpenAI Ten Proofs authority."
+}
