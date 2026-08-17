@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-B1-BINARY-CODES-SEMANTIC-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-B1-BINARY-CODES",
+  "governance": {
+    "tracker_issue": 91,
+    "protected_base": "b9dda1a5b958fd1be37a26324a025013a39584c1",
+    "publication_state": "candidate_until_protected_merge",
+    "candidate_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "head_change_requires_reapproval": true
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_path": "sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json",
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 2,
+    "loci": [
+      "Introduction: A2(n,d) is the largest binary-code size at minimum Hamming distance at least d, and R2(delta)=limsup n->infinity (1/n) log2 A2(n,ceil(delta*n)) for fixed 0<delta<1/2",
+      "Equations (1)-(3): H2, M1, g, F_delta and M2=min over 0<=tau<=1-2delta",
+      "Equation (2) and Theorem 2.3: kappa_H is the strict-feasibility whole-cube infimum and R2<=kappa_H<M1",
+      "Equations (4)-(8): constant-weight parameter domain, Lambda, strict spectral feasibility, kappa_CW, and kappa_bin=min{kappa_H,kappa_CW}",
+      "Theorem 1.1: for every fixed 0<delta<1/2, R2(delta)<=kappa_bin(delta)<M2(delta)",
+      "Theorem 3.8: kappa_bin(delta)<M2(delta), with the M1 endpoint handled by Theorem 2.3 and interior M2 minimizers improved by positive harmonic degrees"
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {"path": "ComparatorChallenges/B_BinaryCodes.json", "blob": "b530b77972c83396c1f2aed2deccda3a12fb6cab"},
+    "challenge": {"path": "ComparatorChallenges/B_BinaryCodes.lean", "blob": "c9e93b1944e6806802068cf593fa6557e4267bb1"},
+    "solution": {"path": "MetricCodes.lean", "blob": "51628c0db81bd6cb9a79777fa601306c9d64cbc5", "byte_length": 4531268},
+    "targets": [
+      "MetricCodes.Hamming.binaryRate_lt_classicalRate",
+      "MetricCodes.Hamming.exists_binaryRate_improvement",
+      "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate",
+      "MetricCodes.MRRW.strict_mrrw2",
+      "MetricCodes.Johnson.binaryRate_lt_mrrw",
+      "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement"
+    ],
+    "replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117069,
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+    }
+  },
+  "definition_concordance": {
+    "binary_code": "BinaryWord is Fin n -> Bool; hammingDist counts disagreeing coordinates; IsBinaryCode requires pairwise distance at least d, matching the source binary-code carrier and minimum-distance convention.",
+    "maximum_size": "Hamming.codeNumber is the finite maximum of code cardinalities over all binary codes at length n and threshold d, matching A2(n,d). codeNumber_pos is proved using a singleton code.",
+    "rate": "Hamming.binaryRate uses limsup atTop of log base 2 of codeNumber n (ceil(delta*n)) divided by n, matching R2(delta). The total Lean value at the finite prefix n=0 does not affect an atTop limsup.",
+    "entropy_and_m1": "binaryEntropy uses Real.logb 2 and agrees with source H2 on the source domain, including the source zero-log convention; classicalParameter and classicalRate are exactly the first MRRW exponent M1.",
+    "whole_cube": "Hamming.Feasible, rateSet and variationalRate encode 0<=b<a<=1/2, Gamma_H(a,b)>1-2delta and the H2(a)-H2(b) infimum, hence kappa_H.",
+    "constant_weight": "Johnson.AsymptoticParameters, spectralLimit, strict spectral feasibility, shellRate and variationalRate encode source equations (4)-(8), hence kappa_CW; combinedVariationalRate is min(kappa_H,kappa_CW)=kappa_bin.",
+    "second_mrrw": "mrrwG and mrrwObjective are source g and F_delta. Lean writes mrrwRate as sInf of the objective set; exists_mrrw_minimizer and mrrwRate_eq_objective_of_minimizer prove attainment on [0,1-2delta], identifying this value with the source minimum M2 under the target hypotheses."
+  },
+  "target_audits": [
+    {
+      "target": "MetricCodes.Hamming.binaryRate_lt_classicalRate",
+      "classification": "source_faithful_derived_consequence",
+      "source_relation": "Theorem 2.3 gives R2<=kappa_H<M1; the target is the transitive consequence R2<M1.",
+      "solution_path": "binaryRate_le_variationalRate followed by variationalRate_lt_classicalRate"
+    },
+    {
+      "target": "MetricCodes.Hamming.exists_binaryRate_improvement",
+      "classification": "derived_positive_margin_certificate",
+      "source_relation": "Derived from the same strict Theorem 2.3 inequality; the source does not print this existential epsilon normal form.",
+      "solution_path": "epsilon is classicalRate(delta)-variationalRate(delta), positive by kappa_H<M1"
+    },
+    {
+      "target": "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate",
+      "classification": "source_faithful_exact_projection",
+      "source_relation": "Exact formal counterpart of R2<=kappa_bin in Theorem 1.1.",
+      "solution_path": "projection-Gram bounds yield binaryRate<=min(kappa_H,kappa_CW)"
+    },
+    {
+      "target": "MetricCodes.MRRW.strict_mrrw2",
+      "classification": "source_faithful_exact_projection",
+      "source_relation": "Exact formal counterpart of kappa_bin<M2 in Theorem 3.8 and the strict half of Theorem 1.1.",
+      "solution_path": "mrrw_endpoint_dichotomy; whole-cube improvement handles M2=M1 and constant-weight positive-harmonic improvement handles interior minimizers"
+    },
+    {
+      "target": "MetricCodes.Johnson.binaryRate_lt_mrrw",
+      "classification": "source_faithful_derived_consequence",
+      "source_relation": "Theorem 1.1 gives R2<=kappa_bin<M2; the target is the transitive consequence R2<M2.",
+      "solution_path": "binaryRate_le_combinedVariationalRate followed by strict_mrrw2"
+    },
+    {
+      "target": "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement",
+      "classification": "derived_positive_margin_certificate",
+      "source_relation": "Derived from kappa_bin<M2; the source does not print this existential epsilon normal form.",
+      "solution_path": "epsilon is mrrwRate(delta)-combinedVariationalRate(delta), positive by strict_mrrw2"
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear_for_all_six_targets",
+    "evidence": [
+      "The target parameter domain 0<delta<1/2 is inhabited, for example by delta=1/4.",
+      "Hamming.codeNumber_pos proves every finite codeNumber n d is positive using a singleton code, so the logarithmic rate is not based on an empty maximum.",
+      "Hamming.rateSet_nonempty_of_interior proves the whole-cube variational set is nonempty for every 0<delta<1/2.",
+      "Johnson.rateSet_nonempty_of_interior proves the constant-weight variational set is nonempty for every 0<delta<1/2.",
+      "For 0<delta<1/2, [0,1-2delta] is nonempty; exists_mrrw_minimizer proves the MRRW objective attains its minimum on that interval.",
+      "The two positive-margin targets use explicit positive differences supplied by the strict source-faithful inequalities rather than an empty-domain implication."
+    ]
+  },
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117069,
+    "observations": [
+      "exact formal root checked out",
+      "all six target names exported from challenge and solution",
+      "MetricCodes solution module built successfully",
+      "Nanoda kernel accepts the solution",
+      "Lean default kernel accepts the solution",
+      "Comparator returned ACCEPT"
+    ],
+    "permitted_axioms_only": ["propext", "Quot.sound", "Classical.choice"],
+    "authority_limit": "This is pinned provider-root replay evidence. MATHFORGE semantic admission does not independently certify proof correctness."
+  },
+  "anti_overclaim": {
+    "positive_margin_targets_source_printed_verbatim": false,
+    "whole_chapter_semantic_equivalence": false,
+    "proof_bodies_compared_in_full": false,
+    "proof_correctness_certified_here": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_targets_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "candidate_family_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "basis": "The source and Lean definitions agree on binary-code rate, base-2 entropy, ceiling convention, whole-cube and constant-weight variational domains, strict spectral thresholds and MRRW objective. The Lean sInf representation of M2 is tied to the source minimum by a proved minimizer theorem; all relevant variational domains are inhabited; and each of the six targets is either an exact source projection or an explicitly classified transitive/positive-margin consequence.",
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "head_change_requires_reapproval": true,
+    "streamlined_exact_head_binding_allowed_if_control_plan_unchanged": true,
+    "material_control_plan_change_requires_renewed_steward_input": true,
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate classifies only the current-root source semantics, definition concordance, target relationships, nonvacuity and pinned formal replay evidence for the six registered OTP-B1-BINARY-CODES targets. It treats the two epsilon statements as derived certificate normal forms rather than source-printed theorems, treats the Lean sInf formulation of M2 as source-equivalent only because the exact solution proves minimizer existence and attainment under the target hypotheses, and preserves the distinction between source-semantic admission and independent proof certification. Protected activation would create no MATHSOLVE handoff or MATHCERT route/output, would not mark any mathematical target proved, would not establish whole-chapter or proof-body equivalence, and creates no aggregate OpenAI Ten Proofs authority."
+}
