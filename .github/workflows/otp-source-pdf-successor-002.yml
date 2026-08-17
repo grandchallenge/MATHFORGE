@@ -35,18 +35,17 @@ jobs:
           BYTES2="$(stat -c %s "$RUNNER_TEMP/two.pdf")"
           test "$SHA1" = "$SHA2"
           test "$BYTES1" = "$BYTES2"
+          LASTMOD="$(grep -i '^last-modified:' "$RUNNER_TEMP/headers1.txt" | tail -1 | sed 's/^[^:]*:[[:space:]]*//' | tr -d '\r' || true)"
+          ETAG="$(grep -i '^etag:' "$RUNNER_TEMP/headers1.txt" | tail -1 | sed 's/^[^:]*:[[:space:]]*//' | tr -d '\r' || true)"
+          echo "::notice title=OTP current PDF identity::sha256=$SHA1 bytes=$BYTES1 last_modified=$LASTMOD etag=$ETAG"
           echo "OTP_CURRENT_PDF_SHA256=$SHA1"
           echo "OTP_CURRENT_PDF_BYTES=$BYTES1"
-          echo '--- selected response headers ---'
-          grep -iE '^(etag|last-modified|content-length|content-type):' "$RUNNER_TEMP/headers1.txt" || true
-          echo '--- second retrieval selected response headers ---'
-          grep -iE '^(etag|last-modified|content-length|content-type):' "$RUNNER_TEMP/headers2.txt" || true
           python - <<'PY'
           import os
           from pathlib import Path
           data = (Path(os.environ['RUNNER_TEMP']) / 'one.pdf').read_bytes()
-          print('OTP_CURRENT_PDF_HEADER=' + data[:8].decode('ascii', errors='replace'))
-          print('OTP_CURRENT_PDF_EOF=' + repr(data[-16:]))
+          assert data.startswith(b'%PDF-')
+          assert b'%%EOF' in data[-1024:]
           PY
       - name: Validate closed successor record when present
         shell: bash
