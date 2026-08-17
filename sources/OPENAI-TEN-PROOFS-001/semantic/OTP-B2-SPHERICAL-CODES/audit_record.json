@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-B2-SPHERICAL-CODES-SEMANTIC-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-B2-SPHERICAL-CODES",
+  "governance": {
+    "tracker_issue": 92,
+    "protected_base": "24a1fa0f020ee9cc7fbe2e7aea4cd840268ca748",
+    "publication_state": "candidate_until_protected_merge",
+    "candidate_exit_state": "SUCCESSOR_FOUR_TARGET_SURFACE__SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "head_change_requires_reapproval": true
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_path": "sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json",
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 2,
+    "loci": [
+      "Theorem 1.1: for every fixed 0<delta<1/2, R2(delta)<=kappa_bin(delta)<M2(delta).",
+      "Theorem 1.2: for every fixed hierarchy level r>=0 and 0<s<1, interlacing parameters with 2*Gamma_r>s give A(n,s)<=2^((Phi_r+o(1))*n), and consequently R_sph(s) is bounded by the closed hierarchy infimum.",
+      "Corollary 1.3: for every 0<s<1 and every r>=0 the hierarchy improves strictly level by level, with the localized strict chain ending at the classical Kabatiansky-Levenshtein row.",
+      "Numerical level-2 consequence: the kissing number satisfies tau_n <= 2^((0.39661+o(1))*n); the source does not print an eventual exact exponent 0.39661 bound."
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_path": "sources/OPENAI-TEN-PROOFS-001/formal_source_successors/OTP-FORMAL-SOURCE-SUCCESSOR-002.json",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {
+      "path": "ComparatorChallenges/B_SphericalCodes.json",
+      "blob": "b343dca9c0373f80c6304f30f261b81b371661c3"
+    },
+    "challenge": {
+      "path": "ComparatorChallenges/B_SphericalCodes.lean",
+      "blob": "5f2bcda432b7091097ae8753cac24c08d0c10f6c"
+    },
+    "solution": {
+      "path": "MetricCodes.lean",
+      "blob": "51628c0db81bd6cb9a79777fa601306c9d64cbc5"
+    },
+    "predecessor_target_surface_authority_transferred": false,
+    "target_surface_drift": "explicit_replacement_of_predecessor_seven_target_surface_with_four_current_targets",
+    "targets": [
+      "MetricCodes.Johnson.main_binary_theorem",
+      "MetricCodes.Spherical.HigherHierarchy.main_general",
+      "MetricCodes.Spherical.HigherHierarchy.strict_hierarchy",
+      "MetricCodes.Spherical.HigherHierarchy.NumericalMaximum.eventually_kissingNumber_lt_published"
+    ],
+    "replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117118,
+      "mode": "isolated_family_comparator_not_All.lean",
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "permitted_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "definition_concordance": {
+    "binary_surface": "main_binary_theorem uses the same fixed domain 0<delta<1/2 and states binaryRate(delta)<=combinedVariationalRate(delta)<mrrwRate(delta), corresponding to source R2<=kappa_bin<M2 under the already-audited B1 rate/log/variational conventions.",
+    "spherical_code": "SpherePacking.SphericalCode uses unit vectors with pairwise real inner product <=s; for 0<s<1 this is the source spherical-code convention after s=cos(theta), theta in (0,pi/2).",
+    "rate": "sphericalCodeRate is limsup_n log_2(A(n,s))/n, matching source R_sph(s); kissingNumber is sphericalCodeNumber at s=1/2.",
+    "hierarchy": "HigherHierarchy encodes r in Nat including r=0, interlacing a_0>b_0>a_1>... with final a_r>=0, the quadratic coordinate u(1+u), Lagrange weights, Gamma, Phi, levelRate, and the closed 2*Gamma>=s consequence.",
+    "localization": "localizedLevelRate and localizedHierarchyRate use the Sidelnikov envelope over Icc 0 s; the strict_hierarchy target records the source level-by-level and localized strict chain.",
+    "numerical": "the configured exact eventual 0.39661 exponent is stronger than the source-printed 0.39661+o(1) statement and is classified only as a formal strengthening entailing that asymptotic consequence."
+  },
+  "target_audits": [
+    {
+      "target": "MetricCodes.Johnson.main_binary_theorem",
+      "classification": "source_faithful_exact_projection",
+      "source_relation": "Exact Chapter 2 Theorem 1.1 domain and inequality: 0<delta<1/2 and R2<=kappa_bin<M2.",
+      "formal_relation": "binaryRate<=combinedVariationalRate<mrrwRate on the same open interval."
+    },
+    {
+      "target": "MetricCodes.Spherical.HigherHierarchy.main_general",
+      "classification": "source_faithful_structured_projection_theorem_1_2_and_consequence",
+      "source_relation": "Packages Theorem 1.2's fixed-r interlacing/Gamma/Phi asymptotic bound as the equivalent eventual R>Phi certificate, together with the printed closed-hierarchy rate consequence.",
+      "formal_relation": "For every r in Nat, Phi<R implies eventually every spherical code has size <2^(R*n), and sphericalCodeRate<=closedHierarchyVariationalRate."
+    },
+    {
+      "target": "MetricCodes.Spherical.HigherHierarchy.strict_hierarchy",
+      "classification": "source_faithful_structured_projection_corollary_1_3",
+      "source_relation": "Records Corollary 1.3 for every r>=0 and 0<s<1, including the localized strict hierarchy and terminal classical-row identity.",
+      "formal_relation": "levelRate(r+1)<levelRate(r), localizedLevelRate(r+1)<localizedLevelRate(r), and the stated localized chain."
+    },
+    {
+      "target": "MetricCodes.Spherical.HigherHierarchy.NumericalMaximum.eventually_kissingNumber_lt_published",
+      "classification": "formal_strengthening_entailing_source_asymptotic_numerical_statement",
+      "source_relation": "The source prints tau_n<=2^((0.39661+o(1))*n); it does not print the exact eventual exponent 0.39661 inequality.",
+      "formal_relation": "The Lean target asserts eventually kissingNumber(n)<=2^(0.39661*n), which is strictly stronger and therefore entails the printed rounded asymptotic consequence."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear_for_successor_four_target_surface",
+    "evidence": [
+      "Binary parameter domain is inhabited, for example delta=1/4.",
+      "Spherical parameter domain is inhabited, for example s=1/2.",
+      "For positive dimension, a singleton unit-vector code witnesses that the spherical-code carrier is inhabited; this is a semantic witness construction, not a separately replayed Lean theorem.",
+      "The hierarchy includes r=0. Taking a0=1 and the empty b-family satisfies Interlacing; Gamma=sqrt(2)/3, so at s=1/2 one has 2*sqrt(2)/3>1/2 and the strict feasibility domain is inhabited.",
+      "The Sidelnikov localization interval Icc 0 s is inhabited for s=1/2 because it contains 0.",
+      "The numerical target uses a genuine atTop eventual quantifier and is not vacuous through an empty dimension domain."
+    ]
+  },
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117118,
+    "permitted_axioms_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "observations": [
+      "Comparator challenge exported exactly the four successor target names.",
+      "MetricCodes solution module built successfully.",
+      "Nanoda kernel accepts the solution.",
+      "Lean default kernel accepts the solution.",
+      "Comparator returned ACCEPT."
+    ],
+    "authority_limit": "Replay establishes exact formal-carrier and kernel acceptance evidence only; it does not independently certify proof correctness or source-semantic equivalence."
+  },
+  "anti_overclaim": {
+    "predecessor_seven_target_authority_transferred": false,
+    "numerical_target_source_printed_verbatim": false,
+    "exact_039661_eventual_bound_claimed_as_manuscript_statement": false,
+    "proof_bodies_compared_in_full": false,
+    "proof_correctness_certified_here": false,
+    "whole_chapter_semantic_equivalence": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_targets_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "candidate_family_exit_state": "SUCCESSOR_FOUR_TARGET_SURFACE__SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "basis": "The four current targets are independently bound to Chapter 2 and current-root replay. Three are source-faithful theorem/corollary projections; the numerical target is explicitly retained as a stronger formal certificate entailing, but not identical to, the source's 0.39661+o(1) kissing-number consequence. Parameter, code-carrier, hierarchy, and localization domains are inhabited.",
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "head_change_requires_reapproval": true,
+    "streamlined_exact_head_binding_allowed_if_control_plan_unchanged": true,
+    "material_control_plan_change_requires_renewed_steward_input": true,
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate is limited to semantic/nonvacuity classification of the four registered current-root OTP-B2-SPHERICAL-CODES targets. It preserves the predecessor seven-target drift, treats the exact eventual 0.39661 target only as a formal strengthening of the source's 0.39661+o(1) statement, and creates no MATHSOLVE handoff, MATHCERT route/output, independent proof certification, whole-chapter equivalence, mathematical-proof promotion, or aggregate OpenAI Ten Proofs authority."
+}
