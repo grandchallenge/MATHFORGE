@@ -110,10 +110,19 @@ def validation_errors(record=None, schema=None):
     expected_def_keys = {"binary_code", "maximum_size", "rate", "entropy_and_m1", "whole_cube", "constant_weight", "second_mrrw"}
     if set(defs) != expected_def_keys:
         e.append("definition concordance shape drift")
-    deftext = "\n".join(str(v) for v in defs.values())
-    for token in ("A2(n,d)", "ceil(delta*n)", "base 2", "kappa_H", "kappa_CW", "kappa_bin", "sInf", "source minimum M2", "minimizer"):
-        if token not in deftext:
-            e.append(f"definition concordance qualification lost: {token}")
+    field_tokens = {
+        "maximum_size": ("A2(n,d)", "codeNumber_pos"),
+        "rate": ("ceil(delta*n)", "base 2", "limsup"),
+        "entropy_and_m1": ("H2", "M1"),
+        "whole_cube": ("kappa_H", "0<=b<a<=1/2", "Gamma_H"),
+        "constant_weight": ("kappa_CW", "kappa_bin", "spectralLimit"),
+        "second_mrrw": ("sInf", "source minimum M2", "exists_mrrw_minimizer", "mrrwRate_eq_objective_of_minimizer"),
+    }
+    for field, tokens in field_tokens.items():
+        text = str(defs.get(field, ""))
+        for token in tokens:
+            if token not in text:
+                e.append(f"definition concordance qualification lost: {field}:{token}")
 
     audits = r.get("target_audits", [])
     if len(audits) != 6:
