@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-A-SPHERE-PACKING-BRIDGE-SEMANTIC-003",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-A-SPHERE-PACKING",
+  "audit_scope": "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper only",
+  "governance": {
+    "tracker_issue": 89,
+    "protected_base": "706d0291370bf3f14aa37be0823e33d06f7343b0",
+    "publication_state": "candidate_until_protected_merge",
+    "history_policy": "the protected ten-field composite remains immutable; this successor closes only the residual packing-density normalization surface if independently reviewed and protected-activated"
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_path": "sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json",
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 1,
+    "loci": [
+      "Chapter 1 opening definition: Delta_d is the supremum of upper densities of radius-1/2 balls whose centers are separated by at least 1",
+      "Equation (3): LP_d = v_d/2^d times the admissible quotient infimum",
+      "Equation (4): Delta_d <= LP_d",
+      "Theorem 1.1: LP_d^(1/d) -> sqrt(e/(2*pi))",
+      "displayed consequence after Theorem 1.1: Delta_d <= LP_d = 2^(-(alpha_*+o(1))*d)"
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {
+      "path": "ComparatorChallenges/A_SpherePacking.json",
+      "blob": "46b2e7b49da43fb17a7efa88652f8ee1adc01cbe"
+    },
+    "challenge": {
+      "path": "ComparatorChallenges/A_SpherePacking.lean",
+      "blob": "2477846e1883534837340c636fd928b091509783"
+    },
+    "solution": {
+      "path": "SpherePacking.lean",
+      "blob": "e6117934a80142a8249356fdafa797eba030e920",
+      "byte_length": 2096663
+    },
+    "target": "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper",
+    "isolated_replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117046,
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "exported_target_present": true
+    },
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "definition_concordance": [
+    {
+      "source_concept": "sphere-packing geometry: centers separated by at least 1 with radius-1/2 balls",
+      "lean_encoding": "SpherePacking centers separation centers_dist together with occupiedBallRegion using ball radius separation/2",
+      "status": "exact_after_unit_separation_restriction",
+      "analysis": "At formal separation 1, centers_dist is the source separation condition and occupiedBallRegion is exactly the union of radius-1/2 balls. The formal definition permits arbitrary positive separation only to make scale invariance explicit."
+    },
+    {
+      "source_concept": "upper density",
+      "lean_encoding": "upperPackingDensity = limsup atTop of volume(occupiedBallRegion intersect ball 0 R) / volume(ball 0 R)",
+      "status": "definitionally_concordant_upper_density_realization",
+      "analysis": "The formal carrier realizes the standard centered-ball limsup upper-density notion used by the manuscript's Delta_d definition. No claim is made that the manuscript prints this implementation formula verbatim."
+    },
+    {
+      "source_concept": "Delta_d: supremum over unit-separated packings",
+      "lean_encoding": "SpherePackingConstant d together with SpherePacking.packing_supremum_eq_unit_separation",
+      "status": "proved_normalization_equivalence",
+      "analysis": "SpherePackingConstant initially takes the supremum over all positive formal separations. rescale_upper_packing_density proves exact density invariance under positive scaling, and packing_supremum_eq_unit_separation proves that this supremum equals the supremum over formal separation exactly 1. This removes the only scale-normalization mismatch with Delta_d."
+    },
+    {
+      "source_concept": "radius-1/2 ball volume factor v_d/2^d",
+      "lean_encoding": "PackingBounds.PackingBridge.volume_half_ball",
+      "status": "proved_exact_normalization",
+      "analysis": "The formal proof identifies the volume of the Euclidean ball of radius 1/2 with CohnElkies.unitBallVolume d / 2^d, matching the manuscript's geometric factor."
+    }
+  ],
+  "target_dependency": {
+    "classification": "source_faithful_displayed_consequence_with_proved_scale_normalization",
+    "source_chain": [
+      "Delta_d <= LP_d from Equation (4)",
+      "LP_d^(1/d) -> sqrt(e/(2*pi)) from Theorem 1.1",
+      "the displayed post-Theorem-1.1 asymptotic upper bound on Delta_d"
+    ],
+    "lean_chain": [
+      "SpherePacking.packing_supremum_eq_unit_separation identifies the formal constant with the unit-separated source domain",
+      "sphere_packing_le_admissible proves the Cohn-Elkies bound for each admissible function",
+      "sphere_packing_le_radial_linear_program and sphere_packing_le_radial_linear_program_ennreal obtain SpherePackingConstant d <= linearProgram d for d>0",
+      "CohnElkies.exists_manuscriptPackingIsLittleO provides an explicit root-error witness e=o(1)",
+      "sphere_packing_sharp_asymptotic_upper rewrites that LP witness through the packing bound"
+    ],
+    "normal_form_note": "The source writes the asymptotic with o(1); Lean exposes the o(1) as an explicit function e : Nat -> Real and uses ENNReal for the packing constant. This is a witness normal form, not a stronger asymptotic rate claim."
+  },
+  "nonvacuity": {
+    "state": "clear_for_packing_bridge_surface",
+    "evidence": [
+      "SpherePacking is structurally inhabitable at separation 1 by a singleton center set: the positive-separation field is immediate and the pairwise distinct-center condition is vacuous.",
+      "SpherePacking.upper_packing_density_le_one proves every formal packing density is bounded by 1, so the formal supremum used by the bridge is finite rather than top.",
+      "CohnElkies.admissible_nonempty and quotientSet_nonempty provide inhabited admissible optimization domains on the linear-program side.",
+      "The target quantifies its comparison only for 0 < d, matching the positive-dimensional packing argument and avoiding a hidden zero-dimensional claim."
+    ],
+    "scope_note": "This establishes semantic nonvacuity of the exact bridge target; it does not certify the mathematical proof independently of the recorded comparator/kernel replay."
+  },
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117046,
+    "observations": [
+      "the exact source root 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6 was checked out",
+      "the exact target was present in the exported solution target set",
+      "the solution module built successfully",
+      "Nanoda kernel accepted the solution",
+      "Lean default kernel accepted the solution",
+      "Comparator returned ACCEPT"
+    ],
+    "permitted_axioms_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "authority_limit": "This is formal replay evidence at the pinned provider root. MATHFORGE does not convert it into independent proof certification."
+  },
+  "anti_overclaim": {
+    "sphere_packing_constant_is_declared_alias_for_delta_d": false,
+    "reason": "The equivalence is established through the formal geometry plus a proved scale-normalization theorem, not by declaration-name similarity.",
+    "source_prints_formal_upper_density_implementation": false,
+    "source_prints_explicit_error_function": false,
+    "proof_correctness_certified_here": false,
+    "whole_chapter_equivalence": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_target_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "target_semantic_state": "candidate_clear_pending_independent_review",
+    "target_classification": "source_faithful_displayed_consequence_with_proved_scale_normalization",
+    "normalization_blocker_resolved": true,
+    "nonvacuity_clear": true,
+    "candidate_family_disposition": "SPHERE_PACKING_CURRENT_ROOT__SEMANTIC_AND_NONVACUITY_CLEAR__SOLVE_HANDOFF_NOT_AUTHORIZED",
+    "reason": "The source Delta_d domain and the formal SpherePackingConstant domain coincide after the solution's proved positive rescaling invariance and exact unit-separation supremum theorem. The bridge then applies the formal Cohn-Elkies inequality and the already-audited Theorem 1.1 asymptotic normal form without adding a stronger source claim."
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "requires_human_steward_disposition": true,
+    "head_change_requires_reapproval": true,
+    "effect": "Protected admission clears source semantics and nonvacuity for PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper and, together with the already protected ten-field composite, closes the current-root MATHFORGE semantic audit for OTP-A-SPHERE-PACKING.",
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate governs only the source-semantic, normalization, nonvacuity, and source-root replay classification of PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper at the pinned current formal root and August 6 manuscript bytes. It uses proved scale invariance to identify the formal arbitrary-separation supremum with the manuscript unit-separation Delta_d domain, and treats the explicit little-o witness as a normal form of the displayed source consequence. It does not certify proof correctness independently of MATHCERT, does not assert verbatim source/formal implementation identity, does not create a Solve or Cert route, does not mark the mathematical target proved, and creates no aggregate OpenAI Ten Proofs authority."
+}
