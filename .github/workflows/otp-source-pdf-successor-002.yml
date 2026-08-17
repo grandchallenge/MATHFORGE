@@ -42,10 +42,9 @@ jobs:
           echo '--- second retrieval selected response headers ---'
           grep -iE '^(etag|last-modified|content-length|content-type):' "$RUNNER_TEMP/headers2.txt" || true
           python - <<'PY'
+          import os
           from pathlib import Path
-          data = Path('/home/runner/work/_temp/one.pdf').read_bytes()
-          # PDF page count is independently verified by counting page type markers only as a probe;
-          # the final closed record additionally binds the page count observed by the official parsed source.
+          data = (Path(os.environ['RUNNER_TEMP']) / 'one.pdf').read_bytes()
           print('OTP_CURRENT_PDF_HEADER=' + data[:8].decode('ascii', errors='replace'))
           print('OTP_CURRENT_PDF_EOF=' + repr(data[-16:]))
           PY
