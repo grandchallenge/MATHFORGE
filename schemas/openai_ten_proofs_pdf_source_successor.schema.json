@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_pdf_source_successor.schema.json",
+  "title": "OpenAI Ten Proofs current PDF source successor",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","record_id","candidate_id","status","predecessor","current_source","formal_subject","family_loci","acquisition","authority_effect","claim_boundary"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"const": "OTP-SOURCE-PDF-SUCCESSOR-002"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "status": {"const": "candidate_until_protected_merge"},
+    "predecessor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_blob","byte_length","sha256","acquired_at_utc","immutable"],
+      "properties": {
+        "record_blob": {"const": "b71427ca89d6663c771a92b4f1f6924110cf4d5d"},
+        "byte_length": {"const": 2266052},
+        "sha256": {"const": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53"},
+        "acquired_at_utc": {"const": "2026-08-01T10:01:31Z"},
+        "immutable": {"const": true}
+      }
+    },
+    "current_source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["url","byte_length","sha256","http_last_modified","http_etag","page_count","observed_revision_date"],
+      "properties": {
+        "url": {"const": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf"},
+        "byte_length": {"const": 2487031},
+        "sha256": {"const": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566"},
+        "http_last_modified": {"const": "Thu, 06 Aug 2026 22:17:40 GMT"},
+        "http_etag": {"const": "0x8DEF4088771D58C"},
+        "page_count": {"const": 253},
+        "observed_revision_date": {"const": "2026-08-06"}
+      }
+    },
+    "formal_subject": {
+      "type": "object", "additionalProperties": false,
+      "required": ["root","tree","successor_record_blob"],
+      "properties": {
+        "root": {"const": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"},
+        "tree": {"const": "174289e4d4958cb0509874e6e53400e098213de7"},
+        "successor_record_blob": {"const": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532"}
+      }
+    },
+    "family_loci": {
+      "type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["family","chapter","primary_loci"],
+        "properties": {
+          "family": {"enum": ["OTP-A-SPHERE-PACKING","OTP-B1-BINARY-CODES","OTP-B2-SPHERICAL-CODES","OTP-D-NON-SOFIC","OTP-E-CONNES-RIGIDITY","OTP-G-QUANTUM-PARALLEL-REPETITION","OTP-H-GAPCVP","OTP-I-RAMSEY"]},
+          "chapter": {"type": "integer", "enum": [1,2,3,4,6,7,9]},
+          "primary_loci": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 8}}
+        }
+      }
+    },
+    "acquisition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["workflow","probe_head","probe_run","probe_job","independent_retrievals","hashes_equal","lengths_equal"],
+      "properties": {
+        "workflow": {"const": "OTP source PDF successor 002"},
+        "probe_head": {"const": "36ff3b04d9eba89798a8c932d486854bda67f802"},
+        "probe_run": {"const": 31986860979},
+        "probe_job": {"const": 95263263307},
+        "independent_retrievals": {"const": 2},
+        "hashes_equal": {"const": true},
+        "lengths_equal": {"const": true}
+      }
+    },
+    "authority_effect": {
+      "type": "object", "additionalProperties": false,
+      "required": ["semantic_source_identity_after_protected_merge","family_semantic_clearance","solve_authority","cert_authority","whole_document_equivalence","aggregate_authority"],
+      "properties": {
+        "semantic_source_identity_after_protected_merge": {"const": "current_pdf_loci_only"},
+        "family_semantic_clearance": {"const": false},
+        "solve_authority": {"const": false},
+        "cert_authority": {"const": false},
+        "whole_document_equivalence": {"const": false},
+        "aggregate_authority": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 180}
+  }
+}

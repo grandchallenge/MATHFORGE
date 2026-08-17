@@ -1,0 +1,68 @@
+name: OTP source PDF successor 002
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/otp-source-pdf-successor-002.yml'
+      - 'sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/**'
+      - 'schemas/openai_ten_proofs_pdf_source_successor.schema.json'
+      - 'ci/validate_openai_ten_proofs_pdf_source_successor.py'
+      - 'tests/test_openai_ten_proofs_pdf_source_successor.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  current-pdf-identity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+      - name: Install locked validation dependency
+        run: python -m pip install -r requirements-ci.txt
+      - name: Independently acquire current official PDF twice and bind closed identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://cdn.openai.com/pdf/ten-proofs-oai.pdf'
+          curl --fail --location --retry 3 --silent --show-error --dump-header "$RUNNER_TEMP/headers1.txt" --output "$RUNNER_TEMP/one.pdf" "$URL"
+          sleep 2
+          curl --fail --location --retry 3 --silent --show-error --dump-header "$RUNNER_TEMP/headers2.txt" --output "$RUNNER_TEMP/two.pdf" "$URL"
+          export SHA1="$(sha256sum "$RUNNER_TEMP/one.pdf" | awk '{print $1}')"
+          export SHA2="$(sha256sum "$RUNNER_TEMP/two.pdf" | awk '{print $1}')"
+          export BYTES1="$(stat -c %s "$RUNNER_TEMP/one.pdf")"
+          export BYTES2="$(stat -c %s "$RUNNER_TEMP/two.pdf")"
+          export LASTMOD="$(grep -i '^last-modified:' "$RUNNER_TEMP/headers1.txt" | tail -1 | sed 's/^[^:]*:[[:space:]]*//' | tr -d '\r')"
+          export ETAG="$(grep -i '^etag:' "$RUNNER_TEMP/headers1.txt" | tail -1 | sed 's/^[^:]*:[[:space:]]*//' | tr -d '\r')"
+          test "$SHA1" = "$SHA2"
+          test "$BYTES1" = "$BYTES2"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          record = json.loads(Path('sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json').read_text())
+          current = record['current_source']
+          assert os.environ['SHA1'] == current['sha256']
+          assert int(os.environ['BYTES1']) == current['byte_length']
+          assert os.environ['LASTMOD'] == current['http_last_modified']
+          assert os.environ['ETAG'] == current['http_etag']
+          data = (Path(os.environ['RUNNER_TEMP']) / 'one.pdf').read_bytes()
+          assert data.startswith(b'%PDF-')
+          assert b'%%EOF' in data[-1024:]
+          PY
+          echo "::notice title=OTP current PDF identity::sha256=$SHA1 bytes=$BYTES1 last_modified=$LASTMOD etag=$ETAG"
+      - name: Validate closed successor record
+        shell: bash
+        run: |
+          set -euo pipefail
+          python ci/validate_openai_ten_proofs_pdf_source_successor.py
+          python -m unittest tests.test_openai_ten_proofs_pdf_source_successor -v
+          python -m json.tool schemas/openai_ten_proofs_pdf_source_successor.schema.json > "$RUNNER_TEMP/schema.json"
+          python -m json.tool sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json > "$RUNNER_TEMP/record.json"
