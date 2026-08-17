@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_binary_codes_semantic.schema.json",
+  "title": "OpenAI Ten Proofs B1 Binary Codes current-root semantic audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_id", "candidate_id", "result_family", "governance",
+    "source_authority", "formal_authority", "definition_concordance", "target_audits",
+    "nonvacuity", "replay_and_axiom_audit", "anti_overclaim", "disposition",
+    "activation", "route_controls", "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"const": "MF-OTP-B1-BINARY-CODES-SEMANTIC-002"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "result_family": {"const": "OTP-B1-BINARY-CODES"},
+    "governance": {"$ref": "#/$defs/closedObject"},
+    "source_authority": {"$ref": "#/$defs/closedObject"},
+    "formal_authority": {"$ref": "#/$defs/closedObject"},
+    "definition_concordance": {"$ref": "#/$defs/closedObject"},
+    "target_audits": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["target", "classification", "source_relation", "solution_path"],
+        "properties": {
+          "target": {"type": "string", "minLength": 1},
+          "classification": {"enum": ["source_faithful_exact_projection", "source_faithful_derived_consequence", "derived_positive_margin_certificate"]},
+          "source_relation": {"type": "string", "minLength": 40},
+          "solution_path": {"type": "string", "minLength": 20}
+        }
+      }
+    },
+    "nonvacuity": {"$ref": "#/$defs/closedObject"},
+    "replay_and_axiom_audit": {"$ref": "#/$defs/closedObject"},
+    "anti_overclaim": {"$ref": "#/$defs/closedObject"},
+    "disposition": {"$ref": "#/$defs/closedObject"},
+    "activation": {"$ref": "#/$defs/closedObject"},
+    "route_controls": {"$ref": "#/$defs/closedObject"},
+    "claim_boundary": {"type": "string", "minLength": 700}
+  },
+  "$defs": {
+    "closedObject": {"type": "object", "minProperties": 1}
+  }
+}
