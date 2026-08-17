@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/openai_ten_proofs_gapcvp_semantic.schema.json",
+  "title": "OpenAI Ten Proofs GapCVP current-root semantic audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "candidate_id",
+    "result_family",
+    "governance",
+    "source_authority",
+    "formal_authority",
+    "machine_model",
+    "reduction_semantics",
+    "target_audits",
+    "parameter_transport",
+    "nonvacuity",
+    "replay_and_axiom_audit",
+    "anti_overclaim",
+    "disposition",
+    "activation",
+    "route_controls",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"const": "MF-OTP-H-GAPCVP-SEMANTIC-003"},
+    "candidate_id": {"const": "OPENAI-TEN-PROOFS-001"},
+    "result_family": {"const": "OTP-H-GAPCVP"},
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tracker_issue", "protected_base", "publication_state", "candidate_exit_state", "head_change_requires_reapproval"],
+      "properties": {
+        "tracker_issue": {"const": 90},
+        "protected_base": {"const": "706d0291370bf3f14aa37be0823e33d06f7343b0"},
+        "publication_state": {"const": "candidate_until_protected_merge"},
+        "candidate_exit_state": {"const": "PROMISE_INTERFACES_CLOSED__SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT"},
+        "head_change_requires_reapproval": {"const": true}
+      }
+    },
+    "source_authority": {"$ref": "#/$defs/sourceAuthority"},
+    "formal_authority": {"$ref": "#/$defs/formalAuthority"},
+    "machine_model": {"$ref": "#/$defs/closedObject"},
+    "reduction_semantics": {"$ref": "#/$defs/closedObject"},
+    "target_audits": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/targetAudit"}
+    },
+    "parameter_transport": {"$ref": "#/$defs/closedObject"},
+    "nonvacuity": {"$ref": "#/$defs/closedObject"},
+    "replay_and_axiom_audit": {"$ref": "#/$defs/closedObject"},
+    "anti_overclaim": {"$ref": "#/$defs/closedObject"},
+    "disposition": {"$ref": "#/$defs/closedObject"},
+    "activation": {"$ref": "#/$defs/closedObject"},
+    "route_controls": {"$ref": "#/$defs/closedObject"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "closedObject": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "sourceAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document", "revision", "pdf_sha256", "pdf_byte_length", "pdf_successor_record_path", "pdf_successor_record_blob", "pdf_successor_protected_merge", "chapter", "loci"],
+      "properties": {
+        "document": {"const": "Ten Advances in Mathematics and Theoretical Computer Science"},
+        "revision": {"const": "2026-08-06"},
+        "pdf_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "pdf_byte_length": {"type": "integer", "minimum": 1},
+        "pdf_successor_record_path": {"type": "string", "minLength": 1},
+        "pdf_successor_record_blob": {"pattern": "^[0-9a-f]{40}$"},
+        "pdf_successor_protected_merge": {"pattern": "^[0-9a-f]{40}$"},
+        "chapter": {"const": 7},
+        "loci": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 20}}
+      }
+    },
+    "formalAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "root", "tree", "formal_successor_record_blob", "config", "challenge", "solution", "targets", "promise_definitions", "replay"],
+      "properties": {
+        "repository": {"const": "openai/ten-proofs"},
+        "root": {"pattern": "^[0-9a-f]{40}$"},
+        "tree": {"pattern": "^[0-9a-f]{40}$"},
+        "formal_successor_record_blob": {"pattern": "^[0-9a-f]{40}$"},
+        "config": {"$ref": "#/$defs/pathBlob"},
+        "challenge": {"$ref": "#/$defs/pathBlob"},
+        "solution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "blob", "byte_length"],
+          "properties": {
+            "path": {"type": "string", "minLength": 1},
+            "blob": {"pattern": "^[0-9a-f]{40}$"},
+            "byte_length": {"type": "integer", "minimum": 1}
+          }
+        },
+        "targets": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "promise_definitions": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "replay": {"$ref": "#/$defs/closedObject"}
+      }
+    },
+    "pathBlob": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "blob"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "blob": {"pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "targetAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "promise", "source_locus", "source_factor", "formal_factor", "norm", "yes_threshold", "no_threshold", "classification", "qualification", "nonvacuity_yes", "nonvacuity_no"],
+      "properties": {
+        "target": {"type": "string", "minLength": 1},
+        "promise": {"type": "string", "minLength": 1},
+        "source_locus": {"type": "string", "minLength": 10},
+        "source_factor": {"type": "string", "minLength": 1},
+        "formal_factor": {"type": "string", "minLength": 1},
+        "norm": {"type": "string", "minLength": 1},
+        "yes_threshold": {"type": "string", "minLength": 1},
+        "no_threshold": {"type": "string", "minLength": 1},
+        "classification": {"type": "string", "minLength": 1},
+        "qualification": {"type": "string", "minLength": 40},
+        "nonvacuity_yes": {"type": "string", "minLength": 20},
+        "nonvacuity_no": {"type": "string", "minLength": 20}
+      }
+    }
+  }
+}
