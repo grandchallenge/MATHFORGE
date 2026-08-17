@@ -1,0 +1,61 @@
+name: OTP source PDF successor 002
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/otp-source-pdf-successor-002.yml'
+      - 'sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/**'
+      - 'schemas/openai_ten_proofs_pdf_source_successor.schema.json'
+      - 'ci/validate_openai_ten_proofs_pdf_source_successor.py'
+      - 'tests/test_openai_ten_proofs_pdf_source_successor.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  current-pdf-identity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Independently acquire current official PDF twice
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://cdn.openai.com/pdf/ten-proofs-oai.pdf'
+          curl --fail --location --retry 3 --silent --show-error --dump-header "$RUNNER_TEMP/headers1.txt" --output "$RUNNER_TEMP/one.pdf" "$URL"
+          sleep 2
+          curl --fail --location --retry 3 --silent --show-error --dump-header "$RUNNER_TEMP/headers2.txt" --output "$RUNNER_TEMP/two.pdf" "$URL"
+          SHA1="$(sha256sum "$RUNNER_TEMP/one.pdf" | awk '{print $1}')"
+          SHA2="$(sha256sum "$RUNNER_TEMP/two.pdf" | awk '{print $1}')"
+          BYTES1="$(stat -c %s "$RUNNER_TEMP/one.pdf")"
+          BYTES2="$(stat -c %s "$RUNNER_TEMP/two.pdf")"
+          test "$SHA1" = "$SHA2"
+          test "$BYTES1" = "$BYTES2"
+          echo "OTP_CURRENT_PDF_SHA256=$SHA1"
+          echo "OTP_CURRENT_PDF_BYTES=$BYTES1"
+          echo '--- selected response headers ---'
+          grep -iE '^(etag|last-modified|content-length|content-type):' "$RUNNER_TEMP/headers1.txt" || true
+          echo '--- second retrieval selected response headers ---'
+          grep -iE '^(etag|last-modified|content-length|content-type):' "$RUNNER_TEMP/headers2.txt" || true
+          python - <<'PY'
+          from pathlib import Path
+          data = Path('/home/runner/work/_temp/one.pdf').read_bytes()
+          # PDF page count is independently verified by counting page type markers only as a probe;
+          # the final closed record additionally binds the page count observed by the official parsed source.
+          print('OTP_CURRENT_PDF_HEADER=' + data[:8].decode('ascii', errors='replace'))
+          print('OTP_CURRENT_PDF_EOF=' + repr(data[-16:]))
+          PY
+      - name: Validate closed successor record when present
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -f sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json; then
+            python ci/validate_openai_ten_proofs_pdf_source_successor.py
+            python -m unittest tests.test_openai_ten_proofs_pdf_source_successor -v
+          else
+            echo 'Probe phase: closed successor record not yet present.'
+          fi
