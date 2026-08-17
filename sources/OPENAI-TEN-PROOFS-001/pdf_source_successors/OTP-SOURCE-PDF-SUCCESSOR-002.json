@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "OTP-SOURCE-PDF-SUCCESSOR-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "status": "candidate_until_protected_merge",
+  "predecessor": {
+    "record_blob": "b71427ca89d6663c771a92b4f1f6924110cf4d5d",
+    "byte_length": 2266052,
+    "sha256": "f318c6508c9d49ef876a5a26cd73928705f96c07bb43e92a0cb35bd3f666ea53",
+    "acquired_at_utc": "2026-08-01T10:01:31Z",
+    "immutable": true
+  },
+  "current_source": {
+    "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+    "byte_length": 2487031,
+    "sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "http_last_modified": "Thu, 06 Aug 2026 22:17:40 GMT",
+    "http_etag": "0x8DEF4088771D58C",
+    "page_count": 253,
+    "observed_revision_date": "2026-08-06"
+  },
+  "formal_subject": {
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532"
+  },
+  "family_loci": [
+    {"family":"OTP-A-SPHERE-PACKING","chapter":1,"primary_loci":["Equation (4): Delta_d <= LP_d","Theorem 1.1: LP_d^(1/d) -> sqrt(e/(2pi))"]},
+    {"family":"OTP-B1-BINARY-CODES","chapter":2,"primary_loci":["Theorem 1.1: R_2(delta) <= kappa_bin(delta) < M_2(delta)"]},
+    {"family":"OTP-B2-SPHERICAL-CODES","chapter":2,"primary_loci":["Theorem 1.2: finite hierarchy spherical bound","Corollary 1.3: strict hierarchy","kissing-number level-2 exponent 0.39661"]},
+    {"family":"OTP-D-NON-SOFIC","chapter":3,"primary_loci":["Theorem 1.1: LF_2(1,2)^x is not sofic","proof construction: finitely generated nonsofic subgroup G"]},
+    {"family":"OTP-E-CONNES-RIGIDITY","chapter":4,"primary_loci":["Theorem 1.2: infinite pairwise nonisomorphic ICC property-(T) family with common group factor","Corollary 5.10: two-group counterexample"]},
+    {"family":"OTP-G-QUANTUM-PARALLEL-REPETITION","chapter":6,"primary_loci":["Theorem 1.1: universal exponential entangled parallel repetition bound"]},
+    {"family":"OTP-H-GAPCVP","chapter":7,"primary_loci":["Theorem 1: Euclidean n^(1/400)-GapCVP hardness","binary nearest-codeword and syndrome n^(1/200) consequences","Corollary 16: fixed rational p n^(1/(200p)) hardness"]},
+    {"family":"OTP-I-RAMSEY","chapter":9,"primary_loci":["Theorem 1.1: R_k(3) >= (c k^(1/3)/log k)^k","consequence: R_k(3)^(1/k) -> infinity"]}
+  ],
+  "acquisition": {
+    "workflow": "OTP source PDF successor 002",
+    "probe_head": "36ff3b04d9eba89798a8c932d486854bda67f802",
+    "probe_run": 31986860979,
+    "probe_job": 95263263307,
+    "independent_retrievals": 2,
+    "hashes_equal": true,
+    "lengths_equal": true
+  },
+  "authority_effect": {
+    "semantic_source_identity_after_protected_merge": "current_pdf_loci_only",
+    "family_semantic_clearance": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "whole_document_equivalence": false,
+    "aggregate_authority": false
+  },
+  "claim_boundary": "This successor binds the exact current official paper bytes and enumerates primary source loci for the eight unresolved result families. It preserves the August 1 historical source identity as immutable predecessor evidence. Protected admission authorizes those exact current-paper loci to be used in later family-specific semantic audits only; it does not establish semantic equivalence, nonvacuity, proof correctness, Solve eligibility, Cert eligibility, adjudication, whole-document equivalence, mathematical truth, or aggregate OpenAI Ten Proofs authority."
+}
