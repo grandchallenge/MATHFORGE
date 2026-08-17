@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-H-GAPCVP-SEMANTIC-003",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-H-GAPCVP",
+  "governance": {
+    "tracker_issue": 90,
+    "protected_base": "706d0291370bf3f14aa37be0823e33d06f7343b0",
+    "publication_state": "candidate_until_protected_merge",
+    "candidate_exit_state": "PROMISE_INTERFACES_CLOSED__SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "head_change_requires_reapproval": true
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_path": "sources/OPENAI-TEN-PROOFS-001/pdf_source_successors/OTP-SOURCE-PDF-SUCCESSOR-002.json",
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 7,
+    "loci": [
+      "GapCVP definition: nonsingular integer n-by-n basis, rational target, positive rational radius, YES distance at most r, NO distance greater than gamma(n)r, intermediate region outside the promise",
+      "Theorem 1: deterministic polynomial-time mapping from 3SAT with integer target and Euclidean gap n^(1/400), implying deterministic polynomial-time many-one NP-hardness",
+      "Corollary 15: binary nearest codeword and syndrome decoding hardness within n^(1/200)",
+      "Corollary 16: for every fixed rational p>=1, full-rank finite-p CVP hardness within n^(1/(200p)) with square integral basis and exact rational target/radius encodings"
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {
+      "path": "ComparatorChallenges/H_GapCVP.json",
+      "blob": "fdba0e774acc6c2bd6fd450ee155975c0eda1833"
+    },
+    "challenge": {
+      "path": "ComparatorChallenges/H_GapCVP.lean",
+      "blob": "770e202350a5c94d3f6516428ff01092cb8f8cb4"
+    },
+    "solution": {
+      "path": "GapCVP.lean",
+      "blob": "47f3a395e4d9ec3e2892664860f26ed63421b0c9",
+      "byte_length": 5335203
+    },
+    "targets": [
+      "GapCVP.Comparator.gapCVP400IsNPHard",
+      "GapCVP.Comparator.binaryNearestCodewordIsNPHard",
+      "GapCVP.Comparator.binarySyndromeDecodingIsNPHard",
+      "GapCVP.Comparator.finitePNormGapCVPIsNPHard"
+    ],
+    "promise_definitions": [
+      "GapCVP.Comparator.gapCVP400Promise",
+      "GapCVP.Comparator.binaryNearestCodewordPromise",
+      "GapCVP.Comparator.binarySyndromeDecodingPromise",
+      "GapCVP.Comparator.finitePGapCVPPromise"
+    ],
+    "replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117067,
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "exported_target_count": 4,
+      "exported_promise_definition_count": 4,
+      "permitted_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "machine_model": {
+    "bit_tm_definition": "GapCVP.BitTM map := Turing.TM2ComputableInPolyTime bitEncoding bitEncoding map",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+    "mathlib_path": "Mathlib/Computability/TuringMachine/Computable.lean",
+    "mathlib_blob": "7779a00f0c3c3909923a5f1bde6b3120b5c2d28a",
+    "classification": "deterministic_polynomial_time_machine_witness",
+    "analysis": "TM2ComputableInPolyTime bundles a finite deterministic TM2, a polynomial time function, and a proof that every encoded input reaches the encoded value of map within that polynomial step bound. The pinned mathlib documentation states that the counted TM step executions differ from the underlying finite statement operations only by a constant factor.",
+    "trust_boundary": "This identifies the formal complexity predicate used by the target. It does not independently certify the upstream proof that each reduction inhabits that predicate."
+  },
+  "reduction_semantics": {
+    "promise_reduction_shape": "one total List Bool -> List Bool map; Nonempty BitTM polynomial-time witness; language-true inputs map to YES; language-false inputs map to NO",
+    "hardness_shape": "for every bit language A, IsNP A implies Nonempty (PromiseReduction A P)",
+    "classification": "deterministic_polynomial_time_many_one_promise_hardness",
+    "direction_matches_source": true,
+    "search_decision_conflated": false,
+    "malformed_input_policy": "outside_promise",
+    "malformed_input_analysis": "Each formal YES/NO language existentially requires an exact encoded instance. A bitstring outside the encoding image is therefore in neither side; it is not silently promoted to NO.",
+    "intermediate_threshold_policy": "outside_promise",
+    "disjointness_evidence": "The exact source-root solution supplies the four PromiseProblem.disjoint proofs; the isolated Comparator/Lean/Nanoda replay accepted the exported promise definitions and target theorems. This record treats that as replay evidence, not independent proof certification."
+  },
+  "target_audits": [
+    {
+      "target": "GapCVP.Comparator.gapCVP400IsNPHard",
+      "promise": "GapCVP.Comparator.gapCVP400Promise",
+      "source_locus": "Chapter 7 Theorem 1 and the preceding Euclidean GapCVP definition",
+      "source_factor": "n^(1/400)",
+      "formal_factor": "dimension^(1/400)",
+      "norm": "Euclidean l2",
+      "yes_threshold": "distance <= r",
+      "no_threshold": "distance > n^(1/400) r",
+      "classification": "source_faithful_restricted_consequence_integer_target",
+      "qualification": "The source general GapCVP definition permits rational targets, whereas the formal promise requires hasIntegerTarget. Theorem 1 itself outputs t in Z^n, so the formal theorem is a justified restricted projection of the source hardness theorem, not an assertion of whole-problem interface identity.",
+      "nonvacuity_yes": "dimension 1, B=(1), t=0, r=1, z=0 gives distance 0",
+      "nonvacuity_no": "dimension 1, B=(2), t=1, r=1/2; every even lattice point is at distance at least 1 and the dimension-1 gap factor is 1"
+    },
+    {
+      "target": "GapCVP.Comparator.binaryNearestCodewordIsNPHard",
+      "promise": "GapCVP.Comparator.binaryNearestCodewordPromise",
+      "source_locus": "Chapter 7 binary nearest-codeword definition and Corollary 15",
+      "source_factor": "n^(1/200)",
+      "formal_factor": "blockLength^(1/200)",
+      "norm": "Hamming distance over ZMod 2",
+      "yes_threshold": "distance <= radius",
+      "no_threshold": "distance > n^(1/200) radius",
+      "classification": "source_faithful_up_to_generator_orientation",
+      "qualification": "The formal generator is indexed blockLength by generatorRank and applies coefficient combinations across its second index; the source prose may present generators as spanning rows. This is a transpose/orientation convention and does not alter the represented binary linear code or Hamming objective.",
+      "nonvacuity_yes": "blockLength 1 zero code, zero target, radius 1 has distance 0",
+      "nonvacuity_no": "blockLength 2 zero code C={00}, target 11, radius 1 has Hamming distance 2, strictly above 2^(1/200)"
+    },
+    {
+      "target": "GapCVP.Comparator.binarySyndromeDecodingIsNPHard",
+      "promise": "GapCVP.Comparator.binarySyndromeDecodingPromise",
+      "source_locus": "Chapter 7 syndrome-decoding definition and Corollary 15",
+      "source_factor": "n^(1/200)",
+      "formal_factor": "blockLength^(1/200)",
+      "norm": "Hamming weight over ZMod 2",
+      "yes_threshold": "exists Hx=b with weight <= radius",
+      "no_threshold": "consistent Hx=b and every solution has weight > n^(1/200) radius",
+      "classification": "source_faithful_restricted_consequence_consistent_syndrome",
+      "qualification": "The formal NO side requires at least one solution to Hx=b. This is narrower than asserting semantics for every syntactic source pair (H,b). Corollary 15's reduction can be represented with consistent syndrome outputs (in particular b=Hu on the nearest-codeword correspondence), so the target remains a justified restricted hardness consequence rather than a whole-interface identity claim.",
+      "nonvacuity_yes": "blockLength 1, H=[0], b=0, radius 1, word 0 is a solution of weight 0",
+      "nonvacuity_no": "blockLength 2, H=I_2, b=11, radius 1 has the unique solution 11 of weight 2, strictly above 2^(1/200)"
+    },
+    {
+      "target": "GapCVP.Comparator.finitePNormGapCVPIsNPHard",
+      "promise": "GapCVP.Comparator.finitePGapCVPPromise",
+      "source_locus": "Chapter 7 Corollary 16",
+      "source_factor": "n^(1/(200p))",
+      "formal_factor": "dimension^((200*p)^(-1))",
+      "norm": "finite l_p",
+      "yes_threshold": "l_p distance <= r",
+      "no_threshold": "l_p distance > n^(1/(200p)) r",
+      "classification": "source_faithful_fixed_rational_p_consequence",
+      "qualification": "The theorem parameter p : Q with hypothesis 1 <= p is external to the input encoding, hence fixed independently of the instance exactly as required by Corollary 16. The formal instance uses a square full-rank integral basis and rational target/radius.",
+      "nonvacuity_yes": "dimension 1, B=(1), t=0, r=1 has l_p distance 0 for every fixed p>=1",
+      "nonvacuity_no": "dimension 1, B=(2), t=1, r=1/2 has l_p distance 1 for every fixed finite p>=1; n=1 makes the gap factor 1"
+    }
+  ],
+  "parameter_transport": {
+    "euclidean_dimension": "formal dimension equals source lattice dimension n",
+    "binary_length": "formal blockLength equals source binary block length n",
+    "finite_p_scope": "p is fixed rational >=1 and is not part of the input bits",
+    "squared_distance_note": "The Euclidean promise compares squared distances with squared positive thresholds. Because radius is positive and the gap factor is positive, this is equivalent to the source Euclidean distance inequalities without reversing strictness.",
+    "factor_drift_prohibited": true,
+    "constant_400_interpretation_prohibited": true
+  },
+  "nonvacuity": {
+    "state": "clear_all_four_promise_interfaces",
+    "yes_witness_count": 4,
+    "no_witness_count": 4,
+    "all_yes_sides_inhabited": true,
+    "all_no_sides_inhabited": true,
+    "vacuous_hardness_inference_prohibited": true,
+    "scope_note": "The witness matrix establishes that the formal promise interfaces are not vacuous. It does not by itself prove NP-hardness; hardness proof evidence remains the pinned formal replay and any later independent MATHCERT adjudication."
+  },
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117067,
+    "observations": [
+      "exact formal root 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6 checked out",
+      "all four target theorem names and all four promise definition names exported from challenge and solution",
+      "GapCVP solution module built successfully",
+      "Nanoda kernel accepts the solution",
+      "Lean default kernel accepts the solution",
+      "Comparator returned ACCEPT"
+    ],
+    "permitted_axioms_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "authority_limit": "This is source-root formal replay evidence. MATHFORGE semantic admission does not independently certify proof correctness."
+  },
+  "anti_overclaim": {
+    "whole_source_gapcvp_interface_identical": false,
+    "euclidean_rational_target_generality_claimed": false,
+    "syndrome_all_syntactic_instances_claimed": false,
+    "binary_generator_orientation_printed_identically": false,
+    "malformed_inputs_promoted_to_no": false,
+    "intermediate_inputs_promoted_to_no": false,
+    "search_problem_equated_with_decision_promise": false,
+    "constant_factor_400_claimed": false,
+    "proof_correctness_certified_here": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_targets_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "candidate_family_exit_state": "PROMISE_INTERFACES_CLOSED__SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "basis": "All four current-root target statements have source-faithful theorem/corollary loci; the polynomial-time reduction predicate is an actual pinned deterministic TM model; malformed and intermediate inputs remain outside the promise; exact exponents, norms, strictness and fixed-p scope transport correctly; the Euclidean integer-target and syndrome-consistency restrictions are explicit justified source projections; and all four promise interfaces have explicit YES and NO witnesses.",
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "requires_human_steward_disposition": true,
+    "head_change_requires_reapproval": true,
+    "effect": "Protected admission closes the current-root MATHFORGE source-semantic and nonvacuity audit for the four registered OTP-H-GAPCVP targets only.",
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate classifies only the source semantics, promise interfaces, deterministic polynomial-time reduction model, parameter transport, nonvacuity, and pinned source-root replay evidence for the four current OTP-H-GAPCVP targets. The Euclidean target is explicitly restricted to the integer-target output surface of source Theorem 1; the syndrome target is explicitly restricted to consistent syndrome systems sufficient for the Corollary 15 reduction; generator orientation is treated only as a representation convention; malformed and threshold-intermediate bitstrings remain outside the promise. Protected activation would create no Solve or MATHCERT route, would not independently certify proof correctness or mark the mathematical targets proved, and creates no aggregate OpenAI Ten Proofs authority."
+}
