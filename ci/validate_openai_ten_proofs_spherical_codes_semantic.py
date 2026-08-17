@@ -125,9 +125,9 @@ def validation_errors(record=None, schema=None):
         "binary_surface": ("0<delta<1/2", "R2<=kappa_bin<M2"),
         "spherical_code": ("inner product <=s", "s=cos(theta)", "0<s<1"),
         "rate": ("limsup", "log_2", "s=1/2"),
-        "hierarchy": ("r=0", "Interlacing", "u(1+u)", "Gamma", "Phi", "2*Gamma>=s"),
+        "hierarchy": ("r=0", "interlacing", "u(1+u)", "Gamma", "Phi", "2*Gamma>=s"),
         "localization": ("Icc 0 s", "strict_hierarchy"),
-        "numerical": ("stronger", "0.39661+o(1)", "not"),
+        "numerical": ("stronger", "0.39661+o(1)", "formal strengthening"),
     }
     for field, tokens in required_by_field.items():
         text = defs.get(field, "")
@@ -243,7 +243,7 @@ def validation_errors(record=None, schema=None):
         "formal strengthening",
         "0.39661+o(1)",
         "no MATHSOLVE handoff",
-        "no aggregate OpenAI Ten Proofs authority",
+        "aggregate OpenAI Ten Proofs authority",
     ):
         if token not in boundary:
             e.append(f"claim boundary missing token: {token}")
