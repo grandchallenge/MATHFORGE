@@ -247,7 +247,7 @@ def validation_errors(record=None, schema=None):
     if d.get("candidate_family_exit_state") != "PROMISE_INTERFACES_CLOSED__SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT":
         e.append("family exit-state drift")
     basis = d.get("basis", "")
-    for token in ("all four current-root target statements", "actual pinned deterministic TM model", "outside the promise", "integer-target", "syndrome-consistency", "explicit YES and NO witnesses"):
+    for token in ("All four current-root target statements", "actual pinned deterministic TM model", "outside the promise", "integer-target", "syndrome-consistency", "explicit YES and NO witnesses"):
         if token not in basis:
             e.append(f"disposition basis weakened: {token}")
     if d.get("solve_handoff_authorized") is not False or d.get("mathcert_route_authorized") is not False:
