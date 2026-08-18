@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-E-CONNES-RIGIDITY-SEMANTIC-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-E-CONNES-RIGIDITY",
+  "governance": {
+    "tracker_issue": 96,
+    "protected_base": "081928fceaca9606af4920559f8b79d5e40225a7",
+    "publication_state": "candidate_until_protected_merge",
+    "candidate_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "head_change_requires_reapproval": true
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 4,
+    "loci": [
+      "Chapter 4 Theorem 1.2 states that there exist finitely generated ICC property-(T) groups Lambda, Gamma_0, Gamma_1, ... that are pairwise nonisomorphic and satisfy L(Gamma_n) isomorphic to L(Lambda) for every n>=0.",
+      "Corollary 5.10 states that Lambda and Gamma_0 are nonisomorphic ICC property-(T) groups with isomorphic group von Neumann algebras.",
+      "Section 2.1 defines L(G) from the left regular representation and the canonical trace tau_G(x)=<x delta_1, delta_1>; Section 2.2 defines property (T) through almost invariant unit vectors.",
+      "Proposition 4.3 and Proposition 6.3 obtain the factor isomorphisms from a common measured K-action / measure-preserving crossed-product presentation. The displayed theorem and corollary say isomorphic group von Neumann algebras; they do not separately print the phrases trace-preserving or normal star-algebra isomorphism.",
+      "The proof of Theorem 1.2 derives pairwise nonisomorphism, ICC, property (T), finite generation, and L(Gamma_n) isomorphic to L(Lambda); pairwise factor isomorphism L(Gamma_m) isomorphic to L(Gamma_n) is a direct transitivity consequence rather than a separately displayed source clause."
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {
+      "path": "ComparatorChallenges/E_ConnesRigidity.json",
+      "blob": "f5d2964be6b1a154bc12b38a0f99f0960960a2d9"
+    },
+    "challenge": {
+      "path": "ComparatorChallenges/E_ConnesRigidity.lean",
+      "blob": "9425edabd79319cbe2943888c6ece107bdd81dfb"
+    },
+    "solution": {
+      "path": "ConnesRigidity.lean",
+      "blob": "81cf03e3f7ccdc66815cc00c9969bcfd2341c8d6"
+    },
+    "mathlib_finite_generation": {
+      "repository": "leanprover-community/mathlib4",
+      "commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+      "path": "Mathlib/GroupTheory/Finiteness.lean",
+      "blob": "b23c7420082cfcfe583ba2ed39a8c9f0c86d73b1"
+    },
+    "targets": [
+      "ConnesRigidity.exists_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors",
+      "ConnesRigidity.exists_infinite_pairwise_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors"
+    ],
+    "replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117059,
+      "mode": "isolated_family_comparator_not_All.lean",
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ]
+    }
+  },
+  "definition_concordance": {
+    "namespace_identity": "The current registered declarations are exactly the two ConnesRigidity.* targets in the successor config. The predecessor ConnesRigidity2.* namespace supplies no alias, declaration-identity, or downstream authority; this audit binds only the current root/tree and current declaration names.",
+    "countable_group_and_icc": "CountableDiscreteGroup stores a group carrier together with Countable. IsICC requires Infinite G and an infinite conjugacy class for every nonidentity element, matching the manuscript's countable discrete ICC convention.",
+    "group_isomorphism": "GroupsIsomorphic G H is Nonempty (G ≃* H), the standard abstract group-isomorphism relation used by the source's pairwise-nonisomorphism assertions.",
+    "property_t": "HasKazhdanPropertyT uses unitary representations, almost invariant unit vectors on every finite test set and positive epsilon, and a nonzero invariant vector. The challenge quantifies Hilbert carriers H : Type u in the same universe as G; for the registered Type 0 groups this is a universe-scoped formal encoding. This audit does not claim a separate universe-polymorphic equivalence theorem, so the source property-(T) result is used only to justify the registered scoped target predicate.",
+    "group_von_neumann_algebra_and_trace": "groupVonNeumannAlgebra is the bicommutant/centralizer-centralizer closure of the left regular representation on l2(G). canonicalTrace is the vacuum vector state at delta_1, matching the source formulas L(G)=lambda_G(G)'' and tau_G(x)=<x delta_1,delta_1>.",
+    "factor_isomorphism_structure": "TracialGroupFactorEquiv packages a complex star-algebra equivalence, preservation of the formal IsProjectionSupremum predicate in both directions, and canonical-trace preservation. The solution constructs this from PaperFactorUnitaryWitness: a unitary spatial equivalence that maps the group-factor algebras and the vacuum vector. Its trace_preserving theorem follows from vacuum preservation. The solution also proves starAlgEquiv_isNormal for the chosen projection-supremum predicate. Thus the formal structure is a source-construction-faithful spatial/tracial refinement of the manuscript's factor-isomorphism conclusion, not verbatim theorem wording and not an independently audited equivalence with every analytic definition of normality.",
+    "finite_generation": "Group.FG is the pinned Mathlib finitely-generated-group predicate. Theorem 1.2 explicitly states finite generation, and the manuscript proof notes that the countable property-(T) groups are finitely generated.",
+    "infinite_family_quantifiers": "The infinite target quantifies one Lambda and a sequence Gamma : Nat -> CountableDiscreteGroup, requires all finite-generation/ICC/property-(T) fields, factor isomorphism Gamma_n -> Lambda for every n, pairwise nonisomorphism of distinct Gamma_m/Gamma_n, and Lambda nonisomorphic to every Gamma_n. Its additional all-pairs factor-isomorphism field is derived by symmetry and transitivity through Lambda."
+  },
+  "target_audits": [
+    {
+      "target": "ConnesRigidity.exists_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors",
+      "classification": "source_faithful_two_group_consequence_with_structured_factor_isomorphism",
+      "source_relation": "Corollary 5.10 supplies nonisomorphic ICC property-(T) groups Lambda and Gamma_0 with isomorphic group von Neumann algebras; Theorem 1.2 supplies finite generation for the same family.",
+      "formal_relation": "The target projects Gamma_0 and Lambda from manuscriptInfinitePropertyTFiber, includes Group.FG for both, and uses F.factors_isomorphic 0. The factor witness is the explicit spatial/vacuum-preserving TracialGroupFactorEquiv constructed along the paper's measured-action route. The structured trace/normal fields are a formal refinement of the source construction, not claimed as verbatim Corollary 5.10 text."
+    },
+    {
+      "target": "ConnesRigidity.exists_infinite_pairwise_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors",
+      "classification": "source_faithful_theorem_1_2_projection_with_derived_pairwise_factor_transitivity",
+      "source_relation": "Theorem 1.2 supplies the countably infinite finitely generated ICC property-(T) family Lambda,Gamma_0,Gamma_1,..., pairwise group nonisomorphic, with every L(Gamma_n) isomorphic to L(Lambda).",
+      "formal_relation": "The target projects manuscriptInfinitePropertyTFiber and exactly carries the family finite-generation, ICC, property-(T), common-factor, Gamma-pairwise-nonisomorphism, and Lambda-vs-Gamma nonisomorphism fields. It additionally states all-pairs factor isomorphism for every Gamma_m/Gamma_n; the solution derives that field by groupFactorsIsomorphic_trans and groupFactorsIsomorphic_symm through Lambda, so it is a direct formal consequence rather than a separately printed source clause."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear_for_exact_two_target_surface_with_universe_scope_recorded",
+    "evidence": [
+      "manuscriptInfinitePropertyTFiber is a concrete InfinitePropertyTFiber constructed from paperInfinitePropertyTFiber rather than an assumed existential.",
+      "Its fields supply one concrete Lambda and a Nat-indexed Gamma family with finite generation, ICC, property (T), common-factor witnesses, pairwise Gamma nonisomorphism, and Lambda-vs-Gamma nonisomorphism.",
+      "paper_factors_isomorphic n contains an explicit paperTracialGroupFactorEquiv n built from paperFactorUnitaryWitness n.",
+      "paperFactorUnitaryWitness n is assembled from paperCarryFactorPresentation n, paperSplitFactorPresentation, and paperHaarTransport n; the transport maps both algebra and vacuum.",
+      "The first registered target uses Gamma 0 and Lambda from the concrete family; the second uses the full Nat-indexed family and derives the extra all-pairs factor isomorphism by symmetry/transitivity.",
+      "The formal property-(T) predicate's universe scope is recorded explicitly rather than hidden or promoted to a stronger universe-polymorphic claim."
+    ]
+  },
+  "proof_path_evidence": [
+    "paperAnalyticInput.infinitePropertyTFiber constructs the family later bound as paperInfinitePropertyTFiber and manuscriptInfinitePropertyTFiber.",
+    "paperFactorUnitaryWitness n is built by factorUnitaryWitness_of_spatialPresentations from paperCarryFactorPresentation n, paperSplitFactorPresentation, and paperHaarTransport n.",
+    "PaperFactorUnitaryWitness.toTracialGroupFactorEquiv produces the structured star-algebra equivalence; trace_preserving uses maps_vacuum, and starAlgEquiv_isNormal supplies the formal projection-supremum normality field.",
+    "paper_factors_isomorphic n packages paperTracialGroupFactorEquiv n as TracialGroupFactorsIsomorphic (gammaGroup n) lambdaGroup.",
+    "The two-group target takes F.Gamma 0 and F.Lambda from manuscriptInfinitePropertyTFiber and discharges nonisomorphism using F.lambda_not_isomorphic 0.",
+    "The infinite target projects F.Lambda and F.Gamma, carries all family fields, and derives pairwise Gamma factor isomorphism using groupFactorsIsomorphic_trans with groupFactorsIsomorphic_symm.",
+    "The exact successor replay exports only the two registered current ConnesRigidity.* declarations and Comparator/Lean/Nanoda accepts that surface."
+  ],
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117059,
+    "permitted_axioms_only": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "observations": [
+      "The successor replay binds the exact E config, challenge, solution, root, and tree.",
+      "Comparator exports exactly the two registered current ConnesRigidity.* targets.",
+      "ConnesRigidity solution builds successfully.",
+      "Nanoda and the Lean default kernel accept the exported target surface.",
+      "Comparator returns ACCEPT."
+    ],
+    "authority_limit": "Replay establishes exact formal-carrier and kernel-acceptance evidence only; it does not independently certify proof correctness or source-semantic equivalence."
+  },
+  "anti_overclaim": {
+    "predecessor_namespace_alias_inferred": false,
+    "theorem_text_claims_trace_preserving_verbatim": false,
+    "theorem_text_claims_normal_star_isomorphism_verbatim": false,
+    "pairwise_gamma_factor_isomorphism_claimed_source_verbatim": false,
+    "universe_polymorphic_property_t_equivalence_claimed": false,
+    "all_analytic_normality_notions_claimed_equivalent": false,
+    "whole_chapter_semantic_equivalence": false,
+    "proof_bodies_compared_in_full": false,
+    "proof_correctness_certified_here": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_targets_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "candidate_family_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "basis": "The current-root two-target surface is semantically aligned with Chapter 4 when the formal packaging qualifications are retained. The first target is the Corollary 5.10 two-group consequence augmented by finite generation from Theorem 1.2 and by the solution's explicit spatial/tracial factor-isomorphism structure. The second is the Theorem 1.2 infinite-family projection, with the all-pairs Gamma factor-isomorphism field derived transitively through Lambda. The current ConnesRigidity.* namespace is independently bound and receives no predecessor ConnesRigidity2.* identity authority.",
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "requires_operator_algebra_specialist_review": true,
+    "head_change_requires_reapproval": true,
+    "streamlined_exact_head_binding_allowed_if_control_plan_unchanged": true,
+    "material_control_plan_change_requires_renewed_steward_input": true,
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_targets_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate is limited to current-root semantic/nonvacuity classification of the two registered OTP-E-CONNES-RIGIDITY targets. It binds only the successor ConnesRigidity.* declarations and infers no alias or authority from predecessor ConnesRigidity2.* names. It records the source ICC and property-(T) conventions, the left-regular group von Neumann algebra and canonical trace, and the source's finitely generated pairwise-nonisomorphic family with common group factor. Lean's TracialGroupFactorEquiv is treated as a source-construction-faithful spatial/tracial refinement because the solution builds it from the manuscript's common measured-action route, maps the vacuum vector, proves canonical-trace preservation, and fills its internal projection-supremum normality predicate. The audit does not claim that trace-preserving or normal star-algebra isomorphism is printed verbatim in Theorem 1.2/Corollary 5.10, does not identify the internal normality predicate with every analytic normality notion, and does not claim a universe-polymorphic property-(T) equivalence beyond the registered scoped predicate. The infinite target's all-pairs Gamma factor-isomorphism field is a symmetry/transitivity consequence through Lambda, not a separately printed source clause. This candidate creates no MATHSOLVE handoff, MATHCERT route/output, proof certification, mathematical-proof promotion, whole-chapter equivalence, or aggregate OpenAI Ten Proofs authority."
+}
