@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-D-NON-SOFIC-SEMANTIC-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-D-NON-SOFIC",
+  "governance": {
+    "tracker_issue": 95,
+    "protected_base": "f0a40146cca7fd39c5724ed5be033ee9092625ac",
+    "publication_state": "candidate_until_protected_merge",
+    "candidate_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "head_change_requires_reapproval": true
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 3,
+    "loci": [
+      "Chapter 3 Theorem 1.1 states that the unit group L_F2(1,2)^x is not sofic; it does not state that a finitely presented nonsofic group exists.",
+      "The introduction states that the proof constructs a finitely generated nonsofic subgroup G of the unit group.",
+      "For the specific complete nine-word code D, the source defines G = EL_D(R) = Theta_D(EL_9(R)) <= R^x and records G isomorphic to EL_9(R); the proof later concludes this G, and hence R^x, is not sofic.",
+      "The source defines normalized Hamming distance on a nonempty finite set and a countable-group sofic approximation by maps p_n with p_n(1)=1, multiplicative error tending to zero, and nonidentity separation tending to one."
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {"path":"ComparatorChallenges/D_NonSoficGroup.json","blob":"af023106a83552d7fafb4f0d122f121a095f802c"},
+    "challenge": {"path":"ComparatorChallenges/D_NonSoficGroup.lean","blob":"158d97224fbd51c203ff07a2f74041ffa2c6013b","byte_length":1117},
+    "solution": {"path":"NonSoficGroup.lean","blob":"dd1f8e63960300c8674fcd491007d2a628fbc6fe","byte_length":1343031},
+    "mathlib_finite_presentation": {"repository":"leanprover-community/mathlib4","commit":"81a5d257c8e410db227a6665ed08f64fea08e997","path":"Mathlib/GroupTheory/FinitelyPresentedGroup.lean","blob":"449ec578624bd05410992e89048a7c1a7bae238d"},
+    "targets": ["SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"],
+    "replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117044,
+      "mode": "isolated_family_comparator_not_All.lean",
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "permitted_axioms": ["propext","Classical.choice","Quot.sound"]
+    }
+  },
+  "definition_concordance": {
+    "sofic_convention": "Lean normalizedHamming is Hamming disagreement count divided by the finite model size. GoodOn requires epsilon-multiplicativity on a finite test set and moves every tested nonidentity element on more than 1-epsilon of points. Sofic quantifies over every finite F and every 0<epsilon<1. This is the local finite-piece form of the source convention. For countable groups, nonempty_soficApproximation_of_sofic explicitly converts the Lean property to the source-style sequence by a finite exhaustion and epsilon_n=1/(n+2).",
+    "source_nonsofic_carrier": "The source obstruction group is G = EL_D(R), isomorphic to EL_9(R). Lean binaryLeavittElementaryGroup 9 is elementaryGroup (Fin 9) BinaryLeavitt, and ninePrefixElementaryGroupEquiv supplies the corresponding nine-prefix group equivalence. binaryLeavittElementaryGroup_not_sofic transports the formal source obstruction through this carrier equivalence rather than identifying R^x definitionally with EL_9(R).",
+    "finite_obstruction": "exists_finite_obstruction negates the Lean Sofic approximation quantifiers to obtain a finite F containing 1 and an epsilon with 0<epsilon<1 for which no PermutationModel is GoodOn. This is an internal compact finite failure certificate; it is not a claim printed in Chapter 3.",
+    "table_group": "From finite F, multiplicationTable F is finite and tableRelators F h1 is a finite set of free-group relations encoding the identity and the multiplication table on F. tableGroup F h1 is PresentedGroup of those relators. tableGroup_not_sofic_of_obstruction proves that a sofic approximation of this table group would pull back to a forbidden GoodOn model for F.",
+    "finite_presentation": "At the pinned Mathlib commit, Group.IsFinitelyPresented G means that for some finite n there is a surjective homomorphism FreeGroup (Fin n) -> G whose kernel is the normal closure of finitely many relations. tableGroup_finitelyPresented is obtained by the standard PresentedGroup finite-generator/finite-relator instance, so the target uses the ordinary group-theoretic meaning of finitely presented.",
+    "universe_and_existence": "The general theorem exists_finitelyPresented_not_sofic_of_not_sofic preserves the source group's universe. The instantiated binaryLeavittElementaryGroup 9 lives in Type, so its table-group witness satisfies the Comparator's existential G : Type with an actual Group instance; no universe lift or empty existential carrier is hidden."
+  },
+  "target_audits": [
+    {
+      "target": "SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group",
+      "classification": "derived_finitely_presented_nonsofic_consequence_of_source_nonsofic_construction",
+      "source_relation": "Chapter 3 proves the unit group nonsofic and explicitly constructs a finitely generated nonsofic subgroup G isomorphic to EL_9(R). It does not state the existence of a finitely presented nonsofic group as Theorem 1.1 or as the displayed source conclusion audited here.",
+      "formal_relation": "The target is exactly discharged by exists_finitelyPresented_not_sofic_of_not_sofic binaryLeavittElementaryGroup_not_sofic. The first theorem constructs a new finitely presented nonsofic PresentedGroup from a finite failed sofic test; the second is the formal source obstruction on the EL_9(R) carrier. The resulting existential is therefore a justified formal consequence of the source nonsofic construction, not a verbatim projection of Theorem 1.1."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear_for_exact_target",
+    "evidence": [
+      "binaryLeavittElementaryGroup 9 is a concrete countable group carrier corresponding to the source EL_9(R) obstruction group.",
+      "binaryLeavittElementaryGroup_not_sofic proves an actual negation of the Lean Sofic property for that carrier; the antecedent supplied to the finite-obstruction theorem is therefore inhabited evidence, not an impossible hypothesis.",
+      "exists_finite_obstruction returns a finite test set containing 1 and a strict error parameter 0<epsilon<1.",
+      "tableRelators is a Finset and tableGroup is a concrete PresentedGroup with a Group instance; tableGroup_finitelyPresented supplies the standard finite-presentation property.",
+      "tableGroup_not_sofic_of_obstruction derives an actual contradiction from any putative Sofic instance by pulling its finite test model back to the original obstruction.",
+      "The final existential supplies both the concrete group structure and the conjunction Group.IsFinitelyPresented H and not Sofic H."
+    ]
+  },
+  "proof_path_evidence": [
+    "binaryLeavittElementaryGroup_not_sofic is the exact source-side nonsofic input to the target.",
+    "exists_finite_obstruction extracts a single finite failed approximation test from not Sofic.",
+    "tableRelators constructs finitely many identity and multiplication-table relators on the finite multiplicationTable F generator type.",
+    "tableGroup_finitelyPresented is the pinned Mathlib PresentedGroup finite-presentation instance.",
+    "goodOn_pullbackTableModel shows that a GoodOn model of the table group induces a GoodOn model of the original finite obstruction.",
+    "tableGroup_not_sofic_of_obstruction uses that pullback to prove the table group nonsofic.",
+    "exists_nonsofic_finite_table packages finite presentation and nonsoficity, and exists_finitelyPresented_not_sofic_of_not_sofic preserves the universe while emitting the existential target witness.",
+    "The registered target is exactly `exact SoficGroups.exists_finitelyPresented_not_sofic_of_not_sofic binaryLeavittElementaryGroup_not_sofic`."
+  ],
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117044,
+    "permitted_axioms_only": ["propext","Classical.choice","Quot.sound"],
+    "observations": [
+      "The successor replay bound the exact D config, challenge, solution, root, and tree.",
+      "Comparator exported exactly the one registered D target.",
+      "NonSoficGroup solution built successfully.",
+      "Nanoda and the Lean default kernel accepted the exported target surface.",
+      "Comparator returned ACCEPT."
+    ],
+    "authority_limit": "Replay establishes exact formal-carrier and kernel-acceptance evidence only; it does not independently certify proof correctness or source-semantic equivalence."
+  },
+  "anti_overclaim": {
+    "finitely_presented_conclusion_claimed_source_verbatim": false,
+    "source_theorem_1_1_rewritten_as_finitely_presented": false,
+    "unit_group_definitionally_identified_with_el9": false,
+    "finite_obstruction_claimed_as_manuscript_result": false,
+    "whole_chapter_semantic_equivalence": false,
+    "proof_bodies_compared_in_full": false,
+    "proof_correctness_certified_here": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_target_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "candidate_family_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "basis": "The registered target is a valid derived consequence at the audited boundary. Chapter 3 supplies a concrete nonsofic obstruction group G isomorphic to EL_9(R); the formal carrier realizes that group and proves its nonsoficity under the aligned finite-permutation approximation convention. A separate formal finite-obstruction/table-presentation argument then converts any nonsofic group into a finitely presented nonsofic PresentedGroup using the pinned standard Mathlib notion of finite presentation. The finite-presentation existential is therefore admitted only as a formal consequence, not as source Theorem 1.1 text.",
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "requires_geometric_group_theory_specialist_review": true,
+    "head_change_requires_reapproval": true,
+    "streamlined_exact_head_binding_allowed_if_control_plan_unchanged": true,
+    "material_control_plan_change_requires_renewed_steward_input": true,
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate is limited to current-root semantic/nonvacuity classification of the single registered OTP-D-NON-SOFIC target. It binds Lean's local finite-set/epsilon permutation approximation property to the source sofic convention and records the explicit countable-group conversion to source-style approximation sequences. It identifies the source obstruction group only up to the proved EL_D(R) / EL_9(R) carrier equivalence and does not definitionally identify the full Leavitt unit group with EL_9(R). Most importantly, it does not attribute finite presentation to Chapter 3 Theorem 1.1: the target's finitely presented witness is created by the separate formal finite-obstruction and finite multiplication-table PresentedGroup construction after source-root nonsoficity has been established. The pinned Mathlib Group.IsFinitelyPresented definition is the standard finite-generators/finitely-many-normal-relations notion. This candidate creates no MATHSOLVE handoff, MATHCERT route or output, proof certification, mathematical-proof promotion, whole-chapter equivalence, or aggregate OpenAI Ten Proofs authority."
+}
