@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OTP-G-QUANTUM-PARALLEL-REPETITION-SEMANTIC-002",
+  "candidate_id": "OPENAI-TEN-PROOFS-001",
+  "result_family": "OTP-G-QUANTUM-PARALLEL-REPETITION",
+  "governance": {
+    "tracker_issue": 94,
+    "protected_base": "dbf3b099331a1807c4d3036e7a6a406711ea7cf3",
+    "publication_state": "candidate_until_protected_merge",
+    "candidate_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "head_change_requires_reapproval": true
+  },
+  "source_authority": {
+    "document": "Ten Advances in Mathematics and Theoretical Computer Science",
+    "revision": "2026-08-06",
+    "pdf_sha256": "ebc561ab5c53dbd240e17a8fdb6fffeb648591eca85dbfc7466f563638f8c566",
+    "pdf_byte_length": 2487031,
+    "pdf_successor_record_blob": "02d1748abed36717afba46451330be165c076737",
+    "pdf_successor_protected_merge": "275f435eaf519ada3f0afa4bf8e77cfd0c8fcbb3",
+    "chapter": 6,
+    "loci": [
+      "Chapter 6 treats finite two-player one-round entangled games with a normalized question distribution, a Boolean winning predicate, finite nonempty answer alphabets, and entangled value defined as the supremum over finite-dimensional tensor-product strategies.",
+      "Theorem 1.1 states that there is a universal constant c_qs>0 such that, when the soundness gap epsilon=1-omega*(G) is positive, omega*(G^n) is at most exp(-c_qs * epsilon^13/(epsilon+log(|A||B|)) * n) for every integer n>=1.",
+      "The source convention ranges over arbitrary finite local Hilbert-space dimensions and uses a supremum; it does not impose a common Alice/Bob dimension and does not require the optimum to be attained."
+    ]
+  },
+  "formal_authority": {
+    "repository": "openai/ten-proofs",
+    "root": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+    "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+    "formal_successor_record_blob": "6993ce9fac2c65ffae7f2a0c7d728aab828ed532",
+    "config": {
+      "path": "ComparatorChallenges/G_QuantumParallelRepetition.json",
+      "blob": "c7dd59e9df9ae5d90b35f76a9d958943d8e94770"
+    },
+    "challenge": {
+      "path": "ComparatorChallenges/G_QuantumParallelRepetition.lean",
+      "blob": "8257e7726643a8f8c08c7e91584e003ab204c589",
+      "byte_length": 4660
+    },
+    "solution": {
+      "path": "QuantumParallelRepetition.lean",
+      "blob": "887c4378f124a5d81a3f2624b6dc34867ec409c4",
+      "byte_length": 2683872
+    },
+    "targets": [
+      "QuantumParallelRepetition.distributionUniformExponential",
+      "QuantumParallelRepetition.standardQuantumParallelRepetition"
+    ],
+    "replay": {
+      "run_id": 31945652355,
+      "job_id": 95161117041,
+      "mode": "isolated_family_comparator_not_All.lean",
+      "result": "comparator_lean_kernel_nanoda_accept",
+      "lean_version": "4.32.0",
+      "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+      "permitted_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "definition_concordance": {
+    "game_model": "Lean Game carries finite question and answer types, a nonnegative questionWeight normalized to total mass 1, and a Boolean predicate, matching the finite one-round source game data.",
+    "parallel_repetition": "Game.repeat uses product question weights and requires the predicate to hold in every coordinate, so repeatedEntangledValue G n is the entangled value of the n-fold product game G^n.",
+    "strategy_model": "Lean Strategy has independent finite Alice and Bob carrier types, a positive trace-one density matrix on Alice x Bob, and question-indexed POVMs for each player. The carriers are not required to have a common dimension. Relative to the source's arbitrary finite-dimensional complex Hilbert spaces, this is the standard finite-coordinate presentation after choosing orthonormal bases; no dimension bound is introduced.",
+    "entangled_value": "entangledValue is sSup of the range of Strategy.winProbability over all Lean strategies. Thus the target uses a supremum rather than a maximum and introduces no optimizer-attainment assumption. The coordinate presentation is semantically equivalent on finite-dimensional source strategies, but this audit does not claim literal definitional identity with an abstract Hilbert-space formulation.",
+    "gap_exponent_denominator": "distributionUniformExponential sets epsilon exactly to 1-entangledValue G, requires it positive, requires Nonempty A and Nonempty B, uses exponent 13, denominator epsilon + Real.log(card A * card B), and quantifies over n with 0<n.",
+    "qualitative_consequence": "StandardQuantumParallelRepetition G is entangledValue G < 1 -> HasExponentialBound (repeatedEntangledValue G). On nonempty answer alphabets it is a direct qualitative consequence of the quantitative theorem. The target itself omits answer-nonemptiness and therefore additionally covers formal empty-answer edge cases outside the manuscript's declared game domain."
+  },
+  "target_audits": [
+    {
+      "target": "QuantumParallelRepetition.distributionUniformExponential",
+      "classification": "source_faithful_exact_coordinate_projection_of_theorem_1_1",
+      "source_relation": "This is the Chapter 6 Theorem 1.1 bound with epsilon=1-omega*(G), the same universal positive constant form, epsilon^13, epsilon+log(|A||B|), nonempty answer alphabets, and every n>=1.",
+      "formal_relation": "The comparator target states the same inequality with entangledValue, repeatedEntangledValue, Real.log, Fintype.card, explicit Nonempty A/B, 0<1-entangledValue G, and 0<n. The solution routes the target through pdf_distributionUniformExponential_unconditional / pdf_distributionUniformExponential_of_uniform_source_rounding and unconditionalSourceOneGameRounding_uniform."
+    },
+    {
+      "target": "QuantumParallelRepetition.standardQuantumParallelRepetition",
+      "classification": "source_faithful_consequence_on_source_domain_with_formal_empty_answer_extension",
+      "source_relation": "For source-domain games with nonempty answer alphabets, Theorem 1.1 immediately implies game-dependent exponential decay whenever omega*(G)<1.",
+      "formal_relation": "The target states exactly entangledValue G < 1 -> HasExponentialBound (repeatedEntangledValue G). Its solution passes through exact_standardQuantumParallelRepetition_of_source_rounding and exactSourceOneGameRounding_unconditional. Because the target does not require Nonempty A/B, it is formally stronger only on empty-answer edge cases that the source theorem does not claim."
+    }
+  ],
+  "nonvacuity": {
+    "state": "clear_on_declared_source_domain_with_empty_answer_extension_separated",
+    "evidence": [
+      "Nonempty A and Nonempty B are explicit hypotheses of the quantitative target, so Fintype.card A and Fintype.card B are positive and the logarithmic alphabet term is well-defined in the intended source regime.",
+      "The quantitative target explicitly assumes 0 < 1-entangledValue G and 0 < n, so neither the soundness-gap nor repetition-count quantifier is discharged by a zero boundary case.",
+      "The Lean game distribution is normalized to total mass 1; hence a constructed Game cannot hide an empty question-distribution domain behind an unnormalized zero measure.",
+      "The solution includes pdfAlphabetEntropy_nonneg from answer nonemptiness and exactSourceAnswerTypes_nonempty_of_remaining in the source-rounding path, providing explicit nonemptiness handling rather than silently taking log 0.",
+      "The qualitative target's additional empty-answer cases are identified as a formal extension and are not attributed to the manuscript."
+    ]
+  },
+  "proof_path_evidence": [
+    "distributionUniformExponential is routed through pdf_distributionUniformExponential_unconditional and pdf_distributionUniformExponential_of_uniform_source_rounding.",
+    "The uniform quantitative path is supplied by unconditionalSourceOneGameRounding_uniform.",
+    "exactSourceOneGameRounding_unconditional constructs the exact one-game rounding object used for the qualitative theorem.",
+    "standardQuantumParallelRepetition is routed through exact_standardQuantumParallelRepetition_of_source_rounding G (exactSourceOneGameRounding_unconditional G).",
+    "The solution separately proves probability normalization and bounds, including outcomeProbability_normalized, winProbability_le_one, winProbabilities_bddAbove, entangledValue_le_one, and entangledValue_nonneg."
+  ],
+  "replay_and_axiom_audit": {
+    "state": "clear_as_source_root_replay_evidence",
+    "run_id": 31945652355,
+    "job_id": 95161117041,
+    "permitted_axioms_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "observations": [
+      "The successor replay bound the exact current root/tree and the G config/challenge/solution blobs.",
+      "Comparator exported exactly the two registered G targets.",
+      "QuantumParallelRepetition solution built successfully.",
+      "Nanoda kernel and Lean default kernel accepted the exported target surface.",
+      "Comparator returned ACCEPT."
+    ],
+    "authority_limit": "Replay establishes exact formal-carrier and kernel-acceptance evidence only; it does not independently certify proof correctness or source-semantic equivalence."
+  },
+  "anti_overclaim": {
+    "abstract_hilbert_space_definitional_identity_claimed": false,
+    "common_local_dimension_restriction_claimed": false,
+    "optimizer_attainment_claimed": false,
+    "empty_answer_extension_claimed_as_manuscript_scope": false,
+    "whole_chapter_semantic_equivalence": false,
+    "proof_bodies_compared_in_full": false,
+    "proof_correctness_certified_here": false,
+    "solve_authority": false,
+    "cert_authority": false,
+    "mathematical_targets_marked_proved": false,
+    "aggregate_ten_proofs_authority": false
+  },
+  "disposition": {
+    "semantic_state": "candidate_clear_pending_independent_review",
+    "candidate_family_exit_state": "SEMANTIC_AND_NONVACUITY_CLEAR_CURRENT_ROOT",
+    "basis": "The quantitative target matches Chapter 6 Theorem 1.1 at the declared finite-dimensional tensor-product boundary: normalized game data, arbitrary independent finite local dimensions in coordinate form, density matrix and POVMs, supremum entangled value, nonempty answers, exact soundness gap, exponent 13, logarithmic alphabet denominator, and n>=1 all align. The qualitative target is source-faithful on that manuscript domain but is explicitly classified as a formal extension on empty-answer edge cases because its statement omits Nonempty A/B.",
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false
+  },
+  "activation": {
+    "requires_exact_head_forge_ci": true,
+    "requires_exact_head_gcl_conformance": true,
+    "requires_exact_head_codeql": true,
+    "requires_non_author_approved_review": true,
+    "requires_quantum_information_specialist_review": true,
+    "head_change_requires_reapproval": true,
+    "streamlined_exact_head_binding_allowed_if_control_plan_unchanged": true,
+    "material_control_plan_change_requires_renewed_steward_input": true,
+    "effect_does_not_authorize_solve": true,
+    "effect_does_not_authorize_cert": true
+  },
+  "route_controls": {
+    "solve_handoff_authorized": false,
+    "mathcert_route_authorized": false,
+    "adjudication_authorized": false,
+    "cert_output_authorized": false,
+    "mathematical_target_proved": false,
+    "aggregate_openai_ten_proofs_authority": false
+  },
+  "claim_boundary": "This candidate is limited to current-root semantic/nonvacuity classification of the two registered OTP-G-QUANTUM-PARALLEL-REPETITION targets. It treats Lean's independent finite Alice/Bob carrier types and matrix-valued density/POVM data as a finite-coordinate presentation of the manuscript's arbitrary finite-dimensional tensor-product strategy convention; it does not claim literal definitional identity with an abstract Hilbert-space presentation. It records that entangledValue is an sSup and therefore introduces neither a fixed-dimension cutoff nor an optimizer-attainment assumption. distributionUniformExponential is classified as a source-faithful exact coordinate projection of Chapter 6 Theorem 1.1. standardQuantumParallelRepetition is source-faithful on the manuscript's nonempty-answer domain but formally extends to empty-answer edge cases, and that extension is not attributed to the manuscript. It creates no MATHSOLVE handoff, MATHCERT route/output, independent proof certification, mathematical-proof promotion, whole-chapter equivalence, or aggregate OpenAI Ten Proofs authority."
+}
