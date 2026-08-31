@@ -5,6 +5,10 @@ import math
 import unittest
 
 from domains.adaptive_spectral_peeling.finite_lab import FiniteProductSpace, objective_from_coefficients
+from domains.adaptive_spectral_peeling.replay_t8_noise import (
+    loglog_slope,
+    minimum_m_for_sd_threshold,
+)
 from domains.adaptive_spectral_peeling.t8_noise import (
     degree_indices,
     exact_l2_energy,
@@ -78,6 +82,19 @@ class AspT8NoiseTests(unittest.TestCase):
         c1, c2 = 4.0, 16.0
         self.assertAlmostEqual(predictor_p0(c2, gamma) / predictor_p0(c1, gamma), 4.0)
         self.assertAlmostEqual(predictor_p1(c2, gamma, sigma) / predictor_p1(c1, gamma, sigma), 8.0)
+
+    def test_exact_null_cost_sweep_confronts_three_halves_exponent(self) -> None:
+        gamma = 1.0
+        sigma = 0.25
+        dimensions = [2, 4, 8, 16, 32, 64, 128]
+        costs = [minimum_m_for_sd_threshold(c, gamma, sigma) for c in dimensions]
+        self.assertEqual(costs, [9, 24, 65, 182, 513, 1449, 4097])
+        slope = loglog_slope(
+            [float(c) for c in dimensions[2:]],
+            [float(m) for m in costs[2:]],
+        )
+        self.assertGreater(slope, 1.48)
+        self.assertLess(slope, 1.51)
 
     def test_t6_energy_threshold(self) -> None:
         gamma = 0.8
