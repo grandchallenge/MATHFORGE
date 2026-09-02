@@ -1,0 +1,14 @@
+name: GHOS hostile unregistered probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inert:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Inert marker
+        run: echo 'hostile routing probe: this workflow must remain unregistered and unmergeable'
