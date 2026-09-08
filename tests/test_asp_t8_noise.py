@@ -15,8 +15,11 @@ from domains.adaptive_spectral_peeling.t8_noise import (
     exact_null_variance,
     kernel_diagonal_sup,
     kernel_hilbert_schmidt_sq,
+    noisy_energy_ucb_from_block_median,
+    predictor_combined,
     predictor_p0,
     predictor_p1,
+    required_odd_block_count,
     t6_energy_threshold,
     u_statistic_energy,
 )
@@ -101,6 +104,55 @@ class AspT8NoiseTests(unittest.TestCase):
         c = 10.0
         threshold = t6_energy_threshold(gamma, c)
         self.assertAlmostEqual(math.sqrt(c * threshold), gamma / 4.0)
+
+    def test_explicit_block_median_ucb_matches_derived_formula(self) -> None:
+        estimates = (-0.2, 0.1, 0.3)
+        q = 10
+        residual_bound = 0.5
+        sigma = 0.2
+        c = 4
+        lambda_diag = 4.0
+        a_q = 4.0 * (residual_bound**2 + sigma**2) + (
+            4.0 * (2.0 * sigma**2 + residual_bound**2) * lambda_diag / q
+        )
+        d = 4.0 * sigma**4 * c
+        expected = 2.0 * 0.1 + 4.0 * a_q / q + 4.0 * math.sqrt(d) / q
+        self.assertAlmostEqual(
+            noisy_energy_ucb_from_block_median(
+                estimates, q, residual_bound, sigma, c, lambda_diag
+            ),
+            expected,
+        )
+
+    def test_certificate_inputs_fail_closed_on_non_finite_values(self) -> None:
+        with self.assertRaisesRegex(ValueError, "finite"):
+            noisy_energy_ucb_from_block_median(
+                (0.1, math.nan, 0.2), 10, 0.5, 0.2, 4, 4.0
+            )
+        with self.assertRaisesRegex(ValueError, "finite"):
+            exact_null_variance(math.inf, 4, 10)
+        with self.assertRaisesRegex(ValueError, "odd number"):
+            noisy_energy_ucb_from_block_median(
+                (0.1, 0.2), 10, 0.5, 0.2, 4, 4.0
+            )
+
+    def test_confidence_blocks_are_odd_and_meet_hoeffding_budget(self) -> None:
+        for delta in (0.2, 0.05, 0.001):
+            blocks = required_odd_block_count(delta)
+            self.assertEqual(blocks % 2, 1)
+            self.assertGreaterEqual(blocks, 8.0 * math.log(1.0 / delta))
+
+    def test_combined_predictor_is_sum_of_declared_regimes(self) -> None:
+        c = 16.0
+        gamma = 0.5
+        sigma = 0.2
+        residual_bound = 0.75
+        expected = residual_bound**2 * predictor_p0(c, gamma) + predictor_p1(
+            c, gamma, sigma
+        )
+        self.assertAlmostEqual(
+            predictor_combined(c, gamma, sigma, residual_bound), expected
+        )
 
 
 if __name__ == "__main__":

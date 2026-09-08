@@ -1,7 +1,7 @@
 # ASP-T8-NOISE-002 — Sub-Gaussian residual-energy certification
 
 **Issue:** grandchallenge/MATHFORGE#115  
-**Parent finite harness:** ASP-WP01 / PR #112 exact head `d3f7490a8e28c9a8e426856657506e679d42af4f`  
+**Parent finite harness:** ASP-WP01 / PR #112 protected head `ae55792e3c89a02796958abe4b7556ce9f9822de`
 **Status:** theory candidate + finite confrontation specification; no theorem promotion  
 
 ## 1. Objective
@@ -221,7 +221,10 @@ Hence the exact-surrogate noise floor is
 SD(U_m)\asymp \frac{\nu^2\sqrt C}{m}.
 \]
 
-This already falsifies a universal noisy `C/Gamma^2` law for this energy-certificate route unless noise is asymptotically negligible.
+This exact variance identity shows that `C/Gamma^2` is not a sufficient
+variance-resolution predictor for this estimator under persistent noise. It
+does not, by itself, prove a sample-complexity lower bound: that would require
+an anti-concentration argument or a testing reduction.
 
 ## 6. High-confidence certificate without delicate U-statistic tail constants
 
@@ -355,7 +358,7 @@ Equivalently,
 U_2^{noise}<\frac{\Gamma^2}{16\Lambda}.
 \]
 
-## 8. Scaling consequence
+## 8. Sufficient scaling consequence and variance diagnostic
 
 Ignoring the realized `M_+` term in the near-exact-surrogate regime and lower-order `q^{-2}` terms, the block size sufficient to push the deterministic radius below the T6 energy threshold scales as
 
@@ -381,7 +384,8 @@ q
 
 up to universal constants and the `B=O(log(1/delta))` confidence multiplier.
 
-Thus the candidate certification-cost predictor is not a single ratio. It has two regimes:
+Thus the sufficient cost predictor for this explicit median-of-blocks
+certificate is not a single ratio. It has two regimes:
 
 \[
 \boxed{
@@ -397,9 +401,13 @@ The original
 C/\Gamma^2
 \]
 
-is recovered in bounded/noiseless or sufficiently low-noise conditions. Under persistent observation noise, an additional `sqrt(C)` penalty appears for this residual-energy route.
+is recovered in bounded/noiseless or sufficiently low-noise conditions. Under
+persistent observation noise, the explicit certificate and the exact-null
+standard-deviation resolution criterion both carry an additional `sqrt(C)`
+penalty. The latter is a route-specific variance diagnostic, not a minimax
+lower bound for all ASP certification strategies.
 
-## 9. Route-specific lower boundary
+## 9. Route-specific exact-null variance boundary
 
 At `r=0` the exact variance identity
 
@@ -413,15 +421,21 @@ shows that the `nu^2 sqrt(C)/m` stochastic scale is not an artifact of the media
 a=\Theta(\Gamma^2/C),
 \]
 
-this estimator necessarily needs
+the fixed `z` standard-deviation resolution criterion used by the finite
+confrontation needs
 
 \[
 m=\Omega(\nu^2C^{3/2}/\Gamma^2)
 \]
 
-at constant signal-to-noise confidence.
+at the declared resolution level.
 
-This is an **estimator/energy-route obstruction**, not yet a universal minimax lower bound over every possible ASP certificate. Quadratic-functional estimation and signal-detection theory indicate that such degenerate-noise effects are standard; any stronger minimax claim requires a separate reduction and independent review.
+This is an exact **estimator/energy-route variance identity and diagnostic**,
+not a high-probability or minimax lower bound. Variance alone does not establish
+sample-complexity necessity. Quadratic-functional estimation and
+signal-detection theory indicate that such degenerate-noise effects are
+standard; any lower-bound claim requires a separate reduction,
+anti-concentration argument, and independent review.
 
 ## 10. Provenance boundary
 
@@ -432,6 +446,22 @@ The ingredients are established mathematics:
 - Hoeffding decomposition and variance formula for U-statistics;
 - canonical order-two U-statistic exponential inequalities;
 - quadratic-functional estimation/testing theory.
+
+Primary references checked for this bounded use are:
+
+- W. Hoeffding, *A Class of Statistics with Asymptotically Normal
+  Distribution* (1948), DOI `10.1214/aoms/1177730196`, for the U-statistic
+  framework and decomposition;
+- E. Giné, R. Latała, and J. Zinn, *Exponential and Moment Inequalities for
+  U-Statistics*, `arXiv:math/0003228`, for canonical order-two exponential
+  inequalities;
+- C. Houdré and P. Reynaud-Bouret, *Exponential Inequalities, with Constants,
+  for U-statistics of Order Two*, for explicit constant-bearing order-two
+  bounds.
+
+The governed certificate below deliberately uses only the displayed variance
+bound, Chebyshev, and a block-median Hoeffding step; it does not import an
+unstated constant from the sharper canonical inequalities.
 
 The candidate ASP contribution is the composition
 
