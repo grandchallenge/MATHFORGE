@@ -37,20 +37,33 @@ from domains.adaptive_spectral_peeling.finite_lab import (
 
 TOLERANCE = 1e-10
 SEED = 170600764
+BOOLEAN_SEED = 170600765
 
 
-def run_replay() -> dict:
-    space = FiniteProductSpace((2, 3, 2))
+def _require_finite_result(name: str, value: float) -> float:
+    if not math.isfinite(value):
+        raise ValueError(f"{name} produced a non-finite result")
+    return value
+
+
+def _run_randomized_invariant_fixture(
+    space: FiniteProductSpace, seed: int
+) -> dict:
     source_coefficients = random_spectral_coefficients(
-        space, seed=SEED, density=0.72, scale=0.9
+        space, seed=seed, density=0.72, scale=0.9
     )
     values = objective_from_coefficients(space, source_coefficients)
     recovered = spectral_coefficients(space, values)
 
-    basis_error = basis_orthonormality_error(space)
-    reconstruction_error = max(
-        abs(recovered[alpha] - source_coefficients[alpha])
-        for alpha in source_coefficients
+    basis_error = _require_finite_result(
+        "basis orthonormality error", basis_orthonormality_error(space)
+    )
+    reconstruction_error = _require_finite_result(
+        "spectral reconstruction error",
+        max(
+            abs(recovered[alpha] - source_coefficients[alpha])
+            for alpha in source_coefficients
+        ),
     )
 
     # T1: every nonempty, non-full restriction and every residual coefficient.
@@ -68,22 +81,32 @@ def run_replay() -> dict:
             predicted = transported_coefficient(
                 space, source_coefficients, restriction, beta
             )
-            t1_error = max(t1_error, abs(observed - predicted))
+            comparison_error = _require_finite_result(
+                "T1 coefficient comparison", abs(observed - predicted)
+            )
+            t1_error = max(t1_error, comparison_error)
             coefficient_comparisons += 1
 
     # T2: exact average over every value of every coordinate.
     original_tail = l2_tail_energy(source_coefficients, max_degree=1)
     t2_error = 0.0
     for coordinate in range(space.n):
-        observed_decrement = original_tail - expected_tail_after_single_restriction(
-            space, values, coordinate, max_degree=1
+        observed_decrement = _require_finite_result(
+            "T2 observed decrement",
+            original_tail
+            - expected_tail_after_single_restriction(
+                space, values, coordinate, max_degree=1
+            ),
         )
-        predicted_decrement = level_influence(
-            source_coefficients, coordinate, level=2
+        predicted_decrement = _require_finite_result(
+            "T2 predicted decrement",
+            level_influence(source_coefficients, coordinate, level=2),
         )
-        t2_error = max(
-            t2_error, abs(observed_decrement - predicted_decrement)
+        comparison_error = _require_finite_result(
+            "T2 decrement comparison",
+            abs(observed_decrement - predicted_decrement),
         )
+        t2_error = max(t2_error, comparison_error)
 
     # T3: enumerate every nontrivial restriction and compare actual residual to
     # the assignment-independent weighted spectral envelope.
@@ -93,18 +116,63 @@ def run_replay() -> dict:
     for restriction in all_nontrivial_restrictions(space):
         _, residual_space, residual_values = restrict_table(space, values, restriction)
         assert residual_space is not None
-        residual = restricted_supnorm_residual(
-            residual_space, residual_values, max_degree=1
+        residual = _require_finite_result(
+            "T3 restricted residual",
+            restricted_supnorm_residual(
+                residual_space, residual_values, max_degree=1
+            ),
         )
-        envelope = weighted_l1_tail_envelope(
-            space,
-            source_coefficients,
-            max_degree=1,
-            restricted_coordinates=tuple(restriction),
+        envelope = _require_finite_result(
+            "T3 weighted envelope",
+            weighted_l1_tail_envelope(
+                space,
+                source_coefficients,
+                max_degree=1,
+                restricted_coordinates=tuple(restriction),
+            ),
         )
-        t3_max_violation = max(t3_max_violation, residual - envelope)
+        violation = _require_finite_result(
+            "T3 residual-envelope comparison", residual - envelope
+        )
+        t3_max_violation = max(t3_max_violation, violation)
         t3_largest_residual = max(t3_largest_residual, residual)
         t3_smallest_slack = min(t3_smallest_slack, envelope - residual)
+
+    passed = (
+        basis_error <= TOLERANCE
+        and reconstruction_error <= TOLERANCE
+        and t1_error <= TOLERANCE
+        and t2_error <= TOLERANCE
+        and t3_max_violation <= TOLERANCE
+    )
+
+    return {
+        "space": space.cardinalities,
+        "seed": seed,
+        "basis_orthonormality_max_error": basis_error,
+        "spectral_reconstruction_max_error": reconstruction_error,
+        "t1": {
+            "max_error": t1_error,
+            "restriction_count": restriction_count,
+            "coefficient_comparisons": coefficient_comparisons,
+        },
+        "t2": {"max_error": t2_error},
+        "t3": {
+            "max_residual_minus_envelope": t3_max_violation,
+            "largest_actual_residual": t3_largest_residual,
+            "smallest_envelope_slack": t3_smallest_slack,
+        },
+        "passed": passed,
+    }
+
+
+def run_replay() -> dict:
+    mixed_fixture = _run_randomized_invariant_fixture(
+        FiniteProductSpace((2, 3, 2)), SEED
+    )
+    boolean_fixture = _run_randomized_invariant_fixture(
+        FiniteProductSpace((2, 2, 2)), BOOLEAN_SEED
+    )
 
     regimes = {}
     for name, (regime_space, coefficients, degree_cutoff, branch_coordinate) in adversarial_regimes().items():
@@ -135,11 +203,8 @@ def run_replay() -> dict:
     }
 
     passed = (
-        basis_error <= TOLERANCE
-        and reconstruction_error <= TOLERANCE
-        and t1_error <= TOLERANCE
-        and t2_error <= TOLERANCE
-        and t3_max_violation <= TOLERANCE
+        mixed_fixture["passed"]
+        and boolean_fixture["passed"]
         and all(structural_checks.values())
     )
 
@@ -149,18 +214,18 @@ def run_replay() -> dict:
         "scope": "finite_uniform_product_spaces",
         "seed": SEED,
         "tolerance": TOLERANCE,
-        "basis_orthonormality_max_error": basis_error,
-        "spectral_reconstruction_max_error": reconstruction_error,
-        "t1": {
-            "max_error": t1_error,
-            "restriction_count": restriction_count,
-            "coefficient_comparisons": coefficient_comparisons,
-        },
-        "t2": {"max_error": t2_error},
-        "t3": {
-            "max_residual_minus_envelope": t3_max_violation,
-            "largest_actual_residual": t3_largest_residual,
-            "smallest_envelope_slack": t3_smallest_slack,
+        "basis_orthonormality_max_error": mixed_fixture[
+            "basis_orthonormality_max_error"
+        ],
+        "spectral_reconstruction_max_error": mixed_fixture[
+            "spectral_reconstruction_max_error"
+        ],
+        "t1": mixed_fixture["t1"],
+        "t2": mixed_fixture["t2"],
+        "t3": mixed_fixture["t3"],
+        "randomized_fixtures": {
+            "mixed_cardinality": mixed_fixture,
+            "boolean": boolean_fixture,
         },
         "adversarial_regimes": regimes,
         "structural_checks": structural_checks,
