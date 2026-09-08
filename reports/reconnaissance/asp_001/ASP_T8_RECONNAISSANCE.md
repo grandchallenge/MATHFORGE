@@ -4,7 +4,7 @@
 **Theory target:** `T8`  
 **Issue:** `grandchallenge/MATHFORGE#113`  
 **Owning pillar:** MATHFORGE  
-**Exact base:** `ed8a65410336489ea5646808265c44f5387bebb8`  
+**Exact base:** `c1e3cb17596187bc92b7c260761632a054fad490`
 **Status:** theory reconnaissance; no theorem promotion  
 
 ## 1. Question
@@ -38,7 +38,8 @@ ASP does **not** claim this machinery as novel. The research question is whether
 
 ## 3. T8.1 candidate — sharp evaluation-norm transfer
 
-Let
+For the finite product domains used by ASP, point evaluation is defined and the
+supremum below is a maximum. Let
 
 \[
 \Lambda_V^*:=\sup_x K_V(x).
@@ -73,7 +74,7 @@ Cauchy-Schwarz gives
 
 Taking the supremum over `x` gives the stated inequality.
 
-The constant is exact. At a point `x_*` attaining the supremum, choose the normalized reproducing-kernel section
+The constant is exact. At a point `x_*` attaining the maximum, choose the normalized reproducing-kernel section
 
 \[
 r_*(\cdot)\propto \sum_j \overline{\phi_j(x_*)}\phi_j(\cdot).
@@ -398,7 +399,8 @@ If the empirical residual-energy term `2 \widehat\mu_t` already exceeds the marg
 
 ## 8. Approximate-subspace extension
 
-Exact membership `r in V` need not be required.
+Exact membership `r in V` need not be required, but the holdout bound for `r`
+must not be silently reused as a bound for its `V` component.
 
 Suppose
 
@@ -418,10 +420,36 @@ Then
 }
 \]
 
+If the available validation certificate bounds the full residual instead,
+`||r||_2^2 <= U_2`, then the probability measure and `||h||_infinity <= eta`
+give
+
+\[
+\|v\|_2
+\le \|r\|_2+\|h\|_2
+\le \sqrt{U_2}+\eta,
+\]
+
+and therefore the directly justified certificate is
+
+\[
+\boxed{
+\|r\|_\infty
+\le
+\sqrt{\Lambda_V^*}(\sqrt{U_2}+\eta)+\eta.
+}
+\]
+
+Using the sharper first display requires a separate valid upper bound on
+`||v||_2`, for example from a justified projection estimator. The holdout
+energy of `r` alone does not supply that bound.
+
 This recovers a role for a structural tail budget, but it is weaker than exact sparse recovery:
 
 - `v` may be dense inside `V`;
-- validation estimates its aggregate energy rather than every coefficient;
+- validation may estimate aggregate residual energy rather than every
+  coefficient, with the preceding extra `eta` term unless `v` is estimated
+  separately;
 - the remaining `eta` is explicit rather than silently inferred from small `L2` error.
 
 When no justified `eta` exists, use the full active function space. Then the certificate remains valid with `Lambda=M`, albeit potentially too expensive to be useful.
@@ -558,7 +586,9 @@ This five-way separation should replace any single "effective dimension" scalar 
 
 ## 14. Required finite confrontation extension
 
-After ASP-WP01 is independently reviewed, a successor implementation should add the following tests without rewriting the already-confronted WP01 head:
+ASP-WP01 is now independently reviewed and protected on main. Successor issue
+`#115` and draft PR `#116` carry the following tests without rewriting the
+already-confronted WP01 head:
 
 1. compute `K_V(x)` exactly from an arbitrary declared spectral index set;
 2. verify `max_x K_V(x)` against brute-force `sup ||r||_infinity^2/||r||_2^2` on small subspaces;
