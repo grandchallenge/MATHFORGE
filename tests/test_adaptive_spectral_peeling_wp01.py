@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import math
 import unittest
+from unittest.mock import patch
 
 from domains.adaptive_spectral_peeling.finite_lab import (
     FiniteProductSpace,
@@ -112,6 +113,49 @@ class AdaptiveSpectralPeelingWP01Tests(unittest.TestCase):
             with self.subTest(restriction=restriction):
                 self.assertLessEqual(residual, envelope + TOL)
 
+    def test_boolean_randomized_fixture_satisfies_t1_t2_t3(self) -> None:
+        space = FiniteProductSpace((2, 2, 2))
+        coefficients = random_spectral_coefficients(
+            space, seed=20260905, density=0.7, scale=0.8
+        )
+        values = objective_from_coefficients(space, coefficients)
+
+        original_tail = l2_tail_energy(coefficients, max_degree=1)
+        for coordinate in range(space.n):
+            observed = original_tail - expected_tail_after_single_restriction(
+                space, values, coordinate, max_degree=1
+            )
+            predicted = level_influence(coefficients, coordinate, level=2)
+            with self.subTest(invariant="T2", coordinate=coordinate):
+                self.assertAlmostEqual(observed, predicted, delta=TOL)
+
+        for restriction in all_nontrivial_restrictions(space):
+            _, residual_space, residual_values = restrict_table(
+                space, values, restriction
+            )
+            assert residual_space is not None
+            recovered = spectral_coefficients(residual_space, residual_values)
+            for beta, observed in recovered.items():
+                predicted = transported_coefficient(
+                    space, coefficients, restriction, beta
+                )
+                with self.subTest(
+                    invariant="T1", restriction=restriction, beta=beta
+                ):
+                    self.assertAlmostEqual(observed, predicted, delta=TOL)
+
+            residual = restricted_supnorm_residual(
+                residual_space, residual_values, max_degree=1
+            )
+            envelope = weighted_l1_tail_envelope(
+                space,
+                coefficients,
+                max_degree=1,
+                restricted_coordinates=tuple(restriction),
+            )
+            with self.subTest(invariant="T3", restriction=restriction):
+                self.assertLessEqual(residual, envelope + TOL)
+
     def test_known_treewidth_fixtures(self) -> None:
         regimes = adversarial_regimes()
         path_space, path_coefficients, _, _ = regimes["path_width"]
@@ -182,9 +226,40 @@ class AdaptiveSpectralPeelingWP01Tests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertNotEqual(first, third)
 
+    def test_non_finite_harness_inputs_are_rejected(self) -> None:
+        invalid_values = dict(self.values)
+        invalid_values[next(iter(invalid_values))] = math.nan
+        with self.assertRaisesRegex(ValueError, "finite"):
+            spectral_coefficients(self.space, invalid_values)
+
+        invalid_coefficients = dict(self.coefficients)
+        invalid_coefficients[next(iter(invalid_coefficients))] = math.inf
+        with self.assertRaisesRegex(ValueError, "finite"):
+            objective_from_coefficients(self.space, invalid_coefficients)
+
+    def test_non_finite_t1_intermediate_cannot_pass_replay(self) -> None:
+        with patch(
+            "domains.adaptive_spectral_peeling.replay_wp01.transported_coefficient",
+            return_value=math.nan,
+        ):
+            with self.assertRaisesRegex(ValueError, "T1.*non-finite"):
+                run_replay()
+
+    def test_non_finite_t3_intermediate_cannot_pass_replay(self) -> None:
+        with patch(
+            "domains.adaptive_spectral_peeling.replay_wp01.restricted_supnorm_residual",
+            return_value=math.nan,
+        ):
+            with self.assertRaisesRegex(ValueError, "T3.*non-finite"):
+                run_replay()
+
     def test_deterministic_replay_passes(self) -> None:
         result = run_replay()
         self.assertTrue(result["passed"])
+        self.assertTrue(result["randomized_fixtures"]["boolean"]["passed"])
+        self.assertEqual(
+            result["randomized_fixtures"]["boolean"]["space"], (2, 2, 2)
+        )
 
 
 if __name__ == "__main__":

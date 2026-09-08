@@ -109,11 +109,15 @@ def spectral_coefficients(space: FiniteProductSpace, values: Mapping[Point, floa
 
     _validate_complete_table(space, values)
     inv_size = 1.0 / space.size
-    return {
-        alpha: inv_size
-        * sum(values[x] * basis_value(space, alpha, x) for x in space.points())
-        for alpha in space.multiindices()
-    }
+    result: CoefficientMap = {}
+    for alpha in space.multiindices():
+        coefficient = inv_size * sum(
+            values[x] * basis_value(space, alpha, x) for x in space.points()
+        )
+        result[alpha] = _require_finite(
+            coefficient, f"spectral coefficient {alpha}"
+        )
+    return result
 
 
 def evaluate_spectrum(
@@ -121,10 +125,12 @@ def evaluate_spectrum(
     coefficients: Mapping[MultiIndex, float],
     point: Point,
 ) -> float:
-    return sum(
+    _validate_coefficient_keys(space, coefficients)
+    result = sum(
         coefficient * basis_value(space, alpha, point)
         for alpha, coefficient in coefficients.items()
     )
+    return _require_finite(result, f"spectrum evaluation at {point}")
 
 
 def objective_from_coefficients(
@@ -137,6 +143,7 @@ def objective_from_coefficients(
 def truncate_coefficients(
     coefficients: Mapping[MultiIndex, float], max_degree: int
 ) -> CoefficientMap:
+    _validate_finite_mapping(coefficients, "coefficient")
     return {
         alpha: coefficient
         for alpha, coefficient in coefficients.items()
@@ -147,11 +154,13 @@ def truncate_coefficients(
 def l2_tail_energy(coefficients: Mapping[MultiIndex, float], max_degree: int) -> float:
     """Return squared L2 tail norm, sum_{deg(alpha)>d} |a_alpha|^2."""
 
-    return sum(
+    _validate_finite_mapping(coefficients, "coefficient")
+    result = sum(
         coefficient * coefficient
         for alpha, coefficient in coefficients.items()
         if degree(alpha) > max_degree
     )
+    return _require_finite(result, "L2 tail energy")
 
 
 def level_influence(
@@ -159,21 +168,25 @@ def level_influence(
 ) -> float:
     """Return level-resolved influence energy for one coordinate."""
 
-    return sum(
+    _validate_finite_mapping(coefficients, "coefficient")
+    result = sum(
         coefficient * coefficient
         for alpha, coefficient in coefficients.items()
         if degree(alpha) == level and alpha[coordinate] != 0
     )
+    return _require_finite(result, "level influence")
 
 
 def total_influence(
     coefficients: Mapping[MultiIndex, float], coordinate: int
 ) -> float:
-    return sum(
+    _validate_finite_mapping(coefficients, "coefficient")
+    result = sum(
         coefficient * coefficient
         for alpha, coefficient in coefficients.items()
         if alpha[coordinate] != 0
     )
+    return _require_finite(result, "total influence")
 
 
 def weighted_l1_tail_envelope(
@@ -184,8 +197,9 @@ def weighted_l1_tail_envelope(
 ) -> float:
     """Assignment-independent T3 envelope after restricting selected coordinates."""
 
+    _validate_coefficient_keys(space, coefficients)
     restricted = frozenset(restricted_coordinates)
-    return sum(
+    result = sum(
         abs(coefficient) * basis_supnorm(space, alpha)
         for alpha, coefficient in coefficients.items()
         if sum(
@@ -195,6 +209,7 @@ def weighted_l1_tail_envelope(
         )
         > max_degree
     )
+    return _require_finite(result, "weighted L1 tail envelope")
 
 
 def restrict_table(
@@ -232,6 +247,7 @@ def transported_coefficient(
 ) -> float:
     """T1 right-hand side for a coefficient after an arbitrary restriction."""
 
+    _validate_coefficient_keys(space, coefficients)
     _validate_restriction(space, restriction)
     active = tuple(i for i in range(space.n) if i not in restriction)
     if len(residual_alpha) != len(active):
@@ -246,7 +262,7 @@ def transported_coefficient(
         for coordinate, fixed_value in restriction.items():
             factor *= tables[coordinate][alpha[coordinate]][fixed_value]
         result += coefficient * factor
-    return result
+    return _require_finite(result, f"transported coefficient {residual_alpha}")
 
 
 def restricted_supnorm_residual(
@@ -256,10 +272,11 @@ def restricted_supnorm_residual(
 ) -> float:
     coefficients = spectral_coefficients(residual_space, residual_values)
     truncated = truncate_coefficients(coefficients, max_degree)
-    return max(
+    result = max(
         abs(residual_values[x] - evaluate_spectrum(residual_space, truncated, x))
         for x in residual_space.points()
     )
+    return _require_finite(result, "restricted sup-norm residual")
 
 
 def expected_tail_after_single_restriction(
@@ -285,10 +302,12 @@ def expected_tail_after_single_restriction(
                 spectral_coefficients(residual_space, residual_values), max_degree
             )
         total += tail / cardinality
-    return total
+    return _require_finite(total, "expected restricted tail")
 
 
 def exact_optima(values: Mapping[Point, float], tolerance: float = 1e-12) -> Tuple[float, Tuple[Point, ...]]:
+    _validate_finite_mapping(values, "objective value")
+    _require_finite(tolerance, "optimum tolerance")
     minimum = min(values.values())
     minimizers = tuple(sorted(x for x, value in values.items() if abs(value - minimum) <= tolerance))
     return minimum, minimizers
@@ -307,6 +326,7 @@ def branch_minima(
     values: Mapping[Point, float],
     coordinate: int,
 ) -> Tuple[float, ...]:
+    _validate_complete_table(space, values)
     if coordinate < 0 or coordinate >= space.n:
         raise IndexError("coordinate out of range")
     result = []
@@ -326,12 +346,13 @@ def branch_margin(
     coordinate: int,
     tolerance: float = 1e-12,
 ) -> float:
+    _require_finite(tolerance, "branch-margin tolerance")
     minima = sorted(branch_minima(space, values, coordinate))
     if len(minima) < 2:
         return math.inf
     if abs(minima[1] - minima[0]) <= tolerance:
         return 0.0
-    return minima[1] - minima[0]
+    return _require_finite(minima[1] - minima[0], "branch margin")
 
 
 def primal_graph(
@@ -339,6 +360,8 @@ def primal_graph(
     coefficients: Mapping[MultiIndex, float],
     threshold: float = 0.0,
 ) -> Dict[int, set[int]]:
+    _validate_finite_mapping(coefficients, "coefficient")
+    _require_finite(threshold, "graph threshold")
     graph = {i: set() for i in range(coordinate_count)}
     for alpha, coefficient in coefficients.items():
         if abs(coefficient) <= threshold:
@@ -388,6 +411,8 @@ def random_spectral_coefficients(
 ) -> CoefficientMap:
     """Generate a deterministic random spectral objective for finite confrontation."""
 
+    _require_finite(density, "density")
+    _require_finite(scale, "scale")
     if not (0.0 <= density <= 1.0):
         raise ValueError("density must lie in [0,1]")
     rng = random.Random(seed)
@@ -411,6 +436,7 @@ def noisy_observations(
 ) -> ValueTable:
     """Return one deterministic seeded Gaussian-noise observation per point."""
 
+    _require_finite(sigma, "noise sigma")
     if sigma < 0:
         raise ValueError("sigma must be nonnegative")
     _validate_complete_table(space, values)
@@ -542,6 +568,7 @@ def _validate_complete_table(
         raise ValueError(
             f"objective table must cover the complete domain (missing={missing}, extra={extra})"
         )
+    _validate_finite_mapping(values, "objective value")
 
 
 def _validate_coefficient_keys(
@@ -555,6 +582,24 @@ def _validate_coefficient_keys(
             for i in range(space.n)
         ):
             raise ValueError("coefficient multi-index is outside the basis range")
+    _validate_finite_mapping(coefficients, "coefficient")
+
+
+def _validate_finite_mapping(
+    values: Mapping[object, float], label: str
+) -> None:
+    for key, value in values.items():
+        _require_finite(value, f"{label} at {key}")
+
+
+def _require_finite(value: float, label: str) -> float:
+    try:
+        finite = math.isfinite(value)
+    except TypeError as error:
+        raise ValueError(f"{label} must be a finite real number") from error
+    if not finite:
+        raise ValueError(f"{label} must be finite")
+    return value
 
 
 def _validate_restriction(
