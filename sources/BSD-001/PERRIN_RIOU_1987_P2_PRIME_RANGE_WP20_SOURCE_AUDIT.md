@@ -29,11 +29,7 @@ Instead, two accessible primary Perrin–Riou papers from the same 1987 Heegner/
 
 Bernadette Perrin–Riou, *Fonctions L p-adiques et points de Heegner*, Astérisque 147–148 (1987), 151–171.
 
-At the opening of the paper Perrin–Riou fixes
-
-> `p` a prime number that is odd, with `E` ordinary at `p`.
-
-The paper then develops the ordinary two-variable `p`-adic `L`-function/Heegner-point setup, its derivative conjecture, and the connection with `p`-adic BSD inside that standing prime range.
+The opening paragraph explicitly fixes `p` to be an odd prime and assumes `E` ordinary at `p`. The paper then develops the ordinary two-variable `p`-adic `L`-function/Heegner-point setup, its derivative conjecture, and the connection with `p`-adic BSD inside that standing prime range.
 
 ### Primary companion B — Bulletin SMF 115 (1987)
 
