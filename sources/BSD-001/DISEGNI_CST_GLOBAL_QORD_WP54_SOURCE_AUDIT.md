@@ -173,7 +173,7 @@ Disegni Lemma 4.3.3 / (4.3.4) decomposes `Q^ord` into:
 - remaining vector ratios;
 - the `p-infinity` ordinary term.
 
-Section 4 above admits `Sigma=emptyset` in this selected lane. One may choose `Sigma'` large enough to contain all finite nonspherical places, in particular the primes dividing `N D_K` and `2`; outside that set the spherical local factor is one for the CST local measure. Source-compatible pure tensors may be taken with identical numerator and denominator local vectors wherever the theorem permits, making the surviving vector ratios exactly one rather than merely units.
+Section 4 above admits `Sigma=emptyset` in this selected lane. One may choose `Sigma'` disjoint from `S_p` and large enough to contain every finite nonspherical place away from `p`, in particular the primes dividing `N D_K`; the selected prime `2` is handled exclusively by the `p-infinity` ordinary factor. Outside `Sigma' union {2}` the spherical local factor is one for the CST local measure. Source-compatible pure tensors may be taken with identical numerator and denominator local vectors wherever the theorem permits, making the surviving vector ratios exactly one rather than merely units.
 
 The only global scalar not fixed by local source formulas is therefore the archimedean formal volume required to convert the product of CST finite measures into Disegni's adelic volume-one measure. Its exact value is a downstream idelic/class-group calculation, not an admitted source statement of this audit.
 
