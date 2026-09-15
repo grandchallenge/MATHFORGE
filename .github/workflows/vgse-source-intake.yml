@@ -9,6 +9,7 @@ on:
       - "tools/verify_vgse_source_concordance.py"
       - "tools/audit_vgse_arxiv_source_archive.py"
       - "tools/classify_vgse_varchenko_weight_semantics.py"
+      - "tools/verify_vgse_arxiv_source_archive_record.py"
       - "tests/test_vgse_source_concordance.py"
       - "tests/test_vgse_arxiv_source_archive.py"
       - "tests/test_vgse_varchenko_weight_semantics.py"
@@ -63,6 +64,11 @@ jobs:
             --source-archive /tmp/vgse-arxiv-v2-source \
             --output /tmp/vgse-varchenko-weight-semantics-audit.json \
             | tee /tmp/vgse-varchenko-weight-semantics-audit.stdout.json
+      - name: Verify bound source-package provider record
+        run: |
+          python tools/verify_vgse_arxiv_source_archive_record.py \
+            --source-archive /tmp/vgse-arxiv-v2-source \
+            --record sources/VGSE-001/arxiv_v2_source_archive_audit.json
       - name: Run bounded source-archive parser tests
         run: |
           python -m unittest tests.test_vgse_arxiv_source_archive -v
