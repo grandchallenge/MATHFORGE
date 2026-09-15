@@ -22,6 +22,17 @@ LABEL_RE = re.compile(r"\\label\{([^}]+)\}")
 CAPTION_RE = re.compile(r"\\caption(?:\[[^\]]*\])?\{")
 BEGIN_ENV_RE = re.compile(r"\\begin\{([^}]+)\}")
 VARC_TARGET_RE = re.compile(r"(?:^|/)Varc-[ab](?:\.[A-Za-z0-9]+)?$")
+WEIGHT_TOKEN_RE = re.compile(r"(?i)(?:\\(?:mathrm|operatorname|text)\{(?:wt|weight)\}|\\wt\b|\bwt\b|\bweight\b)")
+GAMMA_TOKEN_RE = re.compile(r"\\Gamma\b")
+MEAS_TOKEN_RE = re.compile(r"(?i)(?:\\operatorname\{Meas\}|\\mathrm\{Meas\}|\bMeas\b)")
+ASSIGNMENT_RE = re.compile(r"(?::=|(?<![<>])=(?!=))")
+NUMERIC_RE = re.compile(r"(?:\\frac\{|\b\d+(?:\.\d+)?\b)")
+PDF_INFO_PATTERNS = {
+    "creator": re.compile(rb"/Creator\s*\(([^)]{0,300})\)"),
+    "producer": re.compile(rb"/Producer\s*\(([^)]{0,300})\)"),
+    "creation_date": re.compile(rb"/CreationDate\s*\(([^)]{0,100})\)"),
+}
+GENERATOR_MARKERS = [b"Mathematica", b"Wolfram", b"matplotlib", b"Matplotlib", b"Illustrator", b"Inkscape", b"TikZ", b"PGF", b"Asymptote"]
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -109,9 +120,32 @@ def structural_window(lines: list[str], marker_index: int, radius: int = 80) -> 
     }
 
 
+def semantic_line_record(line: str, line_number: int) -> dict:
+    stripped = line.strip()
+    return {
+        "line": line_number,
+        "line_sha256": sha256_bytes(stripped.encode("utf-8", errors="replace")),
+        "has_weight_token": bool(WEIGHT_TOKEN_RE.search(stripped)),
+        "has_gamma_token": bool(GAMMA_TOKEN_RE.search(stripped)),
+        "has_meas_token": bool(MEAS_TOKEN_RE.search(stripped)),
+        "has_assignment_token": bool(ASSIGNMENT_RE.search(stripped)),
+        "has_numeric_token": bool(NUMERIC_RE.search(stripped)),
+    }
+
+
+def pdf_metadata(data: bytes) -> dict:
+    info = {}
+    for key, pattern in PDF_INFO_PATTERNS.items():
+        match = pattern.search(data)
+        info[key] = match.group(1).decode("latin-1", errors="replace") if match else None
+    info["generator_markers"] = [marker.decode("ascii") for marker in GENERATOR_MARKERS if marker in data]
+    return info
+
+
 def build_record(path: Path) -> dict:
     archive_sha, members = load_members(path)
-    names = {name for name, _ in members}
+    member_bytes = dict(members)
+    names = set(member_bytes)
     inventory = []
     text_cache: dict[str, str] = {}
     for name, data in members:
@@ -126,6 +160,7 @@ def build_record(path: Path) -> dict:
     example_hits = []
     figure_refs = []
     varc_refs = []
+    varc_source_windows: dict[str, tuple[int, int]] = {}
     for name, text in text_cache.items():
         lines = text.splitlines()
         for marker in EXAMPLE_MARKERS:
@@ -140,15 +175,34 @@ def build_record(path: Path) -> dict:
                 example_hits.append(hit)
         for line_index, line in enumerate(lines):
             for target in INCLUDE_RE.findall(line):
-                ref = {
-                    "source_file": name,
-                    "line": line_index + 1,
-                    "target": target,
-                    "resolved_member": resolve_asset(name, target, names),
-                }
+                resolved = resolve_asset(name, target, names)
+                ref = {"source_file": name, "line": line_index + 1, "target": target, "resolved_member": resolved}
                 figure_refs.append(ref)
                 if VARC_TARGET_RE.search(target):
-                    varc_refs.append({**ref, "structural_context": structural_window(lines, line_index, radius=50)})
+                    context = structural_window(lines, line_index, radius=50)
+                    varc_refs.append({**ref, "structural_context": context, "asset_pdf_metadata": pdf_metadata(member_bytes[resolved]) if resolved and resolved in member_bytes else None})
+                    prior = varc_source_windows.get(name)
+                    lo, hi = max(0, line_index - 90), min(len(lines), line_index + 91)
+                    varc_source_windows[name] = (min(prior[0], lo), max(prior[1], hi)) if prior else (lo, hi)
+
+    varc_semantics = []
+    for name, (lo, hi) in varc_source_windows.items():
+        lines = text_cache[name].splitlines()
+        semantic_lines = []
+        for idx in range(lo, hi):
+            line = lines[idx]
+            if WEIGHT_TOKEN_RE.search(line) or GAMMA_TOKEN_RE.search(line) or MEAS_TOKEN_RE.search(line):
+                semantic_lines.append(semantic_line_record(line, idx + 1))
+        varc_semantics.append({
+            "source_file": name,
+            "line_start": lo + 1,
+            "line_end": hi,
+            "semantic_lines": semantic_lines,
+            "explicit_weight_assignment_lines": [item["line"] for item in semantic_lines if item["has_weight_token"] and item["has_assignment_token"]],
+            "numeric_weight_assignment_lines": [item["line"] for item in semantic_lines if item["has_weight_token"] and item["has_assignment_token"] and item["has_numeric_token"]],
+            "gamma_assignment_lines": [item["line"] for item in semantic_lines if item["has_gamma_token"] and item["has_assignment_token"]],
+            "measurement_assignment_lines": [item["line"] for item in semantic_lines if item["has_meas_token"] and item["has_assignment_token"]],
+        })
 
     code_members = [item for item in inventory if item["class"] == "code"]
     data_members = [item for item in inventory if item["class"] == "data"]
@@ -163,7 +217,7 @@ def build_record(path: Path) -> dict:
             generation_term_hits.append({"path": name, "terms": terms, "sha256": sha256_bytes(text.encode("utf-8", errors="replace"))})
 
     return {
-        "schema_version": "1.1.0",
+        "schema_version": "1.2.0",
         "audit_id": "VGSE-ARXIV-SOURCE-ARCHIVE-AUDIT-001",
         "campaign_id": "VGSE-001",
         "source": {
@@ -177,6 +231,7 @@ def build_record(path: Path) -> dict:
         "example_markers": example_hits,
         "figure_references": figure_refs,
         "varchenko_figure_references": varc_refs,
+        "varchenko_source_semantics": varc_semantics,
         "code_members": code_members,
         "data_members": data_members,
         "metadata_members": metadata_members,
