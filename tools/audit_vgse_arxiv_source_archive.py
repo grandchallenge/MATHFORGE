@@ -20,6 +20,8 @@ INCLUDE_RE = re.compile(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}")
 INPUT_RE = re.compile(r"\\(?:input|include)\{([^}]+)\}")
 LABEL_RE = re.compile(r"\\label\{([^}]+)\}")
 CAPTION_RE = re.compile(r"\\caption(?:\[[^\]]*\])?\{")
+BEGIN_ENV_RE = re.compile(r"\\begin\{([^}]+)\}")
+VARC_TARGET_RE = re.compile(r"(?:^|/)Varc-[ab](?:\.[A-Za-z0-9]+)?$")
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -57,6 +59,22 @@ def decode_text(data: bytes) -> str | None:
     return None
 
 
+def classify_member(name: str) -> str:
+    path = PurePosixPath(name)
+    ext = path.suffix.lower()
+    if path.name == "00README.json":
+        return "metadata"
+    if ext in CODE_EXTS:
+        return "code"
+    if ext in DATA_EXTS:
+        return "data"
+    if ext in FIGURE_EXTS:
+        return "figure"
+    if ext in TEXT_EXTS:
+        return "text"
+    return "other"
+
+
 def resolve_asset(source_name: str, target: str, names: set[str]) -> str | None:
     source_dir = str(PurePosixPath(source_name).parent)
     target_path = PurePosixPath(source_dir) / target if source_dir not in ("", ".", "/") else PurePosixPath(target)
@@ -74,7 +92,7 @@ def resolve_asset(source_name: str, target: str, names: set[str]) -> str | None:
     return matches[0] if len(matches) == 1 else None
 
 
-def structural_window(lines: list[str], marker_index: int, radius: int = 100) -> dict:
+def structural_window(lines: list[str], marker_index: int, radius: int = 80) -> dict:
     start = max(0, marker_index - radius)
     end = min(len(lines), marker_index + radius + 1)
     window = "\n".join(lines[start:end])
@@ -84,6 +102,7 @@ def structural_window(lines: list[str], marker_index: int, radius: int = 100) ->
         "includegraphics_targets": sorted(set(INCLUDE_RE.findall(window))),
         "input_targets": sorted(set(INPUT_RE.findall(window))),
         "labels": sorted(set(LABEL_RE.findall(window))),
+        "environments_opened": sorted(set(BEGIN_ENV_RE.findall(window))),
         "caption_command_present": bool(CAPTION_RE.search(window)),
         "graph_weight_terms_present": sorted(set(match.group(1).lower() for match in GRAPH_WEIGHT_TERMS.finditer(window))),
         "window_sha256": sha256_bytes(window.encode("utf-8", errors="replace")),
@@ -97,15 +116,16 @@ def build_record(path: Path) -> dict:
     text_cache: dict[str, str] = {}
     for name, data in members:
         ext = PurePosixPath(name).suffix.lower()
-        kind = "code" if ext in CODE_EXTS else "data" if ext in DATA_EXTS else "figure" if ext in FIGURE_EXTS else "text" if ext in TEXT_EXTS else "other"
+        kind = classify_member(name)
         inventory.append({"path": name, "size_bytes": len(data), "sha256": sha256_bytes(data), "extension": ext, "class": kind})
-        if ext in TEXT_EXTS or ext in CODE_EXTS or ext in DATA_EXTS:
+        if kind in {"text", "code", "data", "metadata"}:
             text = decode_text(data)
             if text is not None:
                 text_cache[name] = text
 
     example_hits = []
     figure_refs = []
+    varc_refs = []
     for name, text in text_cache.items():
         lines = text.splitlines()
         for marker in EXAMPLE_MARKERS:
@@ -118,22 +138,32 @@ def build_record(path: Path) -> dict:
                     for target in window["includegraphics_targets"]
                 ]
                 example_hits.append(hit)
-        for target in INCLUDE_RE.findall(text):
-            figure_refs.append({"source_file": name, "target": target, "resolved_member": resolve_asset(name, target, names)})
+        for line_index, line in enumerate(lines):
+            for target in INCLUDE_RE.findall(line):
+                ref = {
+                    "source_file": name,
+                    "line": line_index + 1,
+                    "target": target,
+                    "resolved_member": resolve_asset(name, target, names),
+                }
+                figure_refs.append(ref)
+                if VARC_TARGET_RE.search(target):
+                    varc_refs.append({**ref, "structural_context": structural_window(lines, line_index, radius=50)})
 
     code_members = [item for item in inventory if item["class"] == "code"]
     data_members = [item for item in inventory if item["class"] == "data"]
+    metadata_members = [item for item in inventory if item["class"] == "metadata"]
     figure_members = [item for item in inventory if item["class"] == "figure"]
     generation_term_hits = []
     for name, text in text_cache.items():
-        if PurePosixPath(name).suffix.lower() not in CODE_EXTS | DATA_EXTS:
+        if classify_member(name) not in {"code", "data"}:
             continue
         terms = sorted(set(match.group(1).lower() for match in GRAPH_WEIGHT_TERMS.finditer(text)))
         if terms:
             generation_term_hits.append({"path": name, "terms": terms, "sha256": sha256_bytes(text.encode("utf-8", errors="replace"))})
 
     return {
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "audit_id": "VGSE-ARXIV-SOURCE-ARCHIVE-AUDIT-001",
         "campaign_id": "VGSE-001",
         "source": {
@@ -146,8 +176,10 @@ def build_record(path: Path) -> dict:
         "member_inventory": sorted(inventory, key=lambda item: item["path"]),
         "example_markers": example_hits,
         "figure_references": figure_refs,
+        "varchenko_figure_references": varc_refs,
         "code_members": code_members,
         "data_members": data_members,
+        "metadata_members": metadata_members,
         "figure_members": figure_members,
         "generation_term_hits_in_code_or_data": generation_term_hits,
         "interpretation": {
