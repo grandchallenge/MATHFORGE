@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-VGSE-001-ARXIV-SOURCE-ARCHIVE-AUDIT-001",
+  "campaign_id": "VGSE-001",
+  "source": {
+    "arxiv_id": "2410.09574v2",
+    "acquisition_url": "https://arxiv.org/e-print/2410.09574v2",
+    "archive_sha256": "b6d56a3b64bcc8be4f074c43077ea3a44740d9ad75f4a306236784c63940cca2",
+    "archive_size_bytes": 1102698,
+    "member_count": 35,
+    "member_inventory_canonical_sha256": "6a5af980d143a85d424190c7b296787548cd398ed4df2ad4263f33a40b1d17a6"
+  },
+  "package_inventory": {
+    "code_member_count": 0,
+    "non_metadata_data_member_count": 0,
+    "metadata_members": [
+      {
+        "path": "00README.json",
+        "sha256": "30c247ec6290160a4db7e1199785d08d225d060e8678c73913289017f314dfce",
+        "size_bytes": 396
+      }
+    ]
+  },
+  "figure16_source_lineage": {
+    "source_file": "t_embeddings_v2.tex",
+    "assets": [
+      {
+        "include_line": 5497,
+        "target": "figures_t_emb/Varc-a",
+        "resolved_member": "figures_t_emb/Varc-a.pdf",
+        "sha256": "ade05c312ddce14eea3af2554b7b5e1c0fb5316264671a4b760af61ea4495ca2",
+        "size_bytes": 34667,
+        "creator": "LaTeX with hyperref",
+        "producer": "pdfTeX-1.40.21",
+        "generator_markers": []
+      },
+      {
+        "include_line": 5499,
+        "target": "figures_t_emb/Varc-b",
+        "resolved_member": "figures_t_emb/Varc-b.pdf",
+        "sha256": "b110a7edfc6b14b642b0dc5fbd067804a1d3223076a1a39fbf4c4cc43c99ee03",
+        "size_bytes": 2071,
+        "creator": "LaTeX with hyperref",
+        "producer": "pdfTeX-1.40.21",
+        "generator_markers": []
+      }
+    ]
+  },
+  "varchenko_weight_semantics": {
+    "measurement_relation_lines": [5421, 5519],
+    "weight_definition_candidate_lines": [],
+    "numeric_weight_definition_candidate_lines": [],
+    "unrelated_weight_before_assignment_lines": [5417, 5486],
+    "weight_reference_on_rhs_lines": [],
+    "relation_line_hashes": {
+      "5417": "082bcf2acada31ffc96375b8698188b0c8b62d6d27982692df3094d297a0f674",
+      "5421": "7859305cb6a4195fbea63745ae25deec74aa1389fdbe3f47b79e744457fa90cb",
+      "5486": "f5690ab97750463ca51fdd409df1b235a3cffb38868e4270c9a79700e8923271",
+      "5519": "555559b0619ce1cd33d71c66f3a40da36299b62da93a847093dc6e17cd5b452c"
+    }
+  },
+  "provider_finding": {
+    "bundled_graph_or_weight_generation_code_found": false,
+    "bundled_non_metadata_graph_or_weight_data_found": false,
+    "explicit_numeric_weight_definition_in_varchenko_window_found": false,
+    "figure16_vector_assets_found": true,
+    "measurement_relation_present": true,
+    "exact_source_graph_weight_generation_bridge_found": false,
+    "finding": "The published arXiv v2 source package identifies the Figure-16 Varchenko assets and states measurement relations, but supplies no bundled generation code, non-metadata graph/weight data, or explicit numerical weight definition in the Varchenko source window that establishes the Figure-16-to-pinned-C bridge.",
+    "c06_reopening_effect": "none_at_provider_stage"
+  },
+  "claim_boundary": "This is provider/source-package evidence only. It does not certify or refute VGSE-C06, alter the protected MATHCERT blocked state, infer an undeclared equivalence relation, refute the source paper, or authorize mechanical, manufacturing, novelty, priority, patentability, product, performance, or commercial claims."
+}
