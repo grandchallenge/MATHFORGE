@@ -17,6 +17,8 @@ SPEC.loader.exec_module(AUDIT)
 
 ASSIGNMENT_RE = re.compile(r"(?::=|(?<![<>])=(?!=))")
 NUMERIC_RE = re.compile(r"(?:\\frac\{|(?<![A-Za-z])\d+(?:\.\d+)?(?![A-Za-z]))")
+TEX_COMMAND_RE = re.compile(r"\\[A-Za-z@]+")
+PLAIN_WORD_RE = re.compile(r"[A-Za-z]{2,}")
 
 
 def sha256_text(text: str) -> str:
@@ -27,6 +29,28 @@ def token_sides(text: str, pattern: re.Pattern[str], split_at: int, split_end: i
     left = text[:split_at]
     right = text[split_end:]
     return bool(pattern.search(left)), bool(pattern.search(right))
+
+
+def lhs_weight_adjacency(lhs: str) -> dict:
+    matches = list(AUDIT.WEIGHT_TOKEN_RE.finditer(lhs))
+    if not matches:
+        return {
+            "nearest_weight_lhs_gap_length": None,
+            "nearest_weight_lhs_gap_sha256": None,
+            "nearest_weight_lhs_plain_word_run_count": None,
+            "weight_expression_adjacent_to_assignment": False,
+        }
+    match = matches[-1]
+    gap = lhs[match.end() :]
+    without_commands = TEX_COMMAND_RE.sub("", gap)
+    plain_words = PLAIN_WORD_RE.findall(without_commands)
+    direct = len(gap) <= 96 and not plain_words
+    return {
+        "nearest_weight_lhs_gap_length": len(gap),
+        "nearest_weight_lhs_gap_sha256": sha256_text(gap),
+        "nearest_weight_lhs_plain_word_run_count": len(plain_words),
+        "weight_expression_adjacent_to_assignment": direct,
+    }
 
 
 def classify_line(line: str, line_number: int) -> dict | None:
@@ -43,11 +67,14 @@ def classify_line(line: str, line_number: int) -> dict | None:
     lhs = stripped[: assignment.start()].strip()
     rhs = stripped[assignment.end() :].strip()
     rhs_numeric_tokens = NUMERIC_RE.findall(rhs)
+    adjacency = lhs_weight_adjacency(lhs)
 
     if meas_left or meas_right:
         classification = "measurement_relation"
-    elif weight_left:
+    elif weight_left and adjacency["weight_expression_adjacent_to_assignment"]:
         classification = "weight_definition_candidate"
+    elif weight_left:
+        classification = "unrelated_weight_before_assignment"
     elif weight_right:
         classification = "weight_reference_on_rhs"
     else:
@@ -68,6 +95,7 @@ def classify_line(line: str, line_number: int) -> dict | None:
         "gamma_token_on_rhs": gamma_right,
         "rhs_numeric_token_count": len(rhs_numeric_tokens),
         "numeric_rhs": bool(rhs_numeric_tokens),
+        **adjacency,
     }
 
 
@@ -107,10 +135,11 @@ def build_record(source_archive: Path) -> dict:
         "measurement_relation_lines": [r["line"] for r in relations if r["classification"] == "measurement_relation"],
         "weight_definition_candidate_lines": [r["line"] for r in relations if r["classification"] == "weight_definition_candidate"],
         "numeric_weight_definition_candidate_lines": [r["line"] for r in relations if r["classification"] == "weight_definition_candidate" and r["numeric_rhs"]],
+        "unrelated_weight_before_assignment_lines": [r["line"] for r in relations if r["classification"] == "unrelated_weight_before_assignment"],
         "weight_reference_on_rhs_lines": [r["line"] for r in relations if r["classification"] == "weight_reference_on_rhs"],
     }
     return {
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "audit_id": "VGSE-VARCHENKO-WEIGHT-SEMANTICS-AUDIT-001",
         "campaign_id": "VGSE-001",
         "source": {"arxiv_id": "2410.09574v2", "archive_sha256": archive_sha},
@@ -121,8 +150,8 @@ def build_record(source_archive: Path) -> dict:
             "source_prose_emitted": False,
             "source_bytes_committed": False,
             "mathematical_certification_performed": False,
-            "classification_rule": "measurement token on either equality side => measurement_relation; otherwise weight token on lhs => weight_definition_candidate; otherwise weight token on rhs => weight_reference_on_rhs",
-            "c06_reopening_effect": "none_until_provider evidence is reviewed against the protected reopening condition",
+            "classification_rule": "measurement token on either equality side => measurement_relation; otherwise only a syntactically adjacent lhs weight expression can be a weight_definition_candidate; earlier unrelated weight tokens are rejected",
+            "c06_reopening_effect": "none_until provider evidence is reviewed against the protected reopening condition",
         },
     }
 
