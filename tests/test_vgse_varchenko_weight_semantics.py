@@ -34,22 +34,32 @@ class VgseVarchenkoWeightSemanticsTests(unittest.TestCase):
         self.addCleanup(lambda: path.unlink(missing_ok=True))
         return path
 
-    def test_classifies_weight_definition_by_lhs_position(self) -> None:
+    def test_classifies_weight_definition_by_lhs_adjacency(self) -> None:
         record = MODULE.classify_line(r"\\mathrm{wt}(e)=\\frac{2}{7}", 10)
         self.assertIsNotNone(record)
         self.assertEqual(record["classification"], "weight_definition_candidate")
-        self.assertTrue(record["weight_token_on_lhs"])
+        self.assertTrue(record["weight_expression_adjacent_to_assignment"])
         self.assertTrue(record["numeric_rhs"])
 
+    def test_rejects_unrelated_weight_token_before_later_assignment(self) -> None:
+        record = MODULE.classify_line(
+            r"Given a weighted graph (\\Gamma,\\mathrm{wt}) and a fixed polygon \\hat p:=(x_1,x_2,x_3)",
+            11,
+        )
+        self.assertIsNotNone(record)
+        self.assertEqual(record["classification"], "unrelated_weight_before_assignment")
+        self.assertFalse(record["weight_expression_adjacent_to_assignment"])
+        self.assertGreater(record["nearest_weight_lhs_plain_word_run_count"], 0)
+
     def test_classifies_c_equals_measurement_as_measurement_relation(self) -> None:
-        record = MODULE.classify_line(r"C=\\operatorname{Meas}(\\Gamma,\\mathrm{wt})", 11)
+        record = MODULE.classify_line(r"C=\\operatorname{Meas}(\\Gamma,\\mathrm{wt})", 12)
         self.assertIsNotNone(record)
         self.assertEqual(record["classification"], "measurement_relation")
         self.assertTrue(record["measurement_token_on_rhs"])
         self.assertTrue(record["weight_token_on_rhs"])
 
     def test_classifies_measurement_equals_c_as_measurement_relation(self) -> None:
-        record = MODULE.classify_line(r"\\operatorname{Meas}(\\Gamma,\\mathrm{wt})=C", 12)
+        record = MODULE.classify_line(r"\\operatorname{Meas}(\\Gamma,\\mathrm{wt})=C", 13)
         self.assertIsNotNone(record)
         self.assertEqual(record["classification"], "measurement_relation")
         self.assertTrue(record["measurement_token_on_lhs"])
