@@ -37,9 +37,25 @@ Therefore record:
 
 The source cannot be imported unchanged.
 
-## 2. Where clause 4.7(iii) enters the cross-level Stark construction
+## 2. Useful-prime nesting is independent of clause 4.7(iii)
 
-After deriving the finite cohomology vanishing from Hypothesis 4.7(iii), the source fixes the level-`m` useful-prime sets `P_m`, with `N_{m+1} subset N_m`, and assumes finite Hypothesis 4.2 at every level.
+After Hypothesis 4.7 the source defines `P_m` by a Frobenius conjugacy condition at level `p^m` and notes
+
+`N_{m+1} subset N_m`.
+
+This nesting is a reduction statement: a Frobenius element satisfying the prescribed conjugacy condition modulo `p^(m+1)` satisfies the reduced condition modulo `p^m`. It does not use the auxiliary-field cohomology vanishing in clause 4.7(iii).
+
+On the selected lane, protected full `GL_2(Z_2)` image and the compatible selected `tau`/auxiliary-prime construction underlying WP60J–WP60R give the same exact levelwise reduction. Hence the selected useful-prime sets used by WP60R can be chosen compatibly with
+
+`P_{m+1} subset P_m`.
+
+Record:
+
+`SELECTED_P2_BSS_AUXILIARY_PRIME_SETS_NEST_ACROSS_LEVELS`.
+
+## 3. Where clause 4.7(iii) enters the cross-level Stark construction
+
+After deriving the finite cohomology vanishing from Hypothesis 4.7(iii), the source fixes the level-`m` useful-prime sets and assumes finite Hypothesis 4.2 at every level.
 
 For an auxiliary ideal at level `m+1` with dual modified Selmer group zero, the source uses Corollary 3.8 and Lemma 3.10 to obtain the coefficient-reduction isomorphism
 
@@ -54,7 +70,7 @@ Lemma 4.10 proves that this map is surjective and that the Stark-system ideals r
 
 The dependency is therefore precise: Hypothesis 4.7(iii) is not used as an extra ingredient after Lemma 3.10; it is used upstream to force the unrestricted finite auxiliary-field vanishing needed to invoke the source's general coefficient-reduction theorem.
 
-## 3. Protected WP60R/WP60M replace exactly that upstream use
+## 4. Protected WP60R/WP60M replace exactly that upstream use
 
 Protected MATHSOLVE WP60M proves, for every selected finite level, that the unique nonzero global restriction-kernel defect violates a fixed canonical local condition retained by every selected BSS modification. Consequently restriction is injective on the actual modified primal and dual Selmer classes used by the proof, and the BSS Lemma 3.10 coefficient-reduction argument is available on the selected free modified-Selmer modules.
 
@@ -65,13 +81,13 @@ These protected results supply exactly the two ingredients used in the source co
 1. a dual-zero level-`m+1` core vertex with the required free primal module;
 2. the coefficient-reduction isomorphism for that selected modified Selmer module.
 
-Hence the construction and surjectivity proof of Lemma 4.10 replay on the selected literal-`2` lane without asserting the false global cohomology vanishing.
+Together with the nested useful-prime sets of §2, the construction and surjectivity proof of Lemma 4.10 replay on the selected literal-`2` lane without asserting the false global cohomology vanishing.
 
 Record:
 
 `SELECTED_P2_STARK_CROSS_LEVEL_REDUCTION_REPLACEMENT_AVAILABLE`.
 
-## 4. Core-vertex persistence is coefficient-reduction bookkeeping
+## 5. Core-vertex persistence is coefficient-reduction bookkeeping
 
 In §5.5 the source starts with a core vertex `n in N_{m+1}` and states, by Corollary 3.8, that it remains core at level `m`.
 
@@ -83,7 +99,7 @@ Record:
 
 `SELECTED_P2_CORE_VERTEX_PERSISTS_UNDER_COEFFICIENT_REDUCTION`.
 
-## 5. Kolyvagin transition maps can be reconstructed from the protected regulator isomorphisms
+## 6. Kolyvagin transition maps can be reconstructed from the protected regulator isomorphisms
 
 The source says that, once a level-`m+1` core vertex remains core at level `m`, one constructs
 
@@ -98,13 +114,15 @@ Protected WP60R gives, at every selected finite level, the regulator isomorphism
   --> SS_m
   --Reg_m--> KS_m`.
 
-This construction is canonical once the finite regulator maps and Stark reduction map are fixed, and the regulator square commutes by definition. It uses no infinite auxiliary-field vanishing.
+Both finite regulator maps are isomorphisms, so there is exactly one Kolyvagin transition map that makes the regulator square commute. The displayed conjugation is therefore not an alternative arbitrary transition: it is the unique transition characterized by the source's commuting square. Compatibility of successive Stark reductions consequently gives compatibility of successive Kolyvagin reductions.
+
+This construction uses no infinite auxiliary-field vanishing.
 
 Record:
 
 `SELECTED_P2_KOLYVAGIN_CROSS_LEVEL_REDUCTION_REPLACEMENT_AVAILABLE`.
 
-## 6. Inverse-limit Stark freeness and Fitting control use only the repaired finite interfaces
+## 7. Inverse-limit Stark freeness and Fitting control use only the repaired finite interfaces
 
 Lemma 4.10(i) gives surjective transitions between the finite Stark modules. Each finite module is free of rank one by the finite Stark theorem under finite Hypothesis 4.2. Theorem 4.12(i) then obtains rank-one freeness of
 
@@ -112,13 +130,13 @@ Lemma 4.10(i) gives surjective transitions between the finite Stark modules. Eac
 
 Theorem 4.12(ii) identifies the inverse-limit Stark ideals with the integral Fitting ideals. The proof reduces finite Fitting ideals modulo `p^m`, uses Corollary 3.8 for coefficient compatibility, and finally uses completeness of the noetherian coefficient ring so ideals are closed.
 
-On the selected elliptic lane the coefficient ring is `Z_2`, hence complete, noetherian, local, Gorenstein and principal. Protected WP60R supplies the finite Theorem 5.2/Fitting statements; protected WP60M/WP60R supply the required coefficient compatibility. Thus the inverse-limit Stark-system and Fitting-ideal passage is available without full Hypothesis 4.7(iii).
+On the selected elliptic lane the coefficient ring is `Z_2`, hence complete, noetherian, local, Gorenstein and principal. Protected WP60R supplies the finite regulator/Fitting statements and finite Hypothesis 4.2; protected WP60M/WP60R supply the required coefficient compatibility. Thus the inverse-limit Stark-system and Fitting-ideal passage is available without full Hypothesis 4.7(iii).
 
 Record:
 
 `SELECTED_P2_STARK_INVERSE_LIMIT_FITTING_PASSAGE_AVAILABLE`.
 
-## 7. Theorem 5.25 has no further proof ingredient after the transition system exists
+## 8. Theorem 5.25 has no further proof ingredient after the transition system exists
 
 After constructing the Kolyvagin transition maps, BSS Definition 5.24 defines
 
@@ -128,7 +146,9 @@ The source states that the finite regulator maps induce the integral regulator m
 
 Theorem 5.25 states the integral regulator isomorphism/rank-one freeness and the Fitting-ideal inclusions/equalities. Its proof is explicit: claims (i), (ii) and (iii) are direct consequences of the corresponding claims of finite Theorem 5.2.
 
-Therefore, after replacing the cross-level construction as in §§3–6 above, there is no additional occurrence of Hypothesis 4.7(iii) inside the proof of Theorem 5.25 itself.
+Because the selected Kolyvagin transition is the unique map making the finite regulator square commute, a compatible Kolyvagin family corresponds under the finite regulator isomorphisms to a compatible Stark family. The source's finite Fitting identities and the coefficient-reduction identities of Theorem 4.12 therefore give the required ideal compatibility and integral Fitting passage.
+
+Thus, after replacing the cross-level construction as in §§2–7 above, there is no additional occurrence of Hypothesis 4.7(iii) inside the proof of Theorem 5.25 itself.
 
 Record the bounded provider disposition:
 
@@ -136,7 +156,7 @@ Record the bounded provider disposition:
 
 This means only that downstream MATHSOLVE may replay Theorem 5.25 from protected WP60R plus the selected cross-level replacements above. It does not make full Hypothesis 4.7 true.
 
-## 8. Claim firewall
+## 9. Claim firewall
 
 This audit does not establish:
 
