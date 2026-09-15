@@ -1,0 +1,264 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import gzip
+import hashlib
+import io
+import json
+import re
+import tarfile
+from pathlib import Path, PurePosixPath
+
+TEXT_EXTS = {".tex", ".bib", ".sty", ".cls", ".txt", ".md", ".asy", ".tikz", ".pgf"}
+CODE_EXTS = {".py", ".sage", ".sagews", ".m", ".wl", ".nb", ".ipynb", ".jl", ".r", ".R", ".cpp", ".cc", ".c", ".h", ".hpp", ".sh", ".bash", ".zsh", ".lua"}
+DATA_EXTS = {".json", ".csv", ".tsv", ".dat", ".data", ".yaml", ".yml", ".npz", ".npy", ".mat"}
+FIGURE_EXTS = {".pdf", ".eps", ".ps", ".svg", ".png", ".jpg", ".jpeg"}
+GRAPH_WEIGHT_TERMS = re.compile(r"(?i)\b(weight|weights|weighted|pl[uü]cker|matching|boundary measurement|meas\s*\(|kasteleyn|bipartite graph|t-embedding)\b")
+EXAMPLE_MARKERS = [re.compile(r"Example\s+B\.3", re.I), re.compile(r"Example\s+9\.3", re.I)]
+INCLUDE_RE = re.compile(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}")
+INPUT_RE = re.compile(r"\\(?:input|include)\{([^}]+)\}")
+LABEL_RE = re.compile(r"\\label\{([^}]+)\}")
+CAPTION_RE = re.compile(r"\\caption(?:\[[^\]]*\])?\{")
+BEGIN_ENV_RE = re.compile(r"\\begin\{([^}]+)\}")
+VARC_TARGET_RE = re.compile(r"(?:^|/)Varc-[ab](?:\.[A-Za-z0-9]+)?$")
+WEIGHT_TOKEN_RE = re.compile(r"(?i)(?:\\(?:mathrm|operatorname|text)\{(?:wt|weight)\}|\\wt\b|\bwt\b|\bweight\b)")
+GAMMA_TOKEN_RE = re.compile(r"\\Gamma\b")
+MEAS_TOKEN_RE = re.compile(r"(?i)(?:\\operatorname\{Meas\}|\\mathrm\{Meas\}|\bMeas\b)")
+ASSIGNMENT_RE = re.compile(r"(?::=|(?<![<>])=(?!=))")
+NUMERIC_RE = re.compile(r"(?:\\frac\{|\b\d+(?:\.\d+)?\b)")
+PDF_INFO_PATTERNS = {
+    "creator": re.compile(rb"/Creator\s*\(([^)]{0,300})\)"),
+    "producer": re.compile(rb"/Producer\s*\(([^)]{0,300})\)"),
+    "creation_date": re.compile(rb"/CreationDate\s*\(([^)]{0,100})\)"),
+}
+GENERATOR_MARKERS = [b"Mathematica", b"Wolfram", b"matplotlib", b"Matplotlib", b"Illustrator", b"Inkscape", b"TikZ", b"PGF", b"Asymptote"]
+
+
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def load_members(path: Path) -> tuple[str, list[tuple[str, bytes]]]:
+    raw = path.read_bytes()
+    archive_sha = sha256_bytes(raw)
+    members: list[tuple[str, bytes]] = []
+    try:
+        with tarfile.open(fileobj=io.BytesIO(raw), mode="r:*") as archive:
+            for member in archive.getmembers():
+                if not member.isfile():
+                    continue
+                handle = archive.extractfile(member)
+                if handle is not None:
+                    members.append((member.name, handle.read()))
+            if members:
+                return archive_sha, members
+    except tarfile.ReadError:
+        pass
+    try:
+        return archive_sha, [(path.stem or "source.tex", gzip.decompress(raw))]
+    except Exception:
+        return archive_sha, [("source.bin", raw)]
+
+
+def decode_text(data: bytes) -> str | None:
+    for encoding in ("utf-8", "latin-1"):
+        try:
+            return data.decode(encoding)
+        except UnicodeDecodeError:
+            pass
+    return None
+
+
+def classify_member(name: str) -> str:
+    path = PurePosixPath(name)
+    ext = path.suffix.lower()
+    if path.name == "00README.json":
+        return "metadata"
+    if ext in CODE_EXTS:
+        return "code"
+    if ext in DATA_EXTS:
+        return "data"
+    if ext in FIGURE_EXTS:
+        return "figure"
+    if ext in TEXT_EXTS:
+        return "text"
+    return "other"
+
+
+def resolve_asset(source_name: str, target: str, names: set[str]) -> str | None:
+    source_dir = str(PurePosixPath(source_name).parent)
+    target_path = PurePosixPath(source_dir) / target if source_dir not in ("", ".", "/") else PurePosixPath(target)
+    candidates = [str(target_path)]
+    if PurePosixPath(target).suffix == "":
+        candidates.extend(str(target_path) + ext for ext in sorted(FIGURE_EXTS | TEXT_EXTS))
+    for candidate in candidates:
+        normalized = str(PurePosixPath(candidate))
+        if normalized.startswith("./"):
+            normalized = normalized[2:]
+        if normalized in names:
+            return normalized
+    basename = PurePosixPath(target).name
+    matches = [name for name in names if PurePosixPath(name).name == basename or (not PurePosixPath(target).suffix and PurePosixPath(name).stem == basename)]
+    return matches[0] if len(matches) == 1 else None
+
+
+def structural_window(lines: list[str], marker_index: int, radius: int = 80) -> dict:
+    start = max(0, marker_index - radius)
+    end = min(len(lines), marker_index + radius + 1)
+    window = "\n".join(lines[start:end])
+    return {
+        "line_start": start + 1,
+        "line_end": end,
+        "includegraphics_targets": sorted(set(INCLUDE_RE.findall(window))),
+        "input_targets": sorted(set(INPUT_RE.findall(window))),
+        "labels": sorted(set(LABEL_RE.findall(window))),
+        "environments_opened": sorted(set(BEGIN_ENV_RE.findall(window))),
+        "caption_command_present": bool(CAPTION_RE.search(window)),
+        "graph_weight_terms_present": sorted(set(match.group(1).lower() for match in GRAPH_WEIGHT_TERMS.finditer(window))),
+        "window_sha256": sha256_bytes(window.encode("utf-8", errors="replace")),
+    }
+
+
+def semantic_line_record(line: str, line_number: int) -> dict:
+    stripped = line.strip()
+    return {
+        "line": line_number,
+        "line_sha256": sha256_bytes(stripped.encode("utf-8", errors="replace")),
+        "has_weight_token": bool(WEIGHT_TOKEN_RE.search(stripped)),
+        "has_gamma_token": bool(GAMMA_TOKEN_RE.search(stripped)),
+        "has_meas_token": bool(MEAS_TOKEN_RE.search(stripped)),
+        "has_assignment_token": bool(ASSIGNMENT_RE.search(stripped)),
+        "has_numeric_token": bool(NUMERIC_RE.search(stripped)),
+    }
+
+
+def pdf_metadata(data: bytes) -> dict:
+    info = {}
+    for key, pattern in PDF_INFO_PATTERNS.items():
+        match = pattern.search(data)
+        info[key] = match.group(1).decode("latin-1", errors="replace") if match else None
+    info["generator_markers"] = [marker.decode("ascii") for marker in GENERATOR_MARKERS if marker in data]
+    return info
+
+
+def build_record(path: Path) -> dict:
+    archive_sha, members = load_members(path)
+    member_bytes = dict(members)
+    names = set(member_bytes)
+    inventory = []
+    text_cache: dict[str, str] = {}
+    for name, data in members:
+        ext = PurePosixPath(name).suffix.lower()
+        kind = classify_member(name)
+        inventory.append({"path": name, "size_bytes": len(data), "sha256": sha256_bytes(data), "extension": ext, "class": kind})
+        if kind in {"text", "code", "data", "metadata"}:
+            text = decode_text(data)
+            if text is not None:
+                text_cache[name] = text
+
+    example_hits = []
+    figure_refs = []
+    varc_refs = []
+    varc_source_windows: dict[str, tuple[int, int]] = {}
+    for name, text in text_cache.items():
+        lines = text.splitlines()
+        for marker in EXAMPLE_MARKERS:
+            for match in marker.finditer(text):
+                line_index = text[: match.start()].count("\n")
+                window = structural_window(lines, line_index)
+                hit = {"source_file": name, "marker": match.group(0), "line": line_index + 1, **window}
+                hit["resolved_figure_assets"] = [
+                    {"target": target, "resolved_member": resolve_asset(name, target, names)}
+                    for target in window["includegraphics_targets"]
+                ]
+                example_hits.append(hit)
+        for line_index, line in enumerate(lines):
+            for target in INCLUDE_RE.findall(line):
+                resolved = resolve_asset(name, target, names)
+                ref = {"source_file": name, "line": line_index + 1, "target": target, "resolved_member": resolved}
+                figure_refs.append(ref)
+                if VARC_TARGET_RE.search(target):
+                    context = structural_window(lines, line_index, radius=50)
+                    varc_refs.append({**ref, "structural_context": context, "asset_pdf_metadata": pdf_metadata(member_bytes[resolved]) if resolved and resolved in member_bytes else None})
+                    prior = varc_source_windows.get(name)
+                    lo, hi = max(0, line_index - 90), min(len(lines), line_index + 91)
+                    varc_source_windows[name] = (min(prior[0], lo), max(prior[1], hi)) if prior else (lo, hi)
+
+    varc_semantics = []
+    for name, (lo, hi) in varc_source_windows.items():
+        lines = text_cache[name].splitlines()
+        semantic_lines = []
+        for idx in range(lo, hi):
+            line = lines[idx]
+            if WEIGHT_TOKEN_RE.search(line) or GAMMA_TOKEN_RE.search(line) or MEAS_TOKEN_RE.search(line):
+                semantic_lines.append(semantic_line_record(line, idx + 1))
+        varc_semantics.append({
+            "source_file": name,
+            "line_start": lo + 1,
+            "line_end": hi,
+            "semantic_lines": semantic_lines,
+            "explicit_weight_assignment_lines": [item["line"] for item in semantic_lines if item["has_weight_token"] and item["has_assignment_token"]],
+            "numeric_weight_assignment_lines": [item["line"] for item in semantic_lines if item["has_weight_token"] and item["has_assignment_token"] and item["has_numeric_token"]],
+            "gamma_assignment_lines": [item["line"] for item in semantic_lines if item["has_gamma_token"] and item["has_assignment_token"]],
+            "measurement_assignment_lines": [item["line"] for item in semantic_lines if item["has_meas_token"] and item["has_assignment_token"]],
+        })
+
+    code_members = [item for item in inventory if item["class"] == "code"]
+    data_members = [item for item in inventory if item["class"] == "data"]
+    metadata_members = [item for item in inventory if item["class"] == "metadata"]
+    figure_members = [item for item in inventory if item["class"] == "figure"]
+    generation_term_hits = []
+    for name, text in text_cache.items():
+        if classify_member(name) not in {"code", "data"}:
+            continue
+        terms = sorted(set(match.group(1).lower() for match in GRAPH_WEIGHT_TERMS.finditer(text)))
+        if terms:
+            generation_term_hits.append({"path": name, "terms": terms, "sha256": sha256_bytes(text.encode("utf-8", errors="replace"))})
+
+    return {
+        "schema_version": "1.2.0",
+        "audit_id": "VGSE-ARXIV-SOURCE-ARCHIVE-AUDIT-001",
+        "campaign_id": "VGSE-001",
+        "source": {
+            "arxiv_id": "2410.09574v2",
+            "acquisition_url": "https://arxiv.org/e-print/2410.09574v2",
+            "archive_sha256": archive_sha,
+            "archive_size_bytes": path.stat().st_size,
+        },
+        "member_count": len(inventory),
+        "member_inventory": sorted(inventory, key=lambda item: item["path"]),
+        "example_markers": example_hits,
+        "figure_references": figure_refs,
+        "varchenko_figure_references": varc_refs,
+        "varchenko_source_semantics": varc_semantics,
+        "code_members": code_members,
+        "data_members": data_members,
+        "metadata_members": metadata_members,
+        "figure_members": figure_members,
+        "generation_term_hits_in_code_or_data": generation_term_hits,
+        "interpretation": {
+            "source_bytes_committed": False,
+            "mathematical_certification_performed": False,
+            "c06_reopening_effect": "none_until_reviewed_against_protected_reopening_condition",
+            "scope": "source-package inventory and Figure 16 lineage only",
+        },
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--source-archive", type=Path, required=True)
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+    record = build_record(args.source_archive)
+    text = json.dumps(record, indent=2, sort_keys=True) + "\n"
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(text, encoding="utf-8")
+    print(text, end="")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
