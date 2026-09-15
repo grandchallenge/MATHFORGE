@@ -8,8 +8,10 @@ on:
       - "provider_manifests/VGSE-001.json"
       - "tools/verify_vgse_source_concordance.py"
       - "tools/audit_vgse_arxiv_source_archive.py"
+      - "tools/classify_vgse_varchenko_weight_semantics.py"
       - "tests/test_vgse_source_concordance.py"
       - "tests/test_vgse_arxiv_source_archive.py"
+      - "tests/test_vgse_varchenko_weight_semantics.py"
       - "governance/provider_coverage.json"
       - "schemas/provider_coverage.schema.json"
       - "ci/validate_forge.py"
@@ -55,8 +57,16 @@ jobs:
             --source-archive /tmp/vgse-arxiv-v2-source \
             --output /tmp/vgse-arxiv-source-archive-audit.json \
             | tee /tmp/vgse-arxiv-source-archive-audit.stdout.json
+      - name: Classify Varchenko weight equalities
+        run: |
+          python tools/classify_vgse_varchenko_weight_semantics.py \
+            --source-archive /tmp/vgse-arxiv-v2-source \
+            --output /tmp/vgse-varchenko-weight-semantics-audit.json \
+            | tee /tmp/vgse-varchenko-weight-semantics-audit.stdout.json
       - name: Run bounded source-archive parser tests
-        run: python -m unittest tests.test_vgse_arxiv_source_archive -v
+        run: |
+          python -m unittest tests.test_vgse_arxiv_source_archive -v
+          python -m unittest tests.test_vgse_varchenko_weight_semantics -v
       - name: Upload non-copyright verification records
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
@@ -64,5 +74,6 @@ jobs:
           path: |
             /tmp/vgse-source-verification.json
             /tmp/vgse-arxiv-source-archive-audit.json
+            /tmp/vgse-varchenko-weight-semantics-audit.json
           if-no-files-found: error
           retention-days: 30
