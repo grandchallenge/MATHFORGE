@@ -5,7 +5,8 @@
 - Campaign: `BSD-001`.
 - Provider operation: `grandchallenge/MATHFORGE#217`.
 - Downstream theorem operation: `grandchallenge/MATHSOLVE#250` (`BSD-WP60T`).
-- Protected MATHFORGE base: `da746ee38823e408321b9e417649f5b837ec5627`.
+- Initial protected MATHFORGE base: `da746ee38823e408321b9e417649f5b837ec5627`.
+- Initial protected provider admission: `637c842c90c51bc3a832862c5bff7e68659fdcad`.
 - Constitutional authority at issuance: `grandchallenge/INTELLECT@f042220f3bed7cb7b5069256e8f6305c850c0628`.
 - Protected finite BSS replay authority: `grandchallenge/MATHSOLVE@245860ce3d7307a505e48b4165be0850327f996a` (WP60R).
 - Protected inverse-limit completion authority: `grandchallenge/MATHSOLVE@b0854bb7770296b610b655753bc62b27365b27bb` (WP60S completion receipt).
@@ -20,10 +21,11 @@
 
 Protected WP60F distinguished BSS II Theorem 6.12 from the `p>3` Fitting-control chain but stopped short of admitting Theorem 6.12 at literal `p=2`, because the article introduction summarizes results under an odd-prime convention and the rank-one proof cites Mazur–Rubin.
 
-WP60T requires the exact source-level answer to two questions:
+WP60T requires the exact source-level answer to three questions:
 
 1. Does the operative §6 construction and proof of Theorem 6.12 impose any intrinsic odd-prime condition beyond Hypotheses 6.1, 6.7 and 6.11?
 2. If a literal-`2` derivative is constructed, where exactly does the explicit `p>3` assumption in Corollary 6.15 enter?
+3. Can the derivative-prime set used in §6.3 be restricted to the exact selected level-`m` auxiliary-prime set already controlled by protected WP60R?
 
 A separate source question is whether Kato supplies an integral Euler-system input at `p=2`, without confusing Euler-system existence with the unavailable height-one-`(2)` main-conjecture divisibility.
 
@@ -54,7 +56,7 @@ No odd-prime condition is added in this statement.
 
 BSS Hypothesis 6.7 requires `Kcal` to contain every auxiliary field `K(q)` for `q` outside `S`, together with a `Z_p^d`-extension in which no finite place splits completely. Remark 6.8 identifies this as part of the classical Euler-system field setup.
 
-No odd-prime condition is added in this statement.
+Section 6.1 separately requires all infinite places of `K` to split completely in `Kcal`. This is part of the mathematical tower-construction obligation; it is not an odd-prime clause in Hypothesis 6.7 itself.
 
 **Disposition:** `BSS_HYPOTHESIS_6_7_HAS_NO_INTRINSIC_ODD_PRIME_CLAUSE`.
 
@@ -102,9 +104,9 @@ This source fact resolves the uncertainty retained by WP60F: the §6.5 proof int
 
 The preceding conclusion does not by itself prove Hypotheses 6.1, 6.7 or 6.11 for the selected elliptic representation. Those are mathematical obligations for WP60T. It also does not assert that every theorem elsewhere in BSS II extends to `p=2`.
 
-In particular, the small-prime localization and core-vertex restrictions in §3 and §5 remain exactly as recorded by WP60F, except where protected WP60G–WP60R supply selected literal-`2` replacements.
+In particular, the small-prime localization and core-vertex restrictions in §§3 and 5 remain exactly as recorded by WP60F, except where protected WP60G–WP60R supply selected literal-`2` replacements.
 
-## Source A — Corollary 6.15
+## Source A — Corollary 6.15 and the prime-set interface
 
 ### A8. The explicit `p>3` clause belongs to the Fitting-control composition
 
@@ -112,9 +114,37 @@ Corollary 6.15 explicitly assumes `p>3`. Its proof, however, consists of applyin
 
 Thus the source itself localizes the Fitting conclusion to the already-separated Theorem 5.2 control layer. It does not identify the `p>3` clause as an additional requirement of the derivative construction.
 
-Protected MATHSOLVE WP60R has already replayed the selected finite-level Theorem 5.2(ii),(iii) conclusions at literal `2` by replacing the small-prime localization/core-vertex inputs. Whether that protected replacement can be composed with a WP60T derivative is a downstream theorem question, but no further source-level `p>3` mechanism is hidden in the proof of Corollary 6.15.
+Protected MATHSOLVE WP60R has already replayed the selected finite-level Theorem 5.2(ii),(iii) conclusions at literal `2` by replacing the small-prime localization/core-vertex inputs. Whether that protected replacement can be composed with a WP60T derivative remains a downstream theorem question, but no further source-level `p>3` mechanism is hidden in the proof of Corollary 6.15.
 
 **Disposition:** `BSS_COROLLARY_6_15_P_GT_3_DEPENDENCY_IS_THEOREM_5_2_CONTROL_LAYER`.
+
+### A9. Selected `E=F=K=Q` prime-set specialization
+
+Section 3.1.2 defines
+
+`K_M := K(mu_M,(O_K^x)^(1/M)) K(1)`
+
+and the finite auxiliary field
+
+`K(A)_M := K(A) K_M`.
+
+Its prime set consists of primes whose Frobenius in `Gal(K(A)_M/K)` is conjugate to the selected element `tau`. The source immediately records that every such prime splits completely in `K_M` and satisfies
+
+`A/(Fr_q-1)A ~= R`.
+
+Section 6.3 defines the derivative prime set by exactly these two displayed properties for the induced module `Acal`, and explicitly states that this derivative set contains the §3.1.2 set when Hypothesis 3.2(ii) holds for `Acal`.
+
+For the selected BSD application `K=F=Q`. Since `Q` has class number one, `K(1)=Q`; hence the auxiliary choice `E=Q` is allowed in §6.3. With this choice
+
+`Acal = A_F = A = E[2^m]`.
+
+Protected WP60R retains the selected Hypothesis 3.2(ii) rank-one quotient interface at every finite level. Therefore the exact WP60R level-`m` auxiliary-prime set is a subset of the §6.3 derivative-prime set.
+
+BSS Remark 6.16 separately states that, even when the §6.3 set is smaller than the set used for a different induced module `A_F`, the downstream Stark/Kolyvagin theory may be run on any positive-density subset of the derivative set for which the Lemma 3.9-type Chebotarev choice is available. Protected WP60R provides precisely such positive-density localization choices on its exact level-`m` set.
+
+Accordingly, no new literal-`2` localization or core-graph theorem is required merely to compose the derivative with the protected WP60R Theorem 5.2 replacement.
+
+**Disposition:** `BSS_LITERAL_P2_SELECTED_DERIVATIVE_PRIME_SET_COMPATIBLE_WITH_WP60R`.
 
 ## Source B — Kato Euler-system existence versus height-one control
 
@@ -153,7 +183,8 @@ The admitted facts are:
 2. Theorem 6.12 and Corollary 6.13 depend on Hypotheses 6.1, 6.7 and 6.11 only in their operative proof section;
 3. the rank-one Mazur–Rubin citation does not add an unstated odd-prime hypothesis to that BSS proof interface;
 4. Corollary 6.15's explicit `p>3` dependence is through the Theorem 5.2 Fitting-control layer;
-5. Kato supplies an admitted integral Euler-system input at `p=2`, while height-one-`(2)` divisibility and primitivity remain unavailable.
+5. for the selected `E=F=K=Q` specialization, the exact WP60R finite-level auxiliary-prime set is an admissible positive-density subset of the §6.3 derivative-prime set;
+6. Kato supplies an admitted integral Euler-system input at `p=2`, while height-one-`(2)` divisibility and primitivity remain unavailable.
 
 ## Claim firewall
 
