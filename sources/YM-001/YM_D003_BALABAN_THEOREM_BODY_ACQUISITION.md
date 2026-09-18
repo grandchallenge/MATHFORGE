@@ -76,11 +76,27 @@ Result: abstract/metadata only; no theorem-body bytes acquired.
 
 No independent primary or author-hosted copy of CMP119 or CMP122 I–II was found that could be byte-locked on this execution plane.
 
+### Preservation-network recovery
+
+A later recovery pass checked preservation registries rather than ordinary publisher/mirror discovery.
+
+The ISSN Portal record for Communications in Mathematical Physics (online ISSN 1432-0916, ISSN-L 0010-3616) reports:
+
+- Internet Archive preservation for Springer Science & Business Media content covering 1965–2003;
+- Portico preservation covering 1988 onward and explicitly listing 1989 volume 122 issue 3 among preserved holdings;
+- CLOCKSS preservation covering the historical archive, but CLOCKSS is a dark archive and does not provide ordinary user access absent a trigger event.
+
+The ISSN record links the Internet Archive serial collection `pub_communications-in-mathematical-physics`. The collection surface is JavaScript-dependent on this execution plane, and direct metadata/download enumeration did not expose the 1989 volume-122 issue bytes to the available retrieval interface. Therefore preservation is independently established, but theorem-body bytes are still not acquired and no archive checksum is asserted.
+
+This is a materially narrower blocker than source nonexistence: at least one preservation network is known to hold the journal range, but the current execution interface cannot yet retrieve and independently inspect the preserved issue object.
+
 ## Non-authoritative locator evidence
 
 A public third-party research repository reports private/local primary PDFs and rendered page extractions for the Balaban series. This material is **not** imported as source authority.
 
-It is retained only as a navigation aid for later primary verification. Its reported target loci are:
+It is retained only as a navigation aid for later primary verification. The same repository reports a private CMP122-II PDF artifact named `balaban-largefield-II-cmp122-1104178467.pdf`, byte size `4030232`, SHA-256 `80ab1ee09fff0a5b6840a568b72c400a812858425da3200bc5c1c9e2d6941482`. Because neither those bytes nor an independently authoritative copy are exposed, this fingerprint is locator evidence only; it is not adopted as a Forge source lock.
+
+Its reported target loci are:
 
 - CMP119: printed pp. 257–261, including equations `(2.31)` and `(2.42)`;
 - CMP122-I: printed p. 192, including equation `(1.70)`;
@@ -97,7 +113,8 @@ The following are provider-safe facts:
 1. the three primary source identities above are exact and independently corroborated;
 2. Balaban Part II explicitly claims completion of four-dimensional pure-gauge ultraviolet stability;
 3. the exact downstream theorem-body loci requiring inspection have been sharply localized;
-4. this execution plane does not presently possess independently verified theorem-body bytes or page renders for CMP119/CMP122 I–II.
+4. preservation registries independently establish that the relevant CMP journal range is preserved, including volume 122 issue 3;
+5. this execution plane does not presently possess independently verified theorem-body bytes or page renders for CMP119/CMP122 I–II.
 
 ## What remains unestablished
 
