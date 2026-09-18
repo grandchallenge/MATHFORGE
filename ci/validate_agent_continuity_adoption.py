@@ -70,8 +70,9 @@ def adoption_errors(record: dict[str, Any], agents_text: str) -> list[str]:
         "discovery evidence and generated witnesses are not proof, certification, or promotion",
         "agent substitution",
     )
+    agents_lower = agents_text.lower()
     for token in required_agent_tokens:
-        if token not in agents_text:
+        if token.lower() not in agents_lower:
             errors.append(f"AGENTS.md missing Forge continuity binding token: {token}")
 
     return errors
