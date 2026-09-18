@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "YM-D003-BALABAN-MRS-SOURCE-INTAKE",
+  "campaign_id": "YM-001",
+  "parent_debt": "YM-D003",
+  "protected_forge_baseline": "267670385485b88be0556f6993dc171127139ae1",
+  "audit_date": "2026-09-18",
+  "source_records": [
+    {
+      "id": "YM-SRC-021",
+      "title": "Renormalization group approach to lattice gauge field theories — II. Cluster expansions",
+      "authors": ["Tadeusz Balaban"],
+      "year": 1988,
+      "journal": "Communications in Mathematical Physics",
+      "volume": "116",
+      "pages": "1-22",
+      "doi": "10.1007/BF01239022",
+      "provenance": "doi_indexed_public_metadata_and_abstract",
+      "byte_lock": false,
+      "disposition": "ADMIT_SMALL_FIELD_CLUSTER_COMPLETION_ONLY"
+    },
+    {
+      "id": "YM-SRC-022",
+      "title": "Convergent renormalization expansions for lattice gauge theories",
+      "authors": ["Tadeusz Balaban"],
+      "year": 1988,
+      "journal": "Communications in Mathematical Physics",
+      "volume": "119",
+      "pages": "243-285",
+      "doi": "10.1007/BF01217741",
+      "provenance": "doi_indexed_public_metadata_and_abstract",
+      "byte_lock": false,
+      "disposition": "ADMIT_COMPLETE_DENSITY_LARGE_FIELD_ARCHITECTURE__4D_UV_COMPLETION_NOT_FROM_THIS_SOURCE_ALONE"
+    },
+    {
+      "id": "YM-SRC-023",
+      "title": "Large field renormalization. I. The basic step of the R operation",
+      "authors": ["Tadeusz Balaban"],
+      "year": 1989,
+      "journal": "Communications in Mathematical Physics",
+      "volume": "122",
+      "pages": "175-202",
+      "doi": "10.1007/BF01257412",
+      "provenance": "doi_indexed_primary_metadata_and_abstract",
+      "byte_lock": false,
+      "disposition": "ADMIT_4D_LARGE_FIELD_R_OPERATION__COMPLETION_DEFERRED_TO_PART_II"
+    },
+    {
+      "id": "YM-SRC-024",
+      "title": "Large field renormalization. II. Localization, exponentiation, and bounds for the R operation",
+      "authors": ["Tadeusz Balaban"],
+      "year": 1989,
+      "journal": "Communications in Mathematical Physics",
+      "volume": "122",
+      "pages": "355-392",
+      "doi": "10.1007/BF01238433",
+      "provenance": "doi_indexed_primary_metadata_and_abstract",
+      "byte_lock": false,
+      "disposition": "ADMIT_4D_PURE_GAUGE_ULTRAVIOLET_STABILITY__NOT_FULL_CONTINUUM_CONSTRUCTION"
+    },
+    {
+      "id": "YM-SRC-025",
+      "title": "Construction of YM_4 with an infrared cutoff",
+      "authors": ["Jacques Magnen", "Vincent Rivasseau", "Roland Seneor"],
+      "year": 1993,
+      "journal": "Communications in Mathematical Physics",
+      "volume": "155",
+      "pages": "325-383",
+      "doi": "10.1007/BF02097397",
+      "provenance": "author_uploaded_full_body_web_rendering_plus_doi_metadata",
+      "byte_lock": false,
+      "disposition": "ADMIT_SOURCE_STATED_UV_CUTOFF_REMOVAL_AT_FIXED_IR__EXPLICIT_PROOF_COMPLETENESS_AND_IR_OS_LIMITATIONS"
+    }
+  ],
+  "d003_disposition": {
+    "large_field_control": "SUBSTANTIALLY_SUPPLIED_BY_BALABAN_R_OPERATION",
+    "ultraviolet_stability": "SUPPLIED_AS_ULTRAVIOLET_STABILITY",
+    "uv_cutoff_free_schwinger_functions": "SOURCE_STATED_AT_FIXED_IR__PROOF_COMPLETENESS_QUALIFIED",
+    "infrared_cutoff_removal": "OPEN",
+    "infinite_volume": "OPEN",
+    "continuum_uniqueness_identification": "OPEN",
+    "complete_os_profile": "OPEN_D002_COUPLED",
+    "noncircular_reference_scale": "OPEN_D001_FACING_SUBOBLIGATION"
+  },
+  "current_frontier": "BALABAN_4D_UV_STABILITY_AND_LARGE_FIELD_CONTROL_AVAILABLE__FULL_IR_REMOVAL_UNIQUENESS_OS_AND_PHYSICAL_IDENTIFICATION_OPEN",
+  "claim_boundary": "Provider source audit only. No theorem certification, D003 discharge, full continuum construction, mass gap, confinement, novelty, priority, or terminal Yang-Mills claim."
+}
