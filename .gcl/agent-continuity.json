@@ -1,0 +1,31 @@
+{
+  "adoption_id": "MATHFORGE-GCL-AGENT-CONTINUITY-001",
+  "policy_id": "GCL-AGENT-CONTINUITY-001",
+  "version": "1.0.0",
+  "authority_repository": "grandchallenge/INTELLECT",
+  "authority_path": "governance/agent_execution/GCL-AGENT-CONTINUITY-001.md",
+  "repository": "grandchallenge/MATHFORGE",
+  "required": true,
+  "specialization": "MATHFORGE-PROVENANCE-CONTINUITY-001",
+  "applicability": {
+    "interruption_prone_discovery_or_reconstruction": true,
+    "routine_short_operations_checkpoint_required": false
+  },
+  "checkpoint_requirements": {
+    "source_or_provider_identity": true,
+    "acquired_byte_digests_or_immutable_source_refs": true,
+    "provider_manifest_state": true,
+    "transcribed_normalized_reconstructed_distinction": true,
+    "search_or_reconstruction_parameters": true,
+    "generated_witness_identities": true,
+    "failed_searches_or_ruled_out_routes": true,
+    "deterministic_next_evidence_action": true
+  },
+  "authority_preservation": {
+    "authority_changed": false,
+    "discovery_evidence_is_proof": false,
+    "certification_authority_changed": false,
+    "promotion_authority_changed": false,
+    "independent_verification_inherited_across_agent_substitution": false
+  }
+}
