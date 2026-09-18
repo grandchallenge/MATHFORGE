@@ -162,6 +162,68 @@ Delta_H(lambda)
 
 is an exact signed parity-order parameter whenever pole localization holds.
 
+### Quantitative lower bound
+
+Let
+
+d(lambda)
+=
+inf sigma(B_{lambda,-}) - mu
+>
+0.
+
+For every odd-sector form vector f,
+
+|<S,f>|^2
+=
+|<T^{-1/2}S,T^{1/2}f>|^2
+<=
+m_o(mu)<Tf,f>.
+
+Therefore
+
+<(A_{lambda,-}-mu)f,f>
+=
+<Tf,f>-2|<S,f>|^2
+
+is bounded below by
+
+(1-2m_o(mu))<Tf,f>
+>=
+(1-2m_o(mu))d(lambda)||f||^2.
+
+Consequently, whenever m_o(mu)<1/2,
+
+epsilon_-(lambda)-epsilon_+(lambda)
+>=
+(1-2m_o(mu))
+[
+inf sigma(B_{lambda,-})-epsilon_+(lambda)
+].
+
+Equivalently,
+
+g(lambda)
+>=
+2 Delta_H(lambda) d(lambda).
+
+This turns certified lower bounds on the two scalar margins into a
+certified lower bound on the full parity gap.
+
+The converse signs are also explicit.  For the trial vector
+f=T^{-1}S,
+
+<(A_{lambda,-}-mu)f,f>
+=
+m_o(mu)(1-2m_o(mu)).
+
+Hence m_o(mu)>1/2 forces epsilon_-(lambda)<mu.  At m_o(mu)=1/2,
+
+(A_{lambda,-}-mu)T^{-1}S=0,
+
+while the rank-one form factorization is nonnegative, so
+epsilon_-(lambda)=mu exactly.
+
 ## 5. What this reduction does not require
 
 The criterion above does not require:
