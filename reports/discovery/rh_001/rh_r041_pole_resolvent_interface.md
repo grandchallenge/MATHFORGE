@@ -388,6 +388,55 @@ Delta_H(lambda) > 0.
 
 A continuation theorem in lambda can then work directly with these two margins.
 
+There is also an immediate bounded Solve target suggested by Suzuki's proof
+of continuity of the unrestricted lower bound.  After scaling to the fixed
+interval [-1,1], Suzuki writes the closed form as an a-independent closed
+part plus an a-dependent bounded-form part, uses compact embedding for lower
+semicontinuity, and uses fixed test vectors for upper semicontinuity.
+
+The same proof architecture is parity compatible:
+
+- the scaled even and odd subspaces are fixed closed subspaces;
+- the form commutes with parity;
+- parity projections preserve the form core;
+- an L2 limit of even (respectively odd) minimizers remains even
+  (respectively odd).
+
+This supports the bounded Solve target
+
+RH-R042-PARITY-BOTTOM-PARAMETER-CONTINUITY-001:
+
+prove separately that
+
+a -> epsilon_+(e^a)
+and
+a -> epsilon_-(e^a)
+
+are continuous on (0,infinity), and hence
+
+g(a)=epsilon_-(e^a)-epsilon_+(e^a)
+
+is continuous.
+
+This statement should be proved in Solve rather than attributed to Suzuki:
+Suzuki proves continuity of the unrestricted minimum and explicitly notes
+that earlier parity-restricted continuity assertions lacked full details.
+
+If R042 is proved, let I be the connected component adjacent to a=0 on which
+g(a)>0.  Suzuki plus R036 makes I nonempty.  If its finite right endpoint a_*
+exists, continuity forces g(a_*)=0.
+
+Combined with the R041 criterion, a loss of the gap at such a boundary can
+occur through one of two exact interfaces:
+
+1. pole localization closes:
+   inf sigma(B_{a_*,-}) = epsilon_+(a_*); or
+2. pole localization remains strict and the Herglotz margin closes:
+   Delta_H(a_*) = 0.
+
+Thus the all-a continuation problem can be split into two scalar/spectral
+failure modes instead of treated as an undifferentiated parity theorem.
+
 The next provider task is primary-authority acquisition of the Andrade notes
 and an audit of whether their Loewner/Herglotz formulas yield effective
 derivative or monotonicity bounds for H1/H2.
