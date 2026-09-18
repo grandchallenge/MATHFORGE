@@ -9,7 +9,10 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
-from validate_agent_continuity_adoption import repository_errors as agent_continuity_errors
+try:
+    from .validate_agent_continuity_adoption import repository_errors as agent_continuity_errors
+except ImportError:
+    from validate_agent_continuity_adoption import repository_errors as agent_continuity_errors
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
