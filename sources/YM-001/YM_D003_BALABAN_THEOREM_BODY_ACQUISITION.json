@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "YM-D003-BALABAN-THEOREM-BODY-ACQUISITION",
+  "campaign_id": "YM-001",
+  "parent_debt": "YM-D003",
+  "downstream_target": "YM-D003-BAL-R002",
+  "protected_forge_baseline": "a609f40e809ebe74f35dc4ceb069c15e4d21f26e",
+  "audit_date": "2026-09-18",
+  "primary_sources": [
+    {
+      "source_id": "BAL-CMP119",
+      "doi": "10.1007/BF01217741",
+      "title": "Convergent renormalization expansions for lattice gauge theories",
+      "journal": "Communications in Mathematical Physics",
+      "volume": "119",
+      "pages": "243-285",
+      "year": 1988,
+      "project_euclid_object": "cmp/1104162401",
+      "metadata_verified": true,
+      "theorem_body_bytes_acquired": false
+    },
+    {
+      "source_id": "BAL-CMP122-I",
+      "doi": "10.1007/BF01257412",
+      "title": "Large field renormalization. I. The basic step of the R operation",
+      "journal": "Communications in Mathematical Physics",
+      "volume": "122",
+      "pages": "175-202",
+      "year": 1989,
+      "metadata_verified": true,
+      "theorem_body_bytes_acquired": false
+    },
+    {
+      "source_id": "BAL-CMP122-II",
+      "doi": "10.1007/BF01238433",
+      "title": "Large field renormalization. II. Localization, exponentiation, and bounds for the R operation",
+      "journal": "Communications in Mathematical Physics",
+      "volume": "122",
+      "pages": "355-392",
+      "year": 1989,
+      "project_euclid_object": "euclid.cmp/1104178467",
+      "metadata_verified": true,
+      "theorem_body_bytes_acquired": false
+    }
+  ],
+  "access_attempts": [
+    {
+      "surface": "Springer",
+      "result": "subscription_preview_only_no_pdf_bytes"
+    },
+    {
+      "surface": "Project Euclid",
+      "result": "anti_bot_iframe_incapsula_no_pdf_bytes"
+    },
+    {
+      "surface": "Rutgers institutional repository",
+      "result": "bibliographic_record_doi_link_only"
+    },
+    {
+      "surface": "OSTI_ETDE_INSPIRE",
+      "result": "metadata_and_abstract_only"
+    },
+    {
+      "surface": "broad_public_mirror_search",
+      "result": "no_independent_primary_or_author_copy_acquired"
+    }
+  ],
+  "non_authoritative_target_locators": [
+    {
+      "source_id": "BAL-CMP119",
+      "printed_pages": "257-261",
+      "equations": [
+        "2.31",
+        "2.42"
+      ]
+    },
+    {
+      "source_id": "BAL-CMP122-I",
+      "printed_pages": "192",
+      "equations": [
+        "1.70"
+      ]
+    },
+    {
+      "source_id": "BAL-CMP122-II",
+      "printed_pages": "388-390",
+      "equations": [
+        "Theorem 1",
+        "1.98",
+        "1.99",
+        "1.100"
+      ]
+    }
+  ],
+  "locator_authority": "navigation_only_not_theorem_premise",
+  "downstream_state": "BLOCKED_ON_PRIMARY_THEOREM_BODY",
+  "exact_boundary": "MISSING_PRIMARY_BALABAN_THEOREM_BODY_FOR_STABILITY_TO_CONTINUUM_OBSERVABLE_EXISTENCE",
+  "may_route_equation_level_bounds_to_solve": false,
+  "may_infer_continuum_observable_existence": false,
+  "claim_boundary": "Source acquisition record only. No equation-level Balaban theorem body is admitted; no continuum existence, uniqueness, IR removal, OS, physical scale, mass gap, confinement, novelty, priority, or certification claim."
+}
