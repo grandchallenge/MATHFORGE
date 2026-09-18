@@ -145,3 +145,23 @@ Reopen this acquisition tranche when at least one of the following becomes avail
 3. an equivalently authoritative theorem-body reproduction with exact page/equation provenance sufficient for independent visual verification.
 
 Upon reopening, inspect and bind the exact target loci before any Solve theorem attempts to use the internal bounds.
+
+## Continuity checkpoint
+
+Material source identities:
+
+- CMP119 DOI `10.1007/BF01217741`;
+- CMP122-I DOI `10.1007/BF01257412`;
+- CMP122-II DOI `10.1007/BF01238433`, Project Euclid object `euclid.cmp/1104178467`;
+- Internet Archive serial collection `pub_communications-in-mathematical-physics`;
+- non-authoritative private-cache locator fingerprint for CMP122-II: SHA-256 `80ab1ee09fff0a5b6840a568b72c400a812858425da3200bc5c1c9e2d6941482`, 4,030,232 bytes.
+
+Failed routes retained: Springer subscription preview, Project Euclid Incapsula surface, Rutgers DOI-only file link, metadata-only OSTI/ETDE/INSPIRE, ordinary public mirror search, JavaScript-blocked Internet Archive collection enumeration, and dark-archive CLOCKSS access.
+
+Deterministic next evidence action:
+
+1. retrieve the preserved CMP 122(3) issue or article bytes from Internet Archive through an interface that exposes the archived item, or obtain another primary/equivalently authoritative scan;
+2. independently verify the bibliographic first page and CMP122-II Theorem 1 plus printed pp. 388–390 / equations `(1.98)`–`(1.100)`;
+3. recompute the acquired artifact digest and record it as a Forge source lock; the private-cache fingerprint above may be compared only after independent acquisition and must not substitute for it;
+4. inspect CMP119 pp. 257–261 and CMP122-I p. 192 if BAL-R002 needs their internal hypotheses;
+5. only then reopen MATHSOLVE `YM-D003-BAL-R002` for equation-level theorem work.
