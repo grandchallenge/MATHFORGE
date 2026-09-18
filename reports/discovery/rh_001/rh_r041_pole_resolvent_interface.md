@@ -244,14 +244,40 @@ small a=log lambda>0, the full localized Weil ground state is simple and even.
 Combined with protected RH-R036, this gives a strict parity gap in a nonempty
 small-a regime.
 
-The scalar criterion above identifies the exact margin that must remain
-positive to continue that gap once pole localization is established:
+On any parameter value where that strict gap is already known, the
+pole-localization hypothesis required above is automatic. Indeed,
+
+B_{lambda,-}
+=
+A_{lambda,-}+2|S><S|
+>=
+A_{lambda,-}
+
+in form order, so
+
+inf sigma(B_{lambda,-})
+>=
+epsilon_-(lambda)
+>
+epsilon_+(lambda).
+
+Thus the proved Suzuki regime starts inside the domain of the scalar
+resolvent criterion, and the corresponding Herglotz margin is strictly
+positive there.
+
+The scalar criterion therefore identifies an exact continuation variable:
 
 Delta_H(lambda)
 =
 1/2
 -
 <S,(B_{lambda,-}-epsilon_+(lambda))^{-1}S>.
+
+Suzuki separately proves continuity of the unrestricted lowest eigenvalue
+lambda_a as a function of a. That theorem alone does not establish
+continuity of the pole-free odd spectral bottom or of Delta_H. A continuation
+argument must prove the needed sector/resolvent continuity rather than infer
+it from continuity of the global minimum.
 
 This package does not prove continuity or positivity of Delta_H beyond the
 small-a regime.
