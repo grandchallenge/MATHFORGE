@@ -9,6 +9,10 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
+try:
+    from .validate_agent_continuity_adoption import repository_errors as agent_continuity_errors
+except ImportError:
+    from validate_agent_continuity_adoption import repository_errors as agent_continuity_errors
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
@@ -396,6 +400,7 @@ def main() -> int:
     errors.extend(algebraic_witness_errors())
     errors.extend(theorem_intake_matrix_errors())
     errors.extend(provider_contract_errors())
+    errors.extend(agent_continuity_errors())
     for schema in sorted((ROOT / "schemas").glob("*.json")):
         Draft202012Validator.check_schema(load_json(schema))
     if errors:
@@ -403,7 +408,7 @@ def main() -> int:
         print(f"MATHFORGE validation failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
     print(
-        "MATHFORGE JSON, algebraic witness budgets, failure ledgers, discovery, theorem intake, provider coverage, artifact identity, and handoff contracts are valid"
+        "MATHFORGE JSON, algebraic witness budgets, failure ledgers, discovery, theorem intake, provider coverage, artifact identity, handoff contracts, and continuity adoption are valid"
     )
     return 0
 
