@@ -25,9 +25,9 @@ Its classical energy curves are bounded. The source quantizes the model on the p
 \[
 \widehat H
 =
-\left(x+\frac1x\right)
+\sqrt{x+\frac1x}\,
 \left(p+\frac1p\right)
-\left(x+\frac1x\right),
+\sqrt{x+\frac1x},
 \]
 
 after the paper's state redefinition, with \(p=-i\eta\,\partial_x\) and the one-sided integral realization of \(1/p\). The spectral problem is represented equivalently by the integral equation (2.15) and the Schrödinger-like differential equation (2.8).
