@@ -147,5 +147,18 @@
     "or obtain the content-addressed private/user-local CMP122-II PDF and independently match bibliographic identity, recompute digest, and inspect Theorem 1 plus printed pages 388-390",
     "or receive a user-provided primary scan and independently bind identity, pages, and digest",
     "only after actual bytes or equivalently authoritative renders are independently inspected may equation-level bounds route to MATHSOLVE"
-  ]
+  ],
+  "routing_audit": {
+    "date": "2026-09-19",
+    "solve_head": "866612322207cb9e25530215bbfc064dd865ee60",
+    "debts": {
+      "YM-D001": "actual_4d_reference_scale_operator_identifications_and_gap_ratio_required",
+      "YM-D002": "R002_requires_selected_4d_limiting_hierarchy_and_nonalgebraic_OS_profile",
+      "YM-D003": "BAL_R002_smallest_native_successor_but_blocked_on_primary_theorem_body",
+      "YM-D004": "R002_requires_selected_regulated_4d_route_and_renormalized_observable_construction",
+      "YM-D005": "R002_blocked_on_D002_D003_and_reconstructed_4d_limiting_theory"
+    },
+    "disposition": "NO_SMALLER_INDEPENDENTLY_EXECUTABLE_YM_D001_D005_THEOREM_TRANCHE_AFTER_SOURCE_RECOVERY",
+    "opens_solve_tranche": false
+  }
 }
