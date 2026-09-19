@@ -6,7 +6,7 @@
 - Parent debt: `YM-D003`.
 - Downstream target: `YM-D003-BAL-R002 — STABILITY_TO_CONTINUUM_OBSERVABLE_EXISTENCE`.
 - Protected Forge baseline: `a609f40e809ebe74f35dc4ceb069c15e4d21f26e`.
-- Audit date: `2026-09-18`.
+- Audit date: `2026-09-18`; recovery replay: `2026-09-19`.
 - Purpose: acquire theorem-number/equation-exact Balaban source detail needed to test whether the admitted four-dimensional ultraviolet-stability theorem can be strengthened downstream into existence of a continuum gauge-invariant observable hierarchy.
 
 ## Governing distinction
@@ -105,6 +105,99 @@ Its reported target loci are:
 The third-party repository itself labels several of these records as `located` or `visual_confirmed` rather than source-extracted theorem authority and warns against promoting local activity estimates into a global mass-gap claim.
 
 These locators may be used to target a later lawful primary scan. They may not be used as premises in MATHSOLVE.
+
+## 2026-09-19 no-mutation reconnaissance and recovery replay
+
+A fresh read-only reconnaissance rebound the Yang–Mills campaign before any repository mutation.
+
+Protected heads observed at disposition time:
+
+- MATH-PROGRAMME: `d45bd36a6f86c6651b9d40de8191a89e3b793618`;
+- MATHFORGE: `a11c6dedede09af6f3c67c5eec337941b73d4d3a`;
+- MATHSOLVE: `866612322207cb9e25530215bbfc064dd865ee60`;
+- MATHCERT: `1f15e8b1d4f6307aedac5aecfd10bd06b89ab445`;
+- INTELLECT: `7e6b61ddf77e2d73309657d089a98cae84cc735f`.
+
+The current Programme routing gate, Solve handoff, D002/D003/D004 obligation DAGs, Solve campaign manifest, Forge acquisition record, and Cert route were re-read from protected state. No newer protected Yang–Mills result supplied a four-dimensional limiting hierarchy, no protected source lock admitted the Balaban theorem body, and MATHCERT still retains `YM-001` as pending without mathematical adjudication. The Programme external-execution-plane changes admitted on 2026-09-19 alter execution topology only and do not change mathematical or source authority.
+
+Reconnaissance disposition:
+
+`PROCEED_WITH_BALABAN_SOURCE_RECOVERY`.
+
+### Immutable external locator manifest
+
+Recovery located the public repository `lluiseriksson/THE-ERIKSSON-PROGRAMME` at immutable commit
+
+`990d228e11707e7244c70843f48968721ab3e3f7`.
+
+Its public artifact manifest
+
+`source-packets/manifests/source-artifact-manifest.json`
+
+records a private/local CMP122-II source packet with:
+
+- PDF name `balaban-largefield-II-cmp122-1104178467.pdf`;
+- PDF SHA-256 `80ab1ee09fff0a5b6840a568b72c400a812858425da3200bc5c1c9e2d6941482`;
+- PDF byte size `4030232`;
+- full-text extraction SHA-256 `ed6fff77db968cf38006ecebd9aa5044e9d239a60af2e8aaa0d810edeed3d423`;
+- first-page render SHA-256 `c8eb0356343a8002698ebc0f936b7eaf37434b874c95c0c7ebe5d708eb21b1b7`;
+- second-page render SHA-256 `98787cde88bb840e06cf9310af03d74a9d68af07b801a3be951a988cbbd04820`;
+- PDF-page-36 / printed-page-390 render SHA-256 `874c016dea69eae3db29d0acba843b3547bfcbb5e8091eeeecdf02351fe7f66d`.
+
+The same repository's public state explicitly says that raw private source artifacts and generated source packets remain out of public Git. Direct GitHub retrieval of the named PDF, text extraction, and render paths returned `404 Not Found`; only their manifest metadata is publicly available. The manifest's source root is a user-local Windows path rather than an independently retrievable primary archive.
+
+Therefore this materially corroborates the previously recorded private-cache fingerprint but does **not** convert it into source authority. No theorem-body bytes or page render were independently acquired or inspected in this tranche.
+
+### Archive and repository replay
+
+The recovery ladder was replayed against the current execution plane:
+
+- Springer continues to expose metadata/abstract scope but not independently downloadable theorem-body bytes;
+- Project Euclid object `euclid.cmp/1104178467` remains blocked by its anti-bot/Incapsula surface;
+- Rutgers independently confirms the exact CMP122-II bibliographic identity but exposes no independently retrievable theorem body;
+- Internet Archive collection metadata / advanced-search endpoints could not be accessed through the available web retrieval interface, and direct network fallback in the execution container could not resolve the archive host;
+- broad searches of HathiTrust, Portico/CLOCKSS-facing public surfaces, institutional/author mirrors, DOI/Crossref-derived surfaces, and ordinary public mirrors yielded no independently inspectable theorem-body reproduction.
+
+Portico/CLOCKSS/Internet-Archive preservation evidence remains locator/preservation evidence only. Preservation is not equivalent to theorem-body possession.
+
+### Resulting acquisition boundary
+
+The recovery result is now more precise:
+
+`PRIMARY_THEOREM_BODY_KNOWN_TO_EXIST_IN_PRESERVATION_AND_PRIVATE_SOURCE_PACKET__NO_INDEPENDENTLY_INSPECTABLE_BYTES_ON_CURRENT_EXECUTION_PLANE`.
+
+The downstream blocker remains unchanged:
+
+`MISSING_PRIMARY_BALABAN_THEOREM_BODY_FOR_STABILITY_TO_CONTINUUM_OBSERVABLE_EXISTENCE`.
+
+A third party's content-addressed assertion that it holds the PDF is not an independently verified Forge source lock. Equation-level Balaban bounds therefore remain inadmissible as MATHSOLVE premises.
+
+### Fresh D001-D005 routing audit
+
+The protected Solve estate was re-audited after source recovery failed:
+
+- `YM-D001`: the abstract scale/comparison stack has already been reduced to application objects on the actual four-dimensional pure-YM cutoff trajectory: a finite nonzero non-circular reference scale, regulated operator/state-space identifications, and a positive target/reference gap ratio. Another abstract scale lemma would not remove the live dependency.
+- `YM-D002`: `YM-D002-R002` requires one actually selected four-dimensional limiting hierarchy plus the remaining analytic/growth and cluster/vacuum OS profile. It is construction-facing, not independently executable.
+- `YM-D003`: `YM-D003-BAL-R002` remains the smallest native theorem-grade successor, but equation-level use of Balaban's internal bounds remains blocked by this source-acquisition boundary. The MRS successors retain their independent proof-completeness/IR/OS limitations and do not bypass the Balaban route by theorem splicing.
+- `YM-D004`: `YM-D004-R002` requires a selected regulated four-dimensional route on which to construct and identify the renormalized local gauge-invariant observable hierarchy.
+- `YM-D005`: `YM-D005-R002` is expressly non-executable until the reconstructed four-dimensional limiting theory exists; it is blocked by D002/D003.
+
+Disposition:
+
+`NO_SMALLER_INDEPENDENTLY_EXECUTABLE_YM_D001_D005_THEOREM_TRANCHE_AFTER_SOURCE_RECOVERY`.
+
+No MATHSOLVE tranche is opened by this audit. The next material action remains acquisition and independent inspection of the Balaban theorem body, or emergence of a newly protected concrete four-dimensional construction route.
+
+### Deterministic next evidence action
+
+Reopen this tranche only when one of the following exposes actual theorem-body bytes or equivalently authoritative renders to this governed execution:
+
+1. retrieve CMP122-II from the Internet Archive preserved serial item or another authoritative archive with independently downloadable bytes;
+2. obtain the private/user-local CMP122-II PDF named above, then independently match its bibliographic first page to DOI `10.1007/BF01238433`, recompute its SHA-256, and inspect Theorem 1 plus printed pp. 388–390;
+3. receive a user-provided primary scan and independently bind bibliographic identity, page range, and digest;
+4. obtain an equivalently authoritative theorem-body reproduction with exact page/equation provenance.
+
+The private-cache SHA-256 may be compared after independent acquisition, but a matching manifest claim alone must never substitute for possession and inspection of the source bytes.
 
 ## What is established now
 
