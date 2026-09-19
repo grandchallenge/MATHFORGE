@@ -63,6 +63,18 @@
     {
       "surface": "broad_public_mirror_search",
       "result": "no_independent_primary_or_author_copy_acquired"
+    },
+    {
+      "surface": "Internet Archive metadata and advanced-search interfaces",
+      "result": "unavailable_on_current_web_interface_and_network_fallback_no_theorem_bytes"
+    },
+    {
+      "surface": "third_party_public_artifact_manifest",
+      "result": "content_addressed_private_packet_metadata_only_raw_pdf_text_and_renders_not_publicly_retrievable"
+    },
+    {
+      "surface": "HathiTrust_Portico_CLOCKSS_author_and_institutional_mirror_search",
+      "result": "no_independently_inspectable_theorem_body_reproduction_acquired"
     }
   ],
   "non_authoritative_target_locators": [
@@ -97,5 +109,43 @@
   "exact_boundary": "MISSING_PRIMARY_BALABAN_THEOREM_BODY_FOR_STABILITY_TO_CONTINUUM_OBSERVABLE_EXISTENCE",
   "may_route_equation_level_bounds_to_solve": false,
   "may_infer_continuum_observable_existence": false,
-  "claim_boundary": "Source acquisition record only. No equation-level Balaban theorem body is admitted; no continuum existence, uniqueness, IR removal, OS, physical scale, mass gap, confinement, novelty, priority, or certification claim."
+  "claim_boundary": "Source acquisition record only. No equation-level Balaban theorem body is admitted; no continuum existence, uniqueness, IR removal, OS, physical scale, mass gap, confinement, novelty, priority, or certification claim.",
+  "latest_reconnaissance": {
+    "date": "2026-09-19",
+    "disposition": "PROCEED_WITH_BALABAN_SOURCE_RECOVERY",
+    "protected_heads": {
+      "grandchallenge/MATH-PROGRAMME": "d45bd36a6f86c6651b9d40de8191a89e3b793618",
+      "grandchallenge/MATHFORGE": "a11c6dedede09af6f3c67c5eec337941b73d4d3a",
+      "grandchallenge/MATHSOLVE": "866612322207cb9e25530215bbfc064dd865ee60",
+      "grandchallenge/MATHCERT": "1f15e8b1d4f6307aedac5aecfd10bd06b89ab445",
+      "grandchallenge/INTELLECT": "7e6b61ddf77e2d73309657d089a98cae84cc735f"
+    },
+    "authority_result": "ym_source_and_mathematical_authority_unchanged",
+    "certification_result": "YM-001_pending_no_mathematical_adjudication"
+  },
+  "external_locator_manifest": {
+    "repository": "lluiseriksson/THE-ERIKSSON-PROGRAMME",
+    "commit": "990d228e11707e7244c70843f48968721ab3e3f7",
+    "manifest_path": "source-packets/manifests/source-artifact-manifest.json",
+    "source_root_kind": "user_local_private_path",
+    "public_raw_artifacts_available": false,
+    "cmp122_ii": {
+      "pdf_name": "balaban-largefield-II-cmp122-1104178467.pdf",
+      "pdf_sha256": "80ab1ee09fff0a5b6840a568b72c400a812858425da3200bc5c1c9e2d6941482",
+      "pdf_byte_size": 4030232,
+      "text_sha256": "ed6fff77db968cf38006ecebd9aa5044e9d239a60af2e8aaa0d810edeed3d423",
+      "render_source_01_sha256": "c8eb0356343a8002698ebc0f936b7eaf37434b874c95c0c7ebe5d708eb21b1b7",
+      "render_source_02_sha256": "98787cde88bb840e06cf9310af03d74a9d68af07b801a3be951a988cbbd04820",
+      "render_pdf_page_36_sha256": "874c016dea69eae3db29d0acba843b3547bfcbb5e8091eeeecdf02351fe7f66d"
+    },
+    "authority": "navigation_only_not_theorem_premise",
+    "independent_byte_inspection_completed": false
+  },
+  "acquisition_boundary": "PRIMARY_THEOREM_BODY_KNOWN_TO_EXIST_IN_PRESERVATION_AND_PRIVATE_SOURCE_PACKET__NO_INDEPENDENTLY_INSPECTABLE_BYTES_ON_CURRENT_EXECUTION_PLANE",
+  "deterministic_next_evidence_action": [
+    "retrieve CMP122-II bytes from Internet Archive preserved serial item or another authoritative archive",
+    "or obtain the content-addressed private/user-local CMP122-II PDF and independently match bibliographic identity, recompute digest, and inspect Theorem 1 plus printed pages 388-390",
+    "or receive a user-provided primary scan and independently bind identity, pages, and digest",
+    "only after actual bytes or equivalently authoritative renders are independently inspected may equation-level bounds route to MATHSOLVE"
+  ]
 }
