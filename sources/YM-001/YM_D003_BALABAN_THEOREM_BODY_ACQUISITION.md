@@ -172,6 +172,22 @@ The downstream blocker remains unchanged:
 
 A third party's content-addressed assertion that it holds the PDF is not an independently verified Forge source lock. Equation-level Balaban bounds therefore remain inadmissible as MATHSOLVE premises.
 
+### Fresh D001-D005 routing audit
+
+The protected Solve estate was re-audited after source recovery failed:
+
+- `YM-D001`: the abstract scale/comparison stack has already been reduced to application objects on the actual four-dimensional pure-YM cutoff trajectory: a finite nonzero non-circular reference scale, regulated operator/state-space identifications, and a positive target/reference gap ratio. Another abstract scale lemma would not remove the live dependency.
+- `YM-D002`: `YM-D002-R002` requires one actually selected four-dimensional limiting hierarchy plus the remaining analytic/growth and cluster/vacuum OS profile. It is construction-facing, not independently executable.
+- `YM-D003`: `YM-D003-BAL-R002` remains the smallest native theorem-grade successor, but equation-level use of Balaban's internal bounds remains blocked by this source-acquisition boundary. The MRS successors retain their independent proof-completeness/IR/OS limitations and do not bypass the Balaban route by theorem splicing.
+- `YM-D004`: `YM-D004-R002` requires a selected regulated four-dimensional route on which to construct and identify the renormalized local gauge-invariant observable hierarchy.
+- `YM-D005`: `YM-D005-R002` is expressly non-executable until the reconstructed four-dimensional limiting theory exists; it is blocked by D002/D003.
+
+Disposition:
+
+`NO_SMALLER_INDEPENDENTLY_EXECUTABLE_YM_D001_D005_THEOREM_TRANCHE_AFTER_SOURCE_RECOVERY`.
+
+No MATHSOLVE tranche is opened by this audit. The next material action remains acquisition and independent inspection of the Balaban theorem body, or emergence of a newly protected concrete four-dimensional construction route.
+
 ### Deterministic next evidence action
 
 Reopen this tranche only when one of the following exposes actual theorem-body bytes or equivalently authoritative renders to this governed execution:
