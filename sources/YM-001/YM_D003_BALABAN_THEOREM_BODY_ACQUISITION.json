@@ -141,12 +141,13 @@
     "authority": "navigation_only_not_theorem_premise",
     "independent_byte_inspection_completed": false
   },
-  "acquisition_boundary": "PRIMARY_THEOREM_BODY_KNOWN_TO_EXIST_IN_PRESERVATION_AND_PRIVATE_SOURCE_PACKET__NO_INDEPENDENTLY_INSPECTABLE_BYTES_ON_CURRENT_EXECUTION_PLANE",
+  "acquisition_boundary": "PRIMARY_THEOREM_BODY_BYTE_HANDOFF_REQUIRED__PUBLIC_AND_GOVERNED_DISCOVERY_SURFACES_EXHAUSTED",
   "deterministic_next_evidence_action": [
-    "retrieve CMP122-II bytes from Internet Archive preserved serial item or another authoritative archive",
-    "or obtain the content-addressed private/user-local CMP122-II PDF and independently match bibliographic identity, recompute digest, and inspect Theorem 1 plus printed pages 388-390",
-    "or receive a user-provided primary scan and independently bind identity, pages, and digest",
-    "only after actual bytes or equivalently authoritative renders are independently inspected may equation-level bounds route to MATHSOLVE"
+    "obtain the actual CMP122-II PDF bytes, preferably balaban-largefield-II-cmp122-1104178467.pdf",
+    "or obtain a primary scan or authoritative renders covering the bibliographic first page, Theorem 1, and printed pages 388-390",
+    "compute SHA-256 and byte size and compare against the known private-packet fingerprint when applicable",
+    "visually inspect Theorem 1 and equations 1.98-1.100 and bind exact provenance in MATHFORGE",
+    "only after protected source admission reopen YM-D003-BAL-R002 in MATHSOLVE"
   ],
   "routing_audit": {
     "date": "2026-09-19",
@@ -160,5 +161,33 @@
     },
     "disposition": "NO_SMALLER_INDEPENDENTLY_EXECUTABLE_YM_D001_D005_THEOREM_TRANCHE_AFTER_SOURCE_RECOVERY",
     "opens_solve_tranche": false
+  },
+  "latest_reopening_action": {
+    "date": "2026-09-19",
+    "protected_heads": {
+      "grandchallenge/MATHFORGE": "4c581bb252b072be574f9fdeb62a9ee2249722da",
+      "grandchallenge/MATHSOLVE": "8dec3e8473df1ade3a0c717aae0f57c0934ce84e"
+    },
+    "attempted_recovery": [
+      "springer_direct_pdf_endpoint_redirected_to_subscription_article_page",
+      "project_euclid_indexed_but_article_and_pdf_endpoints_remain_antibot_iframe",
+      "internet_archive_metadata_and_advanced_search_inaccessible_and_container_dns_unavailable",
+      "rutgers_esploro_metadata_only_no_download_object",
+      "openaire_inist_crossref_unpaywall_core_openalex_hathitrust_portico_clockss_institutional_author_public_mirror_search_no_primary_bytes",
+      "external_source_owner_git_history_no_raw_pdf_text_or_render_blob",
+      "external_source_owner_releases_no_balaban_source_packet_asset",
+      "external_source_owner_issues_and_attachments_no_balaban_source_packet",
+      "external_source_owner_workflows_no_source_packet_artifact_upload",
+      "user_file_library_no_primary_balaban_scan_or_theorem_body"
+    ],
+    "private_packet_expected_identity": {
+      "filename": "balaban-largefield-II-cmp122-1104178467.pdf",
+      "sha256": "80ab1ee09fff0a5b6840a568b72c400a812858425da3200bc5c1c9e2d6941482",
+      "byte_size": 4030232,
+      "authority": "comparison_target_only_until_bytes_independently_acquired"
+    },
+    "result": "NO_PRIMARY_OR_EQUIVALENTLY_AUTHORITATIVE_THEOREM_BODY_BYTES_ACQUIRED",
+    "exact_boundary": "PRIMARY_THEOREM_BODY_BYTE_HANDOFF_REQUIRED__PUBLIC_AND_GOVERNED_DISCOVERY_SURFACES_EXHAUSTED",
+    "reopens_solve_target": false
   }
 }
