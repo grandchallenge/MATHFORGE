@@ -199,6 +199,94 @@ Reopen this tranche only when one of the following exposes actual theorem-body b
 
 The private-cache SHA-256 may be compared after independent acquisition, but a matching manifest claim alone must never substitute for possession and inspection of the source bytes.
 
+## 2026-09-19 exact reopening action replay — byte handoff boundary
+
+A second exact reopening attempt executed the previously recorded deterministic action rather than merely repeating bibliographic discovery.
+
+### Live rebinding
+
+Before acquisition work, protected state was rebound again:
+
+- MATHFORGE protected head: `4c581bb252b072be574f9fdeb62a9ee2249722da`;
+- MATHSOLVE protected head: `8dec3e8473df1ade3a0c717aae0f57c0934ce84e`.
+
+The protected Forge acquisition state still had `theorem_body_bytes_acquired: false`; the Solve handoff still kept `YM-D003-BAL-R002` source-blocked.
+
+### Authoritative and preservation surfaces replayed
+
+The following current surfaces were tested again:
+
+1. Springer direct PDF endpoint `https://link.springer.com/content/pdf/10.1007/BF01238433.pdf` resolves to the subscription article page rather than PDF bytes.
+2. Project Euclid is indexed for the article, but direct article/PDF endpoints still resolve only to the anti-bot/iframe surface on this execution plane.
+3. Internet Archive direct metadata and advanced-search endpoints remain inaccessible through the available browser tool; container network fallback still cannot resolve `archive.org`.
+4. Rutgers SOAR/Esploro confirms exact article identity but exposes no file/download object.
+5. OpenAIRE, INIST/PASCAL, DOI/Crossref-derived discovery, Unpaywall/CORE/OpenAlex-style searches, HathiTrust, Portico/CLOCKSS-facing discovery, institutional repositories, author pages, and ordinary public mirrors produced no independently retrievable theorem-body copy.
+
+### External source-owner repository recovery
+
+The public repository `lluiseriksson/THE-ERIKSSON-PROGRAMME` was then audited beyond its present source manifest.
+
+- Git commit history was searched around CMP122 source ingestion and source-database work.
+- Likely historical private packet paths were probed at source-ingestion commits.
+- Repository releases were enumerated.
+- Public issues/attachments were searched for CMP122, Balaban PDFs, and source packets.
+- Workflow configuration was checked for source-packet artifact uploads.
+
+Result: no historical Git blob, release asset, issue attachment, or GitHub Actions artifact exposes the CMP122-II PDF, OCR/text extraction, or page renders. The repository explicitly records that private primary artifacts live outside public Git under `source-packets/private/<source_id>/...` or a user-local `YM_SOURCE_ROOT`, and that the raw private packet must not be pushed publicly.
+
+The content-addressed private artifact identity remains:
+
+- filename: `balaban-largefield-II-cmp122-1104178467.pdf`;
+- expected SHA-256: `80ab1ee09fff0a5b6840a568b72c400a812858425da3200bc5c1c9e2d6941482`;
+- expected byte size: `4030232`.
+
+These values remain comparison targets only until the bytes are independently acquired.
+
+### User-held source search
+
+The available user File Library was searched for:
+
+- the exact title;
+- DOI `10.1007/BF01238433`;
+- `CMP122`;
+- Project Euclid object `1104178467`;
+- the private-packet filename.
+
+No primary Balaban scan or theorem-body artifact was present. The matching uploaded material is campaign/handoff prose only.
+
+### Evidentiary disposition
+
+No primary or equivalently authoritative theorem-body bytes or page renders were acquired. Therefore:
+
+`YM-D003-BAL-R002` remains closed to equation-level theorem work.
+
+The exact blocker remains:
+
+`MISSING_PRIMARY_BALABAN_THEOREM_BODY_FOR_STABILITY_TO_CONTINUUM_OBSERVABLE_EXISTENCE`.
+
+The acquisition boundary is sharpened to:
+
+`PRIMARY_THEOREM_BODY_BYTE_HANDOFF_REQUIRED__PUBLIC_AND_GOVERNED_DISCOVERY_SURFACES_EXHAUSTED`.
+
+This is not a generic web-search failure. A content-addressed private source packet is known to exist, but the bytes are outside the reachable governed evidence plane.
+
+### Exact next action that reopens the boundary
+
+Any one of the following is sufficient to restart source verification:
+
+1. provide the actual CMP122-II PDF bytes, preferably the known private artifact `balaban-largefield-II-cmp122-1104178467.pdf`;
+2. provide a primary scan or authoritative page renders containing the bibliographic first page, Theorem 1, and printed pp. 388–390;
+3. expose an authoritative archive download that yields the same theorem-body pages.
+
+Upon receipt, the first actions are mechanical and do not require a new research decision:
+
+1. compute SHA-256 and byte size;
+2. compare against the expected private-packet fingerprint when applicable;
+3. render and visually inspect the bibliographic first page;
+4. inspect Theorem 1 and printed pp. 388–390, including equations (1.98)–(1.100);
+5. bind exact source identity, page/equation locators, and digest in MATHFORGE;
+6. only after protected source admission may `YM-D003-BAL-R002` reopen in MATHSOLVE.
+
 ## What is established now
 
 The following are provider-safe facts:
