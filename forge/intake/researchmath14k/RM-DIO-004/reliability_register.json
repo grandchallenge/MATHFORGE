@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "register_id": "MF-RM-AMPHORA-001-RELIABILITY",
+  "source_id": "RM-AMPHORA-001",
+  "assessed_at": "2026-09-21",
+  "source_authority": "Third-party research-problem corpus assembled from literature-derived material; it is a discovery source, not a mathematical-status authority.",
+  "row_provenance": {
+    "state": "traceable_to_human_readable_source",
+    "source_url": "https://pub.math.leidenuniv.nl/~evertsejh/07-workshop-problems.pdf#page=1",
+    "limitations": "The row is traceable to the workshop problem list, but the corpus normalization and status-search prose are not treated as verbatim primary-source text."
+  },
+  "license_clarity": {
+    "dataset_card_license": "MIT",
+    "state": "dataset_license_recorded_third_party_terms_require_review",
+    "limitations": "The dataset license does not replace attribution or reuse review for linked third-party source materials."
+  },
+  "status_authority": {
+    "imported_status": "unknown",
+    "programme_status": "STATUS_UNVERIFIED_UNKNOWN",
+    "promotion_allowed": false
+  },
+  "evidence_quality": "The linked 2007 workshop document supports historical listing only; it does not establish current global status.",
+  "known_failure_modes": [
+    "stale or generated status summaries",
+    "normalization drift from the source wording",
+    "unstable Viewer row addressing without a repository revision",
+    "third-party licensing or attribution obligations",
+    "taxonomy labels mistaken for method authority"
+  ],
+  "audit_depth": "row_preserved_source_traced_status_not_independently_reconstructed",
+  "allowed_use": "bounded problem-card construction and MATHSOLVE triage proposal",
+  "forbidden_use": "campaign admission, status promotion, theorem assertion, novelty claim, or certification without separate Programme controls"
+}

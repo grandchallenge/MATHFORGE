@@ -23,6 +23,8 @@ ALGEBRAIC_WITNESS_REGISTRY = ROOT / "governance" / "algebraic_witness_registry.j
 THEOREM_INTAKE_MATRIX = (
     ROOT / "sources" / "OPENAI-TEN-PROOFS-001" / "theorem_intake_matrix.json"
 )
+EXTERNAL_SOURCE_REGISTRY = ROOT / "governance" / "external_sources.json"
+RESEARCHMATH_ROOT = ROOT / "forge" / "intake" / "researchmath14k" / "RM-DIO-004"
 
 
 def load_json(path: Path) -> Any:
@@ -174,6 +176,76 @@ def git_blob_sha1(path: Path) -> str:
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def external_source_errors() -> list[str]:
+    errors: list[str] = []
+    registry = load_json(EXTERNAL_SOURCE_REGISTRY)
+    errors.extend(validate(registry, "external_source_registry.schema.json", "governance/external_sources.json"))
+    sources = registry.get("sources", []) if isinstance(registry, dict) else []
+    ids = [entry.get("source_id") for entry in sources if isinstance(entry, dict)]
+    if len(ids) != len(set(ids)):
+        errors.append("governance/external_sources.json: duplicate source_id")
+    by_id = {entry.get("source_id"): entry for entry in sources if isinstance(entry, dict)}
+    if set(by_id) != {"RM-AMPHORA-001", "FC-GDM-001", "FC-GDM-002"}:
+        errors.append("governance/external_sources.json: governed source set drift")
+    for source_id, entry in by_id.items():
+        for field in ("record_path", "reliability_path"):
+            path = ROOT / str(entry.get(field, ""))
+            if not path.is_file():
+                errors.append(f"governance/external_sources.json: {source_id} missing {field} {entry.get(field)}")
+
+    required = {
+        "source_lock.json", "reliability_register.json", "source_row.json",
+        "problem_card.json", "mathsolve_handoff.json"
+    }
+    if not RESEARCHMATH_ROOT.is_dir():
+        return errors + ["ResearchMath canonical intake directory is missing"]
+    missing = sorted(required - {path.name for path in RESEARCHMATH_ROOT.glob("*.json")})
+    for name in missing:
+        errors.append(f"ResearchMath canonical intake is missing {name}")
+    if missing:
+        return errors
+
+    lock = load_json(RESEARCHMATH_ROOT / "source_lock.json")
+    reliability = load_json(RESEARCHMATH_ROOT / "reliability_register.json")
+    row = load_json(RESEARCHMATH_ROOT / "source_row.json")
+    card = load_json(RESEARCHMATH_ROOT / "problem_card.json")
+    handoff = load_json(RESEARCHMATH_ROOT / "mathsolve_handoff.json")
+    expected_commit = "f22d0f28b55e6e777acf82e722d97ae982dff02e"
+    expected_lfs = "3f6c96d18925a47ac223555717226c5408cc9c75e07a1e96bddcffde8a06f029"
+    expected_question = "Determine all integer pairs (x, y) that satisfy the Diophantine equation x^2 - x = y^5 - y."
+    expected_question_sha = hashlib.sha256(expected_question.encode("utf-8")).hexdigest()
+    if lock.get("revision", {}).get("commit") != expected_commit:
+        errors.append("ResearchMath source lock: repository commit drift")
+    if lock.get("revision", {}).get("git_lfs_sha256") != expected_lfs:
+        errors.append("ResearchMath source lock: data LFS identity drift")
+    if lock.get("selection", {}).get("row_index") != 0:
+        errors.append("ResearchMath source lock: selected row index drift")
+    if lock.get("selection", {}).get("question_sha256") != expected_question_sha:
+        errors.append("ResearchMath source lock: selected question identity drift")
+    dataset = row.get("dataset", {})
+    if dataset.get("repository_commit") != expected_commit or dataset.get("data_lfs_sha256") != expected_lfs:
+        errors.append("ResearchMath source row: immutable dataset identity drift")
+    if dataset.get("config") != "ResearchMath-14k" or dataset.get("split") != "test" or dataset.get("row_index") != 0:
+        errors.append("ResearchMath source row: Viewer coordinate drift")
+    if row.get("original_question") != expected_question:
+        errors.append("ResearchMath source row: original question drift")
+    if row.get("audited_status") != "STATUS_UNVERIFIED_UNKNOWN" or row.get("status_promotion_allowed") is not False:
+        errors.append("ResearchMath source row: status quarantine drift")
+    if reliability.get("status_authority", {}).get("promotion_allowed") is not False:
+        errors.append("ResearchMath reliability register: status promotion must remain false")
+    if len(reliability.get("known_failure_modes", [])) < 5:
+        errors.append("ResearchMath reliability register: known failure modes are incomplete")
+    if card.get("source_row_sha256") != sha256(RESEARCHMATH_ROOT / "source_row.json"):
+        errors.append("ResearchMath problem card: source-row hash drift")
+    if card.get("promotion_allowed") is not False:
+        errors.append("ResearchMath problem card: promotion must remain false")
+    if handoff.get("problem_card_sha256") != sha256(RESEARCHMATH_ROOT / "problem_card.json"):
+        errors.append("ResearchMath handoff: problem-card hash drift")
+    if handoff.get("state") != "PROVISIONAL_TRIAGE_SEED":
+        errors.append("ResearchMath handoff: state must remain provisional")
+    return errors
 
 
 def programme_refs() -> tuple[set[str], set[str], set[str]]:
@@ -400,6 +472,7 @@ def main() -> int:
     errors.extend(algebraic_witness_errors())
     errors.extend(theorem_intake_matrix_errors())
     errors.extend(provider_contract_errors())
+    errors.extend(external_source_errors())
     errors.extend(agent_continuity_errors())
     for schema in sorted((ROOT / "schemas").glob("*.json")):
         Draft202012Validator.check_schema(load_json(schema))
@@ -408,7 +481,7 @@ def main() -> int:
         print(f"MATHFORGE validation failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
     print(
-        "MATHFORGE JSON, algebraic witness budgets, failure ledgers, discovery, theorem intake, provider coverage, artifact identity, handoff contracts, and continuity adoption are valid"
+        "MATHFORGE JSON, external source classes, pinned corpus intake, reliability, algebraic witness budgets, failure ledgers, discovery, theorem intake, provider coverage, artifact identity, handoff contracts, and continuity adoption are valid"
     )
     return 0
 

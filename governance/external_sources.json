@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "MF-EXTERNAL-SOURCES",
+  "sources": [
+    {
+      "source_id": "RM-AMPHORA-001",
+      "source_class": "corpus_row",
+      "upstream": "amphora/ResearchMath-14k",
+      "immutable_revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e",
+      "record_path": "forge/intake/researchmath14k/RM-DIO-004/source_lock.json",
+      "reliability_path": "forge/intake/researchmath14k/RM-DIO-004/reliability_register.json",
+      "claim_boundary": "The source supplies a candidate problem row and provenance only; it supplies no Programme status, semantic equivalence, proof, novelty, campaign authority, or certification."
+    },
+    {
+      "source_id": "FC-GDM-001",
+      "source_class": "formal_statement_repository",
+      "upstream": "google-deepmind/formal-conjectures",
+      "immutable_revision": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+      "record_path": "formal_sources/formal_conjectures/source_lock.json",
+      "reliability_path": "formal_sources/formal_conjectures/MF-FC-WP01.md",
+      "claim_boundary": "The source supplies pinned formal statements and concordance evidence only; it supplies no Programme status, proof, novelty, campaign authority, or certification."
+    },
+    {
+      "source_id": "FC-GDM-002",
+      "source_class": "formal_statement_repository",
+      "upstream": "google-deepmind/formal-conjectures",
+      "immutable_revision": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+      "record_path": "formal_sources/formal_conjectures/source_locks/FC-GDM-002.json",
+      "reliability_path": "formal_sources/formal_conjectures/MF-FC-WP02.md",
+      "claim_boundary": "The source supplies pinned formal statements, replay, concordance, and bounded coverage evidence only; it supplies no Programme status, proof, novelty, campaign authority, or certification."
+    }
+  ]
+}
