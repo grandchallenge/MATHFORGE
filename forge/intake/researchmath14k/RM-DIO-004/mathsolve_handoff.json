@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "handoff_id": "RM-DIO-004-HANDOFF",
+  "source_id": "RM-AMPHORA-001",
+  "problem_card_sha256": "7e299c68bbd2d440fc5e00b56b384e62eb9c0aa2fbe9bff5f645343556f8ca3a",
+  "state": "PROVISIONAL_TRIAGE_SEED",
+  "first_executable_step": "Enumerate y in {-1,0,1,2,3}, test D = 1 + 4(y^5-y) for nonnegative squares, and record exact branches.",
+  "proof_debt": ["independent literature-status audit", "source transcription review", "global arithmetic method", "integer-completeness proof"],
+  "claim_boundary": "MATHSOLVE may evaluate this triage seed but may not infer campaign admission, solved status, completeness, or certification from it."
+}

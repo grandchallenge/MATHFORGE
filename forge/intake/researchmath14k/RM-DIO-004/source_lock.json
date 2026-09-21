@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_lock_id": "MF-RM-AMPHORA-001-LOCK",
+  "source_id": "RM-AMPHORA-001",
+  "source_class": "corpus_row",
+  "repository": {
+    "full_name": "amphora/ResearchMath-14k",
+    "url": "https://huggingface.co/datasets/amphora/ResearchMath-14k"
+  },
+  "revision": {
+    "commit": "f22d0f28b55e6e777acf82e722d97ae982dff02e",
+    "retrieved_at": "2026-09-21T08:20:00Z",
+    "data_path": "data/train.jsonl",
+    "git_lfs_sha256": "3f6c96d18925a47ac223555717226c5408cc9c75e07a1e96bddcffde8a06f029",
+    "byte_length": 47941515
+  },
+  "selection": {
+    "config": "ResearchMath-14k",
+    "split": "test",
+    "row_index": 0,
+    "paper_id": "07-workshop-problems",
+    "question_sha256": "9211447a6d6e4187668551a896ad9ce1750519d7d3952fb461fdaadffb324491"
+  },
+  "licensing": {
+    "dataset_card_license": "MIT",
+    "third_party_source_terms_retained": true,
+    "publication_requires_source_attribution_review": true
+  },
+  "claim_boundary": "This lock fixes the dataset repository, data object, Viewer coordinates, selected row, and question bytes. It does not establish current mathematical status, semantic equivalence, proof, novelty, campaign authority, or certification."
+}

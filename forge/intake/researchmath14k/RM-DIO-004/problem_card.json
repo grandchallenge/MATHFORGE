@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "RM-DIO-004",
+  "source_id": "RM-AMPHORA-001",
+  "source_row_sha256": "1b109750c6dc40dda510991ab5cd3ee203377579f102d6650f6885bc85570f27",
+  "normalized_statement": "Classify all integer pairs satisfying x^2 - x - y^5 + y = 0.",
+  "route": "DIOPHANTINE_ALGEBRAIC_INTAKE",
+  "first_executable_step": "Run an exact finite sanity screen for y in {-1,0,1,2,3}; record evidence only, not a completeness proof.",
+  "status": "MATHFORGE_TRIAGE_READY",
+  "promotion_allowed": false,
+  "claim_boundary": "This card preserves and normalizes one pinned corpus row. It does not solve the equation, establish current open status, authorize a campaign, or provide a theorem for certification."
+}
