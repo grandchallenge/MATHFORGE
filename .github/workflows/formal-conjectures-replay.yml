@@ -4,9 +4,13 @@ on:
   pull_request:
     paths:
       - ".github/workflows/formal-conjectures-replay.yml"
+      - "catalog/**"
+      - "governance/external_sources.json"
       - "formal_sources/formal_conjectures/**"
-      - "schemas/**formal**"
-      - "tests/**formal**"
+      - "schemas/**"
+      - "tests/**"
+  schedule:
+    - cron: "23 8 1 * *"
   workflow_dispatch:
 
 permissions:
@@ -25,6 +29,15 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.13"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Install locked catalog validation dependency
+        run: python -m pip install -r requirements-ci.txt
 
       - name: Checkout pinned Formal Conjectures revision
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -81,8 +94,23 @@ jobs:
         run: |
           set -euo pipefail
           lake exe extract_names FormalConjectures \
-            --exclude=docstring,statement,moduleDocstrings \
+            --exclude=docstring,moduleDocstrings \
             > ../../replay/FC-GDM-002-FULL-INVENTORY.json
+
+      - name: Replay complete two-provider semantic catalog
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://huggingface.co/datasets/amphora/ResearchMath-14k/resolve/f22d0f28b55e6e777acf82e722d97ae982dff02e/data/train.jsonl \
+            --output replay/researchmath-train.jsonl
+          test "$(sha256sum replay/researchmath-train.jsonl | cut -d' ' -f1)" = "3f6c96d18925a47ac223555717226c5408cc9c75e07a1e96bddcffde8a06f029"
+          python catalog/build_semantic_catalog.py build-researchmath --input replay/researchmath-train.jsonl
+          python catalog/build_semantic_catalog.py build-formal-conjectures \
+            --checkout upstream/formal-conjectures \
+            --inventory replay/FC-GDM-002-FULL-INVENTORY.json
+          python catalog/build_semantic_catalog.py finalize
+          python catalog/build_semantic_catalog.py verify
+          git diff --exit-code -- catalog governance/external_sources.json schemas
 
       - name: Build deterministic inventory screen
         run: |
@@ -131,10 +159,13 @@ jobs:
           (root / "REPLAY_MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
           PY
 
-      - name: Upload exact replay bundle
+      - name: Upload exact replay and admission-candidate bundle
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: formal-conjectures-expanded-replay
-          path: replay
+          path: |
+            replay
+            catalog/manifest.json
+            catalog/providers
           if-no-files-found: error
           retention-days: 14

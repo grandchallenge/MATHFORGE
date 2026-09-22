@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/semantic_catalog_manifest.schema.json",
+  "title": "GCL semantic catalog manifest",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "catalog_release_id", "generated_at", "provider_snapshots", "total_entries", "public_entries", "assurance_vocabulary", "relation_vocabulary", "authority_boundary"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"}, "catalog_release_id": {"type": "string", "pattern": "^GCL-CATALOG-[A-Z0-9-]+$"}, "generated_at": {"type": "string", "format": "date-time"},
+    "provider_snapshots": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z0-9-]+$"}},
+    "total_entries": {"type": "integer", "minimum": 1}, "public_entries": {"type": "integer", "minimum": 0},
+    "assurance_vocabulary": {"const": ["SOURCE_LOCKED", "NORMALIZED_REPLAYED", "SEMANTICALLY_REVIEWED", "CAMPAIGN_CONCORDANT"]},
+    "relation_vocabulary": {"const": ["same_statement", "formalizes", "specializes", "generalizes", "implies", "related", "duplicate_candidate", "conflicts", "rejected_match"]},
+    "authority_boundary": {"type": "string", "minLength": 100}
+  }
+}

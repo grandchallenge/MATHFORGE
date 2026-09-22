@@ -10,6 +10,11 @@ from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
 try:
+    from catalog.build_semantic_catalog import catalog_validation_errors
+except ModuleNotFoundError:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from catalog.build_semantic_catalog import catalog_validation_errors
+try:
     from .validate_agent_continuity_adoption import repository_errors as agent_continuity_errors
 except ImportError:
     from validate_agent_continuity_adoption import repository_errors as agent_continuity_errors
@@ -182,18 +187,29 @@ def external_source_errors() -> list[str]:
     errors: list[str] = []
     registry = load_json(EXTERNAL_SOURCE_REGISTRY)
     errors.extend(validate(registry, "external_source_registry.schema.json", "governance/external_sources.json"))
-    sources = registry.get("sources", []) if isinstance(registry, dict) else []
-    ids = [entry.get("source_id") for entry in sources if isinstance(entry, dict)]
+    sources = registry.get("providers", []) if isinstance(registry, dict) else []
+    ids = [entry.get("provider_id") for entry in sources if isinstance(entry, dict)]
     if len(ids) != len(set(ids)):
-        errors.append("governance/external_sources.json: duplicate source_id")
-    by_id = {entry.get("source_id"): entry for entry in sources if isinstance(entry, dict)}
-    if set(by_id) != {"RM-AMPHORA-001", "FC-GDM-001", "FC-GDM-002"}:
-        errors.append("governance/external_sources.json: governed source set drift")
-    for source_id, entry in by_id.items():
-        for field in ("record_path", "reliability_path"):
-            path = ROOT / str(entry.get(field, ""))
-            if not path.is_file():
-                errors.append(f"governance/external_sources.json: {source_id} missing {field} {entry.get(field)}")
+        errors.append("governance/external_sources.json: duplicate provider_id")
+    by_id = {entry.get("provider_id"): entry for entry in sources if isinstance(entry, dict)}
+    if set(by_id) != {"RM-AMPHORA-001", "FC-GDM"}:
+        errors.append("governance/external_sources.json: governed provider set drift")
+    aliases = [alias for entry in sources for alias in entry.get("legacy_source_ids", [])]
+    if sorted(aliases) != ["FC-GDM-001", "FC-GDM-002", "RM-AMPHORA-001"]:
+        errors.append("governance/external_sources.json: legacy provider alias set drift")
+    for provider_id, entry in by_id.items():
+        manifest_path = ROOT / str(entry.get("admitted_snapshot", {}).get("manifest_path", ""))
+        if not manifest_path.is_file():
+            errors.append(f"governance/external_sources.json: {provider_id} missing snapshot manifest")
+            continue
+        manifest = load_json(manifest_path)
+        if manifest.get("provider_id") != provider_id:
+            errors.append(f"governance/external_sources.json: {provider_id} manifest provider mismatch")
+        admitted = entry.get("admitted_snapshot", {})
+        if manifest.get("snapshot_id") != admitted.get("snapshot_id") or manifest.get("revision") != admitted.get("revision"):
+            errors.append(f"governance/external_sources.json: {provider_id} admitted identity mismatch")
+        if entry.get("refresh_policy", {}).get("automatic_admission") is not False:
+            errors.append(f"governance/external_sources.json: {provider_id} automatic admission must remain false")
 
     required = {
         "source_lock.json", "reliability_register.json", "source_row.json",
@@ -246,6 +262,13 @@ def external_source_errors() -> list[str]:
     if handoff.get("state") != "PROVISIONAL_TRIAGE_SEED":
         errors.append("ResearchMath handoff: state must remain provisional")
     return errors
+
+
+def semantic_catalog_errors() -> list[str]:
+    try:
+        return catalog_validation_errors()
+    except (OSError, json.JSONDecodeError, KeyError) as exc:
+        return [f"semantic catalog: {exc}"]
 
 
 def programme_refs() -> tuple[set[str], set[str], set[str]]:
@@ -473,6 +496,7 @@ def main() -> int:
     errors.extend(theorem_intake_matrix_errors())
     errors.extend(provider_contract_errors())
     errors.extend(external_source_errors())
+    errors.extend(semantic_catalog_errors())
     errors.extend(agent_continuity_errors())
     for schema in sorted((ROOT / "schemas").glob("*.json")):
         Draft202012Validator.check_schema(load_json(schema))
@@ -481,7 +505,7 @@ def main() -> int:
         print(f"MATHFORGE validation failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
     print(
-        "MATHFORGE JSON, external source classes, pinned corpus intake, reliability, algebraic witness budgets, failure ledgers, discovery, theorem intake, provider coverage, artifact identity, handoff contracts, and continuity adoption are valid"
+        "MATHFORGE JSON, external provider registry, full semantic catalog, pinned corpus intake, reliability, algebraic witness budgets, failure ledgers, discovery, theorem intake, provider coverage, artifact identity, handoff contracts, and continuity adoption are valid"
     )
     return 0
 

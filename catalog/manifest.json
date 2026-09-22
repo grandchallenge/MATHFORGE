@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0.0",
+  "catalog_release_id": "GCL-CATALOG-TWO-PROVIDER-001",
+  "generated_at": "2026-09-22T06:34:00Z",
+  "provider_snapshots": [
+    "RM-AMPHORA-001-F22D0F28",
+    "FC-GDM-85F86371"
+  ],
+  "total_entries": 17288,
+  "public_entries": 17288,
+  "assurance_vocabulary": [
+    "SOURCE_LOCKED",
+    "NORMALIZED_REPLAYED",
+    "SEMANTICALLY_REVIEWED",
+    "CAMPAIGN_CONCORDANT"
+  ],
+  "relation_vocabulary": [
+    "same_statement",
+    "formalizes",
+    "specializes",
+    "generalizes",
+    "implies",
+    "related",
+    "duplicate_candidate",
+    "conflicts",
+    "rejected_match"
+  ],
+  "authority_boundary": "The catalog exposes provenance and assurance metadata. It is not a canonical claim ledger, does not itself create a MATHSOLVE result or campaign target, and cannot issue or imply a MATHCERT certificate."
+}
