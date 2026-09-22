@@ -287,6 +287,46 @@ Upon receipt, the first actions are mechanical and do not require a new research
 5. bind exact source identity, page/equation locators, and digest in MATHFORGE;
 6. only after protected source admission may `YM-D003-BAL-R002` reopen in MATHSOLVE.
 
+## 2026-09-22 authoritative PDF-locator replay
+
+A fresh no-mutation reconnaissance rebound the governed estate before this update.
+
+Protected heads observed:
+
+- MATH-PROGRAMME: `01b334c14dec59b49cca3cc014acafd0870d7011`;
+- MATHFORGE: `bab7ae57f54601b49ad9fc870051095ad487c64a`;
+- MATHSOLVE: `78c31d50671ad98305062c7104ed1e3c1812fc0c`;
+- MATHCERT: `0fb5030600cbe72de72dbf0900732352d50cf3e8`;
+- INTELLECT: `cacfe1f749b91a335e1d1734352cecff56bad7c1`.
+
+No newer Yang-Mills theorem, source lock, or certification action supersedes the existing D003 boundary. The later ResearchMath external-corpus intake is unrelated discovery infrastructure and does not supply Balaban theorem-body authority.
+
+### Canonical Project Euclid locator now independently confirmed
+
+Current web indexing exposes the exact Project Euclid article PDF locator:
+
+`https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-122/issue-3/Large-field-renormalization-II-Localization-exponentiation-and-bounds-for-the/cmp/1104178467.pdf`
+
+The Project Euclid volume/issue page also lists the same article in volume 122, issue 3, pp. 355-392.
+
+However, direct retrieval of that PDF locator on the current execution plane still redirects into Project Euclid's Incapsula security challenge rather than returning `application/pdf` bytes. A PDF screenshot attempt therefore cannot resolve because the retrieved object is the security wrapper, not the article file. Container-level direct download also remains unavailable because the execution environment cannot resolve the Project Euclid host.
+
+Springer's nominal direct PDF endpoint likewise resolves to subscription HTML rather than PDF bytes.
+
+This is a genuine improvement in locator precision, but it does not cross the source-lock boundary. No file bytes were obtained; therefore no SHA-256 can be independently recomputed and no primary page image can be visually inspected.
+
+### Current evidence disposition
+
+The canonical authoritative locator is now known exactly, but the protected state remains:
+
+`PRIMARY_THEOREM_BODY_BYTE_HANDOFF_REQUIRED__PUBLIC_AND_GOVERNED_DISCOVERY_SURFACES_EXHAUSTED`.
+
+The exact downstream blocker remains:
+
+`MISSING_PRIMARY_BALABAN_THEOREM_BODY_FOR_STABILITY_TO_CONTINUUM_OBSERVABLE_EXISTENCE`.
+
+The canonical Project Euclid locator should be the first retrieval target on any execution plane with ordinary browser/network access. If it yields the article PDF, immediately compute its SHA-256 and byte size, compare against the known private-packet fingerprint when applicable, and inspect the bibliographic first page, Theorem 1, and printed pp. 388-390 before any equation-level use in MATHSOLVE.
+
 ## What is established now
 
 The following are provider-safe facts:
