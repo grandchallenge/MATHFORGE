@@ -75,6 +75,10 @@
     {
       "surface": "HathiTrust_Portico_CLOCKSS_author_and_institutional_mirror_search",
       "result": "no_independently_inspectable_theorem_body_reproduction_acquired"
+    },
+    {
+      "surface": "Project Euclid canonical article PDF locator",
+      "result": "exact_pdf_url_confirmed_by_current_indexing_but_direct_retrieval_redirects_to_incapsula_security_wrapper_no_pdf_bytes"
     }
   ],
   "non_authoritative_target_locators": [
@@ -111,17 +115,17 @@
   "may_infer_continuum_observable_existence": false,
   "claim_boundary": "Source acquisition record only. No equation-level Balaban theorem body is admitted; no continuum existence, uniqueness, IR removal, OS, physical scale, mass gap, confinement, novelty, priority, or certification claim.",
   "latest_reconnaissance": {
-    "date": "2026-09-19",
+    "date": "2026-09-22",
     "disposition": "PROCEED_WITH_BALABAN_SOURCE_RECOVERY",
     "protected_heads": {
-      "grandchallenge/MATH-PROGRAMME": "d45bd36a6f86c6651b9d40de8191a89e3b793618",
-      "grandchallenge/MATHFORGE": "a11c6dedede09af6f3c67c5eec337941b73d4d3a",
-      "grandchallenge/MATHSOLVE": "866612322207cb9e25530215bbfc064dd865ee60",
-      "grandchallenge/MATHCERT": "1f15e8b1d4f6307aedac5aecfd10bd06b89ab445",
-      "grandchallenge/INTELLECT": "7e6b61ddf77e2d73309657d089a98cae84cc735f"
+      "grandchallenge/MATH-PROGRAMME": "01b334c14dec59b49cca3cc014acafd0870d7011",
+      "grandchallenge/MATHFORGE": "bab7ae57f54601b49ad9fc870051095ad487c64a",
+      "grandchallenge/MATHSOLVE": "78c31d50671ad98305062c7104ed1e3c1812fc0c",
+      "grandchallenge/MATHCERT": "0fb5030600cbe72de72dbf0900732352d50cf3e8",
+      "grandchallenge/INTELLECT": "cacfe1f749b91a335e1d1734352cecff56bad7c1"
     },
     "authority_result": "ym_source_and_mathematical_authority_unchanged",
-    "certification_result": "YM-001_pending_no_mathematical_adjudication"
+    "external_source_registry_change": "researchmath_intake_unrelated_to_balaban_source_authority"
   },
   "external_locator_manifest": {
     "repository": "lluiseriksson/THE-ERIKSSON-PROGRAMME",
@@ -143,11 +147,11 @@
   },
   "acquisition_boundary": "PRIMARY_THEOREM_BODY_BYTE_HANDOFF_REQUIRED__PUBLIC_AND_GOVERNED_DISCOVERY_SURFACES_EXHAUSTED",
   "deterministic_next_evidence_action": [
-    "obtain the actual CMP122-II PDF bytes, preferably balaban-largefield-II-cmp122-1104178467.pdf",
-    "or obtain a primary scan or authoritative renders covering the bibliographic first page, Theorem 1, and printed pages 388-390",
+    "retrieve the canonical Project Euclid CMP122-II PDF URL on an execution plane with ordinary network/browser access",
+    "or obtain the actual private CMP122-II PDF balaban-largefield-II-cmp122-1104178467.pdf or equivalent primary scan",
     "compute SHA-256 and byte size and compare against the known private-packet fingerprint when applicable",
-    "visually inspect Theorem 1 and equations 1.98-1.100 and bind exact provenance in MATHFORGE",
-    "only after protected source admission reopen YM-D003-BAL-R002 in MATHSOLVE"
+    "visually inspect the bibliographic first page, Theorem 1, and printed pages 388-390 including equations 1.98-1.100",
+    "protect the exact source lock in MATHFORGE before reopening YM-D003-BAL-R002 in MATHSOLVE"
   ],
   "routing_audit": {
     "date": "2026-09-19",
@@ -189,5 +193,16 @@
     "result": "NO_PRIMARY_OR_EQUIVALENTLY_AUTHORITATIVE_THEOREM_BODY_BYTES_ACQUIRED",
     "exact_boundary": "PRIMARY_THEOREM_BODY_BYTE_HANDOFF_REQUIRED__PUBLIC_AND_GOVERNED_DISCOVERY_SURFACES_EXHAUSTED",
     "reopens_solve_target": false
+  },
+  "authoritative_pdf_locator": {
+    "source_id": "BAL-CMP122-II",
+    "provider": "Project Euclid",
+    "url": "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-122/issue-3/Large-field-renormalization-II-Localization-exponentiation-and-bounds-for-the/cmp/1104178467.pdf",
+    "confirmed_date": "2026-09-22",
+    "indexed_as_article_pdf": true,
+    "direct_byte_retrieval_result": "incapsula_security_wrapper_not_application_pdf",
+    "independent_sha256_recomputed": false,
+    "primary_page_visual_inspection_completed": false,
+    "authority": "authoritative_locator_only_until_bytes_acquired"
   }
 }
