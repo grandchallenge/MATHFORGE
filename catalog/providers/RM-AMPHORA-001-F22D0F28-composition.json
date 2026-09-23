@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.0.0",
+  "provider_id": "RM-AMPHORA-001",
+  "snapshot_id": "RM-AMPHORA-001-F22D0F28",
+  "inventory_count": 14056,
+  "taxonomy_level_1": {
+    "Algebra and Representation Theory": 1289,
+    "Analysis, PDEs, and Dynamics": 3197,
+    "Applied and Computational Mathematics": 839,
+    "Discrete Mathematics and Combinatorics": 1897,
+    "Geometry and Topology": 1846,
+    "Logic and Foundations": 455,
+    "Mathematical Physics": 2031,
+    "Number Theory": 806,
+    "Other / Cross-disciplinary": 311,
+    "Probability, Statistics, and ML": 636,
+    "Theoretical Computer Science": 749
+  },
+  "provider_status_assertions": {
+    "open": 8313,
+    "partially_solved": 2083,
+    "solved": 1171,
+    "unknown": 2489
+  },
+  "claim_boundary": "These counts summarize provider metadata and catalog accounting only. Status counts are attributed to the provider and are not Programme determinations."
+}

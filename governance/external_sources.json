@@ -1,33 +1,41 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "registry_id": "MF-EXTERNAL-SOURCES",
-  "sources": [
+  "providers": [
     {
-      "source_id": "RM-AMPHORA-001",
-      "source_class": "corpus_row",
-      "upstream": "amphora/ResearchMath-14k",
-      "immutable_revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e",
-      "record_path": "forge/intake/researchmath14k/RM-DIO-004/source_lock.json",
-      "reliability_path": "forge/intake/researchmath14k/RM-DIO-004/reliability_register.json",
-      "claim_boundary": "The source supplies a candidate problem row and provenance only; it supplies no Programme status, semantic equivalence, proof, novelty, campaign authority, or certification."
+      "provider_id": "RM-AMPHORA-001",
+      "legacy_source_ids": ["RM-AMPHORA-001"],
+      "source_class": "mathematical_corpus",
+      "upstream": {"locator": "amphora/ResearchMath-14k", "url": "https://huggingface.co/datasets/amphora/ResearchMath-14k"},
+      "admitted_snapshot": {"snapshot_id": "RM-AMPHORA-001-F22D0F28", "revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e", "manifest_path": "catalog/providers/RM-AMPHORA-001-F22D0F28.json"},
+      "observatory": {"observed_revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e", "observed_at": "2026-09-22T06:34:00Z", "admission_state": "ADMITTED_CURRENT"},
+      "adapter": {"path": "catalog/build_semantic_catalog.py", "version": "2.0.0", "replay_command": "python catalog/build_semantic_catalog.py build-researchmath --input <pinned-train.jsonl>"},
+      "refresh_policy": {"observation_schedule": "weekly", "admission_schedule": "monthly", "event_triggers": ["corrected_misformalization", "licensing_change", "campaign_change", "security_concern"], "automatic_admission": false},
+      "licensing": {"software": "MIT", "content": "MIT dataset card declaration", "third_party": "Per-entry source terms retained and independently reviewable", "disposition": "full_text"},
+      "visibility": "public_full_text",
+      "reliability_limitations": [
+        "Imported status prose and evidence are provider-attributed search results rather than GCL determinations.",
+        "Taxonomy labels require deterministic mapping and do not establish mathematical equivalence or campaign relevance."
+      ],
+      "claim_boundary": "The provider supplies candidate problem rows, source provenance, and attributed status prose only; it supplies no Programme status, semantic equivalence, proof, novelty, campaign authority, Claim Ledger authority, or certification."
     },
     {
-      "source_id": "FC-GDM-001",
+      "provider_id": "FC-GDM",
+      "legacy_source_ids": ["FC-GDM-001", "FC-GDM-002"],
       "source_class": "formal_statement_repository",
-      "upstream": "google-deepmind/formal-conjectures",
-      "immutable_revision": "85f863718beeec7b58a3a1926ee92e3472bc2020",
-      "record_path": "formal_sources/formal_conjectures/source_lock.json",
-      "reliability_path": "formal_sources/formal_conjectures/MF-FC-WP01.md",
-      "claim_boundary": "The source supplies pinned formal statements and concordance evidence only; it supplies no Programme status, proof, novelty, campaign authority, or certification."
-    },
-    {
-      "source_id": "FC-GDM-002",
-      "source_class": "formal_statement_repository",
-      "upstream": "google-deepmind/formal-conjectures",
-      "immutable_revision": "85f863718beeec7b58a3a1926ee92e3472bc2020",
-      "record_path": "formal_sources/formal_conjectures/source_locks/FC-GDM-002.json",
-      "reliability_path": "formal_sources/formal_conjectures/MF-FC-WP02.md",
-      "claim_boundary": "The source supplies pinned formal statements, replay, concordance, and bounded coverage evidence only; it supplies no Programme status, proof, novelty, campaign authority, or certification."
+      "upstream": {"locator": "google-deepmind/formal-conjectures", "url": "https://github.com/google-deepmind/formal-conjectures"},
+      "admitted_snapshot": {"snapshot_id": "FC-GDM-85F86371", "revision": "85f863718beeec7b58a3a1926ee92e3472bc2020", "manifest_path": "catalog/providers/FC-GDM-85F86371.json"},
+      "observatory": {"observed_revision": "8927a585c5d522fc132d7ea6488fcd9e30ccd80e", "observed_at": "2026-09-22T06:34:00Z", "admission_state": "UPSTREAM_AHEAD"},
+      "adapter": {"path": "catalog/build_semantic_catalog.py", "version": "2.0.0", "replay_command": "python catalog/build_semantic_catalog.py build-formal-conjectures --checkout <pinned-checkout> --inventory <extract-names.json>"},
+      "refresh_policy": {"observation_schedule": "weekly", "admission_schedule": "monthly", "event_triggers": ["corrected_misformalization", "licensing_change", "campaign_change", "security_concern"], "automatic_admission": false},
+      "licensing": {"software": "Apache-2.0", "content": "CC-BY-4.0", "third_party": "Wikipedia-derived material may be CC-BY-SA-4.0; per-source terms retained", "disposition": "metadata_only"},
+      "visibility": "public_metadata_only",
+      "reliability_limitations": [
+        "Repository category and research-status annotations are source-attributed metadata and are not independent GCL determinations.",
+        "A declaration's formal_proof annotation is distinct from research-problem status and does not itself establish a MATHCERT certificate."
+      ],
+      "claim_boundary": "The provider supplies pinned Lean declarations, source annotations, replay evidence, and reviewed concordance records only; it supplies no Programme status, proof of an external research claim, novelty, campaign authority, Claim Ledger authority, or certification."
     }
-  ]
+  ],
+  "authority_boundary": "This MATHFORGE registry is the canonical provider and admitted-snapshot authority. Observation never changes admitted identity. Catalog assurance is provenance and review metadata only; it cannot create a MATHSOLVE result, mutate the MATH-CORE Claim Ledger, or issue a MATHCERT certificate."
 }

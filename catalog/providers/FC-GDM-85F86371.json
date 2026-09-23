@@ -1,0 +1,53 @@
+{
+  "schema_version": "2.0.0",
+  "snapshot_id": "FC-GDM-85F86371",
+  "provider_id": "FC-GDM",
+  "revision": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+  "admitted_at": "2026-09-22T06:34:00Z",
+  "admission_basis": {
+    "revision_kind": "exact_commit",
+    "benchmark_tag": null,
+    "tag_exception_reason": "No immutable bench-v release contains the admitted revision; see the retained FC-GDM-002 tag-resolution evidence."
+  },
+  "source_objects": [
+    {
+      "locator": "canonical extract_names inventory",
+      "sha256": "c12bc94f462b9ecb46fc9b646e5bcc45031bcca9c24556cb66101831b432027a"
+    },
+    {
+      "locator": "lean-toolchain",
+      "sha256": "e695e6e5d8e7a8be4d6cf159dfb995847993d26c6cc450353a86f387279025b9"
+    }
+  ],
+  "inventory_count": 3232,
+  "catalog_shards": [
+    {
+      "path": "catalog/entries/formal-conjectures-00000.jsonl",
+      "entry_count": 2000,
+      "byte_length": 5488280,
+      "sha256": "33d1929f630431fe731cf0880cd01312cee3c7fa043ed5f1d4499fa28c0533fd",
+      "first_catalog_id": "GCL-CAT-FC-A597E2569F1A31D7",
+      "last_catalog_id": "GCL-CAT-FC-A5338D0D4BDE4B56"
+    },
+    {
+      "path": "catalog/entries/formal-conjectures-00001.jsonl",
+      "entry_count": 1232,
+      "byte_length": 3211689,
+      "sha256": "b9284333f076b0b4b702f08d977c8e0bdede815599e22750e0c70c5ee214c54f",
+      "first_catalog_id": "GCL-CAT-FC-85C5E4618F5120E9",
+      "last_catalog_id": "GCL-CAT-FC-8AB81D4B92E0C50F"
+    }
+  ],
+  "replay": {
+    "adapter": "catalog/build_semantic_catalog.py",
+    "adapter_version": "2.0.0",
+    "command": "lake exe extract_names FormalConjectures --exclude=docstring,moduleDocstrings; python catalog/build_semantic_catalog.py build-formal-conjectures --checkout <pinned-checkout> --inventory <extract-names.json> --admitted-at <timestamp>",
+    "environment": [
+      "leanprover/lean4:v4.27.0",
+      "Python >=3.11",
+      "jsonschema >=4"
+    ],
+    "deterministic": true
+  },
+  "claim_boundary": "This catalog entry records provider provenance, deterministic normalization, and explicitly attributed annotations only. It does not establish Programme status, semantic equivalence, mathematical proof, novelty, campaign authority, Claim Ledger authority, or certification."
+}

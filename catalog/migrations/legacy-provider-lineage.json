@@ -1,0 +1,10 @@
+{
+  "schema_version": "2.0.0",
+  "ledger_id": "MF-EXTERNAL-PROVIDER-MIGRATION-001",
+  "migrations": [
+    {"legacy_id": "RM-AMPHORA-001", "provider_id": "RM-AMPHORA-001", "snapshot_id": "RM-AMPHORA-001-F22D0F28", "disposition": "IDENTITY_RETAINED", "historical_record": "forge/intake/researchmath14k/RM-DIO-004/source_lock.json"},
+    {"legacy_id": "FC-GDM-001", "provider_id": "FC-GDM", "snapshot_id": "FC-GDM-85F86371", "disposition": "SCOPE_ALIAS", "historical_record": "formal_sources/formal_conjectures/source_lock.json"},
+    {"legacy_id": "FC-GDM-002", "provider_id": "FC-GDM", "snapshot_id": "FC-GDM-85F86371", "disposition": "SCOPE_ALIAS", "historical_record": "formal_sources/formal_conjectures/source_locks/FC-GDM-002.json"}
+  ],
+  "authority_boundary": "Legacy identifiers remain resolvable migration aliases and their original records remain immutable historical evidence. They are not separate current providers and cannot independently move an admitted revision or confer semantic, campaign, claim, proof, or certification authority."
+}

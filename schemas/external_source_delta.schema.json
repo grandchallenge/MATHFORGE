@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/external_source_delta.schema.json",
+  "title": "External provider refresh delta",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "provider_id", "from_revision", "to_revision", "observed_at", "additions", "deletions", "statement_changes", "classification_or_status_changes", "proof_annotation_changes", "toolchain_change", "possible_semantic_invalidations", "automatic_admission"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"}, "provider_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+    "from_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "to_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "observed_at": {"type": "string", "format": "date-time"},
+    "additions": {"$ref": "#/$defs/identifiers"}, "deletions": {"$ref": "#/$defs/identifiers"}, "statement_changes": {"$ref": "#/$defs/identifiers"},
+    "classification_or_status_changes": {"$ref": "#/$defs/identifiers"}, "proof_annotation_changes": {"$ref": "#/$defs/identifiers"},
+    "toolchain_change": {"type": ["object", "null"]}, "possible_semantic_invalidations": {"$ref": "#/$defs/identifiers"}, "automatic_admission": {"const": false}
+  },
+  "$defs": {"identifiers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}
+}

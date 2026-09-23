@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/external_source_snapshot.schema.json",
+  "title": "External source snapshot manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "snapshot_id", "provider_id", "revision", "admitted_at", "admission_basis", "source_objects", "inventory_count", "catalog_shards", "replay", "claim_boundary"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "snapshot_id": {"type": "string", "pattern": "^[A-Z0-9-]+$"},
+    "provider_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+    "revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "admitted_at": {"type": "string", "format": "date-time"},
+    "admission_basis": {
+      "type": "object", "additionalProperties": false, "required": ["revision_kind", "benchmark_tag", "tag_exception_reason"],
+      "properties": {"revision_kind": {"enum": ["benchmark_tag", "exact_commit"]}, "benchmark_tag": {"type": ["string", "null"]}, "tag_exception_reason": {"type": ["string", "null"]}}
+    },
+    "source_objects": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/digestObject"}},
+    "inventory_count": {"type": "integer", "minimum": 1},
+    "catalog_shards": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/shard"}},
+    "replay": {
+      "type": "object", "additionalProperties": false, "required": ["adapter", "adapter_version", "command", "environment", "deterministic"],
+      "properties": {
+        "adapter": {"type": "string", "minLength": 3}, "adapter_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "command": {"type": "string", "minLength": 10}, "environment": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "deterministic": {"const": true}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "digestObject": {
+      "type": "object", "additionalProperties": false, "required": ["locator", "sha256"],
+      "properties": {"locator": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "shard": {
+      "type": "object", "additionalProperties": false, "required": ["path", "entry_count", "byte_length", "sha256", "first_catalog_id", "last_catalog_id"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^catalog/entries/.+\\.jsonl$"}, "entry_count": {"type": "integer", "minimum": 1}, "byte_length": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "first_catalog_id": {"type": "string", "pattern": "^GCL-CAT-[A-Z0-9-]+$"}, "last_catalog_id": {"type": "string", "pattern": "^GCL-CAT-[A-Z0-9-]+$"}
+      }
+    }
+  }
+}

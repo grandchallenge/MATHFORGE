@@ -1,0 +1,40 @@
+name: External provider observer
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: external-provider-observer
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Observe upstream heads without admission
+        id: observe
+        shell: bash
+        run: |
+          set -euo pipefail
+          python catalog/observe_upstreams.py --output observer/provider-movement.json | tee observer/result.txt
+          changed="$(cut -d= -f2 observer/result.txt)"
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
+      - name: Upload movement delta only when upstream state changed
+        if: steps.observe.outputs.changed == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: external-provider-movement-${{ github.run_id }}
+          path: observer/provider-movement.json
+          if-no-files-found: error
+          retention-days: 30
