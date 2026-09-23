@@ -133,6 +133,16 @@ jobs:
           path: nanoda-src
           fetch-depth: 1
           persist-credentials: false
+      - name: Restore certified Go toolchain
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+        with:
+          go-version: '1.24.13'
+          cache: false
+      - name: Restore certified Rust toolchain
+        shell: bash
+        run: |
+          rustup toolchain install 1.97.1 --profile minimal
+          rustup default 1.97.1
       - name: Assert exact replay TCB source identities
         shell: bash
         run: |
@@ -146,7 +156,7 @@ jobs:
           cargo --version
       - name: Assert exact family source bytes and structural scan
         run: python ci/audit_openai_ten_proofs_successor_upstream.py verify --root upstream --family '${{ matrix.family }}'
-      - uses: grandchallenge/lean-action@138a564e38a62ce545e8d47d86a97628463aced4
+      - uses: grandchallenge/lean-action@37f8471aecd2efbeab3b1e1a75ad18fb8f5c1b01
         with:
           lake-package-directory: upstream
           build: 'false'
