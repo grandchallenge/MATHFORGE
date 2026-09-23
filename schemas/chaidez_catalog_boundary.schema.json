@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "policy_id", "programme_authority", "catalog_entry_disposition", "chaidez_dossier_at_ingestion", "promotion_trigger", "minimum_proposal_assurance_tier", "exact_campaign_target_assurance_tier", "automatic_promotion", "claim_boundary"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"}, "policy_id": {"const": "MF-CHAIDEZ-CATALOG-BOUNDARY-001"},
+    "programme_authority": {"type": "object", "additionalProperties": false, "required": ["repository", "commit", "path", "git_blob_sha1"], "properties": {"repository": {"const": "grandchallenge/MATH-PROGRAMME"}, "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "path": {"const": "pedagogy/chaidez_protocol_contract.json"}, "git_blob_sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"}}},
+    "catalog_entry_disposition": {"const": "SOURCE_RECORD_ONLY"}, "chaidez_dossier_at_ingestion": {"const": false},
+    "promotion_trigger": {"const": "REVIEWED_PROMOTION_TO_MATHSOLVE"}, "minimum_proposal_assurance_tier": {"const": "SEMANTICALLY_REVIEWED"},
+    "exact_campaign_target_assurance_tier": {"const": "CAMPAIGN_CONCORDANT"}, "automatic_promotion": {"const": false},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  }
+}
