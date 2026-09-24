@@ -145,13 +145,14 @@
     "authority": "navigation_only_not_theorem_premise",
     "independent_byte_inspection_completed": false
   },
-  "acquisition_boundary": "PRIMARY_THEOREM_BODY_BYTE_HANDOFF_REQUIRED__PUBLIC_AND_GOVERNED_DISCOVERY_SURFACES_EXHAUSTED",
+  "acquisition_boundary": "EXTERNAL_PRIMARY_SOURCE_BYTE_ACCESS_REQUIRED__AUTOMATED_DISCOVERY_EXHAUSTED__NO_FURTHER_SEARCH_REPLAY",
   "deterministic_next_evidence_action": [
-    "retrieve the canonical Project Euclid CMP122-II PDF URL on an execution plane with ordinary network/browser access",
-    "or obtain the actual private CMP122-II PDF balaban-largefield-II-cmp122-1104178467.pdf or equivalent primary scan",
-    "compute SHA-256 and byte size and compare against the known private-packet fingerprint when applicable",
-    "visually inspect the bibliographic first page, Theorem 1, and printed pages 388-390 including equations 1.98-1.100",
-    "protect the exact source lock in MATHFORGE before reopening YM-D003-BAL-R002 in MATHSOLVE"
+    "wait for a material byte-access change rather than replaying search",
+    "upon byte arrival recompute SHA-256 and byte size",
+    "verify bibliographic first page against DOI 10.1007/BF01238433",
+    "visually inspect Theorem 1 and printed pages 388-390 including equations 1.98-1.100",
+    "protect a byte-bound MATHFORGE source lock",
+    "reopen YM-D003-BAL-R002 in MATHSOLVE only against that protected Forge identity"
   ],
   "routing_audit": {
     "date": "2026-09-19",
@@ -204,5 +205,32 @@
     "independent_sha256_recomputed": false,
     "primary_page_visual_inspection_completed": false,
     "authority": "authoritative_locator_only_until_bytes_acquired"
+  },
+  "terminal_byte_access_disposition": {
+    "date": "2026-09-24",
+    "protected_heads": {
+      "grandchallenge/MATHFORGE": "64207cfb8b67aa49ded3b4bfb460260871136753",
+      "grandchallenge/MATHSOLVE": "b9906e0d150e232efed1a5e4fbd2f5081609ab56"
+    },
+    "replayed_transport": [
+      "project_euclid_browser_retrieval_incapsula_not_pdf",
+      "project_euclid_container_download_failed",
+      "project_euclid_raw_curl_host_resolution_unavailable",
+      "springer_direct_pdf_no_article_bytes",
+      "doi_resolver_no_direct_byte_path",
+      "exact_filename_sha256_render_hash_and_image_cache_search_no_primary_bytes",
+      "external_source_owner_public_git_no_raw_artifact",
+      "public_mirror_and_repository_search_metadata_or_secondary_only"
+    ],
+    "external_private_source_corroboration": "private_user_provided_pdf_and_page_renders_reported_by_source_owner_but_not_transferred_to_GCL_evidence_plane",
+    "disposition": "EXTERNAL_PRIMARY_SOURCE_BYTE_ACCESS_REQUIRED__AUTOMATED_DISCOVERY_EXHAUSTED__NO_FURTHER_SEARCH_REPLAY",
+    "reopen_automation_only_if": [
+      "canonical_project_euclid_pdf_becomes_byte_retrievable",
+      "known_private_pdf_is_supplied_to_governed_GCL_evidence_plane",
+      "primary_scan_or_authoritative_theorem_page_renders_are_supplied",
+      "new_authoritative_mirror_exposes_actual_article_bytes",
+      "authorized_connected_external_retrieval_capability_can_return_bytes"
+    ],
+    "reopens_solve_target": false
   }
 }
