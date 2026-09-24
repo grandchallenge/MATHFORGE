@@ -327,6 +327,63 @@ The exact downstream blocker remains:
 
 The canonical Project Euclid locator should be the first retrieval target on any execution plane with ordinary browser/network access. If it yields the article PDF, immediately compute its SHA-256 and byte size, compare against the known private-packet fingerprint when applicable, and inspect the bibliographic first page, Theorem 1, and printed pp. 388-390 before any equation-level use in MATHSOLVE.
 
+## 2026-09-24 terminal byte-access disposition
+
+A final exact execution replay was performed after the canonical Project Euclid PDF locator had been protected.
+
+Current protected heads rebound for this replay:
+
+- MATHFORGE: `64207cfb8b67aa49ded3b4bfb460260871136753`;
+- MATHSOLVE: `b9906e0d150e232efed1a5e4fbd2f5081609ab56`.
+
+No newer Yang-Mills result supersedes the D003 source boundary. The latest YM commits remain the protected D003 supplement in Programme, the 2026-09-22 canonical-locator update in Forge, and the 2026-09-18 D002 reconciliation in Solve.
+
+### Final transport replay
+
+The exact authoritative Project Euclid PDF URL was retried by all currently available direct paths:
+
+- browser/web retrieval: redirected to the Project Euclid Incapsula security wrapper rather than article bytes;
+- container download: failed;
+- raw `curl` with redirect-following, browser user-agent, and PDF accept headers: host resolution unavailable on the execution plane;
+- Springer direct-PDF endpoint: no article PDF bytes;
+- DOI resolver: no direct byte path on the execution plane;
+- exact filename, SHA-256, rendered-page hashes, and image/cache searches: no independently retrievable raw PDF or page render;
+- public external source-owner Git paths and source-packet paths: no raw artifact exposed;
+- indexed repository and mirror searches: bibliographic/secondary citations only, no primary article bytes.
+
+The external source-owner audit remains useful corroboration: it records that the primary PDF was found in a private/user-provided local source cache and that rendered page images were created from it. That evidence does not transfer possession of those bytes to GCL and therefore cannot serve as an independent Forge source lock.
+
+### Anti-churn disposition
+
+The source-discovery problem is closed on the present execution plane.
+
+Do **not** repeat publisher/mirror/search-engine/archive discovery merely because another agent restarts the tranche. Reopen automated acquisition only if at least one material access condition changes:
+
+1. an execution plane gains ordinary byte access to the canonical Project Euclid PDF;
+2. the known private artifact is supplied into the governed GCL evidence plane;
+3. a primary scan or authoritative theorem-page render is supplied;
+4. a newly discovered authoritative mirror exposes actual article bytes rather than metadata;
+5. a connected external retrieval capability is explicitly authorized and can return the bytes.
+
+Until one of those conditions holds, the exact state is:
+
+`EXTERNAL_PRIMARY_SOURCE_BYTE_ACCESS_REQUIRED__AUTOMATED_DISCOVERY_EXHAUSTED__NO_FURTHER_SEARCH_REPLAY`.
+
+This refines, but does not weaken, the governing evidentiary blocker:
+
+`MISSING_PRIMARY_BALABAN_THEOREM_BODY_FOR_STABILITY_TO_CONTINUUM_OBSERVABLE_EXISTENCE`.
+
+### Mechanical continuation after byte arrival
+
+Once actual article bytes or authoritative renders enter the governed evidence plane, no further target-selection decision is needed:
+
+1. recompute SHA-256 and byte size;
+2. compare against the known private-packet fingerprint when applicable;
+3. verify the bibliographic first page against DOI `10.1007/BF01238433`;
+4. render and visually inspect Theorem 1 and printed pp. 388-390, including (1.98)-(1.100);
+5. protect a byte-bound MATHFORGE source lock;
+6. reopen `YM-D003-BAL-R002` in MATHSOLVE on the exact protected Forge identity.
+
 ## What is established now
 
 The following are provider-safe facts:
