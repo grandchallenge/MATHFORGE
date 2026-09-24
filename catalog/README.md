@@ -24,6 +24,36 @@ The weekly observer records upstream movement without changing admitted identity
 - MATH-CORE may receive read-only provenance-bound nodes and typed edges. Catalog events cannot mutate its canonical Claim Ledger.
 - MATHCERT receives only separately scoped local claims and evidence. Catalog status, upstream proof annotations, and campaign relations are not certificates.
 
+## Reviewed-promotion documentary boundary
+
+MATHFORGE responsibility ends at provenance-bound source records, catalog
+assurance, qualified semantic review evidence and reviewed typed relations.
+These remain foundry responsibilities; a downstream dossier does not replace
+source or relation review. An exact imported campaign target requires both
+`CAMPAIGN_CONCORDANT` assurance and a reviewed relation establishing that exact
+target, not merely lexical similarity or an implication to a different statement.
+
+Ordinary catalog entries do **not** receive Chaidez dossiers. Full
+`CHAIDEZ-PEDAGOGY-001` v2 conformance begins only at qualified reviewed promotion
+into MATHSOLVE. MATHSOLVE owns the promotion registry, reviewer decision, local
+work-package dossier, theorem spine, proof debt and scoped MATHCERT handoff.
+No promotion or dossier machinery belongs in MATHFORGE. Existing reviewed
+campaign relations are not promotions.
+
+Keep five states separate in documentation and publication: source assurance,
+semantic review, Solve promotion, local mathematical status, and MATHCERT
+certification. An assured source is not a Solve result; a completed dossier is
+not a proof; replay, formal annotations and green CI do not certify a claim.
+The initial hardening release preserves the 17,288-entry catalog and zero
+production external-catalog promotions. It adds no empty promotion filter to
+the public catalog. Historical contracts, receipts, failures and pre-catalog
+routes remain provenance, not automatically migrated authority.
+
+The operative downstream gate is documented in
+[MATHSOLVE's reviewed-promotion standard](https://github.com/grandchallenge/MATHSOLVE/blob/49807113a16c029fa05f3a3eb3d47b88aaec4e4d/docs/EXTERNAL_CATALOG_REVIEWED_PROMOTION.md).
+Programme's unified import registry remains the cross-repository admission
+authority; foundry documentation does not advance its admitted commit.
+
 ## Replay
 
 ResearchMath:
