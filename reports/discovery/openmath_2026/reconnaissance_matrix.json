@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-RECONNAISSANCE-MATRIX",
+  "campaign_id": "OPENMATH-2026",
+  "shared_lanes": [
+    {
+      "lane": "external-source-acquisition",
+      "state": "ACTIVE",
+      "output": "authoritative rendered/exported hill records"
+    },
+    {
+      "lane": "formal-environment-inventory",
+      "state": "AUTHORIZED",
+      "output": "approved prover/certificate environments and version locks"
+    },
+    {
+      "lane": "checker-contract-audit",
+      "state": "AUTHORIZED",
+      "output": "submission/evaluator semantics without hill-specific assumptions"
+    },
+    {
+      "lane": "library-gap-inventory",
+      "state": "AUTHORIZED",
+      "output": "shared formal-library prerequisites once environments are known"
+    },
+    {
+      "lane": "provenance-template",
+      "state": "AUTHORIZED",
+      "output": "tool/authorship/dependency disclosure packet"
+    }
+  ],
+  "hill_lanes": [
+    {
+      "slot": "OM26-H1",
+      "source_lock": "PENDING",
+      "status_audit": "BLOCKED_BY_SOURCE_LOCK",
+      "representation_search": "BLOCKED_BY_SOURCE_LOCK",
+      "exact_reconnaissance": "BLOCKED_BY_SOURCE_LOCK",
+      "false_proof_risks": "BLOCKED_BY_SOURCE_LOCK",
+      "suggested_wp01": "BLOCKED_BY_SOURCE_LOCK",
+      "certification_route": "BLOCKED_BY_SOURCE_LOCK"
+    },
+    {
+      "slot": "OM26-H2",
+      "source_lock": "PENDING",
+      "status_audit": "BLOCKED_BY_SOURCE_LOCK",
+      "representation_search": "BLOCKED_BY_SOURCE_LOCK",
+      "exact_reconnaissance": "BLOCKED_BY_SOURCE_LOCK",
+      "false_proof_risks": "BLOCKED_BY_SOURCE_LOCK",
+      "suggested_wp01": "BLOCKED_BY_SOURCE_LOCK",
+      "certification_route": "BLOCKED_BY_SOURCE_LOCK"
+    },
+    {
+      "slot": "OM26-H3",
+      "source_lock": "PENDING",
+      "status_audit": "BLOCKED_BY_SOURCE_LOCK",
+      "representation_search": "BLOCKED_BY_SOURCE_LOCK",
+      "exact_reconnaissance": "BLOCKED_BY_SOURCE_LOCK",
+      "false_proof_risks": "BLOCKED_BY_SOURCE_LOCK",
+      "suggested_wp01": "BLOCKED_BY_SOURCE_LOCK",
+      "certification_route": "BLOCKED_BY_SOURCE_LOCK"
+    },
+    {
+      "slot": "OM26-H4",
+      "source_lock": "PENDING",
+      "status_audit": "BLOCKED_BY_SOURCE_LOCK",
+      "representation_search": "BLOCKED_BY_SOURCE_LOCK",
+      "exact_reconnaissance": "BLOCKED_BY_SOURCE_LOCK",
+      "false_proof_risks": "BLOCKED_BY_SOURCE_LOCK",
+      "suggested_wp01": "BLOCKED_BY_SOURCE_LOCK",
+      "certification_route": "BLOCKED_BY_SOURCE_LOCK"
+    },
+    {
+      "slot": "OM26-H5",
+      "source_lock": "PENDING",
+      "status_audit": "BLOCKED_BY_SOURCE_LOCK",
+      "representation_search": "BLOCKED_BY_SOURCE_LOCK",
+      "exact_reconnaissance": "BLOCKED_BY_SOURCE_LOCK",
+      "false_proof_risks": "BLOCKED_BY_SOURCE_LOCK",
+      "suggested_wp01": "BLOCKED_BY_SOURCE_LOCK",
+      "certification_route": "BLOCKED_BY_SOURCE_LOCK"
+    },
+    {
+      "slot": "OM26-H6",
+      "source_lock": "PENDING",
+      "status_audit": "BLOCKED_BY_SOURCE_LOCK",
+      "representation_search": "BLOCKED_BY_SOURCE_LOCK",
+      "exact_reconnaissance": "BLOCKED_BY_SOURCE_LOCK",
+      "false_proof_risks": "BLOCKED_BY_SOURCE_LOCK",
+      "suggested_wp01": "BLOCKED_BY_SOURCE_LOCK",
+      "certification_route": "BLOCKED_BY_SOURCE_LOCK"
+    }
+  ],
+  "non_certification_statement": "This matrix is a discovery work queue. ACTIVE or AUTHORIZED means provider work may be performed; it does not mean any mathematical statement is true or certified."
+}
