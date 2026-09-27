@@ -17,26 +17,28 @@
   },
   "handoff_packet": {
     "problem_card": {
-      "state": "deferred",
+      "state": "present",
       "references": [
-        "reports/discovery/openmath_2026/README.md",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/PROBLEM_CARD.md",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ],
-      "reason": "The six hill identities and exact statements remain pending organizer-authoritative acquisition."
+      "reason": "OM26-H1 Kobon triangles now has an exact content-addressed problem card; the remaining five hill identities remain explicitly unresolved."
     },
     "source_map": {
-      "state": "deferred",
+      "state": "present",
       "references": [
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_MAP.md",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ],
-      "reason": "The canonical list surface is recorded, but exact per-hill source maps await authoritative hill records."
+      "reason": "OM26-H1 has a source map bound to an authenticated rendered capture; remaining hill source maps await acquisition."
     },
     "status_triage": {
-      "state": "deferred",
+      "state": "present",
       "references": [
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATUS_TRIAGE.md",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ],
-      "reason": "Dated mathematical open-status triage is intentionally blocked until each exact hill statement is acquired."
+      "reason": "OM26-H1 has a dated construction-task status triage; no status is inferred for the five unresolved hills."
     },
     "reconnaissance_ledger": {
       "state": "present",
@@ -87,7 +89,7 @@
       "path": "reports/discovery/openmath_2026/hill_source_locks.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "606f050bd9b158e40be1ed8f12d6df9d0cac4721"
+        "value": "46b73c578d625035a12df3beeb28536c09e88f47"
       },
       "claim_boundary": "Null hill fields are unresolved and must not be inferred; no hill-specific mathematical work is released by this ledger."
     },
@@ -123,6 +125,72 @@
         "value": "76a1f5e6722345b72195e6eff98881cbe043df57"
       },
       "claim_boundary": "The route sketch describes possible downstream verification modalities; it does not certify any claim."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-SOURCE-LOCK",
+      "kind": "source_lock",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_LOCK.json",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "7a90cd6eeb54e8e4c5b63c5977e40a1ab5bcaa2c"
+      },
+      "claim_boundary": "Content-addressed research source lock only; no optimality, novelty, competition-acceptance, or certification claim."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-STATEMENT",
+      "kind": "authenticated_render_capture",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATEMENT.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "47e529bce21e76c575c69a26824e182848dceedc"
+      },
+      "claim_boundary": "Exact captured task body and capture qualifications; live pre-submit concordance remains required."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-EVALUATOR-CONTRACT",
+      "kind": "evaluator_contract",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/EVALUATOR_CONTRACT.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "b9f9d8b58fa613c9e788d09f987b50260066bc67"
+      },
+      "claim_boundary": "Evaluator semantics extracted from the captured hill; not a claim that a candidate construction is accepted or optimal."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-SOURCE-MAP",
+      "kind": "source_map",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_MAP.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "cfdc8e40e383ee290f238143c5a7f438af43086a"
+      },
+      "claim_boundary": "Maps the captured source to operative semantics; does not add unstated mathematical claims."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-STATUS-TRIAGE",
+      "kind": "status_triage",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATUS_TRIAGE.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "58b2d8ab30b33de1d110d30578011d516ea078d0"
+      },
+      "claim_boundary": "Competition-task triage only; no claim about the global mathematical optimum or literature-best construction."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-PROBLEM-CARD",
+      "kind": "problem_card",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/PROBLEM_CARD.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "466224d5623c9463b556f8aa76277b94fc56bc85"
+      },
+      "claim_boundary": "Defines the admitted research target without asserting optimality."
     }
   ],
   "source_records": [
@@ -133,6 +201,15 @@
         "https://app.autolab.ai/lists/alejandrozu/openmath",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ]
+    },
+    {
+      "record_id": "OPENMATH-2026-OM26-H1-SOURCE",
+      "summary": "OM26-H1 is identified as alejandrozu/kobon-triangles and bound to an authenticated 2026-09-27 render capture. The server did not expose a separate immutable hill-version token, so the captured body is content-addressed and a live pre-submit concordance check remains mandatory.",
+      "references": [
+        "https://app.autolab.ai/hills/alejandrozu/kobon-triangles",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_LOCK.json",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATEMENT.md"
+      ]
     }
   ],
   "status_records": [
@@ -140,6 +217,14 @@
       "record_id": "OPENMATH-2026-STATUS",
       "summary": "All six hill slots remain source-lock pending; no per-hill open-status assertion has yet been admitted.",
       "references": [
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
+    },
+    {
+      "record_id": "OPENMATH-2026-OM26-H1-STATUS",
+      "summary": "Kobon triangles is admitted as an exact deterministic construction-optimization hill. A higher verified score is progress but does not establish an upper bound or optimality. Five campaign hill slots remain source-lock pending.",
+      "references": [
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATUS_TRIAGE.md",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ]
     }
@@ -158,7 +243,7 @@
   "provider_debt": [
     {
       "record_id": "OPENMATH-2026-HILL-BODIES",
-      "summary": "Acquire exact organizer-authoritative records for all six hills, then perform source mapping and dated status triage before Solve release.",
+      "summary": "Acquire exact organizer-authoritative records for the remaining five hills. OM26-H1 Kobon triangles is source-locked for Solve research; its final competition submission additionally requires a live hill/version concordance check.",
       "references": [
         "grandchallenge/MATHFORGE#282",
         "reports/discovery/openmath_2026/hill_source_locks.json"
@@ -170,7 +255,8 @@
     "created_by": "OPENMATH-2026-WP00",
     "source_commits": [
       "5fb372a59d80ada7f9d6e7079729c20dc2702e64",
-      "9df7eb5ee651bfd2808c7fef27971383aa9b023e"
+      "9df7eb5ee651bfd2808c7fef27971383aa9b023e",
+      "56b2c5aba769995fd1cb02a58ee25f757cc990c8"
     ]
   },
   "downstream_references": {

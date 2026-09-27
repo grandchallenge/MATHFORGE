@@ -10,18 +10,35 @@
   "hill_slots": [
     {
       "slot": "OM26-H1",
-      "state": "PENDING_AUTHORITATIVE_ACQUISITION",
-      "autolab_hill_id": null,
-      "title": null,
-      "exact_statement": null,
-      "external_version": null,
+      "state": "SOURCE_LOCKED_CONTENT_ADDRESSED",
+      "autolab_hill_id": "alejandrozu/kobon-triangles",
+      "title": "Kobon triangles",
+      "exact_statement": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATEMENT.md",
+      "external_version": "CONTENT_ADDRESSED_CAPTURE__AUTOLAB_VERSION_TOKEN_NOT_EXPOSED",
       "ulam_or_unsolvedmath_id": null,
       "difficulty": null,
-      "primary_sources": [],
-      "status_triage": null,
-      "evaluator_or_checker": null,
-      "acquired_evidence": [],
-      "solve_release": false
+      "primary_sources": [
+        "https://app.autolab.ai/hills/alejandrozu/kobon-triangles",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATEMENT.md"
+      ],
+      "status_triage": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATUS_TRIAGE.md",
+      "evaluator_or_checker": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/EVALUATOR_CONTRACT.md",
+      "acquired_evidence": [
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_LOCK.json",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATEMENT.md"
+      ],
+      "solve_release": true,
+      "solve_release_scope": "RESEARCH_AND_CANDIDATE_CONSTRUCTION",
+      "final_submission_release": false,
+      "final_submission_blocker": "LIVE_HILL_VERSION_CONCORDANCE_REQUIRED",
+      "source_lock_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "7a90cd6eeb54e8e4c5b63c5977e40a1ab5bcaa2c"
+      },
+      "statement_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "47e529bce21e76c575c69a26824e182848dceedc"
+      }
     },
     {
       "slot": "OM26-H2",
@@ -99,5 +116,11 @@
       "solve_release": false
     }
   ],
-  "claim_boundary": "This ledger reserves six source-lock slots only. Null fields are unresolved and must not be inferred. No hill-specific mathematical work is released by this record."
+  "claim_boundary": "This ledger reserves exactly six source-lock slots. OM26-H1 is content-addressed to an authenticated Kobon-triangles capture and is released for Solve research/candidate construction; final submission still requires live hill concordance. Null fields in the other five slots remain unresolved and must not be inferred.",
+  "campaign_hill_count": 6,
+  "campaign_count_clarification": {
+    "authority": "HUMAN_STEWARD",
+    "date": "2026-09-27",
+    "note": "The authenticated Kobon hill page rendered an 'Open Math Challenge' sidebar count of 7 hills. The Human Steward confirms this is a UI typo; the sprint cardinality is six."
+  }
 }
