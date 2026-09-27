@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-OM26-H1-LITERATURE-STATUS",
+  "campaign_id": "OPENMATH-2026",
+  "hill_slot": "OM26-H1",
+  "date": "2026-09-27",
+  "state": "EXTERNAL_BENCHMARK_IDENTIFIED__RECONSTRUCTION_PENDING",
+  "external_context": {
+    "n": 18,
+    "current_reported_lower_bound": 93,
+    "current_reported_simple_arrangement_upper_bound": 94,
+    "straight_line_realizability_reported": true,
+    "exact_rational_coefficients_acquired": false
+  },
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/0706.0723v1",
+      "kind": "primary_paper"
+    },
+    {
+      "url": "https://oeis.org/A006066/internal",
+      "kind": "current_status_index"
+    },
+    {
+      "url": "https://zegalur.github.io/line-order/gallery/kobon.html",
+      "kind": "line_order_gallery"
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.07951",
+      "kind": "methodological_preprint"
+    }
+  ],
+  "search_implications": {
+    "primary_target": "RECONSTRUCT_93_AS_RATIONAL_STRAIGHT_LINES",
+    "secondary_target": "CONTINUE_INDEPENDENT_EXACT_LOCAL_SEARCH_FROM_86",
+    "bound_target": "AUDIT_TRANSFER_OF_SIMPLE_94_BOUND_TO_HILL_DEGENERACY_SEMANTICS"
+  },
+  "claim_boundary": "External reconnaissance only. No exact 93 coefficient submission is acquired; the 94 simple-arrangement bound is not yet imported as a hill-global theorem."
+}
