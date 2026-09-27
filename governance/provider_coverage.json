@@ -76,7 +76,7 @@
     },
     {
       "campaign_id": "EUCLID-GCD-E2E-001",
-      "title": "Euclidean algorithm and B\u00e9zout witness end-to-end exemplar",
+      "title": "Euclidean algorithm and Bézout witness end-to-end exemplar",
       "lifecycle": "candidate",
       "disposition": "manifest",
       "manifest_path": "provider_manifests/EUCLID-GCD-E2E-001.json"
@@ -94,6 +94,13 @@
       "lifecycle": "candidate",
       "disposition": "manifest",
       "manifest_path": "provider_manifests/EUCLID-ELEMENTS-BOOK-VII-MICRO-001.json"
+    },
+    {
+      "campaign_id": "OPENMATH-2026",
+      "title": "OpenMath 2026 six-hill sprint candidate provider coverage",
+      "lifecycle": "candidate",
+      "disposition": "manifest",
+      "manifest_path": "provider_manifests/OPENMATH-2026.json"
     }
   ]
 }

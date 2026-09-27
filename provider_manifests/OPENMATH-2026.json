@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "MF-OPENMATH-2026-MANIFEST",
+  "campaign_id": "OPENMATH-2026",
+  "title": "OpenMath 2026 six-hill sprint candidate provider coverage",
+  "coverage_mode": "native",
+  "provider_repository": "grandchallenge/MATHFORGE",
+  "programme": {
+    "repository": "grandchallenge/MATH-PROGRAMME",
+    "commit": "5fb372a59d80ada7f9d6e7079729c20dc2702e64",
+    "issue": 1072,
+    "paths": [
+      "docs/campaigns/OPENMATH_2026_CHARTER.md",
+      "docs/campaigns/OPENMATH_2026_SPRINT_PROFILE.md",
+      "governance/openmath_2026_external_state.json"
+    ]
+  },
+  "handoff_packet": {
+    "problem_card": {
+      "state": "deferred",
+      "references": [
+        "reports/discovery/openmath_2026/README.md",
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ],
+      "reason": "The six hill identities and exact statements remain pending organizer-authoritative acquisition."
+    },
+    "source_map": {
+      "state": "deferred",
+      "references": [
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ],
+      "reason": "The canonical list surface is recorded, but exact per-hill source maps await authoritative hill records."
+    },
+    "status_triage": {
+      "state": "deferred",
+      "references": [
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ],
+      "reason": "Dated mathematical open-status triage is intentionally blocked until each exact hill statement is acquired."
+    },
+    "reconnaissance_ledger": {
+      "state": "present",
+      "references": [
+        "reports/discovery/openmath_2026/reconnaissance_matrix.json"
+      ],
+      "reason": "The shared reconnaissance lanes and per-hill release gates are recorded natively."
+    },
+    "failure_risks": {
+      "state": "present",
+      "references": [
+        "reports/discovery/openmath_2026/failure_risks.md"
+      ],
+      "reason": "Sprint-specific source, semantic, parallelism, provenance, and certification risks are recorded."
+    },
+    "suggested_wp01": {
+      "state": "present",
+      "references": [
+        "reports/discovery/openmath_2026/README.md",
+        "reports/discovery/openmath_2026/reconnaissance_matrix.json"
+      ],
+      "reason": "The bounded next provider action is authoritative acquisition of all six hill records before hill-specific Solve release."
+    },
+    "certification_route_sketch": {
+      "state": "present",
+      "references": [
+        "reports/discovery/openmath_2026/certification_route_sketch.md"
+      ],
+      "reason": "Candidate replay modalities and MATHCERT handoff requirements are explicit without claiming certification."
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "OPENMATH-2026-FORGE-INTAKE",
+      "kind": "provider_intake",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/README.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "ed27d5c472ab0d8d0e8b3fecf06e646979ef3cd2"
+      },
+      "claim_boundary": "This intake defines source-lock discipline and six placeholder identities only; it does not identify or solve an OpenMath hill."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-HILL-SOURCE-LOCKS",
+      "kind": "source_lock_ledger",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hill_source_locks.json",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "606f050bd9b158e40be1ed8f12d6df9d0cac4721"
+      },
+      "claim_boundary": "Null hill fields are unresolved and must not be inferred; no hill-specific mathematical work is released by this ledger."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-RECONNAISSANCE",
+      "kind": "reconnaissance_ledger",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/reconnaissance_matrix.json",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "0d2038fcf9f8e16b55d81c909eb5a6006116033f"
+      },
+      "claim_boundary": "Shared provider lanes are work authorization only and do not establish a mathematical claim about an unresolved hill."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-FAILURE-RISKS",
+      "kind": "failure_risk_ledger",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/failure_risks.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "a48ede47f78f00d851c1acc2e0bfc1ae030bb410"
+      },
+      "claim_boundary": "The listed risks are controls and failure modes, not negative mathematical results about any hill."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-CERT-ROUTE-SKETCH",
+      "kind": "certification_route_sketch",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/certification_route_sketch.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "76a1f5e6722345b72195e6eff98881cbe043df57"
+      },
+      "claim_boundary": "The route sketch describes possible downstream verification modalities; it does not certify any claim."
+    }
+  ],
+  "source_records": [
+    {
+      "record_id": "OPENMATH-2026-EXTERNAL-SOURCE",
+      "summary": "The organizer AutoLab list identity is known, while exact per-hill rendered records remain pending authoritative acquisition.",
+      "references": [
+        "https://app.autolab.ai/lists/alejandrozu/openmath",
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
+    }
+  ],
+  "status_records": [
+    {
+      "record_id": "OPENMATH-2026-STATUS",
+      "summary": "All six hill slots remain source-lock pending; no per-hill open-status assertion has yet been admitted.",
+      "references": [
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
+    }
+  ],
+  "fixtures": [],
+  "failed_routes": [
+    {
+      "record_id": "OPENMATH-2026-NONINTERACTIVE-LIST-ACQUISITION",
+      "summary": "The initial non-interactive retrieval path exposed the AutoLab list identity but not authoritative hill bodies, so the campaign failed closed rather than infer them.",
+      "references": [
+        "reports/discovery/openmath_2026/hill_source_locks.json",
+        "grandchallenge/MATH-PROGRAMME#1072"
+      ]
+    }
+  ],
+  "provider_debt": [
+    {
+      "record_id": "OPENMATH-2026-HILL-BODIES",
+      "summary": "Acquire exact organizer-authoritative records for all six hills, then perform source mapping and dated status triage before Solve release.",
+      "references": [
+        "grandchallenge/MATHFORGE#282",
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-09-27",
+    "created_by": "OPENMATH-2026-WP00",
+    "source_commits": [
+      "5fb372a59d80ada7f9d6e7079729c20dc2702e64",
+      "9df7eb5ee651bfd2808c7fef27971383aa9b023e"
+    ]
+  },
+  "downstream_references": {
+    "programme": [
+      "https://github.com/grandchallenge/MATH-PROGRAMME/issues/1072"
+    ],
+    "mathsolve": [
+      "https://github.com/grandchallenge/MATHSOLVE/issues/454"
+    ],
+    "mathcert": [
+      "https://github.com/grandchallenge/MATHCERT/issues/339"
+    ]
+  },
+  "non_certification_statement": "This manifest registers candidate MATHFORGE provider provenance and explicit source-lock debt for OPENMATH-2026 only. It does not identify an unresolved hill by inference, prove a mathematical claim, establish novelty, certify an artifact, or authorize Programme promotion."
+}
