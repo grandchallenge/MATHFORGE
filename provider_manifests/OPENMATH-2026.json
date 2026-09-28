@@ -199,7 +199,7 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_RECONNAISSANCE.md",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "a9cd296023e57ebe30128cf3a45c68e538340397"
+        "value": "32c4f4e881b4e1a20940e2c1c49a2629d925ed57"
       },
       "claim_boundary": "External benchmark and route-planning evidence only; no proof, exact 93 submission, or certification claim."
     },
@@ -210,9 +210,20 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "79a97067d520ea7e7321bd1ccae65919da77f1a4"
+        "value": "bd03b0828f8cb7ef6ad085f0f5baf8d3cd491771"
       },
       "claim_boundary": "Records externally reported 93 construction and simple-arrangement 94 upper bound with transfer qualification."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-GENERAL-BOUND-AUDIT",
+      "kind": "literature_bound_scope_audit",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/GENERAL_BOUND_AUDIT.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "4007f975e74691a7c3233e671230327551f1777a"
+      },
+      "claim_boundary": "Source-scope audit only: records general bound 95 and simple bound 94 with hypothesis separation; no certification or optimality claim."
     }
   ],
   "source_records": [
@@ -252,10 +263,11 @@
     },
     {
       "record_id": "OPENMATH-2026-OM26-H1-LITERATURE",
-      "summary": "Current literature reconnaissance records an externally reported straight-line-realizable 93-triangle n=18 construction and a 94 upper bound for simple affine arrangements. The current GCL 86 leader is below that benchmark. Rational coefficients for the 93 target have not been acquired, and transfer of the simple-arrangement bound to the hill's allowed degeneracies remains unaudited.",
+      "summary": "Current source audit records a straight-line-realizable 93 benchmark, a Clément–Bader general n=18 upper bound 95 that explicitly treats multiple intersections/common-side triangles, and a stronger Bartholdi–Blanc–Loisel simple-arrangement bound 94 whose hypotheses do not directly match the hill. OEIS reports 94, but a hill-global 94 proof remains unresolved.",
       "references": [
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_RECONNAISSANCE.md",
-        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json"
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/GENERAL_BOUND_AUDIT.md"
       ]
     }
   ],
@@ -287,7 +299,8 @@
       "5fb372a59d80ada7f9d6e7079729c20dc2702e64",
       "9df7eb5ee651bfd2808c7fef27971383aa9b023e",
       "56b2c5aba769995fd1cb02a58ee25f757cc990c8",
-      "73f1890387eec56eb6be31f8c00f10b6a5a56383"
+      "73f1890387eec56eb6be31f8c00f10b6a5a56383",
+      "9e00c45fd665546b813f9234314a63eddbec854d"
     ]
   },
   "downstream_references": {
