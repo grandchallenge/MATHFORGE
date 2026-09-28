@@ -253,8 +253,8 @@
       "ownership": "MATHFORGE",
       "path": "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
       "integrity": {
-        "algorithm": "PROTECTED_GIT_PATH__BLOB_TO_BE_BOUND_AT_MERGE",
-        "value": null
+        "algorithm": "git_blob_sha1",
+        "value": "9534f4aa456d1da6ae285c0fcb83a93403922837"
       },
       "claim_boundary": "Six exact organizer sources are content-locked but remain unmapped to OM26-H2..H7; no mathematical release follows."
     }
