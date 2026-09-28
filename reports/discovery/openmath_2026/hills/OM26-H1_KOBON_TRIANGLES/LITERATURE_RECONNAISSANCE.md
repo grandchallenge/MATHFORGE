@@ -41,3 +41,16 @@ Primary next route: reconstruct the published 93 order table as actual rational 
 - https://oeis.org/A006066/internal
 - https://zegalur.github.io/line-order/gallery/kobon.html
 - https://arxiv.org/abs/2507.07951
+
+
+## General-versus-simple bound audit
+
+A follow-up source audit distinguishes two upper bounds that must not be conflated.
+
+- Clément–Bader (2007) treats the general Kobon quantity (K(n)), explicitly discusses multiple-line intersections/common-side triangles, and gives (K(18)le 95).
+- Bartholdi–Blanc–Loisel (2007) gives the stronger value 94 only under its simple affine arrangement hypotheses.
+- OEIS currently reports 94 for (n=18), but the status row is not itself a hill-semantic proof.
+
+Accordingly, Forge currently admits the source-grounded interval (93le K_{hill}(18)le95). The value 94 remains a target and reported status, not a Forge-admitted hill-global theorem.
+
+See `GENERAL_BOUND_AUDIT.md`.

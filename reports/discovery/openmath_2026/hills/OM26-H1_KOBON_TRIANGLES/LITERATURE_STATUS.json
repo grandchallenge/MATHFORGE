@@ -4,13 +4,16 @@
   "campaign_id": "OPENMATH-2026",
   "hill_slot": "OM26-H1",
   "date": "2026-09-27",
-  "state": "EXTERNAL_BENCHMARK_IDENTIFIED__RECONSTRUCTION_PENDING",
+  "state": "EXTERNAL_BENCHMARK_93__GENERAL_BOUND_95__SIMPLE_BOUND_94_TRANSFER_OPEN",
   "external_context": {
     "n": 18,
     "current_reported_lower_bound": 93,
     "current_reported_simple_arrangement_upper_bound": 94,
     "straight_line_realizability_reported": true,
-    "exact_rational_coefficients_acquired": false
+    "exact_rational_coefficients_acquired": false,
+    "current_source_matched_general_upper_bound": 95,
+    "current_oeis_reported_upper_bound": 94,
+    "hill_global_94_proof_state": "UNRESOLVED__SIMPLE_HYPOTHESES_DO_NOT_MATCH_HILL"
   },
   "sources": [
     {
@@ -28,12 +31,17 @@
     {
       "url": "https://arxiv.org/abs/2507.07951",
       "kind": "methodological_preprint"
+    },
+    {
+      "url": "https://oeis.org/A006066/a006066.pdf",
+      "kind": "general_kobon_upper_bound_draft",
+      "relevant_surface": "Clément–Bader Theorem 1; explicit treatment of multiple intersections/common-side triangles; n=18 gives 95"
     }
   ],
   "search_implications": {
     "primary_target": "RECONSTRUCT_93_AS_RATIONAL_STRAIGHT_LINES",
     "secondary_target": "CONTINUE_INDEPENDENT_EXACT_LOCAL_SEARCH_FROM_86",
-    "bound_target": "AUDIT_TRANSFER_OF_SIMPLE_94_BOUND_TO_HILL_DEGENERACY_SEMANTICS"
+    "bound_target": "SOURCE_OR_PROVE_HILL_VALID_94_BOUND__CURRENT_SOURCE_MATCHED_GENERAL_BOUND_95"
   },
-  "claim_boundary": "External reconnaissance only. No exact 93 coefficient submission is acquired; the 94 simple-arrangement bound is not yet imported as a hill-global theorem."
+  "claim_boundary": "External reconnaissance and source-scope audit only. Forge admits a source-grounded n=18 interval 93..95. The 94 simple-arrangement/OEIS-reported bound is not yet admitted as a hill-global proved bound because the hill permits degeneracies beyond the cited simple theorem's hypotheses."
 }
