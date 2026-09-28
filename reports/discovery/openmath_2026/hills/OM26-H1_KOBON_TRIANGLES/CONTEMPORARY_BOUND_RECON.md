@@ -18,7 +18,7 @@ Relevant exact source objects:
 
 ## What this source says that matters for H1-12
 
-The repository independently reaches the same scope warning as our Forge audit: BBL/Blanc even-order bounds are simple-arrangement results and cannot automatically certify the unrestricted classical problem.
+The repository independently reaches the same scope warning as our Forge audit: BBL/Blanc even-order bounds are simple-arrangement results and cannot automatically certify the unrestricted classical problem. It also records Blanc's later simple even-order polynomial `floor(n(n-5/2)/3)`, which equals **93 at n=18**. Thus any hill construction scoring 94 or 95 must be nonsimple (parallelism and/or a finite multiple intersection).
 
 It also contains a paper-level restricted nonsimple theorem:
 
@@ -32,7 +32,7 @@ The repository explicitly labels the complete global extraction/clean-line charg
 
 ## Structural consequences for our search
 
-Subject to independent downstream proof review of the stated restricted theorem, a hypothetical n=18 score-95 arrangement cannot lie in the pairwise-nonparallel class with at most two finite multiple points. Therefore a 95 search should concentrate on singular strata:
+Subject to independent downstream proof review of the stated restricted theorem, a hypothetical n=18 score-95 arrangement cannot lie in the pairwise-nonparallel class with at most two finite multiple points. More basically, Blanc's simple 93 bound means any score above 93 must occupy a nonsimple stratum. Therefore the next search should concentrate on singular strata:
 
 - at least one parallel pair; or
 - if pairwise nonparallel, at least three finite multiple points, with triple/quadruple points the difficult multiplicities.
