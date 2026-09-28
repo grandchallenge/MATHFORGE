@@ -114,13 +114,29 @@
       "evaluator_or_checker": null,
       "acquired_evidence": [],
       "solve_release": false
+    },
+    {
+      "slot": "OM26-H7",
+      "state": "PENDING_AUTHORITATIVE_ACQUISITION",
+      "autolab_hill_id": null,
+      "title": null,
+      "exact_statement": null,
+      "external_version": null,
+      "ulam_or_unsolvedmath_id": null,
+      "difficulty": null,
+      "primary_sources": [],
+      "status_triage": null,
+      "evaluator_or_checker": null,
+      "acquired_evidence": [],
+      "solve_release": false
     }
   ],
-  "claim_boundary": "This ledger reserves exactly six source-lock slots. OM26-H1 is content-addressed to an authenticated Kobon-triangles capture and is released for Solve research/candidate construction; final submission still requires live hill concordance. Null fields in the other five slots remain unresolved and must not be inferred.",
-  "campaign_hill_count": 6,
+  "claim_boundary": "This ledger reserves exactly seven source-lock slots. OM26-H1 is content-addressed to an authenticated Kobon-triangles capture and is released for Solve research/candidate construction; final submission still requires live hill concordance. Null fields in OM26-H2 through OM26-H7 remain unresolved and must not be inferred.",
+  "campaign_hill_count": 7,
   "campaign_count_clarification": {
     "authority": "HUMAN_STEWARD",
     "date": "2026-09-27",
-    "note": "The authenticated Kobon hill page rendered an 'Open Math Challenge' sidebar count of 7 hills. The Human Steward confirms this is a UI typo; the sprint cardinality is six."
+    "supersedes": "Prior clarification treating the rendered count of 7 as a UI typo and fixing sprint cardinality at six.",
+    "note": "The Human Steward corrects the sprint cardinality to seven. The observed list count of 7 is genuine, and the additional seventh hill is identified at Human-Steward level as an Erdős problem. OM26-H7 is therefore reserved, but its exact organizer hill ID, title, statement, evaluator, version, and other source fields remain null until authoritative acquisition."
   }
 }
