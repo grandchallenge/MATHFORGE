@@ -89,9 +89,9 @@
     }
   },
   "campaign_cardinality": {
-    "hill_count": 7,
-    "authority": "HUMAN_STEWARD_CORRECTION",
-    "note": "The authenticated hill page sidebar displayed '7 hills'. The Human Steward corrects the earlier interpretation: OPENMATH-2026 contains seven hills, with an additional Erdős problem. This changes campaign cardinality only; exact OM26-H7 organizer identity and statement remain source-lock pending."
+    "hill_count": 6,
+    "authority": "HUMAN_STEWARD_CLARIFICATION",
+    "note": "The authenticated hill page sidebar displayed '7 hills'. The Human Steward clarified that this is a typo and that OPENMATH-2026 contains six hills. No seventh campaign slot is created."
   },
   "release": {
     "solve_release": true,
