@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "manifest_id": "MF-OPENMATH-2026-MANIFEST",
   "campaign_id": "OPENMATH-2026",
-  "title": "OpenMath 2026 six-hill sprint candidate provider coverage",
+  "title": "OpenMath 2026 seven-hill sprint candidate provider coverage",
   "coverage_mode": "native",
   "provider_repository": "grandchallenge/MATHFORGE",
   "programme": {
@@ -22,7 +22,7 @@
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/PROBLEM_CARD.md",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ],
-      "reason": "OM26-H1 Kobon triangles now has an exact content-addressed problem card; the remaining five hill identities remain explicitly unresolved."
+      "reason": "OM26-H1 Kobon triangles now has an exact content-addressed problem card; the remaining six hill identities remain explicitly unresolved."
     },
     "source_map": {
       "state": "present",
@@ -38,7 +38,7 @@
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATUS_TRIAGE.md",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ],
-      "reason": "OM26-H1 has a dated construction-task status triage; no status is inferred for the five unresolved hills."
+      "reason": "OM26-H1 has a dated construction-task status triage; no status is inferred for the six unresolved hills."
     },
     "reconnaissance_ledger": {
       "state": "present",
@@ -60,7 +60,7 @@
         "reports/discovery/openmath_2026/README.md",
         "reports/discovery/openmath_2026/reconnaissance_matrix.json"
       ],
-      "reason": "The bounded next provider action is authoritative acquisition of all six hill records before hill-specific Solve release."
+      "reason": "The bounded next provider action is authoritative acquisition of all seven hill records before hill-specific Solve release."
     },
     "certification_route_sketch": {
       "state": "present",
@@ -78,9 +78,9 @@
       "path": "reports/discovery/openmath_2026/README.md",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "ed27d5c472ab0d8d0e8b3fecf06e646979ef3cd2"
+        "value": "71d3cc36d522f3931dd0a887e294c8b247dde6cb"
       },
-      "claim_boundary": "This intake defines source-lock discipline and six placeholder identities only; it does not identify or solve an OpenMath hill."
+      "claim_boundary": "This intake defines source-lock discipline and seven placeholder identities only; it does not identify or solve an unresolved OpenMath hill."
     },
     {
       "artifact_id": "OPENMATH-2026-HILL-SOURCE-LOCKS",
@@ -89,7 +89,7 @@
       "path": "reports/discovery/openmath_2026/hill_source_locks.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "46b73c578d625035a12df3beeb28536c09e88f47"
+        "value": "d384838849ca7aba0e0501990abc58353555c0f2"
       },
       "claim_boundary": "Null hill fields are unresolved and must not be inferred; no hill-specific mathematical work is released by this ledger."
     },
@@ -259,14 +259,14 @@
   "status_records": [
     {
       "record_id": "OPENMATH-2026-STATUS",
-      "summary": "All six hill slots remain source-lock pending; no per-hill open-status assertion has yet been admitted.",
+      "summary": "OM26-H1 is source-locked; OM26-H2 through OM26-H7 remain source-lock pending. No unresolved per-hill open-status assertion is admitted by inference.",
       "references": [
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ]
     },
     {
       "record_id": "OPENMATH-2026-OM26-H1-STATUS",
-      "summary": "Kobon triangles is admitted as an exact deterministic construction-optimization hill. A higher verified score is progress but does not establish an upper bound or optimality. Five campaign hill slots remain source-lock pending.",
+      "summary": "Kobon triangles is admitted as an exact deterministic construction-optimization hill. A higher verified score is progress but does not establish an upper bound or optimality. Six campaign hill slots remain source-lock pending.",
       "references": [
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATUS_TRIAGE.md",
         "reports/discovery/openmath_2026/hill_source_locks.json"
@@ -297,7 +297,7 @@
   "provider_debt": [
     {
       "record_id": "OPENMATH-2026-HILL-BODIES",
-      "summary": "Acquire exact organizer-authoritative records for the remaining five hills. OM26-H1 Kobon triangles is source-locked for Solve research; its final competition submission additionally requires a live hill/version concordance check.",
+      "summary": "Acquire exact organizer-authoritative records for the remaining six hills. OM26-H1 Kobon triangles is source-locked for Solve research; its final competition submission additionally requires a live hill/version concordance check.",
       "references": [
         "grandchallenge/MATHFORGE#282",
         "reports/discovery/openmath_2026/hill_source_locks.json"
