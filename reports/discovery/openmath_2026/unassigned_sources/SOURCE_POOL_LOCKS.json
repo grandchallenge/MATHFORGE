@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-UNASSIGNED-SOURCE-POOL",
+  "campaign_id": "OPENMATH-2026",
+  "state": "SOURCE_POOL_LOCKED__SLOT_MAPPING_PENDING",
+  "acquisition_source": {
+    "repository": "grandchallenge/MATHSOLVE",
+    "protected_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
+    "source_pool_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/SOURCE_POOL_MANIFEST.json",
+    "public_source_capture": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/PUBLIC_SOURCE_CAPTURE.json"
+  },
+  "locks": [
+    {
+      "source_id": "alejandrozu/clique-cluster-ramsey-multiplicity",
+      "path": "reports/discovery/openmath_2026/unassigned_sources/clique-cluster-ramsey-multiplicity/SOURCE_LOCK.json"
+    },
+    {
+      "source_id": "alejandrozu/matrix-multiplication-tensor-3x3",
+      "path": "reports/discovery/openmath_2026/unassigned_sources/matrix-multiplication-tensor-3x3/SOURCE_LOCK.json"
+    },
+    {
+      "source_id": "alejandrozu/grothendieck-constant-witnesses",
+      "path": "reports/discovery/openmath_2026/unassigned_sources/grothendieck-constant-witnesses/SOURCE_LOCK.json"
+    },
+    {
+      "source_id": "alejandrozu/collatz-modular-descent",
+      "path": "reports/discovery/openmath_2026/unassigned_sources/collatz-modular-descent/SOURCE_LOCK.json"
+    },
+    {
+      "source_id": "alejandrozu/busy-beaver-6-certificates",
+      "path": "reports/discovery/openmath_2026/unassigned_sources/busy-beaver-6-certificates/SOURCE_LOCK.json"
+    },
+    {
+      "source_id": "ottogin/erdos-3",
+      "path": "reports/discovery/openmath_2026/unassigned_sources/erdos-3/SOURCE_LOCK.json"
+    }
+  ],
+  "free_slots": [
+    "OM26-H2",
+    "OM26-H3",
+    "OM26-H4",
+    "OM26-H5",
+    "OM26-H6",
+    "OM26-H7"
+  ],
+  "slot_mapping": {
+    "OM26-H2": null,
+    "OM26-H3": null,
+    "OM26-H4": null,
+    "OM26-H5": null,
+    "OM26-H6": null,
+    "OM26-H7": null
+  },
+  "mapping_boundary": "All six exact organizer sources are now locked by identity and content. No slot assignment follows from organizer-list order, source topic, source name, or conversational memory.",
+  "release_boundary": "No hill-specific mathematics may be released until a separate protected slot-binding act maps one exact source lock to one free OM26-H2..H7 slot.",
+  "claim_boundary": "Provider/source admission only; no mathematical, novelty, competition-acceptance, or certification effect."
+}
