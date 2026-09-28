@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-H2-H7-SEMANTIC-READBACK",
+  "campaign_id": "OPENMATH-2026",
+  "semantic_pack_merge": "e86b2873536e4e66e72cf91e8df41c287ac1081d",
+  "semantic_pack_manifest": {
+    "path": "reports/discovery/openmath_2026/SEMANTIC_PACKS.json",
+    "git_blob_sha1": "aaf8aa9b65d2218943b5dc9f3840cb16751a1ef0"
+  },
+  "hill_source_lock_ledger": {
+    "path": "reports/discovery/openmath_2026/hill_source_locks.json",
+    "git_blob_sha1": "227238902ec992197d8b30bd4aee03dd25da861e"
+  },
+  "verified_slot_blobs": {
+    "OM26-H2": [
+      "47d1f0a4b59ecea5c5109cb7558f8f085da8c671",
+      "27a567569cf30808b4b544d7e7b365fa2e88de15",
+      "d7a8c2f94d9280cea993b8ca3c3215271fde1a7f"
+    ],
+    "OM26-H3": [
+      "f2918272815a7cb349144b897840c49f258b2027",
+      "10aa92ca4b70503113d58c37da794c610db29397",
+      "06ed01cf4bb74784231961d5527354e1e8a3473a"
+    ],
+    "OM26-H4": [
+      "fdde21a86224085c4241ed7b073069d067daf876",
+      "6e344742aa84fdd8332fd6dd2b31b4b50b896df2",
+      "386d98dd7890250d2500ef7611138a6302eb0159"
+    ],
+    "OM26-H5": [
+      "8e62471b8641de88106ecf00bb5ed1cb957f75f8",
+      "c3400371533c414ba4217a65d125add49879d085",
+      "9a87b1b9d3015d68b388aac851173c4d261a2c23"
+    ],
+    "OM26-H6": [
+      "d3ecf211c6d944907a1c07ae591028f84373c866",
+      "ef1393c13ead06be96c06fe34a70519774bceff8",
+      "7c0defbe5478dbafa709fd6c6aa6327d76e3133c"
+    ],
+    "OM26-H7": [
+      "cc1210a8718544b038a04748a8df24d3f5bb1505",
+      "3059cf3f7853b949985cdbc206a0f986c2eb6790",
+      "3977015dfc62753da0990913fe797338b83383c6"
+    ]
+  },
+  "result": "SEMANTIC_PACK_PROTECTED_READBACK_CONFIRMED",
+  "release_effect": "Eligible for Solve decomposition and bounded research only after this release act itself is protected.",
+  "prohibited_effects": [
+    "COMPETITION_SUBMISSION_RELEASE",
+    "NOVELTY_CERTIFICATION",
+    "MATHCERT_CERTIFICATION"
+  ],
+  "claim_boundary": "Readback and Solve-release gating only; no mathematical claim."
+}
