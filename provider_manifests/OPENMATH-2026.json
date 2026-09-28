@@ -210,7 +210,7 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "b3020eaa98731a74edfa42efc27af90212178807"
+        "value": "31af7d63bd109425c6676f7be7125bf65f965656"
       },
       "claim_boundary": "Records externally reported 93 construction and simple-arrangement 94 upper bound with transfer qualification."
     },
@@ -232,7 +232,7 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/CONTEMPORARY_BOUND_RECON.md",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "07fb1787016632668c3b126109f2f64079dbb68b"
+        "value": "45aa4bd9271bb36fc651a736550cff1fceebd53b"
       },
       "claim_boundary": "External proof-scope reconnaissance only; no hill-global upper-bound or certification claim."
     }
@@ -274,7 +274,7 @@
     },
     {
       "record_id": "OPENMATH-2026-OM26-H1-LITERATURE",
-      "summary": "Source audit now includes contemporary alejandrozu/kobon-proof work: unrestricted source-grounded n=18 interval remains 93..95; a paper-level theorem narrows pairwise-nonparallel arrangements with at most two finite multiple points to at most 94. Hill-global 94 remains open because parallel and richer multiple-point strata are not covered.",
+      "summary": "Current source audit records unrestricted n=18 interval 93..95; Blanc's simple-arrangement bound is 93 at n=18, so every 94/95 hill witness must be nonsimple; contemporary restricted work gives at most 94 for pairwise-nonparallel arrangements with at most two finite multiple points. Hill-global 94 remains open.",
       "references": [
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_RECONNAISSANCE.md",
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json",
