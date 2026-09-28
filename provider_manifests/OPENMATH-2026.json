@@ -235,6 +235,16 @@
         "value": "45aa4bd9271bb36fc651a736550cff1fceebd53b"
       },
       "claim_boundary": "External proof-scope reconnaissance only; no hill-global upper-bound or certification claim."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-HANDBOOK-INTAKE",
+      "kind": "competition_rules_source_intake",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/HANDBOOK_INTAKE.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1"
+      },
+      "claim_boundary": "Authoritative handbook URL and organizer-page rules context only; exact PDF bytes remain pending and this record does not source-lock any unresolved hill."
     }
   ],
   "source_records": [
@@ -253,6 +263,15 @@
         "https://app.autolab.ai/hills/alejandrozu/kobon-triangles",
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_LOCK.json",
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATEMENT.md"
+      ]
+    },
+    {
+      "record_id": "OPENMATH-2026-HANDBOOK-SOURCE",
+      "summary": "The organizer identifies https://rsihouse.ai/openmath/handbook.pdf as the Competition and Judging Handbook. It is the rules/judging authority for the sprint. Exact PDF bytes remain pending in Forge; the handbook is not a substitute for per-hill source locks.",
+      "references": [
+        "https://rsihouse.ai/openmath/handbook.pdf",
+        "https://rsihouse.ai/openmath",
+        "reports/discovery/openmath_2026/HANDBOOK_INTAKE.md"
       ]
     }
   ],
@@ -301,6 +320,14 @@
       "references": [
         "grandchallenge/MATHFORGE#282",
         "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
+    },
+    {
+      "record_id": "OPENMATH-2026-HANDBOOK-BYTES",
+      "summary": "Acquire and content-address the exact Competition and Judging Handbook PDF bytes or authenticated renders before relying on page/section-specific scoring, deadline, or submission-rule details.",
+      "references": [
+        "https://rsihouse.ai/openmath/handbook.pdf",
+        "reports/discovery/openmath_2026/HANDBOOK_INTAKE.md"
       ]
     }
   ],
