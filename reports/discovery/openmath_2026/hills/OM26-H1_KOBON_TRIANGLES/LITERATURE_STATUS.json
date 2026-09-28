@@ -4,13 +4,16 @@
   "campaign_id": "OPENMATH-2026",
   "hill_slot": "OM26-H1",
   "date": "2026-09-27",
-  "state": "EXTERNAL_BENCHMARK_IDENTIFIED__RECONSTRUCTION_PENDING",
+  "state": "EXTERNAL_BENCHMARK_93__UNRESTRICTED_PROVED_BOUND_95__REPORTED_BOUND_94_PROOF_CHAIN_UNRESOLVED",
   "external_context": {
     "n": 18,
     "current_reported_lower_bound": 93,
     "current_reported_simple_arrangement_upper_bound": 94,
     "straight_line_realizability_reported": true,
-    "exact_rational_coefficients_acquired": false
+    "exact_rational_coefficients_acquired": false,
+    "current_primary_source_unrestricted_upper_bound": 95,
+    "current_reported_unrestricted_upper_bound": 94,
+    "unrestricted_94_primary_proof_chain_resolved": false
   },
   "sources": [
     {
@@ -28,12 +31,17 @@
     {
       "url": "https://arxiv.org/abs/2507.07951",
       "kind": "methodological_preprint"
+    },
+    {
+      "url": "https://oeis.org/A006066/a006066.pdf",
+      "kind": "primary_unrestricted_upper_bound_paper",
+      "relevant_surface": "Clément-Bader Theorem 1 gives K(18)<=95 while explicitly handling degenerate intersections"
     }
   ],
   "search_implications": {
     "primary_target": "RECONSTRUCT_93_AS_RATIONAL_STRAIGHT_LINES",
     "secondary_target": "CONTINUE_INDEPENDENT_EXACT_LOCAL_SEARCH_FROM_86",
-    "bound_target": "AUDIT_TRANSFER_OF_SIMPLE_94_BOUND_TO_HILL_DEGENERACY_SEMANTICS"
+    "bound_target": "CLASSIFY_95_CANDIDATE_DEGENERACIES_OR_FIND_PRIMARY_UNRESTRICTED_94_PROOF"
   },
-  "claim_boundary": "External reconnaissance only. No exact 93 coefficient submission is acquired; the 94 simple-arrangement bound is not yet imported as a hill-global theorem."
+  "claim_boundary": "External reconnaissance and source-scope audit only. GCL has a primary-source unrestricted upper bound 95 and a simple-arrangement upper bound 94; current status surfaces report 94 for n=18, but the audited primary chain does not yet justify importing 94 as a hill-global theorem."
 }
