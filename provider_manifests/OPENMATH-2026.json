@@ -89,7 +89,7 @@
       "path": "reports/discovery/openmath_2026/hill_source_locks.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "4616103c1d520f9fbed57474239da9d0b3528320"
+        "value": "5144d68953e0c3afabc2144cf2c3e3c83c512dfd"
       },
       "claim_boundary": "Null hill fields are unresolved and must not be inferred; no hill-specific mathematical work is released by this ledger."
     },
@@ -133,7 +133,7 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_LOCK.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "12954171a088468f46214ee1b239d095c43269d0"
+        "value": "7a90cd6eeb54e8e4c5b63c5977e40a1ab5bcaa2c"
       },
       "claim_boundary": "Content-addressed research source lock only; no optimality, novelty, competition-acceptance, or certification claim."
     },
@@ -144,7 +144,7 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/STATEMENT.md",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "487a0cd5372c0a721a7541689b6282990fb18ce8"
+        "value": "47e529bce21e76c575c69a26824e182848dceedc"
       },
       "claim_boundary": "Exact captured task body and capture qualifications; live pre-submit concordance remains required."
     },
@@ -166,7 +166,7 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/SOURCE_MAP.md",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "9aa3cdc3cfabe8632b52a7f7533e150c3ba6fba1"
+        "value": "cfdc8e40e383ee290f238143c5a7f438af43086a"
       },
       "claim_boundary": "Maps the captured source to operative semantics; does not add unstated mathematical claims."
     },
@@ -240,7 +240,7 @@
   "source_records": [
     {
       "record_id": "OPENMATH-2026-EXTERNAL-SOURCE",
-      "summary": "The organizer AutoLab list identity is known, while exact per-hill rendered records remain pending authoritative acquisition.",
+      "summary": "The campaign originally operated with six hills. The Human Steward now reports a seventh listed hill, an additional Erdős problem; exact source records remain pending for OM26-H2 through OM26-H7.",
       "references": [
         "https://app.autolab.ai/lists/alejandrozu/openmath",
         "reports/discovery/openmath_2026/hill_source_locks.json"
