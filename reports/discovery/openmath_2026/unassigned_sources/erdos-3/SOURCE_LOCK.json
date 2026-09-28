@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-SOURCE-ERDOS-3",
+  "campaign_id": "OPENMATH-2026",
+  "hill_slot": null,
+  "state": "SOURCE_LOCKED_UNMAPPED",
+  "external_identity": {
+    "provider": "AutoLab",
+    "canonical_id": "ottogin/erdos-3",
+    "canonical_url": "https://app.autolab.ai/hills/ottogin/erdos-3",
+    "hill_name": "erdos-3",
+    "rendered_title": "Erdős Problem 3",
+    "version": "0.1.0",
+    "spec_version": 3
+  },
+  "acquisition": {
+    "mode": "AUTHENTICATED_AUTOLAB_PULL__PROTECTED_SOLVE_CAPTURE",
+    "source_repository": "grandchallenge/MATHSOLVE",
+    "protected_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
+    "source_pool_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/SOURCE_POOL_MANIFEST.json",
+    "public_file_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/erdos-3/PUBLIC_FILE_MANIFEST.json",
+    "public_file_manifest_integrity": {
+      "algorithm": "git_blob_sha1",
+      "value": "e04469ac8bcc1748696bf36dd7ce6b00b09d6213"
+    },
+    "public_file_manifest_sha256": "7f1bc988c9eb319df9313d4704c5fe6c5a68a6026cf28e59abb77ee15155c8e8",
+    "stable_content_sha256": "eb031da311061a3551f33ef727c01907ee99e2715f7b4258402d58d0665a63ee",
+    "tree_hash": "0149383772ad4a7c7cc45a434de11be51678a524"
+  },
+  "operative_sources": {
+    "statement_readme": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/erdos-3/PUBLIC_SOURCE/README.md",
+      "git_blob_sha1": "afa17e9cec030a9674c11ffbc12030947e9b7d9d",
+      "sha256": "01340450159675d867105c9790f0e870a183d2cb43403b0c5a88d17711e5907b"
+    },
+    "hill_manifest": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/erdos-3/PUBLIC_SOURCE/hill.yaml",
+      "git_blob_sha1": "203a6e111a793aa35c3b635c6bb289a04048ea1b",
+      "sha256": "9dcdeea5ead3c24e1a4097da20e391266a50022df5aa87bc2cc299a75ea07672"
+    },
+    "evaluator": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/erdos-3/PUBLIC_SOURCE/eval.py",
+      "git_blob_sha1": "feb4ab912167a9fbcff52ce304329fcc235257f2",
+      "sha256": "8a0ac14c62863b6d738b91d311e63f5caa0be608849b761ee238711d9dcdc215"
+    }
+  },
+  "metrics": [
+    {
+      "name": "proved",
+      "direction": "max"
+    }
+  ],
+  "mapping": {
+    "slot_binding": null,
+    "rule": "Exact organizer source is locked, but OM26-H2..H7 correspondence remains unresolved and must be established by a separate protected authority act."
+  },
+  "release": {
+    "source_acquisition_complete": true,
+    "solve_math_release": false,
+    "release_blocker": "PROTECTED_SLOT_BINDING_REQUIRED",
+    "competition_submission_release": false
+  },
+  "claim_boundary": "Source-lock provenance only. This record does not bind an OM26-H2..H7 slot, admit hill-specific mathematics, establish a theorem or novelty claim, authorize competition submission, or create MATHCERT effect."
+}
