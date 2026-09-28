@@ -89,7 +89,7 @@
       "path": "reports/discovery/openmath_2026/hill_source_locks.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "5144d68953e0c3afabc2144cf2c3e3c83c512dfd"
+        "value": "9c236a477a3f44121504c85377b2e777b3b9b758"
       },
       "claim_boundary": "Null hill fields are unresolved and must not be inferred; no hill-specific mathematical work is released by this ledger."
     },
