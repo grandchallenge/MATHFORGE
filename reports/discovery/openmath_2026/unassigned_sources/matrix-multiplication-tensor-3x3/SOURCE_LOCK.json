@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-SOURCE-MATRIX-MULTIPLICATION-TENSOR-3X3",
+  "campaign_id": "OPENMATH-2026",
+  "hill_slot": null,
+  "state": "SOURCE_LOCKED_UNMAPPED",
+  "external_identity": {
+    "provider": "AutoLab",
+    "canonical_id": "alejandrozu/matrix-multiplication-tensor-3x3",
+    "canonical_url": "https://app.autolab.ai/hills/alejandrozu/matrix-multiplication-tensor-3x3",
+    "hill_name": "matrix-multiplication-tensor-3x3",
+    "rendered_title": "3x3 matrix multiplication tensor",
+    "version": "0.1.0",
+    "spec_version": 2
+  },
+  "acquisition": {
+    "mode": "AUTHENTICATED_AUTOLAB_PULL__PROTECTED_SOLVE_CAPTURE",
+    "source_repository": "grandchallenge/MATHSOLVE",
+    "protected_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
+    "source_pool_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/SOURCE_POOL_MANIFEST.json",
+    "public_file_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/matrix-multiplication-tensor-3x3/PUBLIC_FILE_MANIFEST.json",
+    "public_file_manifest_integrity": {
+      "algorithm": "git_blob_sha1",
+      "value": "40cd5a44de504e6c734b243e79ad4138091dcd93"
+    },
+    "public_file_manifest_sha256": "4b235f9d6d1799642f8868bfb11fb133ae6862fe9f5f4d1996442cff2a42a2e4",
+    "stable_content_sha256": "d36b7db4213a9206e949be873a252057dfa3cf6df4f2d775aab12b544992a99f",
+    "tree_hash": null
+  },
+  "operative_sources": {
+    "statement_readme": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/matrix-multiplication-tensor-3x3/PUBLIC_SOURCE/README.md",
+      "git_blob_sha1": "9b70dfece930f033318db4691056b133e8ad6a98",
+      "sha256": "701dd32d8c98edc64d362b69c916845e22cf26d94579c31c32a29b2615007f1f"
+    },
+    "hill_manifest": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/matrix-multiplication-tensor-3x3/PUBLIC_SOURCE/hill.yaml",
+      "git_blob_sha1": "a5ac1c7b4da18ab686a1d362754a49f69d593bba",
+      "sha256": "5dbb1d3354089daf89d1c37312203edce91fe087cf867181f443ebb74a5b1efa"
+    },
+    "evaluator": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/matrix-multiplication-tensor-3x3/PUBLIC_SOURCE/eval.py",
+      "git_blob_sha1": "bc9738b5a02732dda53d835d5adb9c21d0e5f569",
+      "sha256": "40d52cb3a0fdccaf2e1a1feb2cc9d982b803a72a9b1c9cdd3105fcc06f43231e"
+    }
+  },
+  "metrics": [
+    {
+      "name": "rank",
+      "direction": "min"
+    },
+    {
+      "name": "support",
+      "direction": "min"
+    }
+  ],
+  "mapping": {
+    "slot_binding": null,
+    "rule": "Exact organizer source is locked, but OM26-H2..H7 correspondence remains unresolved and must be established by a separate protected authority act."
+  },
+  "release": {
+    "source_acquisition_complete": true,
+    "solve_math_release": false,
+    "release_blocker": "PROTECTED_SLOT_BINDING_REQUIRED",
+    "competition_submission_release": false
+  },
+  "claim_boundary": "Source-lock provenance only. This record does not bind an OM26-H2..H7 slot, admit hill-specific mathematics, establish a theorem or novelty claim, authorize competition submission, or create MATHCERT effect."
+}
