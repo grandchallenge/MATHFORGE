@@ -4,7 +4,7 @@
   "campaign_id": "OPENMATH-2026",
   "hill_slot": "OM26-H1",
   "date": "2026-09-27",
-  "state": "EXTERNAL_BENCHMARK_93__GENERAL_BOUND_95__SIMPLE_BOUND_94_TRANSFER_OPEN",
+  "state": "EXTERNAL_BENCHMARK_93__GENERAL_BOUND_95__RESTRICTED_94_THEOREM_IDENTIFIED__HILL_GLOBAL_94_OPEN",
   "external_context": {
     "n": 18,
     "current_reported_lower_bound": 93,
@@ -13,7 +13,10 @@
     "exact_rational_coefficients_acquired": false,
     "current_source_matched_general_upper_bound": 95,
     "current_oeis_reported_upper_bound": 94,
-    "hill_global_94_proof_state": "UNRESOLVED__SIMPLE_HYPOTHESES_DO_NOT_MATCH_HILL"
+    "hill_global_94_proof_state": "UNRESOLVED__SIMPLE_HYPOTHESES_DO_NOT_MATCH_HILL",
+    "current_bbl_simple_arrangement_upper_bound": 94,
+    "current_blanc_simple_arrangement_upper_bound": 93,
+    "simple_n18_status": "SOURCE_REPORTED_CLOSED_AT_93__NOT_MATHCERT_CERTIFIED"
   },
   "sources": [
     {
@@ -41,7 +44,20 @@
   "search_implications": {
     "primary_target": "RECONSTRUCT_93_AS_RATIONAL_STRAIGHT_LINES",
     "secondary_target": "CONTINUE_INDEPENDENT_EXACT_LOCAL_SEARCH_FROM_86",
-    "bound_target": "SOURCE_OR_PROVE_HILL_VALID_94_BOUND__CURRENT_SOURCE_MATCHED_GENERAL_BOUND_95"
+    "bound_target": "INDEPENDENTLY_REVIEW_RESTRICTED_94_THEOREM_AND_CLOSE_PARALLEL_OR_MANY_MULTIPLE_POINT CASES",
+    "primary_singular_target": "PARALLEL_PRESERVING_OR_MULTIPLE_POINT_SEARCH_FOR_94_OR_95"
   },
-  "claim_boundary": "External reconnaissance and source-scope audit only. Forge admits a source-grounded n=18 interval 93..95. The 94 simple-arrangement/OEIS-reported bound is not yet admitted as a hill-global proved bound because the hill permits degeneracies beyond the cited simple theorem's hypotheses."
+  "claim_boundary": "External source/status reconnaissance only. Current source-grounded unrestricted interval remains 93..95. Blanc's cited simple-arrangement bound is 93 at n=18, so any 94/95 hill witness must be nonsimple. A contemporary restricted theorem gives at most 94 for pairwise-nonparallel arrangements with at most two finite multiple points, but GCL has not independently certified it and it does not cover all hill arrangements.",
+  "contemporary_bound_research": {
+    "repository": "alejandrozu/kobon-proof",
+    "commit": "22d1165f6c455fe45e461baef4410f6d5c78a014",
+    "scope_audit_blob": "5ba2f73df5ca677d5f0d81e82389d90ef9a56aaf",
+    "clean_line_parity_blob": "9cdfd43d3c9d9f47485d4c2a45926bcf22574ab0",
+    "multiplicity_budget_blob": "a2dc06f950e860c0a0a45734e0a77b15ad3b826a",
+    "restricted_even_theorem": "pairwise nonparallel, at most two finite multiple points => T <= floor(n(n-5/2)/3)+1",
+    "n18_consequence": 94,
+    "proof_scope": "PAPER_LEVEL_GLOBAL_GEOMETRY_WITH_FORMALIZED_LOCAL_COMPONENTS__NOT_UNRESTRICTED_LEAN_THEOREM",
+    "blanc_simple_n18_bound": 93,
+    "search_consequence": "ANY_SCORE_94_OR_95_MUST_BE_NONSIMPLE"
+  }
 }
