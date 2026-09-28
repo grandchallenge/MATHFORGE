@@ -213,6 +213,17 @@
         "value": "79a97067d520ea7e7321bd1ccae65919da77f1a4"
       },
       "claim_boundary": "Records externally reported 93 construction and simple-arrangement 94 upper bound with transfer qualification."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-UPPER-BOUND-AUDIT",
+      "kind": "source_scope_audit",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/UPPER_BOUND_AUDIT.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "d104eceb40357f51439e2c691679d174148740f9"
+      },
+      "claim_boundary": "Distinguishes unrestricted proved upper 95 from simple-arrangement theorem 94 and externally reported 94; no hill-global 94 theorem is admitted."
     }
   ],
   "source_records": [
@@ -252,10 +263,11 @@
     },
     {
       "record_id": "OPENMATH-2026-OM26-H1-LITERATURE",
-      "summary": "Current literature reconnaissance records an externally reported straight-line-realizable 93-triangle n=18 construction and a 94 upper bound for simple affine arrangements. The current GCL 86 leader is below that benchmark. Rational coefficients for the 93 target have not been acquired, and transfer of the simple-arrangement bound to the hill's allowed degeneracies remains unaudited.",
+      "summary": "Current literature/status reconnaissance records a 93 construction benchmark, primary unrestricted upper theorem 95, simple-arrangement theorem 94, and current status-report upper 94. The primary proof/transfer chain establishing 94 for the hill's unrestricted degeneracy semantics remains unresolved.",
       "references": [
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_RECONNAISSANCE.md",
-        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json"
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/UPPER_BOUND_AUDIT.md"
       ]
     }
   ],
