@@ -25,9 +25,9 @@ A hill becomes Forge-ready only when an organizer-authoritative AutoLab record o
 
 Until then its slot remains `PENDING_AUTHORITATIVE_ACQUISITION`.
 
-## Six slots
+## Seven slots
 
-The provider reserves `OM26-H1` through `OM26-H6`. They are placeholders for identity only, not claims about content.
+The provider reserves `OM26-H1` through `OM26-H7`. They are placeholders for identity only, not claims about content.
 
 ## Required packet after lock
 
@@ -48,3 +48,7 @@ Shared reconnaissance may inventory formal environments, common libraries, submi
 ## Downstream boundary
 
 A Forge source lock permits MATHSOLVE to organize work. It does not establish mathematical correctness, novelty, semantic fidelity of a future formal artifact, certification, or competition acceptance.
+
+## Human Steward cardinality correction
+
+The sprint cardinality is seven. `OM26-H7` is reserved following the Human Steward correction identifying an additional Erdős problem. That high-level identification is not a source lock: exact H7 organizer identity, statement, evaluator, version, and source metadata remain `PENDING_AUTHORITATIVE_ACQUISITION`.

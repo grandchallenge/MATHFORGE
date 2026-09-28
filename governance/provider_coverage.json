@@ -97,7 +97,7 @@
     },
     {
       "campaign_id": "OPENMATH-2026",
-      "title": "OpenMath 2026 six-hill sprint candidate provider coverage",
+      "title": "OpenMath 2026 seven-hill sprint candidate provider coverage",
       "lifecycle": "candidate",
       "disposition": "manifest",
       "manifest_path": "provider_manifests/OPENMATH-2026.json"

@@ -68,4 +68,4 @@ The line count, input bounds, scoring rule, and evaluator are fixed for a given 
 
 The supplied authenticated render does not expose a separate immutable AutoLab hill-version token. This record therefore binds the exact captured body by Git blob identity. Before any final competition submission, the live hill must be re-read and compared against this capture. The `hills==0.11.0` string above is the package pin in the displayed local-evaluation command; it is not treated as an AutoLab hill-version identifier.
 
-The page sidebar displayed `7 hills`. The Human Steward has clarified that the OpenMath sprint contains six hills and that the displayed seven-count is a typo. This clarification affects campaign cardinality only; it does not alter the mathematical or evaluator semantics of this hill.
+The page sidebar displayed `7 hills`. The Human Steward has corrected the earlier six-hill interpretation: the OpenMath sprint contains seven hills, with an additional Erdős problem. This correction affects campaign cardinality only; it does not alter the mathematical or evaluator semantics of this hill, and it does not source-lock the exact seventh-hill record.

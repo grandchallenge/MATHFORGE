@@ -25,4 +25,4 @@ The authenticated render does not expose an immutable AutoLab hill-version token
 
 ## Campaign cardinality clarification
 
-The rendered sidebar showed `7 hills`; the Human Steward states that the sprint contains six and that the displayed seven-count is a typo. Campaign cardinality remains six. No seventh slot is created.
+The rendered sidebar showed `7 hills`. The Human Steward corrects the earlier interpretation: campaign cardinality is seven, and an additional Erdős problem supplies the seventh slot. This high-level correction reserves `OM26-H7` but does not source-lock its exact organizer identity or statement.
