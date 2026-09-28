@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-H2-H7-SEMANTIC-PACKS",
+  "campaign_id": "OPENMATH-2026",
+  "slot_binding_anchor": "343945512476bd91ed936749f9c4918f0723bff2",
+  "protected_source_capture": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90",
+  "state": "SEMANTIC_PACK_CANDIDATE__SOLVE_RELEASE_FALSE",
+  "triage_date": "2026-09-28",
+  "slots": [
+    {
+      "slot": "OM26-H2",
+      "source_id": "alejandrozu/busy-beaver-6-certificates",
+      "source_map": "reports/discovery/openmath_2026/hills/OM26-H2_BUSY_BEAVER_6_CERTIFICATES/SOURCE_MAP.md",
+      "source_map_blob_sha1": "47d1f0a4b59ecea5c5109cb7558f8f085da8c671",
+      "status_triage": "reports/discovery/openmath_2026/hills/OM26-H2_BUSY_BEAVER_6_CERTIFICATES/STATUS_TRIAGE.md",
+      "status_triage_blob_sha1": "27a567569cf30808b4b544d7e7b365fa2e88de15",
+      "evaluator_contract": "reports/discovery/openmath_2026/hills/OM26-H2_BUSY_BEAVER_6_CERTIFICATES/EVALUATOR_CONTRACT.md",
+      "evaluator_contract_blob_sha1": "d7a8c2f94d9280cea993b8ca3c3215271fde1a7f",
+      "solve_release": false
+    },
+    {
+      "slot": "OM26-H3",
+      "source_id": "alejandrozu/clique-cluster-ramsey-multiplicity",
+      "source_map": "reports/discovery/openmath_2026/hills/OM26-H3_CLIQUE_CLUSTER_RAMSEY_MULTIPLICITY/SOURCE_MAP.md",
+      "source_map_blob_sha1": "f2918272815a7cb349144b897840c49f258b2027",
+      "status_triage": "reports/discovery/openmath_2026/hills/OM26-H3_CLIQUE_CLUSTER_RAMSEY_MULTIPLICITY/STATUS_TRIAGE.md",
+      "status_triage_blob_sha1": "10aa92ca4b70503113d58c37da794c610db29397",
+      "evaluator_contract": "reports/discovery/openmath_2026/hills/OM26-H3_CLIQUE_CLUSTER_RAMSEY_MULTIPLICITY/EVALUATOR_CONTRACT.md",
+      "evaluator_contract_blob_sha1": "06ed01cf4bb74784231961d5527354e1e8a3473a",
+      "solve_release": false
+    },
+    {
+      "slot": "OM26-H4",
+      "source_id": "alejandrozu/collatz-modular-descent",
+      "source_map": "reports/discovery/openmath_2026/hills/OM26-H4_COLLATZ_MODULAR_DESCENT/SOURCE_MAP.md",
+      "source_map_blob_sha1": "fdde21a86224085c4241ed7b073069d067daf876",
+      "status_triage": "reports/discovery/openmath_2026/hills/OM26-H4_COLLATZ_MODULAR_DESCENT/STATUS_TRIAGE.md",
+      "status_triage_blob_sha1": "6e344742aa84fdd8332fd6dd2b31b4b50b896df2",
+      "evaluator_contract": "reports/discovery/openmath_2026/hills/OM26-H4_COLLATZ_MODULAR_DESCENT/EVALUATOR_CONTRACT.md",
+      "evaluator_contract_blob_sha1": "386d98dd7890250d2500ef7611138a6302eb0159",
+      "solve_release": false
+    },
+    {
+      "slot": "OM26-H5",
+      "source_id": "alejandrozu/grothendieck-constant-witnesses",
+      "source_map": "reports/discovery/openmath_2026/hills/OM26-H5_GROTHENDIECK_CONSTANT_WITNESSES/SOURCE_MAP.md",
+      "source_map_blob_sha1": "8e62471b8641de88106ecf00bb5ed1cb957f75f8",
+      "status_triage": "reports/discovery/openmath_2026/hills/OM26-H5_GROTHENDIECK_CONSTANT_WITNESSES/STATUS_TRIAGE.md",
+      "status_triage_blob_sha1": "c3400371533c414ba4217a65d125add49879d085",
+      "evaluator_contract": "reports/discovery/openmath_2026/hills/OM26-H5_GROTHENDIECK_CONSTANT_WITNESSES/EVALUATOR_CONTRACT.md",
+      "evaluator_contract_blob_sha1": "9a87b1b9d3015d68b388aac851173c4d261a2c23",
+      "solve_release": false
+    },
+    {
+      "slot": "OM26-H6",
+      "source_id": "alejandrozu/matrix-multiplication-tensor-3x3",
+      "source_map": "reports/discovery/openmath_2026/hills/OM26-H6_MATRIX_MULTIPLICATION_TENSOR_3X3/SOURCE_MAP.md",
+      "source_map_blob_sha1": "d3ecf211c6d944907a1c07ae591028f84373c866",
+      "status_triage": "reports/discovery/openmath_2026/hills/OM26-H6_MATRIX_MULTIPLICATION_TENSOR_3X3/STATUS_TRIAGE.md",
+      "status_triage_blob_sha1": "ef1393c13ead06be96c06fe34a70519774bceff8",
+      "evaluator_contract": "reports/discovery/openmath_2026/hills/OM26-H6_MATRIX_MULTIPLICATION_TENSOR_3X3/EVALUATOR_CONTRACT.md",
+      "evaluator_contract_blob_sha1": "7c0defbe5478dbafa709fd6c6aa6327d76e3133c",
+      "solve_release": false
+    },
+    {
+      "slot": "OM26-H7",
+      "source_id": "ottogin/erdos-3",
+      "source_map": "reports/discovery/openmath_2026/hills/OM26-H7_ERDOS_3/SOURCE_MAP.md",
+      "source_map_blob_sha1": "cc1210a8718544b038a04748a8df24d3f5bb1505",
+      "status_triage": "reports/discovery/openmath_2026/hills/OM26-H7_ERDOS_3/STATUS_TRIAGE.md",
+      "status_triage_blob_sha1": "3059cf3f7853b949985cdbc206a0f986c2eb6790",
+      "evaluator_contract": "reports/discovery/openmath_2026/hills/OM26-H7_ERDOS_3/EVALUATOR_CONTRACT.md",
+      "evaluator_contract_blob_sha1": "3977015dfc62753da0990913fe797338b83383c6",
+      "solve_release": false
+    }
+  ],
+  "release_gate": "Protect and read back this semantic pack, then perform a separate Solve-release/import act. No candidate branch releases mathematics.",
+  "claim_boundary": "Source-semantic reconstruction only, grounded in protected organizer bytes. No mathematical result, novelty, competition acceptance, or MATHCERT effect."
+}
