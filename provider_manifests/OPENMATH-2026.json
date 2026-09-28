@@ -89,7 +89,7 @@
       "path": "reports/discovery/openmath_2026/hill_source_locks.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "9c236a477a3f44121504c85377b2e777b3b9b758"
+        "value": "5feaf04feeb66ceed8c65310a57293d0634a1d7c"
       },
       "claim_boundary": "Null hill fields are unresolved and must not be inferred; no hill-specific mathematical work is released by this ledger."
     },
@@ -264,8 +264,8 @@
       "ownership": "MATHFORGE",
       "path": "reports/discovery/openmath_2026/SLOT_BINDING.json",
       "integrity": {
-        "algorithm": "PROTECTED_GIT_PATH__BLOB_TO_BE_BOUND",
-        "value": null
+        "algorithm": "git_blob_sha1",
+        "value": "e5eab24f88bf904c5600d9f1c7181d54a89847d8"
       },
       "claim_boundary": "Internal GCL source-to-slot allocation only; no organizer ordinal, mathematical, competition, or certification claim."
     }
