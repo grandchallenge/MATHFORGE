@@ -33,11 +33,11 @@
       "final_submission_blocker": "LIVE_HILL_VERSION_CONCORDANCE_REQUIRED",
       "source_lock_integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "12954171a088468f46214ee1b239d095c43269d0"
+        "value": "7a90cd6eeb54e8e4c5b63c5977e40a1ab5bcaa2c"
       },
       "statement_integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "487a0cd5372c0a721a7541689b6282990fb18ce8"
+        "value": "47e529bce21e76c575c69a26824e182848dceedc"
       }
     },
     {
@@ -136,7 +136,8 @@
   "campaign_count_clarification": {
     "authority": "HUMAN_STEWARD",
     "date": "2026-09-27",
-    "supersedes": "Prior clarification treating the rendered count of 7 as a UI typo and fixing sprint cardinality at six.",
-    "note": "The Human Steward corrects the sprint cardinality to seven. The observed list count of 7 is genuine, and the additional seventh hill is identified at Human-Steward level as an Erdős problem. OM26-H7 is therefore reserved, but its exact organizer hill ID, title, statement, evaluator, version, and other source fields remain null until authoritative acquisition."
+    "prior_state": "The initial campaign state and H1 capture recorded six hills; the Human Steward had classified the sidebar seven-count in that earlier capture as a typo.",
+    "current_state": "The Human Steward now reports seven hills are listed because an additional Erdős problem has been added.",
+    "effect": "Current OPENMATH-2026 cardinality is seven. OM26-H7 is reserved, but its exact organizer hill ID, title, statement, evaluator, version, and other source fields remain null until authoritative acquisition."
   }
 }
