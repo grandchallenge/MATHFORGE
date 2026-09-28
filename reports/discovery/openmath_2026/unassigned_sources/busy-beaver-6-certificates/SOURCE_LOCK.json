@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-SOURCE-BUSY-BEAVER-6-CERTIFICATES",
+  "campaign_id": "OPENMATH-2026",
+  "hill_slot": null,
+  "state": "SOURCE_LOCKED_UNMAPPED",
+  "external_identity": {
+    "provider": "AutoLab",
+    "canonical_id": "alejandrozu/busy-beaver-6-certificates",
+    "canonical_url": "https://app.autolab.ai/hills/alejandrozu/busy-beaver-6-certificates",
+    "hill_name": "busy-beaver-6-certificates",
+    "rendered_title": "Busy Beaver 6 certificates",
+    "version": "0.1.0",
+    "spec_version": 2
+  },
+  "acquisition": {
+    "mode": "AUTHENTICATED_AUTOLAB_PULL__PROTECTED_SOLVE_CAPTURE",
+    "source_repository": "grandchallenge/MATHSOLVE",
+    "protected_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
+    "source_pool_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/SOURCE_POOL_MANIFEST.json",
+    "public_file_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/busy-beaver-6-certificates/PUBLIC_FILE_MANIFEST.json",
+    "public_file_manifest_integrity": {
+      "algorithm": "git_blob_sha1",
+      "value": "132585bd6bb09e5146c96a68fff3273f9c443fc9"
+    },
+    "public_file_manifest_sha256": "76e0782742efd542172ff0d0510fa0977c8bc2a2b2fa9ee83ca9f7803bd082a8",
+    "stable_content_sha256": "9a84c79d17288a1c379fe8c29ef7c815d32f35f67f021451e40155f079e52e8e",
+    "tree_hash": null
+  },
+  "operative_sources": {
+    "statement_readme": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/busy-beaver-6-certificates/PUBLIC_SOURCE/README.md",
+      "git_blob_sha1": "c1813ed2461d79f65013ea7c6df921d7240998bd",
+      "sha256": "9614c01ce936236d58fef96628a0251a6dc3101b9eff0fc1a3d41a30693e4cf2"
+    },
+    "hill_manifest": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/busy-beaver-6-certificates/PUBLIC_SOURCE/hill.yaml",
+      "git_blob_sha1": "79838ec2b90227aeef0f56e4fa1787ef949e2c75",
+      "sha256": "9cb234a0958896eb5d1c4655768a6be2aec86c173a8bedabc0c664f624c96b56"
+    },
+    "evaluator": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/busy-beaver-6-certificates/PUBLIC_SOURCE/eval.py",
+      "git_blob_sha1": "1b956107377f3ac67dc8277164f7db82fbb15744",
+      "sha256": "84ba441b101a61283c0dd5d05960a33cedf8cfe224cc6aae4b308d0a4cc60fc0"
+    }
+  },
+  "metrics": [
+    {
+      "name": "steps",
+      "direction": "max"
+    },
+    {
+      "name": "ones",
+      "direction": "max"
+    },
+    {
+      "name": "tape_span",
+      "direction": "max"
+    }
+  ],
+  "mapping": {
+    "slot_binding": null,
+    "rule": "Exact organizer source is locked, but OM26-H2..H7 correspondence remains unresolved and must be established by a separate protected authority act."
+  },
+  "release": {
+    "source_acquisition_complete": true,
+    "solve_math_release": false,
+    "release_blocker": "PROTECTED_SLOT_BINDING_REQUIRED",
+    "competition_submission_release": false
+  },
+  "claim_boundary": "Source-lock provenance only. This record does not bind an OM26-H2..H7 slot, admit hill-specific mathematics, establish a theorem or novelty claim, authorize competition submission, or create MATHCERT effect."
+}

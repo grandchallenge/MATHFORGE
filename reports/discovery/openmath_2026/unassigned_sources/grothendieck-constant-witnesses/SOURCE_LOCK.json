@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-SOURCE-GROTHENDIECK-CONSTANT-WITNESSES",
+  "campaign_id": "OPENMATH-2026",
+  "hill_slot": null,
+  "state": "SOURCE_LOCKED_UNMAPPED",
+  "external_identity": {
+    "provider": "AutoLab",
+    "canonical_id": "alejandrozu/grothendieck-constant-witnesses",
+    "canonical_url": "https://app.autolab.ai/hills/alejandrozu/grothendieck-constant-witnesses",
+    "hill_name": "grothendieck-constant-witnesses",
+    "rendered_title": "Grothendieck constant witnesses",
+    "version": "0.1.0",
+    "spec_version": 2
+  },
+  "acquisition": {
+    "mode": "AUTHENTICATED_AUTOLAB_PULL__PROTECTED_SOLVE_CAPTURE",
+    "source_repository": "grandchallenge/MATHSOLVE",
+    "protected_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
+    "source_pool_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/SOURCE_POOL_MANIFEST.json",
+    "public_file_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/grothendieck-constant-witnesses/PUBLIC_FILE_MANIFEST.json",
+    "public_file_manifest_integrity": {
+      "algorithm": "git_blob_sha1",
+      "value": "d1b25f2c02e14ec87a38cf679449771cc3c603a2"
+    },
+    "public_file_manifest_sha256": "c3e4dd428d431c904e29f45ffb68c869e06f1b02679c8a79d6b167b9cf47455b",
+    "stable_content_sha256": "84b679f702ab437ed96c4b5c7cf049c2d4e9c0910feed0df77e557ebbc428268",
+    "tree_hash": null
+  },
+  "operative_sources": {
+    "statement_readme": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/grothendieck-constant-witnesses/PUBLIC_SOURCE/README.md",
+      "git_blob_sha1": "3e700d422cfc8cc02cfca7dfbf66a22836da7bcc",
+      "sha256": "5275d35b0c4f194bd48686bca120b3e247beace3f6fef32377c2b217632bcce4"
+    },
+    "hill_manifest": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/grothendieck-constant-witnesses/PUBLIC_SOURCE/hill.yaml",
+      "git_blob_sha1": "af2823c20fbcd12bc284f68f536caf76cba54bb5",
+      "sha256": "2b113b1ec58b4e2862e3ac8dcb72d9d909645159b44d1fcdb676604aa749d477"
+    },
+    "evaluator": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/grothendieck-constant-witnesses/PUBLIC_SOURCE/eval.py",
+      "git_blob_sha1": "b30592c6f8f6de8e2e9210efd3105f8c1321298a",
+      "sha256": "b3728fa8ed1cfdeb57a5de65bff93a4c92e94c0390d23c242b370ea288988a64"
+    }
+  },
+  "metrics": [
+    {
+      "name": "gap_ppm",
+      "direction": "max"
+    },
+    {
+      "name": "matrix_area",
+      "direction": "min"
+    },
+    {
+      "name": "certificate_bits",
+      "direction": "min"
+    }
+  ],
+  "mapping": {
+    "slot_binding": null,
+    "rule": "Exact organizer source is locked, but OM26-H2..H7 correspondence remains unresolved and must be established by a separate protected authority act."
+  },
+  "release": {
+    "source_acquisition_complete": true,
+    "solve_math_release": false,
+    "release_blocker": "PROTECTED_SLOT_BINDING_REQUIRED",
+    "competition_submission_release": false
+  },
+  "claim_boundary": "Source-lock provenance only. This record does not bind an OM26-H2..H7 slot, admit hill-specific mathematics, establish a theorem or novelty claim, authorize competition submission, or create MATHCERT effect."
+}

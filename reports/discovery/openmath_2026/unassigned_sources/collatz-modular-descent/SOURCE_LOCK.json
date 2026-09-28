@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-SOURCE-COLLATZ-MODULAR-DESCENT",
+  "campaign_id": "OPENMATH-2026",
+  "hill_slot": null,
+  "state": "SOURCE_LOCKED_UNMAPPED",
+  "external_identity": {
+    "provider": "AutoLab",
+    "canonical_id": "alejandrozu/collatz-modular-descent",
+    "canonical_url": "https://app.autolab.ai/hills/alejandrozu/collatz-modular-descent",
+    "hill_name": "collatz-modular-descent",
+    "rendered_title": "Collatz modular descent",
+    "version": "0.1.0",
+    "spec_version": 2
+  },
+  "acquisition": {
+    "mode": "AUTHENTICATED_AUTOLAB_PULL__PROTECTED_SOLVE_CAPTURE",
+    "source_repository": "grandchallenge/MATHSOLVE",
+    "protected_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
+    "source_pool_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/SOURCE_POOL_MANIFEST.json",
+    "public_file_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/collatz-modular-descent/PUBLIC_FILE_MANIFEST.json",
+    "public_file_manifest_integrity": {
+      "algorithm": "git_blob_sha1",
+      "value": "4adb4fa46c996568273c664bc6c2d055ae43380f"
+    },
+    "public_file_manifest_sha256": "7642b77042784e336b5aae5b1b9f8a4d5156105b4489975c7cf3d27fea605201",
+    "stable_content_sha256": "00b0502067d549bad43929761a33d79281ea8b0c314320f1778b40a345e33a02",
+    "tree_hash": null
+  },
+  "operative_sources": {
+    "statement_readme": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/collatz-modular-descent/PUBLIC_SOURCE/README.md",
+      "git_blob_sha1": "37621383047e52ee39281fc3d692f0e17af48f5d",
+      "sha256": "b69518e01d211db5207b64702d4fbec6dde637aae25aff8064944c9c43816a1f"
+    },
+    "hill_manifest": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/collatz-modular-descent/PUBLIC_SOURCE/hill.yaml",
+      "git_blob_sha1": "d57dbda3b2af225ca686027e9ebc0798b1be7bdd",
+      "sha256": "8bb1ca9c3fbe88b70ed11b7bf065526386bfa3b51f41685a16f6fd582148bad3"
+    },
+    "evaluator": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/collatz-modular-descent/PUBLIC_SOURCE/eval.py",
+      "git_blob_sha1": "3de53b603afe94f74c7b2052f95eaeb613587b20",
+      "sha256": "a501ef967049190906f0b6499bcb0bd219e0b2e8e3b1aeec5dc2f6d1731ee671"
+    }
+  },
+  "metrics": [
+    {
+      "name": "coverage_ppm",
+      "direction": "max"
+    },
+    {
+      "name": "min_descent_ppm",
+      "direction": "max"
+    },
+    {
+      "name": "rule_count",
+      "direction": "min"
+    }
+  ],
+  "mapping": {
+    "slot_binding": null,
+    "rule": "Exact organizer source is locked, but OM26-H2..H7 correspondence remains unresolved and must be established by a separate protected authority act."
+  },
+  "release": {
+    "source_acquisition_complete": true,
+    "solve_math_release": false,
+    "release_blocker": "PROTECTED_SLOT_BINDING_REQUIRED",
+    "competition_submission_release": false
+  },
+  "claim_boundary": "Source-lock provenance only. This record does not bind an OM26-H2..H7 slot, admit hill-specific mathematics, establish a theorem or novelty claim, authorize competition submission, or create MATHCERT effect."
+}
