@@ -242,7 +242,8 @@
       "ownership": "MATHFORGE",
       "path": "reports/discovery/openmath_2026/HANDBOOK_INTAKE.md",
       "integrity": {
-        "algorithm": "git_blob_sha1"
+        "algorithm": "git_blob_sha1",
+        "value": "6d8e2fdc81207b566b826f36b451be77ac4b66cc"
       },
       "claim_boundary": "Authoritative handbook URL and organizer-page rules context only; exact PDF bytes remain pending and this record does not source-lock any unresolved hill."
     }
