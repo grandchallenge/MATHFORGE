@@ -210,7 +210,7 @@
       "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "bd03b0828f8cb7ef6ad085f0f5baf8d3cd491771"
+        "value": "b3020eaa98731a74edfa42efc27af90212178807"
       },
       "claim_boundary": "Records externally reported 93 construction and simple-arrangement 94 upper bound with transfer qualification."
     },
@@ -224,6 +224,17 @@
         "value": "4007f975e74691a7c3233e671230327551f1777a"
       },
       "claim_boundary": "Source-scope audit only: records general bound 95 and simple bound 94 with hypothesis separation; no certification or optimality claim."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-OM26-H1-CONTEMPORARY-BOUND-RECON",
+      "kind": "external_research_reconnaissance",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/CONTEMPORARY_BOUND_RECON.md",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "07fb1787016632668c3b126109f2f64079dbb68b"
+      },
+      "claim_boundary": "External proof-scope reconnaissance only; no hill-global upper-bound or certification claim."
     }
   ],
   "source_records": [
@@ -263,11 +274,12 @@
     },
     {
       "record_id": "OPENMATH-2026-OM26-H1-LITERATURE",
-      "summary": "Current source audit records a straight-line-realizable 93 benchmark, a Clément–Bader general n=18 upper bound 95 that explicitly treats multiple intersections/common-side triangles, and a stronger Bartholdi–Blanc–Loisel simple-arrangement bound 94 whose hypotheses do not directly match the hill. OEIS reports 94, but a hill-global 94 proof remains unresolved.",
+      "summary": "Source audit now includes contemporary alejandrozu/kobon-proof work: unrestricted source-grounded n=18 interval remains 93..95; a paper-level theorem narrows pairwise-nonparallel arrangements with at most two finite multiple points to at most 94. Hill-global 94 remains open because parallel and richer multiple-point strata are not covered.",
       "references": [
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_RECONNAISSANCE.md",
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/LITERATURE_STATUS.json",
-        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/GENERAL_BOUND_AUDIT.md"
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/GENERAL_BOUND_AUDIT.md",
+        "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/CONTEMPORARY_BOUND_RECON.md"
       ]
     }
   ],
@@ -300,7 +312,8 @@
       "9df7eb5ee651bfd2808c7fef27971383aa9b023e",
       "56b2c5aba769995fd1cb02a58ee25f757cc990c8",
       "73f1890387eec56eb6be31f8c00f10b6a5a56383",
-      "9e00c45fd665546b813f9234314a63eddbec854d"
+      "9e00c45fd665546b813f9234314a63eddbec854d",
+      "9eb438b658000f299240940d4468d7eb52ed1e11"
     ]
   },
   "downstream_references": {
