@@ -246,6 +246,17 @@
         "value": "6d8e2fdc81207b566b826f36b451be77ac4b66cc"
       },
       "claim_boundary": "Authoritative handbook URL and organizer-page rules context only; exact PDF bytes remain pending and this record does not source-lock any unresolved hill."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-UNASSIGNED-SOURCE-POOL",
+      "kind": "source_lock_pool",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
+      "integrity": {
+        "algorithm": "PROTECTED_GIT_PATH__BLOB_TO_BE_BOUND_AT_MERGE",
+        "value": null
+      },
+      "claim_boundary": "Six exact organizer sources are content-locked but remain unmapped to OM26-H2..H7; no mathematical release follows."
     }
   ],
   "source_records": [
@@ -274,6 +285,15 @@
         "https://rsihouse.ai/openmath",
         "reports/discovery/openmath_2026/HANDBOOK_INTAKE.md"
       ]
+    },
+    {
+      "record_id": "OPENMATH-2026-UNASSIGNED-SOURCE-POOL",
+      "summary": "Authenticated AutoLab acquisition now content-locks the six unresolved organizer hill sources by exact ID and protected public source manifests. Slot correspondence remains a separate unresolved authority act.",
+      "references": [
+        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
+        "reports/discovery/openmath_2026/hill_source_locks.json",
+        "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90"
+      ]
     }
   ],
   "status_records": [
@@ -301,6 +321,14 @@
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/GENERAL_BOUND_AUDIT.md",
         "reports/discovery/openmath_2026/hills/OM26-H1_KOBON_TRIANGLES/CONTEMPORARY_BOUND_RECON.md"
       ]
+    },
+    {
+      "record_id": "OPENMATH-2026-H2-H7-SOURCE-STATUS",
+      "summary": "OM26-H2 through OM26-H7 are no longer blocked on source acquisition. Six exact source locks exist as an unassigned pool; all six slots remain blocked on protected source-to-slot correspondence.",
+      "references": [
+        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
     }
   ],
   "fixtures": [],
@@ -316,10 +344,10 @@
   ],
   "provider_debt": [
     {
-      "record_id": "OPENMATH-2026-HILL-BODIES",
-      "summary": "Acquire exact organizer-authoritative records for the remaining six hills. OM26-H1 Kobon triangles is source-locked for Solve research; its final competition submission additionally requires a live hill/version concordance check.",
+      "record_id": "OPENMATH-2026-H2-H7-SLOT-BINDING",
+      "summary": "Six unresolved organizer hill bodies are now source-locked by exact ID. Establish protected one-to-one correspondence between those six locks and OM26-H2..H7 before Solve mathematical release.",
       "references": [
-        "grandchallenge/MATHFORGE#282",
+        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ]
     },
