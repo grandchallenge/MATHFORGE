@@ -42,108 +42,198 @@
     },
     {
       "slot": "OM26-H2",
-      "state": "PENDING_PROTECTED_SLOT_BINDING",
-      "autolab_hill_id": null,
-      "title": null,
-      "exact_statement": null,
-      "external_version": null,
+      "state": "SOURCE_LOCKED_SLOT_BOUND__SEMANTIC_PACK_PENDING",
+      "autolab_hill_id": "alejandrozu/busy-beaver-6-certificates",
+      "title": "Busy Beaver 6 certificates",
+      "exact_statement": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/busy-beaver-6-certificates/PUBLIC_SOURCE/README.md",
+      "external_version": "0.1.0",
       "ulam_or_unsolvedmath_id": null,
       "difficulty": null,
-      "primary_sources": [],
-      "status_triage": null,
-      "evaluator_or_checker": null,
-      "acquired_evidence": [
-        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json"
+      "primary_sources": [
+        "https://app.autolab.ai/hills/alejandrozu/busy-beaver-6-certificates",
+        "reports/discovery/openmath_2026/unassigned_sources/busy-beaver-6-certificates/SOURCE_LOCK.json",
+        "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/busy-beaver-6-certificates/PUBLIC_SOURCE/README.md"
       ],
-      "solve_release": false
+      "status_triage": null,
+      "evaluator_or_checker": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/busy-beaver-6-certificates/PUBLIC_SOURCE/eval.py",
+      "acquired_evidence": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/unassigned_sources/busy-beaver-6-certificates/SOURCE_LOCK.json"
+      ],
+      "solve_release": false,
+      "solve_release_blocker": "SEMANTIC_SOURCE_MAP_AND_STATUS_TRIAGE_REQUIRED",
+      "final_submission_release": false,
+      "source_lock_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "d590cf562f562a81df64d403ff5d9aa01e25626c"
+      },
+      "statement_integrity": {
+        "algorithm": "sha256",
+        "value": "9614c01ce936236d58fef96628a0251a6dc3101b9eff0fc1a3d41a30693e4cf2"
+      }
     },
     {
       "slot": "OM26-H3",
-      "state": "PENDING_PROTECTED_SLOT_BINDING",
-      "autolab_hill_id": null,
-      "title": null,
-      "exact_statement": null,
-      "external_version": null,
+      "state": "SOURCE_LOCKED_SLOT_BOUND__SEMANTIC_PACK_PENDING",
+      "autolab_hill_id": "alejandrozu/clique-cluster-ramsey-multiplicity",
+      "title": "Clique-cluster Ramsey multiplicity",
+      "exact_statement": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/clique-cluster-ramsey-multiplicity/PUBLIC_SOURCE/README.md",
+      "external_version": "1.0.0",
       "ulam_or_unsolvedmath_id": null,
       "difficulty": null,
-      "primary_sources": [],
-      "status_triage": null,
-      "evaluator_or_checker": null,
-      "acquired_evidence": [
-        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json"
+      "primary_sources": [
+        "https://app.autolab.ai/hills/alejandrozu/clique-cluster-ramsey-multiplicity",
+        "reports/discovery/openmath_2026/unassigned_sources/clique-cluster-ramsey-multiplicity/SOURCE_LOCK.json",
+        "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/clique-cluster-ramsey-multiplicity/PUBLIC_SOURCE/README.md"
       ],
-      "solve_release": false
+      "status_triage": null,
+      "evaluator_or_checker": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/clique-cluster-ramsey-multiplicity/PUBLIC_SOURCE/eval.py",
+      "acquired_evidence": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/unassigned_sources/clique-cluster-ramsey-multiplicity/SOURCE_LOCK.json"
+      ],
+      "solve_release": false,
+      "solve_release_blocker": "SEMANTIC_SOURCE_MAP_AND_STATUS_TRIAGE_REQUIRED",
+      "final_submission_release": false,
+      "source_lock_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "11d2a15fac721495bc0cc9b7f638a364ad55a719"
+      },
+      "statement_integrity": {
+        "algorithm": "sha256",
+        "value": "201d781e16ab9ef651f796c238518306c3fefcd16c3de11c213bdbec8c8a7142"
+      }
     },
     {
       "slot": "OM26-H4",
-      "state": "PENDING_PROTECTED_SLOT_BINDING",
-      "autolab_hill_id": null,
-      "title": null,
-      "exact_statement": null,
-      "external_version": null,
+      "state": "SOURCE_LOCKED_SLOT_BOUND__SEMANTIC_PACK_PENDING",
+      "autolab_hill_id": "alejandrozu/collatz-modular-descent",
+      "title": "Collatz modular descent",
+      "exact_statement": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/collatz-modular-descent/PUBLIC_SOURCE/README.md",
+      "external_version": "0.1.0",
       "ulam_or_unsolvedmath_id": null,
       "difficulty": null,
-      "primary_sources": [],
-      "status_triage": null,
-      "evaluator_or_checker": null,
-      "acquired_evidence": [
-        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json"
+      "primary_sources": [
+        "https://app.autolab.ai/hills/alejandrozu/collatz-modular-descent",
+        "reports/discovery/openmath_2026/unassigned_sources/collatz-modular-descent/SOURCE_LOCK.json",
+        "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/collatz-modular-descent/PUBLIC_SOURCE/README.md"
       ],
-      "solve_release": false
+      "status_triage": null,
+      "evaluator_or_checker": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/collatz-modular-descent/PUBLIC_SOURCE/eval.py",
+      "acquired_evidence": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/unassigned_sources/collatz-modular-descent/SOURCE_LOCK.json"
+      ],
+      "solve_release": false,
+      "solve_release_blocker": "SEMANTIC_SOURCE_MAP_AND_STATUS_TRIAGE_REQUIRED",
+      "final_submission_release": false,
+      "source_lock_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "4ec9e0cdad3bc572b4577809d0323f9c670a379c"
+      },
+      "statement_integrity": {
+        "algorithm": "sha256",
+        "value": "b69518e01d211db5207b64702d4fbec6dde637aae25aff8064944c9c43816a1f"
+      }
     },
     {
       "slot": "OM26-H5",
-      "state": "PENDING_PROTECTED_SLOT_BINDING",
-      "autolab_hill_id": null,
-      "title": null,
-      "exact_statement": null,
-      "external_version": null,
+      "state": "SOURCE_LOCKED_SLOT_BOUND__SEMANTIC_PACK_PENDING",
+      "autolab_hill_id": "alejandrozu/grothendieck-constant-witnesses",
+      "title": "Grothendieck constant witnesses",
+      "exact_statement": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/grothendieck-constant-witnesses/PUBLIC_SOURCE/README.md",
+      "external_version": "0.1.0",
       "ulam_or_unsolvedmath_id": null,
       "difficulty": null,
-      "primary_sources": [],
-      "status_triage": null,
-      "evaluator_or_checker": null,
-      "acquired_evidence": [
-        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json"
+      "primary_sources": [
+        "https://app.autolab.ai/hills/alejandrozu/grothendieck-constant-witnesses",
+        "reports/discovery/openmath_2026/unassigned_sources/grothendieck-constant-witnesses/SOURCE_LOCK.json",
+        "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/grothendieck-constant-witnesses/PUBLIC_SOURCE/README.md"
       ],
-      "solve_release": false
+      "status_triage": null,
+      "evaluator_or_checker": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/grothendieck-constant-witnesses/PUBLIC_SOURCE/eval.py",
+      "acquired_evidence": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/unassigned_sources/grothendieck-constant-witnesses/SOURCE_LOCK.json"
+      ],
+      "solve_release": false,
+      "solve_release_blocker": "SEMANTIC_SOURCE_MAP_AND_STATUS_TRIAGE_REQUIRED",
+      "final_submission_release": false,
+      "source_lock_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "c5c72c4b00fdf1d12eafa6673ed0752a76d66a26"
+      },
+      "statement_integrity": {
+        "algorithm": "sha256",
+        "value": "5275d35b0c4f194bd48686bca120b3e247beace3f6fef32377c2b217632bcce4"
+      }
     },
     {
       "slot": "OM26-H6",
-      "state": "PENDING_PROTECTED_SLOT_BINDING",
-      "autolab_hill_id": null,
-      "title": null,
-      "exact_statement": null,
-      "external_version": null,
+      "state": "SOURCE_LOCKED_SLOT_BOUND__SEMANTIC_PACK_PENDING",
+      "autolab_hill_id": "alejandrozu/matrix-multiplication-tensor-3x3",
+      "title": "3x3 matrix multiplication tensor",
+      "exact_statement": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/matrix-multiplication-tensor-3x3/PUBLIC_SOURCE/README.md",
+      "external_version": "0.1.0",
       "ulam_or_unsolvedmath_id": null,
       "difficulty": null,
-      "primary_sources": [],
-      "status_triage": null,
-      "evaluator_or_checker": null,
-      "acquired_evidence": [
-        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json"
+      "primary_sources": [
+        "https://app.autolab.ai/hills/alejandrozu/matrix-multiplication-tensor-3x3",
+        "reports/discovery/openmath_2026/unassigned_sources/matrix-multiplication-tensor-3x3/SOURCE_LOCK.json",
+        "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/matrix-multiplication-tensor-3x3/PUBLIC_SOURCE/README.md"
       ],
-      "solve_release": false
+      "status_triage": null,
+      "evaluator_or_checker": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/matrix-multiplication-tensor-3x3/PUBLIC_SOURCE/eval.py",
+      "acquired_evidence": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/unassigned_sources/matrix-multiplication-tensor-3x3/SOURCE_LOCK.json"
+      ],
+      "solve_release": false,
+      "solve_release_blocker": "SEMANTIC_SOURCE_MAP_AND_STATUS_TRIAGE_REQUIRED",
+      "final_submission_release": false,
+      "source_lock_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "a7ec3fc86696698ba729632ae16397e05189221b"
+      },
+      "statement_integrity": {
+        "algorithm": "sha256",
+        "value": "701dd32d8c98edc64d362b69c916845e22cf26d94579c31c32a29b2615007f1f"
+      }
     },
     {
       "slot": "OM26-H7",
-      "state": "PENDING_PROTECTED_SLOT_BINDING",
-      "autolab_hill_id": null,
-      "title": null,
-      "exact_statement": null,
-      "external_version": null,
+      "state": "SOURCE_LOCKED_SLOT_BOUND__SEMANTIC_PACK_PENDING",
+      "autolab_hill_id": "ottogin/erdos-3",
+      "title": "Erdős Problem 3",
+      "exact_statement": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/erdos-3/PUBLIC_SOURCE/README.md",
+      "external_version": "0.1.0",
       "ulam_or_unsolvedmath_id": null,
       "difficulty": null,
-      "primary_sources": [],
-      "status_triage": null,
-      "evaluator_or_checker": null,
-      "acquired_evidence": [
-        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json"
+      "primary_sources": [
+        "https://app.autolab.ai/hills/ottogin/erdos-3",
+        "reports/discovery/openmath_2026/unassigned_sources/erdos-3/SOURCE_LOCK.json",
+        "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/erdos-3/PUBLIC_SOURCE/README.md"
       ],
-      "solve_release": false
+      "status_triage": null,
+      "evaluator_or_checker": "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90:work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/erdos-3/PUBLIC_SOURCE/eval.py",
+      "acquired_evidence": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/unassigned_sources/erdos-3/SOURCE_LOCK.json"
+      ],
+      "solve_release": false,
+      "solve_release_blocker": "SEMANTIC_SOURCE_MAP_AND_STATUS_TRIAGE_REQUIRED",
+      "final_submission_release": false,
+      "source_lock_integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "2e3551cf7be57f1920382296bbb0d6ebea4379d6"
+      },
+      "statement_integrity": {
+        "algorithm": "sha256",
+        "value": "01340450159675d867105c9790f0e870a183d2cb43403b0c5a88d17711e5907b"
+      }
     }
   ],
-  "claim_boundary": "This ledger reserves exactly seven source-lock slots. OM26-H1 remains source-locked and released for Solve research. The six remaining organizer sources are now content-locked as an unassigned pool, while OM26-H2 through OM26-H7 await a separate protected slot-binding act and remain unreleased for hill-specific mathematics.",
+  "claim_boundary": "All seven campaign slots now have exact source identities. H1 remains released for Solve research. H2-H7 are source-locked and slot-bound but remain unreleased for hill-specific mathematics until per-slot semantic source maps and dated status triage are protected and read back.",
   "campaign_hill_count": 7,
   "campaign_count_clarification": {
     "authority": "HUMAN_STEWARD",
@@ -153,10 +243,11 @@
     "effect": "Current OPENMATH-2026 cardinality is seven. OM26-H7 is reserved, but its exact organizer hill ID, title, statement, evaluator, version, and other source fields remain null until authoritative acquisition."
   },
   "unassigned_source_pool": {
-    "state": "SOURCE_POOL_LOCKED__SLOT_MAPPING_PENDING",
+    "state": "SOURCE_POOL_LOCKED__SLOT_MAPPING_COMPLETE",
     "ledger": "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
     "source_count": 6,
     "protected_solve_capture_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
-    "rule": "Each exact source is content-locked, but no H2-H7 source correspondence is inferred."
+    "rule": "Six exact source locks are bound one-to-one to H2-H7 by protected GCL internal deterministic allocation; organizer ordinal meaning is not asserted.",
+    "slot_binding": "reports/discovery/openmath_2026/SLOT_BINDING.json"
   }
 }
