@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-SOURCE-CLIQUE-CLUSTER-RAMSEY-MULTIPLICITY",
+  "campaign_id": "OPENMATH-2026",
+  "hill_slot": null,
+  "state": "SOURCE_LOCKED_UNMAPPED",
+  "external_identity": {
+    "provider": "AutoLab",
+    "canonical_id": "alejandrozu/clique-cluster-ramsey-multiplicity",
+    "canonical_url": "https://app.autolab.ai/hills/alejandrozu/clique-cluster-ramsey-multiplicity",
+    "hill_name": "clique-cluster-ramsey-multiplicity",
+    "rendered_title": "Clique-cluster Ramsey multiplicity",
+    "version": "1.0.0",
+    "spec_version": 2
+  },
+  "acquisition": {
+    "mode": "AUTHENTICATED_AUTOLAB_PULL__PROTECTED_SOLVE_CAPTURE",
+    "source_repository": "grandchallenge/MATHSOLVE",
+    "protected_commit": "4ab1f45089ff6be6f70772d0441fe88afd930f90",
+    "source_pool_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/SOURCE_POOL_MANIFEST.json",
+    "public_file_manifest": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/clique-cluster-ramsey-multiplicity/PUBLIC_FILE_MANIFEST.json",
+    "public_file_manifest_integrity": {
+      "algorithm": "git_blob_sha1",
+      "value": "3596df7b9c436ae93966ebb0fd107173fdb3ddf1"
+    },
+    "public_file_manifest_sha256": "9bfbc06cb77c2cffaebcc600e85b1d0d2468427fadc7dfa2064bbc4fb7193a67",
+    "stable_content_sha256": "2cf4844325a850cbef91544d1d65f5ee23ccee2b5fd0dcf691f8659a56699b64",
+    "tree_hash": null
+  },
+  "operative_sources": {
+    "statement_readme": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/clique-cluster-ramsey-multiplicity/PUBLIC_SOURCE/README.md",
+      "git_blob_sha1": "9d80242d004ced72be930e4f60f58056a9d0e040",
+      "sha256": "201d781e16ab9ef651f796c238518306c3fefcd16c3de11c213bdbec8c8a7142"
+    },
+    "hill_manifest": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/clique-cluster-ramsey-multiplicity/PUBLIC_SOURCE/hill.yaml",
+      "git_blob_sha1": "7e31348f53b41dcce68fa2c54e4bf629a5b50fe5",
+      "sha256": "1c30b4a60ea56ddcf27f4bba3d3426c36a23bc3bacee2b05dbee8bde64f8773d"
+    },
+    "evaluator": {
+      "path": "work_packages/OPENMATH_2026/AUTHORITATIVE_SOURCE_POOL/clique-cluster-ramsey-multiplicity/PUBLIC_SOURCE/eval.py",
+      "git_blob_sha1": "88d045233c27ceda838ebb2ddec283a0dcc39394",
+      "sha256": "39932af840c4cd822b43be9383fb850b692635787a05562a01ae23363776697f"
+    }
+  },
+  "metrics": [
+    {
+      "name": "reference_beaten",
+      "direction": "max"
+    },
+    {
+      "name": "density_ppt",
+      "direction": "min"
+    }
+  ],
+  "mapping": {
+    "slot_binding": null,
+    "rule": "Exact organizer source is locked, but OM26-H2..H7 correspondence remains unresolved and must be established by a separate protected authority act."
+  },
+  "release": {
+    "source_acquisition_complete": true,
+    "solve_math_release": false,
+    "release_blocker": "PROTECTED_SLOT_BINDING_REQUIRED",
+    "competition_submission_release": false
+  },
+  "claim_boundary": "Source-lock provenance only. This record does not bind an OM26-H2..H7 slot, admit hill-specific mathematics, establish a theorem or novelty claim, authorize competition submission, or create MATHCERT effect."
+}
