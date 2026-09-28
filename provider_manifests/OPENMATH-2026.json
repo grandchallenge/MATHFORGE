@@ -89,7 +89,7 @@
       "path": "reports/discovery/openmath_2026/hill_source_locks.json",
       "integrity": {
         "algorithm": "git_blob_sha1",
-        "value": "9c236a477a3f44121504c85377b2e777b3b9b758"
+        "value": "5feaf04feeb66ceed8c65310a57293d0634a1d7c"
       },
       "claim_boundary": "Null hill fields are unresolved and must not be inferred; no hill-specific mathematical work is released by this ledger."
     },
@@ -257,6 +257,17 @@
         "value": "9534f4aa456d1da6ae285c0fcb83a93403922837"
       },
       "claim_boundary": "Six exact organizer sources are content-locked but remain unmapped to OM26-H2..H7; no mathematical release follows."
+    },
+    {
+      "artifact_id": "OPENMATH-2026-H2-H7-SLOT-BINDING",
+      "kind": "campaign_slot_binding",
+      "ownership": "MATHFORGE",
+      "path": "reports/discovery/openmath_2026/SLOT_BINDING.json",
+      "integrity": {
+        "algorithm": "git_blob_sha1",
+        "value": "e5eab24f88bf904c5600d9f1c7181d54a89847d8"
+      },
+      "claim_boundary": "Internal GCL source-to-slot allocation only; no organizer ordinal, mathematical, competition, or certification claim."
     }
   ],
   "source_records": [
@@ -294,6 +305,14 @@
         "reports/discovery/openmath_2026/hill_source_locks.json",
         "grandchallenge/MATHSOLVE@4ab1f45089ff6be6f70772d0441fe88afd930f90"
       ]
+    },
+    {
+      "record_id": "OPENMATH-2026-H2-H7-SLOT-BINDING",
+      "summary": "Six protected exact source locks are assigned one-to-one to OM26-H2..H7 by a deterministic GCL internal allocation rule independent of organizer-list position.",
+      "references": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
     }
   ],
   "status_records": [
@@ -329,6 +348,14 @@
         "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ]
+    },
+    {
+      "record_id": "OPENMATH-2026-H2-H7-BINDING-STATUS",
+      "summary": "OM26-H2..H7 now have exact source identities and protected source locks. Mathematical release remains blocked on per-slot semantic source map, dated status triage, and protected readback.",
+      "references": [
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
+        "reports/discovery/openmath_2026/hill_source_locks.json"
+      ]
     }
   ],
   "fixtures": [],
@@ -344,10 +371,10 @@
   ],
   "provider_debt": [
     {
-      "record_id": "OPENMATH-2026-H2-H7-SLOT-BINDING",
-      "summary": "Six unresolved organizer hill bodies are now source-locked by exact ID. Establish protected one-to-one correspondence between those six locks and OM26-H2..H7 before Solve mathematical release.",
+      "record_id": "OPENMATH-2026-H2-H7-SEMANTIC-PACKS",
+      "summary": "Create per-slot semantic source maps and dated status triage for OM26-H2..H7, bind evaluator/checker semantics, protect and read back before Solve mathematical release.",
       "references": [
-        "reports/discovery/openmath_2026/unassigned_sources/SOURCE_POOL_LOCKS.json",
+        "reports/discovery/openmath_2026/SLOT_BINDING.json",
         "reports/discovery/openmath_2026/hill_source_locks.json"
       ]
     },

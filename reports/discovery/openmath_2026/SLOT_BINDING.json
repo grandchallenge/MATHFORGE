@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENMATH-2026-H2-H7-SLOT-BINDING",
+  "campaign_id": "OPENMATH-2026",
+  "state": "PROTECTED_BINDING_CANDIDATE",
+  "authority": {
+    "allocator": "GCL_DISPATCH_CONTROLLER",
+    "policy_source": "grandchallenge/MATHSOLVE:.gcl/campaigns/OPENMATH-2026/CEX_ASSIGNMENTS.json",
+    "rule": "GCL dispatch/controller may allocate free OM26-H2..H7 slots through protected repository mutation after exact MATHFORGE source locks exist."
+  },
+  "allocation_rule": {
+    "kind": "GCL_INTERNAL_DETERMINISTIC_ALLOCATION",
+    "procedure": "Sort the six canonical source_id strings lexicographically and map them one-to-one to free slots OM26-H2 through OM26-H7 in ascending slot order.",
+    "organizer_semantics_claimed": false,
+    "organizer_list_position_used": false,
+    "rationale": "Slots H2-H7 are internal GCL campaign identifiers. This allocation creates a stable one-to-one campaign binding and does not claim historical or organizer ordinal meaning."
+  },
+  "forge_source_lock_anchor": "d20529a14d29a78d873420dba0552fea077cb32f",
+  "bindings": [
+    {
+      "slot": "OM26-H2",
+      "source_id": "alejandrozu/busy-beaver-6-certificates",
+      "source_lock": "reports/discovery/openmath_2026/unassigned_sources/busy-beaver-6-certificates/SOURCE_LOCK.json",
+      "source_lock_blob_sha1": "d590cf562f562a81df64d403ff5d9aa01e25626c",
+      "title": "Busy Beaver 6 certificates",
+      "version": "0.1.0",
+      "statement_sha256": "9614c01ce936236d58fef96628a0251a6dc3101b9eff0fc1a3d41a30693e4cf2"
+    },
+    {
+      "slot": "OM26-H3",
+      "source_id": "alejandrozu/clique-cluster-ramsey-multiplicity",
+      "source_lock": "reports/discovery/openmath_2026/unassigned_sources/clique-cluster-ramsey-multiplicity/SOURCE_LOCK.json",
+      "source_lock_blob_sha1": "11d2a15fac721495bc0cc9b7f638a364ad55a719",
+      "title": "Clique-cluster Ramsey multiplicity",
+      "version": "1.0.0",
+      "statement_sha256": "201d781e16ab9ef651f796c238518306c3fefcd16c3de11c213bdbec8c8a7142"
+    },
+    {
+      "slot": "OM26-H4",
+      "source_id": "alejandrozu/collatz-modular-descent",
+      "source_lock": "reports/discovery/openmath_2026/unassigned_sources/collatz-modular-descent/SOURCE_LOCK.json",
+      "source_lock_blob_sha1": "4ec9e0cdad3bc572b4577809d0323f9c670a379c",
+      "title": "Collatz modular descent",
+      "version": "0.1.0",
+      "statement_sha256": "b69518e01d211db5207b64702d4fbec6dde637aae25aff8064944c9c43816a1f"
+    },
+    {
+      "slot": "OM26-H5",
+      "source_id": "alejandrozu/grothendieck-constant-witnesses",
+      "source_lock": "reports/discovery/openmath_2026/unassigned_sources/grothendieck-constant-witnesses/SOURCE_LOCK.json",
+      "source_lock_blob_sha1": "c5c72c4b00fdf1d12eafa6673ed0752a76d66a26",
+      "title": "Grothendieck constant witnesses",
+      "version": "0.1.0",
+      "statement_sha256": "5275d35b0c4f194bd48686bca120b3e247beace3f6fef32377c2b217632bcce4"
+    },
+    {
+      "slot": "OM26-H6",
+      "source_id": "alejandrozu/matrix-multiplication-tensor-3x3",
+      "source_lock": "reports/discovery/openmath_2026/unassigned_sources/matrix-multiplication-tensor-3x3/SOURCE_LOCK.json",
+      "source_lock_blob_sha1": "a7ec3fc86696698ba729632ae16397e05189221b",
+      "title": "3x3 matrix multiplication tensor",
+      "version": "0.1.0",
+      "statement_sha256": "701dd32d8c98edc64d362b69c916845e22cf26d94579c31c32a29b2615007f1f"
+    },
+    {
+      "slot": "OM26-H7",
+      "source_id": "ottogin/erdos-3",
+      "source_lock": "reports/discovery/openmath_2026/unassigned_sources/erdos-3/SOURCE_LOCK.json",
+      "source_lock_blob_sha1": "2e3551cf7be57f1920382296bbb0d6ebea4379d6",
+      "title": "Erdős Problem 3",
+      "version": "0.1.0",
+      "statement_sha256": "01340450159675d867105c9790f0e870a183d2cb43403b0c5a88d17711e5907b"
+    }
+  ],
+  "release_effect": {
+    "slot_binding_complete": true,
+    "solve_math_release": false,
+    "next_gate": "PER_SLOT_SEMANTIC_SOURCE_MAP__STATUS_TRIAGE__PROTECTED_READBACK",
+    "competition_submission_release": false
+  },
+  "claim_boundary": "Internal GCL slot allocation only. It does not assert organizer ordering, mathematical truth, novelty, competition acceptance, or MATHCERT certification."
+}
