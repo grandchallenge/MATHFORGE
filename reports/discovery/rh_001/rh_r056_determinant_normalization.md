@@ -139,6 +139,51 @@ ground vector is even under `u -> u^(-1)`, its logarithmic-coordinate
 Fourier/Mellin transform is even in `z`. Solve may use that symmetry to fix the
 linear exponential gauge without introducing an unsupported source constant.
 
+## 6.1. Classical nonzero anchor available to Solve
+
+For the Solve-native residual scalar gauge, one nonreal anchor can be fixed
+without assuming RH.
+
+The NIST Digital Library of Mathematical Functions defines Riemann's completed
+xi-function by DLMF 25.4.4,
+
+`xi(s) = (1/2) s(s-1) Gamma(s/2) pi^(-s/2) zeta(s)`.
+
+DLMF 25.5.13 gives, for `s != 1`,
+
+`zeta(s) = pi^(s/2)/(s(s-1)Gamma(s/2))
+          + pi^(s/2)/Gamma(s/2) * I(s)`,
+
+where the displayed integral `I(s)` is finite at `s=0`. Multiplying by the
+completion factor gives
+
+`xi(s) = 1/2 + (1/2) s(s-1) I(s)`,
+
+and therefore
+
+`xi(0) = 1/2 != 0`.
+
+CCM Section 7 uses the convention
+
+`Xi(z) = xi(1/2 + i*z)`.
+
+Thus the fixed nonreal point
+
+`z_* = i/2`
+
+satisfies
+
+`Xi(z_*) = xi(0) = 1/2 != 0`.
+
+This anchor fact is classical and independent of RH. It does not select the
+finite scalar normalization by itself; it only supplies a rigorously nonzero
+target value that Solve may use after the source-fixed phase removal (R056.2).
+
+Provider references:
+- NIST DLMF 25.4.4, Riemann xi definition;
+- NIST DLMF 25.5.13, integral representation of zeta;
+- CCM v1 Section 7, convention `Xi(z)=xi(1/2+i*z)`.
+
 ## 7. Limit-strategy context, not an admitted theorem
 
 Section 7 defines the prolate/Sonin candidate `k_lambda` only up to scalar
