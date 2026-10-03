@@ -1,3 +1,24 @@
+# SUPERSEDED IDENTIFIER NOTICE — RH-R054 provider audit
+
+This artifact is retained for immutable historical provenance only.
+
+The exact source audit below was completed and protected before the RH-001 parallel-route controller allocated collision-free theorem lanes. Protected MATHSOLVE commit `20a1f4565bc99c383492894904047af6659fd6ad` subsequently reserved:
+
+- `RH-R054` for Route A;
+- `RH-R055` for Route B;
+- `RH-R056` for Route C C0 determinant normalization.
+
+Therefore this historical `RH-R054` provider label MUST NOT be used as the canonical Route C identity.
+
+Canonical replacement:
+
+- `reports/discovery/rh_001/rh_r056_determinant_normalization.md`
+- provider tracker `grandchallenge/MATHFORGE#301`
+
+The source conclusions are unchanged. The remainder of this file is preserved verbatim as the pre-lane record.
+
+---
+
 # RH-R054 — Exact CCM determinant-normalization audit for Route C C0
 
 - Campaign: RH-001
