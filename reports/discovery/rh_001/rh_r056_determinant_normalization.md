@@ -1,31 +1,11 @@
-# SUPERSEDED IDENTIFIER NOTICE — RH-R054 provider audit
-
-This artifact is retained for immutable historical provenance only.
-
-The exact source audit below was completed and protected before the RH-001 parallel-route controller allocated collision-free theorem lanes. Protected MATHSOLVE commit `20a1f4565bc99c383492894904047af6659fd6ad` subsequently reserved:
-
-- `RH-R054` for Route A;
-- `RH-R055` for Route B;
-- `RH-R056` for Route C C0 determinant normalization.
-
-Therefore this historical `RH-R054` provider label MUST NOT be used as the canonical Route C identity.
-
-Canonical replacement:
-
-- `reports/discovery/rh_001/rh_r056_determinant_normalization.md`
-- provider tracker `grandchallenge/MATHFORGE#301`
-
-The source conclusions are unchanged. The remainder of this file is preserved verbatim as the pre-lane record.
-
----
-
-# RH-R054 — Exact CCM determinant-normalization audit for Route C C0
+# RH-R056 — Exact CCM determinant-normalization audit for Route C C0
 
 - Campaign: RH-001
-- Provider tracker: grandchallenge/MATHFORGE#298
+- Provider tracker: grandchallenge/MATHFORGE#301
 - Parent protected audit: grandchallenge/MATHFORGE@564f6e2b41c9b13334bc8a5b84914a85c6b70790
 - Initial Forge base: grandchallenge/MATHFORGE@782b80c8c57d4e77356d8c77c50ee1fffdcd92b8
 - Scope: exact source/version and normalization audit only
+- Identifier reconciliation: this source audit was first protected under the provisional pre-lane label RH-R054 at grandchallenge/MATHFORGE@493819ab1d66174ab290deb00b06f84a7bbeb9c2. Protected MATHSOLVE controller commit 20a1f4565bc99c383492894904047af6659fd6ad subsequently reserved RH-R054 for Route A and RH-R056 for Route C C0. This file is the canonical Route C provider identity; source conclusions are unchanged.
 - Novelty / priority / RH / certification claims: none
 
 ## 1. Immutable primary-source identity
@@ -69,7 +49,7 @@ With `L = 2 log(lambda)`, Theorem 5.10(ii), using (5.17), proves exactly
 
 `G_(lambda,N)(z) := det_reg(D_log^(lambda,N)-z)`
 `                  = -i exp(-i*z*L/2) xi_hat(z)`
-`                  = -i lambda^(-i*z) xi_hat(z)`.  (R054.1)
+`                  = -i lambda^(-i*z) xi_hat(z)`.  (R056.1)
 
 Theorem 5.10(iii) states that `xi_hat` is entire, all of its zeros are real,
 and those zeros coincide with the spectrum of the finite approximant.
@@ -127,7 +107,7 @@ The paper does not provide there:
   Xi-normalization;
 - a globally locally-uniform convergence theorem on all of C.
 
-Combining the exact finite identity (R054.1) with the immediately preceding
+Combining the exact finite identity (R056.1) with the immediately preceding
 statement that only a scalar multiple of `xi_lambda_hat` is to approach Xi
 does isolate the source-fixed z-dependent part: one must remove
 `lambda^(-i*z)`, i.e. multiply the raw determinant by the zero-free entire
@@ -145,7 +125,7 @@ For C0 theorem development, the provider-safe source interface is
 
 with `xi_(lambda,N)` even under the source hypothesis. Hence
 
-`i lambda^(i*z) G_(lambda,N)(z) = xi_(lambda,N)_hat(z)`.  (R054.2)
+`i lambda^(i*z) G_(lambda,N)(z) = xi_(lambda,N)_hat(z)`.  (R056.2)
 
 This is an exact source-derived phase removal by a zero-free entire multiplier.
 
@@ -177,6 +157,6 @@ determinant convergence.
 
 **EXACT_FINITE_PHASE_AND_VECTOR_NORMALIZATION_PINNED__XI_SCALAR_NORMALIZATION_UNSPECIFIED_IN_SOURCE**
 
-The safe next action is a Solve-native C0 theorem that chooses and proves a
-canonical scalar gauge after the exact phase removal (R054.2), without
+The safe next action is the Solve-native RH-R056 C0 theorem that chooses and proves a
+canonical scalar gauge after the exact phase removal (R056.2), without
 attributing that scalar to the source.
