@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "source_lock_id": "MF-ERDOS-OPEN-001-LOCK",
+  "intake_id": "ERDOS-OPEN-001",
+  "generated_on": "2026-10-04",
+  "registry_source": {
+    "repository": "teorth/erdosproblems",
+    "repository_role": "community database for the problems on erdosproblems.com; data/problems.yaml is ground truth for that repository",
+    "website": "https://www.erdosproblems.com/",
+    "commit": "b916d95cdfd41a6d2f21aa304515834e84f247c9",
+    "data_path": "data/problems.yaml",
+    "data_git_blob_sha1": "62f04086391481caae8f5cb8f59c6f67f275d728",
+    "schema_path": "schema/problems.schema.json",
+    "schema_git_blob_sha1": "0fe70758cba49e86ba097bd11049b2906d12dc95",
+    "license": "Apache-2.0"
+  },
+  "protected_formal_provider": {
+    "provider_id": "FC-GDM",
+    "provider_snapshot_id": "FC-GDM-85F86371",
+    "repository": "google-deepmind/formal-conjectures",
+    "source_commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "erdos_directory": "FormalConjectures/ErdosProblems",
+    "erdos_directory_tree_sha1": "f3c8155d7552dea50c76c21148f540c0c4ab4749",
+    "lean_file_count": 509,
+    "composition_record": "catalog/providers/FC-GDM-85F86371-composition.json"
+  },
+  "selection_policy": {
+    "included_informal_status": [
+      "open"
+    ],
+    "excluded_special_unresolved_statuses": [
+      "decidable",
+      "falsifiable",
+      "verifiable",
+      "not provable",
+      "not disprovable",
+      "independent"
+    ],
+    "formal_solution_hold_rule": "If registry formal_status.state is Lean while informal_status.state remains open, retain the row but hold it from ordinary Programme triage pending status reconciliation.",
+    "protected_formalization_rule": "Only a file present in the admitted FC-GDM-85F86371 Erdős directory counts as a protected GCL formalization surface."
+  },
+  "artifacts": {
+    "registry_snapshot_path": "sources/ERDOS-OPEN-001/upstream/problems.yaml",
+    "registry_snapshot_git_blob_sha1": "62f04086391481caae8f5cb8f59c6f67f275d728",
+    "registry_schema_snapshot_path": "sources/ERDOS-OPEN-001/upstream/problems.schema.json",
+    "registry_schema_snapshot_git_blob_sha1": "0fe70758cba49e86ba097bd11049b2906d12dc95",
+    "protected_fc_index_path": "sources/ERDOS-OPEN-001/protected_fc_index.json",
+    "protected_fc_index_git_blob_sha1": "4e4c42785b3c049ac37c05fcc3da1c2bece875d3",
+    "open_manifest_path": "sources/ERDOS-OPEN-001/open_problem_manifest.json",
+    "open_manifest_git_blob_sha1": "0a71491313ffad6ba2d02a3bdc3fc5a5a8cf65d8"
+  },
+  "counts": {
+    "registry_problem_count": 1221,
+    "strict_open_count": 593,
+    "strict_open_with_protected_fc_formalization": 298,
+    "strict_open_with_registry_reported_formalization_not_in_protected_fc_snapshot": 59,
+    "strict_open_without_registry_reported_formalization": 236,
+    "strict_open_with_formal_solution_pending_human_status_reconciliation": 4,
+    "excluded_special_unresolved_status_count": 52,
+    "excluded_special_unresolved_statuses": {
+      "decidable": 8,
+      "falsifiable": 25,
+      "verifiable": 7,
+      "not provable": 3,
+      "not disprovable": 6,
+      "independent": 3
+    }
+  },
+  "authority_boundary": {
+    "current_status_authority_retained_by_math_programme": true,
+    "source_status_does_not_self_promote": true,
+    "solve_authorized": false,
+    "certification_authorized": false,
+    "automatic_upstream_refresh": false
+  }
+}

@@ -39,6 +39,8 @@ jobs:
         run: python ci/validate_euclid_gcd_forge.py
       - name: Validate EUCLID-DIOPHANTINE-E2E-002 provider package
         run: python ci/validate_euclid_diophantine_forge.py
+      - name: Validate strict-open Erdős intake
+        run: python ci/validate_erdos_open_intake.py
       - name: Validate EUCLID-ELEMENTS-BOOK-VII-MICRO-001 source lock
         run: python ci/validate_euclid_book_vii_source_lock.py
       - name: Run discovery and adversarial contract tests

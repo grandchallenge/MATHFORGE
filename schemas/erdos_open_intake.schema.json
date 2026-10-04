@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ERDOS-OPEN-001 strict-open intake manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "intake_id",
+    "source_lock_id",
+    "generated_on",
+    "selection",
+    "summary",
+    "entries",
+    "authority_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "intake_id": {
+      "const": "ERDOS-OPEN-001"
+    },
+    "source_lock_id": {
+      "const": "MF-ERDOS-OPEN-001-LOCK"
+    },
+    "generated_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_field",
+        "included_state",
+        "interpretation"
+      ],
+      "properties": {
+        "registry_field": {
+          "const": "informal_status.state"
+        },
+        "included_state": {
+          "const": "open"
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 40
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_problem_count",
+        "strict_open_count",
+        "strict_open_with_protected_fc_formalization",
+        "strict_open_with_registry_reported_formalization_not_in_protected_fc_snapshot",
+        "strict_open_without_registry_reported_formalization",
+        "strict_open_with_formal_solution_pending_human_status_reconciliation",
+        "excluded_special_unresolved_status_count",
+        "excluded_special_unresolved_statuses"
+      ],
+      "properties": {
+        "registry_problem_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "strict_open_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "strict_open_with_protected_fc_formalization": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "strict_open_with_registry_reported_formalization_not_in_protected_fc_snapshot": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "strict_open_without_registry_reported_formalization": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "strict_open_with_formal_solution_pending_human_status_reconciliation": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "excluded_special_unresolved_status_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "excluded_special_unresolved_statuses": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "decidable",
+            "falsifiable",
+            "verifiable",
+            "not provable",
+            "not disprovable",
+            "independent"
+          ],
+          "properties": {
+            "decidable": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "falsifiable": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "verifiable": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "not provable": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "not disprovable": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "independent": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "problem_id",
+          "site_url",
+          "prize",
+          "tags",
+          "registry_status",
+          "registry_solution_formalized",
+          "registry_statement_formalized",
+          "protected_fc",
+          "gcl_disposition",
+          "programme_triage_state",
+          "solve_eligibility"
+        ],
+        "properties": {
+          "problem_id": {
+            "type": "string",
+            "pattern": "^[0-9-]+$"
+          },
+          "site_url": {
+            "type": "string",
+            "pattern": "^https://www\\.erdosproblems\\.com/[0-9-]+$"
+          },
+          "prize": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "registry_status": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "last_update"
+            ],
+            "properties": {
+              "state": {
+                "const": "open"
+              },
+              "last_update": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              }
+            }
+          },
+          "registry_solution_formalized": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "last_update"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "unformalized",
+                  "Lean"
+                ]
+              },
+              "last_update": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              }
+            }
+          },
+          "registry_statement_formalized": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "last_update"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "yes",
+                  "no"
+                ]
+              },
+              "last_update": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              }
+            }
+          },
+          "protected_fc": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "present",
+              "path",
+              "git_blob_sha1"
+            ],
+            "properties": {
+              "present": {
+                "type": "boolean"
+              },
+              "path": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "git_blob_sha1": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{40}$"
+              }
+            }
+          },
+          "gcl_disposition": {
+            "enum": [
+              "OPEN_WITH_PROTECTED_FC_FORMALIZATION",
+              "OPEN_WITH_REGISTRY_REPORTED_FORMALIZATION_NOT_IN_PROTECTED_FC_SNAPSHOT",
+              "OPEN_WITHOUT_REGISTRY_REPORTED_FORMALIZATION"
+            ]
+          },
+          "programme_triage_state": {
+            "enum": [
+              "ELIGIBLE_FOR_PROGRAMME_TRIAGE",
+              "HOLD_PENDING_REGISTRY_STATUS_RECONCILIATION"
+            ]
+          },
+          "solve_eligibility": {
+            "const": "REQUIRES_PROGRAMME_SELECTION"
+          }
+        }
+      }
+    },
+    "authority_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_status_is_evidence_not_gcl_mathematical_adjudication",
+        "protected_fc_presence_is_statement_source_identity_not_proof",
+        "solve_authorized",
+        "certification_authorized",
+        "promotion_authorized"
+      ],
+      "properties": {
+        "registry_status_is_evidence_not_gcl_mathematical_adjudication": {
+          "const": true
+        },
+        "protected_fc_presence_is_statement_source_identity_not_proof": {
+          "const": true
+        },
+        "solve_authorized": {
+          "const": false
+        },
+        "certification_authorized": {
+          "const": false
+        },
+        "promotion_authorized": {
+          "const": false
+        }
+      }
+    }
+  }
+}
