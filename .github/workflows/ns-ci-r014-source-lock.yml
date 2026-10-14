@@ -53,7 +53,7 @@ jobs:
             --record reports/discovery/ns_ci_001/source_byte_lock_2026.json \
             | tee /tmp/ns-ci-r014-source-acquisition.json
       - name: Upload non-copyright verification record
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: ns-ci-r014-source-acquisition
           path: /tmp/ns-ci-r014-source-acquisition.json
