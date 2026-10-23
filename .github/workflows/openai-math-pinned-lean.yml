@@ -71,10 +71,12 @@ jobs:
         shell: bash
         run: |
           set +e
-          {
+          (
+            set -euo pipefail
             echo "Replaying OAI.Geometry.TamingCompatibility.Main"
             lake --version
             lake update
+            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/openai-math-342/lake-manifest-pre.sha256")"
             lake exe cache get
             lake build OAI.Geometry.TamingCompatibility.Main
             cat > /tmp/gcl-openai-math-342-axioms.lean <<'LEAN'
@@ -82,7 +84,7 @@ jobs:
           #print axioms OAI.TamingCompatibility.taming_implies_compatibility
           LEAN
             lake env lean /tmp/gcl-openai-math-342-axioms.lean
-          } > "$GITHUB_WORKSPACE/replay/openai-math-342/lean.stdout_stderr.log" 2>&1
+          ) > "$GITHUB_WORKSPACE/replay/openai-math-342/lean.stdout_stderr.log" 2>&1
           result=$?
           echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-342/lean.exit"
           sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/openai-math-342/lake-manifest-post.sha256"
