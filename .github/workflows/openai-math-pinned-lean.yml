@@ -5,6 +5,10 @@ on:
     paths:
       - ".github/workflows/openai-math-pinned-lean.yml"
       - "sources/OPENAI-MATH-2026/**"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/openai-math-pinned-lean.yml"
   workflow_dispatch:
 
 permissions:
