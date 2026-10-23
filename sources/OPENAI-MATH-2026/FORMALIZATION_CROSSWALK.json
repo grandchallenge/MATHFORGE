@@ -1,0 +1,2294 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENAI-MATH-2026-FORMALIZATION-CROSSWALK",
+  "origin": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "metadata_path": "lean/formalization.yaml",
+    "metadata_blob_sha1": "275eee8cfab7ce49d3a5e88f02cbb8f28fe6fee6"
+  },
+  "review_status_upstream": "unchecked",
+  "metadata_source_count": 173,
+  "main_result_declaration_count": 200,
+  "source_papers": [
+    {
+      "title": "\"$L_1$ Embeddings of Graphs of Bounded Treewidth\"",
+      "pdf_path": "preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A CH obstruction to a prescribed categoricity threshold\"",
+      "pdf_path": "preprints/A-CH-Obstruction-to-a-Prescribed-Categoricity-Threshold-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A classification of finite Euclidean Ramsey configurations\"",
+      "pdf_path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Complete Local Domain without a Small Cohen–Macaulay Module\"",
+      "pdf_path": "preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A continuum temperature singularity for a radial pair potential\"",
+      "pdf_path": "preprints/A-continuum-temperature-singularity-for-a-radial-pair-potential-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A counterexample to Hadwiger's conjecture\"",
+      "pdf_path": "preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A counterexample to integer-degree harmonic dimension comparison\"",
+      "pdf_path": "preprints/A-counterexample-to-integer-degree-harmonic-dimension-comparison-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two\"",
+      "pdf_path": "preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Odd Characteristic\"",
+      "pdf_path": "preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A counterexample to Kaplansky's quasitrace conjecture and failure of tensor-product stable finiteness\"",
+      "pdf_path": "preprints/A-counterexample-to-Kaplanskys-quasitrace-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A counterexample to Ryser's covering conjecture\"",
+      "pdf_path": "preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A counterexample to Tachikawa's second conjecture\"",
+      "pdf_path": "preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Counterexample to the Group-Ring Determinant Conjecture\"",
+      "pdf_path": "preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Counterexample to the Infinite Matroid Packing/Covering Conjecture\"",
+      "pdf_path": "preprints/A-Counterexample-to-the-Infinite-Matroid-Packing-Covering-Conjecture-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Cyclic Polytabloid Proof of Saxl's Conjecture\"",
+      "pdf_path": "preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Direct Proof of Optimal Max-Cut Hardness\"",
+      "pdf_path": "preprints/A-Direct-Proof-of-Optimal-Max-Cut-Hardness-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A direct proof of the complete Crouzeix inequality\"",
+      "pdf_path": "preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A doubling Hilbert subset with no finite-dimensional bi-Lipschitz embedding\"",
+      "pdf_path": "preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Fock-space inequality and the Laughlin spectral gap\"",
+      "pdf_path": "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A hyperbolic group with no geometric CAT(0) action\"",
+      "pdf_path": "preprints/A-hyperbolic-group-with-no-geometric-CAT0-action-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A linear cycle-and-edge decomposition of every graph\"",
+      "pdf_path": "preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A logarithmic independence bound for clique-free graphs\"",
+      "pdf_path": "preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A negatively pinched Kähler threefold without bounded holomorphic coordinates\"",
+      "pdf_path": "preprints/A-negatively-pinched-Kahler-threefold-without-bounded-holomorphic-coordinates-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A nine-dimensional counterexample to Borsuk's covering assertion\"",
+      "pdf_path": "preprints/A-nine-dimensional-counterexample-to-Borsuks-covering-assertion-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A nonspectrahedral hyperbolicity cone\"",
+      "pdf_path": "preprints/A-Nonspectrahedral-Hyperbolicity-Cone-September-24-2026/nonspectrahedral-hyperbolicity-cone.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Polynomial-Time 2-Approximation for Shortest Common Superstring\"",
+      "pdf_path": "preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A positive solution to Tingley's problem\"",
+      "pdf_path": "preprints/A-positive-solution-to-Tingleys-problem-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A product counterexample to the simplex maximum for projection-body volume\"",
+      "pdf_path": "preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A proof of Seymour’s second-neighborhood conjecture\"",
+      "pdf_path": "preprints/A-proof-of-Seymours-second-neighborhood-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A quadratic bound for Jacobsthal's function\"",
+      "pdf_path": "preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A radial continuum phase transition with algebraic decay\"",
+      "pdf_path": "preprints/A-radial-continuum-phase-transition-with-algebraic-decay-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A single-lattice covering bound of order n log n\"",
+      "pdf_path": "preprints/A-single-lattice-covering-bound-of-order-n-log-n-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Smooth Metric with No Local Isometric Immersion into Three-Space\"",
+      "pdf_path": "preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A stable coordinate that is not a coordinate in four variables\"",
+      "pdf_path": "preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/stable-coordinate-four-variables.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A strict inverse-first-power bound for univalent functions\"",
+      "pdf_path": "preprints/A-strict-inverse-first-power-bound-for-univalent-functions-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A superquadratic separation between sensitivity and block sensitivity\"",
+      "pdf_path": "preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Three-Manifold Without Conjugate Points and Without a Nonpositively Curved Metric\"",
+      "pdf_path": "preprints/A-Three-Manifold-Without-Conjugate-Points-and-Without-a-Nonpositively-Curved-Metric-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A Torsion-Free Group Algebra with Zero Divisors\"",
+      "pdf_path": "preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A torsion-free hyperbolic group that is not residually finite\"",
+      "pdf_path": "preprints/a-torsion-free-hyperbolic-group-that-is-not-residually-finite-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A translational tile with no fully periodic tiling in dimension three\"",
+      "pdf_path": "preprints/A-translational-tile-with-no-fully-periodic-tiling-in-dimension-three-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"A universal group of type F∞\"",
+      "pdf_path": "preprints/A-universal-group-of-type-F-infinity-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Additive hardness and unbounded configuration gaps in bin packing\"",
+      "pdf_path": "preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Almost-everywhere Fourier convergence in L log L\"",
+      "pdf_path": "preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Ample rank-two bundles on the quadric surface without Griffiths-positive metrics\"",
+      "pdf_path": "preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An algebra of infinite little finitistic dimension\"",
+      "pdf_path": "preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An Artin group with no geometric CAT(0) action\"",
+      "pdf_path": "preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An Endpoint Gradient Bound for the Centered Disk Maximal Operator\"",
+      "pdf_path": "preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/article.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An explicit counterexample to the Auslander-Reiten conjecture\"",
+      "pdf_path": "preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An explicit failure of complex affine-space cancellation\"",
+      "pdf_path": "preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An explicit noncoordinate polynomial with affine three-space zero fibre\"",
+      "pdf_path": "preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An explicit power saving for the exact discrete Fourier transform\"",
+      "pdf_path": "preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An exponential state lower bound for two-way nondeterministic complementation\"",
+      "pdf_path": "preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An exponential two-way deterministic state lower bound for one-way liveness\"",
+      "pdf_path": "preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An infinite finitely presented simple amenable group\"",
+      "pdf_path": "preprints/An-Infinite-Finitely-Presented-Simple-Amenable-Group-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"An Upper Bound of 9/4 for the Matrix Multiplication Exponent\"",
+      "pdf_path": "preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Approximate counting of common bases of two matroids\"",
+      "pdf_path": "preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Asymptotic midpoint uniform convexity and unbounded diamond distortion in a reflexive tree space\"",
+      "pdf_path": "preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Asymptotically minimal maxima of real Littlewood polynomials\"",
+      "pdf_path": "preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Average sensitivity of polynomial threshold functions\"",
+      "pdf_path": "preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Backward intertwiners and a transitive commutant\"",
+      "pdf_path": "preprints/Backward-intertwiners-and-a-transitive-commutant-September-27-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Beyond the Square-Root Exponent for Depth-Three Boolean Circuits\"",
+      "pdf_path": "preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Bi-Lipschitz Absorption of $c_0$ Without a Linear Copy of $c_0$\"",
+      "pdf_path": "preprints/Bi-Lipschitz-Absorption-of-c0-Without-a-Linear-Copy-of-c0-September-26-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Bounded recovery for modular spectral averages\"",
+      "pdf_path": "preprints/Bounded-recovery-for-modular-spectral-averages-September-23-2026/Bounded-recovery-for-modular-spectral-averages-September-23-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Bounded-Step Walks on Gaussian Primes\"",
+      "pdf_path": "preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Brennan's conjecture and sharp inverse-square integral means\"",
+      "pdf_path": "preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Choiceless polynomial time with counting does not capture polynomial time\"",
+      "pdf_path": "preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Classical capacity and entropy inequalities for generalized amplitude damping\"",
+      "pdf_path": "preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Compatibility entropy and the spectrum of a Thorp sweep\"",
+      "pdf_path": "preprints/Compatibility-entropy-and-the-spectrum-of-a-Thorp-sweep-September-26-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Complex Matrix Multiplication Below 2.258 and Rectangular Bounds\"",
+      "pdf_path": "preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Conditional coordinate sweeps and analytic transfer\"",
+      "pdf_path": "preprints/Conditional-coordinate-sweeps-and-analytic-transfer-September-26-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Counterexamples to the duality conjecture for metric entropy\"",
+      "pdf_path": "preprints/Counterexamples-to-the-duality-conjecture-for-metric-entropy-September-24-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Critical bond and site percolation on the cubic lattice\"",
+      "pdf_path": "preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Critical honeycomb chords with prescribed boundary endpoints\"",
+      "pdf_path": "preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Critical slowing down in the Sherrington–Kirkpatrick model\"",
+      "pdf_path": "preprints/Critical-slowing-down-in-the-Sherrington-Kirkpatrick-model-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Directional transience implies ballisticity\"",
+      "pdf_path": "preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Distortion of countably branching diamonds from midpoint and tree energies\"",
+      "pdf_path": "preprints/Diamond-distortion-from-midpoint-and-tree-energies-September-27-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Entropy and Face Dimension of the Perfect-Matching Polytope\"",
+      "pdf_path": "preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Exact asymptotic moduli in a Daugavet subspace of L1\"",
+      "pdf_path": "preprints/Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Exact derandomization of logarithmic space: L = RL = BPL\"",
+      "pdf_path": "preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Exponential decay in two-dimensional classical O(n) models\"",
+      "pdf_path": "preprints/Exponential-decay-in-two-dimensional-classical-On-models-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Finite tensor savings and exact Fourier circuits\"",
+      "pdf_path": "preprints/Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Fixed Points of Nonexpansive Maps in Reflexive Banach Spaces\"",
+      "pdf_path": "preprints/Fixed-Points-of-Nonexpansive-Maps-in-Reflexive-Banach-Spaces-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Generalized ionization energies for full Coulomb atoms\"",
+      "pdf_path": "preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Global classical solutions of the three-dimensional relativistic Vlasov–Maxwell system\"",
+      "pdf_path": "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Global Support and Convex Injectivity Domains under Weak MTW\"",
+      "pdf_path": "preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Hardness of finding large independent sets in three-colorable graphs\"",
+      "pdf_path": "preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Harmonic heights and the Artin K(π,1) conjecture\"",
+      "pdf_path": "preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Independent products in real L1: asymptotic midpoint convexity without AUC renormings\"",
+      "pdf_path": "preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Integral and fractional expectation thresholds are equivalent\"",
+      "pdf_path": "preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Integral points on character varieties of curves\"",
+      "pdf_path": "preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Lipschitz Equivalent Separable Banach Spaces Need Not Be Linearly Isomorphic\"",
+      "pdf_path": "preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Maximal Seshadri constants on arbitrary polarized surfaces\"",
+      "pdf_path": "preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Memory and precision in noiseless Gaussian regression\"",
+      "pdf_path": "preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Midpoint convexity from bounded tree potentials and path costs\"",
+      "pdf_path": "preprints/Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Midpoint convexity from two recursive potentials\"",
+      "pdf_path": "preprints/Midpoint-convexity-from-two-recursive-potentials-September-27-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Midpoint lenses in segment spaces\"",
+      "pdf_path": "preprints/Midpoint-lenses-in-segment-spaces-September-27-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Nagata's conjecture for plane curves\"",
+      "pdf_path": "preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Near-square-root logarithmic integrality gaps for uniform sparsest cut\"",
+      "pdf_path": "preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Nontrivial Markov Type Forces Superreflexivity\"",
+      "pdf_path": "preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Nonuniqueness for Bounded Measurable Scalar Conductivities in Three Dimensions\"",
+      "pdf_path": "preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Perfect completeness for 2-to-1 games\"",
+      "pdf_path": "preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Petty’s projection-volume conjecture in dimensions at least four\"",
+      "pdf_path": "preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Planar Graph Metrics Embed into $L_1$ with Constant Distortion\"",
+      "pdf_path": "preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Polynomial Hitting Lists for Noncommutative Rational Formulas\"",
+      "pdf_path": "preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Polynomial removal fails for ordered binary matrices\"",
+      "pdf_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Posterior replicas and conditional information in Gaussian regression\"",
+      "pdf_path": "preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Power-law violations of Yau's nodal upper bound\"",
+      "pdf_path": "preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Product-projection localization and the QAC⁰ parity lower bound\"",
+      "pdf_path": "preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Projection moments, positive cap domination, and Riesz estimates on the sphere\"",
+      "pdf_path": "preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Quadratic stabilization of the canonical Foulkes–Howe map\"",
+      "pdf_path": "preprints/Quadratic-Stabilization-of-the-Canonical-Foulkes-Howe-Map-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Quantitative Superexponential Bounds for van der Waerden Numbers\"",
+      "pdf_path": "preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Randomized quasipolynomial-time mean-payoff games\"",
+      "pdf_path": "preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Regular trajectories, pruning and quantum parity\"",
+      "pdf_path": "preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Relative generation and the generator problem for finite factors\"",
+      "pdf_path": "preprints/Relative-generation-and-the-generator-problem-for-finite-factors-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Replacing Gaussian observations in memory-constrained inference\"",
+      "pdf_path": "preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Riesz transforms and uniform rectifiability in higher codimension\"",
+      "pdf_path": "preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Rigidity of the Turing degrees\"",
+      "pdf_path": "preprints/Rigidity-of-the-Turing-degrees-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Routing densities and representation contraction for Thorp sweeps\"",
+      "pdf_path": "preprints/Routing-densities-and-representation-contraction-for-Thorp-sweeps-September-26-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Sharp binary-information contraction on the discrete cube\"",
+      "pdf_path": "preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Sharp one-dimensional Lieb–Thirring constants\"",
+      "pdf_path": "preprints/Sharp-One-Dimensional-Lieb-Thirring-Constants-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Short Egyptian fractions\"",
+      "pdf_path": "preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Simulating One-Tape Time in Two-Fifths-Power Space\"",
+      "pdf_path": "preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Single-exponential recovery and bounded-price strictness for metric k-median\"",
+      "pdf_path": "preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Single-fold Diophantine representations\"",
+      "pdf_path": "preprints/Single-fold-Diophantine-representations-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Smooth counterexamples to Yau's nodal upper bound in dimensions three and four\"",
+      "pdf_path": "preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Squarefree values of quartics and power-free values of polynomials\"",
+      "pdf_path": "preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Staggered extraction for exact matrix multiplication over every field\"",
+      "pdf_path": "preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Strict convexity and differentiability of the planar exponential first-passage limit shape\"",
+      "pdf_path": "preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Subpolynomial dimension reduction in $L_p$\"",
+      "pdf_path": "preprints/Subpolynomial-dimension-reduction-in-Lp-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Subpolynomial query complexity for well-conditioned log-concave sampling\"",
+      "pdf_path": "preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Subsphere methods for memory–sample lower bounds in noiseless Gaussian regression\"",
+      "pdf_path": "preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Symmetry of semialgebraic bounded domains with compact quotient\"",
+      "pdf_path": "preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Symplectic Balls in Symmetric Polar Products\"",
+      "pdf_path": "preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Talagrand's discrete-convexity conjecture\"",
+      "pdf_path": "preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Taming implies compatibility on four-manifolds\"",
+      "pdf_path": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf",
+      "indexed_manuscript": false
+    },
+    {
+      "title": "\"The Bass trace conjecture and the characteristic-zero Kaplansky idempotent conjecture\"",
+      "pdf_path": "preprints/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The circulant Hadamard conjecture\"",
+      "pdf_path": "preprints/The-circulant-Hadamard-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The complete Crouzeix theorem: optimal similarity and a common positive boundary representation\"",
+      "pdf_path": "preprints/The-complete-Crouzeix-theorem-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The cotype–cotype conjecture under the approximation property\"",
+      "pdf_path": "preprints/The-cotype-cotype-conjecture-under-the-approximation-property-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The crossing number of complete bipartite graphs\"",
+      "pdf_path": "preprints/The-crossing-number-of-complete-bipartite-graphs-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The crossing number of complete graphs\"",
+      "pdf_path": "preprints/The-crossing-number-of-complete-graphs-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Deligne-Drinfeld conjecture\"",
+      "pdf_path": "preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The entropy-rate dimension formula for self-similar measures on the line\"",
+      "pdf_path": "preprints/The-entropy-rate-dimension-formula-for-self-similar-measures-on-the-line-September-24-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Euclidean plane is not five-colorable\"",
+      "pdf_path": "preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Euclidean Steinitz–Bergström theorem\"",
+      "pdf_path": "preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Factor-Two Hardness Threshold for Vertex Cover\"",
+      "pdf_path": "preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Falconer distance conjecture in all dimensions\"",
+      "pdf_path": "preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Gaussian propeller bound in every dimension\"",
+      "pdf_path": "preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/main.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Grothendieck homotopy hypothesis via elementary expansions\"",
+      "pdf_path": "preprints/The-Grothendieck-homotopy-hypothesis-via-elementary-expansions-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Kirchberg–Rørdam character criterion\"",
+      "pdf_path": "preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The logarithmic Brunn–Minkowski conjecture\"",
+      "pdf_path": "preprints/The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The maximal triangular Hilbert transform at the symmetric point\"",
+      "pdf_path": "preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Partition Principle does not imply Choice\"",
+      "pdf_path": "preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/partition-principle-without-choice.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane Re(s)>7/8\"",
+      "pdf_path": "preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The second Kahn–Kalai conjecture\"",
+      "pdf_path": "preprints/The-second-Kahn-Kalai-conjecture-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The sharp factor-of-IID threshold for the free Ising model on regular trees\"",
+      "pdf_path": "preprints/The-sharp-factor-of-IID-threshold-for-the-free-Ising-model-on-regular-trees-September-26-2026/article.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The strong thin tree conjecture\"",
+      "pdf_path": "preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Subcritical Hénon–Lane–Emden Conjecture\"",
+      "pdf_path": "preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The symmetric Mahler conjecture and its equality cases\"",
+      "pdf_path": "preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The trace cone classifies Razak–Jacelon stabilizations\"",
+      "pdf_path": "preprints/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The Unique Games Theorem\"",
+      "pdf_path": "preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"The weak pinned planar distance theorem\"",
+      "pdf_path": "preprints/The-weak-pinned-planar-distance-theorem-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Thompson's group F is nonamenable\"",
+      "pdf_path": "preprints/Thompsons-group-F-is-nonamenable-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Three fixed points on the symplectic quadric threefold\"",
+      "pdf_path": "preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Threshold parallel repetition for finite-dimensional entangled games\"",
+      "pdf_path": "preprints/Threshold-parallel-repetition-for-finite-dimensional-entangled-games-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Tracial projection methods and uniform property Γ\"",
+      "pdf_path": "preprints/Tracial-projection-methods-and-uniform-property-Gamma-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Two limit cycles for quintic Liénard systems\"",
+      "pdf_path": "preprints/two-limit-cycles-for-quintic-lienard-systems-September-24-2026/two-limit-cycles-for-quintic-lienard-systems-September-24-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Uniform Bi-Hölder Transport from Weak MTW\"",
+      "pdf_path": "preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Uniform Cartier sections for Fano type contractions\"",
+      "pdf_path": "preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Uniform exclusion of Landau–Siegel zeros\"",
+      "pdf_path": "preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Unitarizability implies amenability for discrete groups\"",
+      "pdf_path": "preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Universal-cover splitting for compact Kähler manifolds\"",
+      "pdf_path": "preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/paper.pdf",
+      "indexed_manuscript": true
+    },
+    {
+      "title": "\"Weak Hessian bounds along every geodesic in RCD spaces\"",
+      "pdf_path": "preprints/Weak-Hessian-bounds-along-every-geodesic-in-RCD-spaces-September-24-2026/weak-hessian-geodesics.pdf",
+      "indexed_manuscript": true
+    }
+  ],
+  "main_results": [
+    {
+      "comparator_config": "lean/ComparatorChallenges/AbhyankarSathaye.json",
+      "declaration": "OAI.AbhyankarSathaye.exists_noncoordinate_polynomial",
+      "lean_source": "lean/OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/AmplitudeDamping.json",
+      "declaration": "OAI.GAD.main",
+      "lean_source": "lean/OAI/InformationTheory/AmplitudeDamping/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ArnoldCounterexample.json",
+      "declaration": "OAI.ArnoldCounterexample.main",
+      "lean_source": "lean/OAI/Geometry/Arnold/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ArtinCAT0.json",
+      "declaration": "OAI.ArtinCAT0.main",
+      "lean_source": "lean/OAI/GroupTheory/ArtinCAT0/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.json",
+      "declaration": "OAI.AsymptoticallyMinimalLittlewood.main",
+      "lean_source": "lean/OAI/Analysis/Littlewood/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/AuslanderReiten.json",
+      "declaration": "OAI.ArExplicit.Statement.main",
+      "lean_source": "lean/OAI/Algebra/AuslanderReiten/All.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BackwardIntertwiners.json",
+      "declaration": "OAI.BackwardIntertwiners.direct_algebra_corollary",
+      "lean_source": "lean/OAI/Analysis/BackwardIntertwiners/AlgebraCorollary.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BassTrace.json",
+      "declaration": "OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support",
+      "lean_source": "lean/OAI/RingTheory/BassTrace/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BiholderTransport.json",
+      "declaration": "OAI.WeakMTWTransport.uniform_biHolder_transport",
+      "lean_source": "lean/OAI/Analysis/BiholderTransport/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BinPackingGap.json",
+      "declaration": "OAI.BinPackingGap.main_results",
+      "lean_source": "lean/OAI/Computability/BinPacking/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BinaryMatching.json",
+      "declaration": "OAI.BinaryMatching.deterministic_approximate_counting",
+      "lean_source": "lean/OAI/Computability/MatchingCount/BinarySolve.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BinarySweep.json",
+      "declaration": "OAI.binary_sweep_contraction_and_mixing",
+      "lean_source": "lean/OAI/Probability/BinarySweep/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BipartiteCrossing.json",
+      "declaration": "OAI.Zarankiewicz.mainTarget_proof",
+      "lean_source": "lean/OAI/Combinatorics/Crossing/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BorsukNine.json",
+      "declaration": "OAI.BorsukNine.main_theorem",
+      "lean_source": "lean/OAI/Geometry/Borsuk/Counterexample.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BoundedRecovery.json",
+      "declaration": "OAI.BoundedRecovery.bounded_recovery",
+      "lean_source": "lean/OAI/Analysis/ModularRecovery/Recovery.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BoundedTreePotentials.json",
+      "declaration": "OAI.BoundedTreePotentials.TreeCalculus.main_counterexample",
+      "lean_source": "lean/OAI/Analysis/TreePotential/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BoundedTreewidthL1.json",
+      "declaration": "OAI.BoundedTreewidthL1.main_theorem",
+      "lean_source": "lean/OAI/Combinatorics/TreewidthL1/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Brennan.json",
+      "declaration": "OAI.Brennan.main_theorem",
+      "lean_source": "lean/OAI/Analysis/IntegralMeans/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/BrennanSharp.json",
+      "declaration": "OAI.Brennan.Sharp.sharp_endpoints",
+      "lean_source": "lean/OAI/Analysis/IntegralMeans/SharpEndpoints.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/C0Absorption.json",
+      "declaration": "OAI.C0Absorption.main_result",
+      "lean_source": "lean/OAI/Analysis/C0Absorption/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CHObstruction.json",
+      "declaration": "OAI.CHObstruction.main",
+      "lean_source": "lean/OAI/ModelTheory/Categoricity/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CartierChartCompactnessSupport.json",
+      "declaration": "OAI.CartierSections.isCompact_closedChartFieldRetraction_cone",
+      "lean_source": "lean/OAI/AlgebraicGeometry/CartierSections/ChartCompactness.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CharacterCriterion.json",
+      "declaration": "OAI.KirchbergRordam.character_criterion",
+      "lean_source": "lean/OAI/Analysis/CharacterCriterion/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.json",
+      "declaration": "OAI.IntegralCharacterVarieties.SurfacePresentation.Diagram.producedMarkedValues_allSeams",
+      "lean_source": "lean/OAI/AlgebraicGeometry/CharacterVarieties/Seams/ProducedSolution.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ChoicelessPolynomialTime.json",
+      "declaration": "OAI.CPTSeparation.main",
+      "lean_source": "lean/OAI/ModelTheory/Choiceless/Separation.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CirculantHadamard.json",
+      "declaration": "OAI.CirculantHadamard.exists_iff_order_one_or_four",
+      "lean_source": "lean/OAI/LinearAlgebra/CirculantHadamard/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ClassicalON.json",
+      "declaration": "OAI.ClassicalON.main",
+      "lean_source": "lean/OAI/Probability/ClassicalON/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CliqueFreeLog.json",
+      "declaration": "OAI.CliqueFreeLog.logarithmic_independence_bound",
+      "lean_source": "lean/OAI/Combinatorics/CliqueFree/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CommonBasesFPRAS.json",
+      "declaration": "OAI.common_bases_fpras",
+      "lean_source": "lean/OAI/Combinatorics/MatroidCounting/CommonBases.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CommutingDerivations.json",
+      "declaration": "OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras",
+      "lean_source": "lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CompactBanach.json",
+      "declaration": "OAI.CompactBanach.main",
+      "lean_source": "lean/OAI/Geometry/DoublingHilbert/CompactBanach.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CompleteCrossing.json",
+      "declaration": "OAI.Paper170.complete_graph_crossing_number",
+      "lean_source": "lean/OAI/Combinatorics/CompleteCrossing/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CompleteCrouzeix.json",
+      "declaration": "OAI.CompleteCrouzeix.main",
+      "lean_source": "lean/OAI/Analysis/NumericalRange/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ComplexCancellation.json",
+      "declaration": "OAI.ComplexCancellation.main",
+      "lean_source": "lean/OAI/Algebra/AffineCancellation/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Conductivity.json",
+      "declaration": "OAI.ScalarConductivity.main_nonuniqueness",
+      "lean_source": "lean/OAI/Analysis/Conductivity/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ConjugatePoints.json",
+      "declaration": "OAI.ThreeManifold.main_theorem",
+      "lean_source": "lean/OAI/Geometry/ConjugatePoints/ThreeManifold.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ContinuumTransition.json",
+      "declaration": "OAI.ContinuumTemperature.main_theorem",
+      "lean_source": "lean/OAI/Probability/ContinuumTransition/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CoordinateSweeps.json",
+      "declaration": "OAI.CoordinateSweeps.conditional_main",
+      "lean_source": "lean/OAI/Probability/CoordinateSweeps/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Cotype.json",
+      "declaration": "OAI.Cotype.mainTarget_proved",
+      "lean_source": "lean/OAI/Analysis/Cotype/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CoulombIonization.json",
+      "declaration": "OAI.CoulombAtom.generalized_ionization",
+      "lean_source": "lean/OAI/Analysis/CoulombIonization/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CourtadeKumar.json",
+      "declaration": "OAI.LeanBlast.CourtadeKumar.courtadeKumarAndAttainment",
+      "lean_source": "lean/OAI/InformationTheory/BooleanNoise/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CriticalSK.json",
+      "declaration": "OAI.CriticalSK.covariance_and_linear_tests",
+      "lean_source": "lean/OAI/MathematicalPhysics/CriticalSK/Rayleigh.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CriticalSKMixing.json",
+      "declaration": "OAI.CriticalSK.critical_mixing_bounds",
+      "lean_source": "lean/OAI/MathematicalPhysics/CriticalMixing/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CriticalZ3.json",
+      "declaration": "OAI.CriticalZ3.critical_no_infinite",
+      "lean_source": "lean/OAI/Probability/CriticalZ3/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CycleDecomposition.json",
+      "declaration": "OAI.ErdosGallai.erdos_gallai",
+      "lean_source": "lean/OAI/Combinatorics/CycleDecomposition/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DaugavetModuli.json",
+      "declaration": "OAI.ExactModuli.exact_example",
+      "lean_source": "lean/OAI/Analysis/Daugavet/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DegreeRigidity.json",
+      "declaration": "OAI.TuringRigidity.ManuscriptMain.rigidity",
+      "lean_source": "lean/OAI/Computability/DegreeRigidity/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DeligneDrinfeld.json",
+      "declaration": "OAI.DeligneDrinfeld.main",
+      "lean_source": "lean/OAI/Algebra/Drinfeld/Completion.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DepthThree.json",
+      "declaration": "OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound",
+      "lean_source": "lean/OAI/Computability/DepthThree/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DiamondDistortion.json",
+      "declaration": "OAI.DiamondDistortion.headline_all_pairs",
+      "lean_source": "lean/OAI/Analysis/DiamondDistortion/Descent.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DirectCrouzeix.json",
+      "declaration": "OAI.DirectCrouzeix.complete_crouzeix",
+      "lean_source": "lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DirectionalBallisticity.json",
+      "declaration": "OAI.DirectionalTransience.directional_transience_implies_ballisticity",
+      "lean_source": "lean/OAI/Probability/Ballisticity/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DirichletSevenEighths.json",
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "lean_source": "lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DixmierAllDiscrete.json",
+      "declaration": "OAI.Dixmier.current_main_theorem",
+      "lean_source": "lean/OAI/Analysis/Unitarizability/AllDiscrete.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/DoublingHilbert.json",
+      "declaration": "OAI.DoublingHilbert.main",
+      "lean_source": "lean/OAI/Geometry/DoublingHilbert/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/EgyptianFractions.json",
+      "declaration": "OAI.Problem337.main_double_log_order",
+      "lean_source": "lean/OAI/NumberTheory/EgyptianFractions/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/EgyptianFractions.json",
+      "declaration": "OAI.Problem337.counting_double_log_order",
+      "lean_source": "lean/OAI/NumberTheory/EgyptianFractions/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/EgyptianFractions.json",
+      "declaration": "OAI.Problem337.prescribed_denominator_corollary",
+      "lean_source": "lean/OAI/NumberTheory/EgyptianFractions/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/EntangledGames.json",
+      "declaration": "OAI.ThresholdParallelRepetition.threshold_parallel_repetition",
+      "lean_source": "lean/OAI/Probability/EntangledGames/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/EuclideanFiveColor.json",
+      "declaration": "OAI.EuclideanFiveColor.no_proper_five_coloring",
+      "lean_source": "lean/OAI/Geometry/PlaneColoring/Five.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/EuclideanRamsey.json",
+      "declaration": "OAI.EuclideanRamsey.classification",
+      "lean_source": "lean/OAI/Combinatorics/EuclideanRamsey/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ExactFourier.json",
+      "declaration": "OAI.ExactFourier.main_theorem",
+      "lean_source": "lean/OAI/Computability/FourierCircuit/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/FactorGeneration.json",
+      "declaration": "OAI.Generator.single_generation_of_II1_separable_predual",
+      "lean_source": "lean/OAI/Analysis/FactorGeneration/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/FinitisticAsymmetry.json",
+      "declaration": "OAI.LittleFinitistic.extreme_left_right_asymmetry",
+      "lean_source": "lean/OAI/Algebra/FinitisticAsymmetry/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ForestSpace.json",
+      "declaration": "OAI.ForestSpace.main_theorem",
+      "lean_source": "lean/OAI/Analysis/ForestSpace/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/FoulkesHowe.json",
+      "declaration": "OAI.Problem346.canonical_foulkes_howe_surjective",
+      "lean_source": "lean/OAI/RepresentationTheory/FoulkesHowe/Stabilization.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/FourierLLogL.json",
+      "declaration": "OAI.FourierLLogL.paperMain",
+      "lean_source": "lean/OAI/Analysis/FourierLLogL/PaperMain.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/FreeIsing.json",
+      "declaration": "OAI.Problem367.free_ising_factor_iff_threshold",
+      "lean_source": "lean/OAI/Probability/FreeIsing/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GaussianMoat.json",
+      "declaration": "OAI.GaussianMoat.fullMain",
+      "lean_source": "lean/OAI/NumberTheory/GaussianMoat/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GaussianPropeller.json",
+      "declaration": "OAI.GaussianPropeller.all_partitions",
+      "lean_source": "lean/OAI/Probability/GaussianPropeller/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GaussianReplacement.json",
+      "declaration": "OAI.CurrentProjection.hybridBlockMain",
+      "lean_source": "lean/OAI/Probability/GaussianReplacement/Hybrid.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GaussianReplacement.json",
+      "declaration": "OAI.CurrentProjection.fiberBlockMain",
+      "lean_source": "lean/OAI/Probability/GaussianReplacement/FiberBlock.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GotsmanLinial.json",
+      "declaration": "OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement",
+      "lean_source": "lean/OAI/Combinatorics/GotsmanLinial/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GrahamSpherical.json",
+      "declaration": "OAI.GrahamSpherical.full_main",
+      "lean_source": "lean/OAI/Combinatorics/SphericalRamsey/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GrothendieckElementaryExpansion.json",
+      "declaration": "OAI.Grothendieck.elementary_expansion",
+      "lean_source": "lean/OAI/CategoryTheory/Globular/ElementaryExpansion.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/GroupRingDeterminant.json",
+      "declaration": "OAI.GroupRingDeterminant.main",
+      "lean_source": "lean/OAI/Analysis/GroupDeterminants/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HadwigerCounterexample.json",
+      "declaration": "OAI.HadwigerCounterexample.not_hadwiger_conjecture",
+      "lean_source": "lean/OAI/Combinatorics/HadwigerCounterexample/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HarmonicArtin.json",
+      "declaration": "OAI.HarmonicArtin.salvetti_cover_contractible",
+      "lean_source": "lean/OAI/Topology/ArtinGroups/Realizations/SalvettiCoverContractible.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HarmonicGrowth.json",
+      "declaration": "OAI.HarmonicCounterexample.main",
+      "lean_source": "lean/OAI/Geometry/HarmonicGrowth/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HeckeSevenEighths.json",
+      "declaration": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "lean_source": "lean/OAI/NumberTheory/DirichletL/Hecke/Nonvanishing.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HenonEmden.json",
+      "declaration": "OAI.HenonLaneEmden.main_nonexistence",
+      "lean_source": "lean/OAI/Analysis/HenonEmden/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HoneycombBridgeMassSupport.json",
+      "declaration": "OAI.CriticalHoneycomb.finiteBridgeMassEstimate",
+      "lean_source": "lean/OAI/Combinatorics/HoneycombChords/BridgeMass.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HyperbolicCones.json",
+      "declaration": "OAI.Paper256.main_result",
+      "lean_source": "lean/OAI/Analysis/HyperbolicCones/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HyperbolicObstruction.json",
+      "declaration": "OAI.HyperbolicObstruction.main",
+      "lean_source": "lean/OAI/Geometry/HyperbolicGroups/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/IndependentProducts.json",
+      "declaration": "OAI.IndependentProducts.main_general",
+      "lean_source": "lean/OAI/Analysis/ProductSpaces/WeakNullity.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/IndependentProducts.json",
+      "declaration": "OAI.IndependentProducts.main_exponential",
+      "lean_source": "lean/OAI/Analysis/ProductSpaces/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/IndependentSets.json",
+      "declaration": "OAI.LargeIndependentSets.mainTheoremReal",
+      "lean_source": "lean/OAI/Combinatorics/IndependentSets/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/InfiniteMatroid.json",
+      "declaration": "OAI.InfiniteMatroidCounterexample.main",
+      "lean_source": "lean/OAI/Combinatorics/InfiniteMatroid/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/IsometricImmersion.json",
+      "declaration": "OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion",
+      "lean_source": "lean/OAI/Geometry/IsometricImmersion/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Jacobsthal.json",
+      "declaration": "OAI.Erdos970.Erdos970Final.erdos_970_quadratic",
+      "lean_source": "lean/OAI/NumberTheory/Jacobsthal/Conclusions/QuadraticBound.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/KMedianRecovery.json",
+      "declaration": "OAI.MetricKMedianRecovery.global_application",
+      "lean_source": "lean/OAI/Combinatorics/KMedianRecovery/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/KahlerSplitting.json",
+      "declaration": "OAI.UniversalCoverSplitting.main",
+      "lean_source": "lean/OAI/Geometry/KahlerSplitting/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/KaplanskyFinitelyPresented.json",
+      "declaration": "OAI.KaplanskyCounterexample.finitelyPresented_counterexample",
+      "lean_source": "lean/OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/KaplanskyQuasitrace.json",
+      "declaration": "OAI.Kaplansky.kaplansky_quasitrace_counterexample",
+      "lean_source": "lean/OAI/Analysis/Kaplansky/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Laughlin.json",
+      "declaration": "OAI.Laughlin.mainTarget_proved",
+      "lean_source": "lean/OAI/Analysis/Laughlin/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/LiebThirring.json",
+      "declaration": "OAI.SharpLiebThirring.sharp_lieb_thirring",
+      "lean_source": "lean/OAI/Analysis/LiebThirring/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/LipschitzEquivalence.json",
+      "declaration": "OAI.LipschitzCounterexample.main",
+      "lean_source": "lean/OAI/Analysis/LipschitzEquivalence/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/LittleFinitistic.json",
+      "declaration": "OAI.LittleFinitistic.Main.exists_counterexample",
+      "lean_source": "lean/OAI/Algebra/Finitistic/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/LogBrunnMinkowski.json",
+      "declaration": "OAI.LogBrunnMinkowski.main",
+      "lean_source": "lean/OAI/Geometry/LogVolume/BrunnMinkowski.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/LogConcaveQuery.json",
+      "declaration": "OAI.LogConcaveSampling.exact_source_main",
+      "lean_source": "lean/OAI/Probability/LogConcave/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/LogspaceEquality.json",
+      "declaration": "OAI.ExactDerandomization.exact_logarithmic_space_derandomization",
+      "lean_source": "lean/OAI/Computability/Logspace/Equality.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MahlerConjecture.json",
+      "declaration": "OAI.SymmetricMahler.symmetric_mahler",
+      "lean_source": "lean/OAI/Analysis/Mahler/MainTheorem.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MarkovType.json",
+      "declaration": "OAI.MarkovSuperreflexivity.hasNontrivialMarkovType_iff_hasEquivalentUCNorm",
+      "lean_source": "lean/OAI/Analysis/MarkovType/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MatchingEntropy.json",
+      "declaration": "OAI.MatchingEntropy.entropy_main",
+      "lean_source": "lean/OAI/Combinatorics/PerfectMatching/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MatrixFields.json",
+      "declaration": "OAI.MatrixAllFields.MatrixMultiplication.AllFieldMain.omega_lt_source_constant",
+      "lean_source": "lean/OAI/LinearAlgebra/MatrixFields/Conclusions/AllFieldsBound.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MatrixMultiplication.json",
+      "declaration": "OAI.MatrixMultiplication.complex_omega_le_nine_quarters",
+      "lean_source": "lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MatrixMultiplication.json",
+      "declaration": "OAI.MatrixMultiplication.complex_alpha_gt_93_div_200",
+      "lean_source": "lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MatrixMultiplication.json",
+      "declaration": "OAI.MatrixMultiplication.complex_rectangular_omega_lt_523_div_250",
+      "lean_source": "lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MatrixRemoval.json",
+      "declaration": "OAI.Problem348.no_polynomial_removal_bound",
+      "lean_source": "lean/OAI/Combinatorics/MatrixRemoval/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MaximalSeshadriConstants.json",
+      "declaration": "OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants",
+      "lean_source": "lean/OAI/AlgebraicGeometry/Seshadri/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MemoryPrecision.json",
+      "declaration": "OAI.MemoryPrecision.main",
+      "lean_source": "lean/OAI/Probability/MemoryPrecision/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MetricEntropyDuality.json",
+      "declaration": "OAI.MetricEntropyDuality.exists_entropy_duality_counterexample_with_covers",
+      "lean_source": "lean/OAI/Analysis/MetricEntropy/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/MidpointLenses.json",
+      "declaration": "OAI.SegmentLenses.midpoint_lens_main",
+      "lean_source": "lean/OAI/Analysis/SegmentLenses/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Nagata.json",
+      "declaration": "OAI.Nagata.nagata_conjecture",
+      "lean_source": "lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/OddKaplansky.json",
+      "declaration": "OAI.OddKaplansky.main_theorem",
+      "lean_source": "lean/OAI/Algebra/OddKaplansky/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/OneTapeSpace.json",
+      "declaration": "OAI.Fifths.Single.capped",
+      "lean_source": "lean/OAI/Computability/SpaceSimulation/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/OneTapeSpace.json",
+      "declaration": "OAI.Fifths.Single.unknown",
+      "lean_source": "lean/OAI/Computability/SpaceSimulation/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/OneWayLiveness.json",
+      "declaration": "OAI.OneWayLiveness.main_theorem",
+      "lean_source": "lean/OAI/Combinatorics/Automata/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/OptimalMaxCut.json",
+      "declaration": "OAI.OptimalMaxCut.main",
+      "lean_source": "lean/OAI/Computability/MaxCut/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PartitionPrinciple.json",
+      "declaration": "OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice",
+      "lean_source": "lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PerfectCompleteness.json",
+      "declaration": "OAI.PerfectCompleteness.Theorem11.exists_reduction",
+      "lean_source": "lean/OAI/Computability/PerfectCompleteness/Theorem11.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PeriodicTilingThree.json",
+      "declaration": "OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality",
+      "lean_source": "lean/OAI/Geometry/PeriodicTiling/Counterexample.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PettyProjectionVolume.json",
+      "declaration": "OAI.PettyProjection.petty_projection_volume",
+      "lean_source": "lean/OAI/Geometry/ProjectionBodies/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PinchedKahler.json",
+      "declaration": "OAI.PinchedHartogs.main_theorem",
+      "lean_source": "lean/OAI/Geometry/Kahler/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PinnedDistances.json",
+      "declaration": "OAI.WeakPinned.main",
+      "lean_source": "lean/OAI/Geometry/PinnedDistances/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PlanarFalconer.json",
+      "declaration": "OAI.PlanarFalconer.mainTarget_proved",
+      "lean_source": "lean/OAI/MeasureTheory/Falconer/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PlanarFirstPassage.json",
+      "declaration": "OAI.PlanarFPP.manuscriptMain",
+      "lean_source": "lean/OAI/Probability/FirstPassage/BoundaryCurve.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PlanarL1.json",
+      "declaration": "OAI.PlanarL1.planar_graph_metrics_embed_L1",
+      "lean_source": "lean/OAI/Combinatorics/PlanarL1/Embedding.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PlaneColoring.json",
+      "declaration": "OAI.Problem160.properColoring_seven",
+      "lean_source": "lean/OAI/Geometry/PlaneColoring/Seven.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PosteriorReplicas.json",
+      "declaration": "OAI.PosteriorReplicas.source_main",
+      "lean_source": "lean/OAI/Probability/PosteriorReplicas/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/PowerFreeValues.json",
+      "declaration": "OAI.QuarticPowerFree.allDegrees",
+      "lean_source": "lean/OAI/NumberTheory/PowerFree/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ProjectionCounterexample.json",
+      "declaration": "OAI.ProjectionCounterexample.universal_simplex_upper_bound_false",
+      "lean_source": "lean/OAI/Geometry/ProjectionBody/Counterexample.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ProjectionMoments.json",
+      "declaration": "OAI.ProjectionMoments.main",
+      "lean_source": "lean/OAI/Probability/ProjectionMoments/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ProjectionVolume.json",
+      "declaration": "OAI.Paper092.product_counterexample",
+      "lean_source": "lean/OAI/Geometry/ProjectionVolume/ProductCounterexample.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/QACParity.json",
+      "declaration": "OAI.QAC.parity_lower_bound",
+      "lean_source": "lean/OAI/InformationTheory/QuantumCircuit/Parity.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/QuadricBundles.json",
+      "declaration": "OAI.QuadricCounterexample.main_theorem",
+      "lean_source": "lean/OAI/Geometry/QuadricBundles/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/QuantitativeVanDerWaerden.json",
+      "declaration": "OAI.QuantitativeVanDerWaerden.uniform_lower_bound",
+      "lean_source": "lean/OAI/Combinatorics/ProgressionColoring/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/QuasiRiemannHypothesis.json",
+      "declaration": "OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
+      "lean_source": "lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/QuinticLienard.json",
+      "declaration": "OAI.QuinticLienard.main",
+      "lean_source": "lean/OAI/Analysis/LienardCycles/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RadialTransition.json",
+      "declaration": "OAI.RadialTransition.main",
+      "lean_source": "lean/OAI/Probability/RadialTransition/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RandomizedMeanPayoff.json",
+      "declaration": "OAI.randomized_quasipolynomial_mean_payoff",
+      "lean_source": "lean/OAI/Computability/RandomMean/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RationalHitting.json",
+      "declaration": "OAI.RationalHitting.main",
+      "lean_source": "lean/OAI/Computability/RationalHitting/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RecursivePotentials.json",
+      "declaration": "OAI.ComparatorModel.RecursivePotentials.main",
+      "lean_source": "lean/OAI/Analysis/RecursivePotentials/Challenge.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ReflexiveFixedPoints.json",
+      "declaration": "OAI.ReflexiveFixedPoints.exists_fixedPoint_of_canonicallyReflexive",
+      "lean_source": "lean/OAI/Analysis/Nonexpansive/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RegularParity.json",
+      "declaration": "OAI.QAC.parity_lower_bound_polynomial_size",
+      "lean_source": "lean/OAI/InformationTheory/QuantumCircuit/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RieszQuantitative.json",
+      "declaration": "OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability",
+      "lean_source": "lean/OAI/Analysis/RieszRectifiability/Uniformity/Rectifiability.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RyserCovering.json",
+      "declaration": "OAI.RyserCoveringCounterexample.exists_prime_eventually_counterexampleRank",
+      "lean_source": "lean/OAI/Combinatorics/Ryser/Construction/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/RyserOddExtensions.json",
+      "declaration": "OAI.RyserOdd.eventualOddFailures_and_infinite",
+      "lean_source": "lean/OAI/Combinatorics/Ryser/OddExtensions.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Saxl.json",
+      "declaration": "OAI.Saxl.saxl_conjecture",
+      "lean_source": "lean/OAI/RepresentationTheory/Saxl/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SecondKahnKalai.json",
+      "declaration": "OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds",
+      "lean_source": "lean/OAI/Combinatorics/GraphThreshold/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SelfSimilar.json",
+      "declaration": "OAI.EntropyRateDimension.entropy_rate_dimension",
+      "lean_source": "lean/OAI/MeasureTheory/SelfSimilar/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SensitivitySeparation.json",
+      "declaration": "OAI.Paper320.quantitative_separation",
+      "lean_source": "lean/OAI/Combinatorics/Sensitivity/Separation.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SeymourSecondNeighborhood.json",
+      "declaration": "OAI.SeymourSecondNeighborhood.exists_goodVertex",
+      "lean_source": "lean/OAI/Combinatorics/SecondNeighborhood/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SiegelZeros.json",
+      "declaration": "OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap",
+      "lean_source": "lean/OAI/NumberTheory/SiegelZeros/Conclusions/Theorem.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SignedFiniteBand.json",
+      "declaration": "OAI.SignedDisk.CenteredDiskEndpoint.main_signed_finite_band",
+      "lean_source": "lean/OAI/Analysis/SignedDisk/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SimpleAmenable.json",
+      "declaration": "OAI.SimpleAmenable.main",
+      "lean_source": "lean/OAI/GroupTheory/SimpleAmenable/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SingleFold.json",
+      "declaration": "OAI.SingleFold.main",
+      "lean_source": "lean/OAI/NumberTheory/SingleFold/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SingleLatticeCovering.json",
+      "declaration": "OAI.SingleLatticeCovering.single_lattice_covering",
+      "lean_source": "lean/OAI/Geometry/LatticeCovering/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SingletonLoopMatching.json",
+      "declaration": "OAI.LoopMatching.fullEndpoint",
+      "lean_source": "lean/OAI/Computability/LoopMatching/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SmoothYau.json",
+      "declaration": "OAI.YauCounterexamples.sphere_three",
+      "lean_source": "lean/OAI/Geometry/SmoothYau/SphereMetric/ThreeSphere.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SmoothYau.json",
+      "declaration": "OAI.YauCounterexamples.sphere_two_torus_two",
+      "lean_source": "lean/OAI/Geometry/SmoothYau/ProductMetric/SphereProduct.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/StableCoordinateFour.json",
+      "declaration": "OAI.StableCoordinate.principal_package",
+      "lean_source": "lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SteinitzBergstrom.json",
+      "declaration": "OAI.EuclideanSteinitzBergstrom.main",
+      "lean_source": "lean/OAI/Analysis/Steinitz/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/StrictMeans.json",
+      "declaration": "OAI.StrictInverseFirstPower.main",
+      "lean_source": "lean/OAI/Analysis/StrictMeans/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/StrongThinTree.json",
+      "declaration": "OAI.StrongThinTree.strongThinTree",
+      "lean_source": "lean/OAI/Combinatorics/ThinTrees/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/StructuralCrouzeix.json",
+      "declaration": "OAI.StructuralCrouzeixReference.challenge",
+      "lean_source": "lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SubpolynomialLp.json",
+      "declaration": "OAI.SubpolynomialLp.source_main",
+      "lean_source": "lean/OAI/Analysis/LpDimension/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SubsphereCurrent.json",
+      "declaration": "OAI.SubsphereCurrent.full_current_main_scope",
+      "lean_source": "lean/OAI/Probability/Subsphere/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Superstring.json",
+      "declaration": "OAI.Superstring.main",
+      "lean_source": "lean/OAI/Computability/Superstring/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SurfaceConeCandidateSupport.json",
+      "declaration": "OAI.SmallCM.candidate_ring_properties",
+      "lean_source": "lean/OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SymmetricDomains.json",
+      "declaration": "OAI.Release061.main",
+      "lean_source": "lean/OAI/Analysis/SymmetricDomains/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SymmetricMahlerEquality.json",
+      "declaration": "OAI.SymmetricMahler.symmetric_mahler_equality",
+      "lean_source": "lean/OAI/Analysis/Mahler/Classification.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SymmetricPolar.json",
+      "declaration": "OAI.SymmetricPolar.symmetric_polar_main",
+      "lean_source": "lean/OAI/Geometry/PolarProducts/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/Tachikawa.json",
+      "declaration": "OAI.Tachikawa.main_theorem",
+      "lean_source": "lean/OAI/RingTheory/Tachikawa/Counterexample.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TalagrandDiscreteConvexity.json",
+      "declaration": "OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity",
+      "lean_source": "lean/OAI/Combinatorics/DiscreteConvexity/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TalagrandExpectationThreshold.json",
+      "declaration": "OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence",
+      "lean_source": "lean/OAI/Combinatorics/ExpectationThreshold/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TamingCompatibility.json",
+      "declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+      "lean_source": "lean/OAI/Geometry/TamingCompatibility/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ThompsonNonamenability.json",
+      "declaration": "OAI.ThompsonNonamenability.thompson_F_nonamenable_composition",
+      "lean_source": "lean/OAI/GroupTheory/Thompson/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ThorpRouting.json",
+      "declaration": "OAI.ThorpNine.main",
+      "lean_source": "lean/OAI/Probability/ThorpRouting/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/ThorpWeightedCompatibility.json",
+      "declaration": "OAI.ThorpCompatibility.weightedCompatibility_main",
+      "lean_source": "lean/OAI/Probability/ThorpCompatibility/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TingleySphereIsometry.json",
+      "declaration": "OAI.Tingley.tingley_sphere_isometry_full",
+      "lean_source": "lean/OAI/Analysis/SphereIsometry/Extension.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TorsionFreeHyperbolic.json",
+      "declaration": "OAI.Release075.main",
+      "lean_source": "lean/OAI/GroupTheory/Hyperbolic/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TorsionFreeZeroDivisors.json",
+      "declaration": "OAI.TorsionFreeZeroDivisors.main",
+      "lean_source": "lean/OAI/Algebra/GroupRing/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TraceIdealTransportSupport.json",
+      "declaration": "OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_finIdeal",
+      "lean_source": "lean/OAI/Analysis/TraceCone/IdealTransport.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TraceIdealTransportSupport.json",
+      "declaration": "OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_zeroIdeal",
+      "lean_source": "lean/OAI/Analysis/TraceCone/IdealTransport.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TraceIdealTransportSupport.json",
+      "declaration": "OAI.TraceConeClassification.closed_ideal_weight_exists",
+      "lean_source": "lean/OAI/Analysis/TraceCone/FiniteIdeal.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TriangularHilbert.json",
+      "declaration": "OAI.TriangularHilbert.main_estimate",
+      "lean_source": "lean/OAI/Analysis/TriangularHilbert/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TwoWayComplementation.json",
+      "declaration": "OAI.TwoWayComplementation.complementation_lower_bound_finite",
+      "lean_source": "lean/OAI/Combinatorics/TwoWayAutomata/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TwoWayDeterminization.json",
+      "declaration": "OAI.TwoWayComplementation.explicit_family_main",
+      "lean_source": "lean/OAI/Combinatorics/TwoWayAutomata/ExplicitFamily.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/UniformFourier.json",
+      "declaration": "OAI.PowerSaving.transform_main",
+      "lean_source": "lean/OAI/Computability/FourierTransform/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/UniformFourier.json",
+      "declaration": "OAI.PowerSaving.convolution_main",
+      "lean_source": "lean/OAI/Computability/FourierTransform/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/UniformGamma.json",
+      "declaration": "OAI.ComparatorModel.CurrentMain.main",
+      "lean_source": "lean/OAI/Analysis/TracialSplitting/Challenge.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/UniformSparsestCut.json",
+      "declaration": "OAI.UniformSparsestCut.mainGap",
+      "lean_source": "lean/OAI/Combinatorics/SparsestCut/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/UniqueGamesTheorem.json",
+      "declaration": "OAI.UniqueGamesTheorem.theorem11",
+      "lean_source": "lean/OAI/Computability/UniqueGames/Theorem.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/UniversalFInfinity.json",
+      "declaration": "OAI.UniversalFInfinity.universal_group_of_type_FInfinity",
+      "lean_source": "lean/OAI/GroupTheory/UniversalGroup/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/VertexCover.json",
+      "declaration": "OAI.VertexCover.every_fixed_factor_below_two",
+      "lean_source": "lean/OAI/Computability/VertexCover/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/VlasovMaxwell.json",
+      "declaration": "OAI.RVM.global_classical_solution",
+      "lean_source": "lean/OAI/Analysis/VlasovMaxwell/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/WeakHessian.json",
+      "declaration": "OAI.WeakHessian.every_geodesic",
+      "lean_source": "lean/OAI/Geometry/WeakHessian/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/WeakMTWGlobalSupport.json",
+      "declaration": "OAI.WeakMTWGlobalSupport.current_main_convexity",
+      "lean_source": "lean/OAI/Geometry/WeakMTW/Convexity.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/YauCounterexample.json",
+      "declaration": "OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample",
+      "lean_source": "lean/OAI/Geometry/NodalSets/Main.lean",
+      "replay": "NOT_RUN",
+      "semantic_review": "NOT_REVIEWED"
+    }
+  ],
+  "revision_exceptions": [
+    {
+      "family_id": "342",
+      "formalization_reference": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf",
+      "current_manuscript_reference": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
+      "kind": "REVISION_MISMATCH",
+      "disposition": "REQUIRES_STATEMENT_BY_STATEMENT_CONCORDANCE"
+    }
+  ],
+  "lean_replay_status": "NOT_RUN",
+  "mathematical_certification": "NOT_CLAIMED",
+  "claim_boundary": "This registry indexes upstream-attributed source-to-Lean references, not verified paper-to-theorem correspondence. It records no GCL Lean compilation, comparator run, axiom closure, independent semantic certification, novelty or protected theorem promotion."
+}

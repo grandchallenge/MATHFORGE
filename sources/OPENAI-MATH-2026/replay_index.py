@@ -16,7 +16,7 @@ def extract(text):
             headline = re.sub(r"\s+", " ", headline).strip()
             families.append({"family_id": match.group(1), "headline": headline, "manuscripts": []})
             continue
-        paper = re.search(r"&emsp;\[([\s\S]*?)\]\((preprints/[^)]+)\)", block)
+        paper = re.search(r"&emsp;\[([\s\S]*?)\]\((preprints/.*?\.pdf)\)", block)
         if not paper or not families:
             raise ValueError("Unmatched manuscript block")
         families[-1]["manuscripts"].append({
