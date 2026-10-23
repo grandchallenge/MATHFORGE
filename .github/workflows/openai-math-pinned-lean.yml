@@ -53,6 +53,14 @@ jobs:
           df -h . > replay/openai-math-342/disk-at-start.txt
           sha256sum upstream/math/lean/lake-manifest.json > replay/openai-math-342/lake-manifest-pre.sha256
           sha256sum upstream/math/lean/ComparatorChallenges/TamingCompatibility.json > replay/openai-math-342/comparator-config.sha256
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          cfg = json.loads(Path("upstream/math/lean/ComparatorChallenges/TamingCompatibility.json").read_text())
+          assert cfg["solution_module"] == "OAI.Geometry.TamingCompatibility.Main"
+          assert cfg["theorem_names"] == ["OAI.TamingCompatibility.taming_implies_compatibility"]
+          assert set(cfg["permitted_axioms"]) == {"propext", "Quot.sound", "Classical.choice"}
+          PY
 
       - name: Install pinned elan bootstrap
         shell: bash
