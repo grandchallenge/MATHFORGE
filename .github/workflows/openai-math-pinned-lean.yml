@@ -1,0 +1,145 @@
+name: OpenAI Math pinned Lean 4.34.1 replay
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/openai-math-pinned-lean.yml"
+      - "sources/OPENAI-MATH-2026/**"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/openai-math-pinned-lean.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: openai-math-pinned-lean-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  family-342:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    env:
+      GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
+    steps:
+      - name: Checkout GCL source lock
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Checkout pinned OpenAI Math Lean sources
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+
+      - name: Verify complete revision and exact toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/openai-math-342
+          {
+            git -C upstream/math rev-parse HEAD
+            git -C upstream/math rev-parse HEAD^{tree}
+            cat upstream/math/lean/lean-toolchain
+            git -C upstream/math status --short
+          } > replay/openai-math-342/identities.txt
+          test "$(sed -n '1p' replay/openai-math-342/identities.txt)" = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+          test "$(sed -n '2p' replay/openai-math-342/identities.txt)" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(sed -n '3p' replay/openai-math-342/identities.txt)" = "leanprover/lean4:v4.34.1"
+          df -h . > replay/openai-math-342/disk-at-start.txt
+          sha256sum upstream/math/lean/lake-manifest.json > replay/openai-math-342/lake-manifest-pre.sha256
+          sha256sum upstream/math/lean/ComparatorChallenges/TamingCompatibility.json > replay/openai-math-342/comparator-config.sha256
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          cfg = json.loads(Path("upstream/math/lean/ComparatorChallenges/TamingCompatibility.json").read_text())
+          assert cfg["solution_module"] == "OAI.Geometry.TamingCompatibility.Main"
+          assert cfg["theorem_names"] == ["OAI.TamingCompatibility.taming_implies_compatibility"]
+          assert set(cfg["permitted_axioms"]) == {"propext", "Quot.sound", "Classical.choice"}
+          PY
+
+      - name: Install pinned elan bootstrap
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Reproduce pinned dependency and targeted Lean compilation
+        id: lean-replay
+        working-directory: upstream/math/lean
+        shell: bash
+        run: |
+          set +e
+          (
+            set -euo pipefail
+            echo "Replaying OAI.Geometry.TamingCompatibility.Main"
+            lake --version
+            lake update
+            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/openai-math-342/lake-manifest-pre.sha256")"
+            lake exe cache get
+            lake build OAI.Geometry.TamingCompatibility.Main
+            cat > /tmp/gcl-openai-math-342-axioms.lean <<'LEAN'
+          import OAI.Geometry.TamingCompatibility.Main
+          #print axioms OAI.TamingCompatibility.taming_implies_compatibility
+          LEAN
+            lake env lean /tmp/gcl-openai-math-342-axioms.lean
+          ) > "$GITHUB_WORKSPACE/replay/openai-math-342/lean.stdout_stderr.log" 2>&1
+          result=$?
+          echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-342/lean.exit"
+          sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/openai-math-342/lake-manifest-post.sha256"
+          git status --short > "$GITHUB_WORKSPACE/replay/openai-math-342/upstream-working-tree-after.txt"
+          cat "$GITHUB_WORKSPACE/replay/openai-math-342/lean.stdout_stderr.log"
+          exit "$result"
+
+      - name: Record reproducible replay receipt
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          base = Path("replay/openai-math-342")
+          records = {}
+          for p in sorted(base.iterdir()):
+              if p.is_file():
+                  data = p.read_bytes()
+                  records[p.name] = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+          exit_file = base / "lean.exit"
+          payload = {
+              "record_type": "GCL_OPENAI_MATH_LEAN_TARGET_REPLAY/1",
+              "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+              "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+              "toolchain": "leanprover/lean4:v4.34.1",
+              "target_module": "OAI.Geometry.TamingCompatibility.Main",
+              "target_declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+              "comparator_config": "ComparatorChallenges/TamingCompatibility.json",
+              "actual_comparator_executed": False,
+              "exit_code": int(exit_file.read_text()) if exit_file.is_file() else None,
+              "run_id": os.environ.get("GITHUB_RUN_ID"),
+              "files": records,
+              "claim_boundary": "A successful Lean kernel compilation and an axiom print would establish only the exact target replay; it does not prove correspondence to a corrected manuscript, completeness, novelty or MATHCERT certification."
+          }
+          (base / "REPLAY_RECEIPT.json").write_text(json.dumps(payload,indent=2)+"\n")
+          PY
+
+      - name: Upload exact replay logs including failure evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: openai-math-family342-lean-4341
+          path: replay/openai-math-342
+          if-no-files-found: error
+          retention-days: 30
