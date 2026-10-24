@@ -26,8 +26,8 @@ theorem gcl_chartBumpExtension_mfderiv_eq
       (mfderiv Model Model (chartAt Space x).symm z) := by
   have hlocal : gcl_chartBumpExtension x y₀ f =ᶠ[𝓝 z]
       (chartAt Space x).symm := by
-    apply Filter.eventuallyEq_of_mem (Metric.isOpen_ball.mem_nhds hz)
-    exact gcl_chartBumpExtension_eqOn x y₀ f
+    filter_upwards [Metric.isOpen_ball.mem_nhds hz] with w hw
+    exact gcl_chartBumpExtension_eqOn x y₀ f hw
   have h := Filter.EventuallyEq.mfderiv_eq hlocal
   have hp : gcl_chartBumpExtension x y₀ f z =
       (chartAt Space x).symm z :=
