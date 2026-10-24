@@ -84,6 +84,7 @@ theorem gcl_extDeriv_zero_pullback_in_coordinates
     extDeriv (fun z : Space =>
       (A (f z)).compContinuousLinearMap (fderiv ℝ f z)) y = 0 := by
   rw [extDeriv_pullback hA hf (by simp), hcl]
+  ext v
   simp
 
 end OAI.TamingCompatibility
