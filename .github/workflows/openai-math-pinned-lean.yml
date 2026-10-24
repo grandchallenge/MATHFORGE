@@ -363,6 +363,7 @@ jobs:
             sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean \
             sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean \
             sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean \
+            sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean \
             upstream/math/lean/OAI/Geometry/TamingCompatibility/Model.lean \
             upstream/math/lean/lake-manifest.json \
             > replay/openai-math-semantic-342/source-sha256.txt
@@ -397,6 +398,7 @@ jobs:
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean"
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean"
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean"
           ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
           result=$?
           echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.exit"
@@ -430,6 +432,7 @@ jobs:
               "native_metric_bridge": "sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean",
               "cutoff_chart_bridge": "sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean",
               "native_chart_inverse_extension": "sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean",
+              "native_pullback_locality": "sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean",
               "sem342_01_intrinsic_smoothness": "CUTOFF_CORE_IF_SUCCESS__FULL_INTRINSIC_OPEN",
               "sem342_02_intrinsic_closedness": "CUTOFF_CORE_IF_SUCCESS__FULL_INTRINSIC_OPEN",
               "sem342_03_metric_algebra": "NATIVE_POINTWISE_IF_SUCCESS__METRIC_SMOOTHNESS_OPEN",
