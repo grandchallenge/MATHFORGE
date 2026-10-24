@@ -4,7 +4,7 @@ Family-342 semantic bridge, stage 1; exact pinned OpenAI Math 2026 source.
 This module imports upstream OAI.Geometry.TamingCompatibility.Model; it proves
 that for a taming two-form, the explicit Lean IsNondegenerate assumption is
 mathematically redundant, and establishes the linear-algebra equivalence
-between J-invariance and symmetry of g(u,v)=ω(u,Jv) under explicit
+between J-invariance and symmetry of g(u,v)=A(u,Jv) under explicit
 alternating-form identities. It does NOT establish the manifold/chart or
 exterior-derivative naturality bridges.
 
@@ -52,13 +52,13 @@ skewness and sign properties that an alternating two-form provides.
 The next semantic step is to instantiate these algebraic hypotheses with
 the actual ContinuousAlternatingMap upstream eval and J.square. -/
 theorem gcl_invariant_iff_metric_symmetric_abstract
-    {V : Type*} [AddGroup V] (ω : V → V → ℝ) (J : V → V)
-    (skew : ∀ u v, ω u v = -ω v u)
-    (neg_left : ∀ u v, ω (-u) v = -ω u v)
-    (neg_right : ∀ u v, ω u (-v) = -ω u v)
+    {V : Type*} [AddGroup V] (A : V → V → ℝ) (J : V → V)
+    (skew : ∀ u v, A u v = -A v u)
+    (neg_left : ∀ u v, A (-u) v = -A u v)
+    (neg_right : ∀ u v, A u (-v) = -A u v)
     (square : ∀ u, J (J u) = -u) :
-    (∀ u v, ω (J u) (J v) = ω u v) ↔
-      (∀ u v, ω u (J v) = ω v (J u)) := by
+    (∀ u v, A (J u) (J v) = A u v) ↔
+      (∀ u v, A u (J v) = A v (J u)) := by
   constructor
   · intro h u v
     have hi := h (J u) v
@@ -66,24 +66,24 @@ theorem gcl_invariant_iff_metric_symmetric_abstract
     exact neg_injective hi
   · intro h u v
     calc
-      ω (J u) (J v) = ω v (J (J u)) := h (J u) v
-      _ = ω v (-u) := by rw [square u]
-      _ = -ω v u := neg_right v u
-      _ = ω u v := by rw [skew v u]; simp
+      A (J u) (J v) = A v (J (J u)) := h (J u) v
+      _ = A v (-u) := by rw [square u]
+      _ = -A v u := neg_right v u
+      _ = A u v := by rw [skew v u]; simp
 
 
 /-- On the Euclidean model space, exterior closedness survives any smooth
 change of coordinates. This is the forward naturality direction of the
 closedness bridge; it does NOT yet establish the manifold-level converse. -/
 theorem gcl_extDeriv_zero_pullback_in_coordinates
-    (ω : Space → Space [⋀^Fin 2]→L[ℝ] ℝ)
+    (A : Space → Space [⋀^Fin 2]→L[ℝ] ℝ)
     (f : Space → Space) (y : Space)
-    (hω : DifferentiableAt ℝ ω (f y))
+    (hA : DifferentiableAt ℝ A (f y))
     (hf : ContDiffAt ℝ ∞ f y)
-    (hcl : extDeriv ω (f y) = 0) :
+    (hcl : extDeriv A (f y) = 0) :
     extDeriv (fun z : Space =>
-      (ω (f z)).compContinuousLinearMap (fderiv ℝ f z)) y = 0 := by
-  rw [extDeriv_pullback hω hf le_top, hcl]
+      (A (f z)).compContinuousLinearMap (fderiv ℝ f z)) y = 0 := by
+  rw [extDeriv_pullback hA hf le_top, hcl]
   simp
 
 end OAI.TamingCompatibility
