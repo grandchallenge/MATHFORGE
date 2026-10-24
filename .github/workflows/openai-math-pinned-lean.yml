@@ -398,7 +398,15 @@ jobs:
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean"
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean"
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean"
-            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean"
+            # Both GCL modules are source-locked and checked as one Lean unit:
+            # the locality proof needs the earlier, non-upstream definitions.
+            # Remove only the duplicate import from the second module.
+            {
+              cat "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean"
+              sed '/^import OAI.Geometry.TamingCompatibility.Model$/d' \
+                "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean"
+            } > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342LocalityComposite.lean"
+            lake env lean "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342LocalityComposite.lean"
           ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
           result=$?
           echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.exit"
