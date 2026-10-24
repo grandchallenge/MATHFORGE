@@ -9,7 +9,7 @@ Lean: leanprover/lean4:v4.34.1
 import OAI.Geometry.TamingCompatibility.Model
 
 namespace OAI.TamingCompatibility
-open scoped Manifold ContDiff
+open scoped Manifold ContDiff Topology
 open Set
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace Space X]
