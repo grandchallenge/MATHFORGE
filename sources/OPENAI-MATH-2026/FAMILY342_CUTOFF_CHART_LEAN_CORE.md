@@ -15,18 +15,19 @@ The ordinary mathematical argument in `FAMILY342_ATLAS_EQUIVALENCE_MATH_PROOF.md
 H(z)=y₀+χ(z)(z-y₀).
 \]
 
-The new Lean file `sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean` implements exactly this Euclidean interpolating map and four theorems:
+The new Lean file `sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean` implements exactly this Euclidean interpolating map and five theorems:
 
 - `gcl_cutoffInterpolation_mapsTo`: for convex `D` containing `y₀`, a cutoff `χ∈[0,1]` vanishing outside `D` gives `H(\mathbb R^4)⊆D`.
 - `gcl_cutoffInterpolation_smooth`: if `χ` is `C∞`, so is `H`.
 - `gcl_cutoffInterpolation_eq_self`: if `χ(z)=1`, then `H(z)=z`.
 - `gcl_cutoffInterpolation_chart_core`: combines these into global smoothness, image-in-chart and agreement with identity on a specified set `B`.
+- `gcl_bump_cutoff_chart_core`: instantiates these hypotheses using the pinned Mathlib `ContDiffBump` on concentric Euclidean inner/outer balls.
 
 The pinned Mathlib API `Convex.add_smul_sub_mem` supplies the critical range proof. These facts require **neither** compactness nor connectedness of the target manifold. The code is part of the `semantic-342` exact-source CI replay; **acceptance requires an actual completed pass and permitted kernel axiom list**.
 
 ## What this does not establish
 
-This file assumes a cutoff with the stated properties is supplied. A future proof must construct it from the pinned finite-dimensional smooth-bump API, choose concentric chart balls, and define a globally smooth manifold-valued map `F = ψ ∘ H` for the chart inverse `ψ`. That final map must be proved admissible to the upstream `ContMDiffOn Model Model ∞` quantification and its `mfderiv` must be shown equal to the local inverse-chart derivative wherever `χ=1`.
+The generic lemmas take a cutoff as input; the packaged-bump lemma constructs its required properties from an existing Mathlib `ContDiffBump` with chosen radii. A future proof must choose a sufficiently small outer radius to lie inside an arbitrary chart image, then define a globally smooth manifold-valued map `F = ψ ∘ H` for the chart inverse `ψ`. That final map must be proved admissible to the upstream `ContMDiffOn Model Model ∞` quantification and its `mfderiv` must be shown equal to the local inverse-chart derivative wherever `χ=1`.
 
 Only then can we finish the two directions of intrinsic `IsSmooth` and, under smoothness, intrinsic `IsClosed` equivalence. The current math-level argument is not a kernel proof of those equivalences.
 
@@ -34,7 +35,7 @@ The following stay unchanged: `SEM342_01_INTRINSIC_SMOOTHNESS_OPEN`, `SEM342_02_
 
 ## Exact follow-on steps
 
-1. Build the finite-dimensional smooth cutoff with support inside an open convex chart ball and value one on an open neighborhood of the chart point.
+1. Given an arbitrary open chart image and point, choose a sufficiently small outer ball inside it and instantiate the existing `ContDiffBump` type with appropriate inner/outer radii; the packaged-bump lemma supplies the remaining properties.
 2. Compose it with the chart's total inverse function, proving `ContMDiff Model Model ∞` globally by `ContMDiffOn` composition and `H(E)⊆D`.
 3. Prove equality of chart inverse `mfderiv` on the neighborhood and, consequently, equality of the resulting pulled-back differential forms there.
 4. Prove full local-to-global and global-to-local `IsSmooth`/chart coefficient equivalence.
