@@ -14,6 +14,29 @@ open scoped Manifold ContDiff
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace Space X]
   [IsManifold Model ∞ X]
 
+
+/-- Under the elementary skew/negation identities and J²=-I,
+invariance of a form is equivalent to symmetry of its induced pairing. -/
+private theorem gcl_metric_abstract_iff
+    {V : Type*} [AddGroup V] (A : V → V → ℝ) (J : V → V)
+    (skew : ∀ u v, A u v = -A v u)
+    (neg_left : ∀ u v, A (-u) v = -A u v)
+    (neg_right : ∀ u v, A u (-v) = -A u v)
+    (square : ∀ u, J (J u) = -u) :
+    (∀ u v, A (J u) (J v) = A u v) ↔
+      (∀ u v, A u (J v) = A v (J u)) := by
+  constructor
+  · intro h u v
+    have hi := h (J u) v
+    rw [square u, neg_left u (J v), skew (J u) v] at hi
+    exact neg_injective hi
+  · intro h u v
+    calc
+      A (J u) (J v) = A v (J (J u)) := h (J u) v
+      _ = A v (-u) := by rw [square u]
+      _ = -A v u := neg_right v u
+      _ = A u v := by rw [skew v u]; simp
+
 theorem gcl_eval_skew (α : TwoForm X) (x : X)
     (u v : TangentSpace Model x) :
     eval α x u v = -eval α x v u := by
@@ -64,7 +87,7 @@ theorem gcl_native_invariant_iff_metric_symmetric
   unfold IsInvariant
   constructor
   · intro h x
-    exact (gcl_invariant_iff_metric_symmetric_abstract
+    exact (gcl_metric_abstract_iff
       (A := fun u v : TangentSpace Model x => eval α x u v)
       (J := J.endomorphism x)
       (gcl_eval_skew α x)
@@ -72,7 +95,7 @@ theorem gcl_native_invariant_iff_metric_symmetric
       (gcl_eval_neg_right α x)
       (J.square x)).mp (h x)
   · intro h x
-    exact (gcl_invariant_iff_metric_symmetric_abstract
+    exact (gcl_metric_abstract_iff
       (A := fun u v : TangentSpace Model x => eval α x u v)
       (J := J.endomorphism x)
       (gcl_eval_skew α x)
