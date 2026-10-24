@@ -361,6 +361,7 @@ jobs:
           test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
           sha256sum sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean \
             sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean \
+            sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean \
             upstream/math/lean/OAI/Geometry/TamingCompatibility/Model.lean \
             upstream/math/lean/lake-manifest.json \
             > replay/openai-math-semantic-342/source-sha256.txt
@@ -393,6 +394,7 @@ jobs:
             lake build OAI.Geometry.TamingCompatibility.Model
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean"
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean"
           ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
           result=$?
           echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.exit"
@@ -424,8 +426,9 @@ jobs:
               "model_import": "OAI.Geometry.TamingCompatibility.Model",
               "bridge": "sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean",
               "native_metric_bridge": "sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean",
-              "sem342_01_intrinsic_smoothness": "OPEN",
-              "sem342_02_intrinsic_closedness": "OPEN",
+              "cutoff_chart_bridge": "sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean",
+              "sem342_01_intrinsic_smoothness": "CUTOFF_CORE_IF_SUCCESS__FULL_INTRINSIC_OPEN",
+              "sem342_02_intrinsic_closedness": "CUTOFF_CORE_IF_SUCCESS__FULL_INTRINSIC_OPEN",
               "sem342_03_metric_algebra": "NATIVE_POINTWISE_IF_SUCCESS__METRIC_SMOOTHNESS_OPEN",
               "sem342_04_manifold_correspondence": "OPEN",
               "scope": "Only kernel-checked declarations and printed axioms accepted. Native pointwise pairing symmetry/positivity does not certify metric smoothness or intrinsic manifold chart equivalence; no MATHCERT promotion.",
