@@ -15,6 +15,7 @@ using leanprover/lean4:v4.34.1.
 import OAI.Geometry.TamingCompatibility.Model
 
 namespace OAI.TamingCompatibility
+open scoped Manifold ContDiff
 
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace Space X]
   [IsManifold Model ∞ X]
