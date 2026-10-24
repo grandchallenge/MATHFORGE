@@ -360,6 +360,7 @@ jobs:
           test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
           test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
           sha256sum sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean \
+            sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean \
             upstream/math/lean/OAI/Geometry/TamingCompatibility/Model.lean \
             upstream/math/lean/lake-manifest.json \
             > replay/openai-math-semantic-342/source-sha256.txt
@@ -391,6 +392,7 @@ jobs:
             lake exe cache get
             lake build OAI.Geometry.TamingCompatibility.Model
             lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean"
           ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
           result=$?
           echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.exit"
@@ -421,11 +423,12 @@ jobs:
               "result": int(output.read_text()) if output.exists() else None,
               "model_import": "OAI.Geometry.TamingCompatibility.Model",
               "bridge": "sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean",
+              "native_metric_bridge": "sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean",
               "sem342_01_intrinsic_smoothness": "OPEN",
               "sem342_02_intrinsic_closedness": "OPEN",
-              "sem342_03_metric_algebra": "PARTIAL_IF_SUCCESS",
+              "sem342_03_metric_algebra": "NATIVE_POINTWISE_IF_SUCCESS__METRIC_SMOOTHNESS_OPEN",
               "sem342_04_manifold_correspondence": "OPEN",
-              "scope": "Only the explicitly proved Lean declarations and their printed axioms can be accepted. Algebraic metric symmetry is under explicit skew/neg/invariance hypotheses; its native instance is not yet certified. No paper equivalence or MATHCERT promotion.",
+              "scope": "Only kernel-checked declarations and printed axioms accepted. Native pointwise pairing symmetry/positivity does not certify metric smoothness or intrinsic manifold chart equivalence; no MATHCERT promotion.",
               "files": files
           }
           (root / "REPLAY_RECEIPT.json").write_text(json.dumps(payload, indent=2)+"\n")
