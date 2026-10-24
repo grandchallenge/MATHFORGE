@@ -68,6 +68,32 @@ theorem gcl_cutoffInterpolation_chart_core
   intro z hz
   exact gcl_cutoffInterpolation_eq_self y₀ χ z (hχone z hz)
 
+/-- In a Euclidean space a packaged smooth bump function provides
+the cutoff hypotheses needed by the chart core, with inner and outer
+balls determined by its positive radii. -/
+theorem gcl_bump_cutoff_chart_core
+    (y₀ : Space) (f : ContDiffBump y₀) :
+    ContDiff ℝ ∞ (gcl_cutoffInterpolation y₀ f) ∧
+      MapsTo (gcl_cutoffInterpolation y₀ f) univ (Metric.ball y₀ f.rOut) ∧
+      EqOn (gcl_cutoffInterpolation y₀ f) id (Metric.ball y₀ f.rIn) := by
+  apply gcl_cutoffInterpolation_chart_core y₀ f
+    (Metric.ball y₀ f.rOut) (Metric.ball y₀ f.rIn)
+  · exact convex_ball y₀ f.rOut
+  · exact Metric.mem_ball_self f.rOut_pos
+  · intro z
+    exact ⟨f.nonneg, f.le_one⟩
+  · intro z hz
+    by_contra hn
+    have hs : z ∈ Function.support f := hn
+    rw [f.support_eq] at hs
+    exact hz hs
+  · intro z hz
+    apply f.one_of_mem_closedBall
+    exact Metric.mem_closedBall.mpr (le_of_lt (Metric.mem_ball.mp hz))
+  · exact f.contDiff
+
+#print axioms OAI.TamingCompatibility.gcl_bump_cutoff_chart_core
+
 end OAI.TamingCompatibility
 
 #print axioms OAI.TamingCompatibility.gcl_cutoffInterpolation_mapsTo
