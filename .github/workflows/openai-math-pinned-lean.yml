@@ -328,3 +328,114 @@ jobs:
           path: replay/comparator-342
           if-no-files-found: error
           retention-days: 30
+
+
+  semantic-342:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
+    steps:
+      - name: Checkout governed semantic bridge
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Checkout exact upstream formal model
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+
+      - name: Assert upstream source and local proof identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/openai-math-semantic-342
+          test "$(git -C upstream/math rev-parse HEAD)" = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          sha256sum sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean \
+            upstream/math/lean/OAI/Geometry/TamingCompatibility/Model.lean \
+            upstream/math/lean/lake-manifest.json \
+            > replay/openai-math-semantic-342/source-sha256.txt
+          sha256sum upstream/math/lean/lake-manifest.json \
+            > replay/openai-math-semantic-342/lake-manifest-pre.sha256
+
+      - name: Install fixed elan v1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Replay actual Lean semantic bridge under pinned model and toolchain
+        shell: bash
+        working-directory: upstream/math/lean
+        run: |
+          set +e
+          (
+            set -euo pipefail
+            lake --version
+            lake update
+            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = \
+              "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/lake-manifest-pre.sha256")"
+            lake exe cache get
+            lake build OAI.Geometry.TamingCompatibility.Model
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean"
+          ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
+          result=$?
+          echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.exit"
+          sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/lake-manifest-post.sha256"
+          tail -n 100 "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log"
+          exit "$result"
+
+      - name: Record exact replay and bounded proof scope
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path("replay/openai-math-semantic-342")
+          files = {}
+          for f in sorted(root.iterdir()):
+              if f.is_file():
+                  raw = f.read_bytes()
+                  files[f.name] = {"size": len(raw), "sha256": hashlib.sha256(raw).hexdigest()}
+          output = root / "semantic.exit"
+          payload = {
+              "record_type": "GCL_OPENAI_MATH_F342_SEMANTIC_BRIDGE_REPLAY/1",
+              "head": os.environ.get("GITHUB_SHA"),
+              "run_id": os.environ.get("GITHUB_RUN_ID"),
+              "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+              "toolchain": "leanprover/lean4:v4.34.1",
+              "result": int(output.read_text()) if output.exists() else None,
+              "model_import": "OAI.Geometry.TamingCompatibility.Model",
+              "bridge": "sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean",
+              "sem342_01_intrinsic_smoothness": "OPEN",
+              "sem342_02_intrinsic_closedness": "OPEN",
+              "sem342_03_metric_algebra": "PARTIAL_IF_SUCCESS",
+              "sem342_04_manifold_correspondence": "OPEN",
+              "scope": "Only the explicitly proved Lean declarations and their printed axioms can be accepted. Algebraic metric symmetry is under explicit skew/neg/invariance hypotheses; its native instance is not yet certified. No paper equivalence or MATHCERT promotion.",
+              "files": files
+          }
+          (root / "REPLAY_RECEIPT.json").write_text(json.dumps(payload, indent=2)+"\n")
+          PY
+
+      - name: Retain positive or negative semantic bridge evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: openai-math-family342-semantic-bridge
+          path: replay/openai-math-semantic-342
+          retention-days: 30
+          if-no-files-found: error
