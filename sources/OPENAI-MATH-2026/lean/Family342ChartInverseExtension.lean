@@ -61,6 +61,40 @@ theorem gcl_chartBumpExtension_eqOn
     (Metric.mem_closedBall.mpr (le_of_lt (Metric.mem_ball.mp hz)))
   simp [gcl_chartBumpExtension, hχ]
 
+/-- Every point of an open Euclidean chart image admits a packaged
+smooth cutoff whose outer support ball is contained in the image. -/
+theorem gcl_exists_chartFittingBump
+    (W : Set Space) (hW : IsOpen W)
+    (y₀ : Space) (hy₀ : y₀ ∈ W) :
+    ∃ f : ContDiffBump y₀, Metric.ball y₀ f.rOut ⊆ W := by
+  obtain ⟨r, hr, hball⟩ := Metric.isOpen_iff.mp hW y₀ hy₀
+  let f : ContDiffBump y₀ :=
+    { rIn := r / 2
+      rOut := r
+      rIn_pos := half_pos hr
+      rIn_lt_rOut := half_lt_self hr }
+  exact ⟨f, hball⟩
+
+/-- A smooth global manifold-valued extension of each local chart inverse
+exists at every point of the open target; it agrees with the inverse on a
+nonempty inner neighborhood. No global chart inverse is assumed. -/
+theorem gcl_exists_globalSmooth_chartInverse_extension
+    (x : X) (y₀ : Space)
+    (hy₀ : y₀ ∈ (chartAt Space x).target) :
+    ∃ (f : ContDiffBump y₀),
+      ContMDiff Model Model ∞ (gcl_chartBumpExtension x y₀ f) ∧
+      EqOn (gcl_chartBumpExtension x y₀ f)
+        (chartAt Space x).symm (Metric.ball y₀ f.rIn) ∧
+      y₀ ∈ Metric.ball y₀ f.rIn := by
+  obtain ⟨f, hfit⟩ := gcl_exists_chartFittingBump
+    (chartAt Space x).target (chartAt Space x).open_target y₀ hy₀
+  refine ⟨f, gcl_chartBumpExtension_smooth x y₀ f hfit,
+    gcl_chartBumpExtension_eqOn x y₀ f, ?_⟩
+  exact Metric.mem_ball_self f.rIn_pos
+
+#print axioms OAI.TamingCompatibility.gcl_exists_chartFittingBump
+#print axioms OAI.TamingCompatibility.gcl_exists_globalSmooth_chartInverse_extension
+
 end OAI.TamingCompatibility
 
 #print axioms OAI.TamingCompatibility.gcl_chartBumpExtension_smooth

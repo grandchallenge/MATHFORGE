@@ -23,9 +23,15 @@ The executable proof `sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtensi
 
 **This claim is conditional on the job `semantic-342` compiling the source without `sorryAx` or nonpermitted axioms.** The declarations are not accepted based on this document alone.
 
+## Constructive existence in any open chart image
+
+The extended native Lean module additionally proves `gcl_exists_chartFittingBump`: every point in an open subset of `Space` has a `ContDiffBump` with outer support ball contained in that subset. It uses `Metric.isOpen_iff` to choose the outer radius and sets the inner radius to half of it.
+
+The resulting `gcl_exists_globalSmooth_chartInverse_extension` asserts that for every point in the target of a chart, there exists a globally smooth map `F:Space→X` which agrees with the chart inverse on a **nonempty** Euclidean inner ball containing the chosen point. This is the exact global-chart-inverse extension that the original atlas-equivalence mathematical proof needs. The theorem is accepted only on a clean exact-source Lean replay.
+
 ## Remaining steps to full smoothness / closedness equivalence
 
-1. **Fit to every chart point.** From the openness of `(chartAt Space x).target` at any chosen point `y₀`, select positive radii `0<rIn<rOut` so the outer ball is contained in the target. Instantiate a `ContDiffBump y₀` with those radii.
+1. **Global inverse chart extension:** completed by the new existential theorem, conditional on exact Lean replay.
 2. **Pullback identity.** Use `EqOn F ψ` on the inner ball plus locality of `mfderiv` to prove equality of `pullback α F` and chartwise inverse-coordinate coefficients there.
 3. **SEM-342-01.** Recover intrinsic smoothness from the globally quantified `IsSmooth α` via `F`; prove its converse by local smooth pullback in arbitrary charts.
 4. **SEM-342-02.** Repeat using locality of `extDerivWithin` and the pinned `extDerivWithin_pullback`; explicitly require smoothness for the exterior derivative and verify overlap invariance.
