@@ -35,7 +35,9 @@ theorem gcl_chartBumpExtension_mfderiv_eq
       (chartAt Space x).symm z :=
     gcl_chartBumpExtension_eqOn x y₀ f hz
   rw [hp] at h
-  simpa using h
+  refine h.trans ?_
+  ext v
+  rfl
 
 /-- The raw two-form pullback along the global chart extension agrees
 on the inner ball with the local inverse-chart coefficients, for every
