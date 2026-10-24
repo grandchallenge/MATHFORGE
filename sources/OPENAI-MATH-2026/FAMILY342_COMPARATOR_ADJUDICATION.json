@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "GCL_OPENAI_MATH_FAMILY342_COMPARATOR_ADJUDICATION/1",
+  "record_id": "MF-OAI-MATH-2026-F342-CMP-001",
+  "decision": "HARDENED_COMPARATOR_REPLAY_ACCEPTED",
+  "decision_scope": "exact pinned Lean comparator challenge only; NOT manuscript-level mathematical certification",
+  "governed_repository": "grandchallenge/MATHFORGE",
+  "protected_head": "470398de928083cf7f890edc99d459aa43b1c38d",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+  },
+  "replay": {
+    "run_id": 40041645086,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40041645086",
+    "run_conclusion": "success",
+    "event_head": "470398de928083cf7f890edc99d459aa43b1c38d",
+    "run_attempt": 1,
+    "comparator": {
+      "job_id": 120713859317,
+      "job_conclusion": "success",
+      "challenged_declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+      "comparator_config": "lean/ComparatorChallenges/TamingCompatibility.json",
+      "hardened_exit_code": 0,
+      "hardened_accepted": true,
+      "diagnostic_exit_code": null,
+      "observed_success_lines": [
+        "Lean default kernel accepts the solution",
+        "Your solution is okay!",
+        "Finished with result: success",
+        "Main processes terminated with: code=exited/status=0"
+      ],
+      "build_task_count": 9505,
+      "tool_commits": {
+        "comparator": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+        "lean4export": "076e8e57707e813375e8f9da8bf989799ace9680",
+        "landrun": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+      }
+    },
+    "lean": {
+      "job_id": 120713859486,
+      "job_conclusion": "success",
+      "exit_code": 0,
+      "build_task_count": 9505,
+      "printed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "config_permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ]
+    }
+  },
+  "evidence": {
+    "comparator_artifact": {
+      "artifact_id": 12541759822,
+      "archive_name": "openai-math-comparator-family342",
+      "archive_sha256": "4b32370b49385bd1c04b714691c12306dded601d5f9517a341e0e3ef89a44a29",
+      "hardened_log_sha256": "fb13c3b7bff01a5549ba587295d0dfbfd1fd5dc363724a0fcdbe6c9f9c256ed2",
+      "receipt_file": "REPLAY_RECEIPT.json",
+      "expires_at": "2026-11-23T01:07:07Z"
+    },
+    "lean_artifact": {
+      "artifact_id": 12542105341,
+      "archive_name": "openai-math-family342-lean-4341",
+      "archive_sha256": "5c3cd14a8af80c881320543d9b498b92274d106e58528ed3166272f593b8a317",
+      "receipt_file": "REPLAY_RECEIPT.json",
+      "expires_at": "2026-11-23T00:52:53Z"
+    },
+    "independent_readback": "Downloaded both exact GitHub-run artifacts; verified artifact SHA-256 digests match API digests; verified every receipt-listed internal file length and SHA-256; verified hardened acceptance lines, tool source pins, and equal pre/post Lake manifest digest."
+  },
+  "semantics": {
+    "displayed_main_theorem": "PRELIMINARY_STATEMENT_ALIGNMENT_ONLY",
+    "definition_equivalence": "INDEPENDENT_DETAILED_REVIEW_PENDING",
+    "corrected_cone_theorem": "NOT_FORMALIZED_BY_THIS_COMPARATOR",
+    "cross_edition_status": "MAIN_EXISTENCE_THEOREM_TEXT_IDENTICAL_BUT_OTHER_CLAIMS_CHANGE",
+    "upstream_catalogue_revision_exception": "formalization.yaml/docs/342.md refer to September 23 edition; CONTENTS.md points to October 6 revision"
+  },
+  "conclusions": {
+    "comparator_execution_gate": "CLOSED_PASS",
+    "lean_kernel_gate": "CLOSED_PASS",
+    "paper_formalization_gate": "OPEN",
+    "correction_semantics_gate": "OPEN",
+    "literature_priority_gate": "OPEN",
+    "MATHCERT_certification": "NOT_GRANTED",
+    "provider_assurance": "SOURCE_LOCKED"
+  },
+  "claim_boundary": "A PASS certifies that Comparator accepted exactly the pinned Lean challenge and proof under its declared execution policy. The dossier does not certify external mathematical correctness, scientific priority, or all claims in either manuscript revision, nor does it grant MATHCERT or claim-ledger authority."
+}
