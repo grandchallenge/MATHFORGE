@@ -30,7 +30,7 @@ theorem gcl_chartBumpExtension_mfderiv_eq
     have hχ : f w = 1 := f.one_of_mem_closedBall
       (Metric.mem_closedBall.mpr (le_of_lt (Metric.mem_ball.mp hw)))
     simp [gcl_chartBumpExtension, hχ]
-  have h := Filter.EventuallyEq.mfderiv_eq hlocal
+  have h := Filter.EventuallyEq.mfderiv_eq (I := Model) (I' := Model) hlocal
   have hp : gcl_chartBumpExtension x y₀ f z =
       (chartAt Space x).symm z :=
     gcl_chartBumpExtension_eqOn x y₀ f hz
