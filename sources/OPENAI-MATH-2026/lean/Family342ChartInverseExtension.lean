@@ -45,7 +45,9 @@ theorem gcl_chartBumpExtension_smooth
         have hs : z ∈ Function.support f := hn
         rw [f.support_eq] at hs
         exact hz hs
-      simpa [hzero] using Metric.mem_ball_self f.rOut_pos
+      have hcenter : y₀ ∈ Metric.ball y₀ f.rOut :=
+        Metric.mem_ball_self f.rOut_pos
+      simpa [hzero] using hcenter
   exact hψ.comp_contMDiff hH.contMDiff hRange
 
 /-- The global map agrees with the true inverse chart on the bump's
