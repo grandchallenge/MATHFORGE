@@ -71,8 +71,24 @@ theorem gcl_invariant_iff_metric_symmetric_abstract
       _ = -ω v u := neg_right v u
       _ = ω u v := by rw [skew v u]; simp
 
+
+/-- On the Euclidean model space, exterior closedness survives any smooth
+change of coordinates. This is the forward naturality direction of the
+closedness bridge; it does NOT yet establish the manifold-level converse. -/
+theorem gcl_extDeriv_zero_pullback_in_coordinates
+    (ω : Space → Space [⋀^Fin 2]→L[ℝ] ℝ)
+    (f : Space → Space) (y : Space)
+    (hω : DifferentiableAt ℝ ω (f y))
+    (hf : ContDiffAt ℝ ∞ f y)
+    (hcl : extDeriv ω (f y) = 0) :
+    extDeriv (fun z : Space =>
+      (ω (f z)).compContinuousLinearMap (fderiv ℝ f z)) y = 0 := by
+  rw [extDeriv_pullback hω hf le_top, hcl]
+  simp
+
 end OAI.TamingCompatibility
 
 #print axioms OAI.TamingCompatibility.gcl_tames_implies_isNondegenerate
 #print axioms OAI.TamingCompatibility.gcl_symplectic_and_tames_iff_smooth_closed_tames
 #print axioms OAI.TamingCompatibility.gcl_invariant_iff_metric_symmetric_abstract
+#print axioms OAI.TamingCompatibility.gcl_extDeriv_zero_pullback_in_coordinates
