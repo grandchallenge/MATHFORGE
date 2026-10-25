@@ -427,6 +427,11 @@ jobs:
                 "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartClosedForward.lean"
             } > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342ClosedForwardComposite.lean"
             lake env lean "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342ClosedForwardComposite.lean"
+            # Prove the forward implications independently of all GCL bump
+            # extension or locality declarations; the upstream only requires
+            # local smoothness of each globally typed test map on its open U.
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartSmoothForward.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartClosedForward.lean"
           ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
           result=$?
           if [ "$result" -eq 0 ]; then
