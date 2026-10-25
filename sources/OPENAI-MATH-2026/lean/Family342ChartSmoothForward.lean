@@ -35,7 +35,7 @@ theorem gcl_isSmooth_implies_chartwise
       Metric.isOpen_ball hF.contMDiffOn
   apply (hGlobal.mono Set.inter_subset_right).congr
   intro z hz
-  exact (gcl_chartBumpExtension_pullback_eqOn α x y f z hz.2).symm
+  exact (gcl_chartBumpExtension_pullback_eqOn α x y f hz.2).symm
 
 end OAI.TamingCompatibility
 
