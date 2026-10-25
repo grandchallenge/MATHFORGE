@@ -1,12 +1,12 @@
 /-
-OpenAI Math family 342, SEM-342-01 forward implication.
+OpenAI Math family 342, SEM-342-01: direct forward chart test.
 
-The upstream universal smooth-test predicate entails C∞ local chart
-coefficients for any raw TwoForm X. This is a source-locked theorem
-on actual upstream types, relying on the previously proved globally
-smooth inverse-chart extension and exact tensor pullback locality.
+The upstream IsSmooth predicate only requires f to be smooth on the
+specified open U. The chart inverse is a globally typed map Space → X,
+and is smooth on its target. A bump extension is unnecessary for this
+forward implication. Converse smoothness remains open.
 
-The converse smoothness implication and closedness bridge remain open.
+Source: openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a
 -/
 import OAI.Geometry.TamingCompatibility.Model
 
@@ -17,25 +17,13 @@ open Set
 variable {X : Type*} [TopologicalSpace X] [ChartedSpace Space X]
   [IsManifold Model ∞ X]
 
-/-- The upstream globally quantified IsSmooth predicate implies
-ordinary C∞ chart coefficients on each inverse chart target. -/
+/-- The upstream open-domain test directly includes every inverse chart. -/
 theorem gcl_isSmooth_implies_chartwise
     (α : TwoForm X) (hα : IsSmooth α) (x : X) :
     ContDiffOn ℝ ∞ (pullback α (chartAt Space x).symm)
       (chartAt Space x).target := by
-  apply contDiffOn_of_locally_contDiffOn
-  intro y hy
-  obtain ⟨f, hF, _hEq, hyBall⟩ :=
-    gcl_exists_globalSmooth_chartInverse_extension x y hy
-  refine ⟨Metric.ball y f.rIn, Metric.isOpen_ball, hyBall, ?_⟩
-  have hGlobal : ContDiffOn ℝ ∞
-      (pullback α (gcl_chartBumpExtension x y f))
-      (Metric.ball y f.rIn) :=
-    hα (gcl_chartBumpExtension x y f) (Metric.ball y f.rIn)
-      Metric.isOpen_ball hF.contMDiffOn
-  apply (hGlobal.mono Set.inter_subset_right).congr
-  intro z hz
-  exact (gcl_chartBumpExtension_pullback_eqOn α x y f hz.2).symm
+  exact hα (chartAt Space x).symm (chartAt Space x).target
+    (chartAt Space x).open_target contMDiffOn_chart_symm
 
 end OAI.TamingCompatibility
 
