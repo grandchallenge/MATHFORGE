@@ -420,6 +420,40 @@ jobs:
             lake env lean "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342SmoothForwardComposite.lean"
           ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
           result=$?
+          if [ "$result" -eq 0 ]; then
+            # Green Lean exit alone is insufficient: admitted holes can compile.
+            # All printed declarations must have permitted kernel axioms.
+            python3 - "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" >> "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1 <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+          s = Path(sys.argv[1]).read_text(errors="replace")
+          if "sorryAx" in s:
+              raise SystemExit("REJECT: sorryAx in Lean theorem dependencies")
+          declared = re.findall(r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]", s, re.S)
+          if not declared:
+              raise SystemExit("REJECT: missing theorem axiom output")
+          allowed = {"propext", "Classical.choice", "Quot.sound"}
+          seen = set()
+          for theorem, raw in declared:
+              axioms = {v.strip() for v in raw.split(",") if v.strip()}
+              extra = axioms - allowed
+              if extra:
+                  raise SystemExit(f"REJECT: disallowed axioms for {theorem}: {sorted(extra)}")
+              seen.add(theorem)
+          required = {
+              "OAI.TamingCompatibility.gcl_chartBumpExtension_mfderiv_eq",
+              "OAI.TamingCompatibility.gcl_chartBumpExtension_pullback_eqOn",
+              "OAI.TamingCompatibility.gcl_isSmooth_implies_chartwise",
+          }
+          missing = required - seen
+          if missing:
+              raise SystemExit(f"REJECT: missing theorem receipts: {sorted(missing)}")
+          print(f"GCL_AXIOMS_PASS: verified {len(declared)} declarations, {len(required)} mandatory")
+          PY
+            checked=$?
+            if [ "$checked" -ne 0 ]; then result="$checked"; fi
+          fi
           echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.exit"
           sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/lake-manifest-post.sha256"
           tail -n 100 "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log"
@@ -453,7 +487,7 @@ jobs:
               "native_chart_inverse_extension": "sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean",
               "native_pullback_locality": "sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean",
               "chartwise_smooth_forward": "sources/OPENAI-MATH-2026/lean/Family342ChartSmoothForward.lean",
-              "sem342_01_intrinsic_smoothness": "CUTOFF_CORE_IF_SUCCESS__FULL_INTRINSIC_OPEN",
+              "sem342_01_intrinsic_smoothness": "CHART_SMOOTH_FORWARD_IF_SUCCESS__CONVERSE_OPEN",
               "sem342_02_intrinsic_closedness": "CUTOFF_CORE_IF_SUCCESS__FULL_INTRINSIC_OPEN",
               "sem342_03_metric_algebra": "NATIVE_POINTWISE_IF_SUCCESS__METRIC_SMOOTHNESS_OPEN",
               "sem342_04_manifold_correspondence": "OPEN",
