@@ -1,0 +1,38 @@
+# WP00: source-normalized portfolio accounting (verification-first)
+
+**Status:** Source-only mapping accepted for protected review. Neither Lean replay nor theorem-semantic correspondence nor MATHCERT certification follows from these files.
+
+## Frozen inputs
+
+- Upstream `openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a`.
+- `MANUSCRIPT_INDEX.json` indexed against pinned `CONTENTS.md` (Git blob `2c68c086fff36a5806c936ad1659cf1a8d0b6dd9`).
+- `FORMALIZATION_CROSSWALK.json`, representing `lean/formalization.yaml` (Git blob `275eee8cfab7ce49d3a5e88f02cbb8f28fe6fee6`).
+- `SOURCE_LOCK.json`, whose *original-intake* status fields must not be mistaken for later CHAD acquisition/PR admissions.
+
+## Mechanically established distinctions
+
+The deterministic `SOURCE_CROSSWALK_LEDGER.json` indexes all 372 unique family IDs, 719 unique PDF paths, 173 upstream formalization source-paper records and 200 uniquely named Lean declaration entries, without assigning source assertions to unverified theorem proofs.
+
+Of the 173 source-paper records, 172 point to active catalogue PDF paths. Those 172 records touch **135 distinct families**; 237 families have no matching source-paper record in this pinned manifest. This is *source metadata coverage*, not the set of all provable, formalized, true or false families.
+
+The unmatched historical source path points to the September 23 manuscript of Family 342, whereas the active catalogue lists the October 6 edition. It is retained as an edition-mismatch risk, not silently rewritten or dropped.
+
+The 200 declaration entries involve 192 distinct solution-file paths and 189 distinct Comparator configurations. Eight Comparator configurations are shared among several declarations; one config is not necessarily one theorem. The upstream YAML includes source-paper records and independent main-result declaration entries **without an explicit edge joining each declaration to a unique source paper/family**. Accordingly, the ledger retains `family_id: null` for all declaration entries rather than guessing via title, file path or mathematical topic. Such links require a separately witnessed manuscript–declaration correspondence.
+
+Upstream `history.md` reports **300 / 719 top-line results formalized**. Neither `formalization.yaml` nor its GCL crosswalk supplies a reconciliation of this reported number to its 173 source records or 200 declaration entries. The unresolved 300/200 gap must not be described as 100 missing formal proofs: these metrics are not shown to count the same objects.
+
+## Replay
+
+```sh
+python3 sources/OPENAI-MATH-2026/audit_crosswalk.py --check
+python3 -m unittest tests.test_openai_math_2026_crosswalk_audit
+# With separately acquired exact-pinned upstream YAML and PyYAML installed:
+python3 sources/OPENAI-MATH-2026/audit_crosswalk.py \
+  --upstream-yaml /path/to/pinned/lean/formalization.yaml --check
+```
+
+The optional upstream check validates the Git-blob SHA-1 before decoding the YAML, compares 173 source paths and all 200 (declaration, source file, Comparator config) triples against GCL's stored crosswalk. The committed ledger is UTF-8 sorted-key JSON and must be byte-for-byte reproducible. Negative tests reject duplicates, false inclusion flags, missing revision exception, stale source lock, unauthorized promotion and wrong upstream blob.
+
+## Residual obligations
+
+WP00 has mechanically closed the *pinned source inventory accounting* slice. The **300-result denominator correspondence** and **200 declaration-to-family semantic edges** remain genuinely unresolved and should be carried as explicit follow-on evidence obligations, not guessed. WP01 must perform actual pinned Lean/axiom/Comparator replay; WP02 checks editions; WP03 verifies theorem meaning; WP04 challenges verdicts. No source-index-only deliverable satisfies any of those proof or certification gates.
