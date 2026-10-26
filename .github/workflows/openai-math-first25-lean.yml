@@ -1,0 +1,99 @@
+name: OAI Math first25 exact Lean theorem replay
+on:
+  workflow_dispatch:
+    inputs:
+      shard_start:
+        description: "Zero-based first25 index (0 through 24)"
+        required: true
+        type: number
+        default: 0
+      shard_count:
+        description: "Number of items to replay (1 through 5)"
+        required: true
+        type: number
+        default: 1
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oai-first25-lean-${{ github.ref }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}
+  cancel-in-progress: false
+
+jobs:
+  pinned-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 145
+    steps:
+      - name: Checkout protected GCL harness
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Checkout exact upstream Lean
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+      - name: Verify immutable revisions and toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream/math rev-parse HEAD)" = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          mkdir -p replay/oai26-first25
+          sha256sum upstream/math/lean/lake-manifest.json > replay/oai26-first25/manifest-pre.sha256
+          git rev-parse HEAD > replay/oai26-first25/gcl-head.txt
+          git -C upstream/math rev-parse HEAD > replay/oai26-first25/upstream-head.txt
+      - name: Install pinned elan v1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            -o /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Prepare pinned dependency cache without manifest drift
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream/math/lean
+          {
+            lake --version
+            lake update
+            diff -u "$GITHUB_WORKSPACE/replay/oai26-first25/manifest-pre.sha256" \
+              <(sha256sum lake-manifest.json | sed 's|lake-manifest.json|upstream/math/lean/lake-manifest.json|')
+            lake exe cache get
+          } > "$GITHUB_WORKSPACE/replay/oai26-first25/environment.log" 2>&1
+      - name: Run bounded exact theorem and axiom replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 sources/OPENAI-MATH-2026/replay_first25_lean.py \
+            --upstream upstream/math \
+            --output replay/oai26-first25 \
+            --start "${{ inputs.shard_start }}" \
+            --count "${{ inputs.shard_count }}"
+      - name: Record output hashes and upload even on failure
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p replay/oai26-first25
+          find replay/oai26-first25 -maxdepth 1 -type f -print0 |
+            sort -z | xargs -0 -r sha256sum > replay/oai26-first25/files.sha256
+          printf 'run_id=%s\nsource_commit=%s\n' "$GITHUB_RUN_ID" "$GITHUB_SHA" \
+            > replay/oai26-first25/run-identity.txt
+      - name: Retain exact success or failure evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: oai26-first25-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}
+          path: replay/oai26-first25
+          if-no-files-found: error
+          retention-days: 30
