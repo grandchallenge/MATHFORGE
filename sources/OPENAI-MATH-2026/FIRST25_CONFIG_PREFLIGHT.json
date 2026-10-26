@@ -1,0 +1,482 @@
+{
+  "record_type": "OAI26_WP01_SOURCE_CONFIG_PREFLIGHT/1",
+  "rows": [
+    {
+      "challenge_module": "ComparatorChallenges.CommutingDerivations",
+      "comparator_blob": "41ce5c20c256e4f4000a99960d9fe9de038dd3f2",
+      "comparator_config": "lean/ComparatorChallenges/CommutingDerivations.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras"
+      ],
+      "declaration": "OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras",
+      "lean_source": "lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.AlgebraicGeometry.CommutingDerivations.OrdinaryExtraMain",
+      "source_blob": "6bdb841e1d5e2eaa4b673f5fcb35548b12c965f1",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.AbhyankarSathaye",
+      "comparator_blob": "6a074f8432d81d9ba1b67a4b58f371b79d07666e",
+      "comparator_config": "lean/ComparatorChallenges/AbhyankarSathaye.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.AbhyankarSathaye.exists_noncoordinate_polynomial"
+      ],
+      "declaration": "OAI.AbhyankarSathaye.exists_noncoordinate_polynomial",
+      "lean_source": "lean/OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.AlgebraicGeometry.AbhyankarSathaye.Counterexample",
+      "source_blob": "10a76c4cd4828cad0e2bef5b1eaee47d006bc5bf",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.AuslanderReiten",
+      "comparator_blob": "c8b0c4013438d814656307933a8927241c0db1f1",
+      "comparator_config": "lean/ComparatorChallenges/AuslanderReiten.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ArExplicit.Statement.main"
+      ],
+      "declaration": "OAI.ArExplicit.Statement.main",
+      "lean_source": "lean/OAI/Algebra/AuslanderReiten/All.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Algebra.AuslanderReiten.All",
+      "source_blob": "47fc6cb45070debc6938693c3ead81221e223c01",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.ArnoldCounterexample",
+      "comparator_blob": "d1b47c86cba347ea016d79f8b682b68ae28c2bbb",
+      "comparator_config": "lean/ComparatorChallenges/ArnoldCounterexample.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ArnoldCounterexample.main"
+      ],
+      "declaration": "OAI.ArnoldCounterexample.main",
+      "lean_source": "lean/OAI/Geometry/Arnold/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Geometry.Arnold.Main",
+      "source_blob": "771ff79d563483fca66e0571613bd6294f7f3596",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.ArtinCAT0",
+      "comparator_blob": "9666edcfab3a1d2dddf7dcbb0ad70b4ae8d8d7c1",
+      "comparator_config": "lean/ComparatorChallenges/ArtinCAT0.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ArtinCAT0.main"
+      ],
+      "declaration": "OAI.ArtinCAT0.main",
+      "lean_source": "lean/OAI/GroupTheory/ArtinCAT0/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.GroupTheory.ArtinCAT0.Main",
+      "source_blob": "b7a2ec65ed3041d4972a551157103e263a154801",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.AsymptoticallyMinimalLittlewood",
+      "comparator_blob": "e12b4dbc197643e365733f455b49bd1b071e7402",
+      "comparator_config": "lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.AsymptoticallyMinimalLittlewood.main"
+      ],
+      "declaration": "OAI.AsymptoticallyMinimalLittlewood.main",
+      "lean_source": "lean/OAI/Analysis/Littlewood/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.Littlewood.Main",
+      "source_blob": "1dd4d6eb01c5098222d2f492761fa0eefcbd37ab",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BackwardIntertwiners",
+      "comparator_blob": "c923da86190f8f3bfe579279e49cfbaa7050df7a",
+      "comparator_config": "lean/ComparatorChallenges/BackwardIntertwiners.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BackwardIntertwiners.direct_algebra_corollary"
+      ],
+      "declaration": "OAI.BackwardIntertwiners.direct_algebra_corollary",
+      "lean_source": "lean/OAI/Analysis/BackwardIntertwiners/AlgebraCorollary.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.BackwardIntertwiners.AlgebraCorollary",
+      "source_blob": "81184567de8403f3b4ad530c120440cea3ba8145",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BassTrace",
+      "comparator_blob": "5cb80181501715b2109221f5915d5051e2a169ed",
+      "comparator_config": "lean/ComparatorChallenges/BassTrace.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support"
+      ],
+      "declaration": "OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support",
+      "lean_source": "lean/OAI/RingTheory/BassTrace/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.RingTheory.BassTrace.Main",
+      "source_blob": "713d37e54fdf006afc52967d5f430185dfb48146",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BinPackingGap",
+      "comparator_blob": "524068fd966d4b066905ed75688701d3bed6a970",
+      "comparator_config": "lean/ComparatorChallenges/BinPackingGap.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BinPackingGap.main_results"
+      ],
+      "declaration": "OAI.BinPackingGap.main_results",
+      "lean_source": "lean/OAI/Computability/BinPacking/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Computability.BinPacking.Main",
+      "source_blob": "2800e6abe9382b13df1ef3e2fc71e778ca889c96",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BinaryMatching",
+      "comparator_blob": "a800ea055142b790c414457858991e7b9fdf4930",
+      "comparator_config": "lean/ComparatorChallenges/BinaryMatching.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BinaryMatching.deterministic_approximate_counting"
+      ],
+      "declaration": "OAI.BinaryMatching.deterministic_approximate_counting",
+      "lean_source": "lean/OAI/Computability/MatchingCount/BinarySolve.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Computability.MatchingCount.BinarySolve",
+      "source_blob": "1058dd9acd6ac1afbab80476869b886418f7b009",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BorsukNine",
+      "comparator_blob": "1efc4b4351424f8da1a77abef9e14befc8733866",
+      "comparator_config": "lean/ComparatorChallenges/BorsukNine.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BorsukNine.main_theorem"
+      ],
+      "declaration": "OAI.BorsukNine.main_theorem",
+      "lean_source": "lean/OAI/Geometry/Borsuk/Counterexample.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Geometry.Borsuk.Main",
+      "source_blob": "7e779e6c38232bf6dc9925f68292820162cf54f3",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BoundedRecovery",
+      "comparator_blob": "3095af7c71b9f02176e78014ed14229861d4083b",
+      "comparator_config": "lean/ComparatorChallenges/BoundedRecovery.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BoundedRecovery.bounded_recovery"
+      ],
+      "declaration": "OAI.BoundedRecovery.bounded_recovery",
+      "lean_source": "lean/OAI/Analysis/ModularRecovery/Recovery.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.ModularRecovery.Main",
+      "source_blob": "9a8b20c0ad89319e76f348fad3d62d2f0f554523",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BoundedTreePotentials",
+      "comparator_blob": "d7280dd1ccc964de22c1d81c668bafa25a1b00ed",
+      "comparator_config": "lean/ComparatorChallenges/BoundedTreePotentials.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BoundedTreePotentials.TreeCalculus.main_counterexample"
+      ],
+      "declaration": "OAI.BoundedTreePotentials.TreeCalculus.main_counterexample",
+      "lean_source": "lean/OAI/Analysis/TreePotential/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.TreePotential.Main",
+      "source_blob": "582e1b15840123dd7f7d8301ac0912d200075ec6",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BoundedTreewidthL1",
+      "comparator_blob": "34e22e18bac3028c36613dac41ed40edc8b70537",
+      "comparator_config": "lean/ComparatorChallenges/BoundedTreewidthL1.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.BoundedTreewidthL1.main_theorem"
+      ],
+      "declaration": "OAI.BoundedTreewidthL1.main_theorem",
+      "lean_source": "lean/OAI/Combinatorics/TreewidthL1/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Combinatorics.TreewidthL1.Main",
+      "source_blob": "bc8b92a4b0aa73a24be359b4ef8f85448f544b22",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.BrennanSharp",
+      "comparator_blob": "69e7aff887e01fcb0349f10827e88b681bb5ecbf",
+      "comparator_config": "lean/ComparatorChallenges/BrennanSharp.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.Brennan.Sharp.sharp_endpoints"
+      ],
+      "declaration": "OAI.Brennan.Sharp.sharp_endpoints",
+      "lean_source": "lean/OAI/Analysis/IntegralMeans/SharpEndpoints.lean",
+      "permitted_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "solution_module": "OAI.Analysis.IntegralMeans.SharpEndpoints",
+      "source_blob": "4c18bfd8f6cf424fd70f7081eb246432d8f3919f",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.Brennan",
+      "comparator_blob": "0c5f62624312ecb6dcc44d0940f399c3da7aa969",
+      "comparator_config": "lean/ComparatorChallenges/Brennan.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.Brennan.main_theorem"
+      ],
+      "declaration": "OAI.Brennan.main_theorem",
+      "lean_source": "lean/OAI/Analysis/IntegralMeans/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.IntegralMeans.Main",
+      "source_blob": "febf62e3690ebadf6831a66431d662f216872e4f",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.C0Absorption",
+      "comparator_blob": "70c6df7624531a5d45a716ed64c48c362d3d7fc1",
+      "comparator_config": "lean/ComparatorChallenges/C0Absorption.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.C0Absorption.main_result"
+      ],
+      "declaration": "OAI.C0Absorption.main_result",
+      "lean_source": "lean/OAI/Analysis/C0Absorption/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.C0Absorption.Main",
+      "source_blob": "9bb270097aa133b5e310baa57a75633242e5a26d",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CHObstruction",
+      "comparator_blob": "1f95bafacc1c44bcb07b475ac00fe9af90c9c76e",
+      "comparator_config": "lean/ComparatorChallenges/CHObstruction.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CHObstruction.main"
+      ],
+      "declaration": "OAI.CHObstruction.main",
+      "lean_source": "lean/OAI/ModelTheory/Categoricity/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.ModelTheory.Categoricity.Main",
+      "source_blob": "15a5f509c9015929dd0435f18bbd1d683c2f43db",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.ChoicelessPolynomialTime",
+      "comparator_blob": "5bbf4246a23d110ce1783708e6cf32431db3ff94",
+      "comparator_config": "lean/ComparatorChallenges/ChoicelessPolynomialTime.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CPTSeparation.main"
+      ],
+      "declaration": "OAI.CPTSeparation.main",
+      "lean_source": "lean/OAI/ModelTheory/Choiceless/Separation.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.ModelTheory.Choiceless.Separation",
+      "source_blob": "f286a0e8c78aed6717e3f82df085cada632c6868",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CartierChartCompactnessSupport",
+      "comparator_blob": "b9b3651ebd56b5cd033ad9af2308836d3152db64",
+      "comparator_config": "lean/ComparatorChallenges/CartierChartCompactnessSupport.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CartierSections.isCompact_closedChartFieldRetraction_cone"
+      ],
+      "declaration": "OAI.CartierSections.isCompact_closedChartFieldRetraction_cone",
+      "lean_source": "lean/OAI/AlgebraicGeometry/CartierSections/ChartCompactness.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.AlgebraicGeometry.CartierSections.ChartCompactness",
+      "source_blob": "85e2dc9c5d0ac1a8fcba25e59c5731f4c25ea3e7",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CirculantHadamard",
+      "comparator_blob": "00832afd698a153120fe7800689602e00477ed66",
+      "comparator_config": "lean/ComparatorChallenges/CirculantHadamard.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CirculantHadamard.exists_iff_order_one_or_four"
+      ],
+      "declaration": "OAI.CirculantHadamard.exists_iff_order_one_or_four",
+      "lean_source": "lean/OAI/LinearAlgebra/CirculantHadamard/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.LinearAlgebra.CirculantHadamard.Main",
+      "source_blob": "48df5c378fbae1c48a17d82a9303a70009526fbf",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.ClassicalON",
+      "comparator_blob": "efe82f734b5aa3f6414779109d993f27f9738baf",
+      "comparator_config": "lean/ComparatorChallenges/ClassicalON.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ClassicalON.main"
+      ],
+      "declaration": "OAI.ClassicalON.main",
+      "lean_source": "lean/OAI/Probability/ClassicalON/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Probability.ClassicalON.Main",
+      "source_blob": "b838a422bbd33393382b95b9ed2f8c6a5177b134",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CliqueFreeLog",
+      "comparator_blob": "0fc16471c5450d23ce92d61fe93cb303465386c0",
+      "comparator_config": "lean/ComparatorChallenges/CliqueFreeLog.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CliqueFreeLog.logarithmic_independence_bound"
+      ],
+      "declaration": "OAI.CliqueFreeLog.logarithmic_independence_bound",
+      "lean_source": "lean/OAI/Combinatorics/CliqueFree/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Combinatorics.CliqueFree.Main",
+      "source_blob": "8f1a47dcf0c0ca1f0087f813640ab3b47f3f2848",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CompactBanach",
+      "comparator_blob": "c7541a5721a183de7f95f719363d17d2798c7ca9",
+      "comparator_config": "lean/ComparatorChallenges/CompactBanach.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CompactBanach.main"
+      ],
+      "declaration": "OAI.CompactBanach.main",
+      "lean_source": "lean/OAI/Geometry/DoublingHilbert/CompactBanach.lean",
+      "permitted_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "solution_module": "OAI.Geometry.DoublingHilbert.CompactBanach",
+      "source_blob": "f06cb1890690039985e97fa2642adabd13fc347a",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.UniformGamma",
+      "comparator_blob": "edf4f8b90fb40afa1a72c5c5e309e36416bc0ecb",
+      "comparator_config": "lean/ComparatorChallenges/UniformGamma.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ComparatorModel.CurrentMain.main"
+      ],
+      "declaration": "OAI.ComparatorModel.CurrentMain.main",
+      "lean_source": "lean/OAI/Analysis/TracialSplitting/Challenge.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.TracialSplitting.Challenge",
+      "source_blob": "c60879b2fe4a56f27d719621dd4d2fe4b2f003e7",
+      "source_contains_unqualified_name": true
+    }
+  ],
+  "scope": "SOURCE_FILES_AND_CONFIG_ONLY_NOT_LEAN_REPLAY",
+  "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+}
