@@ -58,6 +58,8 @@ def prepare_tasks(crosswalk, report, start, count):
     return tasks
 
 def replay(upstream, destination, tasks, env):
+    upstream = upstream.resolve()
+    destination = destination.resolve()
     lean_root = upstream/"lean"
     destination.mkdir(parents=True, exist_ok=True)
     records=[]
