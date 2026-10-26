@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Source-only inventory accounting; never interprets an indexed declaration as a proof."""
 import argparse
+import csv
+import io
 import hashlib
 import json
 from collections import Counter
@@ -133,6 +135,51 @@ def verify_upstream_yaml(blob, crosswalk):
             "declaration_config_triples_matched": len(rows)}
 
 
+def render_csv(fields, records):
+    """Stable, RFC-compatible UTF-8 CSV with an explicit LF newline contract."""
+    stream = io.StringIO(newline="")
+    writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(records)
+    return stream.getvalue()
+
+
+def csv_ledgers(result):
+    """Source-accounting projections; neither CSV establishes theorem provenance."""
+    manuscript_rows = []
+    for family in result["families"]:
+        source_paths = {record["pdf_path"] for record in family["manifest_source_papers"]}
+        for manuscript in family["manuscripts"]:
+            manuscript_rows.append({
+                "family_id": family["family_id"],
+                "manuscript_path": manuscript["pdf_path"],
+                "manuscript_title": manuscript["title"],
+                "source_paper_path_match": "YES" if manuscript["pdf_path"] in source_paths else "NO",
+                "declaration_family_edge": "UNRECONCILED",
+            })
+    declaration_rows = []
+    for result_row in result["declarations"]:
+        declaration_rows.append({
+            "declaration": result_row["declaration"],
+            "lean_source": result_row["lean_source"],
+            "comparator_config": result_row["comparator_config"],
+            "family_id": "",
+            "family_binding": "UNRECONCILED",
+            "lean_replay": result_row["lean_replay"],
+            "semantic_review": result_row["semantic_review"],
+        })
+    if len(manuscript_rows) != 719 or len(declaration_rows) != 200:
+        raise ValueError("CSV projection count drift")
+    return {
+        "SOURCE_CROSSWALK_MANUSCRIPTS.csv": render_csv(
+            ["family_id", "manuscript_path", "manuscript_title",
+             "source_paper_path_match", "declaration_family_edge"], manuscript_rows),
+        "SOURCE_CROSSWALK_DECLARATIONS.csv": render_csv(
+            ["declaration", "lean_source", "comparator_config", "family_id",
+             "family_binding", "lean_replay", "semantic_review"], declaration_rows),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--index", type=Path, default=ROOT/"MANUSCRIPT_INDEX.json")
@@ -149,11 +196,18 @@ def main():
         evidence = verify_upstream_yaml(args.upstream_yaml.read_bytes(), crosswalk)
         print("UPSTREAM_SOURCE_REPLAY_PASS", json.dumps(evidence, sort_keys=True))
     content = json.dumps(result, sort_keys=True, indent=2, ensure_ascii=False)+"\n"
+    projected_files = {args.output: content}
+    projected_files.update({
+        args.output.parent / name: csv_text
+        for name, csv_text in csv_ledgers(result).items()
+    })
     if args.check:
-        if not args.output.is_file() or args.output.read_text(encoding="utf-8") != content:
-            raise SystemExit("FAIL: source crosswalk ledger output drift")
+        for target, expected in projected_files.items():
+            if not target.is_file() or target.read_text(encoding="utf-8") != expected:
+                raise SystemExit(f"FAIL: source crosswalk output drift: {target}")
     else:
-        args.output.write_text(content, encoding="utf-8")
+        for target, output_content in projected_files.items():
+            target.write_text(output_content, encoding="utf-8", newline="")
     print("SOURCE_LEDGER_PASS", json.dumps(result["summary"], sort_keys=True))
 
 

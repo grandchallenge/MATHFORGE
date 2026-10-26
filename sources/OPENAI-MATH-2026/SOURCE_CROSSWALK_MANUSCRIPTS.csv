@@ -1,0 +1,720 @@
+family_id,manuscript_path,manuscript_title,source_paper_path_match,declaration_family_edge
+001,preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf,Milne's rationality conjecture for abelian varieties,NO,UNRECONCILED
+002,preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf,Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank,NO,UNRECONCILED
+002,preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf,The Selmer converse for elliptic curves at every prime,NO,UNRECONCILED
+002,preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf,The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one,NO,UNRECONCILED
+003,preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf,The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $`\Re s\gt 7/8`$,YES,UNRECONCILED
+003,preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf,The Quasi-Riemann Hypothesis (alternate 11/12 proof),NO,UNRECONCILED
+003,preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf,Uniform exclusion of Landau–Siegel zeros,YES,UNRECONCILED
+004,preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf,Hilbert’s tenth problem over the rational numbers,NO,UNRECONCILED
+004,preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf,A pointwise 2-converse for elliptic curves with rational two-torsion,NO,UNRECONCILED
+005,preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf,Catalan's constant is irrational,NO,UNRECONCILED
+006,preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf,Goldfeld's analytic density conjecture and the 2-converse for elliptic curves,NO,UNRECONCILED
+006,preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf,The mean analytic rank of quadratic twists of elliptic curves,NO,UNRECONCILED
+007,preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf,Ordinary two-point correlations of multiplicative functions,NO,UNRECONCILED
+008,preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf,The Deligne-Drinfeld conjecture,YES,UNRECONCILED
+009,preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf,Reconstruction of Function Fields from Mod-ℓ Milnor K-Theory,NO,UNRECONCILED
+009,preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf,Reconstruction from Milnor K-theory modulo the characteristic,NO,UNRECONCILED
+009,preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf,The Bogomolov-Pop reconstruction theorem,NO,UNRECONCILED
+010,preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf,Unrestricted pro-modularity at the prime two,NO,UNRECONCILED
+010,preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf,The Dimension of the Two-Adic Hecke Algebra at Odd Level,NO,UNRECONCILED
+010,preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf,Fontaine–Mazur modularity at the prime 2,NO,UNRECONCILED
+011,preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf,"Weighted dilation graphs, smooth shifted primes and totient fibers",NO,UNRECONCILED
+011,preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf,The Poisson-Dirichlet law for prime predecessors,NO,UNRECONCILED
+011,preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf,Prime Predecessors with an Even Number of Prime Factors,NO,UNRECONCILED
+012,preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf,The joint Dickman law for consecutive integers,NO,UNRECONCILED
+013,preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf,The additive indecomposability of the primes,NO,UNRECONCILED
+014,preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf,Global Arthur Enhancements of Cuspidal Excursion Parameters,NO,UNRECONCILED
+014,preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf,Rationality of the Canonical Unramified Arthur Filtration,NO,UNRECONCILED
+014,preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/paper.pdf,Ramanujan-Arthur Decompositions of Cuspidal Functions at Full Finite Level,NO,UNRECONCILED
+014,preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/ramified-ramanujan.pdf,Temperedness at ramified places for globally generic exceptional groups,NO,UNRECONCILED
+014,preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/paper.pdf,The Restricted Geometric Langlands Equivalence in Positive Characteristic,NO,UNRECONCILED
+014,preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/constructible-tame-hecke-eigensheaves-positive-characteristic.pdf,Constructible tame Hecke eigensheaves in positive characteristic,NO,UNRECONCILED
+014,preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/Tame-Hecke-Eigensheaves-with-Several-Marked-Points.pdf,Tame Hecke Eigensheaves with Several Marked Points,NO,UNRECONCILED
+014,preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/tame-hecke-frobenius.pdf,Frobenius Structures on Tame Hecke Eigensheaves,NO,UNRECONCILED
+015,preprints/Equidistribution-of-Prime-Degree-Torus-Packets-with-Arbitrary-Local-Type-September-24-2026/paper.pdf,Equidistribution of Prime-Degree Torus Packets with Arbitrary Local Type,NO,UNRECONCILED
+015,preprints/Equidistribution-of-Primitive-Quartic-Torus-Packets-for-Arbitrary-Orders-October-5-2026/quartic-torus-packets.pdf,Equidistribution of primitive quartic torus packets for arbitrary orders,NO,UNRECONCILED
+015,preprints/Equidistribution-of-Primitive-Sextic-Torus-Packets-October-5-2026/primitive-sextic-torus-packets.pdf,Equidistribution of Primitive Sextic Torus Packets,NO,UNRECONCILED
+016,preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf,The abelian Zilber–Pink conjecture,NO,UNRECONCILED
+016,preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf,The E×CM component of Zilber–Pink for curves in A2,NO,UNRECONCILED
+016,preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/paper.pdf,Quaternionic division points on curves in the Siegel threefold,NO,UNRECONCILED
+016,preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf,Elliptic squares and Zilber–Pink for curves in A2,NO,UNRECONCILED
+017,preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf,The irrationality exponent of pi is 2,NO,UNRECONCILED
+018,preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf,The Margulis–Platonov conjecture over global function fields,NO,UNRECONCILED
+018,preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf,The Margulis–Platonov conjecture over number fields,NO,UNRECONCILED
+019,preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/main.pdf,Étale covers with a prescribed exterior sheet,NO,UNRECONCILED
+019,preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf,The p-adic section conjecture,NO,UNRECONCILED
+020,preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf,Squarefree values of quartics and power-free values of polynomials,YES,UNRECONCILED
+021,preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf,A quadratic bound for Jacobsthal's function,YES,UNRECONCILED
+022,preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/paper.pdf,The Weak Inhomogeneous Duffin–Schaeffer Conjecture,NO,UNRECONCILED
+023,preprints/An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026/paper.pdf,An unconditional first moment for cubic Gauss sums,NO,UNRECONCILED
+024,preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf,An asymptotic formula for the number of totients,NO,UNRECONCILED
+025,preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf,Short Egyptian fractions,YES,UNRECONCILED
+026,preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf,Positive lower density of large prime gaps,NO,UNRECONCILED
+027,preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf,Integral points on character varieties of curves,YES,UNRECONCILED
+028,preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf,Bounded-Step Walks on Gaussian Primes,YES,UNRECONCILED
+029,preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf,Primitive roots for every admissible integer base,NO,UNRECONCILED
+029,preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf,Simultaneous primitive roots: a conditional lower bound for prime bases,NO,UNRECONCILED
+030,preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf,Modularity of elliptic curves over imaginary quadratic fields,NO,UNRECONCILED
+031,preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/open-homomorphisms-solvably-closed-galois-groups.pdf,Open Homomorphisms of Global Solvably Closed Galois Groups,NO,UNRECONCILED
+032,preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf,The rational Hodge conjecture for CM abelian varieties,NO,UNRECONCILED
+032,preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf,Algebraic Kuga–Satake correspondences and Hodge conjectures on a K3 quadratic locus,NO,UNRECONCILED
+032,preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf,Weil classes and Hodge classes on abelian powers,NO,UNRECONCILED
+032,preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf,"Abelian covers, Gale correspondences, and the Hodge conjecture for powers",NO,UNRECONCILED
+032,preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf,A Conditional Reduction for Algebraic Kuga–Satake Correspondences,NO,UNRECONCILED
+033,preprints/Orbifold-and-logarithmic-Iitaka-subadditivity-September-26-2026/paper.pdf,Orbifold and logarithmic Iitaka subadditivity,NO,UNRECONCILED
+033,preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/paper.pdf,Logarithmic Kodaira dimension and whole-fiber variation,NO,UNRECONCILED
+033,preprints/The-reverse-logarithmic-Kodaira-inequality-and-additivity-September-26-2026/paper.pdf,The reverse logarithmic Kodaira inequality and additivity,NO,UNRECONCILED
+033,preprints/Projective-Hodge-lines-and-ordinary-Iitaka-subadditivity-September-27-2026/paper.pdf,Projective Hodge lines and ordinary Iitaka subadditivity,NO,UNRECONCILED
+033,preprints/B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026/paper.pdf,B-semiampleness for compact log-smooth Kähler fibrations,NO,UNRECONCILED
+034,preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf,Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity,NO,UNRECONCILED
+034,preprints/Uniform-indices-for-semi-log-canonical-log-Calabi-Yau-pairs-October-5-2026/uniform-slc-index.pdf,Uniform indices for semi-log-canonical log Calabi–Yau pairs,NO,UNRECONCILED
+034,preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf,Conditional good minimal models for compact Kähler fourfolds,NO,UNRECONCILED
+034,preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf,Log abundance in characteristic zero,NO,UNRECONCILED
+034,preprints/Minimal-metrics-and-interior-injectivity-for-nef-adjoints-September-27-2026/paper.pdf,Minimal metrics and interior injectivity for nef adjoints,NO,UNRECONCILED
+034,preprints/Fourfold-nonvanishing-by-minimal-metrics-and-moving-jets-September-27-2026/paper.pdf,Fourfold nonvanishing by minimal metrics and moving jets,NO,UNRECONCILED
+034,preprints/Lifting-sections-from-the-reduced-support-of-an-adjoint-September-27-2026/paper.pdf,Lifting sections from the reduced support of an adjoint,NO,UNRECONCILED
+034,preprints/Schnell-fiber-spaces-and-good-canonical-models-September-24-2026/paper.pdf,Schnell fiber spaces and good canonical models,NO,UNRECONCILED
+034,preprints/Uniform-log-Iitaka-fibrations-and-bounded-moduli-denominators-October-4-2026/uniform-log-iitaka.pdf,Uniform log Iitaka fibrations and bounded moduli denominators,NO,UNRECONCILED
+034,preprints/Uniform-Pluricanonical-Iitaka-Fibrations-October-3-2026/paper.pdf,Uniform Pluricanonical Iitaka Fibrations,NO,UNRECONCILED
+034,preprints/Relative-denominators-and-effective-systems-for-log-Calabi-Yau-fibrations-September-27-2026/paper.pdf,Relative denominators and effective systems for log Calabi-Yau fibrations,NO,UNRECONCILED
+034,preprints/Arithmetic-Stein-degree-bounds-for-log-Calabi-Yau-pairs-September-25-2026/paper.pdf,Arithmetic Stein-degree bounds for log Calabi–Yau pairs,NO,UNRECONCILED
+034,preprints/Uniform-effective-log-Iitaka-fibrations-for-fourfolds-September-26-2026/paper.pdf,Uniform effective log Iitaka fibrations for fourfolds,NO,UNRECONCILED
+034,preprints/Abundance-after-nonvanishing-for-compact-Kahler-fourfolds-September-27-2026/paper.pdf,Abundance after nonvanishing for compact Kähler fourfolds,NO,UNRECONCILED
+035,preprints/Log-abundance-in-numerical-dimension-one-for-threefolds-in-positive-characteristic-October-5-2026/paper.pdf,Log abundance in numerical dimension one for threefolds in positive characteristic,NO,UNRECONCILED
+035,preprints/Abundance-in-numerical-dimension-one-for-terminal-threefolds-in-positive-characteristic-September-24-2026/paper.pdf,Abundance in numerical dimension one for terminal threefolds in positive characteristic,NO,UNRECONCILED
+036,preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf,Numerical semiampleness of nef adjoint classes on compact Kähler manifolds,NO,UNRECONCILED
+036,preprints/Numerical-Semiampleness-of-Nef-Adjoint-Divisors-October-3-2026/paper.pdf,Numerical Semiampleness of Nef Adjoint Divisors,NO,UNRECONCILED
+036,preprints/Minimal-models-and-Mori-fibre-spaces-for-generalized-log-canonical-Q-pairs-September-24-2026/paper.pdf,Minimal models and Mori fibre spaces for generalized log canonical Q-pairs,NO,UNRECONCILED
+036,preprints/Minimal-models-in-numerical-dimension-one-September-24-2026/paper.pdf,Minimal models in numerical dimension one,NO,UNRECONCILED
+037,preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/paper.pdf,The ordinary-double-point gap in every dimension,NO,UNRECONCILED
+037,preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/paper.pdf,The normalized-volume gap in dimension four,NO,UNRECONCILED
+038,preprints/Fujitas-freeness-conjecture-September-23-2026/Fujitas-freeness-conjecture-September-23-2026.pdf,Fujita's freeness conjecture,NO,UNRECONCILED
+039,preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/main.pdf,Nagata's conjecture for plane curves,YES,UNRECONCILED
+039,preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/main.pdf,Maximal Seshadri constants on arbitrary polarized surfaces,YES,UNRECONCILED
+039,preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/main.pdf,Maximal Multipoint Seshadri Constants in Higher Dimensions,NO,UNRECONCILED
+039,preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/seshadri-positive-characteristic.pdf,Maximal multipoint Seshadri constants in positive characteristic,NO,UNRECONCILED
+040,preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/paper.pdf,Bloch’s conjecture for surfaces with p_g=0,NO,UNRECONCILED
+041,preprints/Projective-Space-Bases-of-Lagrangian-Fibrations-September-23-2026/main.pdf,Projective-space bases of Lagrangian fibrations,NO,UNRECONCILED
+041,preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf,The strong hyperkähler SYZ conjecture,NO,UNRECONCILED
+042,preprints/Every-complex-K3-surface-is-Oka-September-23-2026/paper.pdf,Every complex K3 surface is Oka,NO,UNRECONCILED
+043,preprints/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026.pdf,P=W in composite rank for fixed determinant,NO,UNRECONCILED
+044,preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/main.pdf,The equivariant cohomological Hikita conjecture for arbitrary quivers,NO,UNRECONCILED
+046,preprints/A-projective-fourfold-with-large-fundamental-group-and-non-Stein-universal-cover-October-5-2026/large-fundamental-group-non-stein.pdf,A projective fourfold with large fundamental group and non-Stein universal cover,NO,UNRECONCILED
+046,preprints/A-surface-counterexample-to-Shafarevich-holomorphic-convexity-September-23-2026/paper.pdf,A surface counterexample to Shafarevich holomorphic convexity,NO,UNRECONCILED
+047,preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/paper.pdf,An explicit failure of complex affine-space cancellation,YES,UNRECONCILED
+048,preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/paper.pdf,A singular normal affine surface with free tangent sheaf,NO,UNRECONCILED
+049,preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/stable-coordinate-four-variables.pdf,A stable coordinate that is not a coordinate in four variables,YES,UNRECONCILED
+049,preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/paper.pdf,An explicit noncoordinate polynomial with affine three-space zero fibre,YES,UNRECONCILED
+050,preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/paper.pdf,Ample rank-two bundles on the quadric surface without Griffiths-positive metrics,YES,UNRECONCILED
+051,preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/canonical-ampleness.pdf,Canonical ampleness of compact hyperbolic Kähler manifolds,NO,UNRECONCILED
+052,preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/paper.pdf,Universal-cover splitting for compact Kähler manifolds,YES,UNRECONCILED
+052,preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/main.pdf,Integrability of split tangent bundles on rationally connected manifolds,NO,UNRECONCILED
+053,preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/paper.pdf,A high-arity counterexample to Pixton completeness in Chow,NO,UNRECONCILED
+054,preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026.pdf,Irrational cubic fourfolds with geometric K3 categories,NO,UNRECONCILED
+055,preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/paper.pdf,A Gepner stability condition on every smooth quintic threefold,NO,UNRECONCILED
+055,preprints/Prescribed-large-volume-charges-on-threefolds-with-trivial-canonical-bundle-September-24-2026/paper.pdf,Prescribed large-volume charges on threefolds with trivial canonical bundle,NO,UNRECONCILED
+056,preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf,Termination of generalized log canonical flips on compact Kähler fourfolds,NO,UNRECONCILED
+056,preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf,Termination of generalized-canonical flips on compact Kähler fourfolds,NO,UNRECONCILED
+056,preprints/Termination-for-projective-log-canonical-fourfolds-with-rational-boundary-September-24-2026/paper.pdf,Termination for projective log canonical fourfolds with rational boundary,NO,UNRECONCILED
+056,preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf,Finite ordinary minimal model programs on compact Kähler fourfolds,NO,UNRECONCILED
+056,preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/paper.pdf,Finite ordinary minimal model programs on compact Kähler fourfolds,NO,UNRECONCILED
+057,preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/paper.pdf,The abelianity conjecture for special compact Kähler manifolds,NO,UNRECONCILED
+057,preprints/Two-step-monodromy-of-special-quasi-projective-varieties-September-24-2026/paper.pdf,Two-step monodromy of special quasi-projective varieties,NO,UNRECONCILED
+057,preprints/A-conditional-abelianity-theorem-for-special-fourfold-pairs-with-a-half-weight-divisor-October-5-2026/main.pdf,A conditional abelianity theorem for special fourfold pairs with a half-weight divisor,NO,UNRECONCILED
+058,preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/paper.pdf,Semialgebraic universal covers of normal projective varieties,NO,UNRECONCILED
+058,preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf,Symmetry of semialgebraic bounded domains with compact quotient,YES,UNRECONCILED
+059,preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/paper.pdf,Ambiently homeomorphic isolated hypersurfaces of multiplicities two and three,NO,UNRECONCILED
+059,preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/paper.pdf,Ambiently homeomorphic isolated hypersurface germs in ℂ⁴ with multiplicities four and five,NO,UNRECONCILED
+060,preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/paper.pdf,Global Spherical Shells on Minimal Surfaces of Class VII,NO,UNRECONCILED
+062,preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/paper.pdf,Contact Fano manifolds and the LeBrun–Salamon conjecture,NO,UNRECONCILED
+063,preprints/The-Generalized-Mukai-Conjecture-September-24-2026/article.pdf,The generalized Mukai conjecture,NO,UNRECONCILED
+064,preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/main.pdf,Topological triviality of mu-constant families of surface singularities,NO,UNRECONCILED
+065,preprints/Virasoro-Constraints-under-Projectivization-October-5-2026/virasoro-constraints-under-projectivization.pdf,Virasoro Constraints under Projectivization,NO,UNRECONCILED
+065,preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/article.pdf,Virasoro Constraints for Projective Complete Intersections,NO,UNRECONCILED
+066,preprints/Bounded-klt-complements-for-Fano-contractions-September-25-2026/Bounded-klt-complements-for-Fano-contractions-September-25-2026.pdf,Bounded klt complements for Fano contractions,NO,UNRECONCILED
+066,preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf,Uniform Cartier sections for Fano type contractions,YES,UNRECONCILED
+067,preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/main.pdf,The Campana–Peternell conjecture in dimension six,NO,UNRECONCILED
+068,preprints/Anticanonical-nonvanishing-from-smooth-semipositivity-September-26-2026/main.pdf,Anticanonical nonvanishing from smooth semipositivity,NO,UNRECONCILED
+068,preprints/Invariant-anticanonical-indices-and-conversion-of-twisted-differentials-September-26-2026/main.pdf,Invariant anticanonical indices and conversion of twisted differentials,NO,UNRECONCILED
+068,preprints/Bounded-anticanonical-metrics-on-klt-pairs-and-torus-quotients-September-26-2026/main.pdf,Bounded anticanonical metrics on klt pairs and torus quotients,NO,UNRECONCILED
+068,preprints/Cohomological-transfer-and-equivariant-anticanonical-sections-September-26-2026/main.pdf,Cohomological transfer and equivariant anticanonical sections,NO,UNRECONCILED
+068,preprints/Metric-descent-and-rank-preserving-contractions-September-26-2026/main.pdf,Metric descent and rank-preserving contractions,NO,UNRECONCILED
+068,preprints/Integrable-metrics-and-effectivity-with-controlled-boundary-September-26-2026/main.pdf,Integrable metrics and effectivity with controlled boundary,NO,UNRECONCILED
+068,preprints/Exact-orders-and-invariant-anticanonical-linear-systems-September-26-2026/main.pdf,Exact orders and invariant anticanonical linear systems,NO,UNRECONCILED
+069,preprints/Global-quantum-geometric-Langlands-at-irrational-level-October-4-2026/quantum-langlands.pdf,Global quantum geometric Langlands at irrational level,NO,UNRECONCILED
+071,preprints/Removable-Boundaries-and-Rigidity-of-Circle-Domains-September-23-2026/paper.pdf,Removable Boundaries and Rigidity of Circle Domains,NO,UNRECONCILED
+071,preprints/Koebes-Circle-Domain-Conjecture-September-23-2026/paper.pdf,Koebe's Circle-Domain Conjecture,NO,UNRECONCILED
+072,preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/paper.pdf,Brennan's conjecture and sharp inverse-square integral means,YES,UNRECONCILED
+072,preprints/A-strict-inverse-first-power-bound-for-univalent-functions-September-24-2026/paper.pdf,A strict inverse-first-power bound for univalent functions,YES,UNRECONCILED
+073,preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf,The Falconer distance conjecture in all dimensions,YES,UNRECONCILED
+074,preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/paper.pdf,The Kakeya maximal conjecture in three dimensions,NO,UNRECONCILED
+074,preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/paper.pdf,Every four-dimensional Kakeya set has full Hausdorff dimension,NO,UNRECONCILED
+075,preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf,Almost-everywhere Fourier convergence in L log L,YES,UNRECONCILED
+076,preprints/Ultraflat-real-Littlewood-polynomials-October-5-2026/ultraflat-real-littlewood-polynomials.pdf,Ultraflat real Littlewood polynomials,NO,UNRECONCILED
+076,preprints/Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026/littlewood-lower-envelope.pdf,Nearly minimal maxima and positive minima of Littlewood polynomials,NO,UNRECONCILED
+076,preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf,Asymptotically minimal maxima of real Littlewood polynomials,YES,UNRECONCILED
+077,preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf,Elliptic capacity propagation and Fourier restriction to the sphere,NO,UNRECONCILED
+077,preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026.pdf,Diagonal Fourier extension for positively curved surfaces in three dimensions,NO,UNRECONCILED
+078,preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf,Bochner–Riesz multipliers in three dimensions,NO,UNRECONCILED
+079,preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf,Critical local smoothing for the three-dimensional wave equation,NO,UNRECONCILED
+080,preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/paper.pdf,Endpoint convergence for the planar Schrodinger equation,NO,UNRECONCILED
+080,preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/paper.pdf,Endpoint pointwise convergence for the Schrodinger equation in higher dimensions,NO,UNRECONCILED
+081,preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf,Riesz transforms and uniform rectifiability in higher codimension,YES,UNRECONCILED
+082,preprints/Annular-variation-of-the-triangular-Hilbert-transform-at-the-symmetric-point-October-5-2026/annular-variation.pdf,Annular variation of the triangular Hilbert transform at the symmetric point,NO,UNRECONCILED
+082,preprints/An-L3-bound-for-the-dyadic-triangular-Hilbert-form-October-5-2026/dyadic-triangular-hilbert.pdf,An L³ bound for the dyadic triangular Hilbert form,NO,UNRECONCILED
+082,preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf,The maximal triangular Hilbert transform at the symmetric point,YES,UNRECONCILED
+083,preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf,A uniform Hilbert transform estimate for Lipschitz directions,NO,UNRECONCILED
+084,preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/geometric-erdos-similarity.pdf,The geometric case of the Erdős similarity conjecture,NO,UNRECONCILED
+084,preprints/The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026/paper.pdf,The dyadic case of the Erdős similarity conjecture,NO,UNRECONCILED
+085,preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/article.pdf,An Endpoint Gradient Bound for the Centered Disk Maximal Operator,YES,UNRECONCILED
+086,preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/paper.pdf,An <i>L</i><sup>3</sup> bound for the trilinear Hilbert transform,NO,UNRECONCILED
+087,preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf,The symmetric Mahler conjecture and its equality cases,YES,UNRECONCILED
+087,preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/paper.pdf,The Mahler Conjecture for General Convex Bodies,NO,UNRECONCILED
+087,preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/paper.pdf,Symplectic Balls in Symmetric Polar Products,YES,UNRECONCILED
+088,preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/paper.pdf,Petty’s projection-volume conjecture in dimensions at least four,YES,UNRECONCILED
+088,preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/paper.pdf,A product counterexample to the simplex maximum for projection-body volume,YES,UNRECONCILED
+089,preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf,Planar Graph Metrics Embed into L1 with Constant Distortion,YES,UNRECONCILED
+089,preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/paper.pdf,L1 Embeddings of Graphs of Bounded Treewidth,YES,UNRECONCILED
+090,preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf,An atomic certificate for triangular-lattice universal optimality,NO,UNRECONCILED
+090,preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/paper.pdf,Universal optimality of the triangular lattice,NO,UNRECONCILED
+090,preprints/A-sharp-Fourier-certificate-for-planar-circle-packing-September-23-2026/paper.pdf,A sharp Fourier certificate for planar circle packing,NO,UNRECONCILED
+090,preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf,Triangular minimality for planar Coulomb renormalized energy,NO,UNRECONCILED
+091,preprints/The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026/paper.pdf,The logarithmic Brunn–Minkowski conjecture,YES,UNRECONCILED
+092,preprints/A-single-lattice-covering-bound-of-order-n-log-n-September-23-2026/paper.pdf,A single-lattice covering bound of order n log n,YES,UNRECONCILED
+092,preprints/Translative-covering-densities-of-order-n-log-n-September-23-2026/paper.pdf,Translative covering densities of order n log n,NO,UNRECONCILED
+093,preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf,A dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures,NO,UNRECONCILED
+094,preprints/Subpolynomial-dimension-reduction-in-Lp-September-23-2026/paper.pdf,Subpolynomial dimension reduction in Lp,YES,UNRECONCILED
+095,preprints/Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026/nonliftable-hyperbolicity.pdf,Hyperbolicity Cones Without Semidefinite Lifts,NO,UNRECONCILED
+095,preprints/A-Nonspectrahedral-Hyperbolicity-Cone-September-24-2026/nonspectrahedral-hyperbolicity-cone.pdf,A nonspectrahedral hyperbolicity cone,YES,UNRECONCILED
+095,preprints/An-Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone-October-5-2026/Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone.pdf,An Exact Semidefinite Lift of a Nonspectrahedral Hyperbolicity Cone,NO,UNRECONCILED
+096,preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/main.pdf,The Gaussian propeller bound in every dimension,YES,UNRECONCILED
+097,preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf,The Euclidean Steinitz–Bergström theorem,YES,UNRECONCILED
+098,preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/main.pdf,A doubling Hilbert subset with no finite-dimensional bi-Lipschitz embedding,YES,UNRECONCILED
+099,preprints/Edit-Distance-in-l1-Matching-Bounds-up-to-Constants-in-the-Exponent-September-27-2026/paper.pdf,Edit Distance in l1: Matching Bounds up to Constants in the Exponent,NO,UNRECONCILED
+099,preprints/Finite-Circle-Obstructions-Binary-Codes-and-Histogram-Embeddings-for-Edit-Distance-September-27-2026/paper.pdf,"Finite-Circle Obstructions, Binary Codes, and Histogram Embeddings for Edit Distance",NO,UNRECONCILED
+099,preprints/Tree-Constructions-for-the-l1-Distortion-of-Binary-Edit-Distance-September-27-2026/paper.pdf,Tree Constructions for the l1 Distortion of Binary Edit Distance,NO,UNRECONCILED
+100,preprints/Finite-angular-cylinder-covers-below-the-half-area-bound-September-27-2026/main.pdf,Finite angular cylinder covers below the half-area bound,NO,UNRECONCILED
+100,preprints/Finite-cylinder-approximation-of-ruled-sets-September-27-2026/main.pdf,Finite cylinder approximation of ruled sets,NO,UNRECONCILED
+100,preprints/Slope-field-perturbations-of-the-two-cylinder-covering-September-27-2026/main.pdf,Slope-field perturbations of the two-cylinder covering,NO,UNRECONCILED
+100,preprints/Finite-triangular-approximation-of-radial-sweeps-September-27-2026/main.pdf,Finite triangular approximation of radial sweeps,NO,UNRECONCILED
+101,preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf,A sharp entropy bound and the simplex inequality for isotropic constants,NO,UNRECONCILED
+102,preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf,The Unique Games Theorem,YES,UNRECONCILED
+102,preprints/A-Direct-Proof-of-Optimal-Max-Cut-Hardness-September-23-2026/paper.pdf,A Direct Proof of Optimal Max-Cut Hardness,YES,UNRECONCILED
+102,preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/paper.pdf,The Factor-Two Hardness Threshold for Vertex Cover,YES,UNRECONCILED
+102,preprints/Constant-factor-hardness-of-Min-UnCut-September-23-2026/paper.pdf,Constant-factor hardness of Min-UnCut,NO,UNRECONCILED
+102,preprints/Constant-factor-hardness-of-directed-feedback-vertex-set-September-23-2026/paper.pdf,Constant-factor hardness of directed feedback vertex set,NO,UNRECONCILED
+103,preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf,Exact derandomization of logarithmic space: L = RL = BPL,YES,UNRECONCILED
+104,preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf,Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time,NO,UNRECONCILED
+104,preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf,Mean-payoff parity games in quasipolynomial time,NO,UNRECONCILED
+104,preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf,Deterministic quasipolynomial-time mean-payoff games,NO,UNRECONCILED
+104,preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf,Randomized quasipolynomial-time mean-payoff games,YES,UNRECONCILED
+105,preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf,Perfect completeness for 2-to-1 games,YES,UNRECONCILED
+106,preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf,Hardness of finding large independent sets in three-colorable graphs,YES,UNRECONCILED
+107,preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf,An Upper Bound of 9/4 for the Matrix Multiplication Exponent,YES,UNRECONCILED
+107,preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026.pdf,Complex Matrix Multiplication Below 2.258 and Rectangular Bounds,YES,UNRECONCILED
+107,preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026.pdf,Staggered extraction for exact matrix multiplication over every field,YES,UNRECONCILED
+108,preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf,A cubic lower bound for border determinantal complexity of the permanent,NO,UNRECONCILED
+109,preprints/Integer-multiplication-below-n-log-n-September-23-2026/paper.pdf,Integer multiplication below n log n,NO,UNRECONCILED
+110,preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf,Squared-logarithmic randomized k-server on arbitrary metrics,NO,UNRECONCILED
+110,preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf,Uniform computation of the squared-logarithmic k-server bound,NO,UNRECONCILED
+111,preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf,One Sample Suffices for Matroid Prophet Inequalities against an Almighty Adversary,NO,UNRECONCILED
+112,preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf,Beyond the Square-Root Exponent for Depth-Three Boolean Circuits,YES,UNRECONCILED
+113,preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf,A Fully Polynomial Randomized Approximation Scheme for Perfect Matchings in General Graphs,NO,UNRECONCILED
+113,preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf,Entropy and Face Dimension of the Perfect-Matching Polytope,YES,UNRECONCILED
+114,preprints/An-FPRAS-for-Common-Integer-Polymatroid-Bases-with-Binary-Capacities-October-5-2026/polymatroid-fpras.pdf,An FPRAS for Common Integer Polymatroid Bases with Binary Capacities,NO,UNRECONCILED
+114,preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/main.pdf,Approximate counting of common bases of two matroids,YES,UNRECONCILED
+115,preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf,Exact Uniform Sampling of Contingency Tables with Arbitrary Margins,NO,UNRECONCILED
+115,preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf,An FPRAS for Cell-Bounded Contingency Tables,NO,UNRECONCILED
+116,preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf,Uniform Matrix Hitting Points in Every Positive Characteristic,NO,UNRECONCILED
+116,preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf,One Rational Matrix Hitting Point for Noncommutative Formulas,NO,UNRECONCILED
+116,preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf,Polynomial Hitting Lists for Noncommutative Rational Formulas,YES,UNRECONCILED
+117,preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf,Constant-factor hardness of uniform sparsest cut,NO,UNRECONCILED
+117,preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf,Near-square-root logarithmic integrality gaps for uniform sparsest cut,YES,UNRECONCILED
+118,preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf,Additive hardness and unbounded configuration gaps in bin packing,YES,UNRECONCILED
+119,preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf,Sharp binary-information contraction on the discrete cube,YES,UNRECONCILED
+119,preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf,Hellinger contraction with arbitrary Boolean output bias,NO,UNRECONCILED
+120,preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf,Almost-Linear-Time Maximum-Cardinality Matching in General Graphs,NO,UNRECONCILED
+121,preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf,An Almost-Linear Approximation Scheme for Edit Distance,NO,UNRECONCILED
+122,preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf,Uniform quasipolynomial-time trace reconstruction,NO,UNRECONCILED
+122,preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf,A latest-anchor induction with spectrally compact masks for worst-case trace reconstruction,NO,UNRECONCILED
+122,preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf,Quantitative lower bounds for trace reconstruction,NO,UNRECONCILED
+124,preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf,A Polynomial-Time Algorithm for Three-Machine Unit-Job Scheduling,NO,UNRECONCILED
+125,preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf,Single-exponential recovery and bounded-price strictness for metric k-median,YES,UNRECONCILED
+125,preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/main.pdf,The approximation threshold for metric k-median,NO,UNRECONCILED
+126,preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/shifted-matching-psd.pdf,Exponential PSD rank of positively shifted matching matrices,NO,UNRECONCILED
+127,preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/main.pdf,Average sensitivity of polynomial threshold functions,YES,UNRECONCILED
+128,preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf,A Polynomial-Time 2-Approximation for Shortest Common Superstring,YES,UNRECONCILED
+129,preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf,An exponential state lower bound for two-way nondeterministic complementation,YES,UNRECONCILED
+129,preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf,An exponential two-way deterministic state lower bound for one-way liveness,YES,UNRECONCILED
+130,preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf,An explicit power saving for the exact discrete Fourier transform,YES,UNRECONCILED
+130,preprints/Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026/main.pdf,Finite tensor savings and exact Fourier circuits,YES,UNRECONCILED
+131,preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/main.pdf,Polynomial mixing of the switch chain for every graphical degree sequence,NO,UNRECONCILED
+132,preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf,A superquadratic separation between sensitivity and block sensitivity,YES,UNRECONCILED
+133,preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf,Parity lifts and bounded-treewidth witnesses for Weisfeiler–Leman equivalence,NO,UNRECONCILED
+133,preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/paper.pdf,The complexity of identifying a graph by Weisfeiler–Leman refinement,NO,UNRECONCILED
+133,preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf,Unconditional time lower bounds for Weisfeiler–Leman equivalence,NO,UNRECONCILED
+133,preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/paper.pdf,Variable-dimension Weisfeiler–Leman equivalence on general and subcubic graphs,NO,UNRECONCILED
+134,preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026.pdf,Finite Monoid Computations and a Uniform Generalized Star-Height Bound,NO,UNRECONCILED
+134,preprints/Generalized-Star-Height-at-Most-Four-September-25-2026/Generalized-Star-Height-at-Most-Four-September-25-2026.pdf,Generalized Star Height at Most Four,NO,UNRECONCILED
+134,preprints/Generalized-Star-Height-at-Most-Three-September-25-2026/article.pdf,Generalized Star Height at Most Three,NO,UNRECONCILED
+135,preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf,Homogeneous depth-five lower bounds for iterated matrix multiplication,NO,UNRECONCILED
+136,preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/paper.pdf,The PCP-for-PPAD conjecture: a quasilinear reduction,NO,UNRECONCILED
+137,preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf,Simulating One-Tape Time in Two-Fifths-Power Space,YES,UNRECONCILED
+138,preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/subset-sum.pdf,Subset Sum in Time $`O(2^{0.49n})`$,NO,UNRECONCILED
+138,preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/paper.pdf,A Low-Space Algorithm for Worst-Case Subset Sum,NO,UNRECONCILED
+139,preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf,Subpolynomial query complexity for well-conditioned log-concave sampling,YES,UNRECONCILED
+140,preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf,Memory and precision in noiseless Gaussian regression,YES,UNRECONCILED
+140,preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf,Posterior replicas and conditional information in Gaussian regression,YES,UNRECONCILED
+140,preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf,Localization costs and information growth for exact Gaussian observations,NO,UNRECONCILED
+140,preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf,"Projection moments, positive cap domination, and Riesz estimates on the sphere",YES,UNRECONCILED
+140,preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf,Replacing Gaussian observations in memory-constrained inference,YES,UNRECONCILED
+140,preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf,Subsphere methods for memory-sample lower bounds in noiseless Gaussian regression,YES,UNRECONCILED
+141,preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/etr-counting-hierarchy.pdf,Existential–universal real sentences in the counting hierarchy,NO,UNRECONCILED
+142,preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf,Deterministic Polynomial Factorization over Prime Fields,NO,UNRECONCILED
+143,preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf,Uniform bounds for planar polynomial limit cycles,NO,UNRECONCILED
+143,preprints/two-limit-cycles-for-quintic-lienard-systems-September-24-2026/two-limit-cycles-for-quintic-lienard-systems-September-24-2026.pdf,Two limit cycles for quintic Liénard systems,YES,UNRECONCILED
+144,preprints/A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026/paper.pdf,A smooth three-torus diffeomorphism with simple Lebesgue spectrum,NO,UNRECONCILED
+145,preprints/Rokhlins-multiple-mixing-problem-for-one-transformation-September-23-2026/paper.pdf,Rokhlin's multiple-mixing problem for one transformation,NO,UNRECONCILED
+146,preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf,Positive Metric Entropy for the Standard Map at Large Parameters,NO,UNRECONCILED
+147,preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf,Continuous Phase Foliations Create Analytic Caustic Collars,NO,UNRECONCILED
+147,preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/paper.pdf,Rigidity of Smooth Billiards with a Continuous Caustic Collar,NO,UNRECONCILED
+148,preprints/The-entropy-rate-dimension-formula-for-self-similar-measures-on-the-line-September-24-2026/main.pdf,The entropy-rate dimension formula for self-similar measures on the line,YES,UNRECONCILED
+149,preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf,Uniform Permanence in Weakly Reversible Mass-Action Systems,NO,UNRECONCILED
+149,preprints/Boundedness-and-persistence-of-weakly-reversible-mass-action-systems-September-25-2026/paper.pdf,Boundedness and persistence of weakly reversible mass-action systems,NO,UNRECONCILED
+150,preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf,Weak mixing of triangular billiards with an irrational angle,NO,UNRECONCILED
+150,preprints/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026.pdf,Ergodicity of triangular billiards with an irrational angle,NO,UNRECONCILED
+151,preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/article.pdf,A C^1 Counterexample to the Entropy Conjecture,NO,UNRECONCILED
+152,preprints/A-finite-entropy-system-without-a-smooth-positive-volume-model-September-25-2026/paper.pdf,A zero-entropy system without a smooth positive-volume model,NO,UNRECONCILED
+153,preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/paper.pdf,Arithmetic classification and non-Pisot singularity for Bernoulli convolutions,NO,UNRECONCILED
+154,preprints/Pointwise-Multiple-Ergodic-Averages-for-Mixing-Transformations-October-4-2026/multiple-ergodic-averages.pdf,Pointwise Multiple Ergodic Averages for Mixing Transformations,NO,UNRECONCILED
+154,preprints/Pointwise-convergence-of-fourfold-ergodic-averages-for-mixing-transformations-October-4-2026/fourfold-ergodic-averages.pdf,Pointwise convergence of fourfold ergodic averages for mixing transformations,NO,UNRECONCILED
+154,preprints/Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026/triple-ergodic-distinct-slopes.pdf,Triple ergodic averages with distinct integer slopes,NO,UNRECONCILED
+154,preprints/Pointwise-convergence-of-triple-ergodic-averages-for-mixing-transformations-October-4-2026/pointwise-triple-ergodic-averages-mixing-transformations.pdf,Pointwise convergence of triple ergodic averages for mixing transformations,NO,UNRECONCILED
+155,preprints/A-translational-tile-with-no-fully-periodic-tiling-in-dimension-three-September-23-2026/paper.pdf,A translational tile with no fully periodic tiling in dimension three,YES,UNRECONCILED
+156,preprints/A-nine-dimensional-counterexample-to-Borsuks-covering-assertion-September-23-2026/paper.pdf,A nine-dimensional counterexample to Borsuk's covering assertion,YES,UNRECONCILED
+157,preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf,A counterexample to Hadwiger's conjecture,YES,UNRECONCILED
+157,preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/paper.pdf,A counterexample to the Colin de Verdière chromatic conjecture,NO,UNRECONCILED
+157,preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/paper.pdf,A linear list-coloring bound in terms of the Hadwiger number,NO,UNRECONCILED
+158,preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/paper.pdf,The Euclidean plane is not five-colorable,YES,UNRECONCILED
+159,preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf,Quasipolynomial Bounds for Arithmetic Progressions,NO,UNRECONCILED
+160,preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf,Quantitative Superexponential Bounds for van der Waerden Numbers,YES,UNRECONCILED
+161,preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf,A counterexample to Sidorenko's conjecture,NO,UNRECONCILED
+162,preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/paper.pdf,Balanced counterexamples to Ryser's conjecture at prime orders,NO,UNRECONCILED
+162,preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf,A counterexample to Ryser's covering conjecture,YES,UNRECONCILED
+164,preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/paper.pdf,Monochromatic finite sums and products in the positive integers,NO,UNRECONCILED
+165,preprints/The-crossing-number-of-complete-graphs-September-23-2026/paper.pdf,The crossing number of complete graphs,YES,UNRECONCILED
+165,preprints/The-crossing-number-of-complete-bipartite-graphs-September-23-2026/paper.pdf,The crossing number of complete bipartite graphs,YES,UNRECONCILED
+166,preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf,The higher-dimensional Erdős distinct-distances conjecture,NO,UNRECONCILED
+167,preprints/The-weak-pinned-planar-distance-theorem-September-23-2026/paper.pdf,The weak pinned planar distance theorem,YES,UNRECONCILED
+167,preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf,A power saving for planar unit distances,NO,UNRECONCILED
+168,preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf,Combinatorial invariance of Kazhdan–Lusztig polynomials,NO,UNRECONCILED
+169,preprints/Elementary-Positivity-of-Chromatic-Quasisymmetric-Functions-September-24-2026/paper.pdf,Elementary positivity of chromatic quasisymmetric functions,NO,UNRECONCILED
+170,preprints/The-Sharp-Logarithmic-Exponent-of-r-5-t-September-24-2026/paper.pdf,"The sharp logarithmic exponent of r(5,t)",NO,UNRECONCILED
+170,preprints/Sharp-Logarithmic-Exponents-for-Fixed-Off-Diagonal-Ramsey-Numbers-September-24-2026/paper.pdf,Sharp logarithmic exponents for fixed off-diagonal Ramsey numbers,NO,UNRECONCILED
+171,preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/paper.pdf,The hypercube Ramsey number has linear order,NO,UNRECONCILED
+172,preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/paper.pdf,A classification of finite Euclidean Ramsey configurations,YES,UNRECONCILED
+173,preprints/A-proof-of-Seymours-second-neighborhood-conjecture-September-23-2026/paper.pdf,A proof of Seymour’s second-neighborhood conjecture,YES,UNRECONCILED
+174,preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf,The strong thin tree conjecture,YES,UNRECONCILED
+174,preprints/A-polynomial-time-construction-of-strong-thin-trees-September-23-2026/paper.pdf,A polynomial-time construction of strong thin trees,NO,UNRECONCILED
+175,preprints/Graph-Decompositions-at-the-Integral-Expectation-Threshold-October-5-2026/graph-threshold-decompositions.pdf,Graph Decompositions at the Integral Expectation Threshold,NO,UNRECONCILED
+175,preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf,Integral and fractional expectation thresholds are equivalent,YES,UNRECONCILED
+175,preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf,Talagrand’s discrete-convexity conjecture,YES,UNRECONCILED
+176,preprints/The-second-Kahn-Kalai-conjecture-September-24-2026/paper.pdf,The second Kahn–Kalai conjecture,YES,UNRECONCILED
+177,preprints/Bounded-degree-coboundary-expanders-in-every-dimension-September-24-2026/paper.pdf,Bounded-degree coboundary expanders in every dimension,NO,UNRECONCILED
+178,preprints/Deterministic-nonbipartite-Ramanujan-graphs-in-every-fixed-degree-September-23-2026/paper.pdf,Deterministic nonbipartite Ramanujan graphs in every fixed degree,NO,UNRECONCILED
+179,preprints/The-circulant-Hadamard-conjecture-September-23-2026/paper.pdf,The circulant Hadamard conjecture,YES,UNRECONCILED
+180,preprints/Paired-states-and-Hamiltonian-cycles-in-cubic-bipartite-planar-graphs-September-24-2026/paper.pdf,Paired states and Hamiltonian cycles in cubic bipartite planar graphs,NO,UNRECONCILED
+181,preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/main.pdf,A linear cycle-and-edge decomposition of every graph,YES,UNRECONCILED
+182,preprints/A-power-saving-for-intersective-polynomial-differences-with-an-exponent-depending-only-on-the-degree-October-5-2026/power-saving-intersective-polynomial-differences.pdf,A power saving for intersective polynomial differences with an exponent depending only on the degree,NO,UNRECONCILED
+182,preprints/A-Power-Saving-for-Polynomial-Differences-at-Prime-Arguments-October-5-2026/prime-argument-polynomial-differences.pdf,A Power Saving for Polynomial Differences at Prime Arguments,NO,UNRECONCILED
+182,preprints/A-power-saving-for-square-difference-free-sets-September-24-2026/paper.pdf,A power saving for square-difference-free sets,NO,UNRECONCILED
+183,preprints/A-power-saving-for-planar-halving-lines-September-25-2026/main.pdf,A power saving for planar halving lines,NO,UNRECONCILED
+184,preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf,Correspondence coloring graphs with a forbidden clique,NO,UNRECONCILED
+184,preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf,A logarithmic independence bound for clique-free graphs,YES,UNRECONCILED
+185,preprints/A-Counterexample-to-the-Infinite-Matroid-Packing-Covering-Conjecture-September-24-2026/paper.pdf,A Counterexample to the Infinite Matroid Packing/Covering Conjecture,YES,UNRECONCILED
+186,preprints/A-uniform-influence-bound-for-hypergraph-properties-October-5-2026/hypergraph-influences.pdf,A uniform influence bound for hypergraph properties,NO,UNRECONCILED
+186,preprints/A-Sharp-Threshold-Bound-for-Monotone-Graph-Properties-September-25-2026/paper.pdf,A Sharp Threshold Bound for Monotone Graph Properties,NO,UNRECONCILED
+187,preprints/Snaky-in-21-Maker-moves-September-25-2026/article.pdf,Snaky in 21 Maker moves,NO,UNRECONCILED
+188,preprints/The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026/The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026.pdf,The sharp terminal leave in random triangle removal,NO,UNRECONCILED
+189,preprints/Cycle-clique-Ramsey-numbers-September-25-2026/Cycle-clique-Ramsey-numbers-September-25-2026.pdf,Cycle--clique Ramsey numbers,NO,UNRECONCILED
+190,preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/paper.pdf,Polynomial removal fails for ordered binary matrices,YES,UNRECONCILED
+191,preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/main.pdf,A power improvement in the Heilbronn triangle lower bound,NO,UNRECONCILED
+192,preprints/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026.pdf,Unbounded Violations of the Square-Root Degree Bound,NO,UNRECONCILED
+193,preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/paper.pdf,Positivity of Serre's Intersection Multiplicity,NO,UNRECONCILED
+194,preprints/Lechs-multiplicity-conjecture-September-23-2026/paper.pdf,Lech's multiplicity conjecture,NO,UNRECONCILED
+195,preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/paper.pdf,A Complete Local Domain without a Small Cohen–Macaulay Module,YES,UNRECONCILED
+196,preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/paper.pdf,A Torsion-Free Group Algebra with Zero Divisors,YES,UNRECONCILED
+197,preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf,A Torsion-Free Group Algebra That Is Not Directly Finite,NO,UNRECONCILED
+197,preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf,A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two,YES,UNRECONCILED
+197,preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/paper.pdf,A Counterexample to the Group-Ring Determinant Conjecture,YES,UNRECONCILED
+197,preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf,A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Odd Characteristic,YES,UNRECONCILED
+198,preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/paper.pdf,An algebra of infinite little finitistic dimension,YES,UNRECONCILED
+199,preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/paper.pdf,An explicit counterexample to the Auslander-Reiten conjecture,YES,UNRECONCILED
+199,preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026/paper.pdf,A counterexample to Tachikawa's second conjecture,YES,UNRECONCILED
+200,preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/paper.pdf,The Artinian Lex-Plus-Powers Betti Theorem,NO,UNRECONCILED
+200,preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/paper.pdf,Commuting Division-Coefficient Forms and the Artinian Eisenbud--Green--Harris Conjecture,NO,UNRECONCILED
+201,preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/paper.pdf,A Counterexample to Kurosh’s Division-Ring Problem,NO,UNRECONCILED
+202,preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/paper.pdf,The Blockwise Alperin Weight Conjecture,NO,UNRECONCILED
+203,preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/main.pdf,Donovan's Conjecture over Algebraically Closed Fields,NO,UNRECONCILED
+203,preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/main.pdf,Integral Donovan Finiteness over Witt Vectors,NO,UNRECONCILED
+204,preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026.pdf,Tensor saturation for even spin groups,NO,UNRECONCILED
+205,preprints/Universal-Tensor-Squares-for-Symmetric-Groups-September-24-2026/main.pdf,Universal Tensor Squares for Symmetric Groups,NO,UNRECONCILED
+205,preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/paper.pdf,A Cyclic Polytabloid Proof of Saxl's Conjecture,YES,UNRECONCILED
+206,preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/paper.pdf,Finite congruence lattices: characterization and undecidability,NO,UNRECONCILED
+206,preprints/A-Negative-Solution-to-the-Finite-Lattice-Representation-Problem-September-24-2026/paper.pdf,A negative solution to the finite lattice representation problem,NO,UNRECONCILED
+207,preprints/The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026/l1-bass-conjecture.pdf,The ℓ¹-Bass Conjecture for Discrete Groups,NO,UNRECONCILED
+207,preprints/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026.pdf,The Bass trace conjecture and the characteristic-zero Kaplansky idempotent conjecture,YES,UNRECONCILED
+208,preprints/Fiber-functors-for-finite-symmetric-tensor-categories-in-positive-characteristic-September-24-2026/paper.pdf,Fiber functors for finite symmetric tensor categories in positive characteristic,NO,UNRECONCILED
+209,preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026.pdf,An integral counterexample to Gersten's conjecture,NO,UNRECONCILED
+209,preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/paper.pdf,An integral degree-three Gersten counterexample,NO,UNRECONCILED
+210,preprints/Foulkes-Conjecture-for-the-Sixth-Symmetric-Power-September-25-2026/main.pdf,Foulkes' conjecture for the sixth symmetric power,NO,UNRECONCILED
+210,preprints/Quadratic-Stabilization-of-the-Canonical-Foulkes-Howe-Map-September-25-2026/paper.pdf,Quadratic stabilization of the canonical Foulkes--Howe map,YES,UNRECONCILED
+211,preprints/Random-Walks-on-Critical-FK-Ising-Maps-and-Liouville-Brownian-Motion-October-5-2026/fk-ising-walk-limit.pdf,Random Walks on Critical FK–Ising Maps and Liouville Brownian Motion,NO,UNRECONCILED
+211,preprints/Spectral-convergence-for-critical-FK-Ising-planar-maps-October-5-2026/spectral-convergence-critical-fk-ising-planar-maps.pdf,Spectral convergence for critical FK–Ising planar maps,NO,UNRECONCILED
+211,preprints/A-Linear-Clock-for-Random-Walk-on-Tree-Weighted-Planar-Maps-October-5-2026/linear-clock-random-walk-tree-weighted-planar-maps.pdf,A Linear Clock for Random Walk on Tree-Weighted Planar Maps,NO,UNRECONCILED
+211,preprints/Canonical-conformal-limits-of-subcritical-FK-planar-maps-September-24-2026/main.pdf,Canonical conformal limits of subcritical FK planar maps,NO,UNRECONCILED
+211,preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/main.pdf,The critical Liouville quantum sphere and geometric limits of FK maps at q=4,NO,UNRECONCILED
+211,preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/main.pdf,Metric-measure limits of subcritical FK and spanning-tree planar maps,NO,UNRECONCILED
+211,preprints/Brownian-continuum-random-tree-limits-of-finite-Fortuin-Kasteleyn-maps-above-four-September-24-2026/main.pdf,Brownian continuum random tree limits of finite Fortuin–Kasteleyn maps above four,NO,UNRECONCILED
+212,preprints/No-bigeodesics-in-planar-first-passage-percolation-September-24-2026/main.pdf,No bigeodesics in planar first-passage percolation,NO,UNRECONCILED
+212,preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/main.pdf,Strict convexity and differentiability of the planar exponential first-passage limit shape,YES,UNRECONCILED
+213,preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf,Critical bond and site percolation on the cubic lattice,YES,UNRECONCILED
+213,preprints/No-percolation-at-criticality-on-quasi-transitive-graphs-September-24-2026/paper.pdf,No percolation at criticality on quasi-transitive graphs,NO,UNRECONCILED
+214,preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/paper.pdf,Nonuniqueness of percolation on nonamenable quasi-transitive graphs,NO,UNRECONCILED
+215,preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf,The canonical massive continuum limit of the two-dimensional O(3) model,NO,UNRECONCILED
+215,preprints/An-Isolated-Particle-Pole-for-the-Two-Dimensional-O3-Spin-Field-October-4-2026/o3-particle-pole.pdf,An Isolated Particle Pole for the Two-Dimensional O(3) Spin Field,NO,UNRECONCILED
+215,preprints/Exact-mass-asymptotics-for-the-two-dimensional-O4-lattice-model-October-5-2026/exact-mass-o4.pdf,Exact mass asymptotics for the two-dimensional O(4) lattice model,NO,UNRECONCILED
+215,preprints/Sharp-mass-bounds-for-the-two-dimensional-O4-model-September-23-2026/paper.pdf,Sharp mass bounds for the two-dimensional O(4) model,NO,UNRECONCILED
+215,preprints/Exponential-decay-in-two-dimensional-classical-On-models-September-23-2026/paper.pdf,Exponential decay in two-dimensional classical O(n) models,YES,UNRECONCILED
+216,preprints/The-critical-logarithmic-correction-for-the-planar-XY-model-October-5-2026/paper.pdf,The critical logarithmic correction for the planar XY model,NO,UNRECONCILED
+216,preprints/Critical-Center-Magnetization-in-the-Planar-XY-Model-October-5-2026/paper.pdf,Critical Center Magnetization in the Planar XY Model,NO,UNRECONCILED
+216,preprints/The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026/paper.pdf,The Critical Spin Field of the Planar XY Model,NO,UNRECONCILED
+216,preprints/Essential-Singularity-of-the-Correlation-Length-in-the-Planar-XY-Model-October-5-2026/paper.pdf,Essential Singularity of the Correlation Length in the Planar XY Model,NO,UNRECONCILED
+216,preprints/The-critical-correlation-exponent-of-the-planar-XY-model-September-24-2026/paper.pdf,The critical correlation exponent of the planar XY model,NO,UNRECONCILED
+216,preprints/BKT-universality-for-height-and-planar-spin-fields-September-24-2026/paper.pdf,BKT universality for height and planar spin fields,NO,UNRECONCILED
+217,preprints/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026.pdf,The low-temperature Sherrington–Kirkpatrick free-energy limiting law,NO,UNRECONCILED
+217,preprints/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026.pdf,The low-temperature Sherrington–Kirkpatrick fluctuation scale,NO,UNRECONCILED
+218,preprints/Quenched-SLE3-limits-for-general-weak-random-bond-Ising-models-October-5-2026/general-weak-random-bond-ising.pdf,Quenched SLE₃ limits for general weak random-bond Ising models,NO,UNRECONCILED
+218,preprints/Quenched-SLE3-Universality-for-the-Weak-Random-Bond-Ising-Model-October-5-2026/quenched-sle3-weak-random-bond-ising.pdf,Quenched SLE₃ Universality for the Weak Random-Bond Ising Model,NO,UNRECONCILED
+218,preprints/Logarithmic-Relative-Fluctuations-in-the-Weakly-Disordered-Planar-Ising-Model-October-5-2026/critical-relative-second-moment-weak-random-bond-ising.pdf,Logarithmic Relative Fluctuations in the Weakly Disordered Planar Ising Model,NO,UNRECONCILED
+218,preprints/Conformal-universality-of-bulk-Ising-correlations-under-weak-interactions-September-23-2026/paper.pdf,Conformal universality of bulk Ising correlations under weak interactions,NO,UNRECONCILED
+218,preprints/SLE3-universality-for-weak-finite-range-Ising-interactions-September-23-2026/paper.pdf,SLE3 universality for weak finite-range Ising interactions,NO,UNRECONCILED
+218,preprints/Buffered-comparison-and-stopping-band-resolution-in-critical-Ising-September-23-2026/paper.pdf,Buffered comparison and stopping-band resolution in critical Ising,NO,UNRECONCILED
+219,preprints/Fixed-energy-universality-for-weak-Anderson-disorder-on-random-regular-graphs-October-5-2026/fixed-energy-universality-weak-anderson-disorder-random-regular-graphs.pdf,Fixed-energy universality for weak Anderson disorder on random regular graphs,NO,UNRECONCILED
+219,preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/paper.pdf,GOE bulk universality for fixed-degree random regular graphs,NO,UNRECONCILED
+220,preprints/A-directional-zero-one-law-for-finite-range-dependent-random-environments-October-5-2026/directional-zero-one-finite-range.pdf,A directional zero–one law for finite-range-dependent random environments,NO,UNRECONCILED
+220,preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/paper.pdf,A directional zero–one law under strict ellipticity,NO,UNRECONCILED
+220,preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf,Directional transience implies ballisticity,YES,UNRECONCILED
+221,preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf,The Mézard–Parisi formula for diluted spin glasses,NO,UNRECONCILED
+222,preprints/The-free-energy-of-the-Ising-random-perceptron-September-24-2026/The-free-energy-of-the-Ising-random-perceptron-September-24-2026.pdf,The free energy of the Ising random perceptron,NO,UNRECONCILED
+222,preprints/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026.pdf,Microscopic jamming in the negative spherical perceptron,NO,UNRECONCILED
+222,preprints/The-spherical-perceptron-with-bi-orthogonally-invariant-disorder-September-24-2026/The-spherical-perceptron-with-bi-orthogonally-invariant-disorder-September-24-2026.pdf,The spherical perceptron with bi-orthogonally invariant disorder,NO,UNRECONCILED
+222,preprints/The-free-energy-of-the-spherical-random-perceptron-September-24-2026/The-free-energy-of-the-spherical-random-perceptron-September-24-2026.pdf,The free energy of the spherical random perceptron,NO,UNRECONCILED
+223,preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf,Square-lattice FK interfaces and nested loops for 1 <= q < 4,NO,UNRECONCILED
+223,preprints/Self-dual-random-cluster-interfaces-below-one-September-23-2026/paper.pdf,Self-dual random-cluster interfaces below one,NO,UNRECONCILED
+223,preprints/Quenched-SLE-Universality-for-Weakly-Disordered-FK-Ising-Interfaces-October-5-2026/quenched-fk-ising.pdf,Quenched SLE Universality for Weakly Disordered FK–Ising Interfaces,NO,UNRECONCILED
+223,preprints/Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026/paper.pdf,Thermal FK–Ising interfaces and massive SLE,NO,UNRECONCILED
+223,preprints/Natural-Occupation-Measures-for-Critical-Square-Lattice-FK-Interfaces-October-5-2026/natural-occupation-measures-critical-square-lattice-fk-interfaces.pdf,Natural Occupation Measures for Critical Square-Lattice FK Interfaces,NO,UNRECONCILED
+223,preprints/Conformal-Limits-of-Critical-Square-Lattice-Random-Cluster-Interfaces-October-5-2026/paper.pdf,Conformal Limits of Critical Square-Lattice Random-Cluster Interfaces,NO,UNRECONCILED
+224,preprints/From-critical-crossings-to-quenched-near-critical-universality-in-Voronoi-percolation-October-5-2026/critical-crossings-quenched-near-critical-universality-voronoi-percolation.pdf,From critical crossings to quenched near-critical universality in Voronoi percolation,NO,UNRECONCILED
+224,preprints/A-Pivotal-Amplitude-for-Voronoi-Percolation-from-Cardys-Formula-October-5-2026/voronoi-pivotal-amplitude.pdf,A Pivotal Amplitude for Voronoi Percolation from Cardy's Formula,NO,UNRECONCILED
+224,preprints/Cardys-formula-for-critical-Poisson-Voronoi-percolation-September-23-2026/paper.pdf,Cardy’s formula for critical Poisson–Voronoi percolation,NO,UNRECONCILED
+225,preprints/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026.pdf,The Gaussian free field limit of the balanced six-vertex model with variance multiplier 1/arcsin(c/2),NO,UNRECONCILED
+226,preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/paper.pdf,The curve scaling limit of half-plane double dimers,NO,UNRECONCILED
+227,preprints/Universality-of-critical-quench-autocorrelations-in-the-Sherrington-Kirkpatrick-model-October-5-2026/main.pdf,Universality of critical quench autocorrelations in the Sherrington–Kirkpatrick model,NO,UNRECONCILED
+227,preprints/Functional-universality-of-critical-SK-autocorrelations-October-5-2026/critical-sk-autocorrelations.pdf,Functional universality of critical SK autocorrelations,NO,UNRECONCILED
+227,preprints/A-spectral-gap-throughout-the-high-temperature-Sherrington-Kirkpatrick-phase-September-24-2026/main.pdf,A spectral gap throughout the high-temperature Sherrington–Kirkpatrick phase,NO,UNRECONCILED
+227,preprints/Cutoff-throughout-the-high-temperature-Sherrington-Kirkpatrick-phase-September-24-2026/paper.pdf,Cutoff throughout the high-temperature Sherrington–Kirkpatrick phase,NO,UNRECONCILED
+227,preprints/Critical-slowing-down-in-the-Sherrington-Kirkpatrick-model-September-24-2026/paper.pdf,Critical slowing down in the Sherrington–Kirkpatrick model,YES,UNRECONCILED
+227,preprints/Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026/paper.pdf,Stretched-exponential barriers for typical SK initial states,NO,UNRECONCILED
+227,preprints/A-typical-start-upper-bound-for-low-temperature-SK-Glauber-dynamics-September-24-2026/paper.pdf,A typical-start upper bound for low-temperature SK Glauber dynamics,NO,UNRECONCILED
+227,preprints/Critical-mixing-in-the-Sherrington-Kirkpatrick-model-September-25-2026/paper.pdf,Critical mixing in the Sherrington–Kirkpatrick model,NO,UNRECONCILED
+228,preprints/A-continuum-temperature-singularity-for-a-radial-pair-potential-September-24-2026/paper.pdf,A continuum temperature singularity for a radial pair potential,YES,UNRECONCILED
+228,preprints/A-radial-continuum-phase-transition-with-algebraic-decay-September-24-2026/paper.pdf,A radial continuum phase transition with algebraic decay,YES,UNRECONCILED
+229,preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/four-state-potts.pdf,The Reconstruction Threshold for the Ferromagnetic Four-State Potts Model,NO,UNRECONCILED
+229,preprints/A-Capacity-Criterion-for-Four-State-Potts-Reconstruction-on-Trees-October-5-2026/four-state-capacity.pdf,A Capacity Criterion for Four-State Potts Reconstruction on Trees,NO,UNRECONCILED
+229,preprints/The-exact-reconstruction-threshold-for-the-three-state-symmetric-channel-September-25-2026/paper.pdf,The exact reconstruction threshold for the three-state symmetric channel,NO,UNRECONCILED
+230,preprints/An-exact-Hausdorff-gauge-for-SLE-September-25-2026/An-exact-Hausdorff-gauge-for-SLE-September-25-2026.pdf,An exact Hausdorff gauge for SLE,NO,UNRECONCILED
+230,preprints/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026.pdf,An explicit exact Hausdorff gauge for SLE,NO,UNRECONCILED
+231,preprints/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026.pdf,The free uniform spanning forest is a factor of IID,NO,UNRECONCILED
+232,preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf,Gaussian free-field limits of weighted integer Lipschitz heights,NO,UNRECONCILED
+232,preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf,The Gaussian free field limit of integer Lipschitz heights with two-arc boundary data,NO,UNRECONCILED
+232,preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf,Uniform real Lipschitz surfaces on the triangular lattice,NO,UNRECONCILED
+233,preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf,The joint scaling limit of critical Ashkin-Teller currents,NO,UNRECONCILED
+234,preprints/All-temperature-pressure-for-orthogonally-invariant-Ising-spin-glasses-September-25-2026/paper.pdf,All-temperature pressure for orthogonally invariant Ising spin glasses,NO,UNRECONCILED
+235,preprints/A-Limiting-Satisfiability-Threshold-for-Every-Fixed-Clause-Size-September-25-2026/article.pdf,A Limiting Satisfiability Threshold for Every Fixed Clause Size,NO,UNRECONCILED
+235,preprints/Linear-Variance-of-the-Random-3-SAT-Hitting-Time-October-5-2026/linear-variance-of-the-random-3-sat-hitting-time.pdf,Linear Variance of the Random 3-SAT Hitting Time,NO,UNRECONCILED
+235,preprints/Variance-of-the-Random-k-SAT-Hitting-Time-September-27-2026/article.pdf,Variance of the Random k-SAT Hitting Time,NO,UNRECONCILED
+235,preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/article.pdf,Computing the Random 3-SAT Threshold,NO,UNRECONCILED
+236,preprints/The-sharp-factor-of-IID-threshold-for-the-free-Ising-model-on-regular-trees-September-26-2026/article.pdf,The sharp factor-of-IID threshold for the free Ising model on regular trees,YES,UNRECONCILED
+237,preprints/Radial-transfer-estimates-and-polygon-length-laws-for-honeycomb-walks-September-26-2026/main.pdf,Radial transfer estimates and polygon length laws for honeycomb walks,NO,UNRECONCILED
+237,preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/main.pdf,Critical honeycomb chords with prescribed boundary endpoints,YES,UNRECONCILED
+237,preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/main.pdf,Cylinder loop weights and planar nesting,NO,UNRECONCILED
+237,preprints/Mass-and-covering-exponents-for-fixed-length-honeycomb-walks-September-26-2026/main.pdf,Mass and covering exponents for fixed-length honeycomb walks,NO,UNRECONCILED
+237,preprints/Signed-cylinder-propagation-and-marked-polygons-on-the-honeycomb-lattice-September-26-2026/main.pdf,Signed cylinder propagation and marked polygons on the honeycomb lattice,NO,UNRECONCILED
+237,preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/main.pdf,Cylinder amplitudes and logarithmic bridge-length windows on the honeycomb lattice,NO,UNRECONCILED
+237,preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf,Marked polygon correlations and one-arc bounds,NO,UNRECONCILED
+237,preprints/Disk-transfer-representations-and-confined-bridge-mass-September-26-2026/main.pdf,Disk transfer representations and confined bridge mass,NO,UNRECONCILED
+237,preprints/Polynomial-vacuum-representations-and-bridge-mass-for-honeycomb-walks-September-26-2026/main.pdf,Polynomial vacuum representations and bridge mass for honeycomb walks,NO,UNRECONCILED
+237,preprints/Renewal-and-changes-of-law-for-critical-honeycomb-walks-September-26-2026/main.pdf,Renewal and changes of law for critical honeycomb walks,NO,UNRECONCILED
+237,preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/main.pdf,Critical strip-crossing mass on the honeycomb lattice,NO,UNRECONCILED
+237,preprints/Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026/main.pdf,Uniform marked-polygon estimates and sharp finite bridge moments,NO,UNRECONCILED
+237,preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/main.pdf,Cap-selected amplitudes and triangle chords for honeycomb walks,NO,UNRECONCILED
+238,preprints/Optimal-order-mixing-of-the-Thorp-shuffle-September-26-2026/paper.pdf,Optimal-order mixing of the Thorp shuffle,NO,UNRECONCILED
+238,preprints/Random-coordinate-frames-and-partial-permutation-laws-September-26-2026/main.pdf,Random coordinate frames and partial permutation laws,NO,UNRECONCILED
+238,preprints/From-partial-permutation-information-to-Fourier-bounds-September-26-2026/main.pdf,From partial permutation information to Fourier bounds,NO,UNRECONCILED
+238,preprints/Conditional-information-under-deterministic-coordinate-sweeps-September-26-2026/main.pdf,Conditional information under deterministic coordinate sweeps,NO,UNRECONCILED
+238,preprints/Conditional-permutations-in-a-revealed-switching-environment-September-26-2026/paper.pdf,Conditional permutations in a revealed switching environment,NO,UNRECONCILED
+238,preprints/Routing-densities-and-representation-contraction-for-Thorp-sweeps-September-26-2026/paper.pdf,Routing densities and representation contraction for Thorp sweeps,YES,UNRECONCILED
+238,preprints/Row-column-symmetry-and-contraction-of-coordinate-sweeps-September-26-2026/paper.pdf,Row&#8211;column symmetry and contraction of coordinate sweeps,NO,UNRECONCILED
+238,preprints/Random-subspace-tests-and-trace-smoothing-for-coordinate-sweeps-September-26-2026/paper.pdf,Random-subspace tests and trace smoothing for coordinate sweeps,NO,UNRECONCILED
+238,preprints/Compatibility-entropy-and-the-spectrum-of-a-Thorp-sweep-September-26-2026/paper.pdf,Compatibility entropy and the spectrum of a Thorp sweep,YES,UNRECONCILED
+238,preprints/Signed-tensor-densities-and-diagram-budgets-for-coordinate-sweeps-September-26-2026/paper.pdf,Signed tensor densities and diagram budgets for the Thorp shuffle,NO,UNRECONCILED
+238,preprints/Conditional-coordinate-sweeps-and-analytic-transfer-September-26-2026/main.pdf,Conditional coordinate sweeps and analytic transfer,YES,UNRECONCILED
+238,preprints/A-strict-four-row-permanent-inequality-and-permutation-moments-September-26-2026/main.pdf,A strict four-row permanent inequality and permutation moments,NO,UNRECONCILED
+239,preprints/The-sharp-exponential-rate-of-singularity-for-symmetric-Bernoulli-matrices-October-3-2026/symmetric-bernoulli-singularity.pdf,The sharp exponential rate of singularity for symmetric Bernoulli matrices,NO,UNRECONCILED
+239,preprints/The-sharp-singularity-rate-for-biased-symmetric-sign-matrices-October-4-2026/biased-symmetric-sign-singularity.pdf,The sharp singularity rate for biased symmetric sign matrices,NO,UNRECONCILED
+240,preprints/A-CH-Obstruction-to-a-Prescribed-Categoricity-Threshold-September-24-2026/paper.pdf,A CH obstruction to a prescribed categoricity threshold,YES,UNRECONCILED
+240,preprints/Eventual-Categoricity-for-Abstract-Elementary-Classes-September-24-2026/paper.pdf,Eventual categoricity for abstract elementary classes,NO,UNRECONCILED
+241,preprints/Rigidity-of-the-Turing-degrees-September-24-2026/paper.pdf,Rigidity of the Turing degrees,YES,UNRECONCILED
+242,preprints/Single-fold-Diophantine-representations-September-24-2026/paper.pdf,Single-fold Diophantine representations,YES,UNRECONCILED
+243,preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/paper.pdf,Choiceless polynomial time with counting does not capture polynomial time,YES,UNRECONCILED
+243,preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/paper.pdf,Witnessed symmetric choice is strictly stronger than choiceless polynomial time with counting,NO,UNRECONCILED
+244,preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/partition-principle-without-choice.pdf,The Partition Principle does not imply Choice,YES,UNRECONCILED
+245,preprints/Weak-and-strong-normalization-in-pure-type-systems-September-25-2026/paper.pdf,Weak and strong normalization in pure type systems,NO,UNRECONCILED
+246,preprints/A-Modulus-Proof-of-Cannons-Conjecture-September-23-2026/paper.pdf,A Modulus Proof of Cannon’s Conjecture,NO,UNRECONCILED
+247,preprints/An-infinite-finitely-presented-residually-finite-2-group-October-5-2026/residually-finite-torsion.pdf,An infinite finitely presented residually finite 2-group,NO,UNRECONCILED
+247,preprints/An-infinite-finitely-presented-periodic-group-September-23-2026/paper.pdf,An infinite finitely presented periodic group,NO,UNRECONCILED
+248,preprints/Thompsons-group-F-is-nonamenable-September-23-2026/paper.pdf,Thompson's group F is nonamenable,YES,UNRECONCILED
+249,preprints/A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026/paper.pdf,A finitely generated counterexample to the Eilenberg–Ganea conjecture,NO,UNRECONCILED
+250,preprints/Finite-algebraic-envelopes-and-the-Boone-Higman-conjecture-September-23-2026/paper.pdf,Finite algebraic envelopes and the Boone–Higman conjecture,NO,UNRECONCILED
+250,preprints/Simple-F-infinity-overgroups-of-groups-with-decidable-word-problem-September-23-2026/paper.pdf,Simple F∞ overgroups of groups with decidable word problem,NO,UNRECONCILED
+250,preprints/A-universal-group-of-type-F-infinity-September-23-2026/paper.pdf,A universal group of type F∞,YES,UNRECONCILED
+251,preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/paper.pdf,Unitarizability implies amenability for discrete groups,YES,UNRECONCILED
+251,preprints/Strong-Ulam-Stability-Characterizes-Amenability-October-5-2026/strong-ulam-stability.pdf,Strong Ulam Stability Characterizes Amenability,NO,UNRECONCILED
+252,preprints/a-torsion-free-hyperbolic-group-that-is-not-residually-finite-September-23-2026/paper.pdf,A torsion-free hyperbolic group that is not residually finite,YES,UNRECONCILED
+253,preprints/An-Infinite-Finitely-Presented-Simple-Amenable-Group-September-23-2026/paper.pdf,An infinite finitely presented simple amenable group,YES,UNRECONCILED
+254,preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/paper.pdf,"Harmonic heights and the Artin K(pi,1) conjecture",YES,UNRECONCILED
+254,preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/paper.pdf,An Artin group with no geometric CAT(0) action,YES,UNRECONCILED
+254,preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/paper.pdf,Parabolic intersections in Artin groups,NO,UNRECONCILED
+255,preprints/quasi-isometric-recognition-of-virtually-polycyclic-groups-September-24-2026/paper.pdf,Quasi-isometric recognition of virtually polycyclic groups,NO,UNRECONCILED
+256,preprints/Nonsingular-systems-of-equations-over-arbitrary-groups-October-5-2026/nonsingular-systems-over-arbitrary-groups.pdf,Nonsingular systems of equations over arbitrary groups,NO,UNRECONCILED
+256,preprints/The-Kervaire-Theorem-for-Groups-September-24-2026/The-Kervaire-Theorem-for-Groups-September-24-2026.pdf,The Kervaire theorem for groups,NO,UNRECONCILED
+257,preprints/A-hyperbolic-group-with-no-geometric-CAT0-action-September-25-2026/paper.pdf,A hyperbolic group with no geometric CAT(0) action,YES,UNRECONCILED
+258,preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/paper.pdf,Baumslag-Solitar-free one-relator groups are hyperbolic,NO,UNRECONCILED
+258,preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/paper.pdf,Virtual compact specialness of hyperbolic one-relator groups,NO,UNRECONCILED
+259,preprints/A-group-without-fixed-price-October-5-2026/unequal-costs-rank-100-amalgam.pdf,A group without fixed price,NO,UNRECONCILED
+260,preprints/The-spacetime-Penrose-inequality-with-charge-and-original-data-rigidity-October-5-2026/paper.pdf,The spacetime Penrose inequality with charge and original-data rigidity,NO,UNRECONCILED
+260,preprints/A-Charged-Reduction-of-the-Spacetime-Penrose-Inequality-in-Spatial-Dimensions-at-Least-Four-October-5-2026/paper.pdf,A Charged Reduction of the Spacetime Penrose Inequality in Spatial Dimensions at Least Four,NO,UNRECONCILED
+260,preprints/Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026/paper.pdf,"Spacetime Penrose inequalities: enclosing area, charge, and rigidity",NO,UNRECONCILED
+260,preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/paper.pdf,The Kerr–Newman Penrose Inequality for Axisymmetric Electrovacuum Exteriors,NO,UNRECONCILED
+260,preprints/Electromagnetic-tails-and-the-Kerr-Newman-Penrose-inequality-October-5-2026/paper.pdf,Electromagnetic tails and the Kerr–Newman Penrose inequality,NO,UNRECONCILED
+260,preprints/The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026/paper.pdf,The nonmaximal anti-de Sitter Penrose Inequality and original-data rigidity,NO,UNRECONCILED
+260,preprints/The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026/paper.pdf,The Penrose inequality for maximal asymptotically hyperbolic initial data,NO,UNRECONCILED
+260,preprints/A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026/paper.pdf,A local Penrose inequality for conformal perturbations of Schwarzschild–anti-de Sitter data,NO,UNRECONCILED
+260,preprints/The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026/paper.pdf,The spacetime Penrose inequality and enclosing area,NO,UNRECONCILED
+260,preprints/Conformal-flow-and-the-Riemannian-Penrose-inequality-with-minimizing-frontiers-September-27-2026/paper.pdf,Conformal flow and the Riemannian Penrose inequality with minimizing frontiers,NO,UNRECONCILED
+260,preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/paper.pdf,Equality and rigidity in the spacetime Penrose inequality,NO,UNRECONCILED
+260,preprints/Boundary-graph-deformations-for-the-spacetime-Penrose-inequality-September-27-2026/paper.pdf,Boundary graph deformations for the spacetime Penrose inequality,NO,UNRECONCILED
+260,preprints/Area-controlled-end-replacement-and-the-Bondi-Penrose-inequality-in-the-CKS-class-September-27-2026/paper.pdf,Area-controlled end replacement and the Bondi Penrose inequality in the CKS class,NO,UNRECONCILED
+261,preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf,Absolutely Continuous Spectrum for Weak-Disorder Anderson Models in Dimensions at Least Three,NO,UNRECONCILED
+261,preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/paper.pdf,Pure-Point Spectrum for the Two-Dimensional Anderson Model at Every Positive Disorder,NO,UNRECONCILED
+262,preprints/Equality-cases-in-the-sharp-one-dimensional-matrix-Lieb-Thirring-inequality-October-5-2026/sharp-one-dimensional-lieb-thirring-inequalities-matrix-potentials.pdf,Equality cases in the sharp one-dimensional matrix Lieb–Thirring inequality,NO,UNRECONCILED
+262,preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/sharp-matrix-lieb-thirring.pdf,Sharp one-dimensional Lieb–Thirring inequalities for matrix potentials,NO,UNRECONCILED
+262,preprints/Sharp-One-Dimensional-Lieb-Thirring-Constants-September-23-2026/paper.pdf,Sharp one-dimensional Lieb–Thirring constants,YES,UNRECONCILED
+263,preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf,Uniform excess charge for Coulomb molecules and the outer radius of neutral atoms,NO,UNRECONCILED
+263,preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/paper.pdf,Generalized ionization energies for full Coulomb atoms,YES,UNRECONCILED
+263,preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/paper.pdf,Generalized outer-electron radii of neutral Coulomb atoms,NO,UNRECONCILED
+264,preprints/Generic-Future-Inextendibility-with-Square-Integrable-Connection-Near-a-Fixed-Kerr-Spacetime-September-23-2026/paper.pdf,Generic Future Inextendibility with Square-Integrable Connection Near a Fixed Kerr Spacetime,NO,UNRECONCILED
+264,preprints/Generic-C1-Future-Inextendibility-Near-Rotating-Subextremal-Kerr-Spacetimes-September-23-2026/paper.pdf,Generic C1 Future Inextendibility Near Rotating Subextremal Kerr Spacetimes,NO,UNRECONCILED
+264,preprints/Quantitative-Near-Kerr-Evolution-and-Generic-C2-Future-Inextendibility-September-23-2026/paper.pdf,Quantitative Near-Kerr Evolution and Generic C2 Future Inextendibility,NO,UNRECONCILED
+265,preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf,A two-dimensional area law from a global spectral gap,NO,UNRECONCILED
+265,preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/paper.pdf,Polynomial PEPS approximation of gapped square-grid ground states,NO,UNRECONCILED
+266,preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf,The maximum number of mutually unbiased bases in dimension six,NO,UNRECONCILED
+266,preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026.pdf,Exact Fourier certificates for complex Hadamard matrices of order six,NO,UNRECONCILED
+267,preprints/Bose-Einstein-condensation-at-positive-temperature-in-the-dilute-hard-sphere-gas-October-5-2026/positive-temperature-hard-spheres.pdf,Bose–Einstein condensation at positive temperature in the dilute hard-sphere gas,NO,UNRECONCILED
+267,preprints/Quantum-Depletion-and-Momentum-Distribution-in-the-Dilute-Hard-Sphere-Bose-Gas-October-5-2026/Quantum-Depletion-in-the-Dilute-Hard-Sphere-Bose-Gas.pdf,Quantum Depletion and Momentum Distribution in the Dilute Hard-Sphere Bose Gas,NO,UNRECONCILED
+267,preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/fixed-repulsion-quantum-depletion.pdf,Quantum Depletion for Fixed Bounded Repulsive Potentials,NO,UNRECONCILED
+267,preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf,A density-uniform condensate bound for dilute Bose gases,NO,UNRECONCILED
+267,preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf,Ground-state condensation in the dilute hard-sphere gas,NO,UNRECONCILED
+268,preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf,The periodic spin-one Haldane gap,NO,UNRECONCILED
+268,preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/paper.pdf,A boundary-field gap for the spin-one Heisenberg chain,NO,UNRECONCILED
+269,preprints/Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026/uniform-stability-spherical-laughlin-gap.pdf,Uniform Stability of the Spherical Laughlin Gap,NO,UNRECONCILED
+269,preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026.pdf,A Fock-space inequality and the Laughlin spectral gap,YES,UNRECONCILED
+270,preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/paper.pdf,The unique threshold bound state of the SU(N) BFSS model,NO,UNRECONCILED
+270,preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/positive-eigenvalues-relative-su2-bfss.pdf,Positive eigenvalues of the relative SU(2) BFSS Hamiltonian,NO,UNRECONCILED
+271,preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/bloch-law-heisenberg.pdf,Bloch's Law for Finite-Range Heisenberg Ferromagnets in Three Dimensions,NO,UNRECONCILED
+271,preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/first-lattice-correction-bloch-law.pdf,The first lattice correction to Bloch's law,NO,UNRECONCILED
+271,preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/spherical-magnetization.pdf,The spherical magnetization law for the three-dimensional quantum Heisenberg ferromagnet,NO,UNRECONCILED
+271,preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/paper.pdf,Spontaneous magnetization in the quantum Heisenberg ferromagnet,NO,UNRECONCILED
+272,preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf,Entanglement with zero distillable secret key in local dimension ten,NO,UNRECONCILED
+273,preprints/The-entropy-photon-number-inequality-September-24-2026/paper.pdf,The entropy photon-number inequality,NO,UNRECONCILED
+274,preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/paper.pdf,Product-projection localization and the QAC0 parity lower bound,YES,UNRECONCILED
+274,preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/paper.pdf,"Regular trajectories, pruning and quantum parity",YES,UNRECONCILED
+275,preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026.pdf,Continuum Coulomb hardness with binary nuclear charges,NO,UNRECONCILED
+275,preprints/QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026/QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026.pdf,QMA-hardness of continuum Coulomb energy with unit nuclear charges,NO,UNRECONCILED
+276,preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf,Classical capacity and entropy inequalities for generalized amplitude damping,YES,UNRECONCILED
+277,preprints/Threshold-parallel-repetition-for-finite-dimensional-entangled-games-September-25-2026/paper.pdf,Threshold parallel repetition for finite-dimensional entangled games,YES,UNRECONCILED
+278,preprints/A-Coulomb-Ground-State-Density-without-Kohn-Sham-Ensemble-Representation-September-25-2026/paper.pdf,A Coulomb ground-state density without Kohn-Sham ensemble representation,NO,UNRECONCILED
+279,preprints/Exact-quantum-factoring-over-a-fixed-finite-gate-set-September-25-2026/main.pdf,Exact quantum factoring over a fixed finite gate set,NO,UNRECONCILED
+280,preprints/Strongly-rational-unitary-vertex-operator-algebras-and-conformal-nets-September-25-2026/paper.pdf,Strongly rational unitary vertex operator algebras and conformal nets,NO,UNRECONCILED
+281,preprints/QAOA-attains-the-SK-ground-state-energy-in-the-thermodynamic-first-limit-September-25-2026/QAOA-attains-the-SK-ground-state-energy-in-the-thermodynamic-first-limit-September-25-2026.pdf,QAOA attains the SK ground-state energy in the thermodynamic-first limit,NO,UNRECONCILED
+281,preprints/Full-support-of-the-zero-temperature-Sherrington-Kirkpatrick-order-parameter-September-27-2026/main.pdf,Full support of the zero-temperature Sherrington-Kirkpatrick order parameter,NO,UNRECONCILED
+282,preprints/Scale-and-conformal-symmetry-in-four-dimensional-operational-quantum-field-theory-September-26-2026/main.pdf,Scale and conformal symmetry in four-dimensional operational quantum field theory,NO,UNRECONCILED
+283,preprints/Polynomial-Time-Unitary-Synthesis-from-a-Boolean-Oracle-October-5-2026/paper.pdf,Polynomial-Time Unitary Synthesis from a Boolean Oracle,NO,UNRECONCILED
+284,preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/quartic-query-separation.pdf,A Nearly Quartic Separation Between Randomized and Quantum Query Complexity,NO,UNRECONCILED
+285,preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/paper.pdf,A torsion-free counterexample to reduced Baum–Connes injectivity,NO,UNRECONCILED
+285,preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/paper.pdf,A torsion-free counterexample to the Kadison–Kaplansky projection conjecture,NO,UNRECONCILED
+285,preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/paper.pdf,An irrational-trace counterexample to reduced Baum–Connes,NO,UNRECONCILED
+286,preprints/Arithmeticity-of-twisted-finite-correspondences-for-lattices-over-local-fields-September-23-2026/paper.pdf,Arithmeticity of twisted finite correspondences for lattices over local fields,NO,UNRECONCILED
+286,preprints/The-arithmetic-category-and-stable-recovery-of-lattice-factors-September-23-2026/paper.pdf,The arithmetic category and stable recovery of lattice factors,NO,UNRECONCILED
+287,preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/An-isomorphism-of-the-free-group-factors-September-23-2026.pdf,An isomorphism of the free group factors,NO,UNRECONCILED
+288,preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/paper.pdf,Kadison's similarity theorem through uniform derivation estimates,NO,UNRECONCILED
+289,preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/paper.pdf,Universal strong Kadison–Kastler stability,NO,UNRECONCILED
+289,preprints/Near-Inclusions-of-von-Neumann-Algebras-Without-Small-Spatial-Embeddings-October-5-2026/near-inclusions.pdf,Near Inclusions of von Neumann Algebras Without Small Spatial Embeddings,NO,UNRECONCILED
+289,preprints/Close-Separable-Cstar-Algebras-Without-Spatial-Conjugacy-October-5-2026/paper.pdf,Close Separable C*-Algebras Without Spatial Conjugacy,NO,UNRECONCILED
+290,preprints/Expected-amenable-subalgebras-preserving-core-commutants-September-23-2026/Expected-amenable-subalgebras-preserving-core-commutants-September-23-2026.pdf,Expected amenable subalgebras preserving core commutants,NO,UNRECONCILED
+290,preprints/Bounded-recovery-for-modular-spectral-averages-September-23-2026/Bounded-recovery-for-modular-spectral-averages-September-23-2026.pdf,Bounded recovery for modular spectral averages,YES,UNRECONCILED
+291,preprints/Equivariant-Jiang-Su-Stability-for-Amenable-Actions-in-the-Unital-Stably-Finite-Case-October-5-2026/paper.pdf,Equivariant Jiang–Su Stability for Amenable Actions in the Unital Stably Finite Case,NO,UNRECONCILED
+291,preprints/Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026/paper.pdf,Cuntz comparison and Jiang–Su absorption,NO,UNRECONCILED
+291,preprints/Nuclear-dimension-and-Jiang-Su-stability-without-elementary-subquotients-September-23-2026/paper.pdf,Nuclear dimension and Jiang–Su stability without elementary subquotients,NO,UNRECONCILED
+291,preprints/Tracial-projection-methods-and-uniform-property-Gamma-September-23-2026/paper.pdf,Tracial projection methods and uniform property Gamma,YES,UNRECONCILED
+292,preprints/An-explicit-obstruction-to-nuclear-norm-ultrapower-embeddings-September-23-2026/paper.pdf,An explicit obstruction to nuclear norm-ultrapower embeddings,NO,UNRECONCILED
+293,preprints/Invariant-projection-counterexamples-for-every-irrational-rotation-September-27-2026/paper.pdf,Invariant-projection counterexamples for every irrational rotation,NO,UNRECONCILED
+293,preprints/Backward-intertwiners-and-a-transitive-commutant-September-27-2026/paper.pdf,Backward intertwiners and a transitive commutant,YES,UNRECONCILED
+294,preprints/A-counterexample-to-Kaplanskys-quasitrace-conjecture-September-23-2026/paper.pdf,A counterexample to Kaplansky's quasitrace conjecture and failure of tensor-product stable finiteness,YES,UNRECONCILED
+295,preprints/Vanishing-of-higher-bounded-Hochschild-cohomology-September-23-2026/paper.pdf,Vanishing of higher bounded Hochschild cohomology,NO,UNRECONCILED
+296,preprints/Relative-generation-and-the-generator-problem-for-finite-factors-September-23-2026/paper.pdf,Relative generation and the generator problem for finite factors,YES,UNRECONCILED
+297,preprints/A-counterexample-to-Naimarks-problem-in-ZFC-September-24-2026/naimark-counterexample-zfc.pdf,A counterexample to Naimark's problem in ZFC,NO,UNRECONCILED
+298,preprints/A-finite-entropy-separation-of-microstates-and-nonmicrostates-free-entropy-September-25-2026/paper.pdf,A finite-entropy separation of microstates and nonmicrostates free entropy,NO,UNRECONCILED
+299,preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/paper.pdf,The Kirchberg–Rørdam character criterion,YES,UNRECONCILED
+300,preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf,Approximation Paving over Arbitrary Maximal Abelian Subalgebras,NO,UNRECONCILED
+300,preprints/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf,Quadratic Strong-Operator Paving over Arbitrary Maximal Abelian Subalgebras,NO,UNRECONCILED
+301,preprints/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026.pdf,The trace cone classifies Razak–Jacelon stabilizations,YES,UNRECONCILED
+302,preprints/Filtered-products-and-boundary-preserving-compression-in-complex-cobordism-September-25-2026/paper.pdf,Filtered products and boundary-preserving compression in complex cobordism,NO,UNRECONCILED
+302,preprints/Radius-of-comparison-equals-half-the-mean-dimension-September-25-2026/paper.pdf,Radius of comparison equals half the mean dimension,NO,UNRECONCILED
+303,preprints/Weak-pure-infiniteness-and-O-infinity-absorption-September-25-2026/paper.pdf,Weak pure infiniteness and O-infinity absorption,NO,UNRECONCILED
+304,preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf,The Hilbert–Smith conjecture in every finite dimension,NO,UNRECONCILED
+305,preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/paper.pdf,A boundary-only obstruction to four-dimensional disk embedding,NO,UNRECONCILED
+305,preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/paper.pdf,A marked tensor obstruction to four-dimensional disk embedding,NO,UNRECONCILED
+305,preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/paper.pdf,A PD4 group without an aspherical manifold model,NO,UNRECONCILED
+306,preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/paper.pdf,Purely cosmetic surgery on knots in the three-sphere,NO,UNRECONCILED
+307,preprints/Failure-of-rational-injectivity-for-maximal-coarse-assembly-October-5-2026/paper.pdf,Failure of rational injectivity for maximal coarse assembly,NO,UNRECONCILED
+307,preprints/A-counterexample-to-the-coarse-Novikov-conjecture-September-23-2026/paper.pdf,A counterexample to the coarse Novikov conjecture,NO,UNRECONCILED
+308,preprints/Finite-Smith-Toda-Complexes-at-Varying-Primes-September-23-2026/paper.pdf,Finite Smith–Toda Complexes at Varying Primes,NO,UNRECONCILED
+308,preprints/A-finite-Smith-Toda-complex-V4-at-the-prime-1009-September-23-2026/paper.pdf,A finite Smith–Toda complex V(4) at the prime 1009,NO,UNRECONCILED
+309,preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/paper.pdf,The Kervaire invariant problem at the prime three,NO,UNRECONCILED
+310,preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/paper.pdf,Rational homology and Quillen's conjecture,NO,UNRECONCILED
+311,preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/paper.pdf,Stabilizer orbits and thick tensor ideals of dualizable K(n)-local spectra,NO,UNRECONCILED
+312,preprints/The-Grothendieck-homotopy-hypothesis-via-elementary-expansions-September-24-2026/paper.pdf,The Grothendieck homotopy hypothesis via elementary expansions,YES,UNRECONCILED
+313,preprints/Finite-generation-for-the-Kn-local-sphere-September-24-2026/Finite-generation-for-the-Kn-local-sphere-September-24-2026.pdf,Finite generation for the K(n)-local sphere,NO,UNRECONCILED
+314,preprints/Cyclic-Length-and-Chromatic-Fixed-Point-Loss-September-24-2026/Cyclic-Length-and-Chromatic-Fixed-Point-Loss-September-24-2026.pdf,Cyclic length and chromatic fixed-point loss,NO,UNRECONCILED
+315,preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/paper.pdf,The Singer conjecture in dimension four,NO,UNRECONCILED
+316,preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/paper.pdf,The Stable Hurewicz Image of the Sphere at Two,NO,UNRECONCILED
+317,preprints/Thomason-Model-Structures-in-Every-Strict-Higher-Dimension-September-25-2026/paper.pdf,Thomason Model Structures in Every Strict Higher Dimension,NO,UNRECONCILED
+318,preprints/Filtered-chromatic-splitting-at-generic-primes-September-25-2026/paper.pdf,Filtered chromatic splitting at generic primes,NO,UNRECONCILED
+318,preprints/The-height-three-chromatic-overlap-an-explicit-filtration-and-its-attachments-September-27-2026/paper.pdf,The height-three chromatic overlap: an explicit filtration and its attachments,NO,UNRECONCILED
+318,preprints/A-rational-obstruction-to-strong-chromatic-splitting-at-height-three-September-25-2026/paper.pdf,A rational obstruction to strong chromatic splitting at height three,NO,UNRECONCILED
+318,preprints/Failure-of-finite-assembly-for-a-chromatic-overlap-at-the-prime-three-September-25-2026/paper.pdf,Failure of finite assembly for a chromatic overlap at the prime three,NO,UNRECONCILED
+318,preprints/Counterexamples-to-weak-chromatic-splitting-sphere-kernels-and-descent-exponents-September-27-2026/paper.pdf,Counterexamples to weak chromatic splitting: sphere kernels and descent exponents,NO,UNRECONCILED
+319,preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/paper.pdf,Counterexamples to the Hahn-Wilson conjecture at height two,NO,UNRECONCILED
+320,preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/paper.pdf,Nonhomeomorphic closed aspherical four-manifolds with the same homotopy type,NO,UNRECONCILED
+321,preprints/A-Counterexample-to-Walls-D2-Problem-October-6-2026/wall-d2-counterexample.pdf,A Counterexample to Wall's D(2) Problem,NO,UNRECONCILED
+322,preprints/A-positive-solution-to-Tingleys-problem-September-23-2026/paper.pdf,A positive solution to Tingley’s problem,YES,UNRECONCILED
+323,preprints/Relative-independence-of-the-separable-quotient-problem-September-23-2026/paper.pdf,Relative independence of the separable quotient problem,NO,UNRECONCILED
+324,preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/paper.pdf,Lipschitz Equivalent Separable Banach Spaces Need Not Be Linearly Isomorphic,YES,UNRECONCILED
+324,preprints/Bi-Lipschitz-Absorption-of-c0-Without-a-Linear-Copy-of-c0-September-26-2026/paper.pdf,Bi-Lipschitz Absorption of c0 Without a Linear Copy of c0,YES,UNRECONCILED
+325,preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf,A direct proof of the complete Crouzeix inequality,YES,UNRECONCILED
+325,preprints/The-complete-Crouzeix-theorem-September-23-2026/paper.pdf,The complete Crouzeix theorem: optimal similarity and a common positive boundary representation,YES,UNRECONCILED
+326,preprints/The-cotype-cotype-conjecture-under-the-approximation-property-September-23-2026/paper.pdf,The cotype–cotype conjecture under the approximation property,YES,UNRECONCILED
+327,preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/paper.pdf,Nontrivial Markov Type Forces Superreflexivity,YES,UNRECONCILED
+328,preprints/Fixed-Points-of-Nonexpansive-Maps-in-Reflexive-Banach-Spaces-September-24-2026/paper.pdf,Fixed Points of Nonexpansive Maps in Reflexive Banach Spaces,YES,UNRECONCILED
+329,preprints/Counterexamples-to-the-duality-conjecture-for-metric-entropy-September-24-2026/main.pdf,Counterexamples to the duality conjecture for metric entropy,YES,UNRECONCILED
+330,preprints/Failure-of-Bounded-Approximation-in-a-Lipschitz-Free-Space-over-a-Uniformly-Discrete-Metric-Space-September-26-2026/main.pdf,A uniformly discrete counterexample to bounded approximation in Lipschitz-free spaces,NO,UNRECONCILED
+331,preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/manuscript.pdf,Asymptotic midpoint uniform convexity and unbounded diamond distortion in a reflexive tree space,YES,UNRECONCILED
+331,preprints/Midpoint-lenses-in-segment-spaces-September-27-2026/manuscript.pdf,Midpoint lenses in segment spaces,YES,UNRECONCILED
+331,preprints/Diamond-distortion-from-midpoint-and-tree-energies-September-27-2026/manuscript.pdf,Distortion of countably branching diamonds from midpoint and tree energies,YES,UNRECONCILED
+331,preprints/Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026/manuscript.pdf,Exact asymptotic moduli in a Daugavet subspace of L1,YES,UNRECONCILED
+331,preprints/Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026/manuscript.pdf,Midpoint convexity from bounded tree potentials and path costs,YES,UNRECONCILED
+331,preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/manuscript.pdf,Independent products in real L1: asymptotic midpoint convexity without AUC renormings,YES,UNRECONCILED
+331,preprints/Midpoint-convexity-from-two-recursive-potentials-September-27-2026/manuscript.pdf,Midpoint convexity from two recursive potentials,YES,UNRECONCILED
+332,preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/l1-markov-cotype.pdf,Metric Markov Cotype Two of <i>ℓ</i><sub>1</sub>,NO,UNRECONCILED
+333,preprints/Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026/paper.pdf,Smooth isometric immersions of closed surfaces into Euclidean four-space,NO,UNRECONCILED
+334,preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/paper.pdf,A Smooth Metric with No Local Isometric Immersion into Three-Space,YES,UNRECONCILED
+335,preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/v126-proof.pdf,An integral scalar curvature bound for real simplicial volume,NO,UNRECONCILED
+335,preprints/Positive-scalar-curvature-forces-rational-inessentiality-September-23-2026/paper.pdf,Positive scalar curvature forces rational inessentiality,NO,UNRECONCILED
+336,preprints/Spectral-scalar-curvature-and-uniform-Urysohn-width-October-5-2026/main.pdf,Spectral scalar curvature and uniform Urysohn width,NO,UNRECONCILED
+336,preprints/Spectral-scalar-curvature-and-Urysohn-width-in-dimension-three-October-5-2026/spectral-urysohn-three-manifolds.pdf,Spectral scalar curvature and Urysohn width in dimension three,NO,UNRECONCILED
+336,preprints/Positive-scalar-curvature-and-uniform-codimension-two-width-September-23-2026/paper.pdf,Positive scalar curvature and uniform codimension-two width,NO,UNRECONCILED
+337,preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf,Generalized Cartan–Hadamard isoperimetry and Euclidean equality rigidity,NO,UNRECONCILED
+337,preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf,Sharp integral fillings in CAT(0) spaces,NO,UNRECONCILED
+338,preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/paper.pdf,Uniformization of complete Kähler manifolds with positive bisectional curvature,NO,UNRECONCILED
+339,preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/paper.pdf,Entropy equality and local symmetry in negative curvature,NO,UNRECONCILED
+340,preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/paper.pdf,A counterexample to the nearby Lagrangian conjecture,NO,UNRECONCILED
+341,preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf,Deforming hypersymplectic four-manifolds to hyperkähler triples,NO,UNRECONCILED
+342,preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf,Taming implies compatibility on four-manifolds,NO,UNRECONCILED
+343,preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/paper.pdf,Symplectic Ball Packings in Higher Dimensions,NO,UNRECONCILED
+344,preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf,The metric Blaschke theorem,NO,UNRECONCILED
+345,preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf,Infinitely many closed geodesic images on every Riemannian sphere,NO,UNRECONCILED
+346,preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf,A Codimension-One Bound for the Singular Set of a Stationary Integral Varifold,NO,UNRECONCILED
+346,preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf,Almost-everywhere regularity of stationary integral varifolds,NO,UNRECONCILED
+347,preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf,Hamiltonian Fixed Points Below the Stable Morse Number in Dimension Twenty-Two,NO,UNRECONCILED
+347,preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/sharp-cyclic-integral-floer-bound-below-stable-morse-number.pdf,Sharpness of the Cyclic Integral Floer Bound Below the Stable Morse Number,NO,UNRECONCILED
+347,preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf,Hamiltonian Fixed Points Below the Stable Morse Number,NO,UNRECONCILED
+347,preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/paper.pdf,A nondegenerate counterexample to the Morse-number Arnold bound,NO,UNRECONCILED
+347,preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf,Three fixed points on the symplectic quadric threefold,YES,UNRECONCILED
+348,preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf,Zero-Plane Rigidity for Einstein Four-Manifolds,NO,UNRECONCILED
+348,preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf,An L² Einstein Gap for Nonnegatively Curved Four-Manifolds,NO,UNRECONCILED
+348,preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf,Positively curved Einstein four-manifolds,NO,UNRECONCILED
+349,preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf,The Solomon–Yau least-volume theorem,NO,UNRECONCILED
+350,preprints/Sharp-nodal-length-on-smooth-surfaces-September-23-2026/paper.pdf,Sharp nodal length on smooth surfaces,NO,UNRECONCILED
+350,preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf,Smooth counterexamples to Yau's nodal upper bound in dimensions three and four,YES,UNRECONCILED
+350,preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf,Power-law violations of Yau's nodal upper bound,YES,UNRECONCILED
+351,preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/paper.pdf,A closed Ricci flow with bounded scalar curvature and finite-time curvature blowup,NO,UNRECONCILED
+351,preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/paper.pdf,Bounded scalar curvature and smooth extension of four-dimensional Ricci flow,NO,UNRECONCILED
+351,preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/paper.pdf,Path selection and an elliptic inequality on degenerating Ricci-flat trees,NO,UNRECONCILED
+352,preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/paper.pdf,A finite-time singularity of Calabi flow on projective space,NO,UNRECONCILED
+353,preprints/Smooth-Nonquadratic-Affine-Maximal-Graph-in-Dimension-Ten-October-5-2026/affine-maximal-dimension-ten.pdf,A Smooth Nonquadratic Entire Affine Maximal Graph in Dimension Ten,NO,UNRECONCILED
+353,preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/main.pdf,The affine Bernstein theorem in dimensions three through nine,NO,UNRECONCILED
+354,preprints/The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026/article.pdf,The Isoperimetric Conjecture for the Cubic Flat Three-Torus,NO,UNRECONCILED
+355,preprints/Tangent-flow-uniqueness-2026-09-24/paper.pdf,Uniqueness of tangent flows at the first singular time of embedded surface mean-curvature flow,NO,UNRECONCILED
+356,preprints/Giglis-distributional-curvature-characterization-of-Alexandrov-spaces-September-24-2026/main.pdf,Gigli’s distributional curvature characterization of Alexandrov spaces,NO,UNRECONCILED
+356,preprints/Weak-Hessian-bounds-along-every-geodesic-in-RCD-spaces-September-24-2026/weak-hessian-geodesics.pdf,Weak Hessian bounds along every geodesic in RCD spaces,YES,UNRECONCILED
+357,preprints/Bi-Lipschitz-Coordinates-at-Regular-Points-of-Noncollapsed-RCD-Spaces-September-25-2026/paper.pdf,Bi-Lipschitz Coordinates at Regular Points of Noncollapsed RCD Spaces,NO,UNRECONCILED
+358,preprints/A-Three-Manifold-Without-Conjugate-Points-and-Without-a-Nonpositively-Curved-Metric-September-24-2026/paper.pdf,A Three-Manifold Without Conjugate Points and Without a Nonpositively Curved Metric,YES,UNRECONCILED
+359,preprints/A-negatively-pinched-Kahler-threefold-without-bounded-holomorphic-coordinates-September-25-2026/paper.pdf,A negatively pinched Kähler threefold without bounded holomorphic coordinates,YES,UNRECONCILED
+359,preprints/One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026/paper.pdf,One-sided negative sectional curvature and the holomorphic Liouville property,NO,UNRECONCILED
+360,preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf,Global Support and Convex Injectivity Domains under Weak MTW,YES,UNRECONCILED
+360,preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf,Uniform Bi-Holder Transport from Weak MTW,YES,UNRECONCILED
+361,preprints/A-counterexample-to-integer-degree-harmonic-dimension-comparison-September-25-2026/paper.pdf,A counterexample to integer-degree harmonic dimension comparison,YES,UNRECONCILED
+361,preprints/A-Three-Dimensional-Counterexample-to-Integer-Degree-Harmonic-Dimension-Comparison-September-26-2026/paper.pdf,A Three-Dimensional Counterexample to Integer-Degree Harmonic Dimension Comparison,NO,UNRECONCILED
+362,preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf,Global classical solutions of the three-dimensional relativistic Vlasov–Maxwell system,YES,UNRECONCILED
+363,preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/paper.pdf,Nonuniqueness with local conservation for the hard-sphere Boltzmann equation,NO,UNRECONCILED
+363,preprints/Nonuniqueness-for-the-periodic-hard-sphere-Boltzmann-equation-September-23-2026/paper.pdf,Nonuniqueness for the periodic hard-sphere Boltzmann equation,NO,UNRECONCILED
+364,preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/paper.pdf,The Boltzmann–Grad limit for stable radial potentials on regular kinetic intervals,NO,UNRECONCILED
+364,preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/paper.pdf,Hard-sphere fluctuations on the regular Boltzmann lifespan,NO,UNRECONCILED
+365,preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/paper.pdf,Determination of a metric and a unitary connection from one boundary patch,NO,UNRECONCILED
+365,preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf,Smooth anisotropic uniqueness in the Calderón problem from one boundary patch,NO,UNRECONCILED
+365,preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf,Nonuniqueness for bounded measurable scalar conductivities in three dimensions,YES,UNRECONCILED
+366,preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026.pdf,Interior regularity of planar Mumford–Shah minimizers,NO,UNRECONCILED
+367,preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf,The critical dimension for one-phase Bernoulli minimizers,NO,UNRECONCILED
+368,preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf,Strong diffeomorphic approximation in three dimensions for 1≤p≤2,NO,UNRECONCILED
+368,preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf,Strong diffeomorphic approximation in three dimensions for p>2,NO,UNRECONCILED
+369,preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf,Strict hot spots and absence of interior critical points on smooth simply connected planar domains,NO,UNRECONCILED
+370,preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf,The Subcritical Hénon–Lane–Emden Conjecture,YES,UNRECONCILED
+371,preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/paper.pdf,Stable self-similar blowup for a supercritical defocusing Schrödinger equation on the torus,NO,UNRECONCILED
+372,preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/article.pdf,Global Uniqueness for the Smooth Isotropic Elasticity Inverse Problem,NO,UNRECONCILED
+373,preprints/A-counterexample-to-the-Monge-ansatz-for-the-three-marginal-Coulomb-cost-September-25-2026/paper.pdf,A counterexample to the Monge ansatz for the three-marginal Coulomb cost,NO,UNRECONCILED
+374,preprints/Sharp-One-Third-Stability-of-Brenier-Maps-September-25-2026/article.pdf,Sharp One-Third Stability of Brenier Maps,NO,UNRECONCILED
+375,preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf,A positive resolution of De Giorgi's conjecture in dimension eight,NO,UNRECONCILED
+376,preprints/Finite-Instructions-and-Solenoidal-Shear-Flows-September-27-2026/manuscript.pdf,Finite Instructions and Solenoidal Shear Flows,NO,UNRECONCILED
+376,preprints/A-Fixed-Particle-Test-for-Computation-in-a-Forced-Viscous-Flow-September-27-2026/manuscript.pdf,A Fixed Particle Test for Computation in a Forced Viscous Flow,NO,UNRECONCILED
+376,preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf,Universal Computation with Eventually Stationary Navier–Stokes Forcing,NO,UNRECONCILED
+376,preprints/Geometric-Programs-for-Solenoidal-Forcing-September-27-2026/manuscript.pdf,Geometric Programs for Solenoidal Forcing,NO,UNRECONCILED
+376,preprints/Prefix-Instructions-and-Incompressible-Flows-September-27-2026/manuscript.pdf,Prefix Instructions and Incompressible Flows,NO,UNRECONCILED
+376,preprints/Computation-under-Rapidly-Vanishing-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf,Computation under Rapidly Vanishing Navier–Stokes Forcing,NO,UNRECONCILED
+376,preprints/Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026/manuscript.pdf,Velocity-Field Detection of Computation in Forced Navier–Stokes Flows,NO,UNRECONCILED
+376,preprints/Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026/manuscript.pdf,Scalar Potentials and Slow Clocks for Forced Fluid Computation,NO,UNRECONCILED
+376,preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf,Incompressible Box Transport and Finite Computation,NO,UNRECONCILED
+377,preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/interior-c1-infinity-harmonic.pdf,"Uniform Interior $`C^{1,\alpha}`$ Estimates for Infinity-Harmonic Functions",NO,UNRECONCILED

@@ -1,5 +1,7 @@
 """Pinned source-accounting positive and hostile fixtures; not a theorem audit."""
 from copy import deepcopy
+import csv
+import io
 import importlib.util
 import json
 from pathlib import Path
@@ -35,6 +37,31 @@ class SourceCrosswalkAuditTests(unittest.TestCase):
         self.assertIn("September-23", got["unindexed_source_editions"][0]["pdf_path"])
         self.assertTrue(all(row["family_id"] is None for row in got["declarations"]))
         self.assertEqual(got, mod.audit(self.index, self.crosswalk, self.lock))
+
+    def test_csv_manuscript_and_declaration_projections(self):
+        result = mod.audit(self.index, self.crosswalk, self.lock)
+        first = mod.csv_ledgers(result)
+        self.assertEqual(first, mod.csv_ledgers(result))
+        for name, content in first.items():
+            self.assertEqual((ROOT/name).read_text(encoding="utf-8"), content)
+        manuscripts = list(csv.DictReader(io.StringIO(first["SOURCE_CROSSWALK_MANUSCRIPTS.csv"])))
+        declarations = list(csv.DictReader(io.StringIO(first["SOURCE_CROSSWALK_DECLARATIONS.csv"])))
+        self.assertEqual(len(manuscripts), 719)
+        self.assertEqual({row["family_id"] for row in manuscripts},
+                         {family["family_id"] for family in result["families"]})
+        self.assertEqual({row["manuscript_path"] for row in manuscripts},
+                         {m["pdf_path"] for family in result["families"]
+                          for m in family["manuscripts"]})
+        self.assertEqual(len(declarations), 200)
+        self.assertEqual({row["declaration"] for row in declarations},
+                         {entry["declaration"] for entry in result["declarations"]})
+        self.assertTrue(all(row["family_id"] == "" and
+                            row["family_binding"] == "UNRECONCILED" for row in declarations))
+        self.assertTrue(all(row["declaration_family_edge"] == "UNRECONCILED"
+                            for row in manuscripts))
+        family337 = [row for row in manuscripts if row["family_id"] == "337"]
+        self.assertEqual(len(family337), 2)
+        self.assertEqual({row["source_paper_path_match"] for row in family337}, {"NO"})
 
     def test_duplicate_pdf_rejected(self):
         idx = deepcopy(self.index)
