@@ -79,6 +79,22 @@
       "controller_id": "GITHUB_ACTIONS"
     },
     {
+      "path": ".github/workflows/openai-math-first25-lean.yml",
+      "observed_features": [
+        "OPAQUE_EXECUTION"
+      ],
+      "topology": "PERSISTENT_CONTROLLER_REQUIRED",
+      "controller_id": "GITHUB_ACTIONS"
+    },
+    {
+      "path": ".github/workflows/openai-math-pinned-lean.yml",
+      "observed_features": [
+        "OPAQUE_EXECUTION"
+      ],
+      "topology": "PERSISTENT_CONTROLLER_REQUIRED",
+      "controller_id": "GITHUB_ACTIONS"
+    },
+    {
       "path": ".github/workflows/otp-formal-source-successor-002.yml",
       "observed_features": [
         "OPAQUE_EXECUTION"

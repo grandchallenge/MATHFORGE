@@ -1,0 +1,523 @@
+name: OpenAI Math pinned Lean 4.34.1 replay
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/openai-math-pinned-lean.yml"
+      - "sources/OPENAI-MATH-2026/**"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/openai-math-pinned-lean.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: openai-math-pinned-lean-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  family-342:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    env:
+      GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
+    steps:
+      - name: Checkout GCL source lock
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Checkout pinned OpenAI Math Lean sources
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+
+      - name: Verify complete revision and exact toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/openai-math-342
+          {
+            git -C upstream/math rev-parse HEAD
+            git -C upstream/math rev-parse HEAD^{tree}
+            cat upstream/math/lean/lean-toolchain
+            git -C upstream/math status --short
+          } > replay/openai-math-342/identities.txt
+          test "$(sed -n '1p' replay/openai-math-342/identities.txt)" = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+          test "$(sed -n '2p' replay/openai-math-342/identities.txt)" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(sed -n '3p' replay/openai-math-342/identities.txt)" = "leanprover/lean4:v4.34.1"
+          df -h . > replay/openai-math-342/disk-at-start.txt
+          sha256sum upstream/math/lean/lake-manifest.json > replay/openai-math-342/lake-manifest-pre.sha256
+          sha256sum upstream/math/lean/ComparatorChallenges/TamingCompatibility.json > replay/openai-math-342/comparator-config.sha256
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          cfg = json.loads(Path("upstream/math/lean/ComparatorChallenges/TamingCompatibility.json").read_text())
+          assert cfg["solution_module"] == "OAI.Geometry.TamingCompatibility.Main"
+          assert cfg["theorem_names"] == ["OAI.TamingCompatibility.taming_implies_compatibility"]
+          assert set(cfg["permitted_axioms"]) == {"propext", "Quot.sound", "Classical.choice"}
+          PY
+
+      - name: Install pinned elan bootstrap
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Reproduce pinned dependency and targeted Lean compilation
+        id: lean-replay
+        working-directory: upstream/math/lean
+        shell: bash
+        run: |
+          set +e
+          (
+            set -euo pipefail
+            echo "Replaying OAI.Geometry.TamingCompatibility.Main"
+            lake --version
+            lake update
+            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/openai-math-342/lake-manifest-pre.sha256")"
+            lake exe cache get
+            lake build OAI.Geometry.TamingCompatibility.Main
+            cat > /tmp/gcl-openai-math-342-axioms.lean <<'LEAN'
+          import OAI.Geometry.TamingCompatibility.Main
+          #print axioms OAI.TamingCompatibility.taming_implies_compatibility
+          LEAN
+            lake env lean /tmp/gcl-openai-math-342-axioms.lean
+          ) > "$GITHUB_WORKSPACE/replay/openai-math-342/lean.stdout_stderr.log" 2>&1
+          result=$?
+          echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-342/lean.exit"
+          sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/openai-math-342/lake-manifest-post.sha256"
+          git status --short > "$GITHUB_WORKSPACE/replay/openai-math-342/upstream-working-tree-after.txt"
+          cat "$GITHUB_WORKSPACE/replay/openai-math-342/lean.stdout_stderr.log"
+          exit "$result"
+
+      - name: Record reproducible replay receipt
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          base = Path("replay/openai-math-342")
+          records = {}
+          for p in sorted(base.iterdir()):
+              if p.is_file():
+                  data = p.read_bytes()
+                  records[p.name] = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+          exit_file = base / "lean.exit"
+          payload = {
+              "record_type": "GCL_OPENAI_MATH_LEAN_TARGET_REPLAY/1",
+              "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+              "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+              "toolchain": "leanprover/lean4:v4.34.1",
+              "target_module": "OAI.Geometry.TamingCompatibility.Main",
+              "target_declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+              "comparator_config": "ComparatorChallenges/TamingCompatibility.json",
+              "actual_comparator_executed": False,
+              "exit_code": int(exit_file.read_text()) if exit_file.is_file() else None,
+              "run_id": os.environ.get("GITHUB_RUN_ID"),
+              "files": records,
+              "claim_boundary": "A successful Lean kernel compilation and an axiom print would establish only the exact target replay; it does not prove correspondence to a corrected manuscript, completeness, novelty or MATHCERT certification."
+          }
+          (base / "REPLAY_RECEIPT.json").write_text(json.dumps(payload,indent=2)+"\n")
+          PY
+
+      - name: Upload exact replay logs including failure evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: openai-math-family342-lean-4341
+          path: replay/openai-math-342
+          if-no-files-found: error
+          retention-days: 30
+
+
+  comparator-342:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    env:
+      GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
+      GCL_UPSTREAM_SHA: "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      GCL_COMPARATOR_SHA: "d03acab154d269c06e60e4de7e4cc85deebff94b"
+      GCL_EXPORT_SHA: "076e8e57707e813375e8f9da8bf989799ace9680"
+      GCL_LANDRUN_SHA: "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+    steps:
+      - name: Checkout GCL governed source lock
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Checkout immutable upstream Lean corpus
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+
+      - name: Preflight exact source theorem and challenge
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/comparator-342
+          test "$(git -C upstream/math rev-parse HEAD)" = "$GCL_UPSTREAM_SHA"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          sha256sum upstream/math/lean/lake-manifest.json > replay/comparator-342/lake-manifest-pre.sha256
+          sha256sum upstream/math/lean/ComparatorChallenges/TamingCompatibility.lean \
+            upstream/math/lean/ComparatorChallenges/TamingCompatibility.json \
+            upstream/math/lean/OAI/Geometry/TamingCompatibility/Main.lean \
+            > replay/comparator-342/statement-sha256.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("upstream/math/lean")
+          cfg = json.loads((root/"ComparatorChallenges/TamingCompatibility.json").read_text())
+          assert cfg["challenge_module"] == "ComparatorChallenges.TamingCompatibility"
+          assert cfg["solution_module"] == "OAI.Geometry.TamingCompatibility.Main"
+          assert cfg["theorem_names"] == ["OAI.TamingCompatibility.taming_implies_compatibility"]
+          assert sorted(cfg["permitted_axioms"]) == sorted(["propext","Classical.choice","Quot.sound"])
+          assert cfg["enable_nanoda"] is False
+          PY
+
+      - name: Install fixed elan v1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Build pinned landrun comparator and toolchain-matched exporter
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/comparator-342 /tmp/gcl-comparator-tools
+          {
+            go version
+            git clone https://github.com/leanprover/lean4export.git /tmp/gcl-comparator-tools/lean4export
+            git -C /tmp/gcl-comparator-tools/lean4export checkout --detach "$GCL_EXPORT_SHA"
+            test "$(git -C /tmp/gcl-comparator-tools/lean4export rev-parse HEAD)" = "$GCL_EXPORT_SHA"
+            cp upstream/math/lean/lean-toolchain /tmp/gcl-comparator-tools/lean4export/lean-toolchain
+            (cd /tmp/gcl-comparator-tools/lean4export && lake build lean4export)
+            git clone https://github.com/leanprover/comparator.git /tmp/gcl-comparator-tools/comparator
+            git -C /tmp/gcl-comparator-tools/comparator checkout --detach "$GCL_COMPARATOR_SHA"
+            test "$(git -C /tmp/gcl-comparator-tools/comparator rev-parse HEAD)" = "$GCL_COMPARATOR_SHA"
+            cp upstream/math/lean/lean-toolchain /tmp/gcl-comparator-tools/comparator/lean-toolchain
+            python3 - <<'PY'
+          from pathlib import Path
+          p = Path("/tmp/gcl-comparator-tools/comparator/lakefile.toml")
+          data = p.read_text()
+          assert 'rev = "master"' in data
+          p.write_text(data.replace('rev = "master"', 'rev = "076e8e57707e813375e8f9da8bf989799ace9680"'))
+          PY
+            (cd /tmp/gcl-comparator-tools/comparator && lake update && lake build comparator)
+            go install "github.com/zouuup/landrun/cmd/landrun@$GCL_LANDRUN_SHA"
+            test -x "$(go env GOPATH)/bin/landrun"
+            test -x /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export
+            test -x /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
+            sha256sum "$(go env GOPATH)/bin/landrun" \
+              /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export \
+              /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
+          } > replay/comparator-342/toolchain-build.log 2>&1
+
+      - name: Prepare exact upstream Lake environment without source drift
+        working-directory: upstream/math/lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            lake --version
+            lake update
+            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/comparator-342/lake-manifest-pre.sha256")"
+            lake exe cache get
+          } > "$GITHUB_WORKSPACE/replay/comparator-342/lake-environment.log" 2>&1
+          sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/comparator-342/lake-manifest-post.sha256"
+
+      - name: Comparator isolated execution and separately labelled lower-assurance diagnostic
+        working-directory: upstream/math/lean
+        shell: bash
+        run: |
+          set +e
+          export PATH="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin:$(go env GOPATH)/bin:$PATH"
+          export COMPARATOR_LEAN4EXPORT="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export"
+          export COMPARATOR_LANDRUN="$(go env GOPATH)/bin/landrun"
+          export GCL_COMPARATOR_BIN="/tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator"
+          export GCL_COMPARATOR_CONFIG="ComparatorChallenges/TamingCompatibility.json"
+          systemd-run --user --wait --collect --pipe \
+            --property='RestrictAddressFamilies=~AF_UNIX' \
+            -E "PATH=$PATH" -E "COMPARATOR_LEAN4EXPORT=$COMPARATOR_LEAN4EXPORT" \
+            -E "COMPARATOR_LANDRUN=$COMPARATOR_LANDRUN" \
+            --working-directory="$(pwd)" \
+            /bin/bash -c 'lake env "$1" "$2"' \
+            comparator "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
+            > "$GITHUB_WORKSPACE/replay/comparator-342/hardened.stdout_stderr.log" 2>&1
+          hard_rc=$?
+          echo "$hard_rc" > "$GITHUB_WORKSPACE/replay/comparator-342/hardened.exit"
+          # If systemd user manager is unavailable, preserve a NON-CERTIFYING
+          # landrun-backed diagnostic result rather than pretending hardened execution.
+          if [ "$hard_rc" -ne 0 ]; then
+            lake env "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
+              > "$GITHUB_WORKSPACE/replay/comparator-342/diagnostic.stdout_stderr.log" 2>&1
+            diagnostic_rc=$?
+            echo "$diagnostic_rc" > "$GITHUB_WORKSPACE/replay/comparator-342/diagnostic.exit"
+          fi
+          # Hardened Comparator acceptance alone is the success condition.
+          exit "$hard_rc"
+
+      - name: Retain exact result identity and bounded claims
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root=Path("replay/comparator-342")
+          files={}
+          for p in sorted(root.glob("*")):
+              if p.is_file():
+                  data=p.read_bytes()
+                  files[p.name]={"bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()}
+          def code(name):
+              p=root/name
+              return int(p.read_text().strip()) if p.is_file() else None
+          hard,diagnostic=code("hardened.exit"),code("diagnostic.exit")
+          record={
+            "record_type":"GCL_OPENAI_MATH_COMPARATOR_REPLAY/1",
+            "gcl_head":os.environ.get("GITHUB_SHA"),
+            "run_id":os.environ.get("GITHUB_RUN_ID"),
+            "upstream_revision":os.environ.get("GCL_UPSTREAM_SHA"),
+            "lean_toolchain":"leanprover/lean4:v4.34.1",
+            "comparator_source_commit":os.environ.get("GCL_COMPARATOR_SHA"),
+            "exporter_source_commit":os.environ.get("GCL_EXPORT_SHA"),
+            "landrun_source_commit":os.environ.get("GCL_LANDRUN_SHA"),
+            "target":"OAI.TamingCompatibility.taming_implies_compatibility",
+            "hardened_exit":hard,
+            "diagnostic_exit":diagnostic,
+            "comparator_hardened_accepted":hard==0,
+            "diagnostic_not_certification":True,
+            "files":files,
+            "claim_boundary":"Comparator acceptance under the declared isolation policy verifies the exact pinned Lean challenge; it does not independently establish paper-to-formalization semantic correspondence, literary correctness, novel status, or MATHCERT certification."
+          }
+          (root/"REPLAY_RECEIPT.json").write_text(json.dumps(record,indent=2)+"\n")
+          PY
+
+      - name: Retain comparator and infrastructure failure evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: openai-math-comparator-family342
+          path: replay/comparator-342
+          if-no-files-found: error
+          retention-days: 30
+
+
+  semantic-342:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
+    steps:
+      - name: Checkout governed semantic bridge
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Checkout exact upstream formal model
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+
+      - name: Assert upstream source and local proof identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/openai-math-semantic-342
+          test "$(git -C upstream/math rev-parse HEAD)" = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          sha256sum sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean \
+            sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean \
+            sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean \
+            sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean \
+            sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean \
+            sources/OPENAI-MATH-2026/lean/Family342ChartSmoothForward.lean \
+            sources/OPENAI-MATH-2026/lean/Family342ChartClosedForward.lean \
+            upstream/math/lean/OAI/Geometry/TamingCompatibility/Model.lean \
+            upstream/math/lean/lake-manifest.json \
+            > replay/openai-math-semantic-342/source-sha256.txt
+          sha256sum upstream/math/lean/lake-manifest.json \
+            > replay/openai-math-semantic-342/lake-manifest-pre.sha256
+
+      - name: Install fixed elan v1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Replay actual Lean semantic bridge under pinned model and toolchain
+        shell: bash
+        working-directory: upstream/math/lean
+        run: |
+          set +e
+          (
+            set -euo pipefail
+            lake --version
+            lake update
+            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = \
+              "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/lake-manifest-pre.sha256")"
+            lake exe cache get
+            lake build OAI.Geometry.TamingCompatibility.Model
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean"
+            # Both GCL modules are source-locked and checked as one Lean unit:
+            # the locality proof needs the earlier, non-upstream definitions.
+            # Remove only the duplicate import from the second module.
+            {
+              cat "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean"
+              sed '/^import OAI.Geometry.TamingCompatibility.Model$/d' \
+                "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean"
+            } > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342LocalityComposite.lean"
+            lake env lean "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342LocalityComposite.lean"
+            # Source-locked composite for the new non-upstream forward
+            # implication; preserve all three source identities in receipt.
+            {
+              cat "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean"
+              sed '/^import OAI.Geometry.TamingCompatibility.Model$/d' \
+                "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean"
+              sed '/^import OAI.Geometry.TamingCompatibility.Model$/d' \
+                "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartSmoothForward.lean"
+            } > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342SmoothForwardComposite.lean"
+            lake env lean "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342SmoothForwardComposite.lean"
+            {
+              cat "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean"
+              sed '/^import OAI.Geometry.TamingCompatibility.Model$/d' \
+                "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean"
+              sed '/^import OAI.Geometry.TamingCompatibility.Model$/d' \
+                "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartClosedForward.lean"
+            } > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342ClosedForwardComposite.lean"
+            lake env lean "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/Family342ClosedForwardComposite.lean"
+            # Prove the forward implications independently of all GCL bump
+            # extension or locality declarations; the upstream only requires
+            # local smoothness of each globally typed test map on its open U.
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartSmoothForward.lean"
+            lake env lean "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/lean/Family342ChartClosedForward.lean"
+          ) > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1
+          result=$?
+          if [ "$result" -eq 0 ]; then
+            # Green Lean exit alone is insufficient: admitted holes can compile.
+            # All printed declarations must have permitted kernel axioms.
+            python3 - "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" >> "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log" 2>&1 <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+          s = Path(sys.argv[1]).read_text(errors="replace")
+          if "sorryAx" in s:
+              raise SystemExit("REJECT: sorryAx in Lean theorem dependencies")
+          declared = re.findall(r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]", s, re.S)
+          if not declared:
+              raise SystemExit("REJECT: missing theorem axiom output")
+          allowed = {"propext", "Classical.choice", "Quot.sound"}
+          seen = set()
+          for theorem, raw in declared:
+              axioms = {v.strip() for v in raw.split(",") if v.strip()}
+              extra = axioms - allowed
+              if extra:
+                  raise SystemExit(f"REJECT: disallowed axioms for {theorem}: {sorted(extra)}")
+              seen.add(theorem)
+          required = {
+              "OAI.TamingCompatibility.gcl_chartBumpExtension_mfderiv_eq",
+              "OAI.TamingCompatibility.gcl_chartBumpExtension_pullback_eqOn",
+              "OAI.TamingCompatibility.gcl_isSmooth_implies_chartwise",
+              "OAI.TamingCompatibility.gcl_isClosed_implies_chartwise",
+          }
+          missing = required - seen
+          if missing:
+              raise SystemExit(f"REJECT: missing theorem receipts: {sorted(missing)}")
+          print(f"GCL_AXIOMS_PASS: verified {len(declared)} declarations, {len(required)} mandatory")
+          PY
+            checked=$?
+            if [ "$checked" -ne 0 ]; then result="$checked"; fi
+          fi
+          echo "$result" > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.exit"
+          sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/lake-manifest-post.sha256"
+          tail -n 100 "$GITHUB_WORKSPACE/replay/openai-math-semantic-342/semantic.stdout_stderr.log"
+          exit "$result"
+
+      - name: Record exact replay and bounded proof scope
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path("replay/openai-math-semantic-342")
+          files = {}
+          for f in sorted(root.iterdir()):
+              if f.is_file():
+                  raw = f.read_bytes()
+                  files[f.name] = {"size": len(raw), "sha256": hashlib.sha256(raw).hexdigest()}
+          output = root / "semantic.exit"
+          payload = {
+              "record_type": "GCL_OPENAI_MATH_F342_SEMANTIC_BRIDGE_REPLAY/1",
+              "head": os.environ.get("GITHUB_SHA"),
+              "run_id": os.environ.get("GITHUB_RUN_ID"),
+              "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+              "toolchain": "leanprover/lean4:v4.34.1",
+              "result": int(output.read_text()) if output.exists() else None,
+              "model_import": "OAI.Geometry.TamingCompatibility.Model",
+              "bridge": "sources/OPENAI-MATH-2026/lean/Family342SemanticBridge.lean",
+              "native_metric_bridge": "sources/OPENAI-MATH-2026/lean/Family342NativeMetric.lean",
+              "cutoff_chart_bridge": "sources/OPENAI-MATH-2026/lean/Family342CutoffChart.lean",
+              "native_chart_inverse_extension": "sources/OPENAI-MATH-2026/lean/Family342ChartInverseExtension.lean",
+              "native_pullback_locality": "sources/OPENAI-MATH-2026/lean/Family342PullbackLocality.lean",
+              "chartwise_smooth_forward": "sources/OPENAI-MATH-2026/lean/Family342ChartSmoothForward.lean",
+              "chartwise_closed_forward": "sources/OPENAI-MATH-2026/lean/Family342ChartClosedForward.lean",
+              "sem342_01_intrinsic_smoothness": "CHART_SMOOTH_FORWARD_IF_SUCCESS__CONVERSE_OPEN",
+              "sem342_02_intrinsic_closedness": "CHART_CLOSED_FORWARD_IF_SUCCESS__CONVERSE_OPEN",
+              "sem342_03_metric_algebra": "NATIVE_POINTWISE_IF_SUCCESS__METRIC_SMOOTHNESS_OPEN",
+              "sem342_04_manifold_correspondence": "OPEN",
+              "scope": "Only kernel-checked declarations and printed axioms accepted. Native pointwise pairing symmetry/positivity does not certify metric smoothness or intrinsic manifold chart equivalence; no MATHCERT promotion.",
+              "files": files
+          }
+          (root / "REPLAY_RECEIPT.json").write_text(json.dumps(payload, indent=2)+"\n")
+          PY
+
+      - name: Retain positive or negative semantic bridge evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: openai-math-family342-semantic-bridge
+          path: replay/openai-math-semantic-342
+          retention-days: 30
+          if-no-files-found: error

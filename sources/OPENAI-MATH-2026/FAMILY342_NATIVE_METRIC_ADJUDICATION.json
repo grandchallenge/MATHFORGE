@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "GCL_OPENAI_MATH_F342_NATIVE_METRIC_ADJUDICATION/1",
+  "record_id": "MF-OAI-MATH-2026-F342-SEM-003",
+  "decision": "EXACT_MAIN_NATIVE_METRIC_KERNEL_PASS",
+  "decision_scope": "Nine bounded Lean semantic lemmas including five newly instantiated native-tangent-form metric lemmas; not entire manuscript or chartwise theorem formalization",
+  "repository": "grandchallenge/MATHFORGE",
+  "protected_head": "4a40e6a6231700f6201ca86c505e571094860d52",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "model_sha256": "c6c2af0982afc791430dc1f622bb4752a75fa350c4f96f0088fb72ce1afbd692"
+  },
+  "replay": {
+    "run_id": 40094136070,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40094136070",
+    "event": "workflow_dispatch",
+    "head_sha": "4a40e6a6231700f6201ca86c505e571094860d52",
+    "run_attempt": 1,
+    "job_name": "semantic-342",
+    "job_id": 120872796223,
+    "job_conclusion": "success",
+    "result_exit": 0,
+    "axioms_each": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sorryAx_present": false,
+    "Lean_error_present": false,
+    "declarations": [
+      "OAI.TamingCompatibility.gcl_tames_implies_isNondegenerate",
+      "OAI.TamingCompatibility.gcl_symplectic_and_tames_iff_smooth_closed_tames",
+      "OAI.TamingCompatibility.gcl_invariant_iff_metric_symmetric_abstract",
+      "OAI.TamingCompatibility.gcl_extDeriv_zero_pullback_in_coordinates",
+      "OAI.TamingCompatibility.gcl_eval_skew",
+      "OAI.TamingCompatibility.gcl_eval_neg_left",
+      "OAI.TamingCompatibility.gcl_eval_neg_right",
+      "OAI.TamingCompatibility.gcl_native_invariant_iff_metric_symmetric",
+      "OAI.TamingCompatibility.gcl_native_compatible_iff_symmetric_positive"
+    ],
+    "native_bridge_sha256": "a70976d4f4789a183d24213602698ba76c06f65e3f744c93fcfe22a89b1b172b",
+    "predecessor_bridge_sha256": "84844916d59bac1aa525aed6606b571e5967ad3e769ae16342fc48042b63eb9f"
+  },
+  "evidence": {
+    "artifact_id": 12560057130,
+    "artifact_name": "openai-math-family342-semantic-bridge",
+    "artifact_sha256": "096695aeb4f736bfdd5b53cbbe4574aac7dc97f1139d5a725e7f8db18b643b38",
+    "source_files_source_sha256_file": "source-sha256.txt",
+    "receipt_file": "REPLAY_RECEIPT.json",
+    "hashes_for_all_receipt_files_verified": true,
+    "lake_manifest_pre_post_digests_match": true,
+    "expires_at": "2026-11-23T12:33:59Z"
+  },
+  "adjudication": {
+    "SEM342_03_alternating_metric_pointwise": "CLOSED_NATIVE_LEAN_PASS",
+    "SEM342_03_symmetry_iff_invariance": "CLOSED_NATIVE_LEAN_PASS",
+    "SEM342_03_compatible_iff_symmetric_positive": "CLOSED_NATIVE_LEAN_PASS",
+    "SEM342_03_metric_smoothness": "OPEN_DEPENDS_ON_SEM342_01",
+    "SEM342_01_intrinsic_smoothness": "OPEN_LEAN_GLOBAL_CHART_EXTENSION_REQUIRED",
+    "SEM342_02_intrinsic_exterior_closedness": "OPEN_LEAN_GLOBAL_CHART_EXTENSION_REQUIRED",
+    "SEM342_04_manifold_hypotheses_equivalence": "OPEN",
+    "atlas_level_S_C_paper_argument": "MATHEMATICAL_ARGUMENT_RECORDED_NOT_KERNEL_PROVED",
+    "corrected_cone_theorem": "NOT_COVERED_BY_COMPARATOR",
+    "paper_manuscript_semantics": "NOT_YET_ADMITTED",
+    "source_catalogue": "SOURCE_LOCKED",
+    "MATHCERT": "NOT_GRANTED"
+  },
+  "evidence_readback": "Downloaded the exact protected-main GitHub Actions ZIP after semantic-342 job pass; verified archive digest against GitHub Actions API, all five receipt-listed file byte sizes/hashes, nine theorem axiom lists, no Lean errors, no sorryAx; receipt head equals protected main at dispatch.",
+  "claim_boundary": "This closes the native pointwise algebraic compatibility/metric semantic bridge only. Ordinary mathematical proof of atlas smoothness and closedness equivalence is recorded in FAMILY342_ATLAS_EQUIVALENCE_MATH_PROOF.md but its smooth global chart-extension and bidirectional Lean theorems remain uncompiled. No paper-level or MATHCERT claim."
+}

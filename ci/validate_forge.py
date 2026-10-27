@@ -192,7 +192,7 @@ def external_source_errors() -> list[str]:
     if len(ids) != len(set(ids)):
         errors.append("governance/external_sources.json: duplicate provider_id")
     by_id = {entry.get("provider_id"): entry for entry in sources if isinstance(entry, dict)}
-    if set(by_id) != {"RM-AMPHORA-001", "FC-GDM"}:
+    if set(by_id) != {"RM-AMPHORA-001", "FC-GDM", "OAI-MATH-2026"}:
         errors.append("governance/external_sources.json: governed provider set drift")
     aliases = [alias for entry in sources for alias in entry.get("legacy_source_ids", [])]
     if sorted(aliases) != ["FC-GDM-001", "FC-GDM-002", "RM-AMPHORA-001"]:

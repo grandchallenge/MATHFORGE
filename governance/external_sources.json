@@ -4,14 +4,46 @@
   "providers": [
     {
       "provider_id": "RM-AMPHORA-001",
-      "legacy_source_ids": ["RM-AMPHORA-001"],
+      "legacy_source_ids": [
+        "RM-AMPHORA-001"
+      ],
       "source_class": "mathematical_corpus",
-      "upstream": {"locator": "amphora/ResearchMath-14k", "url": "https://huggingface.co/datasets/amphora/ResearchMath-14k"},
-      "admitted_snapshot": {"snapshot_id": "RM-AMPHORA-001-F22D0F28", "revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e", "manifest_path": "catalog/providers/RM-AMPHORA-001-F22D0F28.json"},
-      "observatory": {"observed_revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e", "observed_at": "2026-09-22T06:34:00Z", "admission_state": "ADMITTED_CURRENT"},
-      "adapter": {"path": "catalog/build_semantic_catalog.py", "version": "2.0.0", "replay_command": "python catalog/build_semantic_catalog.py build-researchmath --input <pinned-train.jsonl>"},
-      "refresh_policy": {"observation_schedule": "weekly", "admission_schedule": "monthly", "event_triggers": ["corrected_misformalization", "licensing_change", "campaign_change", "security_concern"], "automatic_admission": false},
-      "licensing": {"software": "MIT", "content": "MIT dataset card declaration", "third_party": "Per-entry source terms retained and independently reviewable", "disposition": "full_text"},
+      "upstream": {
+        "locator": "amphora/ResearchMath-14k",
+        "url": "https://huggingface.co/datasets/amphora/ResearchMath-14k"
+      },
+      "admitted_snapshot": {
+        "snapshot_id": "RM-AMPHORA-001-F22D0F28",
+        "revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e",
+        "manifest_path": "catalog/providers/RM-AMPHORA-001-F22D0F28.json"
+      },
+      "observatory": {
+        "observed_revision": "f22d0f28b55e6e777acf82e722d97ae982dff02e",
+        "observed_at": "2026-09-22T06:34:00Z",
+        "admission_state": "ADMITTED_CURRENT"
+      },
+      "adapter": {
+        "path": "catalog/build_semantic_catalog.py",
+        "version": "2.0.0",
+        "replay_command": "python catalog/build_semantic_catalog.py build-researchmath --input <pinned-train.jsonl>"
+      },
+      "refresh_policy": {
+        "observation_schedule": "weekly",
+        "admission_schedule": "monthly",
+        "event_triggers": [
+          "corrected_misformalization",
+          "licensing_change",
+          "campaign_change",
+          "security_concern"
+        ],
+        "automatic_admission": false
+      },
+      "licensing": {
+        "software": "MIT",
+        "content": "MIT dataset card declaration",
+        "third_party": "Per-entry source terms retained and independently reviewable",
+        "disposition": "full_text"
+      },
       "visibility": "public_full_text",
       "reliability_limitations": [
         "Imported status prose and evidence are provider-attributed search results rather than GCL determinations.",
@@ -21,20 +53,101 @@
     },
     {
       "provider_id": "FC-GDM",
-      "legacy_source_ids": ["FC-GDM-001", "FC-GDM-002"],
+      "legacy_source_ids": [
+        "FC-GDM-001",
+        "FC-GDM-002"
+      ],
       "source_class": "formal_statement_repository",
-      "upstream": {"locator": "google-deepmind/formal-conjectures", "url": "https://github.com/google-deepmind/formal-conjectures"},
-      "admitted_snapshot": {"snapshot_id": "FC-GDM-85F86371", "revision": "85f863718beeec7b58a3a1926ee92e3472bc2020", "manifest_path": "catalog/providers/FC-GDM-85F86371.json"},
-      "observatory": {"observed_revision": "8927a585c5d522fc132d7ea6488fcd9e30ccd80e", "observed_at": "2026-09-22T06:34:00Z", "admission_state": "UPSTREAM_AHEAD"},
-      "adapter": {"path": "catalog/build_semantic_catalog.py", "version": "2.0.0", "replay_command": "python catalog/build_semantic_catalog.py build-formal-conjectures --checkout <pinned-checkout> --inventory <extract-names.json>"},
-      "refresh_policy": {"observation_schedule": "weekly", "admission_schedule": "monthly", "event_triggers": ["corrected_misformalization", "licensing_change", "campaign_change", "security_concern"], "automatic_admission": false},
-      "licensing": {"software": "Apache-2.0", "content": "CC-BY-4.0", "third_party": "Wikipedia-derived material may be CC-BY-SA-4.0; per-source terms retained", "disposition": "metadata_only"},
+      "upstream": {
+        "locator": "google-deepmind/formal-conjectures",
+        "url": "https://github.com/google-deepmind/formal-conjectures"
+      },
+      "admitted_snapshot": {
+        "snapshot_id": "FC-GDM-85F86371",
+        "revision": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+        "manifest_path": "catalog/providers/FC-GDM-85F86371.json"
+      },
+      "observatory": {
+        "observed_revision": "8927a585c5d522fc132d7ea6488fcd9e30ccd80e",
+        "observed_at": "2026-09-22T06:34:00Z",
+        "admission_state": "UPSTREAM_AHEAD"
+      },
+      "adapter": {
+        "path": "catalog/build_semantic_catalog.py",
+        "version": "2.0.0",
+        "replay_command": "python catalog/build_semantic_catalog.py build-formal-conjectures --checkout <pinned-checkout> --inventory <extract-names.json>"
+      },
+      "refresh_policy": {
+        "observation_schedule": "weekly",
+        "admission_schedule": "monthly",
+        "event_triggers": [
+          "corrected_misformalization",
+          "licensing_change",
+          "campaign_change",
+          "security_concern"
+        ],
+        "automatic_admission": false
+      },
+      "licensing": {
+        "software": "Apache-2.0",
+        "content": "CC-BY-4.0",
+        "third_party": "Wikipedia-derived material may be CC-BY-SA-4.0; per-source terms retained",
+        "disposition": "metadata_only"
+      },
       "visibility": "public_metadata_only",
       "reliability_limitations": [
         "Repository category and research-status annotations are source-attributed metadata and are not independent GCL determinations.",
         "A declaration's formal_proof annotation is distinct from research-problem status and does not itself establish a MATHCERT certificate."
       ],
       "claim_boundary": "The provider supplies pinned Lean declarations, source annotations, replay evidence, and reviewed concordance records only; it supplies no Programme status, proof of an external research claim, novelty, campaign authority, Claim Ledger authority, or certification."
+    },
+    {
+      "provider_id": "OAI-MATH-2026",
+      "legacy_source_ids": [],
+      "source_class": "mathematical_corpus",
+      "upstream": {
+        "locator": "openai/math",
+        "url": "https://github.com/openai/math"
+      },
+      "admitted_snapshot": {
+        "snapshot_id": "OAI-MATH-1581D4CB",
+        "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+        "manifest_path": "catalog/providers/OAI-MATH-1581D4CB.json"
+      },
+      "observatory": {
+        "observed_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+        "observed_at": "2026-10-23T21:45:49Z",
+        "admission_state": "ADMITTED_CURRENT"
+      },
+      "adapter": {
+        "path": "catalog/build_openai_math_provider.py",
+        "version": "1.0.0",
+        "replay_command": "python catalog/build_openai_math_provider.py build"
+      },
+      "refresh_policy": {
+        "observation_schedule": "weekly",
+        "admission_schedule": "monthly",
+        "event_triggers": [
+          "corrected_misformalization",
+          "licensing_change",
+          "campaign_change",
+          "security_concern"
+        ],
+        "automatic_admission": false
+      },
+      "licensing": {
+        "software": "Apache-2.0 root repository",
+        "content": "Apache-2.0 root repository; paper-by-paper rights not separately adjudicated",
+        "third_party": "Source metadata only; imported bibliographies and dependencies retain their own terms",
+        "disposition": "metadata_only"
+      },
+      "visibility": "public_metadata_only",
+      "reliability_limitations": [
+        "Source-locked manuscript titles do not establish that the manuscript's theorem claims are true or novel.",
+        "173 declared formalization source records and 200 comparator pairs are unverified upstream annotations, not GCL kernel replay.",
+        "A known source-revision discordance affects family 342; all family-level theorem/definition concordance is a separate qualification."
+      ],
+      "claim_boundary": "The admitted source is a bibliographic manuscript-title catalogue only; no theorem statement, semantic equivalence, formal proof, programme promotion, Claim Ledger authority, novelty or mathematical certification follows from provider admission."
     }
   ],
   "authority_boundary": "This MATHFORGE registry is the canonical provider and admitted-snapshot authority. Observation never changes admitted identity. Catalog assurance is provenance and review metadata only; it cannot create a MATHSOLVE result, mutate the MATH-CORE Claim Ledger, or issue a MATHCERT certificate."

@@ -1,0 +1,64 @@
+{
+  "schema_version": "2.0.0",
+  "snapshot_id": "OAI-MATH-1581D4CB",
+  "provider_id": "OAI-MATH-2026",
+  "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "admitted_at": "2026-10-23T21:45:49Z",
+  "admission_basis": {
+    "revision_kind": "exact_commit",
+    "benchmark_tag": null,
+    "tag_exception_reason": "Upstream is an immutable public Git commit, not a benchmark release."
+  },
+  "source_objects": [
+    {
+      "locator": "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json",
+      "sha256": "adcadc4cd5aaeff7a1bdd89167ad2b9d361e721dcc1e67fb8e695bb8d9c26af5"
+    }
+  ],
+  "inventory_count": 719,
+  "catalog_shards": [
+    {
+      "path": "catalog/entries/openai-math-00000.jsonl",
+      "entry_count": 180,
+      "byte_length": 335190,
+      "sha256": "65246f3a3927a8b578f8c0ad48e6aa7039936777627bf0e0fa5f796dc76cd8e3",
+      "first_catalog_id": "GCL-CAT-OAI-00000",
+      "last_catalog_id": "GCL-CAT-OAI-00179"
+    },
+    {
+      "path": "catalog/entries/openai-math-00001.jsonl",
+      "entry_count": 180,
+      "byte_length": 335707,
+      "sha256": "634851a068ca4ece742e0800ce6870b31359bb258182f210cbb8a9036bb94b65",
+      "first_catalog_id": "GCL-CAT-OAI-00180",
+      "last_catalog_id": "GCL-CAT-OAI-00359"
+    },
+    {
+      "path": "catalog/entries/openai-math-00002.jsonl",
+      "entry_count": 180,
+      "byte_length": 339070,
+      "sha256": "9e57310a63624e66be63373cdd6b211fbbd20ef239ff6b77f1eb4967001e9531",
+      "first_catalog_id": "GCL-CAT-OAI-00360",
+      "last_catalog_id": "GCL-CAT-OAI-00539"
+    },
+    {
+      "path": "catalog/entries/openai-math-00003.jsonl",
+      "entry_count": 179,
+      "byte_length": 335357,
+      "sha256": "0840c365fe9d74b280463636496b7806e8989c8dfbe35cf983df48392d644d64",
+      "first_catalog_id": "GCL-CAT-OAI-00540",
+      "last_catalog_id": "GCL-CAT-OAI-00718"
+    }
+  ],
+  "replay": {
+    "adapter": "catalog/build_openai_math_provider.py",
+    "adapter_version": "1.0.0",
+    "command": "python catalog/build_openai_math_provider.py build",
+    "environment": [
+      "Python >=3.11; standard library",
+      "pinned OpenAI Math index within MATHFORGE"
+    ],
+    "deterministic": true
+  },
+  "claim_boundary": "This provider indexes pinned manuscript titles and provenance, not theorem texts. No Lean proof replay, statement equivalence, novelty, Programme authority, MATHSOLVE result, Claim Ledger mutation or MATHCERT certification is established."
+}

@@ -32,6 +32,7 @@ RM_REVISION = "f22d0f28b55e6e777acf82e722d97ae982dff02e"
 RM_SOURCE_SHA256 = "3f6c96d18925a47ac223555717226c5408cc9c75e07a1e96bddcffde8a06f029"
 FC_PROVIDER = "FC-GDM"
 FC_SNAPSHOT = "FC-GDM-85F86371"
+OAI_SNAPSHOT = "OAI-MATH-1581D4CB"
 FC_REVISION = "85f863718beeec7b58a3a1926ee92e3472bc2020"
 EXCLUDED_INFERENCES = [
     "programme_status", "semantic_equivalence", "proof", "novelty",
@@ -503,14 +504,14 @@ def build_formal_conjectures(args: argparse.Namespace) -> None:
 
 
 def finalize(args: argparse.Namespace) -> None:
-    manifests = [load_json(PROVIDER_DIR / f"{snapshot}.json") for snapshot in (RM_SNAPSHOT, FC_SNAPSHOT)]
+    manifests = [load_json(PROVIDER_DIR / f"{snapshot}.json") for snapshot in (RM_SNAPSHOT, FC_SNAPSHOT, OAI_SNAPSHOT)]
     total = sum(int(item["inventory_count"]) for item in manifests)
     public = sum(int(item["inventory_count"]) for item in manifests)
     write_json(ROOT / "catalog" / "manifest.json", {
         "schema_version": SCHEMA_VERSION,
-        "catalog_release_id": "GCL-CATALOG-TWO-PROVIDER-001",
+        "catalog_release_id": "GCL-CATALOG-THREE-PROVIDER-001",
         "generated_at": args.generated_at,
-        "provider_snapshots": [RM_SNAPSHOT, FC_SNAPSHOT],
+        "provider_snapshots": [RM_SNAPSHOT, FC_SNAPSHOT, OAI_SNAPSHOT],
         "total_entries": total,
         "public_entries": public,
         "assurance_vocabulary": ["SOURCE_LOCKED", "NORMALIZED_REPLAYED", "SEMANTICALLY_REVIEWED", "CAMPAIGN_CONCORDANT"],
@@ -627,7 +628,7 @@ def parse_args() -> argparse.Namespace:
     fc.add_argument("--inventory", type=Path, required=True)
     fc.add_argument("--admitted-at", default="2026-09-22T06:34:00Z")
     final = sub.add_parser("finalize")
-    final.add_argument("--generated-at", default="2026-09-22T06:34:00Z")
+    final.add_argument("--generated-at", default="2026-10-23T21:45:49Z")
     sub.add_parser("verify")
     return parser.parse_args()
 

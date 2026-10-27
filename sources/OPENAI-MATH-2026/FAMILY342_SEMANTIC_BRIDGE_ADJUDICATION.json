@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "GCL_OPENAI_MATH_F342_SEMANTIC_BRIDGE_ADJUDICATION/1",
+  "record_id": "MF-OAI-MATH-2026-F342-SEM-002",
+  "decision": "BOUNDED_NATIVE_LEAN_SEMANTIC_BRIDGE_ACCEPTED",
+  "decision_scope": "Four exact declarations only; partial geometric semantics, not bidirectional manifold correspondence or MATHCERT",
+  "governed_repository": "grandchallenge/MATHFORGE",
+  "protected_head": "f1bea85706b51e759212f4fc6f12f215130ff325",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "mathlib_lock": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+  },
+  "replay": {
+    "run_id": 40089468868,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40089468868",
+    "job": "semantic-342",
+    "job_id": 120859016798,
+    "head_sha": "f1bea85706b51e759212f4fc6f12f215130ff325",
+    "job_conclusion": "success",
+    "exit_code": 0,
+    "exact_declarations": [
+      "OAI.TamingCompatibility.gcl_tames_implies_isNondegenerate",
+      "OAI.TamingCompatibility.gcl_symplectic_and_tames_iff_smooth_closed_tames",
+      "OAI.TamingCompatibility.gcl_invariant_iff_metric_symmetric_abstract",
+      "OAI.TamingCompatibility.gcl_extDeriv_zero_pullback_in_coordinates"
+    ],
+    "axiom_set_for_each": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sorryAx_present": false,
+    "lean_error_present": false,
+    "evidence_artifact": {
+      "artifact_id": 12558333463,
+      "artifact_name": "openai-math-family342-semantic-bridge",
+      "archive_sha256": "3ade86f1289ea222d6bfb02ce13e589492d14f4d19d4f1c6fc7197ba3ffb62d3",
+      "expires_at": "2026-11-23T11:24:09Z",
+      "all_receipt_file_hashes_verified": true,
+      "source_bridge_sha256": "84844916d59bac1aa525aed6606b571e5967ad3e769ae16342fc48042b63eb9f",
+      "upstream_model_sha256": "c6c2af0982afc791430dc1f622bb4752a75fa350c4f96f0088fb72ce1afbd692",
+      "manifest_unchanged": true
+    }
+  },
+  "proof_disposition": {
+    "taming_non_degeneracy": "CLOSED_LEAN_PASS",
+    "taming_symplectic_redundancy": "CLOSED_LEAN_PASS",
+    "abstract_J_invariant_metric_symmetry": "CLOSED_LEAN_PASS_ONLY_UNDER_EXPLICIT_ALTERNATING_HYPOTHESES",
+    "euclidean_ext_derivative_pullback_naturality": "CLOSED_LEAN_PASS_ONE_DIRECTION",
+    "sem342_01_manifold_smoothness_equivalence": "OPEN",
+    "sem342_02_manifold_exterior_closedness_equivalence": "OPEN_REMAINDER_AFTER_EUCLIDEAN_NATURALITY",
+    "sem342_03_native_metric_correspondence": "OPEN_INSTANTIATION_AND_SMOOTHNESS",
+    "sem342_04_manifold_model_equivalence": "OPEN",
+    "paper_formalization_semantics": "NOT_YET_ADMITTED",
+    "corrected_October_cone_theorem": "NOT_COVERED_BY_COMPARATOR",
+    "literature_priority": "OPEN",
+    "MATHCERT_certification": "NOT_GRANTED",
+    "source_provider_assurance": "SOURCE_LOCKED"
+  },
+  "evidence_readback": "Downloaded the GitHub Actions exact-protected-main ZIP; independently computed exact SHA-256 digest matching API, verified all internal receipt file byte sizes and SHA-256, checked exit 0, four printed permitted-axiom lists, no Lean errors and no sorryAx.",
+  "claim_boundary": "The four kernel-checked Lean declarations partially close the stated semantic bridge. They do not supply bidirectional intrinsic differential form smoothness/closedness on arbitrary manifolds, actual generic metric instantiation, scientific correctness, priority or proof certification."
+}

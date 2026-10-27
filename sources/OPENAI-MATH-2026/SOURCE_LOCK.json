@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "MF-OPENAI-MATH-2026-SOURCE-OBSERVATION",
+  "scope": "external_public_mathematics_collection; source-intake candidate only",
+  "upstream": {
+    "repository": "https://github.com/openai/math",
+    "default_branch": "main",
+    "observed_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "observed_commit_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "observed_commit_timestamp_utc": "2026-10-12T21:55:24Z",
+    "observed_at_date_utc": "2026-10-23"
+  },
+  "source_objects": [
+    {
+      "path": "README.md",
+      "git_blob_sha1": "50feb63d396138f30dc1ff1e0af121d0263bf5a3"
+    },
+    {
+      "path": "CONTENTS.md",
+      "git_blob_sha1": "2c68c086fff36a5806c936ad1659cf1a8d0b6dd9"
+    },
+    {
+      "path": "history.md",
+      "git_blob_sha1": "693874f398905b1bc59e01b898b223ae9956bfc2"
+    },
+    {
+      "path": "lean/formalization.yaml",
+      "git_blob_sha1": "275eee8cfab7ce49d3a5e88f02cbb8f28fe6fee6"
+    },
+    {
+      "path": "lean/lean-toolchain",
+      "git_blob_sha1": "ba8ebf2dbaf6a668cd2a0e086186d6d569b69ff5"
+    },
+    {
+      "path": "overview.tex",
+      "git_blob_sha1": "8f3b8cb6d5c4f5f7f0ac216b2c6db52b4b34b2fd"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    }
+  ],
+  "repository_reported": {
+    "manuscript_count": 719,
+    "result_family_count": 372,
+    "top_line_results_formalized": 300,
+    "formalization_share_approx": "42%",
+    "approximate_number_of_problems_evaluated": 4000,
+    "claim_verification": "upstream-attributed; not independently verified"
+  },
+  "index_reconstruction": {
+    "index_path": "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json",
+    "families_parsed": 372,
+    "manuscript_links_parsed": 719,
+    "numbering_gaps": [
+      "045",
+      "061",
+      "070",
+      "123",
+      "163"
+    ],
+    "source_commit_locked": true,
+    "full_git_archive_downloaded": false,
+    "manuscripts_mathematically_reviewed": 0,
+    "formalization_replayed": 0
+  },
+  "declared_formal_environment": {
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "formalization_catalogue_version": "v0.4",
+    "comparator_readme": "lean/ComparatorChallenges/README.md",
+    "trust": "upstream-declared; no local comparator replay"
+  },
+  "corrections": {
+    "history_revision_date": "2026-10-07",
+    "withdrawn_titles": [
+      "Algebraicity of Weil classes on split abelian eightfolds",
+      "Algebraicity of Kuga–Satake Correspondences for K3 Surfaces",
+      "The rational Hodge conjecture for products of K3 surfaces"
+    ],
+    "revised_manuscripts_upstream_reported": 14,
+    "dependent_citation_editions_upstream_reported": 13,
+    "additional_formalizations_upstream_reported": 6,
+    "warning": "Withdrawals and repairs are upstream statements; historical editions require separately pinned source/version and dependency audits."
+  },
+  "gcl_relation": {
+    "existing_campaign": "OPENAI-TEN-PROOFS-001",
+    "relation_state": "distinct_source; do_not_conflate_or_inherit_existing_certification_or_semantic_status",
+    "catalog_provider_registration": "NOT_REGISTERED",
+    "solve_route_authorized": false,
+    "certification_authorized": false,
+    "mathematical_claims_promoted": 0
+  },
+  "assurance": "SOURCE_IDENTITY_OBSERVED_AND_INDEX_EXTRACTED; NOT_ADMITTED_PROVIDER",
+  "license_at_repository_root": "Apache-2.0",
+  "claim_boundary": "This pins observed upstream object identities and indexes catalogue links. It does not verify theorem correctness, semantic correspondence, Lean replay, source completeness, novelty, literature priority, GCL campaign admission, or certification."
+}

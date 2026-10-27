@@ -1,13 +1,14 @@
 {
   "schema_version": "2.0.0",
-  "catalog_release_id": "GCL-CATALOG-TWO-PROVIDER-001",
-  "generated_at": "2026-09-22T06:34:00Z",
+  "catalog_release_id": "GCL-CATALOG-THREE-PROVIDER-001",
+  "generated_at": "2026-10-23T21:45:49Z",
   "provider_snapshots": [
     "RM-AMPHORA-001-F22D0F28",
-    "FC-GDM-85F86371"
+    "FC-GDM-85F86371",
+    "OAI-MATH-1581D4CB"
   ],
-  "total_entries": 17288,
-  "public_entries": 17288,
+  "total_entries": 18007,
+  "public_entries": 18007,
   "assurance_vocabulary": [
     "SOURCE_LOCKED",
     "NORMALIZED_REPLAYED",
