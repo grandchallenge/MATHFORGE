@@ -3,10 +3,13 @@ import json
 from pathlib import Path
 import sys
 import unittest
+import hashlib
+import subprocess
+import tempfile
 from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1]/"sources"/"OPENAI-MATH-2026"
 sys.path.insert(0,str(ROOT))
-from replay_first25_lean import prepare_tasks,parsed_axioms,extended_budget_authorized
+from replay_first25_lean import prepare_tasks,parsed_axioms,extended_budget_authorized,execute
 CW=json.loads((ROOT/"FORMALIZATION_CROSSWALK.json").read_text())
 REPORT=json.loads((ROOT/"FIRST25_CONFIG_PREFLIGHT.json").read_text())
 class ReplayGuards(unittest.TestCase):
@@ -37,4 +40,26 @@ class ReplayGuards(unittest.TestCase):
   self.assertEqual(parsed_axioms("'T' does not depend on any axioms"),([],None))
  def test_unknown_axioms(self):
   self.assertEqual(parsed_axioms("strange format"),(None,"AXIOM_OUTPUT_NOT_PARSEABLE"))
+ def test_timeout_preserves_partial_lake_output_and_hash(self):
+  with tempfile.TemporaryDirectory() as td:
+   logfile=Path(td)/"build.log"
+   partial_stdout=b"Building OAI.NumberTheory.DirichletL.Foundation\\n"
+   partial_stderr=b"progress: 137/286\\n"
+   error=subprocess.TimeoutExpired(["lake","build","X"],10,output=partial_stdout,stderr=partial_stderr)
+   with patch("replay_first25_lean.subprocess.run",side_effect=error):
+    code,digest=execute(["lake","build","X"],Path(td),logfile,timeout=10)
+   body=logfile.read_text()
+   self.assertEqual(code,124)
+   self.assertIn("TIMEOUT",body)
+   self.assertIn("Building OAI.NumberTheory.DirichletL.Foundation",body)
+   self.assertIn("progress: 137/286",body)
+   self.assertEqual(digest,hashlib.sha256(body.encode()).hexdigest())
+ def test_timeout_missing_streams(self):
+  with tempfile.TemporaryDirectory() as td:
+   logfile=Path(td)/"build.log"
+   error=subprocess.TimeoutExpired(["lake","build","X"],10)
+   with patch("replay_first25_lean.subprocess.run",side_effect=error):
+    code,_=execute(["lake","build","X"],Path(td),logfile,timeout=10)
+   self.assertEqual(code,124)
+   self.assertIn("PARTIAL STDERR",logfile.read_text())
 if __name__=="__main__":unittest.main()
