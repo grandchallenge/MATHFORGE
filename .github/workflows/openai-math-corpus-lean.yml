@@ -17,7 +17,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: oai-corpus-lean-${{ github.ref }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
+  group: oai-corpus-lean-${{ github.ref }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}
   cancel-in-progress: false
 
 jobs:
@@ -94,7 +94,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: oai26-corpus-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
+          name: oai26-corpus-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}
           path: replay/oai26-corpus
           if-no-files-found: error
           retention-days: 30
