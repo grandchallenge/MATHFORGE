@@ -99,7 +99,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: oai26-first25-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}-${{ inputs.build_timeout }}
+          name: oai26-first25-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
           path: replay/oai26-first25
           if-no-files-found: error
           retention-days: 30
