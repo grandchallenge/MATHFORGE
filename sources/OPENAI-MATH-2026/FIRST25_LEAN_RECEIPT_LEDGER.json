@@ -1,9 +1,23 @@
 {
-  "claim_boundary": "LEAN_AXIOM_ONLY_NO_COMPARATOR_OR_SEMANTIC_CERTIFICATION",
-  "count_pass": 24,
-  "count_timeout": 1,
+  "claim_boundary": "25/25 LEAN BUILD AND AXIOM ONLY; COMPARATOR NOT EXECUTED, NO SEMANTIC CERTIFICATION",
+  "count_pass": 25,
+  "count_timeout": 0,
   "head": "369d6285f23cebeec5477bbe182190b697fbf5e7",
   "record_type": "GCL_OAI26_WP01_LEAN_LEDGER/1",
+  "retry_evidence": {
+    "artifact_id": 12710468457,
+    "artifact_sha256": "3a7fc1e1726da2d85add3959dc4b7c347e298e08a9182ffb7a7ba65e2b07a14e",
+    "axioms_exit": 0,
+    "build_exit": 0,
+    "observation": "Pinned Lean and permitted axiom check only; Comparator and manuscript semantics not tested.",
+    "outcome": "LEAN_REPLAY_AND_AXS_PASS",
+    "receipt_json_sha256": "0e26fe571c17d7d63ec1ac4b7cce595f967dee3f0d62f27686c56f6ad5133e58",
+    "run_id": 40449075002,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40449075002",
+    "source_head": "6bbe29cb1b24ef1f8e0ed4907f314f5b2312af9f",
+    "target_declaration": "OAI.ArExplicit.Statement.main",
+    "workflow_conclusion": "success"
+  },
   "retry_run": 40432085589,
   "rows": [
     {
@@ -33,13 +47,17 @@
       "verdict": "LEAN_REPLAY_AND_AXS_PASS"
     },
     {
-      "axioms_exit": null,
-      "build_exit": 124,
+      "axioms_exit": 0,
+      "build_exit": 0,
       "declaration": "OAI.ArExplicit.Statement.main",
-      "observed_axioms": null,
-      "receipt_sha256": "4972770e07598a085bc33794d325e4a2b37af7d8386dc248b0cf5a7915c25f24",
-      "run_id": 40425555562,
-      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "0e26fe571c17d7d63ec1ac4b7cce595f967dee3f0d62f27686c56f6ad5133e58",
+      "run_id": 40449075002,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
     },
     {
       "axioms_exit": 0,
@@ -328,17 +346,5 @@
       "verdict": "LEAN_REPLAY_AND_AXS_PASS"
     }
   ],
-  "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
-  "retry_evidence": {
-    "run_id": 40432085589,
-    "source_head": "369d6285f23cebeec5477bbe182190b697fbf5e7",
-    "target_declaration": "OAI.ArExplicit.Statement.main",
-    "outcome": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED",
-    "build_exit": 124,
-    "workflow_conclusion": "failure",
-    "artifact_id": 12703920667,
-    "artifact_sha256": "8df3e88551c271e872fda3e6ed7762de0e9a6bb9b7f12a6fe49d119f0cfc2fe1",
-    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40432085589",
-    "observation": "Single-declaration retry also exhausted 1500-second bounded replay. This is not a Lean proof failure or a PASS; retain original 24 PASS, 1 EXACT_BLOCKER ledger. No semantic or Comparator certification."
-  }
+  "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
 }
