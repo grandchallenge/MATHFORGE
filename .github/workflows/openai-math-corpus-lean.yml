@@ -2,11 +2,6 @@ name: OAI Math corpus R02-R08 exact Lean replay
 on:
   workflow_dispatch:
     inputs:
-      shard_offset:
-        description: "Pinned declaration shard: 0 or 25"
-        required: true
-        type: number
-        default: 25
       shard_start:
         description: "Corpus index (25 to 199)"
         required: true
@@ -22,7 +17,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: oai-corpus-lean-${{ github.ref }}-${{ inputs.shard_offset }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}
+  group: oai-corpus-lean-${{ github.ref }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}
   cancel-in-progress: false
 
 jobs:
@@ -83,7 +78,6 @@ jobs:
           python3 sources/OPENAI-MATH-2026/replay_corpus_lean.py \
             --upstream upstream/math \
             --output replay/oai26-corpus \
-            --offset "${{ inputs.shard_offset }}" \
             --start "${{ inputs.shard_start }}" \
             --count "${{ inputs.shard_count }}"
       - name: Record output hashes and upload even on failure
@@ -99,7 +93,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: oai26-corpus-lean-${{ inputs.shard_offset }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}
+          name: oai26-corpus-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}
           path: replay/oai26-corpus
           if-no-files-found: error
           retention-days: 30
