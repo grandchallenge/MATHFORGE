@@ -31,7 +31,16 @@ def execute(argv, cwd, logfile, timeout=1800):
         body = p.stdout + "\n=== STDERR ===\n" + p.stderr
         code = p.returncode
     except subprocess.TimeoutExpired as e:
-        body = f"TIMEOUT {argv} after {timeout}s\n"
+        # Python supplies captured timeout streams as bytes even with text=True.
+        # Preserve partial Lake diagnostics rather than discarding the only
+        # evidence of which dependency or compilation step was active.
+        def partial(value):
+            if value is None:
+                return ""
+            return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value
+        body = (f"TIMEOUT {argv} after {timeout}s\n"
+                f"=== PARTIAL STDOUT ===\n{partial(e.stdout)}\n"
+                f"=== PARTIAL STDERR ===\n{partial(e.stderr)}\n")
         code = 124
     logfile.write_text(body, encoding="utf-8")
     return code, hashlib.sha256(body.encode("utf-8")).hexdigest()
