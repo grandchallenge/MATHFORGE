@@ -67,5 +67,29 @@ class Next25LedgerTests(unittest.TestCase):
         self.assertIn("Comparator not executed", self.ledger["claim_boundary"])
 
 
+    def test_extended_replay_receipts_and_effective_counts(self):
+        x = self.ledger["extended_replays"]
+        self.assertEqual([r["global_index_zero_based"] for r in x], [43, 47])
+        self.assertEqual([r["run_id"] for r in x], [40500508252, 40500513211])
+        self.assertEqual([r["artifact_id"] for r in x], [12736906287, 12734374033])
+        self.assertEqual([r["build_exit"] for r in x], [124, 0])
+        self.assertEqual([r["axioms_exit"] for r in x], [None, 0])
+        self.assertEqual([r["verdict"] for r in x],
+                         ["BUILD_TIMEOUT_4200S_NO_AXIOM_AUDIT", "LEAN_REPLAY_AND_AXS_PASS"])
+        self.assertEqual(x[1]["observed_axioms"], AXIOMS)
+        self.assertEqual(x[1]["extra_axioms"], [])
+        self.assertIsNone(x[0]["observed_axioms"])
+        self.assertTrue(all(not r["comparator_executed"] for r in x))
+        self.assertTrue(all(r["workflow_head"] == "99fd03a672cd7d83dea317d3b4f3ad2441a746a9" for r in x))
+        self.assertTrue(all(r["upstream_commit"] == PINNED_UPSTREAM for r in x))
+        self.assertTrue(all(r["toolchain"] == "leanprover/lean4:v4.34.1" and r["build_timeout_seconds"] == 4200 for r in x))
+        self.assertTrue(all(len(r["artifact_zip_sha256"]) == 64 and len(r["receipt_json_sha256"]) == 64 for r in x))
+        self.assertEqual(sum(r["verified_internal_file_hashes"] for r in x), 14)
+        self.assertEqual(self.ledger["counts"]["effective_lean_axiom_pass"], 24)
+        self.assertEqual(self.ledger["counts"]["effective_build_timeout"], 1)
+        self.assertEqual(self.ledger["counts"]["extended_archive_sha256_verified"], 2)
+        self.assertEqual(self.ledger["counts"]["extended_internal_file_sha256_verified"], 14)
+        self.assertIn("4200s", self.ledger["remaining_obligation"])
+
 if __name__ == "__main__":
     unittest.main()
