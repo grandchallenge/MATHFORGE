@@ -1,0 +1,332 @@
+{
+  "claim_boundary": "LEAN_AXIOM_ONLY_NO_COMPARATOR_OR_SEMANTIC_CERTIFICATION",
+  "count_pass": 24,
+  "count_timeout": 1,
+  "head": "369d6285f23cebeec5477bbe182190b697fbf5e7",
+  "record_type": "GCL_OAI26_WP01_LEAN_LEDGER/1",
+  "retry_run": 40432085589,
+  "rows": [
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "cf00fa884b047c0534fb0356035b3084b8775b9148fcf5de5f9cba4eb578a1e6",
+      "run_id": 40419079641,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.AbhyankarSathaye.exists_noncoordinate_polynomial",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "4972770e07598a085bc33794d325e4a2b37af7d8386dc248b0cf5a7915c25f24",
+      "run_id": 40425555562,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "build_exit": 124,
+      "declaration": "OAI.ArExplicit.Statement.main",
+      "observed_axioms": null,
+      "receipt_sha256": "4972770e07598a085bc33794d325e4a2b37af7d8386dc248b0cf5a7915c25f24",
+      "run_id": 40425555562,
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.ArnoldCounterexample.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "4972770e07598a085bc33794d325e4a2b37af7d8386dc248b0cf5a7915c25f24",
+      "run_id": 40425555562,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.ArtinCAT0.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "4972770e07598a085bc33794d325e4a2b37af7d8386dc248b0cf5a7915c25f24",
+      "run_id": 40425555562,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.AsymptoticallyMinimalLittlewood.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "fc317761dd39350c43073269dca834e0657dd7cc8fe7ef7b1de341d360288d9a",
+      "run_id": 40425559628,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BackwardIntertwiners.direct_algebra_corollary",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "fc317761dd39350c43073269dca834e0657dd7cc8fe7ef7b1de341d360288d9a",
+      "run_id": 40425559628,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "fc317761dd39350c43073269dca834e0657dd7cc8fe7ef7b1de341d360288d9a",
+      "run_id": 40425559628,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BinPackingGap.main_results",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "fc317761dd39350c43073269dca834e0657dd7cc8fe7ef7b1de341d360288d9a",
+      "run_id": 40425559628,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BinaryMatching.deterministic_approximate_counting",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "fc317761dd39350c43073269dca834e0657dd7cc8fe7ef7b1de341d360288d9a",
+      "run_id": 40425559628,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BorsukNine.main_theorem",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "98d8d588913f44ff15361adadfdc6e1eed040dfaf0d9c9877fe1622ca8706337",
+      "run_id": 40425563437,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BoundedRecovery.bounded_recovery",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "98d8d588913f44ff15361adadfdc6e1eed040dfaf0d9c9877fe1622ca8706337",
+      "run_id": 40425563437,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BoundedTreePotentials.TreeCalculus.main_counterexample",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "98d8d588913f44ff15361adadfdc6e1eed040dfaf0d9c9877fe1622ca8706337",
+      "run_id": 40425563437,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.BoundedTreewidthL1.main_theorem",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "98d8d588913f44ff15361adadfdc6e1eed040dfaf0d9c9877fe1622ca8706337",
+      "run_id": 40425563437,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.Brennan.Sharp.sharp_endpoints",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "98d8d588913f44ff15361adadfdc6e1eed040dfaf0d9c9877fe1622ca8706337",
+      "run_id": 40425563437,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.Brennan.main_theorem",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "3d16493690c5afa874ec0a0547f0da44b41177881b43cb0df4c56eb556c6dbd0",
+      "run_id": 40425567387,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.C0Absorption.main_result",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "3d16493690c5afa874ec0a0547f0da44b41177881b43cb0df4c56eb556c6dbd0",
+      "run_id": 40425567387,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.CHObstruction.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "3d16493690c5afa874ec0a0547f0da44b41177881b43cb0df4c56eb556c6dbd0",
+      "run_id": 40425567387,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.CPTSeparation.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "3d16493690c5afa874ec0a0547f0da44b41177881b43cb0df4c56eb556c6dbd0",
+      "run_id": 40425567387,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.CartierSections.isCompact_closedChartFieldRetraction_cone",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "3d16493690c5afa874ec0a0547f0da44b41177881b43cb0df4c56eb556c6dbd0",
+      "run_id": 40425567387,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.CirculantHadamard.exists_iff_order_one_or_four",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "ca8ee322c562966ffeb18ff77975b3c2c01abaee11645d82a80fcebfe9005165",
+      "run_id": 40425571412,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.ClassicalON.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "ca8ee322c562966ffeb18ff77975b3c2c01abaee11645d82a80fcebfe9005165",
+      "run_id": 40425571412,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.CliqueFreeLog.logarithmic_independence_bound",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "ca8ee322c562966ffeb18ff77975b3c2c01abaee11645d82a80fcebfe9005165",
+      "run_id": 40425571412,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.CompactBanach.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "ca8ee322c562966ffeb18ff77975b3c2c01abaee11645d82a80fcebfe9005165",
+      "run_id": 40425571412,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "build_exit": 0,
+      "declaration": "OAI.ComparatorModel.CurrentMain.main",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt_sha256": "ca8ee322c562966ffeb18ff77975b3c2c01abaee11645d82a80fcebfe9005165",
+      "run_id": 40425571412,
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    }
+  ],
+  "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+}
