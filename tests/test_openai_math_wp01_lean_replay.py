@@ -14,6 +14,12 @@ class ReplayGuards(unittest.TestCase):
   x=prepare_tasks(CW,REPORT,0,5)
   self.assertEqual((len(x),x[0]["declaration"],x[-1]["declaration"]),
     (5,"OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras","OAI.ArtinCAT0.main"))
+ def test_next25_exact_shard(self):
+  report=json.loads((ROOT/"NEXT25_CONFIG_PREFLIGHT.json").read_text())
+  rows=prepare_tasks(CW,report,0,5)
+  self.assertEqual(len(rows),5)
+  self.assertEqual(rows[0]["declaration"],"OAI.ComparatorModel.RecursivePotentials.main")
+  self.assertNotIn(rows[0]["declaration"],{x["declaration"] for x in REPORT["rows"]})
  def test_invalid_ranges(self):
   for start,count in ((-1,1),(0,0),(24,2),(25,1)):
    with self.assertRaises(ValueError):prepare_tasks(CW,REPORT,start,count)
