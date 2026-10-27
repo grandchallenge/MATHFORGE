@@ -91,5 +91,34 @@ class Next25LedgerTests(unittest.TestCase):
         self.assertEqual(self.ledger["counts"]["extended_internal_file_sha256_verified"], 14)
         self.assertIn("4200s", self.ledger["remaining_obligation"])
 
+    def test_diagnostic_replay_identity_and_timeout_evidence(self):
+        rows = self.ledger["diagnostic_replays"]
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row["global_index_zero_based"], 43)
+        self.assertEqual(row["declaration"], self.preflight["rows"][18]["declaration"])
+        self.assertEqual(row["run_id"], 40548732401)
+        self.assertEqual(row["workflow_head"], "8ebcb65d3ba8bf10e376c0daba9b8e37f0834aad")
+        self.assertEqual(row["upstream_commit"], PINNED_UPSTREAM)
+        self.assertEqual(row["toolchain"], "leanprover/lean4:v4.34.1")
+        self.assertEqual(row["build_timeout_seconds"], 4200)
+        self.assertEqual(row["artifact_id"], 12761280403)
+        self.assertEqual(row["artifact_zip_sha256"],
+                         "39df37faeb899a02ba36fd5140b850c054ee750b07e5606a2951f08cefef00bf")
+        self.assertEqual(row["receipt_json_sha256"],
+                         "80fb4fc5657f672a80ed050c0723fac2b9a3fb17b99e5818cf236d3186a87849")
+        self.assertEqual(row["build_log_sha256"],
+                         "ab9807addcc92f72ddb908e6f27f4a72c45acddccab92bf1967e248b22df7ffa")
+        self.assertEqual((row["build_exit"], row["axioms_exit"]), (124, None))
+        self.assertIsNone(row["observed_axioms"])
+        self.assertFalse(row["comparator_executed"])
+        self.assertEqual(row["diagnostic"]["last_observed_lake_step"], "5459/7061")
+        self.assertTrue(row["diagnostic"]["partial_stdout_captured"])
+        self.assertTrue(row["diagnostic"]["progress_denominator_dynamic"])
+        self.assertEqual(row["verified_internal_file_hashes"], 6)
+        self.assertEqual(self.ledger["counts"]["diagnostic_archive_sha256_verified"], 1)
+        self.assertEqual(self.ledger["counts"]["diagnostic_internal_file_sha256_verified"], 6)
+        self.assertEqual(self.ledger["counts"]["effective_lean_axiom_pass"], 24)
+
 if __name__ == "__main__":
     unittest.main()
