@@ -328,5 +328,17 @@
       "verdict": "LEAN_REPLAY_AND_AXS_PASS"
     }
   ],
-  "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "retry_evidence": {
+    "run_id": 40432085589,
+    "source_head": "369d6285f23cebeec5477bbe182190b697fbf5e7",
+    "target_declaration": "OAI.ArExplicit.Statement.main",
+    "outcome": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED",
+    "build_exit": 124,
+    "workflow_conclusion": "failure",
+    "artifact_id": 12703920667,
+    "artifact_sha256": "8df3e88551c271e872fda3e6ed7762de0e9a6bb9b7f12a6fe49d119f0cfc2fe1",
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40432085589",
+    "observation": "Single-declaration retry also exhausted 1500-second bounded replay. This is not a Lean proof failure or a PASS; retain original 24 PASS, 1 EXACT_BLOCKER ledger. No semantic or Comparator certification."
+  }
 }
