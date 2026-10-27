@@ -57,7 +57,7 @@ def prepare_tasks(crosswalk, report, start, count):
             raise ValueError("bad pinned module identifier")
     return tasks
 
-def replay(upstream, destination, tasks, env):
+def replay(upstream, destination, tasks, env, build_timeout=1500):
     upstream = upstream.resolve()
     destination = destination.resolve()
     lean_root = upstream/"lean"
@@ -83,7 +83,7 @@ def replay(upstream, destination, tasks, env):
         allowed = set(cfg["permitted_axioms"])
         stem = f"{offset:02d}-{re.sub('[^A-Za-z0-9]+','_',declaration)[-70:]}"
         build_exit, build_log = execute(["lake","build",module],lean_root,
-                                        destination/(stem+".build.log"),timeout=1500)
+                                        destination/(stem+".build.log"),timeout=build_timeout)
         evidence = {"declaration":declaration,"solution_module":module,
                     "solution_git_blob":task["source_blob"],
                     "comparator_config":config_rel,"comparator_git_blob":task["comparator_blob"],
@@ -122,7 +122,12 @@ def main():
     parser.add_argument("--output",type=Path,required=True)
     parser.add_argument("--start",type=int,default=0)
     parser.add_argument("--count",type=int,default=5)
+    parser.add_argument("--build-timeout",type=int,default=1500)
     args=parser.parse_args()
+    if args.build_timeout not in (1500, 4200):
+        raise ValueError("Only existing 1500-second or controlled 4200-second build budgets permitted")
+    if args.build_timeout==4200 and (args.start,args.count)!=(2,1):
+        raise ValueError("Extended budget is authorized for exact ArExplicit index 2 only")
     report=json.loads((ROOT/"FIRST25_CONFIG_PREFLIGHT.json").read_text())
     crosswalk=json.loads((ROOT/"FORMALIZATION_CROSSWALK.json").read_text())
     tasks=prepare_tasks(crosswalk,report,args.start,args.count)
@@ -130,7 +135,8 @@ def main():
     env.update(first25_range=[args.start,args.start+args.count],
                declared_upstream_manifest_sha256=hashlib.sha256(
                    (args.upstream/"lean"/"lake-manifest.json").read_bytes()).hexdigest())
-    result=replay(args.upstream,args.output,tasks,env)
+    env["build_timeout_seconds"]=args.build_timeout
+    result=replay(args.upstream,args.output,tasks,env,build_timeout=args.build_timeout)
     successes=sum(x["verdict"]=="LEAN_REPLAY_AND_AXS_PASS" for x in result)
     print(f"LEARNED: {successes}/{len(result)} pinned declarations passed Lean compilation and axiom whitelist")
     if successes != len(result):

@@ -7,6 +7,11 @@ on:
         required: true
         type: number
         default: 0
+      build_timeout:
+        description: "Allowed: 1500 (normal), 4200 (ArExplicit index 2 only)"
+        required: true
+        type: number
+        default: 1500
       shard_count:
         description: "Number of items to replay (1 through 5)"
         required: true
@@ -17,7 +22,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: oai-first25-lean-${{ github.ref }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}
+  group: oai-first25-lean-${{ github.ref }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
   cancel-in-progress: false
 
 jobs:
@@ -79,13 +84,14 @@ jobs:
             --upstream upstream/math \
             --output replay/oai26-first25 \
             --start "${{ inputs.shard_start }}" \
-            --count "${{ inputs.shard_count }}"
+            --count "${{ inputs.shard_count }}" \
+            --build-timeout "${{ inputs.build_timeout }}"
       - name: Record output hashes and upload even on failure
         if: always()
         shell: bash
         run: |
           mkdir -p replay/oai26-first25
-          find replay/oai26-first25 -maxdepth 1 -type f -print0 |
+          find replay/oai26-first25 -maxdepth 1 -type f ! -name files.sha256 -print0 |
             sort -z | xargs -0 -r sha256sum > replay/oai26-first25/files.sha256
           printf 'run_id=%s\nsource_commit=%s\n' "$GITHUB_RUN_ID" "$GITHUB_SHA" \
             > replay/oai26-first25/run-identity.txt
@@ -93,7 +99,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: oai26-first25-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}
+          name: oai26-first25-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
           path: replay/oai26-first25
           if-no-files-found: error
           retention-days: 30
