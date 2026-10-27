@@ -22,7 +22,9 @@
     "effective_lean_axiom_pass": 24,
     "effective_build_timeout": 1,
     "extended_archive_sha256_verified": 2,
-    "extended_internal_file_sha256_verified": 14
+    "extended_internal_file_sha256_verified": 14,
+    "diagnostic_archive_sha256_verified": 1,
+    "diagnostic_internal_file_sha256_verified": 6
   },
   "shards": [
     {
@@ -635,5 +637,38 @@
       "comparator_executed": false
     }
   ],
-  "remaining_obligation": "Index 43 exceeded controlled 4200s Lean build budget; no axiom audit or proof result. Requires a distinct source-pinned resource/compilation diagnosis and separately governed remedy before full shard closure."
+  "remaining_obligation": "Index 43 timed out in the 4200s diagnostic replay at observed Lake progress 5459/7061 (dynamic total); build exit 124, axiom audit not executed. Source-pinned staged compilation or persistent cache is required under separately governed bounded execution. Do not infer proof failure or pass.",
+  "diagnostic_replays": [
+    {
+      "global_index_zero_based": 43,
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "run_id": 40548732401,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40548732401",
+      "workflow_conclusion": "failure",
+      "workflow_head": "8ebcb65d3ba8bf10e376c0daba9b8e37f0834aad",
+      "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "toolchain": "leanprover/lean4:v4.34.1",
+      "build_timeout_seconds": 4200,
+      "artifact_id": 12761280403,
+      "artifact_zip_sha256": "39df37faeb899a02ba36fd5140b850c054ee750b07e5606a2951f08cefef00bf",
+      "receipt_json_sha256": "80fb4fc5657f672a80ed050c0723fac2b9a3fb17b99e5818cf236d3186a87849",
+      "build_log_sha256": "ab9807addcc92f72ddb908e6f27f4a72c45acddccab92bf1967e248b22df7ffa",
+      "verified_internal_file_hashes": 6,
+      "build_exit": 124,
+      "axioms_exit": null,
+      "observed_axioms": null,
+      "verdict": "BUILD_TIMEOUT_4200S_NO_AXIOM_AUDIT",
+      "comparator_executed": false,
+      "diagnostic": {
+        "last_observed_lake_step": "5459/7061",
+        "last_built_module": "OAI.NumberTheory.DirichletL.Hecke.PrimeAmplitudeBins",
+        "partial_stdout_captured": true,
+        "partial_stderr_captured": true,
+        "compilation_errors_observed": false,
+        "progress_denominator_dynamic": true
+      }
+    }
+  ]
 }
