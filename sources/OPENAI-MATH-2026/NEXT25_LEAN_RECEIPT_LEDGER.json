@@ -1,0 +1,586 @@
+{
+  "record_type": "GCL_OAI26_WP01_NEXT25_LEAN_RECEIPT_LEDGER/1",
+  "disposition": "PARTIAL_EVIDENCE_ADMISSION_TWO_TIMEOUTS_RETRY_PENDING",
+  "claim_boundary": "Lean source replay and axiom audit only; Comparator not executed; manuscript semantic equivalence and MATHCERT certification not asserted",
+  "source_identity": {
+    "gcl_workflow_head": "9c3a18aec029998f4303b399d5dc09e6b7ce7059",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "upstream_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "preflight_path": "sources/OPENAI-MATH-2026/NEXT25_CONFIG_PREFLIGHT.json",
+    "preflight_blob_sha": "85668855c2761538c25eae99f4711177f899d629",
+    "declaration_indices": "zero-based 25 through 49 (human ordinal 26 through 50)"
+  },
+  "counts": {
+    "total": 25,
+    "lean_axiom_pass": 23,
+    "build_timeout": 2,
+    "other_failure": 0,
+    "archive_sha256_verified": 5,
+    "internal_file_sha256_verified": 96
+  },
+  "shards": [
+    {
+      "zero_based_global_range": [
+        25,
+        30
+      ],
+      "workflow_run_id": 40472532552,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40472532552",
+      "original_attempt_conclusion": "success",
+      "original_attempt": 1,
+      "artifact_id": 12721187405,
+      "artifact_zip_sha256": "4e50758d01f812a4560c54830c9e8bde575eb1350e8bb8472802870c4b24a37c",
+      "receipt_json_sha256": "f31b858fe74dccd42943e47245f4d0e31d64e1ae1aa808ff354b9ed10ec140e5",
+      "verified_internal_file_hashes": 20
+    },
+    {
+      "zero_based_global_range": [
+        30,
+        35
+      ],
+      "workflow_run_id": 40472536318,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40472536318",
+      "original_attempt_conclusion": "success",
+      "original_attempt": 1,
+      "artifact_id": 12722423936,
+      "artifact_zip_sha256": "acf84d6add97b66f103235a4fd65140d3665f656507c21bc1c2dabe092c019f7",
+      "receipt_json_sha256": "eedd8135647e23a1da4dba6efec5c39cd414e60be4b7a016568c8a9545946a80",
+      "verified_internal_file_hashes": 20
+    },
+    {
+      "zero_based_global_range": [
+        35,
+        40
+      ],
+      "workflow_run_id": 40472539929,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40472539929",
+      "original_attempt_conclusion": "success",
+      "original_attempt": 1,
+      "artifact_id": 12719019505,
+      "artifact_zip_sha256": "6a018f12590285df1e4cc59f731024bc03938a0e80b8248f37c02794231e8977",
+      "receipt_json_sha256": "fd3f697c4849100bcf2bef763e573163f5a528fbb65446376f611b9f9379cf69",
+      "verified_internal_file_hashes": 20
+    },
+    {
+      "zero_based_global_range": [
+        40,
+        45
+      ],
+      "workflow_run_id": 40472543489,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40472543489",
+      "original_attempt_conclusion": "failure",
+      "original_attempt": 1,
+      "artifact_id": 12722436474,
+      "artifact_zip_sha256": "8f5e241d42c32b7330ed92df3652d664734ad9fe4f3b6faaa47d262ed5522dce",
+      "receipt_json_sha256": "f3edc2284693a5ce1d8cea63f41e4d3211abfef69b96c4067bb74ed9c36a4b01",
+      "verified_internal_file_hashes": 18
+    },
+    {
+      "zero_based_global_range": [
+        45,
+        50
+      ],
+      "workflow_run_id": 40472546954,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40472546954",
+      "original_attempt_conclusion": "failure",
+      "original_attempt": 1,
+      "artifact_id": 12720513553,
+      "artifact_zip_sha256": "c1d0fc223302b291968e8115e83b6b12aa0a8f046f8a18bb1173b25f05a19d91",
+      "receipt_json_sha256": "ee65af1064adf8c2cdd6e5dc44a6bc04eeed8d26c174bee9de04331d64468d18",
+      "verified_internal_file_hashes": 18
+    }
+  ],
+  "rows": [
+    {
+      "global_index_zero_based": 25,
+      "declaration": "OAI.ComparatorModel.RecursivePotentials.main",
+      "source_git_blob": "43afbaa05006f44fb5d712d467ac6a18a5a005aa",
+      "comparator_config_git_blob": "19c3404b7923cfee0cae594f3526b8bc70de4295",
+      "solution_module": "OAI.Analysis.RecursivePotentials.Challenge",
+      "run_id": 40472532552,
+      "artifact_id": 12721187405,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 26,
+      "declaration": "OAI.CompleteCrouzeix.main",
+      "source_git_blob": "efa3c8b2063e4cb282059ec21521635deffcc150",
+      "comparator_config_git_blob": "47699d55d822203bab4d0db311da402009bfd4c8",
+      "solution_module": "OAI.Analysis.NumericalRange.Main",
+      "run_id": 40472532552,
+      "artifact_id": 12721187405,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 27,
+      "declaration": "OAI.ComplexCancellation.main",
+      "source_git_blob": "67e12506920cec027e64ff7118c513e3ac8455e0",
+      "comparator_config_git_blob": "76b958b25b47f8ce7a9e70e6f609c8cb3fa38337",
+      "solution_module": "OAI.Algebra.AffineCancellation.Main",
+      "run_id": 40472532552,
+      "artifact_id": 12721187405,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 28,
+      "declaration": "OAI.ContinuumTemperature.main_theorem",
+      "source_git_blob": "61817448972c90526ac2b96fd7a327578705e834",
+      "comparator_config_git_blob": "38b64a15c55245e22157ed75b3f7938ed8964cc5",
+      "solution_module": "OAI.Probability.ContinuumTransition.Main",
+      "run_id": 40472532552,
+      "artifact_id": 12721187405,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 29,
+      "declaration": "OAI.CoordinateSweeps.conditional_main",
+      "source_git_blob": "7f75c24a9bbc382ad06c955a854be0ddbef4575f",
+      "comparator_config_git_blob": "ade028a33fd32bd5429c6fa5c4ede5096f6ba0e3",
+      "solution_module": "OAI.Probability.CoordinateSweeps.Main",
+      "run_id": 40472532552,
+      "artifact_id": 12721187405,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 30,
+      "declaration": "OAI.Cotype.mainTarget_proved",
+      "source_git_blob": "ff7d685dbbffe372bf88c690873bb61baddd5a7b",
+      "comparator_config_git_blob": "5960b394568ce88d53b9624a06172c1dec9e9183",
+      "solution_module": "OAI.Analysis.Cotype.Main",
+      "run_id": 40472536318,
+      "artifact_id": 12722423936,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 31,
+      "declaration": "OAI.CoulombAtom.generalized_ionization",
+      "source_git_blob": "924cc67e71bf528cfea0b556c6eba5d175e0a005",
+      "comparator_config_git_blob": "3c529f7f3d9dfc6ee39c9530ba131574e73f90f9",
+      "solution_module": "OAI.Analysis.CoulombIonization.Main",
+      "run_id": 40472536318,
+      "artifact_id": 12722423936,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 32,
+      "declaration": "OAI.CriticalHoneycomb.finiteBridgeMassEstimate",
+      "source_git_blob": "d8a278febc1e711e352b8604adc779354a1c6cda",
+      "comparator_config_git_blob": "4919f2323ffb4e24e368318375d1404763e5c9b2",
+      "solution_module": "OAI.Combinatorics.HoneycombChords.BridgeMass",
+      "run_id": 40472536318,
+      "artifact_id": 12722423936,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 33,
+      "declaration": "OAI.CriticalSK.covariance_and_linear_tests",
+      "source_git_blob": "04f1932f2bc7a9161669dc21088a13873dd5faf7",
+      "comparator_config_git_blob": "05ece7e770bc6138940e0e1fca1ce5001fad0787",
+      "solution_module": "OAI.MathematicalPhysics.CriticalSK.Main",
+      "run_id": 40472536318,
+      "artifact_id": 12722423936,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 34,
+      "declaration": "OAI.CriticalSK.critical_mixing_bounds",
+      "source_git_blob": "3daf45778658a94bbf635ae15df6957cf1282bb1",
+      "comparator_config_git_blob": "c159cdd22fe3dec446256aa9005fd79664d4e2c7",
+      "solution_module": "OAI.MathematicalPhysics.CriticalMixing.Main",
+      "run_id": 40472536318,
+      "artifact_id": 12722423936,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 35,
+      "declaration": "OAI.CriticalZ3.critical_no_infinite",
+      "source_git_blob": "dd6361d5bfe6ed788cfd94129ebd6850cbec0865",
+      "comparator_config_git_blob": "9c57c7529b86caab8cdc838dc36fc47c6dd066a6",
+      "solution_module": "OAI.Probability.CriticalZ3.Main",
+      "run_id": 40472539929,
+      "artifact_id": 12719019505,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 36,
+      "declaration": "OAI.CurrentProjection.fiberBlockMain",
+      "source_git_blob": "f4ac8e1ea3d987123d7c49a2fa2eaf5450e7bf6e",
+      "comparator_config_git_blob": "a93c443f9490463df2be4d5d81bca97ea20f065f",
+      "solution_module": "OAI.Probability.GaussianReplacement.FiberEquality",
+      "run_id": 40472539929,
+      "artifact_id": 12719019505,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 37,
+      "declaration": "OAI.CurrentProjection.hybridBlockMain",
+      "source_git_blob": "1a676bd74973c8a48a07e6b8a9d51fd3721c06f2",
+      "comparator_config_git_blob": "a93c443f9490463df2be4d5d81bca97ea20f065f",
+      "solution_module": "OAI.Probability.GaussianReplacement.FiberEquality",
+      "run_id": 40472539929,
+      "artifact_id": 12719019505,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 38,
+      "declaration": "OAI.DeligneDrinfeld.main",
+      "source_git_blob": "98a996a90f4f57a205a3e3e8673a8528e8e3dbbf",
+      "comparator_config_git_blob": "479c2ef4d2352da81193e5ff8248f2cf86f484d7",
+      "solution_module": "OAI.Algebra.Drinfeld.Completion",
+      "run_id": 40472539929,
+      "artifact_id": 12719019505,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 39,
+      "declaration": "OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound",
+      "source_git_blob": "6878be2842d3013ef26cac2936143972782aa6dc",
+      "comparator_config_git_blob": "004af1188c299d9197ac032273fd6c6c913dfa97",
+      "solution_module": "OAI.Computability.DepthThree.Main",
+      "run_id": 40472539929,
+      "artifact_id": 12719019505,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 40,
+      "declaration": "OAI.DiamondDistortion.headline_all_pairs",
+      "source_git_blob": "445f27d6c2bb813bcabfb9725cc45550d5916fa2",
+      "comparator_config_git_blob": "15b0f40b619e93df3a768da18be60a4b8ec9a211",
+      "solution_module": "OAI.Analysis.DiamondDistortion.Descent",
+      "run_id": 40472543489,
+      "artifact_id": 12722436474,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 41,
+      "declaration": "OAI.DirectCrouzeix.complete_crouzeix",
+      "source_git_blob": "a504007c267984cb20e977b0e8c31c4198bad757",
+      "comparator_config_git_blob": "0bcbfcbef94caf448a99232ee99a40e63bf33311",
+      "solution_module": "OAI.Analysis.DirectCrouzeix.Main",
+      "run_id": 40472543489,
+      "artifact_id": 12722436474,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 42,
+      "declaration": "OAI.DirectionalTransience.directional_transience_implies_ballisticity",
+      "source_git_blob": "e63468abd024d61ed7abd20c0412572d6a53d966",
+      "comparator_config_git_blob": "ec13d276a24ffb2dd60eb8d490bd77663d7463e4",
+      "solution_module": "OAI.Probability.Ballisticity.Main",
+      "run_id": 40472543489,
+      "artifact_id": 12722436474,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 43,
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "source_git_blob": "46c67f4000906b1391a471d6e6396ac0da3c16a5",
+      "comparator_config_git_blob": "a946bfcf544ad212fbd46056dbff913c2d75247c",
+      "solution_module": "OAI.NumberTheory.DirichletL.Nonvanishing",
+      "run_id": 40472543489,
+      "artifact_id": 12722436474,
+      "build_exit": 124,
+      "axioms_exit": null,
+      "observed_axioms": null,
+      "extra_axioms": null,
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 44,
+      "declaration": "OAI.Dixmier.current_main_theorem",
+      "source_git_blob": "07ebfcdfe0955c13b36aa1751f47b33e3c9c5445",
+      "comparator_config_git_blob": "4920af0a07a04f28ad7e2c99293f7e0410b1032b",
+      "solution_module": "OAI.Analysis.Unitarizability.AllDiscrete",
+      "run_id": 40472543489,
+      "artifact_id": 12722436474,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 45,
+      "declaration": "OAI.DoublingHilbert.main",
+      "source_git_blob": "721c8cbd169640047318faf7d1e6e95eb2d46b1c",
+      "comparator_config_git_blob": "e3df504122f88d0af3340c8657462987a40f8294",
+      "solution_module": "OAI.Geometry.DoublingHilbert.Main",
+      "run_id": 40472546954,
+      "artifact_id": 12720513553,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 46,
+      "declaration": "OAI.EntropyRateDimension.entropy_rate_dimension",
+      "source_git_blob": "abb3289fa660f4aa687c8ae436a2484c881e3d79",
+      "comparator_config_git_blob": "0588dba1e6de59a9f7f92a1f2801b4c4f3ef46f8",
+      "solution_module": "OAI.MeasureTheory.SelfSimilar.Main",
+      "run_id": 40472546954,
+      "artifact_id": 12720513553,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 47,
+      "declaration": "OAI.Erdos970.Erdos970Final.erdos_970_quadratic",
+      "source_git_blob": "2f6dd39a4c039e86b8bb8b0217f060c7b5ef326c",
+      "comparator_config_git_blob": "54fe1a43894db11e59ee505c3a04361ac0e9a0f3",
+      "solution_module": "OAI.NumberTheory.Jacobsthal.Main",
+      "run_id": 40472546954,
+      "artifact_id": 12720513553,
+      "build_exit": 124,
+      "axioms_exit": null,
+      "observed_axioms": null,
+      "extra_axioms": null,
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 48,
+      "declaration": "OAI.ErdosGallai.erdos_gallai",
+      "source_git_blob": "a146a6edad4e9c89fcd4358cfb25141fe649c24f",
+      "comparator_config_git_blob": "5e16b3b81f9728d8dff5a5f650f3f5a58339e04d",
+      "solution_module": "OAI.Combinatorics.CycleDecomposition.Main",
+      "run_id": 40472546954,
+      "artifact_id": 12720513553,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 49,
+      "declaration": "OAI.EuclideanFiveColor.no_proper_five_coloring",
+      "source_git_blob": "377372bb81c65d351df698936319b809ca2682be",
+      "comparator_config_git_blob": "deeb7e0e6185d8e44bc8803774270ed1eca83958",
+      "solution_module": "OAI.Geometry.PlaneColoring.Five",
+      "run_id": 40472546954,
+      "artifact_id": 12720513553,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    }
+  ],
+  "unresolved": [
+    {
+      "global_index_zero_based": 43,
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "reason": "1500-second lake build timeout; no axiom check executed",
+      "retry_run_id": 40472543489,
+      "retry_attempt": 2,
+      "retry_state_at_ledger_creation": "in_progress",
+      "budget_seconds": 1500
+    },
+    {
+      "global_index_zero_based": 47,
+      "declaration": "OAI.Erdos970.Erdos970Final.erdos_970_quadratic",
+      "reason": "1500-second lake build timeout; no axiom check executed",
+      "retry_run_id": 40472546954,
+      "retry_attempt": 2,
+      "retry_state_at_ledger_creation": "in_progress",
+      "budget_seconds": 1500
+    }
+  ],
+  "verification": "All five original ZIP SHA256 digests matched GitHub artifact digests; each receipt's declared run, exact workflow head, source commit, tree and global index range matched; 96/96 listed internal files SHA256 matched; each build and axiom log SHA256 matched its per-declaration receipt; all 23 passing records had build_exit=axioms_exit=0, only permitted axioms, and no extra axioms; the two 124 exits have no axiom audit and are not passes.",
+  "next_action": "Read back bounded retry attempt 2 for indices 43 and 47; independently verify any new artifact receipts and digests; update this ledger through a protected PR; do not extend the 1500-second budget without separate governed authority."
+}
