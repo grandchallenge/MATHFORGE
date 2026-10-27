@@ -120,19 +120,22 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--upstream",type=Path,required=True)
     parser.add_argument("--output",type=Path,required=True)
+    parser.add_argument("--offset",type=int,choices=(0,25),default=0)
     parser.add_argument("--start",type=int,default=0)
     parser.add_argument("--count",type=int,default=5)
     parser.add_argument("--build-timeout",type=int,default=1500)
     args=parser.parse_args()
     if args.build_timeout not in (1500, 4200):
         raise ValueError("Only existing 1500-second or controlled 4200-second build budgets permitted")
-    if args.build_timeout==4200 and (args.start,args.count)!=(2,1):
+    if args.build_timeout==4200 and (args.offset,args.start,args.count)!=(0,2,1):
         raise ValueError("Extended budget is authorized for exact ArExplicit index 2 only")
-    report=json.loads((ROOT/"FIRST25_CONFIG_PREFLIGHT.json").read_text())
+    report_name="NEXT25_CONFIG_PREFLIGHT.json" if args.offset==25 else "FIRST25_CONFIG_PREFLIGHT.json"
+    report=json.loads((ROOT/report_name).read_text())
     crosswalk=json.loads((ROOT/"FORMALIZATION_CROSSWALK.json").read_text())
     tasks=prepare_tasks(crosswalk,report,args.start,args.count)
     env=verify_environment(args.upstream)
-    env.update(first25_range=[args.start,args.start+args.count],
+    env.update(global_declaration_range=[args.offset+args.start,args.offset+args.start+args.count],
+               first25_range=[args.start,args.start+args.count],
                declared_upstream_manifest_sha256=hashlib.sha256(
                    (args.upstream/"lean"/"lake-manifest.json").read_bytes()).hexdigest())
     env["build_timeout_seconds"]=args.build_timeout

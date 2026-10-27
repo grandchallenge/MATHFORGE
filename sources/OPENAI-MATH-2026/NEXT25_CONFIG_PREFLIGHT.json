@@ -1,0 +1,507 @@
+{
+  "offset": 25,
+  "record_type": "OAI26_WP01_SOURCE_CONFIG_PREFLIGHT/1",
+  "rows": [
+    {
+      "challenge_module": "ComparatorChallenges.RecursivePotentials",
+      "comparator_blob": "19c3404b7923cfee0cae594f3526b8bc70de4295",
+      "comparator_config": "lean/ComparatorChallenges/RecursivePotentials.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ComparatorModel.RecursivePotentials.main"
+      ],
+      "declaration": "OAI.ComparatorModel.RecursivePotentials.main",
+      "lean_source": "lean/OAI/Analysis/RecursivePotentials/Challenge.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.RecursivePotentials.Challenge",
+      "source_blob": "43afbaa05006f44fb5d712d467ac6a18a5a005aa",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CompleteCrouzeix",
+      "comparator_blob": "47699d55d822203bab4d0db311da402009bfd4c8",
+      "comparator_config": "lean/ComparatorChallenges/CompleteCrouzeix.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CompleteCrouzeix.main"
+      ],
+      "declaration": "OAI.CompleteCrouzeix.main",
+      "lean_source": "lean/OAI/Analysis/NumericalRange/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.NumericalRange.Main",
+      "source_blob": "efa3c8b2063e4cb282059ec21521635deffcc150",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.ComplexCancellation",
+      "comparator_blob": "76b958b25b47f8ce7a9e70e6f609c8cb3fa38337",
+      "comparator_config": "lean/ComparatorChallenges/ComplexCancellation.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ComplexCancellation.main"
+      ],
+      "declaration": "OAI.ComplexCancellation.main",
+      "lean_source": "lean/OAI/Algebra/AffineCancellation/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Algebra.AffineCancellation.Main",
+      "source_blob": "67e12506920cec027e64ff7118c513e3ac8455e0",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.ContinuumTransition",
+      "comparator_blob": "38b64a15c55245e22157ed75b3f7938ed8964cc5",
+      "comparator_config": "lean/ComparatorChallenges/ContinuumTransition.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ContinuumTemperature.main_theorem"
+      ],
+      "declaration": "OAI.ContinuumTemperature.main_theorem",
+      "lean_source": "lean/OAI/Probability/ContinuumTransition/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Probability.ContinuumTransition.Main",
+      "source_blob": "61817448972c90526ac2b96fd7a327578705e834",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CoordinateSweeps",
+      "comparator_blob": "ade028a33fd32bd5429c6fa5c4ede5096f6ba0e3",
+      "comparator_config": "lean/ComparatorChallenges/CoordinateSweeps.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CoordinateSweeps.conditional_main",
+        "OAI.CoordinateSweeps.all_grid_moment"
+      ],
+      "declaration": "OAI.CoordinateSweeps.conditional_main",
+      "lean_source": "lean/OAI/Probability/CoordinateSweeps/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Probability.CoordinateSweeps.Main",
+      "source_blob": "7f75c24a9bbc382ad06c955a854be0ddbef4575f",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.Cotype",
+      "comparator_blob": "5960b394568ce88d53b9624a06172c1dec9e9183",
+      "comparator_config": "lean/ComparatorChallenges/Cotype.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.Cotype.mainTarget_proved"
+      ],
+      "declaration": "OAI.Cotype.mainTarget_proved",
+      "lean_source": "lean/OAI/Analysis/Cotype/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.Cotype.Main",
+      "source_blob": "ff7d685dbbffe372bf88c690873bb61baddd5a7b",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CoulombIonization",
+      "comparator_blob": "3c529f7f3d9dfc6ee39c9530ba131574e73f90f9",
+      "comparator_config": "lean/ComparatorChallenges/CoulombIonization.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CoulombAtom.generalized_ionization"
+      ],
+      "declaration": "OAI.CoulombAtom.generalized_ionization",
+      "lean_source": "lean/OAI/Analysis/CoulombIonization/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.CoulombIonization.Main",
+      "source_blob": "924cc67e71bf528cfea0b556c6eba5d175e0a005",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.HoneycombBridgeMassSupport",
+      "comparator_blob": "4919f2323ffb4e24e368318375d1404763e5c9b2",
+      "comparator_config": "lean/ComparatorChallenges/HoneycombBridgeMassSupport.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CriticalHoneycomb.finiteBridgeMassEstimate"
+      ],
+      "declaration": "OAI.CriticalHoneycomb.finiteBridgeMassEstimate",
+      "lean_source": "lean/OAI/Combinatorics/HoneycombChords/BridgeMass.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Combinatorics.HoneycombChords.BridgeMass",
+      "source_blob": "d8a278febc1e711e352b8604adc779354a1c6cda",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CriticalSK",
+      "comparator_blob": "05ece7e770bc6138940e0e1fca1ce5001fad0787",
+      "comparator_config": "lean/ComparatorChallenges/CriticalSK.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CriticalSK.realized_equilibrium_initial_states",
+        "OAI.CriticalSK.covariance_and_linear_tests",
+        "OAI.CriticalSK.critical_mixing_lower_bounds"
+      ],
+      "declaration": "OAI.CriticalSK.covariance_and_linear_tests",
+      "lean_source": "lean/OAI/MathematicalPhysics/CriticalSK/Rayleigh.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.MathematicalPhysics.CriticalSK.Main",
+      "source_blob": "04f1932f2bc7a9161669dc21088a13873dd5faf7",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CriticalSKMixing",
+      "comparator_blob": "c159cdd22fe3dec446256aa9005fd79664d4e2c7",
+      "comparator_config": "lean/ComparatorChallenges/CriticalSKMixing.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CriticalSK.critical_mixing_bounds"
+      ],
+      "declaration": "OAI.CriticalSK.critical_mixing_bounds",
+      "lean_source": "lean/OAI/MathematicalPhysics/CriticalMixing/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.MathematicalPhysics.CriticalMixing.Main",
+      "source_blob": "3daf45778658a94bbf635ae15df6957cf1282bb1",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CriticalZ3",
+      "comparator_blob": "9c57c7529b86caab8cdc838dc36fc47c6dd066a6",
+      "comparator_config": "lean/ComparatorChallenges/CriticalZ3.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CriticalZ3.critical_no_infinite"
+      ],
+      "declaration": "OAI.CriticalZ3.critical_no_infinite",
+      "lean_source": "lean/OAI/Probability/CriticalZ3/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Probability.CriticalZ3.Main",
+      "source_blob": "dd6361d5bfe6ed788cfd94129ebd6850cbec0865",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.GaussianReplacement",
+      "comparator_blob": "a93c443f9490463df2be4d5d81bca97ea20f065f",
+      "comparator_config": "lean/ComparatorChallenges/GaussianReplacement.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CurrentProjection.mixedMomentMain",
+        "OAI.CurrentProjection.actualRowMain",
+        "OAI.CurrentProjection.actualRowRefinement",
+        "OAI.CurrentProjection.actualRowSourceMain",
+        "OAI.CurrentProjection.actualRowSourceRefinement",
+        "OAI.CurrentProjection.criticalComparisonMain",
+        "OAI.CurrentProjection.oneLevelComparisonMain",
+        "OAI.CurrentProjection.twoLabelComparisonMain",
+        "OAI.CurrentProjection.hybridBlockMain",
+        "OAI.CurrentProjection.fiberTwoPointMain",
+        "OAI.CurrentProjection.fiberBlockMain"
+      ],
+      "declaration": "OAI.CurrentProjection.fiberBlockMain",
+      "lean_source": "lean/OAI/Probability/GaussianReplacement/FiberBlock.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Probability.GaussianReplacement.FiberEquality",
+      "source_blob": "f4ac8e1ea3d987123d7c49a2fa2eaf5450e7bf6e",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.GaussianReplacement",
+      "comparator_blob": "a93c443f9490463df2be4d5d81bca97ea20f065f",
+      "comparator_config": "lean/ComparatorChallenges/GaussianReplacement.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.CurrentProjection.mixedMomentMain",
+        "OAI.CurrentProjection.actualRowMain",
+        "OAI.CurrentProjection.actualRowRefinement",
+        "OAI.CurrentProjection.actualRowSourceMain",
+        "OAI.CurrentProjection.actualRowSourceRefinement",
+        "OAI.CurrentProjection.criticalComparisonMain",
+        "OAI.CurrentProjection.oneLevelComparisonMain",
+        "OAI.CurrentProjection.twoLabelComparisonMain",
+        "OAI.CurrentProjection.hybridBlockMain",
+        "OAI.CurrentProjection.fiberTwoPointMain",
+        "OAI.CurrentProjection.fiberBlockMain"
+      ],
+      "declaration": "OAI.CurrentProjection.hybridBlockMain",
+      "lean_source": "lean/OAI/Probability/GaussianReplacement/Hybrid.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Probability.GaussianReplacement.FiberEquality",
+      "source_blob": "1a676bd74973c8a48a07e6b8a9d51fd3721c06f2",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DeligneDrinfeld",
+      "comparator_blob": "479c2ef4d2352da81193e5ff8248f2cf86f484d7",
+      "comparator_config": "lean/ComparatorChallenges/DeligneDrinfeld.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.DeligneDrinfeld.main"
+      ],
+      "declaration": "OAI.DeligneDrinfeld.main",
+      "lean_source": "lean/OAI/Algebra/Drinfeld/Completion.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Algebra.Drinfeld.Completion",
+      "source_blob": "98a996a90f4f57a205a3e3e8673a8528e8e3dbbf",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DepthThree",
+      "comparator_blob": "004af1188c299d9197ac032273fd6c6c913dfa97",
+      "comparator_config": "lean/ComparatorChallenges/DepthThree.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound"
+      ],
+      "declaration": "OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound",
+      "lean_source": "lean/OAI/Computability/DepthThree/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Computability.DepthThree.Main",
+      "source_blob": "6878be2842d3013ef26cac2936143972782aa6dc",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DiamondDistortion",
+      "comparator_blob": "15b0f40b619e93df3a768da18be60a4b8ec9a211",
+      "comparator_config": "lean/ComparatorChallenges/DiamondDistortion.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.DiamondDistortion.headline_all_pairs"
+      ],
+      "declaration": "OAI.DiamondDistortion.headline_all_pairs",
+      "lean_source": "lean/OAI/Analysis/DiamondDistortion/Descent.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.DiamondDistortion.Descent",
+      "source_blob": "445f27d6c2bb813bcabfb9725cc45550d5916fa2",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DirectCrouzeix",
+      "comparator_blob": "0bcbfcbef94caf448a99232ee99a40e63bf33311",
+      "comparator_config": "lean/ComparatorChallenges/DirectCrouzeix.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.DirectCrouzeix.complete_crouzeix",
+        "OAI.DirectCrouzeix.uniform_sharpness"
+      ],
+      "declaration": "OAI.DirectCrouzeix.complete_crouzeix",
+      "lean_source": "lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Analysis.DirectCrouzeix.Main",
+      "source_blob": "a504007c267984cb20e977b0e8c31c4198bad757",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DirectionalBallisticity",
+      "comparator_blob": "ec13d276a24ffb2dd60eb8d490bd77663d7463e4",
+      "comparator_config": "lean/ComparatorChallenges/DirectionalBallisticity.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.DirectionalTransience.directional_transience_implies_ballisticity"
+      ],
+      "declaration": "OAI.DirectionalTransience.directional_transience_implies_ballisticity",
+      "lean_source": "lean/OAI/Probability/Ballisticity/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Probability.Ballisticity.Main",
+      "source_blob": "e63468abd024d61ed7abd20c0412572d6a53d966",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DirichletSevenEighths",
+      "comparator_blob": "a946bfcf544ad212fbd46056dbff913c2d75247c",
+      "comparator_config": "lean/ComparatorChallenges/DirichletSevenEighths.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re"
+      ],
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "lean_source": "lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.NumberTheory.DirichletL.Nonvanishing",
+      "source_blob": "46c67f4000906b1391a471d6e6396ac0da3c16a5",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DixmierAllDiscrete",
+      "comparator_blob": "4920af0a07a04f28ad7e2c99293f7e0410b1032b",
+      "comparator_config": "lean/ComparatorChallenges/DixmierAllDiscrete.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.Dixmier.current_main_theorem"
+      ],
+      "declaration": "OAI.Dixmier.current_main_theorem",
+      "lean_source": "lean/OAI/Analysis/Unitarizability/AllDiscrete.lean",
+      "permitted_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "solution_module": "OAI.Analysis.Unitarizability.AllDiscrete",
+      "source_blob": "07ebfcdfe0955c13b36aa1751f47b33e3c9c5445",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.DoublingHilbert",
+      "comparator_blob": "e3df504122f88d0af3340c8657462987a40f8294",
+      "comparator_config": "lean/ComparatorChallenges/DoublingHilbert.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.DoublingHilbert.main"
+      ],
+      "declaration": "OAI.DoublingHilbert.main",
+      "lean_source": "lean/OAI/Geometry/DoublingHilbert/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Geometry.DoublingHilbert.Main",
+      "source_blob": "721c8cbd169640047318faf7d1e6e95eb2d46b1c",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.SelfSimilar",
+      "comparator_blob": "0588dba1e6de59a9f7f92a1f2801b4c4f3ef46f8",
+      "comparator_config": "lean/ComparatorChallenges/SelfSimilar.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.EntropyRateDimension.entropy_rate_dimension"
+      ],
+      "declaration": "OAI.EntropyRateDimension.entropy_rate_dimension",
+      "lean_source": "lean/OAI/MeasureTheory/SelfSimilar/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.MeasureTheory.SelfSimilar.Main",
+      "source_blob": "abb3289fa660f4aa687c8ae436a2484c881e3d79",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.Jacobsthal",
+      "comparator_blob": "54fe1a43894db11e59ee505c3a04361ac0e9a0f3",
+      "comparator_config": "lean/ComparatorChallenges/Jacobsthal.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.Erdos970.Erdos970Final.erdos_970_quadratic"
+      ],
+      "declaration": "OAI.Erdos970.Erdos970Final.erdos_970_quadratic",
+      "lean_source": "lean/OAI/NumberTheory/Jacobsthal/Conclusions/QuadraticBound.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.NumberTheory.Jacobsthal.Main",
+      "source_blob": "2f6dd39a4c039e86b8bb8b0217f060c7b5ef326c",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.CycleDecomposition",
+      "comparator_blob": "5e16b3b81f9728d8dff5a5f650f3f5a58339e04d",
+      "comparator_config": "lean/ComparatorChallenges/CycleDecomposition.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.ErdosGallai.erdos_gallai"
+      ],
+      "declaration": "OAI.ErdosGallai.erdos_gallai",
+      "lean_source": "lean/OAI/Combinatorics/CycleDecomposition/Main.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Combinatorics.CycleDecomposition.Main",
+      "source_blob": "a146a6edad4e9c89fcd4358cfb25141fe649c24f",
+      "source_contains_unqualified_name": true
+    },
+    {
+      "challenge_module": "ComparatorChallenges.EuclideanFiveColor",
+      "comparator_blob": "deeb7e0e6185d8e44bc8803774270ed1eca83958",
+      "comparator_config": "lean/ComparatorChallenges/EuclideanFiveColor.json",
+      "config_includes_decl": true,
+      "config_theorems": [
+        "OAI.EuclideanFiveColor.no_proper_five_coloring"
+      ],
+      "declaration": "OAI.EuclideanFiveColor.no_proper_five_coloring",
+      "lean_source": "lean/OAI/Geometry/PlaneColoring/Five.lean",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "solution_module": "OAI.Geometry.PlaneColoring.Five",
+      "source_blob": "377372bb81c65d351df698936319b809ca2682be",
+      "source_contains_unqualified_name": true
+    }
+  ],
+  "scope": "SOURCE_FILES_AND_CONFIG_ONLY_NOT_LEAN_REPLAY",
+  "upstream": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+}

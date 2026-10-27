@@ -2,6 +2,11 @@ name: OAI Math first25 exact Lean theorem replay
 on:
   workflow_dispatch:
     inputs:
+      shard_offset:
+        description: "Pinned declaration shard: 0 or 25"
+        required: true
+        type: number
+        default: 0
       shard_start:
         description: "Zero-based first25 index (0 through 24)"
         required: true
@@ -22,7 +27,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: oai-first25-lean-${{ github.ref }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
+  group: oai-first25-lean-${{ github.ref }}-${{ inputs.shard_offset }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
   cancel-in-progress: false
 
 jobs:
@@ -83,6 +88,7 @@ jobs:
           python3 sources/OPENAI-MATH-2026/replay_first25_lean.py \
             --upstream upstream/math \
             --output replay/oai26-first25 \
+            --offset "${{ inputs.shard_offset }}" \
             --start "${{ inputs.shard_start }}" \
             --count "${{ inputs.shard_count }}" \
             --build-timeout "${{ inputs.build_timeout }}"
@@ -99,7 +105,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: oai26-first25-lean-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
+          name: oai26-first25-lean-${{ inputs.shard_offset }}-${{ inputs.shard_start }}-${{ inputs.shard_count }}-${{ inputs.build_timeout }}
           path: replay/oai26-first25
           if-no-files-found: error
           retention-days: 30

@@ -11,18 +11,18 @@ import subprocess
 
 ROOT=Path(__file__).resolve().parent
 PIN="1581d4cbdd69a0faf34b2089614fe2a814316a6a"
-def first_shard(crosswalk):
+def first_shard(crosswalk, offset=0):
     rs=crosswalk["main_results"]
     if len(rs)!=200 or len({x["declaration"] for x in rs})!=200:
         raise ValueError("not exactly 200 unique pinned declarations")
-    return sorted(rs,key=lambda x:x["declaration"].encode("utf-8"))[:25]
+    return sorted(rs,key=lambda x:x["declaration"].encode("utf-8"))[offset:offset+25]
 
 def check_report(crosswalk, report):
     if report["record_type"]!="OAI26_WP01_SOURCE_CONFIG_PREFLIGHT/1" or report["upstream"]!=PIN:
         raise ValueError("unrecognized source report provenance")
     if report["scope"]!="SOURCE_FILES_AND_CONFIG_ONLY_NOT_LEAN_REPLAY":
         raise ValueError("source result falsely promoted")
-    wanted=first_shard(crosswalk)
+    wanted=first_shard(crosswalk, report.get("offset",0))
     seen=report["rows"]
     if len(seen)!=25 or [x["declaration"] for x in seen]!=[x["declaration"] for x in wanted]:
         raise ValueError("incorrect UTF-8 shard membership or order")
@@ -48,8 +48,8 @@ def fetch(path):
     if git_blob!=obj["sha"]:raise ValueError(f"Git blob mismatch: {path}")
     return path,(git_blob,content)
 
-def live_report(crosswalk):
-    rs=first_shard(crosswalk)
+def live_report(crosswalk, offset=0):
+    rs=first_shard(crosswalk,offset)
     paths=sorted({x[k] for x in rs for k in ("lean_source","comparator_config")})
     with ThreadPoolExecutor(max_workers=8) as pool:
         found=dict(pool.map(fetch,paths))
@@ -68,7 +68,7 @@ def live_report(crosswalk):
                r"(?<![A-Za-z0-9_])"+re.escape(suffix)+r"(?![A-Za-z0-9_])",source)),
            "permitted_axioms":conf.get("permitted_axioms",[])})
     result={"record_type":"OAI26_WP01_SOURCE_CONFIG_PREFLIGHT/1","upstream":PIN,
-        "scope":"SOURCE_FILES_AND_CONFIG_ONLY_NOT_LEAN_REPLAY","rows":checked}
+        "scope":"SOURCE_FILES_AND_CONFIG_ONLY_NOT_LEAN_REPLAY","rows":checked,**({"offset":offset} if offset else {})}
     check_report(crosswalk,result)
     return result
 
@@ -77,9 +77,10 @@ def main():
     p.add_argument("--live",action="store_true",help="fetch pinned source bytes through authenticated gh")
     p.add_argument("--check",action="store_true",help="compare live output with committed report")
     p.add_argument("--report",type=Path,default=ROOT/"FIRST25_CONFIG_PREFLIGHT.json")
+    p.add_argument("--offset",type=int,choices=(0,25),default=0)
     args=p.parse_args()
     crosswalk=json.loads((ROOT/"FORMALIZATION_CROSSWALK.json").read_text())
-    output=live_report(crosswalk) if args.live else json.loads(args.report.read_text())
+    output=live_report(crosswalk,args.offset) if args.live else json.loads(args.report.read_text())
     check_report(crosswalk,output)
     rendered=json.dumps(output,sort_keys=True,indent=2)+"\n"
     if args.check:
