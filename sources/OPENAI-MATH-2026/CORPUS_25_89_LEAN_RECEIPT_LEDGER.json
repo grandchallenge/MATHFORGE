@@ -1,0 +1,1461 @@
+{
+  "claim_boundary": "Only pinned Lean build and axiom replay. No Comparator execution, semantic equivalence, MATHCERT, or certification asserted.",
+  "counts": {
+    "comparator_executed": 0,
+    "effective_unique_0_89_pass": 86,
+    "effective_unique_0_89_unresolved": 4,
+    "new_50_89_pass": 37,
+    "new_50_89_timeout": 3,
+    "new_50_89_timeout_indices": [
+      62,
+      74,
+      79
+    ],
+    "protected_first25_pass": 25,
+    "protected_next25_effective_pass": 24,
+    "remaining_not_yet_evidenced_90_199": 110
+  },
+  "deduplication": {
+    "new_runs_25_49": "corroborative only; do not count twice",
+    "protected_first25_0_24": "FIRST25_LEAN_RECEIPT_LEDGER.json",
+    "protected_next25_25_49": "NEXT25_LEAN_RECEIPT_LEDGER.json",
+    "unique_declaration_indices": 65,
+    "unique_declarations": 65
+  },
+  "disposition": "PARTIAL_LEAN_AXIOM_EVIDENCE_NOT_COMPARATOR",
+  "record_type": "GCL_OAI26_WP01_CORPUS_RECONCILIATION_25_89/1",
+  "rows": [
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "5f1b64b637e4947aaba0b4fc7530cd569e8d9ca26e0e11a67a1f7a058c34676e",
+      "build_exit": 0,
+      "build_log_sha256": "36cc6a48ceafa9f99a5aa0778a2d670a69e50b0ea46320242c4e2b4e10393486",
+      "comparator_executed": false,
+      "comparator_git_blob": "19c3404b7923cfee0cae594f3526b8bc70de4295",
+      "declaration": "OAI.ComparatorModel.RecursivePotentials.main",
+      "extra_axioms": [],
+      "index_zero_based": 25,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40486089306,
+      "solution_git_blob": "43afbaa05006f44fb5d712d467ac6a18a5a005aa",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4004fd4cbe2f447a2cc7261e2e0329351ff1c69ba1b3cd6a5fab4b47e5714a96",
+      "build_exit": 0,
+      "build_log_sha256": "9d4c904130545d8edfb07e0c5c9500ba6cb989db663145011941b76a336ababe",
+      "comparator_executed": false,
+      "comparator_git_blob": "47699d55d822203bab4d0db311da402009bfd4c8",
+      "declaration": "OAI.CompleteCrouzeix.main",
+      "extra_axioms": [],
+      "index_zero_based": 26,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490615802,
+      "solution_git_blob": "efa3c8b2063e4cb282059ec21521635deffcc150",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ea7c0c50bd3004b632868f1285d3e4399c3b2bca0678010b9f7d236edc0b2f08",
+      "build_exit": 0,
+      "build_log_sha256": "f05e8e75c5e0ad05d061be18c01571640fd4b78b278eb3a08e23ec2c60dd8cc6",
+      "comparator_executed": false,
+      "comparator_git_blob": "76b958b25b47f8ce7a9e70e6f609c8cb3fa38337",
+      "declaration": "OAI.ComplexCancellation.main",
+      "extra_axioms": [],
+      "index_zero_based": 27,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490615802,
+      "solution_git_blob": "67e12506920cec027e64ff7118c513e3ac8455e0",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "cc8ad0094b9da73c0cf6a1e35f25747685608c483a6982956b503df31cee39e1",
+      "build_exit": 0,
+      "build_log_sha256": "71801a2766a9bf019440b4d50be9ad60c742f90472365cb4e3e5b31c80be4121",
+      "comparator_executed": false,
+      "comparator_git_blob": "38b64a15c55245e22157ed75b3f7938ed8964cc5",
+      "declaration": "OAI.ContinuumTemperature.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 28,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490615802,
+      "solution_git_blob": "61817448972c90526ac2b96fd7a327578705e834",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "1c819183e605d62421123077ca7e87b929730a97a2620285f1ccd304b783061b",
+      "build_exit": 0,
+      "build_log_sha256": "1133dd23269bed692b13cc9f5a16bddadd161bac13fca158cabb2a288a267e25",
+      "comparator_executed": false,
+      "comparator_git_blob": "ade028a33fd32bd5429c6fa5c4ede5096f6ba0e3",
+      "declaration": "OAI.CoordinateSweeps.conditional_main",
+      "extra_axioms": [],
+      "index_zero_based": 29,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490615802,
+      "solution_git_blob": "7f75c24a9bbc382ad06c955a854be0ddbef4575f",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "cd149d5393c82813f7814eda331bef9be04ceac837b78bd81d20db639add13f0",
+      "build_exit": 0,
+      "build_log_sha256": "2b36a04d9298efec09fa1b235cb60460023944b60e9a6f4578a748815b8fa129",
+      "comparator_executed": false,
+      "comparator_git_blob": "5960b394568ce88d53b9624a06172c1dec9e9183",
+      "declaration": "OAI.Cotype.mainTarget_proved",
+      "extra_axioms": [],
+      "index_zero_based": 30,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490615802,
+      "solution_git_blob": "ff7d685dbbffe372bf88c690873bb61baddd5a7b",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "6fe8268c3a1674699851212b18ecbd74666059f77111ca39ec051a0d05429127",
+      "comparator_executed": false,
+      "comparator_git_blob": "3c529f7f3d9dfc6ee39c9530ba131574e73f90f9",
+      "declaration": "OAI.CoulombAtom.generalized_ionization",
+      "extra_axioms": null,
+      "index_zero_based": 31,
+      "observed_axioms": null,
+      "run_id": 40490621341,
+      "solution_git_blob": "924cc67e71bf528cfea0b556c6eba5d175e0a005",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "6537440bd65de6bcdca0d73bfbb7c6e7dd483a69d39dc3c762d1bacdf3f96398",
+      "comparator_executed": false,
+      "comparator_git_blob": "4919f2323ffb4e24e368318375d1404763e5c9b2",
+      "declaration": "OAI.CriticalHoneycomb.finiteBridgeMassEstimate",
+      "extra_axioms": null,
+      "index_zero_based": 32,
+      "observed_axioms": null,
+      "run_id": 40490621341,
+      "solution_git_blob": "d8a278febc1e711e352b8604adc779354a1c6cda",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "6f000c2b7d05f8a754d5db2c01c7c8b9d2813cad20313b245f3d99c3baaa0ae1",
+      "build_exit": 0,
+      "build_log_sha256": "887fe4dc69f87db34d5684a03aeb5e894bb1b8c9a9c3652769ea93a10445503f",
+      "comparator_executed": false,
+      "comparator_git_blob": "05ece7e770bc6138940e0e1fca1ce5001fad0787",
+      "declaration": "OAI.CriticalSK.covariance_and_linear_tests",
+      "extra_axioms": [],
+      "index_zero_based": 33,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490621341,
+      "solution_git_blob": "04f1932f2bc7a9161669dc21088a13873dd5faf7",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "ea4ae040c25283d9184885cb9589f089ba109be1221c38e55277cc560916308c",
+      "comparator_executed": false,
+      "comparator_git_blob": "c159cdd22fe3dec446256aa9005fd79664d4e2c7",
+      "declaration": "OAI.CriticalSK.critical_mixing_bounds",
+      "extra_axioms": null,
+      "index_zero_based": 34,
+      "observed_axioms": null,
+      "run_id": 40490621341,
+      "solution_git_blob": "3daf45778658a94bbf635ae15df6957cf1282bb1",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "74b5ba340f1be502952655b9b22cdc4bf91b53d802fded9575a0d4fff1868485",
+      "build_exit": 0,
+      "build_log_sha256": "7853d1b62ade30b9648e067c53a855fcecb197943a3eb7b553056a2152ef8e3b",
+      "comparator_executed": false,
+      "comparator_git_blob": "9c57c7529b86caab8cdc838dc36fc47c6dd066a6",
+      "declaration": "OAI.CriticalZ3.critical_no_infinite",
+      "extra_axioms": [],
+      "index_zero_based": 35,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490621341,
+      "solution_git_blob": "dd6361d5bfe6ed788cfd94129ebd6850cbec0865",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "7e8f359d6584c16b6d46d7045639d26db6b47293da24501719d941571298734a",
+      "build_exit": 0,
+      "build_log_sha256": "ada5fba126b76968c76d891fdfa914fd1c64086aeb3a35b727816e170ac97961",
+      "comparator_executed": false,
+      "comparator_git_blob": "a93c443f9490463df2be4d5d81bca97ea20f065f",
+      "declaration": "OAI.CurrentProjection.fiberBlockMain",
+      "extra_axioms": [],
+      "index_zero_based": 36,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490625900,
+      "solution_git_blob": "f4ac8e1ea3d987123d7c49a2fa2eaf5450e7bf6e",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "7ad87815700b032d351346632c541fcc49db83934c5364483b66d737c4bcc9e9",
+      "build_exit": 0,
+      "build_log_sha256": "8ee6382f7bafa310bd212a3e7abe862a01e8744129c90918fd9135de69cd7194",
+      "comparator_executed": false,
+      "comparator_git_blob": "a93c443f9490463df2be4d5d81bca97ea20f065f",
+      "declaration": "OAI.CurrentProjection.hybridBlockMain",
+      "extra_axioms": [],
+      "index_zero_based": 37,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490625900,
+      "solution_git_blob": "1a676bd74973c8a48a07e6b8a9d51fd3721c06f2",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "fa9637946b84db9bde053aacde6209cb747309d9fb43d649d06da405bfd784e9",
+      "build_exit": 0,
+      "build_log_sha256": "124d6834a9eadbccd7b0450953aaee64533a72185d1b9ad5f0dbbe40ce73cf14",
+      "comparator_executed": false,
+      "comparator_git_blob": "479c2ef4d2352da81193e5ff8248f2cf86f484d7",
+      "declaration": "OAI.DeligneDrinfeld.main",
+      "extra_axioms": [],
+      "index_zero_based": 38,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490625900,
+      "solution_git_blob": "98a996a90f4f57a205a3e3e8673a8528e8e3dbbf",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "e675a1ae1037321594c074fb4429e9ca9df48e6cad78547284b36891e9e181ee",
+      "build_exit": 0,
+      "build_log_sha256": "654c5cf00631792dd7b0b02397c49abc14713424152110dcc117468e2f915400",
+      "comparator_executed": false,
+      "comparator_git_blob": "004af1188c299d9197ac032273fd6c6c913dfa97",
+      "declaration": "OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound",
+      "extra_axioms": [],
+      "index_zero_based": 39,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490625900,
+      "solution_git_blob": "6878be2842d3013ef26cac2936143972782aa6dc",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b05bb6739286b941bf58d95c3f24df43d4f88bdd3071d77817d3bd60216108fc",
+      "build_exit": 0,
+      "build_log_sha256": "a3eedb2f028f3016e3f1b40e56871dc24647d8d56762af412bb83f89f8b76933",
+      "comparator_executed": false,
+      "comparator_git_blob": "15b0f40b619e93df3a768da18be60a4b8ec9a211",
+      "declaration": "OAI.DiamondDistortion.headline_all_pairs",
+      "extra_axioms": [],
+      "index_zero_based": 40,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490625900,
+      "solution_git_blob": "445f27d6c2bb813bcabfb9725cc45550d5916fa2",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "e8434c461ae32c5b4acf7ea5b5559a975eb81412684ec59e3d105dda5cefa9d4",
+      "build_exit": 0,
+      "build_log_sha256": "cec4e63c20d260c58e4c7f0092cb5c0a2477e9a7370074ee4fe41f721ed85922",
+      "comparator_executed": false,
+      "comparator_git_blob": "0bcbfcbef94caf448a99232ee99a40e63bf33311",
+      "declaration": "OAI.DirectCrouzeix.complete_crouzeix",
+      "extra_axioms": [],
+      "index_zero_based": 41,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490630808,
+      "solution_git_blob": "a504007c267984cb20e977b0e8c31c4198bad757",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "e0696bfa2fde3c1065e7d05db27030937c409b0c8db6957002bf9003d1e7a22c",
+      "comparator_executed": false,
+      "comparator_git_blob": "ec13d276a24ffb2dd60eb8d490bd77663d7463e4",
+      "declaration": "OAI.DirectionalTransience.directional_transience_implies_ballisticity",
+      "extra_axioms": null,
+      "index_zero_based": 42,
+      "observed_axioms": null,
+      "run_id": 40490630808,
+      "solution_git_blob": "e63468abd024d61ed7abd20c0412572d6a53d966",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "aed9756b3038242b56a14455cac814044c8dde59d458f2703e8dbcac1bfcada7",
+      "comparator_executed": false,
+      "comparator_git_blob": "a946bfcf544ad212fbd46056dbff913c2d75247c",
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "extra_axioms": null,
+      "index_zero_based": 43,
+      "observed_axioms": null,
+      "run_id": 40490630808,
+      "solution_git_blob": "46c67f4000906b1391a471d6e6396ac0da3c16a5",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "927aafd3b6e4d220e16c5ccd1649dc3f14830cc664c3c37e3368ea07263cdcdd",
+      "build_exit": 0,
+      "build_log_sha256": "b1ff3f9ec079ba686818ce92ea4e9f579d5d7c4bad0bef11d10e55aeb1e5a0bd",
+      "comparator_executed": false,
+      "comparator_git_blob": "4920af0a07a04f28ad7e2c99293f7e0410b1032b",
+      "declaration": "OAI.Dixmier.current_main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 44,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490630808,
+      "solution_git_blob": "07ebfcdfe0955c13b36aa1751f47b33e3c9c5445",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "5a0091b32762b770ad78e09279db4e0e2ce39bd17fa547654280574bfe0358f5",
+      "build_exit": 0,
+      "build_log_sha256": "0ad986b8442baa2d1a2692f0ef64eb1a80dce993011eb8dcfa74f868c742748e",
+      "comparator_executed": false,
+      "comparator_git_blob": "e3df504122f88d0af3340c8657462987a40f8294",
+      "declaration": "OAI.DoublingHilbert.main",
+      "extra_axioms": [],
+      "index_zero_based": 45,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490630808,
+      "solution_git_blob": "721c8cbd169640047318faf7d1e6e95eb2d46b1c",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "fa4b541a84489c6c4530021f2aad2b8f3675d53ebe208d058df0c9d17ab366ac",
+      "build_exit": 0,
+      "build_log_sha256": "4309d86cde85cfc9f0bfed6ffcd9c5992f88100703433ee169f50b34747c695d",
+      "comparator_executed": false,
+      "comparator_git_blob": "0588dba1e6de59a9f7f92a1f2801b4c4f3ef46f8",
+      "declaration": "OAI.EntropyRateDimension.entropy_rate_dimension",
+      "extra_axioms": [],
+      "index_zero_based": 46,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490927599,
+      "solution_git_blob": "abb3289fa660f4aa687c8ae436a2484c881e3d79",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "9d87ccad6bd37859f829a682a47f34764a43ab47a405a5b8e229991a40d44748",
+      "comparator_executed": false,
+      "comparator_git_blob": "54fe1a43894db11e59ee505c3a04361ac0e9a0f3",
+      "declaration": "OAI.Erdos970.Erdos970Final.erdos_970_quadratic",
+      "extra_axioms": null,
+      "index_zero_based": 47,
+      "observed_axioms": null,
+      "run_id": 40490927599,
+      "solution_git_blob": "2f6dd39a4c039e86b8bb8b0217f060c7b5ef326c",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "9e78a8ca21e325b023f57c615c617190d69b4301032b0dc58d927545c970798d",
+      "build_exit": 0,
+      "build_log_sha256": "16910e992e3c7b2bebfa180a2917e20518d8e58c374efb6cc3630e9d940632fd",
+      "comparator_executed": false,
+      "comparator_git_blob": "5e16b3b81f9728d8dff5a5f650f3f5a58339e04d",
+      "declaration": "OAI.ErdosGallai.erdos_gallai",
+      "extra_axioms": [],
+      "index_zero_based": 48,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490927599,
+      "solution_git_blob": "a146a6edad4e9c89fcd4358cfb25141fe649c24f",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "60e7d9a5dc7b97cddacac5a2f919867b4f6d3914c1410e80bbeb879b11f1b28f",
+      "build_exit": 0,
+      "build_log_sha256": "23fc34e139db86cb8bb887a0f1fdb7823657ea24192d852b530c4c642a5f2409",
+      "comparator_executed": false,
+      "comparator_git_blob": "deeb7e0e6185d8e44bc8803774270ed1eca83958",
+      "declaration": "OAI.EuclideanFiveColor.no_proper_five_coloring",
+      "extra_axioms": [],
+      "index_zero_based": 49,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490927599,
+      "solution_git_blob": "377372bb81c65d351df698936319b809ca2682be",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "145d28554992cdfd69410295193a2e4993d9752edbbc80630ae8aa0ee011d04f",
+      "build_exit": 0,
+      "build_log_sha256": "3b8de3784f569d47f46772cb4ff8f35a7db759028164354969ec9b0bb27e65ee",
+      "comparator_executed": false,
+      "comparator_git_blob": "7b3d0e9dc89a1a5e254ead95031f29b8f0ccb9f2",
+      "declaration": "OAI.EuclideanRamsey.classification",
+      "extra_axioms": [],
+      "index_zero_based": 50,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490932846,
+      "solution_git_blob": "f61dbf1f08e982747098c903896971d7fd4d1524",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "54cda133e37f1d5cde5ef649d42d63b301d6fa5c8b79974d97c4d035b4f31bb0",
+      "build_exit": 0,
+      "build_log_sha256": "098e95cd4aa2e20907984a8cd8e3e511c8658507d9e82378decdce01b462b096",
+      "comparator_executed": false,
+      "comparator_git_blob": "aa51c3553f77a52d8f7e084955f1109b64737bd3",
+      "declaration": "OAI.EuclideanSteinitzBergstrom.main",
+      "extra_axioms": [],
+      "index_zero_based": 51,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490932846,
+      "solution_git_blob": "d953d9ec5929e37390a83f0aadccf7040d2f038f",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4056502f1ed20a1190d5a129ad9955500258db6b053da27916b5da16e88a969a",
+      "build_exit": 0,
+      "build_log_sha256": "efab660d2fea7b442dc53cc14e6dd8370bf808de489b15d2aa66121d056aa25f",
+      "comparator_executed": false,
+      "comparator_git_blob": "06ca6c6af3ecbe3b426f36b54c7ec9b4e319d117",
+      "declaration": "OAI.ExactDerandomization.exact_logarithmic_space_derandomization",
+      "extra_axioms": [],
+      "index_zero_based": 52,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490932846,
+      "solution_git_blob": "5397fc4cc54b4aefd0898108746b1f301c5c2ce7",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "8526be630a7872a43db33de2f82775575859a65edd536ae765cb193eae1d8710",
+      "build_exit": 0,
+      "build_log_sha256": "2d8a025dcb2393f785a18f1c5033996dea2c9ac6fd51693b840bf32f5207795f",
+      "comparator_executed": false,
+      "comparator_git_blob": "eadf04c3e09caf9407a677899121c391909ea52a",
+      "declaration": "OAI.ExactFourier.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 53,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490932846,
+      "solution_git_blob": "a054afb45c1792326ba43360828d94f7edc22d08",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "196d84ed53b9f9c05aac6c09a274b1aceb20ac350659a69f3c5262e0e391e280",
+      "build_exit": 0,
+      "build_log_sha256": "01617fb1c8c0f41fd11ed7254f0e616bfc25be15a7d2489dc8e66c82498e4719",
+      "comparator_executed": false,
+      "comparator_git_blob": "0be8dce107d8b7c3b021f24892702da9c6554657",
+      "declaration": "OAI.ExactModuli.exact_example",
+      "extra_axioms": [],
+      "index_zero_based": 54,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40490932846,
+      "solution_git_blob": "576d539fec65c621137dc5db65acaba57713c42e",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "bf0bd4600775eaf84021b2ba825d457e4dfbac39acd0d09e655be7b2765f5bb9",
+      "build_exit": 0,
+      "build_log_sha256": "5a2d6a99fadc7d833e9c01821eb1425a5b5013a7e6a4de0048e1f661234a9409",
+      "comparator_executed": false,
+      "comparator_git_blob": "ee45b5d9d29b7a11ca555e8e8b0c704b5e18c60c",
+      "declaration": "OAI.Fifths.Single.capped",
+      "extra_axioms": [],
+      "index_zero_based": 55,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492403069,
+      "solution_git_blob": "7bc46021e50c0c88ea2a63741889db254061b6f2",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "07cd5fc61f352ea63bebe218bdd69bf2afd529e10a7387630dea8f28271957ea",
+      "build_exit": 0,
+      "build_log_sha256": "ae7f92ee5b767b9c1b239f4fea81f281eb23c52f69a3b0a2c01af4b921aa7d10",
+      "comparator_executed": false,
+      "comparator_git_blob": "ee45b5d9d29b7a11ca555e8e8b0c704b5e18c60c",
+      "declaration": "OAI.Fifths.Single.unknown",
+      "extra_axioms": [],
+      "index_zero_based": 56,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492403069,
+      "solution_git_blob": "7bc46021e50c0c88ea2a63741889db254061b6f2",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "eeebe9f071a24852227f053a4c1c33bf68bbd835e53475b929057884e42bd46d",
+      "build_exit": 0,
+      "build_log_sha256": "3ccd6746658559febf5e169d915768f0b1e2c71f10e8f1f7621f02ab1c95a81d",
+      "comparator_executed": false,
+      "comparator_git_blob": "7045f43b1e61d02d4ec7880c3fca03152e60da60",
+      "declaration": "OAI.ForestSpace.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 57,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492403069,
+      "solution_git_blob": "3fa429babf1e6b5530388da4f6234f3cd55bcb58",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b669d8d78a6e457960b5e06dae5869eb0e1b8b324c1130902c590963f4e82068",
+      "build_exit": 0,
+      "build_log_sha256": "ce9918ba91e56aa51d0038b49d1ff9b17dc53492ea7d3094c2a63f6a859466c0",
+      "comparator_executed": false,
+      "comparator_git_blob": "4137151aeb28abf095f93e532b5ffcb7f79a6f6d",
+      "declaration": "OAI.FourierLLogL.paperMain",
+      "extra_axioms": [],
+      "index_zero_based": 58,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492403069,
+      "solution_git_blob": "bedb72c179d611d1278f8357d77346762e4d3352",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "02dac0cf6c4f740eb9fc20e78481a8675bc4b234626639eeff4cd84e14fa7886",
+      "build_exit": 0,
+      "build_log_sha256": "8c3289c2abd840c60c028f7db0618d140d782bb1fbcfcf5dc97ff6c03488bf74",
+      "comparator_executed": false,
+      "comparator_git_blob": "5ecbb645f1bd6340692db50f670d3c34ee60490f",
+      "declaration": "OAI.GAD.main",
+      "extra_axioms": [],
+      "index_zero_based": 59,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492403069,
+      "solution_git_blob": "c11701969c7b48e6e608b6c11ad1e598d715631e",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "8defe6d1776bf9f5c9f5efc71a2671d9f1dc21e25ba0011a4998416b41ff0467",
+      "build_exit": 0,
+      "build_log_sha256": "73458001c5129590e43b5840e39216fd7f59d2199ba0a36476c66f37e86417b2",
+      "comparator_executed": false,
+      "comparator_git_blob": "39c51f64c2203dde1e5277048c83eb9ba5d2b1f8",
+      "declaration": "OAI.GaussianMoat.fullMain",
+      "extra_axioms": [],
+      "index_zero_based": 60,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492407730,
+      "solution_git_blob": "73dd67edbe79d975971db5d996745e3905e15a5c",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "c8849aa5f884fa8739e20027fa4d1e99e1de1baed4d57709ab29e70a86a946be",
+      "build_exit": 0,
+      "build_log_sha256": "ffaf757062ffaa74ca31e93a8b9c5d739dd9ee4e314b724ecc0c8f8f47e0f393",
+      "comparator_executed": false,
+      "comparator_git_blob": "a5aafb0ff774e8e6809eac3bddd32c1509ffd93f",
+      "declaration": "OAI.GaussianPropeller.all_partitions",
+      "extra_axioms": [],
+      "index_zero_based": 61,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492407730,
+      "solution_git_blob": "2f6cd5eab90beca0529c7f4cfec0f35bbe56b514",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "f7c77012ddc24d189f11f5f3bf49c3a4bc6d986c4e6694650675b84aef0f7c36",
+      "comparator_executed": false,
+      "comparator_git_blob": "61565541cc63e581fa5e0d14458616de519b9448",
+      "declaration": "OAI.Generator.single_generation_of_II1_separable_predual",
+      "extra_axioms": null,
+      "index_zero_based": 62,
+      "observed_axioms": null,
+      "run_id": 40492407730,
+      "solution_git_blob": "cb864e7290dcce253f962970fb75ebb510e52a3e",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "55cfb48cda5de329b9a019a159869a157e61489aa99e64ac0ed3aa73887dd717",
+      "build_exit": 0,
+      "build_log_sha256": "03c16068e7cc4c8d0a3224b2621a9ecfd694a90fbed26185c7c8716c00e40b53",
+      "comparator_executed": false,
+      "comparator_git_blob": "1a24217a7982d3920a84790ab17372488fb8011c",
+      "declaration": "OAI.GrahamSpherical.full_main",
+      "extra_axioms": [],
+      "index_zero_based": 63,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492407730,
+      "solution_git_blob": "0bbceb83cc41bd0a605255402002e8f424b521b4",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "e623b14d9d3a6dced876b643f079b4fbe00c5f105525450a620c0103362d06e7",
+      "build_exit": 0,
+      "build_log_sha256": "341878ce0e3e98f4d667fd9e558a1e25ea775eda85a07b2b245f6604267a78ec",
+      "comparator_executed": false,
+      "comparator_git_blob": "139fca9b76ea0dd80d81fff1345938ba5be5a5ab",
+      "declaration": "OAI.Grothendieck.elementary_expansion",
+      "extra_axioms": [],
+      "index_zero_based": 64,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492407730,
+      "solution_git_blob": "e83f2e0c86750be81106b336b45456448d618cde",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "2953b29505b038728e1a23b94a15364e7b2b91174653bc8d16733113433bf1e8",
+      "build_exit": 0,
+      "build_log_sha256": "cce7f570f96aae3eb8e17bae1cfdcfae36da65b919653a00430fbe9984dc84ef",
+      "comparator_executed": false,
+      "comparator_git_blob": "ec8808475e4db1030986436736186289966ea077",
+      "declaration": "OAI.GroupRingDeterminant.main",
+      "extra_axioms": [],
+      "index_zero_based": 65,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492412169,
+      "solution_git_blob": "96862b7e30d07bd89b8ef95f2c8b571d1e1b38fc",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "6b7c8c90596ecf40c4cd541133d26b3279a14a10af7eb18b3961109e40447fd3",
+      "build_exit": 0,
+      "build_log_sha256": "c0739273fd5582b10a3577f149f9e7a9e1c278fb030c03502be36c88512a7b23",
+      "comparator_executed": false,
+      "comparator_git_blob": "0be26c249b1a10acc8f19fdf1c4053e5dceb10cc",
+      "declaration": "OAI.HadwigerCounterexample.not_hadwiger_conjecture",
+      "extra_axioms": [],
+      "index_zero_based": 66,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492412169,
+      "solution_git_blob": "0b8b8d46203e289c68f117b10916c28cc0573e23",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b9cfeea2fd805f0cf60d12f66d8317bb46357c01b1723a0a4c8dc29fd6342521",
+      "build_exit": 0,
+      "build_log_sha256": "5b5f3e2b4662a213e4ecd2ff50dcc5344222b17d89270dcb9220005050220901",
+      "comparator_executed": false,
+      "comparator_git_blob": "fd1dd520bd6d9f82eead3e12f95d823909300600",
+      "declaration": "OAI.HarmonicArtin.salvetti_cover_contractible",
+      "extra_axioms": [],
+      "index_zero_based": 67,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492412169,
+      "solution_git_blob": "810c3337be7ac582722936e42da57618290deb24",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "7d308fed5e37f1fb1ad5c5f04ef553105c7e8a0a57ed421d5edc1c505a28e9ee",
+      "build_exit": 0,
+      "build_log_sha256": "446f709b07e3aebebef27bd03663f9398c3ae16a3b68eb765787b327177195e5",
+      "comparator_executed": false,
+      "comparator_git_blob": "9884b60eaf11a1eb51ef96a723518a2269cacf55",
+      "declaration": "OAI.HarmonicCounterexample.main",
+      "extra_axioms": [],
+      "index_zero_based": 68,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492412169,
+      "solution_git_blob": "5a9cc5c8edb583d326b314195ee096a2011bc1d2",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "1553dcac5d4b11228fca3fada6a4def1a52707d811676032e6ea19b17491f19e",
+      "build_exit": 0,
+      "build_log_sha256": "56bff55d15c0d2546a9ac0f1e382a023a31225ce7d856ea5a9d9b6c372660e4c",
+      "comparator_executed": false,
+      "comparator_git_blob": "aea44bc9259e0cc9a992157f7352b02c844ee71a",
+      "declaration": "OAI.HenonLaneEmden.main_nonexistence",
+      "extra_axioms": [],
+      "index_zero_based": 69,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492412169,
+      "solution_git_blob": "e68ed629019e74239ef0f475268978112fe16dfe",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "24a59be09938779278ec677691c5934a6b826a6ff885b33c75c56dbdbffb6666",
+      "build_exit": 0,
+      "build_log_sha256": "12844335b5a9d4c99a9e1d826827319461847062387f09bbc45d3928ce537c66",
+      "comparator_executed": false,
+      "comparator_git_blob": "b64d87122934dabda5040a37935f1267e2bb6f7c",
+      "declaration": "OAI.HyperbolicObstruction.main",
+      "extra_axioms": [],
+      "index_zero_based": 70,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492416369,
+      "solution_git_blob": "5bddbc582f58b3d8042ebe907ad53975f20a85fb",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "98a3e0888487972aa9afe8b01ef2e71abb48226386927405892635554f44892b",
+      "build_exit": 0,
+      "build_log_sha256": "223d480c9eaa6f3d5e7083d608adcd694fc99e8c2435ef607f0b284c18a1d8d5",
+      "comparator_executed": false,
+      "comparator_git_blob": "c7aea47d3297cf2256fd5ecdba4e99aae4b103c7",
+      "declaration": "OAI.IndependentProducts.main_exponential",
+      "extra_axioms": [],
+      "index_zero_based": 71,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492416369,
+      "solution_git_blob": "e69794f8c6fe46d0fc87152af7eb650e4c41b369",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ca799a38733b10321ae174560cb4d81068f611c27da43533402ca2122eb7b592",
+      "build_exit": 0,
+      "build_log_sha256": "a104e7d6f52c631d48ab2ca4d676d0c90f3ac3e48f22e536a601fb6e28021a3e",
+      "comparator_executed": false,
+      "comparator_git_blob": "c7aea47d3297cf2256fd5ecdba4e99aae4b103c7",
+      "declaration": "OAI.IndependentProducts.main_general",
+      "extra_axioms": [],
+      "index_zero_based": 72,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492416369,
+      "solution_git_blob": "8829db711c60c7d18e7b2aa9469fe5005ba5547b",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "1f08105f6d6eabbc557ba1d1f06e588100e725ef678c73aad079a3f907606b4d",
+      "build_exit": 0,
+      "build_log_sha256": "a2e17e64bc9d3b319b2071d9ecbc2075364a37d414c93b900780643ad3b6b6c0",
+      "comparator_executed": false,
+      "comparator_git_blob": "f5c41097f552dcaf3d189fdadc2fb17df3f8b90e",
+      "declaration": "OAI.InfiniteMatroidCounterexample.main",
+      "extra_axioms": [],
+      "index_zero_based": 73,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40492416369,
+      "solution_git_blob": "83f4d579908a794de66d79bfcf81377492b63d00",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "19bd3da98c7774218f078b3878c452e03fa3c4f47b9085d314b32e845f40f764",
+      "comparator_executed": false,
+      "comparator_git_blob": "c5b2017c0cdb46e77d2e6560898dbcdfbda90599",
+      "declaration": "OAI.IntegralCharacterVarieties.SurfacePresentation.Diagram.producedMarkedValues_allSeams",
+      "extra_axioms": null,
+      "index_zero_based": 74,
+      "observed_axioms": null,
+      "run_id": 40492416369,
+      "solution_git_blob": "f2457411ba1ec389cb9762ff72fa1cdb093dc83e",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "7976041b2cb38579be837c0ec2b2b5548bd7c6448d12ea482a6d4888df662d4e",
+      "build_exit": 0,
+      "build_log_sha256": "e5ff9f134ff552abd64a6312aec345ec4672b628da551bfb986eae988eedf342",
+      "comparator_executed": false,
+      "comparator_git_blob": "1799a3b039d6fa47d476b5c9701ef26908e39770",
+      "declaration": "OAI.Kaplansky.kaplansky_quasitrace_counterexample",
+      "extra_axioms": [],
+      "index_zero_based": 75,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40526819137,
+      "solution_git_blob": "ffb1fc0ec38088de3f0ab903dacff54d56fdac14",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ff22124238f588f32268ed020bb1154bbc76538774f1247f0e3b7488ca61222b",
+      "build_exit": 0,
+      "build_log_sha256": "b60c9adab8148dbfd8da1a9e4cad12594d2b8904e54c3f51a158c5ae7fc55cee",
+      "comparator_executed": false,
+      "comparator_git_blob": "24d978aa6f9357ca3be7f5e52091760c77e98e07",
+      "declaration": "OAI.KaplanskyCounterexample.finitelyPresented_counterexample",
+      "extra_axioms": [],
+      "index_zero_based": 76,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40526819137,
+      "solution_git_blob": "bbae66f5e9e8df3319e38d0935a5077dd46bef1e",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ca3769b3c37f04abc9c62c82e1490b7f0821f3dc2da137c02dd66f767a14e899",
+      "build_exit": 0,
+      "build_log_sha256": "107f46319cb6fd3d8fa719c08e255725bdb625a16275daf80d6414a108ec161c",
+      "comparator_executed": false,
+      "comparator_git_blob": "9d883330b664be191ff1090876ec8da033979100",
+      "declaration": "OAI.KirchbergRordam.character_criterion",
+      "extra_axioms": [],
+      "index_zero_based": 77,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40526819137,
+      "solution_git_blob": "e06d68877eaf251935b13fc330906193ef6c5fca",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "7f879718c8aae31418d77ef4e6132e870a11c32065c6d2f1c26d43d706bd43e4",
+      "build_exit": 0,
+      "build_log_sha256": "14363669b50bcd7a5fcb0715b1c35dbc5251f053d0f710c567d2c9df2257a20f",
+      "comparator_executed": false,
+      "comparator_git_blob": "a4a000e527ec52015fa008b95cd64542cabc78fa",
+      "declaration": "OAI.LargeIndependentSets.mainTheoremReal",
+      "extra_axioms": [],
+      "index_zero_based": 78,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40526819137,
+      "solution_git_blob": "aa8afd648a8a28b9f51549a72b9180919b0287cd",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "2fb5e55dceab7aae14fa4101d4cc8c47e61656694f5f53654ca097e211e3c4d8",
+      "comparator_executed": false,
+      "comparator_git_blob": "4a7e97904317538cc5b882a01c0531262c1a2672",
+      "declaration": "OAI.Laughlin.mainTarget_proved",
+      "extra_axioms": null,
+      "index_zero_based": 79,
+      "observed_axioms": null,
+      "run_id": 40526819137,
+      "solution_git_blob": "9f6bb591d42b0f1a5ea3408526e63a8e1927d699",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ed44c7c5f3f125f4848426f5969e59b0641e03d4e3356149604ce5e2d584ee04",
+      "build_exit": 0,
+      "build_log_sha256": "8a508d9f59d048ac5a210cc7b2f4232f9b3f7e7340be1d5df9624b3d5e8e83c3",
+      "comparator_executed": false,
+      "comparator_git_blob": "d209c50f40c27103558496aa29ff3b0ce3b1bc60",
+      "declaration": "OAI.LeanBlast.CourtadeKumar.courtadeKumarAndAttainment",
+      "extra_axioms": [],
+      "index_zero_based": 80,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527191049,
+      "solution_git_blob": "ad758c7fb9a830a6a159b02afed81aeabf30fc08",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "e208ee71c7844ca93ad2fdc669409b2025647f991504573f4e7cd09809cc9cb9",
+      "build_exit": 0,
+      "build_log_sha256": "30c14ed5f1f3e242c837eecf9a7040df1b65c1737ea5585a6b76d687edc17a63",
+      "comparator_executed": false,
+      "comparator_git_blob": "9caa69252d0179207072d37866053bdde078787b",
+      "declaration": "OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement",
+      "extra_axioms": [],
+      "index_zero_based": 81,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527191049,
+      "solution_git_blob": "5ab67c81020533ebca1b16d94a863c8d176e31ba",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "1fb2b121f73bc4fff38d0161e3aefe545f6dff15a40d459fb16c1d30a822ab7a",
+      "build_exit": 0,
+      "build_log_sha256": "ded2a77c3f3a2a4012df313fbeefefcceaa0ee71c09ac8cc2799130e7423ac7b",
+      "comparator_executed": false,
+      "comparator_git_blob": "523e4418f2d0bb19a88e1c6f71e8959540902857",
+      "declaration": "OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds",
+      "extra_axioms": [],
+      "index_zero_based": 82,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527191049,
+      "solution_git_blob": "26bf6dd13ddb7dc4a51df75d547d027c11cffefb",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "cd64a1419464172b9fe8c2f2ea4988b6245d0ee4475985be7dffe51bba1fa5b5",
+      "build_exit": 0,
+      "build_log_sha256": "d3556095e8b21aa6d34a98521a5245b373cf99837aef5ad9cdf95c299e2cb085",
+      "comparator_executed": false,
+      "comparator_git_blob": "f9688c4b33b229462d16796eb79877f385f6b477",
+      "declaration": "OAI.LipschitzCounterexample.main",
+      "extra_axioms": [],
+      "index_zero_based": 83,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527191049,
+      "solution_git_blob": "c41da8b0a339da394a80fdc63d0ff39360b3d4ac",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "2941c6a3acb824fbcdb80a27ac913030c3c709439f9ab4a6a12e2449fa658b26",
+      "build_exit": 0,
+      "build_log_sha256": "775f73b2d00db6a9be7b00c839c45308ec12e712c583b217e75da35876162b4d",
+      "comparator_executed": false,
+      "comparator_git_blob": "8c6846e6c9c469b242fb5d30e645206435907903",
+      "declaration": "OAI.LittleFinitistic.Main.exists_counterexample",
+      "extra_axioms": [],
+      "index_zero_based": 84,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527191049,
+      "solution_git_blob": "c240b665334da6dc7eca86d52224ae38ed233872",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "24fe267f1ffc22b8d2823ecacf27946720e27843b87f2187e283824e58a97beb",
+      "build_exit": 0,
+      "build_log_sha256": "c63d7cb5681317c735254d3fd4454d619291fd8c0616df3add7d250985c9e4cd",
+      "comparator_executed": false,
+      "comparator_git_blob": "0631e74d2c344b7566e75508ff157ff0a90c5135",
+      "declaration": "OAI.LittleFinitistic.extreme_left_right_asymmetry",
+      "extra_axioms": [],
+      "index_zero_based": 85,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527385386,
+      "solution_git_blob": "80f71b7aaf2147e953e01e13b5119990296f9f5f",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "fb36c645730c540e01cb95775821ff2d57860abee6970d6c747764c57d226338",
+      "build_exit": 0,
+      "build_log_sha256": "77ddb96934aae14f1e54cddd81a730dd691f55a136d4e375af422efc6d7fc62f",
+      "comparator_executed": false,
+      "comparator_git_blob": "882a9ff957097cdf6d76150a79b53d7ecb678610",
+      "declaration": "OAI.LogBrunnMinkowski.main",
+      "extra_axioms": [],
+      "index_zero_based": 86,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527385386,
+      "solution_git_blob": "4a80e5a018fd7e0acfe1c1a9f33e07305dc1c4f2",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "99562a4a8b6d016235455da393b35f72b5b7a115d419d8be062002baf5ac282e",
+      "build_exit": 0,
+      "build_log_sha256": "6f487226f48f58429b1b99464ce1967c7f6b3302d6cefa60e7817e490ee72b13",
+      "comparator_executed": false,
+      "comparator_git_blob": "9a80391ad8226fdbdfd6db1ebca617821b571a2a",
+      "declaration": "OAI.LogConcaveSampling.exact_source_main",
+      "extra_axioms": [],
+      "index_zero_based": 87,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527385386,
+      "solution_git_blob": "67b36e78b8c344cf015eefe004d7ba9ac342cc79",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "063c8e3b8963424e651c076929953d366166b9c54a31d2fd108e17c10f358be9",
+      "build_exit": 0,
+      "build_log_sha256": "93d01870743ffcae79a8a15d3a8e8cd69026e8b91756234ebf8a9f560b05e42b",
+      "comparator_executed": false,
+      "comparator_git_blob": "22b315e47360c5e3ec5389704a23fab07afed07d",
+      "declaration": "OAI.LoopMatching.fullEndpoint",
+      "extra_axioms": [],
+      "index_zero_based": 88,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527385386,
+      "solution_git_blob": "fe8a1c3627c74bf58088193610635d27a34e7de4",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b27c2e5c587f5b5f5d83b876fc2f165c31eca798f953f0032113ba1d4f23bf46",
+      "build_exit": 0,
+      "build_log_sha256": "2006496014b2b0c08c09b0108b3b5b3389ffe8187673b84adb27f0207bb12fdd",
+      "comparator_executed": false,
+      "comparator_git_blob": "35f10fca9eafdab3c99979464ceed4b964325a6c",
+      "declaration": "OAI.MarkovSuperreflexivity.hasNontrivialMarkovType_iff_hasEquivalentUCNorm",
+      "extra_axioms": [],
+      "index_zero_based": 89,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40527385386,
+      "solution_git_blob": "85b3d9f7baaeca95c23375228bfd09d3def33dfa",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    }
+  ],
+  "runs": [
+    {
+      "artifact_id": 12725312644,
+      "artifact_name": "oai26-corpus-lean-25-1",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12725312644",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:a0cd6280814bc1a246dddb09b15b23644d4a9afb0578bf514379657746aac31b",
+      "github_conclusion": "success",
+      "index_range": [
+        25,
+        26
+      ],
+      "receipt_sha256": "bb171a274c2868920e13305a7cdb4eb1413082b3c093bab90cd78a70ef60c38a",
+      "run_id": 40486089306,
+      "verified_internal_file_hashes": 8,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12730507104,
+      "artifact_name": "oai26-corpus-lean-26-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12730507104",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:89cb0108f6f83ac51da760993e424ccd63d5e4717e8cde15b1ccd36974834747",
+      "github_conclusion": "success",
+      "index_range": [
+        26,
+        31
+      ],
+      "receipt_sha256": "4a065d121627e3278b6a45cc3679d93bac00c6ef1e0efa713cb2be2341518d44",
+      "run_id": 40490615802,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12732832427,
+      "artifact_name": "oai26-corpus-lean-31-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12732832427",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:a53cd1bbef00aee771aabe877c787c34a673d3a88328fefecec5364f6d2e256e",
+      "github_conclusion": "failure",
+      "index_range": [
+        31,
+        36
+      ],
+      "receipt_sha256": "cfdf25b58f4d14700f9c08ccc8059283852aab29cf848eca904c438e145964da",
+      "run_id": 40490621341,
+      "verified_internal_file_hashes": 14,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12730006514,
+      "artifact_name": "oai26-corpus-lean-36-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12730006514",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:a10519b0f53936125a923bb5dc2508cc550f615b739249d0060ea3c418e3c180",
+      "github_conclusion": "success",
+      "index_range": [
+        36,
+        41
+      ],
+      "receipt_sha256": "b3d30b55d44f1a5755b06abf5270922e41dd4ea74623100a490a75702181d4e5",
+      "run_id": 40490625900,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12730778676,
+      "artifact_name": "oai26-corpus-lean-41-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12730778676",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:57ff9ee20af2c95b3c85b8f250d7089d0e75375c987c4cc306b0edc9dcc10586",
+      "github_conclusion": "failure",
+      "index_range": [
+        41,
+        46
+      ],
+      "receipt_sha256": "7da079f75420b9c5e05eca307c90f7d9fca32224fdd88c8d0c00b25fd9a2b352",
+      "run_id": 40490630808,
+      "verified_internal_file_hashes": 16,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12729709660,
+      "artifact_name": "oai26-corpus-lean-46-4",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12729709660",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:9ca3c8c1155878223e7fc1a962049910f94fc90825fc13b989257dd20b58da36",
+      "github_conclusion": "failure",
+      "index_range": [
+        46,
+        50
+      ],
+      "receipt_sha256": "72ad8215761736f0bcffa72691ed5fa68b6873d9152b410ed76373f67b74b675",
+      "run_id": 40490927599,
+      "verified_internal_file_hashes": 15,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12729301463,
+      "artifact_name": "oai26-corpus-lean-50-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12729301463",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:0db240774bab39f94d8c5c19c849ce39ec07b9c675c4e8dbcb824ec7b02ba7fb",
+      "github_conclusion": "success",
+      "index_range": [
+        50,
+        55
+      ],
+      "receipt_sha256": "11878750be16577ac09d2e8f93ada47f7c118520f9833215262bb6dbb46f3881",
+      "run_id": 40490932846,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12729733126,
+      "artifact_name": "oai26-corpus-lean-55-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12729733126",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:411d024c68c943eb9ad2265ab3ae027b300afb0c833e5cea7b813ea20e8612ac",
+      "github_conclusion": "success",
+      "index_range": [
+        55,
+        60
+      ],
+      "receipt_sha256": "8ba384728a3b35ee9dc3eb1fa4d99f68c574a5fd6a79de2a5c1d78d096530e57",
+      "run_id": 40492403069,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12731657009,
+      "artifact_name": "oai26-corpus-lean-60-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12731657009",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:ec49cd654ed9241cb1e0b4aa3b23f33945330439147a89e2a72bc716422f4605",
+      "github_conclusion": "failure",
+      "index_range": [
+        60,
+        65
+      ],
+      "receipt_sha256": "321211279ddadcf042a0a49b4f48f90a16d963b73943660ceb47150b51dcad71",
+      "run_id": 40492407730,
+      "verified_internal_file_hashes": 18,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12733201168,
+      "artifact_name": "oai26-corpus-lean-65-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12733201168",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:fff3241dd10e76b4a9dd76d6c9fe84529ade3e0238c834e3cda1dfba77d9ae5a",
+      "github_conclusion": "success",
+      "index_range": [
+        65,
+        70
+      ],
+      "receipt_sha256": "e967f3939e9af5d50113d7fe77200dc488858e96427f746c6ba816ca80121df6",
+      "run_id": 40492412169,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12731013438,
+      "artifact_name": "oai26-corpus-lean-70-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12731013438",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:3f2c52dfbf331114c9eedf5214ade4d1752beb442e2071d9420fe3df243a6477",
+      "github_conclusion": "failure",
+      "index_range": [
+        70,
+        75
+      ],
+      "receipt_sha256": "c6b08e520f57feee2fa3369cc0f43a7f99edeb2c7946639f9279410d0f36ec27",
+      "run_id": 40492416369,
+      "verified_internal_file_hashes": 18,
+      "workflow_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5"
+    },
+    {
+      "artifact_id": 12750310471,
+      "artifact_name": "oai26-corpus-lean-75-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12750310471",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:2453d5e42a1d3d9cad0e650edc99bffc8fd51863ba0e95d276bbd585bbfc1dd1",
+      "github_conclusion": "failure",
+      "index_range": [
+        75,
+        80
+      ],
+      "receipt_sha256": "b4f40577e4a52510020217d2607336fdc385687dca20bc0b4ab8d56370af867c",
+      "run_id": 40526819137,
+      "verified_internal_file_hashes": 18,
+      "workflow_head": "51db8b07a0bbf49864aebfc39c7aa61e10c7bd2c"
+    },
+    {
+      "artifact_id": 12746278541,
+      "artifact_name": "oai26-corpus-lean-80-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12746278541",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:d8f1dcafb318fcbc2360a639a847303fd4b7e3ba0f1e54f747063fbd3c0f3dfc",
+      "github_conclusion": "success",
+      "index_range": [
+        80,
+        85
+      ],
+      "receipt_sha256": "de1b7c6256f8d36b63ff450ebfc3b5b0dacc51f86bdb3aaf80001fde52037fec",
+      "run_id": 40527191049,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "51db8b07a0bbf49864aebfc39c7aa61e10c7bd2c"
+    },
+    {
+      "artifact_id": 12750075794,
+      "artifact_name": "oai26-corpus-lean-85-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12750075794",
+      "files_sha256": null,
+      "github_archive_digest": "sha256:ebf41aeb75c9ac0638687b1d55070afc5c0600717e826bdd7cbf0f89cdbde753",
+      "github_conclusion": "success",
+      "index_range": [
+        85,
+        90
+      ],
+      "receipt_sha256": "8d0c38bd69bea6c6e486d94e7e8e07e6b4078e8365a236c035b7be2c7bf6db75",
+      "run_id": 40527385386,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "51db8b07a0bbf49864aebfc39c7aa61e10c7bd2c"
+    }
+  ],
+  "source_identity": {
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "upstream_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696"
+  },
+  "unresolved": "Build timeout exit 124 is not a theorem refutation. All Comparator challenges remain unexecuted. Exact source, axiom and internal artifact hashes verified for all 14 downloaded runs. GitHub archive digests recorded as provider metadata, not independently rehashed archive bytes."
+}
