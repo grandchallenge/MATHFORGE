@@ -1,6 +1,6 @@
 {
   "record_type": "GCL_OAI26_WP01_NEXT25_LEAN_RECEIPT_LEDGER/1",
-  "disposition": "PARTIAL_EVIDENCE_ADMISSION_TWO_TIMEOUTS_RETRY_PENDING",
+  "disposition": "PARTIAL_EVIDENCE_ADMISSION_ONE_TIMEOUT_AFTER_CONTROLLED_4200S_REPLAY",
   "claim_boundary": "Lean source replay and axiom audit only; Comparator not executed; manuscript semantic equivalence and MATHCERT certification not asserted",
   "source_identity": {
     "gcl_workflow_head": "9c3a18aec029998f4303b399d5dc09e6b7ce7059",
@@ -18,7 +18,11 @@
     "build_timeout": 2,
     "other_failure": 0,
     "archive_sha256_verified": 5,
-    "internal_file_sha256_verified": 96
+    "internal_file_sha256_verified": 96,
+    "effective_lean_axiom_pass": 24,
+    "effective_build_timeout": 1,
+    "extended_archive_sha256_verified": 2,
+    "extended_internal_file_sha256_verified": 14
   },
   "shards": [
     {
@@ -582,5 +586,54 @@
     }
   ],
   "verification": "All five original ZIP SHA256 digests matched GitHub artifact digests; each receipt's declared run, exact workflow head, source commit, tree and global index range matched; 96/96 listed internal files SHA256 matched; each build and axiom log SHA256 matched its per-declaration receipt; all 23 passing records had build_exit=axioms_exit=0, only permitted axioms, and no extra axioms; the two 124 exits have no axiom audit and are not passes.",
-  "next_action": "Read back bounded retry attempt 2 for indices 43 and 47; independently verify any new artifact receipts and digests; update this ledger through a protected PR; do not extend the 1500-second budget without separate governed authority."
+  "next_action": "Read back bounded retry attempt 2 for indices 43 and 47; independently verify any new artifact receipts and digests; update this ledger through a protected PR; do not extend the 1500-second budget without separate governed authority.",
+  "extended_replays": [
+    {
+      "global_index_zero_based": 43,
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "run_id": 40500508252,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40500508252",
+      "workflow_conclusion": "failure",
+      "workflow_head": "99fd03a672cd7d83dea317d3b4f3ad2441a746a9",
+      "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "toolchain": "leanprover/lean4:v4.34.1",
+      "build_timeout_seconds": 4200,
+      "artifact_id": 12736906287,
+      "artifact_zip_sha256": "51b7f35f8a540af7a4c116a32fdc0f2b5d50fc2db8a3d6969f87370b269ea945",
+      "receipt_json_sha256": "99dfa3f1db1737f8b3f337e055458062ea548313505cf9e6e2b51f8ce2de8137",
+      "verified_internal_file_hashes": 6,
+      "build_exit": 124,
+      "axioms_exit": null,
+      "observed_axioms": null,
+      "extra_axioms": null,
+      "verdict": "BUILD_TIMEOUT_4200S_NO_AXIOM_AUDIT",
+      "comparator_executed": false
+    },
+    {
+      "global_index_zero_based": 47,
+      "declaration": "OAI.Erdos970.Erdos970Final.erdos_970_quadratic",
+      "run_id": 40500513211,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40500513211",
+      "workflow_conclusion": "success",
+      "workflow_head": "99fd03a672cd7d83dea317d3b4f3ad2441a746a9",
+      "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "toolchain": "leanprover/lean4:v4.34.1",
+      "build_timeout_seconds": 4200,
+      "artifact_id": 12734374033,
+      "artifact_zip_sha256": "1c890b469c7a017c4350b543e2261b58a0f53284b2a1dfdff6789b3c45857147",
+      "receipt_json_sha256": "e67df056b7e0c5b8fd47f89ab6603a840a667188a89647db140a594801bc2bbf",
+      "verified_internal_file_hashes": 8,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false
+    }
+  ],
+  "remaining_obligation": "Index 43 exceeded controlled 4200s Lean build budget; no axiom audit or proof result. Requires a distinct source-pinned resource/compilation diagnosis and separately governed remedy before full shard closure."
 }
