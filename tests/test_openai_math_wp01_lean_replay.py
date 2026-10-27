@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1]/"sources"/"OPENAI-MATH-2026"
 sys.path.insert(0,str(ROOT))
-from replay_first25_lean import prepare_tasks,parsed_axioms
+from replay_first25_lean import prepare_tasks,parsed_axioms,extended_budget_authorized
 CW=json.loads((ROOT/"FORMALIZATION_CROSSWALK.json").read_text())
 REPORT=json.loads((ROOT/"FIRST25_CONFIG_PREFLIGHT.json").read_text())
 class ReplayGuards(unittest.TestCase):
@@ -23,6 +23,12 @@ class ReplayGuards(unittest.TestCase):
  def test_invalid_ranges(self):
   for start,count in ((-1,1),(0,0),(24,2),(25,1)):
    with self.assertRaises(ValueError):prepare_tasks(CW,REPORT,start,count)
+ def test_extended_budget_exact_targets_only(self):
+  for offset,start in ((0,2),(25,18),(25,22)):
+   self.assertTrue(extended_budget_authorized(offset,start,1))
+   self.assertFalse(extended_budget_authorized(offset,start,2))
+  for offset,start in ((0,1),(0,3),(25,17),(25,19),(25,21),(25,23)):
+   self.assertFalse(extended_budget_authorized(offset,start,1))
  def test_sorry(self):
   self.assertEqual(parsed_axioms("'T' depends on axioms: [Classical.choice, sorryAx]"),(None,"UNAPPROVED_SORRY_AXIOM"))
  def test_whitelist_observation(self):
