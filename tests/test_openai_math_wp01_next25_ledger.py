@@ -23,7 +23,7 @@ class Next25LedgerTests(unittest.TestCase):
         self.assertEqual(source["gcl_workflow_head"], PINNED_HEAD)
         self.assertEqual(source["upstream_commit"], PINNED_UPSTREAM)
         payload = PREFLIGHT.read_bytes()
-        oid = hashlib.sha1(b"blob " + str(len(payload)).encode() + b"\\0" + payload).hexdigest()
+        oid = hashlib.sha1(b"blob " + str(len(payload)).encode() + bytes([0]) + payload).hexdigest()
         self.assertEqual(source["preflight_blob_sha"], oid)
         self.assertEqual(len(self.preflight["rows"]), 25)
 
