@@ -116,6 +116,10 @@ def replay(upstream, destination, tasks, env, build_timeout=1500):
         (destination/"receipt.json").write_text(json.dumps(receipt,sort_keys=True,indent=2)+"\n")
     return records
 
+def extended_budget_authorized(offset, start, count):
+    """Single-declaration exception only: ArExplicit 2 or observed WP01 timeouts 43/47."""
+    return count == 1 and (offset, start) in ((0, 2), (25, 18), (25, 22))
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--upstream",type=Path,required=True)
@@ -127,8 +131,8 @@ def main():
     args=parser.parse_args()
     if args.build_timeout not in (1500, 4200):
         raise ValueError("Only existing 1500-second or controlled 4200-second build budgets permitted")
-    if args.build_timeout==4200 and (args.offset,args.start,args.count)!=(0,2,1):
-        raise ValueError("Extended budget is authorized for exact ArExplicit index 2 only")
+    if args.build_timeout==4200 and not extended_budget_authorized(args.offset,args.start,args.count):
+        raise ValueError("Extended budget is authorized only for exact ArExplicit index 2 or WP01 timeout indices 43/47, one declaration per run")
     report_name="NEXT25_CONFIG_PREFLIGHT.json" if args.offset==25 else "FIRST25_CONFIG_PREFLIGHT.json"
     report=json.loads((ROOT/report_name).read_text())
     crosswalk=json.loads((ROOT/"FORMALIZATION_CROSSWALK.json").read_text())
