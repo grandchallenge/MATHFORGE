@@ -47,14 +47,27 @@ def prepare_corpus(crosswalk, upstream, start, count):
                       "comparator_blob": blobs[1]})
     return tasks
 
+def validate_build_timeout(start, count, timeout):
+    """A single source-pinned 6500s exception for index 145, not a general budget increase.
+
+    Exact blocker: run 40674359419 reached Lake step 6174/7062 in 4200s;
+    run 40660890109 also timed out at 1500s. No Lean PASS is inferred.
+    """
+    if timeout in (1500, 4200):
+        return
+    if timeout == 6500 and start == 145 and count == 1:
+        return
+    raise ValueError("6500-second budget is restricted to exact index 145, count 1")
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--upstream", type=Path, required=True)
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--start", type=int, required=True)
     p.add_argument("--count", type=int, required=True)
-    p.add_argument("--build-timeout", type=int, choices=(1500, 4200), default=1500)
+    p.add_argument("--build-timeout", type=int, choices=(1500, 4200, 6500), default=1500)
     a = p.parse_args()
+    validate_build_timeout(a.start, a.count, a.build_timeout)
     upstream = a.upstream.resolve()
     env = verify_environment(upstream)
     crosswalk = json.loads((ROOT / "FORMALIZATION_CROSSWALK.json").read_text())
@@ -62,7 +75,8 @@ def main():
     env.update(corpus_range=[a.start, a.start + a.count],
                manifest_sha256=hashlib.sha256(
                    (upstream / "lean" / "lake-manifest.json").read_bytes()).hexdigest(),
-               claim_boundary="LEAN_AND_AXIOM_ONLY_NOT_COMPARATOR")
+               claim_boundary="LEAN_AND_AXIOM_ONLY_NOT_COMPARATOR",
+               build_timeout_seconds=a.build_timeout)
     results = replay(upstream, a.output, tasks, env, build_timeout=a.build_timeout)
     passed = sum(r["verdict"] == "LEAN_REPLAY_AND_AXS_PASS" for r in results)
     print(f"EXACT_CORPUS_REPLAY: {passed}/{len(results)} verified Lean and axiom checks")
