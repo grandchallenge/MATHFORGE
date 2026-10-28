@@ -48,16 +48,17 @@ def prepare_corpus(crosswalk, upstream, start, count):
     return tasks
 
 def validate_build_timeout(start, count, timeout):
-    """A single source-pinned 6500s exception for index 145, not a general budget increase.
+    """Source-pinned 6500s exceptions only for single indices 145 and 199.
 
-    Exact blocker: run 40674359419 reached Lake step 6174/7062 in 4200s;
-    run 40660890109 also timed out at 1500s. No Lean PASS is inferred.
+    Index 145: run 40674359419 reached step 6174/7062 in 4200s.
+    Index 199: run 40699788079 reached step 5491/7061 in 4200s.
+    Both require separate bounded evidence; no Lean PASS is inferred.
     """
     if timeout in (1500, 4200):
         return
-    if timeout == 6500 and start == 145 and count == 1:
+    if timeout == 6500 and count == 1 and start in (145, 199):
         return
-    raise ValueError("6500-second budget is restricted to exact index 145, count 1")
+    raise ValueError("6500-second budget is restricted to index 145 or 199, count 1")
 
 def main():
     p = argparse.ArgumentParser()
