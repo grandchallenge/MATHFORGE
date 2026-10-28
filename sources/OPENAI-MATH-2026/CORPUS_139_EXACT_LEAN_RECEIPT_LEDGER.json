@@ -1,0 +1,56 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_SINGLE_TARGET_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-139-EXACT-REPLAY",
+  "disposition": "LEAN_BUILD_AND_AXIOM_REPLAY_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Pinned Lean source compilation and permitted-axiom audit only; no Comparator execution, manuscript-semantic equivalence, mathematical certification, or theorem promotion.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "zero_based_index": 139
+  },
+  "evidence": {
+    "run_id": 40660613411,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40660613411",
+    "workflow_status": "completed",
+    "workflow_conclusion": "success",
+    "artifact_id": 12805995215,
+    "artifact_name": "oai26-corpus-lean-139-1",
+    "artifact_zip_sha256": "0fa4bc6aeabfc27c5f154d3d50f4ce9e8f3f7195c89b3de3364d75185f978452",
+    "internal_files_sha256_verified": 8,
+    "internal_files_sha256_failed": 0,
+    "run_identity": "run_id=40660613411; source_commit=eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846"
+  },
+  "result": {
+    "corpus_range": [
+      139,
+      140
+    ],
+    "declaration": "OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability",
+    "solution_module": "OAI.Analysis.RieszRectifiability.Main",
+    "solution_git_blob": "0926de65656949e1f3c4cc4dd40295772448a4c9",
+    "comparator_config": "lean/ComparatorChallenges/RieszQuantitative.json",
+    "comparator_git_blob": "8ed20da623efe0cf7530e87cafa9524fd0e3659c",
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+    "build_log_sha256": "f6f2757f28a8a54c27fe1649f212a2172f865cbac99ae4e961db9b852da6ac7e",
+    "axioms_log_sha256": "fd803efd07ab43eec065b070a43f026eb92eb9ac013aff2fe40d3cacf566059e",
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "actual_comparator_executed": false
+  }
+}
