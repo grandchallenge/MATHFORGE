@@ -1,0 +1,125 @@
+{
+  "record_type": "GCL_OAI26_WP02_SOURCE_RISK_TRIAGE/1",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "history": "history.md",
+    "gcl_index": "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json",
+    "index_source_blob": "2c68c086fff36a5806c936ad1659cf1a8d0b6dd9"
+  },
+  "disposition": "SOURCED_GAPS_RETAINED_NOT_COMPLETE",
+  "claim_boundary": "Pinned publisher history and catalogue/document-path risk triage only; no proof or source-semantic certification.",
+  "publisher_counts": {
+    "withdrawn_titles": 3,
+    "repaired_manuscripts": 14,
+    "additional_citation_updates": 13
+  },
+  "risk_cases": [
+    {
+      "id": "WP02-WITHDRAWAL-01",
+      "title": "Algebraicity of Weil classes on split abelian eightfolds",
+      "family_id": null,
+      "edition_path": null,
+      "withdrawn": true,
+      "proof_changed": true,
+      "statement_changed": "UNASSESSED",
+      "citation_only": false,
+      "source_mismatch": "UNASSESSED",
+      "unresolved": true,
+      "severity": "critical",
+      "evidence": [
+        "history.md (October 7, 2026 withdrawals)"
+      ],
+      "exact_review_target": "Locate archived withdrawn README/PDF and upstream source tree entry; map dependent Lean declarations; exclude withdrawn construction from accepted result counts.",
+      "note": "Publisher explicitly reports sign error invalidating stabilization-trace cancellation."
+    },
+    {
+      "id": "WP02-WITHDRAWAL-02",
+      "title": "Algebraicity of Kuga–Satake Correspondences for K3 Surfaces",
+      "family_id": null,
+      "edition_path": null,
+      "withdrawn": true,
+      "proof_changed": "DEPENDENCY_INVALIDATED",
+      "statement_changed": "UNASSESSED",
+      "citation_only": false,
+      "source_mismatch": "UNASSESSED",
+      "unresolved": true,
+      "severity": "critical",
+      "evidence": [
+        "history.md (October 7, 2026 withdrawals)"
+      ],
+      "exact_review_target": "Locate archived withdrawn edition and downstream citations/formal declarations; do not accept historical formalizations as current claims."
+    },
+    {
+      "id": "WP02-WITHDRAWAL-03",
+      "title": "The rational Hodge conjecture for products of K3 surfaces",
+      "family_id": null,
+      "edition_path": null,
+      "withdrawn": true,
+      "proof_changed": "DEPENDENCY_INVALIDATED",
+      "statement_changed": "UNASSESSED",
+      "citation_only": false,
+      "source_mismatch": "UNASSESSED",
+      "unresolved": true,
+      "severity": "critical",
+      "evidence": [
+        "history.md (October 7, 2026 withdrawals)"
+      ],
+      "exact_review_target": "Locate archived withdrawn edition and downstream citations/formal declarations; distinguish from other surviving rational Hodge results."
+    },
+    {
+      "id": "WP02-REVISION-F342",
+      "title": "Taming implies compatibility on four-manifolds",
+      "family_id": "342",
+      "edition_path": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
+      "withdrawn": false,
+      "proof_changed": true,
+      "statement_changed": true,
+      "citation_only": false,
+      "source_mismatch": true,
+      "unresolved": true,
+      "severity": "high",
+      "evidence": [
+        "history.md (October 7, 2026 fixes)",
+        "lean/docs/342.md",
+        "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json",
+        "sources/OPENAI-MATH-2026/SEMANTIC_CONCORDANCE_PRELIMINARY.md"
+      ],
+      "historical_edition": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf",
+      "exact_review_target": "Review October 6 corrected cone theorem against September 23 and formalized main existence theorem; update edition reference only through source-locked review.",
+      "literal_delta_summary": "October cone-sum equality is conditional on h_J^- = b_2^+(X)-1, not unconditional; compatible cone characterized by strict positivity and four-torus strict-inclusion example.",
+      "note": "Latest catalogue links October edition but pinned lean/docs/342.md links September edition. This is a source-version mismatch, not rejection of main existence Comparator."
+    },
+    {
+      "id": "WP02-PATH-F337",
+      "title": "Sharp integral fillings in CAT(0) spaces",
+      "family_id": "337",
+      "edition_path": "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf",
+      "withdrawn": false,
+      "proof_changed": "UNASSESSED",
+      "statement_changed": "UNASSESSED",
+      "citation_only": false,
+      "source_mismatch": false,
+      "unresolved": true,
+      "severity": "medium",
+      "evidence": [
+        "lean/docs/337.md",
+        "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json"
+      ],
+      "exact_review_target": "Replay existence and byte identity of CAT(0) PDF path and both comparator configs SharpCAT0Filling and FillingCoefficient; separately establish historical path-repair provenance.",
+      "note": "At pinned revision, docs/337.md PDF link agrees with MANUSCRIPT_INDEX; historical path repair not established by this observation."
+    }
+  ],
+  "crosswalk_gap": {
+    "withdrawn_exact_title_matches_in_372_family_719_manuscript_index": 0,
+    "withdrawn_names_not_assigned_to_family_ids": true,
+    "warning": "Absence of exact title from current index is not absence of archived manuscript or downstream dependency."
+  },
+  "acceptance_progress": {
+    "publisher_withdrawals_accounted_for_by_title": 3,
+    "publisher_repaired_manuscripts_individually_mapped": 0,
+    "publisher_additional_citation_updates_individually_mapped": 0,
+    "remaining_work": "Map exact 14 repaired editions and 13 citation updates; determine affected family/formal declaration/citation graph; add primary blob hashes, exact hypothesis deltas, and defensible exclusion list."
+  }
+}
