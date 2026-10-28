@@ -1,0 +1,160 @@
+{
+  "record_type": "GCL_OAI26_WP01_CORPUS_REPLAY_125_129/1",
+  "claim_boundary": "Pinned Lean build and axiom whitelist evidence only; no Comparator execution, manuscript-semantic equivalence, MATHCERT certification or mathematical promotion.",
+  "disposition": "FIVE_PINNED_DECLARATIONS_LEAN_AND_AXIOM_REPLAY_VERIFIED_UNCERTIFIED",
+  "source": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv"
+  },
+  "workflow": {
+    "run_id": 40601315624,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40601315624",
+    "trigger": "workflow_dispatch",
+    "attempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "gcl_head": "1c1e906d108844b50eac96c51232406f32fdadd5",
+    "artifact_id": 12779820307,
+    "artifact_name": "oai26-corpus-lean-125-5",
+    "artifact_zip_sha256": "58e75785d485b82f58bc139d8a9927d63bfce680e16c5e303a18da087892441a",
+    "corpus_range": [
+      125,
+      130
+    ]
+  },
+  "verification": {
+    "archive_digest_compared_with_github": true,
+    "internal_files_sha256_verified": 20,
+    "internal_files_sha256_failed": 0,
+    "row_build_axiom_logs_sha256_verified": 10,
+    "source_and_config_git_blobs_verified": 10,
+    "run_identity_file_verified": true,
+    "upstream_head_file_verified": true,
+    "manifest_identity_verified": true,
+    "one_byte_hostile_hash_mutations_rejected": 3,
+    "distinct_declarations": 5
+  },
+  "counts": {
+    "unique_indices": 5,
+    "lean_axiom_pass": 5,
+    "build_timeout": 0,
+    "comparator_executed": 0
+  },
+  "rows": [
+    {
+      "index_zero_based": 125,
+      "declaration": "OAI.ProjectionCounterexample.universal_simplex_upper_bound_false",
+      "solution_module": "OAI.Geometry.ProjectionBody.Counterexample",
+      "source_git_blob": "a5091dd2a0c7e0c12d2751e6a4b92da496e46f58",
+      "comparator_config": "lean/ComparatorChallenges/ProjectionCounterexample.json",
+      "comparator_git_blob": "4c1dc8409e152059847d8f8ba13dacecaded52d2",
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "69da7e1bbb54f60241389ccb8b6b776b18c74b3a968b86b897e997d3ec051eb8",
+      "axioms_log_sha256": "cc841bd15f53c5f0d97950a5d4ef8ed2d2e51751230d1feba088c2c3dceab7e3",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false,
+      "run_id": 40601315624,
+      "artifact_id": 12779820307
+    },
+    {
+      "index_zero_based": 126,
+      "declaration": "OAI.ProjectionMoments.main",
+      "solution_module": "OAI.Probability.ProjectionMoments.Main",
+      "source_git_blob": "c39ebce53bdce9c5d5b0a6b5c94d4c23a05d08d1",
+      "comparator_config": "lean/ComparatorChallenges/ProjectionMoments.json",
+      "comparator_git_blob": "b04976339edbb4afb9b79fbf2769051203db02f4",
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "38d4eb514081a73e9487c8c312761388f804e3c2ed9a06b8c6a28fa339d5a509",
+      "axioms_log_sha256": "8975ffa82563e98370d1e8e3da8d4fb71933ddbdb82c6827c9610f463688705e",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false,
+      "run_id": 40601315624,
+      "artifact_id": 12779820307
+    },
+    {
+      "index_zero_based": 127,
+      "declaration": "OAI.QAC.parity_lower_bound",
+      "solution_module": "OAI.InformationTheory.QuantumCircuit.Parity",
+      "source_git_blob": "b2a3acffd4e18de89321b89b6f58918c849531d7",
+      "comparator_config": "lean/ComparatorChallenges/QACParity.json",
+      "comparator_git_blob": "f9f591355023b027e9c9f1de62c202485854d01d",
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "f80e2d6e433a59181880494aa6d1a3c906fb12070b128a9a96dd7936eefd0a12",
+      "axioms_log_sha256": "cebdb246789804447da23992495b2310db4ada0cc937c86e75f5c252d2b36ab3",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false,
+      "run_id": 40601315624,
+      "artifact_id": 12779820307
+    },
+    {
+      "index_zero_based": 128,
+      "declaration": "OAI.QAC.parity_lower_bound_polynomial_size",
+      "solution_module": "OAI.InformationTheory.QuantumCircuit.Main",
+      "source_git_blob": "56c7d2410e355ff9f2791d30c0685c196ada7750",
+      "comparator_config": "lean/ComparatorChallenges/RegularParity.json",
+      "comparator_git_blob": "10d1700791431a1510c3690cb256ec1452f5d379",
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "6504a7f28836ea4eedc21b7efdf3f7f1951175244aa5154b4ce3abe8d8634016",
+      "axioms_log_sha256": "7481a7e8c653ec988cbec82f7f745efc4a06b74b1363b9a3c8f017c537168c88",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false,
+      "run_id": 40601315624,
+      "artifact_id": 12779820307
+    },
+    {
+      "index_zero_based": 129,
+      "declaration": "OAI.QuadricCounterexample.main_theorem",
+      "solution_module": "OAI.Geometry.QuadricBundles.Main",
+      "source_git_blob": "c8ca05a3ad6304a026ea95e1c75639489c3f3ced",
+      "comparator_config": "lean/ComparatorChallenges/QuadricBundles.json",
+      "comparator_git_blob": "60fda5b8c043d927c7a90b3d23be58aa0083bba0",
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "c1fd757b4978db6ff19ff27da785af12ca0defb47f25c169d9c40e480be13f30",
+      "axioms_log_sha256": "fab36fa8217274ffe7e736743bca3e3af29aebedc63459bb2114bb69c753dd2d",
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false,
+      "run_id": 40601315624,
+      "artifact_id": 12779820307
+    }
+  ],
+  "unresolved": "Comparator, manuscript-semantic concordance and certification are not part of this result. The 130-198 source-corpus register is separate. Indices 145 and 199 are explicitly excluded from this transaction."
+}
