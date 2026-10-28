@@ -85,11 +85,79 @@ class Next25LedgerTests(unittest.TestCase):
         self.assertTrue(all(r["toolchain"] == "leanprover/lean4:v4.34.1" and r["build_timeout_seconds"] == 4200 for r in x))
         self.assertTrue(all(len(r["artifact_zip_sha256"]) == 64 and len(r["receipt_json_sha256"]) == 64 for r in x))
         self.assertEqual(sum(r["verified_internal_file_hashes"] for r in x), 14)
-        self.assertEqual(self.ledger["counts"]["effective_lean_axiom_pass"], 24)
-        self.assertEqual(self.ledger["counts"]["effective_build_timeout"], 1)
+        self.assertEqual(self.ledger["counts"]["effective_lean_axiom_pass"], 25)
+        self.assertEqual(self.ledger["counts"]["effective_build_timeout"], 0)
         self.assertEqual(self.ledger["counts"]["extended_archive_sha256_verified"], 2)
         self.assertEqual(self.ledger["counts"]["extended_internal_file_sha256_verified"], 14)
-        self.assertIn("4200s", self.ledger["remaining_obligation"])
+        self.assertIn("No remaining Lean/axiom replay obligation", self.ledger["remaining_obligation"])
+
+
+    def test_staged_index43_receipt_and_effective_coverage(self):
+        import copy
+
+        ledger = self.ledger
+        staged = ledger["staged_replays"]
+        self.assertEqual(len(staged), 1)
+        row = staged[0]
+        original = ledger["rows"][43 - 25]
+
+        def admissible(candidate):
+            return (
+                candidate["global_index_zero_based"] == 43
+                and candidate["declaration"] == original["declaration"]
+                and candidate["solution_git_blob"] == original["source_git_blob"]
+                and candidate["comparator_config_git_blob"] == original["comparator_config_git_blob"]
+                and candidate["workflow_run_id"] == 40610405028
+                and candidate["workflow_conclusion"] == "success"
+                and candidate["workflow_head"] == "d98ca6719e08956068a5f1ff9c48c1dc889fd94b"
+                and candidate["upstream_commit"] == PINNED_UPSTREAM
+                and candidate["upstream_tree"] == ledger["source_identity"]["upstream_tree"]
+                and candidate["upstream_manifest_sha256"] == ledger["source_identity"]["upstream_manifest_sha256"]
+                and candidate["toolchain"] == "leanprover/lean4:v4.34.1"
+                and candidate["prewarm_exit"] == 124
+                and candidate["prewarm_budget_seconds"] == 4200
+                and candidate["prewarm_elapsed_seconds"] == 4200
+                and candidate["target_build_budget_seconds"] == 4200
+                and candidate["build_exit"] == candidate["axioms_exit"] == 0
+                and candidate["observed_axioms"] == AXIOMS
+                and candidate["extra_axioms"] == []
+                and candidate["verdict"] == "LEAN_REPLAY_AND_AXS_PASS"
+                and candidate["comparator_executed"] is False
+                and candidate["artifact_id"] == 12787250318
+                and candidate["artifact_zip_sha256"] == "6d21737e67e09cf873f29b6e1af156c68c6fd9be53fe22f90a40b5b757b660dc"
+                and candidate["receipt_json_sha256"] == "685a6bb69fcef19fb037b44242a414c674a6d4710a7cc1744e1555ceeca67db4"
+                and candidate["verified_internal_file_hashes"] == 13
+                and all(len(candidate[k]) == 64 for k in (
+                    "prewarm_log_sha256", "build_log_sha256", "axioms_log_sha256"
+                ))
+            )
+
+        self.assertTrue(admissible(row))
+        # Hostile fixtures: source drift, unapproved axiom, and failed target must fail closed.
+        for key, bad_value in [
+            ("workflow_head", "0" * 40),
+            ("upstream_commit", "0" * 40),
+            ("extra_axioms", ["sorryAx"]),
+            ("axioms_exit", 124),
+            ("build_exit", 124),
+            ("comparator_executed", True),
+            ("artifact_zip_sha256", "0" * 64),
+            ("solution_git_blob", "0" * 40),
+        ]:
+            bad = copy.deepcopy(row)
+            bad[key] = bad_value
+            self.assertFalse(admissible(bad), key)
+
+        self.assertEqual(ledger["counts"]["effective_lean_axiom_pass"], 25)
+        self.assertEqual(ledger["counts"]["effective_build_timeout"], 0)
+        self.assertEqual(ledger["counts"]["staged_archive_sha256_verified"], 1)
+        self.assertEqual(ledger["counts"]["staged_internal_file_sha256_verified"], 13)
+        self.assertEqual(ledger["current_unresolved"], [])
+        self.assertEqual(ledger["counts"]["lean_axiom_pass"], 23)
+        self.assertEqual(ledger["counts"]["build_timeout"], 2)
+        self.assertEqual(len(ledger["unresolved"]), 2)  # historical evidence retained
+        self.assertFalse(any(r["comparator_executed"] for r in ledger["rows"]))
+        self.assertIn("Comparator not executed", ledger["claim_boundary"])
 
 if __name__ == "__main__":
     unittest.main()
