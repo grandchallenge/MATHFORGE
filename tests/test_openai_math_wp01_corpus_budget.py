@@ -1,4 +1,4 @@
-"""Hostile offline checks for the bounded index-145 timeout exception."""
+"""Hostile offline checks for the bounded index-145 and index-199 exceptions."""
 from pathlib import Path
 import sys
 import unittest
@@ -14,8 +14,10 @@ class CorpusBudgetGuards(unittest.TestCase):
                 self.assertIsNone(validate_build_timeout(start, count, timeout))
 
     def test_exact_exception_only(self):
-        self.assertIsNone(validate_build_timeout(145, 1, 6500))
-        for start, count in ((144, 1), (146, 1), (145, 2), (145, 5), (199, 1), (25, 1)):
+        for start in (145, 199):
+            self.assertIsNone(validate_build_timeout(start, 1, 6500))
+        for start, count in ((144, 1), (146, 1), (145, 2), (145, 5),
+                             (198, 1), (199, 2), (199, 5), (200, 1), (25, 1)):
             with self.subTest(start=start, count=count):
                 with self.assertRaises(ValueError):
                     validate_build_timeout(start, count, 6500)
@@ -30,7 +32,8 @@ class CorpusBudgetGuards(unittest.TestCase):
         self.assertIn('          - "6500"', text)
         self.assertIn('GCL_START: ${{ inputs.shard_start }}', text)
         self.assertIn('GCL_COUNT: ${{ inputs.shard_count }}', text)
-        self.assertIn('"$GCL_START" != "145" || "$GCL_COUNT" != "1"', text)
+        self.assertIn('"$GCL_COUNT" != "1"', text)
+        self.assertIn('"$GCL_START" != "145" && "$GCL_START" != "199"', text)
         self.assertIn('timeout-minutes: 145', text)
 
 if __name__ == "__main__":
