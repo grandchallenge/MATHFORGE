@@ -1,0 +1,59 @@
+{
+  "record_type": "GCL_OAI26_WP02_EXACT_EDITION_IDENTITY/1",
+  "disposition": "TWO_VERSION_MISMATCHES_SOURCE_BLOBS_VERIFIED; STATEMENT_DELTAS_NOT_CERTIFIED",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696"
+  },
+  "cases": [
+    {
+      "family": "342",
+      "title": "Taming implies compatibility on four-manifolds",
+      "current_catalogue": {
+        "path": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
+        "git_blob_sha1": "2a910fe734003848f110acc18ff98d7ceabbf9d4",
+        "size_bytes": 249763
+      },
+      "lean_docs": {
+        "path": "lean/docs/342.md",
+        "git_blob_sha1": "890c10b573d2d383741d727fba384d4e52c0942e",
+        "linked_edition": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf",
+        "linked_edition_git_blob_sha1": "a2dca11fef1401becbc1fe3a00eb595ba73b86c5",
+        "linked_edition_size_bytes": 216875
+      },
+      "source_mismatch": true,
+      "statement_changed": "Prior source-concordance review identifies corrected cone claim; this receipt verifies only edition and blob identities.",
+      "review_target": "Compare October corrected cone theorem against September and explicitly separate selected main existence comparator from unformalized cone theorem."
+    },
+    {
+      "family": "376",
+      "title": "Incompressible Box Transport and Finite Computation",
+      "current_catalogue": {
+        "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf",
+        "git_blob_sha1": "71a7346f671bb43119887bdcd474f00e6a73563d",
+        "size_bytes": 767212
+      },
+      "lean_docs": {
+        "path": "lean/docs/376.md",
+        "git_blob_sha1": "b43f10df2d8fb85337f2b74abe299de009d0ad38",
+        "linked_edition": "preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/manuscript.pdf",
+        "linked_edition_git_blob_sha1": "c8eae2fd6cc36d60cfdae332fbcd44d58f214f53",
+        "linked_edition_size_bytes": 770717,
+        "comparator_names": [
+          "BalancedBoxRouting.lean",
+          "BalancedThreeStack.lean",
+          "ForcedNavierStokesComputation.lean"
+        ]
+      },
+      "source_mismatch": true,
+      "statement_changed": "UNASSESSED",
+      "review_target": "Examine October 6 torus-projection and common-clock repairs and compare the exact hypotheses and conclusions to the September 27 edition and three relevant comparator statements."
+    }
+  ],
+  "reproduction": {
+    "method": "GitHub contents API at immutable openai/math commit; paths, blob SHA1 and sizes; compare MANUSCRIPT_INDEX.json against lean/docs family links.",
+    "no_pdf_body_comparison": true
+  },
+  "claim_boundary": "Source edition and blob identity only; no formal or manuscript-level semantic equivalence, Comparator execution, or mathematical certification."
+}
