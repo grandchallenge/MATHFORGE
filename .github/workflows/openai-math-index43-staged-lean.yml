@@ -103,7 +103,7 @@ jobs:
             sort -z | xargs -0 -r sha256sum > replay/index43/files.sha256
       - name: Retain success or failure evidence
         if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: oai26-wp01-index43-staged-4200-4200
           path: replay/index43
