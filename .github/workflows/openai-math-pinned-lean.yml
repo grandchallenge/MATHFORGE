@@ -137,7 +137,7 @@ jobs:
 
       - name: Upload exact replay logs including failure evidence
         if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: openai-math-family342-lean-4341
           path: replay/openai-math-342
@@ -322,7 +322,7 @@ jobs:
 
       - name: Retain comparator and infrastructure failure evidence
         if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: openai-math-comparator-family342
           path: replay/comparator-342
@@ -515,7 +515,7 @@ jobs:
 
       - name: Retain positive or negative semantic bridge evidence
         if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: openai-math-family342-semantic-bridge
           path: replay/openai-math-semantic-342

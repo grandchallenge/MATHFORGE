@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: '3.12'
           cache: pip
@@ -133,6 +133,16 @@ jobs:
           path: nanoda-src
           fetch-depth: 1
           persist-credentials: false
+      # Reproduce the Rust compiler that produced the protected nanoda digest.
+      # Runner-default Rust 1.99.1 changed after the 1.97.1 baseline.
+      - name: Pin comparator Rust toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          rustup toolchain install 1.97.1 --profile minimal
+          rustup default 1.97.1
+          test "$(rustc --version)" = "rustc 1.97.1 (8bab26f4f 2026-07-14)"
+          test "$(cargo --version)" = "cargo 1.97.1 (c980f4866 2026-06-30)"
       - name: Assert exact replay TCB source identities
         shell: bash
         run: |
@@ -177,6 +187,8 @@ jobs:
           test -x lean4export-src/.lake/build/bin/lean4export
           test -x nanoda-src/target/release/nanoda_bin
           test -x ci/otp_landrun_argv_adapter.sh
+          # Preserve exact observed helper identities before any mismatch fails closed.
+          sha256sum landrun lean4export-src/.lake/build/bin/lean4export nanoda-src/target/release/nanoda_bin ci/otp_landrun_argv_adapter.sh
           test "$(sha256sum landrun | awk '{print $1}')" = "a4ba9ed1b6b53f9cfd57b9fb1e4f8f3c3ab69cf6a0147764ff70303a8306f858"
           test "$(sha256sum lean4export-src/.lake/build/bin/lean4export | awk '{print $1}')" = "e57369980b0b81228580ce08066fb9bd738e717e002673a143f4956d217266b0"
           test "$(sha256sum nanoda-src/target/release/nanoda_bin | awk '{print $1}')" = "60cc30add2758abce965f122b4e85f1fdd7c23607ea67680cec6721aa2ef23f0"
