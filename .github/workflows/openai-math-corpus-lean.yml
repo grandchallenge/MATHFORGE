@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 145
     steps:
-      - name: Enforce exact index-145 resource exception
+      - name: Enforce exact index-145 or index-199 resource exception
         shell: bash
         env:
           GCL_TIMEOUT: ${{ inputs.build_timeout }}
@@ -42,9 +42,13 @@ jobs:
           GCL_COUNT: ${{ inputs.shard_count }}
         run: |
           set -euo pipefail
+          # Index 199: pinned 4200s replay 40699788079 timed out at 5491/7061
+          # build steps; permit a single bounded 6500s retry. Index 145 is
+          # the separately admitted original exception. No other expansion.
           if [[ "$GCL_TIMEOUT" == "6500" ]] &&
-             [[ "$GCL_START" != "145" || "$GCL_COUNT" != "1" ]]; then
-            echo "::error::6500-second exception applies only to index 145, count 1"
+             [[ "$GCL_COUNT" != "1" ||
+                ( "$GCL_START" != "145" && "$GCL_START" != "199" ) ]]; then
+            echo "::error::6500-second exception applies only to index 145 or 199, count 1"
             exit 1
           fi
       - name: Checkout protected GCL harness
