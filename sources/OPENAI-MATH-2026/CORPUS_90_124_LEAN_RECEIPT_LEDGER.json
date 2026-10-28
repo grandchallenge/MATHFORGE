@@ -1,0 +1,928 @@
+{
+  "claim_boundary": "Exact-source Lean build and axiom replay only; no Comparator, manuscript-semantic equivalence, MATHCERT, or certification.",
+  "disposition": "HISTORICAL_REPLAY_AND_DEDUPLICATED_CORRECTED_LEAN_AXIOM_EVIDENCE",
+  "effective_counts": {
+    "comparator_executed": 0,
+    "corrected_pass": 5,
+    "corrected_timeout_indices": [
+      91,
+      102,
+      107,
+      108,
+      124
+    ],
+    "historical_pass": 30,
+    "historical_timeout": 5,
+    "unique_effective_lean_axiom_pass": 35,
+    "unique_effective_unresolved": 0,
+    "unique_indices_90_124": 35
+  },
+  "effective_replay_corrections": [
+    {
+      "comparator_executed": false,
+      "declaration": "OAI.MatrixAllFields.MatrixMultiplication.AllFieldMain.omega_lt_source_constant",
+      "effective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "historical_timeout_run_id": 40586840149,
+      "index_zero_based": 91,
+      "protected_evidence_blob_sha": "038cd4aea6900f68d5b5e794b98c9cc948ff19bc",
+      "protected_evidence_path": "sources/OPENAI-MATH-2026/CORPUS_091_EXTENDED_LEAN_RECEIPT_LEDGER.json",
+      "verified_success_run_id": 40655982816
+    },
+    {
+      "comparator_executed": false,
+      "declaration": "OAI.OptimalMaxCut.main",
+      "effective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "historical_timeout_run_id": 40586850229,
+      "index_zero_based": 102,
+      "protected_evidence_blob_sha": "04c53acacd243e50ea790bb296ac6ac70dba7e64",
+      "protected_evidence_path": "sources/OPENAI-MATH-2026/CORPUS_102_EXTENDED_LEAN_RECEIPT_LEDGER.json",
+      "verified_success_run_id": 40656251749
+    },
+    {
+      "comparator_executed": false,
+      "declaration": "OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice",
+      "effective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "historical_timeout_run_id": 40586855205,
+      "index_zero_based": 107,
+      "protected_evidence_blob_sha": "c82d8995c3fbceecae723ce08caab62dea252562",
+      "protected_evidence_path": "sources/OPENAI-MATH-2026/CORPUS_SIX_EXTENDED_LEAN_RECEIPT_LEDGER.json",
+      "verified_success_run_id": 40661212325
+    },
+    {
+      "comparator_executed": false,
+      "declaration": "OAI.PerfectCompleteness.Theorem11.exists_reduction",
+      "effective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "historical_timeout_run_id": 40586855205,
+      "index_zero_based": 108,
+      "protected_evidence_blob_sha": "c82d8995c3fbceecae723ce08caab62dea252562",
+      "protected_evidence_path": "sources/OPENAI-MATH-2026/CORPUS_SIX_EXTENDED_LEAN_RECEIPT_LEDGER.json",
+      "verified_success_run_id": 40661217258
+    },
+    {
+      "comparator_executed": false,
+      "declaration": "OAI.Problem367.free_ising_factor_iff_threshold",
+      "effective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "historical_timeout_run_id": 40595094502,
+      "index_zero_based": 124,
+      "protected_evidence_blob_sha": "fa2b38c91b4cef90b6f84d0ed985902156a0778f",
+      "protected_evidence_path": "sources/OPENAI-MATH-2026/CORPUS_124_EXACT_LEAN_RECEIPT_LEDGER.json",
+      "verified_success_run_id": 40661222335
+    }
+  ],
+  "historical_counts": {
+    "build_timeout": 5,
+    "build_timeout_indices": [
+      91,
+      102,
+      107,
+      108,
+      124
+    ],
+    "comparator_executed": 0,
+    "effective_pass_0_124": 116,
+    "lean_axiom_pass": 30,
+    "prior_protected_pass_0_89": 86,
+    "remaining_not_yet_evidenced_125_199": 75,
+    "unique_declaration_indices": 35
+  },
+  "protected_input_head": "f6baceefbcc8bc6f64551d89d2dc7a983370e85b",
+  "record_type": "GCL_OAI26_WP01_CORPUS_RECONCILIATION_90_124/2",
+  "rows": [
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "d9e896e8914205f126ac36ddef8a786dae67a7cd18e6ada41d95ea185006c409",
+      "build_exit": 0,
+      "build_log_sha256": "071d5fdcf590a29e75d4cd6f568d0e41b0196aab5fefb4176a4926fbcc406d18",
+      "comparator_config": "lean/ComparatorChallenges/MatchingEntropy.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "1d0587a822eb8044dccaf0e28c9c5b7417c4da99",
+      "declaration": "OAI.MatchingEntropy.entropy_main",
+      "extra_axioms": [],
+      "index_zero_based": 90,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586840149,
+      "solution_git_blob": "fc710eb9dc750c1132a31e786d895e3b853e885f",
+      "solution_module": "OAI.Combinatorics.PerfectMatching.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "2a90b3bb6c5d2c35cc63d46655d1cccec529acb7444da407d2d475af2040e43e",
+      "comparator_config": "lean/ComparatorChallenges/MatrixFields.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "ea0bc98d111a6298b8a786a17b024d9597eb1a2a",
+      "declaration": "OAI.MatrixAllFields.MatrixMultiplication.AllFieldMain.omega_lt_source_constant",
+      "extra_axioms": null,
+      "index_zero_based": 91,
+      "observed_axioms": null,
+      "run_id": 40586840149,
+      "solution_git_blob": "16e2687447f1512b599c65e24f07b608b19d9155",
+      "solution_module": "OAI.LinearAlgebra.MatrixFields.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "6977cf44d0e2b8fdea835fc2463bb70dd226818dc0cbffaa29e28f19dbf3f3d9",
+      "build_exit": 0,
+      "build_log_sha256": "556cdc21774fc031e00adf2479434f050c95d1c4a0c7757fd49f0cffa5c03761",
+      "comparator_config": "lean/ComparatorChallenges/MatrixMultiplication.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "05b80f27b970063376d5b76b83cdc9558f3aeef9",
+      "declaration": "OAI.MatrixMultiplication.complex_alpha_gt_93_div_200",
+      "extra_axioms": [],
+      "index_zero_based": 92,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586840149,
+      "solution_git_blob": "7608542c58cf1d6e2955038e8b35f0a5fb127d0a",
+      "solution_module": "OAI.LinearAlgebra.MatrixMultiplication.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "06439b837dc943ae34fc7641ac4a109ac013c64f3a6b83eb235290baa2a1f85e",
+      "build_exit": 0,
+      "build_log_sha256": "ff7775ba51643f3db516ed1c0d4f9c664e29aa902ebc63ee31992391a9f542fc",
+      "comparator_config": "lean/ComparatorChallenges/MatrixMultiplication.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "05b80f27b970063376d5b76b83cdc9558f3aeef9",
+      "declaration": "OAI.MatrixMultiplication.complex_omega_le_nine_quarters",
+      "extra_axioms": [],
+      "index_zero_based": 93,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586840149,
+      "solution_git_blob": "7608542c58cf1d6e2955038e8b35f0a5fb127d0a",
+      "solution_module": "OAI.LinearAlgebra.MatrixMultiplication.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "319e7c54710fcd1aa019f5c342ddab982400f1535bea309f630f117866891902",
+      "build_exit": 0,
+      "build_log_sha256": "ff7775ba51643f3db516ed1c0d4f9c664e29aa902ebc63ee31992391a9f542fc",
+      "comparator_config": "lean/ComparatorChallenges/MatrixMultiplication.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "05b80f27b970063376d5b76b83cdc9558f3aeef9",
+      "declaration": "OAI.MatrixMultiplication.complex_rectangular_omega_lt_523_div_250",
+      "extra_axioms": [],
+      "index_zero_based": 94,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586840149,
+      "solution_git_blob": "7608542c58cf1d6e2955038e8b35f0a5fb127d0a",
+      "solution_module": "OAI.LinearAlgebra.MatrixMultiplication.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "601a08756a6751cf26223eff627a630c9b76c05e491e10d22b6d68872dbd564d",
+      "build_exit": 0,
+      "build_log_sha256": "54253a05752fa98758676f1289d21b5ee617b8c7e078f04e89d7e0602eed3f15",
+      "comparator_config": "lean/ComparatorChallenges/MaximalSeshadriConstants.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "965f87b11e2f2f3400fdfbbdf2799685dbdd7925",
+      "declaration": "OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants",
+      "extra_axioms": [],
+      "index_zero_based": 95,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586844776,
+      "solution_git_blob": "29eb3f52093ba4948b90ab5b97518edfc1969778",
+      "solution_module": "OAI.AlgebraicGeometry.Seshadri.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ddcb3c6d4e1a5f172c479be2c2fe80b6ecfd56db67028837e7f42cfe06364e3b",
+      "build_exit": 0,
+      "build_log_sha256": "82ccd0d5e2c34f6f47035f68453a75265ad12fd0453ace04c6d089f1d2a16e5f",
+      "comparator_config": "lean/ComparatorChallenges/MemoryPrecision.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "abbfdeb419e4312f8215ea961a34c689aacba5f4",
+      "declaration": "OAI.MemoryPrecision.main",
+      "extra_axioms": [],
+      "index_zero_based": 96,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586844776,
+      "solution_git_blob": "37a55271d3acd46185eedc7ddef076013e2c520c",
+      "solution_module": "OAI.Probability.MemoryPrecision.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "8c36fe844da7e562949231316c0eff7d9be7eaef555fc000e83320f1fece24f0",
+      "build_exit": 0,
+      "build_log_sha256": "d245c19bbe24d04353adedfeedbc253219124d15375a626043186ab523770c67",
+      "comparator_config": "lean/ComparatorChallenges/MetricEntropyDuality.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "66597fb02cd9eace9491154ccfcc20bc3267a0ef",
+      "declaration": "OAI.MetricEntropyDuality.exists_entropy_duality_counterexample_with_covers",
+      "extra_axioms": [],
+      "index_zero_based": 97,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586844776,
+      "solution_git_blob": "716313ca83c768389812c6551e59d8559fb83ed7",
+      "solution_module": "OAI.Analysis.MetricEntropy.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "9ac255ce5b1613c9ae9754190465bbe1b11d423411647b61f78767f8a9b08a44",
+      "build_exit": 0,
+      "build_log_sha256": "6f50a7a480e8ce6f26361e05ce1911020008f0f54bdf7fd2ebd7ff89e49a2190",
+      "comparator_config": "lean/ComparatorChallenges/KMedianRecovery.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "ab8b736b382dbc7c76f34b96f417bd293568bfba",
+      "declaration": "OAI.MetricKMedianRecovery.global_application",
+      "extra_axioms": [],
+      "index_zero_based": 98,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586844776,
+      "solution_git_blob": "a4c3020d1d549c3ae5e78da7714b190a64070af1",
+      "solution_module": "OAI.Combinatorics.KMedianRecovery.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "0bafebe79542dc4d72480b98f7958a497946f07bb26907b39fab16d0604cf4dc",
+      "build_exit": 0,
+      "build_log_sha256": "153f3acca10b3e2627ec2062c12dc5571a51356a8911cb75bd371eae24e2e5a7",
+      "comparator_config": "lean/ComparatorChallenges/Nagata.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "954096c84dd43363642bb7fcb48d778c63af7714",
+      "declaration": "OAI.Nagata.nagata_conjecture",
+      "extra_axioms": [],
+      "index_zero_based": 99,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586844776,
+      "solution_git_blob": "79e90602f8951645bf57c8b94a9cb2ccfb531177",
+      "solution_module": "OAI.AlgebraicGeometry.PlaneCurves.Nagata",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "60a5430789bc1f46d643a20e6b9d2fef3d1e5690ff9da7a929cc7912e94aa716",
+      "build_exit": 0,
+      "build_log_sha256": "a0ac4674f396f524a273a3c2dca846fec02e706931a8124a5c1a0042e1911e68",
+      "comparator_config": "lean/ComparatorChallenges/OddKaplansky.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "9b0b049b08448c310984913e8cf0af637f19f3d4",
+      "declaration": "OAI.OddKaplansky.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 100,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586850229,
+      "solution_git_blob": "2c7a4d935a390a27d8ffc3062673cfa19344ce71",
+      "solution_module": "OAI.Algebra.OddKaplansky.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "61e36c89b39d7368e29731892117c249b03432421affee5dac164dfdcdb8ceb3",
+      "build_exit": 0,
+      "build_log_sha256": "d8c62253e71c1f3d84e542a47bb5dec932f9ae04de920d1cf0320b5f261c2aec",
+      "comparator_config": "lean/ComparatorChallenges/OneWayLiveness.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "e3fe278de13820ccc5e916115e9426aff2b8fb5d",
+      "declaration": "OAI.OneWayLiveness.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 101,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586850229,
+      "solution_git_blob": "a039744c40e96e7e52f8ac71847c3aafd5cb96c8",
+      "solution_module": "OAI.Combinatorics.Automata.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "ab8fd957daee73ce057f5ba43849623661400d0271ff5a8cc50c1ddf327327f6",
+      "comparator_config": "lean/ComparatorChallenges/OptimalMaxCut.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "f33d3ea92b14827b02eb4653bb74187eb108b8d0",
+      "declaration": "OAI.OptimalMaxCut.main",
+      "extra_axioms": null,
+      "index_zero_based": 102,
+      "observed_axioms": null,
+      "run_id": 40586850229,
+      "solution_git_blob": "ba1155880978dd1c4deb62c163d6086c36a233d9",
+      "solution_module": "OAI.Computability.MaxCut.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "2c5f307042598e148498c0ac542dd4affc552336435174fc752d6c2b3f559426",
+      "build_exit": 0,
+      "build_log_sha256": "9ec5fb14ed6b0b0d6fb585631be663839e10ecdd10acd29dd77139a8bd8fe0fb",
+      "comparator_config": "lean/ComparatorChallenges/ProjectionVolume.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "abee0b7a99518236725a4443144dadca064943fa",
+      "declaration": "OAI.Paper092.product_counterexample",
+      "extra_axioms": [],
+      "index_zero_based": 103,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586850229,
+      "solution_git_blob": "5baf0d43bec69c53a305185b88be6e5ebe305f48",
+      "solution_module": "OAI.Geometry.ProjectionVolume.ProductCounterexample",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "91d5f5172f55b06510ab1a13ebc8ab780c6168f739c4df437df3524f4bbf7b32",
+      "build_exit": 0,
+      "build_log_sha256": "89f78e6c4c48a3154c5e818b8d2e2180854226485fbe34d5ffbedc976d57555f",
+      "comparator_config": "lean/ComparatorChallenges/CompleteCrossing.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "8e931afb1b13bd75b052f905bff8a63069008000",
+      "declaration": "OAI.Paper170.complete_graph_crossing_number",
+      "extra_axioms": [],
+      "index_zero_based": 104,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586850229,
+      "solution_git_blob": "bbb76af01755a1712567b4d96e46c05b0c60fbb3",
+      "solution_module": "OAI.Combinatorics.CompleteCrossing.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "44f2c387da6f52f4701dafe26bb5f9e4096c15d0e34aad5afda5a120b5611e8b",
+      "build_exit": 0,
+      "build_log_sha256": "fe37e8aebd06d5aacdb95056108c232a20e9aa3140a171ebcf9cdbeb454b5252",
+      "comparator_config": "lean/ComparatorChallenges/HyperbolicCones.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "332fb7b4a1c0e17a4c2473c40b7cdc9888caaecc",
+      "declaration": "OAI.Paper256.main_result",
+      "extra_axioms": [],
+      "index_zero_based": 105,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586855205,
+      "solution_git_blob": "6354d30d59359984f364c48341f1bc0d151d260b",
+      "solution_module": "OAI.Analysis.HyperbolicCones.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "23824d99d1973b7c1a68c13e8e8b08c198652ab4d3c41c3592743aa5f3a90e06",
+      "build_exit": 0,
+      "build_log_sha256": "724d3d54bd178a5cb97199b1fba1320cd87b565067db034a4b97d5ec3d49c24f",
+      "comparator_config": "lean/ComparatorChallenges/SensitivitySeparation.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "4a045e5a5b2d3879ea54f5d6a790869a70d36da1",
+      "declaration": "OAI.Paper320.quantitative_separation",
+      "extra_axioms": [],
+      "index_zero_based": 106,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586855205,
+      "solution_git_blob": "d72f424a9e90900da6e5f35ba4f486287eadf342",
+      "solution_module": "OAI.Combinatorics.Sensitivity.Separation",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "e4b85d54d75c89b03069bca0d19860d6e12655474fc23522d34423e7603e8cfb",
+      "comparator_config": "lean/ComparatorChallenges/PartitionPrinciple.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c280139691ba247c85ac7f2f9d027e6187c974be",
+      "declaration": "OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice",
+      "extra_axioms": null,
+      "index_zero_based": 107,
+      "observed_axioms": null,
+      "run_id": 40586855205,
+      "solution_git_blob": "70884df9515d0b4af6f7a6acaf9aba13a2e8793b",
+      "solution_module": "OAI.SetTheory.PartitionPrinciple.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "ad0fb11ab70872e894d9be1238a226af8ea91af5dc88e9f05af4f0135909c978",
+      "comparator_config": "lean/ComparatorChallenges/PerfectCompleteness.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c8a63fa00611be828228a68dc728f703cca66754",
+      "declaration": "OAI.PerfectCompleteness.Theorem11.exists_reduction",
+      "extra_axioms": null,
+      "index_zero_based": 108,
+      "observed_axioms": null,
+      "run_id": 40586855205,
+      "solution_git_blob": "a01231ded2e43551949ac614f6d7c48a7d1d1d66",
+      "solution_module": "OAI.Computability.PerfectCompleteness.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "75a2bab7f923eba3b30886121eb60c6f6abd48af934fbcbdc3ad4822be30811c",
+      "build_exit": 0,
+      "build_log_sha256": "648542e988cb1149f0f9710f05ae01f478ed863bb7aeef758ce0f83befdbf59a",
+      "comparator_config": "lean/ComparatorChallenges/PeriodicTilingThree.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "493068b9b0425bd3a2852ce3e0ce2c0c98acc189",
+      "declaration": "OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality",
+      "extra_axioms": [],
+      "index_zero_based": 109,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40586855205,
+      "solution_git_blob": "7988070a1c82287df771ea98f9b211c95542f573",
+      "solution_module": "OAI.Geometry.PeriodicTiling.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "70c6e3366a86062079c589fc7bb8ac25db88f6179f3a169cbe664134feadac64",
+      "build_exit": 0,
+      "build_log_sha256": "a68cc6c7cf94826af7d76d5dcd52eec56b4fdf353ce006a2b085a809b5defe10",
+      "comparator_config": "lean/ComparatorChallenges/PettyProjectionVolume.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "0c8e4f11c04b90920715aa3f6c6fd04d08411147",
+      "declaration": "OAI.PettyProjection.petty_projection_volume",
+      "extra_axioms": [],
+      "index_zero_based": 110,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595086806,
+      "solution_git_blob": "ea4c5cc4c021e62cc1f8a7c37e9f97ac18549dd0",
+      "solution_module": "OAI.Geometry.ProjectionBodies.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "5513b7624319a96f0d7c97abbe7c9281827cd219ed03a66bc327d81e1ffcc300",
+      "build_exit": 0,
+      "build_log_sha256": "17da3de950e55997a32f39d2c537b319b317a31f2494f18b4d13a6890c16a824",
+      "comparator_config": "lean/ComparatorChallenges/PinchedKahler.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c98598a0b814306ca34c3a2f1708f2603f681354",
+      "declaration": "OAI.PinchedHartogs.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 111,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595086806,
+      "solution_git_blob": "ff4c43c06ff1956d3d6073f8c15d14ace4cefb6f",
+      "solution_module": "OAI.Geometry.Kahler.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "bbfff91731f3095a1cd7fde583bac70c3607872581251fc140f2b467069ad8de",
+      "build_exit": 0,
+      "build_log_sha256": "eeea692fbd769a4b24305f3c23aa1333b3c79380e39f55c9f5cbcdee6dc91281",
+      "comparator_config": "lean/ComparatorChallenges/PlanarFirstPassage.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "8d47a2039f683ef4edf2b683a206606e84812f8b",
+      "declaration": "OAI.PlanarFPP.manuscriptMain",
+      "extra_axioms": [],
+      "index_zero_based": 112,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595086806,
+      "solution_git_blob": "c1e3d8e1058d31e58d0a86fc8e6fa386c5de9a8b",
+      "solution_module": "OAI.Probability.FirstPassage.BoundaryCurve",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "0a18609bbae79311df081983b4aa94270217448f4ffeea7d0cb0db8d9cc10afc",
+      "build_exit": 0,
+      "build_log_sha256": "51d379c4aceb11351c37fae66bdec17893a08a1babf83945f315dfbc1e6290c3",
+      "comparator_config": "lean/ComparatorChallenges/PlanarFalconer.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "f4d121eb9ac0f5dea4afc9fc38825b3463bd80a9",
+      "declaration": "OAI.PlanarFalconer.mainTarget_proved",
+      "extra_axioms": [],
+      "index_zero_based": 113,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595086806,
+      "solution_git_blob": "ca925146cb0649ebf03a970a0172004878b76133",
+      "solution_module": "OAI.MeasureTheory.Falconer.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "846af02f28a42f0f6d64e8a63cde4b7012f5b063213c99cb505ddbee12ac097b",
+      "build_exit": 0,
+      "build_log_sha256": "43e183016cad07715567395bc51cf0c60c31b121c34137daa716f956f41162d8",
+      "comparator_config": "lean/ComparatorChallenges/PlanarL1.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "7f18a29b2df2cc67bc14cbadae6a87940dbf9804",
+      "declaration": "OAI.PlanarL1.planar_graph_metrics_embed_L1",
+      "extra_axioms": [],
+      "index_zero_based": 114,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595086806,
+      "solution_git_blob": "6a5cafc6b9160f9a407372b33300b047d0fe5330",
+      "solution_module": "OAI.Combinatorics.PlanarL1.Embedding",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "98334ae5d21f997d22e721a46c11e5eba88571d1e4fcda53b20f1c66f85c93f5",
+      "build_exit": 0,
+      "build_log_sha256": "1de6aa465a972d41cf7c01f98d4d2165e7d3873e9626c25e6df51b404c8ddd25",
+      "comparator_config": "lean/ComparatorChallenges/PosteriorReplicas.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c665eebab98f3fe87917c1c462cf1718c14f6463",
+      "declaration": "OAI.PosteriorReplicas.source_main",
+      "extra_axioms": [],
+      "index_zero_based": 115,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595090625,
+      "solution_git_blob": "40cdda96a543c0d2515213690cc3681bf8b18ceb",
+      "solution_module": "OAI.Probability.PosteriorReplicas.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "c2f59218808d799ad1748739afbcf5553c960809f5708aa1cd2c59a1cd570a07",
+      "build_exit": 0,
+      "build_log_sha256": "ecf7b572b6e9d916ac7ba246bf9b5f6595299a6f1c52901e6930c36716e49302",
+      "comparator_config": "lean/ComparatorChallenges/UniformFourier.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "1979fcdcaa71194fc71859229091d9fd96deee51",
+      "declaration": "OAI.PowerSaving.convolution_main",
+      "extra_axioms": [],
+      "index_zero_based": 116,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595090625,
+      "solution_git_blob": "86ef40a7050feddb8de005b7a2f96fd9fcc2f24c",
+      "solution_module": "OAI.Computability.FourierTransform.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "97ce0a1fdfc638295f7a683d74608006b97dedcfa2709159ff8324b3fb0a86ff",
+      "build_exit": 0,
+      "build_log_sha256": "8a974fbd8b92c2d65e355a96e38a9faadd1834be7b3b52aee766075de8dd44e9",
+      "comparator_config": "lean/ComparatorChallenges/UniformFourier.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "1979fcdcaa71194fc71859229091d9fd96deee51",
+      "declaration": "OAI.PowerSaving.transform_main",
+      "extra_axioms": [],
+      "index_zero_based": 117,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595090625,
+      "solution_git_blob": "86ef40a7050feddb8de005b7a2f96fd9fcc2f24c",
+      "solution_module": "OAI.Computability.FourierTransform.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ce37cd27fd7aba7d4c69dfc1d30a502619ee5348f735b55ce518e8ffbcb24a95",
+      "build_exit": 0,
+      "build_log_sha256": "d7e4ea8c4c9aa0ade873e6a6824612f805ade7401353583ec9e95b98de531c9c",
+      "comparator_config": "lean/ComparatorChallenges/PlaneColoring.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "f7ccb51bddd3231b637085715221a55af27d058e",
+      "declaration": "OAI.Problem160.properColoring_seven",
+      "extra_axioms": [],
+      "index_zero_based": 118,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595090625,
+      "solution_git_blob": "b23cd2d0189d3ec3829b81af92afd9d9a4ce5dc1",
+      "solution_module": "OAI.Geometry.PlaneColoring.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "d45e56b301b64c8872996539c307060e3cd9f6ed4873b9f06cd4ecb073fbaed0",
+      "build_exit": 0,
+      "build_log_sha256": "b99e613fbb7be45615bc9edb428632fa6c0c59ae552701f939f85e392ad1c939",
+      "comparator_config": "lean/ComparatorChallenges/EgyptianFractions.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "8c3f6e4ebeae1bd78f268bb6de381faeb485302e",
+      "declaration": "OAI.Problem337.counting_double_log_order",
+      "extra_axioms": [],
+      "index_zero_based": 119,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595090625,
+      "solution_git_blob": "5b12b022d34e3b3cdb8a262710d6652cdebb2fe2",
+      "solution_module": "OAI.NumberTheory.EgyptianFractions.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "d477c35233c51b57214315ff51dd1675c61dceeaab63897bfe0c471ee5f607e8",
+      "build_exit": 0,
+      "build_log_sha256": "823ca59bfbdf5189e91a545cc31718724fc42137ab71971d0c81b63237fc0dc6",
+      "comparator_config": "lean/ComparatorChallenges/EgyptianFractions.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "8c3f6e4ebeae1bd78f268bb6de381faeb485302e",
+      "declaration": "OAI.Problem337.main_double_log_order",
+      "extra_axioms": [],
+      "index_zero_based": 120,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595094502,
+      "solution_git_blob": "5b12b022d34e3b3cdb8a262710d6652cdebb2fe2",
+      "solution_module": "OAI.NumberTheory.EgyptianFractions.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "81ca54203024b99ee7570f2751442087e7b6174125d91be949b4a424b553045d",
+      "build_exit": 0,
+      "build_log_sha256": "c87ccb01a712c257829dbdd0c44a72e57fa4525f1bf9620f4627ee06f8b98060",
+      "comparator_config": "lean/ComparatorChallenges/EgyptianFractions.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "8c3f6e4ebeae1bd78f268bb6de381faeb485302e",
+      "declaration": "OAI.Problem337.prescribed_denominator_corollary",
+      "extra_axioms": [],
+      "index_zero_based": 121,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595094502,
+      "solution_git_blob": "5b12b022d34e3b3cdb8a262710d6652cdebb2fe2",
+      "solution_module": "OAI.NumberTheory.EgyptianFractions.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4ed739d8f04f94e0695321daabd75195d94d507cde0ab8b97450fde7adf85f7a",
+      "build_exit": 0,
+      "build_log_sha256": "315c10ebb007b6e9a76b8d004ed7a86c6a25b6e07638d043da04139beb633d6b",
+      "comparator_config": "lean/ComparatorChallenges/FoulkesHowe.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "082b9b6f5adc468d87281a158640dc268eaac39d",
+      "declaration": "OAI.Problem346.canonical_foulkes_howe_surjective",
+      "extra_axioms": [],
+      "index_zero_based": 122,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595094502,
+      "solution_git_blob": "6846928c65adf7c450d4b50d57d75625c1bb1d2d",
+      "solution_module": "OAI.RepresentationTheory.FoulkesHowe.Stabilization",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "752b07ae82133b667092417d3d5fd6e2c6b63defc92e48f4d209ecc661f5da29",
+      "build_exit": 0,
+      "build_log_sha256": "bd2eb0eb8824af09ccc142c78d6d5691179aceeaa2c5bc4c155954e3354d5b31",
+      "comparator_config": "lean/ComparatorChallenges/MatrixRemoval.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "cbeed060e341f3dfa440dc63afa2bd5057f11438",
+      "declaration": "OAI.Problem348.no_polynomial_removal_bound",
+      "extra_axioms": [],
+      "index_zero_based": 123,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40595094502,
+      "solution_git_blob": "7d8191a1cf2eb484501aad10c67e63d3975dcacc",
+      "solution_module": "OAI.Combinatorics.MatrixRemoval.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "87d02a31b46fb5abd4da241073f5feafb8532041a81a63d4112b608cecf95387",
+      "comparator_config": "lean/ComparatorChallenges/FreeIsing.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "2f2dd5ff61194eb7a171e25ac3fb3ffd045950e5",
+      "declaration": "OAI.Problem367.free_ising_factor_iff_threshold",
+      "extra_axioms": null,
+      "index_zero_based": 124,
+      "observed_axioms": null,
+      "run_id": 40595094502,
+      "solution_git_blob": "ab50d008714e0584e46dc0001208d0108eeb0a92",
+      "solution_module": "OAI.Probability.FreeIsing.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    }
+  ],
+  "runs": [
+    {
+      "artifact_id": 12773408832,
+      "artifact_name": "oai26-corpus-lean-90-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12773408832",
+      "files_sha256": "583b96659856317a8a6609cd090a602d2ed0af89529db34906335f9df0b8087e",
+      "github_archive_digest": "sha256:1671ed0de592b1485fd37a0cd5b23c5f8b82647fd0125b67736a82f312e519f7",
+      "github_conclusion": "failure",
+      "index_range": [
+        90,
+        95
+      ],
+      "receipt_sha256": "2ff73cf8756861eadb00406e00a879400776ef08c42c8d15692eaa1b5c79bb62",
+      "run_id": 40586840149,
+      "verified_internal_file_hashes": 18,
+      "workflow_head": "1c1e906d108844b50eac96c51232406f32fdadd5"
+    },
+    {
+      "artifact_id": 12774614258,
+      "artifact_name": "oai26-corpus-lean-95-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12774614258",
+      "files_sha256": "572509de077f297e711ce3b8e48f1de760db7fbe57420cf9b2ba68e905f5652a",
+      "github_archive_digest": "sha256:f22147ab7f6e8656491c6d91ba2461fbddca2d5d90faf5fcfd5c7cb481592259",
+      "github_conclusion": "success",
+      "index_range": [
+        95,
+        100
+      ],
+      "receipt_sha256": "9f089c2ba435ca45a6fc90364ab665c7dad1afe6b2a2e7862efb2938ac686ae7",
+      "run_id": 40586844776,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "1c1e906d108844b50eac96c51232406f32fdadd5"
+    },
+    {
+      "artifact_id": 12775591680,
+      "artifact_name": "oai26-corpus-lean-100-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12775591680",
+      "files_sha256": "733285ad8992db3220d2e9ffa9dbfbb1c1093b1a63ca8869fa5a4a844419e950",
+      "github_archive_digest": "sha256:11041f93230d5d0cf28423113a119f3792adb26c2df4c1e1449f69c15e24ef8e",
+      "github_conclusion": "failure",
+      "index_range": [
+        100,
+        105
+      ],
+      "receipt_sha256": "5fe4fdfc399cf34d572fd4de237a43845d33039c092332eb892bfbfa411ef37d",
+      "run_id": 40586850229,
+      "verified_internal_file_hashes": 18,
+      "workflow_head": "1c1e906d108844b50eac96c51232406f32fdadd5"
+    },
+    {
+      "artifact_id": 12775683338,
+      "artifact_name": "oai26-corpus-lean-105-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12775683338",
+      "files_sha256": "4b6cb1970f3ff9104d32a444acf478f9b1d9c91698f790924653bed8d96300cc",
+      "github_archive_digest": "sha256:2036517c0e19ba5b1874a01afeb5e5e0b08bb29fc747248d47445b8d733fb6ca",
+      "github_conclusion": "failure",
+      "index_range": [
+        105,
+        110
+      ],
+      "receipt_sha256": "27a22b6e9dd9059c68a79a64f8bed0f6f8ea93ecdec6e35fd5e0a18be2ceb2cf",
+      "run_id": 40586855205,
+      "verified_internal_file_hashes": 16,
+      "workflow_head": "1c1e906d108844b50eac96c51232406f32fdadd5"
+    },
+    {
+      "artifact_id": 12779235394,
+      "artifact_name": "oai26-corpus-lean-110-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12779235394",
+      "files_sha256": "b6440248d0170debb0c426ccbd52fd1c2a776ac641ce2fc7ef4ae7343efd9928",
+      "github_archive_digest": "sha256:26c4a7f610663061c41d95462c1920ca7526ed9959457a6048114e3baeb86885",
+      "github_conclusion": "success",
+      "index_range": [
+        110,
+        115
+      ],
+      "receipt_sha256": "506e8d6d01065c900510b1e0003b0d00832522324aa2cd58b24b201be6d906c9",
+      "run_id": 40595086806,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "1c1e906d108844b50eac96c51232406f32fdadd5"
+    },
+    {
+      "artifact_id": 12777003862,
+      "artifact_name": "oai26-corpus-lean-115-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12777003862",
+      "files_sha256": "c72104f48a525917191e2f4f305831250c887636fba732f0926de2c68e41677a",
+      "github_archive_digest": "sha256:d16340bbae336f901679c4a9a3603274a96cb824c0aadf0cd41e12fa980842fd",
+      "github_conclusion": "success",
+      "index_range": [
+        115,
+        120
+      ],
+      "receipt_sha256": "97152b9144c890f971cbe352a902bfafdcd8aa57dce2931a8da41cb31eaceed5",
+      "run_id": 40595090625,
+      "verified_internal_file_hashes": 20,
+      "workflow_head": "1c1e906d108844b50eac96c51232406f32fdadd5"
+    },
+    {
+      "artifact_id": 12778111720,
+      "artifact_name": "oai26-corpus-lean-120-5",
+      "artifact_url": "https://api.github.com/repos/grandchallenge/MATHFORGE/actions/artifacts/12778111720",
+      "files_sha256": "b8581f6f17b747123a827ab5c94503acbba4141af9a7a7ee3a37878175c7bb0d",
+      "github_archive_digest": "sha256:3db37c061f7b0e30b3a145a2263b4ea6f83d69495c1bb75aa0edf611ff9a725d",
+      "github_conclusion": "failure",
+      "index_range": [
+        120,
+        125
+      ],
+      "receipt_sha256": "f90a4e2b8f024c1584d357e12ae3ea951b5bb1e2e3c868aabbea5895b09c7cdc",
+      "run_id": 40595094502,
+      "verified_internal_file_hashes": 18,
+      "workflow_head": "1c1e906d108844b50eac96c51232406f32fdadd5"
+    }
+  ],
+  "source_identity": {
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "upstream_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696"
+  },
+  "unresolved": "None for Lean build/axiom source evidence in indices 90-124 after the five exact-source corrective receipts. Original 5 timeout rows preserved. Original seven workflow archive digests are provider metadata, not independently rehashed ZIP bytes; all 130 internal file hashes independently validated. Comparator execution 0/35, manuscript semantics and MATHCERT remain open. Indices 125-199 are outside this evidence unit."
+}
