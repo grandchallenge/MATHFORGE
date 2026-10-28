@@ -9,6 +9,7 @@ on:
         options:
           - "1500"
           - "4200"
+          - "6500"
         default: "1500"
       shard_start:
         description: "Corpus index (25 to 199)"
@@ -33,6 +34,19 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 145
     steps:
+      - name: Enforce exact index-145 resource exception
+        shell: bash
+        env:
+          GCL_TIMEOUT: ${{ inputs.build_timeout }}
+          GCL_START: ${{ inputs.shard_start }}
+          GCL_COUNT: ${{ inputs.shard_count }}
+        run: |
+          set -euo pipefail
+          if [[ "$GCL_TIMEOUT" == "6500" ]] &&
+             [[ "$GCL_START" != "145" || "$GCL_COUNT" != "1" ]]; then
+            echo "::error::6500-second exception applies only to index 145, count 1"
+            exit 1
+          fi
       - name: Checkout protected GCL harness
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
