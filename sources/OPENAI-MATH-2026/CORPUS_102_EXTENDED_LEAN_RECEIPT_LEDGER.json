@@ -1,0 +1,68 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_SINGLE_TARGET_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-102-EXTENDED-REPLAY",
+  "disposition": "INDEX_102_LEAN_BUILD_AND_AXIOM_REPLAY_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Pinned Lean build and axiom audit only; no Comparator execution, manuscript-semantic equivalence, source claim certification, or MATHCERT admission.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "source_crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv",
+    "zero_based_index": 102
+  },
+  "evidence": {
+    "run_id": 40656251749,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40656251749",
+    "workflow_status": "completed",
+    "workflow_conclusion": "success",
+    "artifact_id": 12803282023,
+    "artifact_name": "oai26-corpus-lean-102-1",
+    "artifact_zip_sha256": "d417d0e3c3d082eeebc3e7a32b6754af5053194c017a50c34a5407f2cc5199c4",
+    "internal_files_sha256_verified": 8,
+    "internal_files_sha256_failed": 0,
+    "artifact_manifest_prefix": "replay/oai26-corpus/",
+    "run_identity": "run_id=40656251749; source_commit=eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "build_timeout_seconds": 4200
+  },
+  "result": {
+    "corpus_range": [
+      102,
+      103
+    ],
+    "declaration": "OAI.OptimalMaxCut.main",
+    "solution_module": "OAI.Computability.MaxCut.Main",
+    "solution_git_blob": "ba1155880978dd1c4deb62c163d6086c36a233d9",
+    "comparator_config": "lean/ComparatorChallenges/OptimalMaxCut.json",
+    "comparator_git_blob": "f33d3ea92b14827b02eb4653bb74187eb108b8d0",
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+    "build_log_sha256": "de446aeb3c5a1f390dac781507029a9f5bfc2192c52598672d02e5fdafac06e7",
+    "axioms_log_sha256": "6dcd8a6beeefa18f9de209bd62c30e701c3d767e50e7072255f7489e77dedd17",
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "comparator_executed": false
+  },
+  "review": {
+    "technical": "Downloaded exact run artifact; provider ZIP SHA-256, all 8 manifest-listed file SHA-256, both log SHA-256 and run/head metadata match. Pinned source and comparator Git blobs independently read at upstream commit. Lean build and axiom audits exited zero.",
+    "adversarial": "Three independent one-byte mutations (receipt, environment log, axiom log) each rejected by SHA-256 comparison against the unmodified artifact manifest.",
+    "provenance": "ZIP SHA-256 agrees with GitHub artifact digest; all eight archive entries verify after stripping the archive-root path prefix; raw axiom log reports exactly the three allowlisted axioms.",
+    "deduplication": "Original index 102 timeout is preserved in the existing 90-129 run history. This extended replay supersedes the timeout for index 102 only, not a second distinct theorem; the original range ledger and Comparator remain separately unfinished.",
+    "logical_roles": "Producer, technical critic and adversarial integrity checks are role-scoped logical passes. No independent non-author mathematical certification is claimed.",
+    "environment_caveat": "The toolchain environment logs contain upstream compatibility-patch and local dependency checkout warnings; this evidence asserts exact pinned source/manifest and successful build, not pristine dependency worktrees."
+  },
+  "remaining": "WP01 corpus-wide Lean evidence reconciliation, Comparator and source/manuscript semantic validation remain open; this record closes only the index 102 build and axiom replay once protected-admitted."
+}
