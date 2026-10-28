@@ -1,0 +1,66 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_SINGLE_TARGET_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-079-REPLAY",
+  "disposition": "INDEX_079_LEAN_BUILD_AND_AXIOM_REPLAY_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Pinned Lean build and axiom audit only; no Comparator execution, manuscript-semantic equivalence, source claim certification, or MATHCERT admission.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "source_crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv",
+    "zero_based_index": 79
+  },
+  "evidence": {
+    "run_id": 40661207375,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40661207375",
+    "workflow_status": "completed",
+    "workflow_conclusion": "success",
+    "artifact_id": 12805922880,
+    "artifact_name": "oai26-corpus-lean-79-1",
+    "artifact_zip_sha256": "86969da916ad1d8a2e09c2beda59d460fd0f27362e0c5a12ccd38d149b6573a6",
+    "internal_files_sha256_verified": 8,
+    "internal_files_sha256_failed": 0,
+    "artifact_manifest_prefix": "replay/oai26-corpus/",
+    "run_identity": "run_id=40661207375; source_commit=eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846"
+  },
+  "result": {
+    "corpus_range": [
+      79,
+      80
+    ],
+    "declaration": "OAI.Laughlin.mainTarget_proved",
+    "solution_module": "OAI.Analysis.Laughlin.Main",
+    "solution_git_blob": "9f6bb591d42b0f1a5ea3408526e63a8e1927d699",
+    "comparator_config": "lean/ComparatorChallenges/Laughlin.json",
+    "comparator_git_blob": "4a7e97904317538cc5b882a01c0531262c1a2672",
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+    "build_log_sha256": "1a6cb59f1ede40f274f4dae239c724ab066e9569f06f3f041b960de60a7a82ac",
+    "axioms_log_sha256": "2ec087b20f375aa44eaa7853823106cd1fc425802ddf28aa73ce1eeeb741a98f",
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "comparator_executed": false
+  },
+  "review": {
+    "technical": "Pinned source, Lean 4.34.1 and exact declaration match protected source crosswalk; build and axiom exits zero.",
+    "adversarial": "Artifact manifest rehashed all eight files successfully; no file omission, mismatch or additional axioms.",
+    "provenance": "ZIP digest matches GitHub artifact digest; 8/8 internal SHA-256 manifest entries match after stripping archive root prefix.",
+    "deduplication": "Index 79 is an unresolved timeout in prior 25-89 cohort. This evidence replaces that timeout for replay status and is not a second distinct declaration.",
+    "logical_roles": "Producer, technical critic and adversarial integrity checks performed as role-scoped logical passes; no independent non-author mathematical certification claimed."
+  },
+  "remaining": "WP01 corpus-wide Lean, Comparator and semantic/certification obligations remain open; this record closes only index-79 build/axiom replay."
+}
