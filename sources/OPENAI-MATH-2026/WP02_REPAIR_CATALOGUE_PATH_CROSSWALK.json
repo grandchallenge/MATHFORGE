@@ -1,0 +1,182 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_CANDIDATE_PATH_CROSSWALK/1",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "index_blob": "2c68c086fff36a5806c936ad1659cf1a8d0b6dd9",
+  "disposition": "SOURCE_CATALOGUE_PATH_CROSSWALK_ONLY_NOT_REPAIR_ENUMERATION_COMPLETE",
+  "total_unique_titles": 13,
+  "matched_pdf_paths": 14,
+  "publisher_history": "history.md Oct 7, 2026; group claims only, except individually named entries",
+  "caution": "Kähler/Lipschitz entries are name-group candidates only; do not treat these as verified members of the publisher's exact 14 repaired titles or 13 additional citation updates.",
+  "rows": [
+    {
+      "family_id": "002",
+      "title": "Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank",
+      "paths": [
+        "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf"
+      ],
+      "publisher_risk_group": "obsolete introductory citation",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": true,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "034",
+      "title": "Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity",
+      "paths": [
+        "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf"
+      ],
+      "publisher_risk_group": "Kähler/abundance candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "034",
+      "title": "Conditional good minimal models for compact Kähler fourfolds",
+      "paths": [
+        "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf"
+      ],
+      "publisher_risk_group": "Kähler/minimal-model candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "036",
+      "title": "Numerical semiampleness of nef adjoint classes on compact Kähler manifolds",
+      "paths": [
+        "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf"
+      ],
+      "publisher_risk_group": "Kähler/abundance candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "056",
+      "title": "Termination of generalized log canonical flips on compact Kähler fourfolds",
+      "paths": [
+        "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf"
+      ],
+      "publisher_risk_group": "Kähler/minimal-model candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "056",
+      "title": "Termination of generalized-canonical flips on compact Kähler fourfolds",
+      "paths": [
+        "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf"
+      ],
+      "publisher_risk_group": "Kähler/minimal-model candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "056",
+      "title": "Finite ordinary minimal model programs on compact Kähler fourfolds",
+      "paths": [
+        "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+        "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/paper.pdf"
+      ],
+      "publisher_risk_group": "Kähler/minimal-model candidate",
+      "exact_title_match_count": 2,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "232",
+      "title": "Gaussian free-field limits of weighted integer Lipschitz heights",
+      "paths": [
+        "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf"
+      ],
+      "publisher_risk_group": "Lipschitz candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "232",
+      "title": "The Gaussian free field limit of integer Lipschitz heights with two-arc boundary data",
+      "paths": [
+        "preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf"
+      ],
+      "publisher_risk_group": "Lipschitz candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "233",
+      "title": "The joint scaling limit of critical Ashkin-Teller currents",
+      "paths": [
+        "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf"
+      ],
+      "publisher_risk_group": "Ashkin–Teller candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": false,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "341",
+      "title": "Deforming hypersymplectic four-manifolds to hyperkähler triples",
+      "paths": [
+        "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf"
+      ],
+      "publisher_risk_group": "hypersymplectic candidate",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": true,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "342",
+      "title": "Taming implies compatibility on four-manifolds",
+      "paths": [
+        "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf"
+      ],
+      "publisher_risk_group": "taming correction",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": true,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    },
+    {
+      "family_id": "376",
+      "title": "Incompressible Box Transport and Finite Computation",
+      "paths": [
+        "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf"
+      ],
+      "publisher_risk_group": "torus-projection/common-clock correction",
+      "exact_title_match_count": 1,
+      "revision_membership_verified": true,
+      "statement_delta": "UNASSESSED",
+      "source_blob_sha": "NOT_YET_READ",
+      "formal_declaration_crosswalk": "PENDING"
+    }
+  ]
+}
