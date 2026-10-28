@@ -1,0 +1,66 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_SINGLE_TARGET_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-124-EXACT-REPLAY",
+  "disposition": "INDEX_124_LEAN_BUILD_AND_AXIOM_REPLAY_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Pinned Lean build and axiom audit only; no Comparator execution, manuscript-semantic equivalence, source claim certification, or MATHCERT admission.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "source_crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv",
+    "zero_based_index": 124
+  },
+  "evidence": {
+    "run_id": 40661222335,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40661222335",
+    "workflow_status": "completed",
+    "workflow_conclusion": "success",
+    "artifact_id": 12806640349,
+    "artifact_name": "oai26-corpus-lean-124-1",
+    "artifact_zip_sha256": "f91f31a48ff381fa793498d0af860244586d9647f47ab12a6719885e81a23f95",
+    "internal_files_sha256_verified": 8,
+    "internal_files_sha256_failed": 0,
+    "artifact_manifest_prefix": "replay/oai26-corpus/",
+    "run_identity": "run_id=40661222335; source_commit=eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846"
+  },
+  "result": {
+    "corpus_range": [
+      124,
+      125
+    ],
+    "declaration": "OAI.Problem367.free_ising_factor_iff_threshold",
+    "solution_module": "OAI.Probability.FreeIsing.Main",
+    "solution_git_blob": "ab50d008714e0584e46dc0001208d0108eeb0a92",
+    "comparator_config": "lean/ComparatorChallenges/FreeIsing.json",
+    "comparator_git_blob": "2f2dd5ff61194eb7a171e25ac3fb3ffd045950e5",
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+    "build_log_sha256": "9d51253bf6fe68af398891786587644f91c2b717344878226b6476a2dd9d65c2",
+    "axioms_log_sha256": "ba6953b71e4f0045f6db3c85d2262fc1f4b9e3f3a8f0842f0270f9e32caeda9a",
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "comparator_executed": false
+  },
+  "review": {
+    "technical": "Crosswalk identity and exact pinned source checked; Lean and axiom exits zero.",
+    "adversarial": "Eight internal file hashes verified; mutated-file SHA256 rejection tested.",
+    "provenance": "ZIP digest matches GitHub artifact digest; 8/8 internal SHA-256 manifest entries match after stripping archive root prefix.",
+    "deduplication": "Index 124 appears once; no prior protected single-target ledger for this index.",
+    "logical_roles": "Producer, technical critic and adversarial integrity checks performed as role-scoped logical passes; no independent non-author mathematical certification claimed."
+  },
+  "remaining": "WP01 remains open for corpus, Comparator, semantics and certification."
+}
