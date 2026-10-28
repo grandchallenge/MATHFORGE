@@ -1,0 +1,286 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_BATCH_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-EXTENDED-REPLAY-6-INDEX-20261028",
+  "disposition": "SIX_SOURCE_PINNED_LEAN_BUILD_AND_AXIOM_REPLAYS_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Only pinned Lean compilation and axiom audits. No Comparator execution, manuscript/source semantic equivalence, mathematical claim validation or MATHCERT certification.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv"
+  },
+  "verification": {
+    "unique_indices": [
+      62,
+      74,
+      107,
+      108,
+      124,
+      168
+    ],
+    "count": 6,
+    "provider_zip_sha256_verified": 6,
+    "internal_files_sha256_verified": 48,
+    "internal_files_sha256_mismatched": 0,
+    "hostile_mutations_rejected": 18,
+    "results_counted_once": true,
+    "assertions": "Downloaded provider ZIPs checked against GitHub artifact SHA-256. All 8/8 internal files.sha256 entries per artifact checked against raw ZIP members; environment, receipt, exact run identity, source/tree/manifest/toolchain and logs matched. Pinned solution and comparator-config Git blobs were independently read from exact upstream SHA. Three per-archive one-byte manipulations rejected by hash audit."
+  },
+  "results": [
+    {
+      "zero_based_index": 62,
+      "source_range": [
+        62,
+        63
+      ],
+      "declaration": "OAI.Generator.single_generation_of_II1_separable_predual",
+      "solution_module": "OAI.Analysis.FactorGeneration.Main",
+      "solution_git_blob": "cb864e7290dcce253f962970fb75ebb510e52a3e",
+      "comparator_config": "lean/ComparatorChallenges/FactorGeneration.json",
+      "comparator_git_blob": "61565541cc63e581fa5e0d14458616de519b9448",
+      "run_id": 40661197733,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40661197733",
+      "run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "artifact_id": 12806447168,
+      "artifact_name": "oai26-corpus-lean-62-1",
+      "artifact_zip_sha256": "0ff1b3d32c06cf11e4bcfedf3d3fab7b70676c501fa9e00790e10a0e76e61a5b",
+      "internal_sha256_verified": 8,
+      "build_timeout_seconds": 4200,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "1b2dfd3ba68e40f33298f8ba0b2a0e30c660aba72c5682dc159b8573a3de4de4",
+      "axioms_log_sha256": "7b5587c962a25f4f9b2e329ff7a7518a6603e4e0529b6d7e237c675dfad08d2c",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "comparator_executed": false
+    },
+    {
+      "zero_based_index": 74,
+      "source_range": [
+        74,
+        75
+      ],
+      "declaration": "OAI.IntegralCharacterVarieties.SurfacePresentation.Diagram.producedMarkedValues_allSeams",
+      "solution_module": "OAI.AlgebraicGeometry.CharacterVarieties.Seams.ProducedSolution",
+      "solution_git_blob": "f2457411ba1ec389cb9762ff72fa1cdb093dc83e",
+      "comparator_config": "lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.json",
+      "comparator_git_blob": "c5b2017c0cdb46e77d2e6560898dbcdfbda90599",
+      "run_id": 40661202323,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40661202323",
+      "run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "artifact_id": 12807856166,
+      "artifact_name": "oai26-corpus-lean-74-1",
+      "artifact_zip_sha256": "2ba35a7bab7f482e0d13b13a4f86bad686f209586121db0c7c10a6ef55846af2",
+      "internal_sha256_verified": 8,
+      "build_timeout_seconds": 4200,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "952b42f8fc7fb3b8de01eacba5c37025de9831c9a516ae9baaaacd3cc3a30cfa",
+      "axioms_log_sha256": "131236e167e39175f13c57546926b7b7f8ed30d87980484f537aa6ee266e73a4",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "comparator_executed": false
+    },
+    {
+      "zero_based_index": 107,
+      "source_range": [
+        107,
+        108
+      ],
+      "declaration": "OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice",
+      "solution_module": "OAI.SetTheory.PartitionPrinciple.Main",
+      "solution_git_blob": "70884df9515d0b4af6f7a6acaf9aba13a2e8793b",
+      "comparator_config": "lean/ComparatorChallenges/PartitionPrinciple.json",
+      "comparator_git_blob": "c280139691ba247c85ac7f2f9d027e6187c974be",
+      "run_id": 40661212325,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40661212325",
+      "run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "artifact_id": 12807860658,
+      "artifact_name": "oai26-corpus-lean-107-1",
+      "artifact_zip_sha256": "f783efb02bc00ff41c17cc9ce343eeedb7e1611bf77ded28150ad1c9c7140a9b",
+      "internal_sha256_verified": 8,
+      "build_timeout_seconds": 4200,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "a3f5eed1bb9f017589ac94b45c7335c87715761abbaf14cac7b25636b5cee008",
+      "axioms_log_sha256": "e63c0371d0aca774c69a13666759b0ba7d3aa4c918a1f08f3d9c70c429816f72",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "comparator_executed": false
+    },
+    {
+      "zero_based_index": 108,
+      "source_range": [
+        108,
+        109
+      ],
+      "declaration": "OAI.PerfectCompleteness.Theorem11.exists_reduction",
+      "solution_module": "OAI.Computability.PerfectCompleteness.Main",
+      "solution_git_blob": "a01231ded2e43551949ac614f6d7c48a7d1d1d66",
+      "comparator_config": "lean/ComparatorChallenges/PerfectCompleteness.json",
+      "comparator_git_blob": "c8a63fa00611be828228a68dc728f703cca66754",
+      "run_id": 40661217258,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40661217258",
+      "run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "artifact_id": 12805414014,
+      "artifact_name": "oai26-corpus-lean-108-1",
+      "artifact_zip_sha256": "54b264342f5c248dcfbcafd2d50ac3b33d21acfff9dad5c759758f5368b30821",
+      "internal_sha256_verified": 8,
+      "build_timeout_seconds": 4200,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "37ac3109254a6b6874bddfa0ba7c44ba9a21efdb7f6c9061ef62bf145ea5d92b",
+      "axioms_log_sha256": "2d0fa4f3970f9ae5df1bf9fd6305b8c23e293ea4bb4c74b2408f491e770d19e1",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "comparator_executed": false
+    },
+    {
+      "zero_based_index": 124,
+      "source_range": [
+        124,
+        125
+      ],
+      "declaration": "OAI.Problem367.free_ising_factor_iff_threshold",
+      "solution_module": "OAI.Probability.FreeIsing.Main",
+      "solution_git_blob": "ab50d008714e0584e46dc0001208d0108eeb0a92",
+      "comparator_config": "lean/ComparatorChallenges/FreeIsing.json",
+      "comparator_git_blob": "2f2dd5ff61194eb7a171e25ac3fb3ffd045950e5",
+      "run_id": 40661222335,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40661222335",
+      "run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "artifact_id": 12806640349,
+      "artifact_name": "oai26-corpus-lean-124-1",
+      "artifact_zip_sha256": "f91f31a48ff381fa793498d0af860244586d9647f47ab12a6719885e81a23f95",
+      "internal_sha256_verified": 8,
+      "build_timeout_seconds": 4200,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "9d51253bf6fe68af398891786587644f91c2b717344878226b6476a2dd9d65c2",
+      "axioms_log_sha256": "ba6953b71e4f0045f6db3c85d2262fc1f4b9e3f3a8f0842f0270f9e32caeda9a",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "comparator_executed": false
+    },
+    {
+      "zero_based_index": 168,
+      "source_range": [
+        168,
+        169
+      ],
+      "declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+      "solution_module": "OAI.Geometry.TamingCompatibility.Main",
+      "solution_git_blob": "0e1765dba48224edb030f870bdd1ba8cdaeaf1df",
+      "comparator_config": "lean/ComparatorChallenges/TamingCompatibility.json",
+      "comparator_git_blob": "d46322e905c8a9352677dcfb190ce348a9b81f45",
+      "run_id": 40660894532,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40660894532",
+      "run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "artifact_id": 12807468545,
+      "artifact_name": "oai26-corpus-lean-168-1",
+      "artifact_zip_sha256": "695a437468a5051f90f1901ec9dfca2b5b85bb10a2d2c706aa3a57b5030e4167",
+      "internal_sha256_verified": 8,
+      "build_timeout_seconds": 4200,
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "build_log_sha256": "9897290b5780cdec97064d4fe909428b6b6c5a4ee444a31664d511e75e975323",
+      "axioms_log_sha256": "a9ad9c2dccd011c4fc250ad5770f12b0546f2c8149cfca15a344c82335ab45af",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "comparator_executed": false
+    }
+  ],
+  "historical_integrity": "Original 1500-second timeout observations remain retained in original corpus batch receipts. Six successful extended attempts are counted as six distinct existing declaration obligations, not as new mathematical results. No historical artifact overwritten.",
+  "failed_separate": {
+    "indices": [
+      145,
+      199
+    ],
+    "runs": [
+      40660890109,
+      40660899241
+    ],
+    "original_extended_outcome": "Build timeout exit=124; axioms not run; no mathematical failure or success conclusion. Retain pending further source-specific remediation."
+  },
+  "review": {
+    "logical_roles": "Producer exact evidence, technical provenance/source crosswalk, adversarial SHA-256 integrity checks. No separate physical account or mathematical certification claimed.",
+    "environment_caveat": "Upstream dependency cache reported local-change warnings; no pristine dependency-tree claim."
+  },
+  "remaining": "WP01 full 200-declaration effective coverage, Comparator executions and manuscript-semantic checks remain separate and open. Keep issue #330 open."
+}
