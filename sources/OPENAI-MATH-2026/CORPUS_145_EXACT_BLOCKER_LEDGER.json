@@ -1,0 +1,50 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXACT_BLOCKER/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-145-BOUNDED-REPLAY",
+  "zero_based_index": 145,
+  "classification": "EXACT_BLOCKER",
+  "disposition": "TWO_PINNED_LEAN_BUILD_TIMEOUTS; NO_AXIOM_AUDIT_OR_COMPARATOR",
+  "claim_boundary": "Exact input-level noncoverage evidence only; neither Lean proof replay nor axiom audit passed; no mathematical refutation or certification.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "solution_module": "OAI.NumberTheory.DirichletL.Hecke.Nonvanishing",
+    "solution_git_blob": "4fb158e2dc0d50f71a313ca1c6bdc56923c9d201",
+    "comparator_config": "lean/ComparatorChallenges/HeckeSevenEighths.json",
+    "comparator_git_blob": "139442c594171660b9e4ce80ab01aa978bb32c51",
+    "source_crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv",
+    "declaration": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re"
+  },
+  "attempts": [
+    {
+      "run_id": 40660890109,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40660890109",
+      "artifact_id": 12806884166,
+      "artifact_zip_sha256": "1f979af4e18979e4eed1fa9b601998ea8ccdab63ed1231816734e4968ca7cd7a",
+      "build_timeout_seconds": 1500,
+      "build_exit": 124,
+      "axioms_exit": null,
+      "internal_file_hashes_verified": 6
+    },
+    {
+      "run_id": 40674359419,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40674359419",
+      "runner_head": "1f13ddf412894e13f772a676e69a48e9b92db0b9",
+      "artifact_id": 12813837578,
+      "artifact_zip_sha256": "327c8271c035a156a56215740ffd4604ac9a5a4df5683423a2f31b368a0dcb30",
+      "build_timeout_seconds": 4200,
+      "build_exit": 124,
+      "axioms_exit": null,
+      "build_log_sha256": "9cf2a427c643f9db725aba460e84f80ff5308a55af7964850a04f5c568b3dc8e",
+      "internal_file_hashes_verified": 6,
+      "last_observed_completed_build_step": 6174,
+      "last_observed_build_step_denominator": 7062
+    }
+  ],
+  "technical_review": "Both exact pinned attempts ended in process timeout exit 124, not Lean type-check failure; second build log records 6174/7062 progress at timeout. No completed target build or axiom result.",
+  "adversarial_review": "Provider ZIP digest for 4200s attempt matches GitHub; 6/6 SHA256 manifest entries verified for each attempt; three one-byte append mutations rejected. A missing axiom log is treated as absent evidence, not as success.",
+  "remaining": "Index 145 remains unverified by Lean and Comparator. Any successful replay requires a separately governed, source-pinned incremental cache or bounded resource exception, with new exact-run evidence; do not silently reclassify as PASS. Parent WP01 remains open."
+}
