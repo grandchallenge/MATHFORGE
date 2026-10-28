@@ -1,0 +1,68 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_SINGLE_TARGET_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-192-EXTENDED-REPLAY",
+  "disposition": "INDEX_192_LEAN_BUILD_AND_AXIOM_REPLAY_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Pinned Lean source compile and axiom audit only; no Comparator execution, manuscript-semantic equivalence, source claim certification, or MATHCERT admission.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "source_crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv",
+    "zero_based_index": 192
+  },
+  "evidence": {
+    "run_id": 40662288971,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40662288971",
+    "workflow_status": "completed",
+    "workflow_conclusion": "success",
+    "artifact_id": 12806212549,
+    "artifact_name": "oai26-corpus-lean-192-1",
+    "artifact_zip_sha256": "52c36ff44352423bb6a2f5aa7732537a5cafe0e413fb88a8387e0358949644a5",
+    "internal_files_sha256_verified": 8,
+    "internal_files_sha256_failed": 0,
+    "artifact_manifest_prefix": "replay/oai26-corpus/",
+    "run_identity": "run_id=40662288971; source_commit=eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "build_timeout_seconds": 4200
+  },
+  "result": {
+    "corpus_range": [
+      192,
+      193
+    ],
+    "declaration": "OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample",
+    "solution_module": "OAI.Geometry.NodalSets.Main",
+    "solution_git_blob": "910c94d347793582ba0bb887125f4bdc2ede7e6c",
+    "comparator_config": "lean/ComparatorChallenges/YauCounterexample.json",
+    "comparator_git_blob": "c89cfb9140585b3e9e07d44b5f2b22ec14878a88",
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+    "build_log_sha256": "ad8de6ce079c8f6d6157519e416718655cd7bcfd3f12ad635d4ccff6c1cf15e1",
+    "axioms_log_sha256": "2009ac1cde90f5e9b3adbd5c1a4ef03350caf6f211e177edf2c151e4974bc962",
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "comparator_executed": false
+  },
+  "review": {
+    "technical": "Run and artifact exact identities independently checked. Downloaded ZIP SHA-256 matches GitHub provider digest, all eight manifest-listed hashes, both result-log digests and pinned source/comparator Git blobs verified. Build and axiom exits zero.",
+    "adversarial": "Three one-byte mutations (receipt, build log and axiom log) independently rejected per artifact with SHA-256 comparison; six hostile mutations across both records.",
+    "provenance": "Source sha/tree, pinned toolchain and lake-manifest sha matched immutable run receipt and file artifacts; source/comparator files independently fetched at exact upstream source commit.",
+    "deduplication": "Original 1500-second batch run 40649439606 at source runner dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777 timed out for index 192. That earlier observation is retained; count extended success for the same indexed declaration once, not as a new declaration.",
+    "logical_roles": "Producer, technical critic and adversarial-integrity review performed as separate logical passes; no non-author mathematical certification claimed.",
+    "environment_caveat": "Upstream dependency cache contains local-change warnings; do not infer pristine dependency working trees. Source file SHA, pinned manifest and observed build/axioms are all that the evidence establishes."
+  },
+  "remaining": "WP01 parent remains open: other corpus evidence, Comparator execution, manuscript semantics and MATHCERT certification are outside this bounded result."
+}
