@@ -1,0 +1,67 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_SINGLE_TARGET_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-145-6500S-REPLAY",
+  "disposition": "INDEX_145_LEAN_BUILD_AND_AXIOM_REPLAY_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Pinned Lean build and axiom audit only; no Comparator execution, manuscript-semantic equivalence, source claim certification, or MATHCERT admission.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "351c2c95748e2eabaccc317113b04c60f9bc9f0e",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "source_crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv",
+    "zero_based_index": 145
+  },
+  "evidence": {
+    "run_id": 40697520692,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40697520692",
+    "workflow_status": "completed",
+    "workflow_conclusion": "success",
+    "artifact_id": 12828145565,
+    "artifact_name": "oai26-corpus-lean-145-1",
+    "artifact_zip_sha256": "4d0c552c2f2ed4e975d48c008f1e39989c7bbdcac2522999b6f8f17899d3d20b",
+    "internal_files_sha256_verified": 8,
+    "internal_files_sha256_failed": 0,
+    "artifact_manifest_prefix": "replay/oai26-corpus/",
+    "run_identity": "run_id=40697520692; source_commit=351c2c95748e2eabaccc317113b04c60f9bc9f0e",
+    "build_timeout_seconds": 6500
+  },
+  "result": {
+    "corpus_range": [
+      145,
+      146
+    ],
+    "declaration": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re",
+    "solution_module": "OAI.NumberTheory.DirichletL.Hecke.Nonvanishing",
+    "solution_git_blob": "4fb158e2dc0d50f71a313ca1c6bdc56923c9d201",
+    "comparator_config": "lean/ComparatorChallenges/HeckeSevenEighths.json",
+    "comparator_git_blob": "139442c594171660b9e4ce80ab01aa978bb32c51",
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+    "build_log_sha256": "22fed4fba9411e41d36b86e3057abddfd8ef9c4409ffa2c7e5f0c006ddfde82c",
+    "axioms_log_sha256": "d87161bc1deaaed64878676d3c55a5178ad29a9108708bc4f8b1fa9300ddc418",
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "comparator_executed": false
+  },
+  "review": {
+    "technical": "Exact pinned source and toolchain, crosswalk index 145 and comparator configuration, successful Lean build and axiom audit independently compared to artifact receipt; artifact internal hashes 8/8.",
+    "adversarial": "Three distinct artifact file append mutations rejected by SHA-256 manifest check; unmodified 8/8 baseline passes. This verifies evidence integrity, not mathematical soundness.",
+    "provenance": "GitHub Actions run 40697520692 completed successfully at protected runner head 351c2c95748e2eabaccc317113b04c60f9bc9f0e; artifact digest from GitHub metadata and 8/8 internal file hashes recomputed.",
+    "deduplication": "Supersedes the unresolved replay status recorded in CORPUS_145_EXACT_BLOCKER_LEDGER.json after 1500s and 4200s timeouts. Retain historical blocker ledger as audit evidence; count only one index-145 build/axiom obligation.",
+    "logical_roles": "Producer, source/provenance critic and adversarial integrity passes performed as role-scoped checks; no independent mathematical certification claimed."
+  },
+  "remaining": "WP01 corpus, Comparator, source-semantic and certification obligations remain open. Index 199 also has a separate failed run, not adjudicated by this ledger."
+}
