@@ -1,0 +1,111 @@
+name: OAI Math WP01 index43 staged exact Lean replay
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oai26-wp01-index43-staged-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pinned-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 165
+    steps:
+      - name: Checkout protected GCL harness
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Checkout exact upstream Lean
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+      - name: Verify source tree, toolchain and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream/math rev-parse HEAD)" = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          mkdir -p replay/index43
+          sha256sum upstream/math/lean/lake-manifest.json > replay/index43/manifest-pre.sha256
+          git rev-parse HEAD > replay/index43/gcl-head.txt
+          git -C upstream/math rev-parse HEAD > replay/index43/upstream-head.txt
+      - name: Install pinned elan v1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            -o /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Prepare pinned dependency cache without manifest drift
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream/math/lean
+          {
+            lake --version
+            lake update
+            diff -u "$GITHUB_WORKSPACE/replay/index43/manifest-pre.sha256" \
+              <(sha256sum lake-manifest.json | sed 's|lake-manifest.json|upstream/math/lean/lake-manifest.json|')
+            lake exe cache get
+          } > "$GITHUB_WORKSPACE/replay/index43/environment.log" 2>&1
+      - name: Bounded dependency prewarm, not a theorem verdict
+        shell: bash
+        run: |
+          set -euo pipefail
+          started="$(date +%s)"
+          set +e
+          (
+            cd upstream/math/lean
+            timeout --signal=TERM --kill-after=30s 4200s \
+              lake build OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional
+          ) > replay/index43/prewarm.log 2>&1
+          code=$?
+          set -e
+          printf '%s\n' "$code" > replay/index43/prewarm-exit.txt
+          printf '%s\n' "$(( $(date +%s) - started ))" > replay/index43/prewarm-elapsed-seconds.txt
+          sha256sum replay/index43/prewarm.log > replay/index43/prewarm-log.sha256
+          diff -u replay/index43/manifest-pre.sha256 \
+            <(sha256sum upstream/math/lean/lake-manifest.json)
+          # 124 means only that dependency prewarming exhausted its own 4200s.
+          # It is never accepted as a theorem or axiom result.
+          if [[ "$code" != 0 && "$code" != 124 ]]; then
+            echo "Dependency prewarm failed with exit $code" >&2
+            exit 1
+          fi
+      - name: Bounded exact target and independent axiom audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 sources/OPENAI-MATH-2026/replay_first25_lean.py \
+            --upstream upstream/math \
+            --output replay/index43 \
+            --offset 25 --start 18 --count 1 --build-timeout 4200
+      - name: Record immutable evidence hashes
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p replay/index43
+          printf 'run_id=%s\nsource_commit=%s\n' "$GITHUB_RUN_ID" "$GITHUB_SHA" \
+            > replay/index43/run-identity.txt
+          find replay/index43 -maxdepth 1 -type f ! -name files.sha256 -print0 |
+            sort -z | xargs -0 -r sha256sum > replay/index43/files.sha256
+      - name: Retain success or failure evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: oai26-wp01-index43-staged-4200-4200
+          path: replay/index43
+          if-no-files-found: error
+          retention-days: 30
