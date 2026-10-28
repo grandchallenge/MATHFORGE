@@ -1,6 +1,6 @@
 {
   "record_type": "GCL_OAI26_WP01_NEXT25_LEAN_RECEIPT_LEDGER/1",
-  "disposition": "PARTIAL_EVIDENCE_ADMISSION_ONE_TIMEOUT_AFTER_CONTROLLED_4200S_REPLAY",
+  "disposition": "ALL_25_PINNED_LEAN_AND_AXIOM_REPLAYS_PASS_AFTER_STAGED_INDEX43_REPLAY; COMPARATOR_AND_SEMANTIC_CERTIFICATION_NOT_TESTED",
   "claim_boundary": "Lean source replay and axiom audit only; Comparator not executed; manuscript semantic equivalence and MATHCERT certification not asserted",
   "source_identity": {
     "gcl_workflow_head": "9c3a18aec029998f4303b399d5dc09e6b7ce7059",
@@ -19,10 +19,12 @@
     "other_failure": 0,
     "archive_sha256_verified": 5,
     "internal_file_sha256_verified": 96,
-    "effective_lean_axiom_pass": 24,
-    "effective_build_timeout": 1,
+    "effective_lean_axiom_pass": 25,
+    "effective_build_timeout": 0,
     "extended_archive_sha256_verified": 2,
-    "extended_internal_file_sha256_verified": 14
+    "extended_internal_file_sha256_verified": 14,
+    "staged_archive_sha256_verified": 1,
+    "staged_internal_file_sha256_verified": 13
   },
   "shards": [
     {
@@ -585,8 +587,8 @@
       "budget_seconds": 1500
     }
   ],
-  "verification": "All five original ZIP SHA256 digests matched GitHub artifact digests; each receipt's declared run, exact workflow head, source commit, tree and global index range matched; 96/96 listed internal files SHA256 matched; each build and axiom log SHA256 matched its per-declaration receipt; all 23 passing records had build_exit=axioms_exit=0, only permitted axioms, and no extra axioms; the two 124 exits have no axiom audit and are not passes.",
-  "next_action": "Read back bounded retry attempt 2 for indices 43 and 47; independently verify any new artifact receipts and digests; update this ledger through a protected PR; do not extend the 1500-second budget without separate governed authority.",
+  "verification": "All five original ZIP SHA256 digests matched GitHub artifact digests; each receipt's declared run, exact workflow head, source commit, tree and global index range matched; 96/96 listed internal files SHA256 matched; each build and axiom log SHA256 matched its per-declaration receipt; all 23 passing records had build_exit=axioms_exit=0, only permitted axioms, and no extra axioms; the two 124 exits have no axiom audit and are not passes. Staged index43 run 40610405028: GitHub job success and artifact SHA256 independently matched downloaded ZIP; 13/13 manifest-listed internal file hashes, receipt hash, pinned source SHA/tree/manifest/toolchain, declaration identity, build and axiom log hashes verified; target build_exit=axioms_exit=0; observed axioms exactly Classical.choice, Quot.sound, propext; no extra axioms. Dependency prewarm exit 124 is recorded separately and not counted as a theorem pass.",
+  "next_action": "Run exact-candidate tests and protected CI, complete admissible protected PR merge, independently read back merged ledger, post terminal scoped RESULT/1 to MATHFORGE #330; then stop the declaration 26–50 monitor. WP01 parent 200-row corpus and Comparator remain separate unfinished work.",
   "extended_replays": [
     {
       "global_index_zero_based": 43,
@@ -635,5 +637,45 @@
       "comparator_executed": false
     }
   ],
-  "remaining_obligation": "Index 43 exceeded controlled 4200s Lean build budget; no axiom audit or proof result. Requires a distinct source-pinned resource/compilation diagnosis and separately governed remedy before full shard closure."
+  "remaining_obligation": "No remaining Lean/axiom replay obligation for zero-based indices 25–49. Comparator execution, manuscript-semantic equivalence, and MATHCERT certification are untested; protected admission and readback of this update remain required.",
+  "staged_replays": [
+    {
+      "global_index_zero_based": 43,
+      "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "workflow_run_id": 40610405028,
+      "workflow_run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40610405028",
+      "workflow_conclusion": "success",
+      "workflow_head": "d98ca6719e08956068a5f1ff9c48c1dc889fd94b",
+      "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+      "upstream_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "toolchain": "leanprover/lean4:v4.34.1",
+      "prewarm_budget_seconds": 4200,
+      "prewarm_exit": 124,
+      "prewarm_elapsed_seconds": 4200,
+      "prewarm_log_sha256": "27597f403b0640b42e14566c9291ab0c24bece063563c19cb31640d8b1b090b7",
+      "target_build_budget_seconds": 4200,
+      "artifact_id": 12787250318,
+      "artifact_zip_sha256": "6d21737e67e09cf873f29b6e1af156c68c6fd9be53fe22f90a40b5b757b660dc",
+      "receipt_json_sha256": "685a6bb69fcef19fb037b44242a414c674a6d4710a7cc1744e1555ceeca67db4",
+      "verified_internal_file_hashes": 13,
+      "build_log_sha256": "990d59ba9eba59055e216444f3588b761f5d1c02ef865311b19c270380bca3b0",
+      "axioms_log_sha256": "7f7130aac5c628c0fb23bd44cbb61ffccc79064dde85afb4f25b51a3c8e03ac6",
+      "solution_git_blob": "46c67f4000906b1391a471d6e6396ac0da3c16a5",
+      "comparator_config_git_blob": "a946bfcf544ad212fbd46056dbff913c2d75247c",
+      "build_exit": 0,
+      "axioms_exit": 0,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "extra_axioms": [],
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "comparator_executed": false,
+      "prewarm_interpretation": "Dependency prewarm reached its independent time budget (exit 124); the subsequent exact target build and axiom audit succeeded. Prewarm timeout is not a proof verdict."
+    }
+  ],
+  "historical_unresolved_note": "The two entries in unresolved describe original 1500-second failures only; index 47 was resolved by extended replay 40500513211 and index 43 by staged replay 40610405028. Original evidence rows and adverse outcomes remain immutable.",
+  "current_unresolved": []
 }
