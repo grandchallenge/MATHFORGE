@@ -53,6 +53,7 @@ def main():
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--start", type=int, required=True)
     p.add_argument("--count", type=int, required=True)
+    p.add_argument("--build-timeout", type=int, choices=(1500, 4200), default=1500)
     a = p.parse_args()
     upstream = a.upstream.resolve()
     env = verify_environment(upstream)
@@ -62,7 +63,7 @@ def main():
                manifest_sha256=hashlib.sha256(
                    (upstream / "lean" / "lake-manifest.json").read_bytes()).hexdigest(),
                claim_boundary="LEAN_AND_AXIOM_ONLY_NOT_COMPARATOR")
-    results = replay(upstream, a.output, tasks, env, build_timeout=1500)
+    results = replay(upstream, a.output, tasks, env, build_timeout=a.build_timeout)
     passed = sum(r["verdict"] == "LEAN_REPLAY_AND_AXS_PASS" for r in results)
     print(f"EXACT_CORPUS_REPLAY: {passed}/{len(results)} verified Lean and axiom checks")
     if passed != len(results):
