@@ -1,0 +1,67 @@
+{
+  "record_type": "GCL_OAI26_WP01_EXTENDED_SINGLE_TARGET_LEAN_RECEIPT/1",
+  "assignment_id": "GCL-OAI26-WP01-INDEX-091-EXTENDED-REPLAY",
+  "disposition": "INDEX_091_LEAN_BUILD_AND_AXIOM_REPLAY_VERIFIED_NOT_CERTIFIED",
+  "claim_boundary": "Pinned Lean build and axiom audit only; no Comparator execution, manuscript-semantic equivalence, source claim certification, or MATHCERT admission.",
+  "provenance": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "gcl_repository": "grandchallenge/MATHFORGE",
+    "protected_runner_commit": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "source_crosswalk": "sources/OPENAI-MATH-2026/SOURCE_CROSSWALK_DECLARATIONS.csv",
+    "zero_based_index": 91
+  },
+  "evidence": {
+    "run_id": 40655982816,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40655982816",
+    "workflow_status": "completed",
+    "workflow_conclusion": "success",
+    "artifact_id": 12803630647,
+    "artifact_name": "oai26-corpus-lean-91-1",
+    "artifact_zip_sha256": "33db9afb958312e0a75dab943767a81f2b86e6787c6fd4fc41817629264d4af7",
+    "internal_files_sha256_verified": 8,
+    "internal_files_sha256_failed": 0,
+    "artifact_manifest_prefix": "replay/oai26-corpus/",
+    "run_identity": "run_id=40655982816; source_commit=eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+    "build_timeout_seconds": 4200
+  },
+  "result": {
+    "corpus_range": [
+      91,
+      92
+    ],
+    "declaration": "OAI.MatrixAllFields.MatrixMultiplication.AllFieldMain.omega_lt_source_constant",
+    "solution_module": "OAI.LinearAlgebra.MatrixFields.Main",
+    "solution_git_blob": "16e2687447f1512b599c65e24f07b608b19d9155",
+    "comparator_config": "lean/ComparatorChallenges/MatrixFields.json",
+    "comparator_git_blob": "ea0bc98d111a6298b8a786a17b024d9597eb1a2a",
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "verdict": "LEAN_REPLAY_AND_AXS_PASS",
+    "build_log_sha256": "68f3ab30220d16c65bd40e5e5b6f4eb6321a62cfd968d22dc33907679946fd83",
+    "axioms_log_sha256": "b7e7cfe0851b681848b84cef3b49170bddefa167c5dc92b33993d0b5ec40f0d2",
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "comparator_executed": false
+  },
+  "review": {
+    "technical": "Exact run head and upstream identities match artifact; log digests match receipt; build and axiom exits zero.",
+    "adversarial": "Three single-byte mutations (receipt, environment log, axiom log) each rejected by the artifact SHA-256 manifest verifier.",
+    "provenance": "ZIP digest matches GitHub artifact digest; 8/8 internal SHA-256 manifest entries match after stripping archive root prefix.",
+    "deduplication": "One previously unresolved timeout at index 91; no prior protected successful index-91 ledger entry in FIRST25, NEXT25 or CORPUS_25_89. Do not count repeated replay as a distinct theorem.",
+    "logical_roles": "Producer, technical critic and adversarial integrity checks performed as role-scoped logical passes; no independent non-author mathematical certification claimed."
+  },
+  "remaining": "WP01 corpus-wide Lean, Comparator and semantic/certification obligations remain open; this record closes only index-91 build/axiom replay."
+}
