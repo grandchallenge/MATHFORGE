@@ -1,0 +1,110 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_005_007_LEDGER/1",
+  "assignment_id": "GCL-OAI-26-WP01",
+  "disposition": "THREE_HARDENED_COMPARATOR_RUNS_ACCEPTED_PENDING_PROTECTED_ADMISSION",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "runner_head": "86c8c7e71378ecddc4d08108471d06f7057ede29",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "comparator_source_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+  "exporter_source_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "landrun_source_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+  "review_passes": [
+    {
+      "role": "Verifier",
+      "finding": "Downloaded exact successful-attempt artifact ZIPs; SHA256 of each ZIP matches GitHub provider digest; all 11 files listed in each receipt match SHA256 and byte counts; receipt and run identity match; pre/post pinned Lake manifests match."
+    },
+    {
+      "role": "Adversary",
+      "finding": "Checked diagnostic_exit=null and hardened_exit=0 for each; no diagnostic fallback used. Distinct zero-based indices 5,6,7 and exact target identities match sorted pinned crosswalk. Index 5 prior attempt excluded from admission."
+    },
+    {
+      "role": "Amanuensis",
+      "finding": "Source, runner, toolchain, run and artifact identities retained; acceptance limited to exact pinned Comparator challenge, not manuscript equivalence or certification."
+    }
+  ],
+  "results": [
+    {
+      "index": 5,
+      "declaration": "OAI.AsymptoticallyMinimalLittlewood.main",
+      "run_id": 40887514245,
+      "run_attempt": 2,
+      "artifact_id": 12905065310,
+      "artifact_digest": "sha256:585f37197303e1ba4efd3bb31b022227697b036e74cd02526727732a60dbe7df",
+      "receipt_sha256": "c268f08ea6d5b1249bda79f8f92e2e8785df8a27261119c474dc9129bfc6ca6f",
+      "statement_sha256": "045e02714ed642444b9257f20f1ce65d68f00e63e914cc3aa7335f6ed5648a71",
+      "config_sha256": "0021e2cbecb32bf46c0ee9955f4241e518447f3019717304f2df794126331906",
+      "solution_sha256": "7c7d54dd82a881bf5df78d9ea15973142066a60135031ad47b8d37d7fb5ebe96",
+      "note": "Attempt 1 is superseded by successful attempt 2; prior artifact 12904500781 not used for acceptance.",
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40887514245",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "internal_file_sha256_verified": "11/11",
+      "internal_file_byte_counts_verified": "11/11",
+      "manifest_unchanged": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "comparator_kernel_log": "Lean default kernel accepts the solution; Your solution is okay!; Finished with result: success"
+    },
+    {
+      "index": 6,
+      "declaration": "OAI.BackwardIntertwiners.direct_algebra_corollary",
+      "run_id": 40887655602,
+      "run_attempt": 1,
+      "artifact_id": 12903701777,
+      "artifact_digest": "sha256:d2486bca629851d6b2531c5378eeebb66de0b1d0877fc587c736ebd72d55cd97",
+      "receipt_sha256": "df7dc6dde7c44d2f8ee319e1a952a882282f14434055002946737d1cd13a269a",
+      "statement_sha256": "e555b5537647010a358132ffb75eb9f98bf0221479bcc1d6640f18a134c87820",
+      "config_sha256": "02f60773a490f1f12b81b2b0a66cc34ade1ba3aeaa237f2d4a67613797278973",
+      "solution_sha256": "51406720b28b537dbb3c561315347407734be5645034fc96e91c5933c00e297",
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40887655602",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "internal_file_sha256_verified": "11/11",
+      "internal_file_byte_counts_verified": "11/11",
+      "manifest_unchanged": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "comparator_kernel_log": "Lean default kernel accepts the solution; Your solution is okay!; Finished with result: success"
+    },
+    {
+      "index": 7,
+      "declaration": "OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support",
+      "run_id": 40887849040,
+      "run_attempt": 1,
+      "artifact_id": 12904258322,
+      "artifact_digest": "sha256:6084fc4e4a98446f4e8304c910db9756616931b683e46c4cc6a2c40969f9d1cd",
+      "receipt_sha256": "03cdbfaa328751b1727b1f16e8e98335e5023fb46febb286c32a674194b01e58",
+      "statement_sha256": "e52ea8e1f8feb2f39084de0e3102519adb6d975ce07ff1421c2b2f48bdf33f1b",
+      "config_sha256": "c539654a4313c8174c966e8bfe7db6aaad145975fb41107dce7afcecaf3a537a",
+      "solution_sha256": "3578899496bc23902a29f94cf5b62b724b6a0a1ab0494aad7c982c8029f3e384",
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40887849040",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "internal_file_sha256_verified": "11/11",
+      "internal_file_byte_counts_verified": "11/11",
+      "manifest_unchanged": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "comparator_kernel_log": "Lean default kernel accepts the solution; Your solution is okay!; Finished with result: success"
+    }
+  ],
+  "claim_boundary": "This is exact pinned Comparator challenge acceptance only; paper-to-formalization semantic correspondence, theorem correctness beyond checked Lean target, novelty, and MATHCERT/public certification are not claimed.",
+  "unresolved": [
+    "WP01 remaining indices 8-198 except 199 and indices 0-7",
+    "Full 200-row comparator evidence register",
+    "Independent source-semantic review"
+  ]
+}
