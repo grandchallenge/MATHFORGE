@@ -1,0 +1,33 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_FORMAL_SCOPE_INSPECTION/1",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_repository": "openai/math",
+  "disposition": "BOUNDED_SIGNATURE_AND_SUPPORT_MODULE_SEARCH_NO_EXPLICIT_OCTOBER_ESTIMATE",
+  "claim_boundary": "Search of explicitly identified files only; no full imported transitive dependency closure, no semantic equivalence, no certification.",
+  "comparator_targets": {
+    "BalancedBoxRouting.json": "OAI.BoxTransport.Routing.balanced_box_routing",
+    "BalancedThreeStack.json": "OAI.BalancedTransport.balanced_three_stack_realization",
+    "ForcedNavierStokesComputation.json": "OAI.BalancedTransport.balanced_three_stack_realization"
+  },
+  "inspected_files": [
+    "lean/OAI/Analysis/BoxTransport/Routing.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/MainResult.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/Realization.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/EffectiveConstruction.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/Comparison.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/RelativeForce.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/FieldBounds.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/ResidualRegularity.lean",
+    "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/TemporalJets.lean"
+  ],
+  "source_requirements": [
+    "Effective torus Poisson/Helmholtz projected force Pg=g−∇φ, pressure p−φ, and explicit H^(r+2)→C^r bounds from October analysis.tex",
+    "Common clock decay bound C_(h,r)(1+t)^(−1−h) for all time and space orders from October clocks.tex"
+  ],
+  "observations": [
+    "The two exact comparator target statements concern rational box delivery and zero-data forced Navier–Stokes machine/halting realization; neither spells out the October-specific quantitative projection or common-clock inequality.",
+    "Keyword-oriented inspection of eight BalancedTransport source/support modules and BoxTransport Routing found no explicit named October projection or common-clock lemmas. This is not an exhaustive transitive scan, and a definition or theorem under unrelated naming is not excluded.",
+    "Formalization catalogue lean/docs/376.md still links September 27 manuscript while latest catalogue links October 6 edition."
+  ],
+  "next_obligation": "Traverse all imports and referenced definitions across the pinned source graph; compare actual theorem propositions with corrected October claims. Retain source-versus-lean formalization equivalence as unresolved."
+}
