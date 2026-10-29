@@ -1,0 +1,1745 @@
+{
+  "claim_boundary": "Exact-source Lean build and axiom audit evidence only, not Comparator/semantic/certification",
+  "disposition": "68_DISTINCT_EFFECTIVE_LEAN_AXIOM_PASSES_WITH_CORRECTIVE_PROTECTED_REPLAY_BINDINGS",
+  "effective_counts": {
+    "comparator_executed": 0,
+    "corrected_timeout_indices": [
+      139,
+      143,
+      168,
+      190,
+      192
+    ],
+    "effective_lean_axiom_pass": 68,
+    "effective_unresolved": 0,
+    "original_build_timeout": 5,
+    "original_lean_axiom_pass": 63,
+    "unique_indices": 68
+  },
+  "effective_replay_corrections": [
+    {
+      "comparator_executed": false,
+      "corrective_axioms_exit": 0,
+      "corrective_build_exit": 0,
+      "corrective_extra_axioms": [],
+      "corrective_ledger_git_blob": "377ed6b0e240973df8c22bf02cdc4d2a48f380ff",
+      "corrective_ledger_path": "sources/OPENAI-MATH-2026/CORPUS_139_EXACT_LEAN_RECEIPT_LEDGER.json",
+      "corrective_run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "corrective_run_id": 40660613411,
+      "corrective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "declaration": "OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability",
+      "index_zero_based": 139,
+      "original_build_exit": 124,
+      "original_run_id": 40646956219
+    },
+    {
+      "comparator_executed": false,
+      "corrective_axioms_exit": 0,
+      "corrective_build_exit": 0,
+      "corrective_extra_axioms": [],
+      "corrective_ledger_git_blob": "d063f3b136f371ad0da47f662ce23e31a0e0d39c",
+      "corrective_ledger_path": "sources/OPENAI-MATH-2026/CORPUS_143_EXACT_LEAN_RECEIPT_LEDGER.json",
+      "corrective_run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "corrective_run_id": 40660885696,
+      "corrective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "declaration": "OAI.ScalarConductivity.main_nonuniqueness",
+      "index_zero_based": 143,
+      "original_build_exit": 124,
+      "original_run_id": 40646959781
+    },
+    {
+      "comparator_executed": false,
+      "corrective_axioms_exit": 0,
+      "corrective_build_exit": 0,
+      "corrective_extra_axioms": [],
+      "corrective_ledger_git_blob": "c82d8995c3fbceecae723ce08caab62dea252562",
+      "corrective_ledger_path": "sources/OPENAI-MATH-2026/CORPUS_SIX_EXTENDED_LEAN_RECEIPT_LEDGER.json",
+      "corrective_run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "corrective_run_id": 40660894532,
+      "corrective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+      "index_zero_based": 168,
+      "original_build_exit": 124,
+      "original_run_id": 40648283218
+    },
+    {
+      "comparator_executed": false,
+      "corrective_axioms_exit": 0,
+      "corrective_build_exit": 0,
+      "corrective_extra_axioms": [],
+      "corrective_ledger_git_blob": "809b68a28a379f2e674f7b3c968dc71cef393f68",
+      "corrective_ledger_path": "sources/OPENAI-MATH-2026/CORPUS_190_EXTENDED_LEAN_RECEIPT_LEDGER.json",
+      "corrective_run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "corrective_run_id": 40662284726,
+      "corrective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "declaration": "OAI.WeakMTWTransport.uniform_biHolder_transport",
+      "index_zero_based": 190,
+      "original_build_exit": 124,
+      "original_run_id": 40649439606
+    },
+    {
+      "comparator_executed": false,
+      "corrective_axioms_exit": 0,
+      "corrective_build_exit": 0,
+      "corrective_extra_axioms": [],
+      "corrective_ledger_git_blob": "fb93d7ae41953df121d7293f80d615aff3a6d920",
+      "corrective_ledger_path": "sources/OPENAI-MATH-2026/CORPUS_192_EXTENDED_LEAN_RECEIPT_LEDGER.json",
+      "corrective_run_head": "eb4436c8d12bf24a9d4a00cb96f4ed7b5371e846",
+      "corrective_run_id": 40662288971,
+      "corrective_verdict": "LEAN_REPLAY_AND_AXS_PASS",
+      "declaration": "OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample",
+      "index_zero_based": 192,
+      "original_build_exit": 124,
+      "original_run_id": 40649439606
+    }
+  ],
+  "evidence_caveat": "Original ZIP digests provided by GitHub; independently verified 266 internal artifact file SHA256 from retained extracted bytes. No ZIP-byte digest rehash claim. Excluded indices not adjudicated.",
+  "excluded_by_user": [
+    145,
+    199
+  ],
+  "historical_counts": {
+    "build_timeout": 5,
+    "comparator_executed": 0,
+    "internal_archive_file_hashes_verified": 266,
+    "lean_axiom_pass": 63,
+    "timeout_indices": [
+      139,
+      143,
+      168,
+      190,
+      192
+    ],
+    "unique_indices": 68
+  },
+  "record_type": "GCL_OAI26_WP01_130_198_PINNED_REPLAY/2",
+  "rows": [
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "793ba6d2feed615ba3b0f624605f348c281db120d69a2d4918f4fdef693a4321",
+      "build_exit": 0,
+      "build_log_sha256": "ac05eca86b500713de06f0406f615cea76ba5f3c9610463d7c7bd683afc2790b",
+      "comparator_config": "lean/ComparatorChallenges/QuantitativeVanDerWaerden.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "10b1770000baae70cfe28b4890143ff9960273af",
+      "declaration": "OAI.QuantitativeVanDerWaerden.uniform_lower_bound",
+      "extra_axioms": [],
+      "index_zero_based": 130,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646952848,
+      "solution_git_blob": "d8ca9d7ce4f064bf9573aefb9e1e136063d2d991",
+      "solution_module": "OAI.Combinatorics.ProgressionColoring.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "611d30de2620edc7b6c5d1936a7f20eb5f55c0272bc03829cd5486757aba851f",
+      "build_exit": 0,
+      "build_log_sha256": "3a08c3c1dc57b496c0a8474a9f821762acaeaf7f3f3efdfb4b36b0283460a9fd",
+      "comparator_config": "lean/ComparatorChallenges/PowerFreeValues.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "84b9f8c3fc3318671f528228d592038f77484e90",
+      "declaration": "OAI.QuarticPowerFree.allDegrees",
+      "extra_axioms": [],
+      "index_zero_based": 131,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646952848,
+      "solution_git_blob": "4f47d76e0cd0031883e447747c088b7fd945c6d8",
+      "solution_module": "OAI.NumberTheory.PowerFree.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "215c402d22d4213feeeb14d7a26c32fa8ca553fb3b5e1c0d53bcc67f2819842d",
+      "build_exit": 0,
+      "build_log_sha256": "9fd8e3c07ed4886e8e390cb8832f9005f30c4eca5b737b153f7e00d22b8b6352",
+      "comparator_config": "lean/ComparatorChallenges/QuinticLienard.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "89f4500a1b15d5455e81e76f583faf1751db83b1",
+      "declaration": "OAI.QuinticLienard.main",
+      "extra_axioms": [],
+      "index_zero_based": 132,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646952848,
+      "solution_git_blob": "f8db625152ccc3b35e4d723f2ee41caf3f5bc803",
+      "solution_module": "OAI.Analysis.LienardCycles.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ddbd775bdc43e8c77009b3ee9cd3a1fea8cc2ef4208c84dbc9cdfba6edee2327",
+      "build_exit": 0,
+      "build_log_sha256": "1d7c610fb12a7fa399eefa282c52aa11f6da816e5f45fd5440881c00e45d6dca",
+      "comparator_config": "lean/ComparatorChallenges/VlasovMaxwell.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "558493b4107fdcb3df27126603008c47ec4a2554",
+      "declaration": "OAI.RVM.global_classical_solution",
+      "extra_axioms": [],
+      "index_zero_based": 133,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646952848,
+      "solution_git_blob": "27c4af45312b02fffdd8b3014084dc5d398a36a7",
+      "solution_module": "OAI.Analysis.VlasovMaxwell.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "128216b0650843a598a01a1b9fa55fa16b539ee2c67089eefac660258dcd5e05",
+      "build_exit": 0,
+      "build_log_sha256": "8b69bfc5d22481f0a5b648392447e1a9da04818d7ceab260028dfb4c257e28d2",
+      "comparator_config": "lean/ComparatorChallenges/RadialTransition.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "6ed1573978a57563159dbacef4ace97c6605ac2b",
+      "declaration": "OAI.RadialTransition.main",
+      "extra_axioms": [],
+      "index_zero_based": 134,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646952848,
+      "solution_git_blob": "f33fe6bc671ac5533e40a1fdb7e8f7f9a52a9940",
+      "solution_module": "OAI.Probability.RadialTransition.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "831e53fab50b7f2ed14b720bc6b29a8d57d5782485d2e4d5c0a89a61eefb913b",
+      "build_exit": 0,
+      "build_log_sha256": "a4c725577e882155dd08b685820cf238137be217e5d9f10f9d7f26c6f9d10566",
+      "comparator_config": "lean/ComparatorChallenges/RationalHitting.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c13cb85bb4833ab52f05c20b4576fded30c0f610",
+      "declaration": "OAI.RationalHitting.main",
+      "extra_axioms": [],
+      "index_zero_based": 135,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646956219,
+      "solution_git_blob": "e175e44e4ed74294984eb07dab58c5232cc7eed3",
+      "solution_module": "OAI.Computability.RationalHitting.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "c5f37b2a07dedce70f8915ce8d86d839fef49bb7c9a887ed6f92f1c45ad57f4d",
+      "build_exit": 0,
+      "build_log_sha256": "4eb4555a91f8be073ad4108e162b9629c17d726a88e06983469a36ed5102d7f4",
+      "comparator_config": "lean/ComparatorChallenges/ReflexiveFixedPoints.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "509dbadd66ed99e390c6bae370a8a48a2af44597",
+      "declaration": "OAI.ReflexiveFixedPoints.exists_fixedPoint_of_canonicallyReflexive",
+      "extra_axioms": [],
+      "index_zero_based": 136,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646956219,
+      "solution_git_blob": "d73feb22ad2901005b4a1259b24a6104af33dc70",
+      "solution_module": "OAI.Analysis.Nonexpansive.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "e5fc0ffc6660087eedad2cb771bed38aafc6e1fc300ce497d77ffca42328deda",
+      "build_exit": 0,
+      "build_log_sha256": "c63c714b2db52055c4a6fc15b350372899e75419c65d4fad4ac6b1037edadaf3",
+      "comparator_config": "lean/ComparatorChallenges/SymmetricDomains.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "9e4a05aa5b757aefb19be7dfb92c33feafb5db4c",
+      "declaration": "OAI.Release061.main",
+      "extra_axioms": [],
+      "index_zero_based": 137,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646956219,
+      "solution_git_blob": "83efeb0a9ed7b02e2e515ea3cf44b244e1bcaf03",
+      "solution_module": "OAI.Analysis.SymmetricDomains.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ea200e1951d659d67156dd1bd7c036c0476e03b9de6412521997d364c006b207",
+      "build_exit": 0,
+      "build_log_sha256": "198a6db02d4d8f4b84ce2d08d1a6b78cc4d2ec150ef46a1c58a4bc2ac50c1834",
+      "comparator_config": "lean/ComparatorChallenges/TorsionFreeHyperbolic.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "486a8c4e75596e2bfb095576b454fc32c64f5d4d",
+      "declaration": "OAI.Release075.main",
+      "extra_axioms": [],
+      "index_zero_based": 138,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646956219,
+      "solution_git_blob": "483243ca883b4a01be266b1e1a575c3e8ae30f0e",
+      "solution_module": "OAI.GroupTheory.Hyperbolic.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "53ec011233140ec31d0266c18493d4fa8b691a4100bc2a28774033f19dcd4dc6",
+      "comparator_config": "lean/ComparatorChallenges/RieszQuantitative.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "8ed20da623efe0cf7530e87cafa9524fd0e3659c",
+      "declaration": "OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability",
+      "extra_axioms": null,
+      "index_zero_based": 139,
+      "observed_axioms": null,
+      "run_id": 40646956219,
+      "solution_git_blob": "0926de65656949e1f3c4cc4dd40295772448a4c9",
+      "solution_module": "OAI.Analysis.RieszRectifiability.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "f38a5725298d4e6381a949f8406439d6072039bfc54e5eb3345a65eca0d17be4",
+      "build_exit": 0,
+      "build_log_sha256": "177b347affb2b32960c9ffada2a069e9cff0a2c89cbf53e73d58af88bd4baa74",
+      "comparator_config": "lean/ComparatorChallenges/RyserCovering.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "e35a0eb6789730d6cf32828f48c4cdf7371e9f76",
+      "declaration": "OAI.RyserCoveringCounterexample.exists_prime_eventually_counterexampleRank",
+      "extra_axioms": [],
+      "index_zero_based": 140,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646959781,
+      "solution_git_blob": "20f5b060cf3cec3ffcd2086395ded1abcc5303be",
+      "solution_module": "OAI.Combinatorics.Ryser.Construction.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "d7071a3ffc7f2d9b3d7302b30720cd0f6e8309b482ee0025a49a0da732851e71",
+      "build_exit": 0,
+      "build_log_sha256": "090863bd756a3ab2a8e619e4efc4666c831ea8cb8bc32c0d6accbbc38fe3c82d",
+      "comparator_config": "lean/ComparatorChallenges/RyserOddExtensions.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "89d0069c0e2bd85ea4f4efdd6f5ac2f211054f0d",
+      "declaration": "OAI.RyserOdd.eventualOddFailures_and_infinite",
+      "extra_axioms": [],
+      "index_zero_based": 141,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646959781,
+      "solution_git_blob": "3ab8a3a9bc6270a76acd4c4edf9af8a98ef5d00d",
+      "solution_module": "OAI.Combinatorics.Ryser.OddExtensions",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "f67579944550c471e59454f6c331e4c07f79d28a5580a182a5758c14bc2d971f",
+      "build_exit": 0,
+      "build_log_sha256": "ac01fd67e917e2e7ae88f4d7a8f63403bdde509de756ebeaeb4eb5ffadeb172d",
+      "comparator_config": "lean/ComparatorChallenges/Saxl.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "de28934971681c29068ca51800717c7accd08caf",
+      "declaration": "OAI.Saxl.saxl_conjecture",
+      "extra_axioms": [],
+      "index_zero_based": 142,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646959781,
+      "solution_git_blob": "4bbc2f71b96cb4d920f3e5094856ca899dd3419a",
+      "solution_module": "OAI.RepresentationTheory.Saxl.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "c48c429957c3b0dca5db26c0d53eec894e0cf15165b10022d061182dfbe3ec62",
+      "comparator_config": "lean/ComparatorChallenges/Conductivity.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "e6d8d20f84bedd72e8285337afcb8b0816b3d2ec",
+      "declaration": "OAI.ScalarConductivity.main_nonuniqueness",
+      "extra_axioms": null,
+      "index_zero_based": 143,
+      "observed_axioms": null,
+      "run_id": 40646959781,
+      "solution_git_blob": "4946318f6ceb4f3dbf4ae2cbd673123e5f6f8d68",
+      "solution_module": "OAI.Analysis.Conductivity.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "a0f53493f60b4c1a8d79799847db197aa8e16df5871e8c5a308b57ae15295eb2",
+      "build_exit": 0,
+      "build_log_sha256": "06e7df08cfdfa375bafeab57ea0873705976c45192e68c62a9597583946b0a9c",
+      "comparator_config": "lean/ComparatorChallenges/MidpointLenses.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "d7fe960eb6f3b484c08476acc51b7d3ee4de05bd",
+      "declaration": "OAI.SegmentLenses.midpoint_lens_main",
+      "extra_axioms": [],
+      "index_zero_based": 144,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646959781,
+      "solution_git_blob": "6db5916a4f7b42f26b8066b3bfc99fa8837baef9",
+      "solution_module": "OAI.Analysis.SegmentLenses.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b327c091f7e03776d72dc84b2a2b9d99eeabf1fc2d034504c283dbacab650cbb",
+      "build_exit": 0,
+      "build_log_sha256": "5396714edc504939582f53674f203fde9380636ecbb1a76a4188698de646745c",
+      "comparator_config": "lean/ComparatorChallenges/SeymourSecondNeighborhood.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "30d626fa6821128e87fcfa95827c062bfddd65df",
+      "declaration": "OAI.SeymourSecondNeighborhood.exists_goodVertex",
+      "extra_axioms": [],
+      "index_zero_based": 146,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646962958,
+      "solution_git_blob": "97116f86ece4eb7e64bc818f9781456c74d3cccd",
+      "solution_module": "OAI.Combinatorics.SecondNeighborhood.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "84730a7aa00f4cda6cacf14e0a1b89fd6af7d5bc8d93f5ca5487c0e1e7838087",
+      "build_exit": 0,
+      "build_log_sha256": "6ebf6bfca16865f19f3506b5aa6d1665483db9a542f941bada87a2fb67e0a764",
+      "comparator_config": "lean/ComparatorChallenges/LiebThirring.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "413868acb91c394cf9d6d3ebefe19bbd25167ac1",
+      "declaration": "OAI.SharpLiebThirring.sharp_lieb_thirring",
+      "extra_axioms": [],
+      "index_zero_based": 147,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646962958,
+      "solution_git_blob": "f39af72d5696c7861255c5c552774be23f73a972",
+      "solution_module": "OAI.Analysis.LiebThirring.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "31323796ca0d8551df34939053da7a9760ed758afaddec9be9836ef9d7083f08",
+      "build_exit": 0,
+      "build_log_sha256": "cac16020d85fb6c9fc4db5ff34503bba39e092950cb7717c1c980070aa738fe4",
+      "comparator_config": "lean/ComparatorChallenges/SiegelZeros.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "25989d64aa0ee538fed5921864ddfad283e61e27",
+      "declaration": "OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap",
+      "extra_axioms": [],
+      "index_zero_based": 148,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646962958,
+      "solution_git_blob": "9ed5a07a40ab668baa9b537d46fae0421dc47435",
+      "solution_module": "OAI.NumberTheory.SiegelZeros.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "d369ae48ec44b96962c1c0228ffbc596438f2dad84c3e5087b9c27b6813e61c8",
+      "build_exit": 0,
+      "build_log_sha256": "a2498e12bc41f584b99970dad437c957e59880297ffcfaad684d0f2750e62dc5",
+      "comparator_config": "lean/ComparatorChallenges/SignedFiniteBand.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "7b3fb739221a83830b560a6918a1e38a2f32794d",
+      "declaration": "OAI.SignedDisk.CenteredDiskEndpoint.main_signed_finite_band",
+      "extra_axioms": [],
+      "index_zero_based": 149,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40646962958,
+      "solution_git_blob": "3b89e0501c576d3b38493168a244bb36c7b5a181",
+      "solution_module": "OAI.Analysis.SignedDisk.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "026326d064a7772b531f1c777145a429a84d03ed4ccedd8252e716a728e61857",
+      "build_exit": 0,
+      "build_log_sha256": "122b7eae8558e7d88378e547c36a7ef2b7a4ec16daf4c8d04923d3ec45bd211d",
+      "comparator_config": "lean/ComparatorChallenges/SimpleAmenable.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "621d5a5334092f2a6ec915b5d0d273d924ee0184",
+      "declaration": "OAI.SimpleAmenable.main",
+      "extra_axioms": [],
+      "index_zero_based": 150,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648272735,
+      "solution_git_blob": "2f635943ed1ae0efb2057339bdef4e4fc65db0a7",
+      "solution_module": "OAI.GroupTheory.SimpleAmenable.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "584ad92b21f891d07157548f4faa1c7fe2e045aff75a96969535fc3f0aa0cd57",
+      "build_exit": 0,
+      "build_log_sha256": "71209b7adf1087c62417f33694479e8f0f8c6a11865071f3acf0513e481db795",
+      "comparator_config": "lean/ComparatorChallenges/SingleFold.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "1bc6f3f55d586edc53c080c0014a678ead44045e",
+      "declaration": "OAI.SingleFold.main",
+      "extra_axioms": [],
+      "index_zero_based": 151,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648272735,
+      "solution_git_blob": "706b01d4275ccd203bcccae6623dc18d32f6370b",
+      "solution_module": "OAI.NumberTheory.SingleFold.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "67d6b98ca6567f5e1c8ad3e23dfb6f18207dfa6ab5262c6671ccdb2ea62eda8b",
+      "build_exit": 0,
+      "build_log_sha256": "874ff33ab35414020d51a866e9c3b238229dfc2c2334cbda39866316b4c7896e",
+      "comparator_config": "lean/ComparatorChallenges/SingleLatticeCovering.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "0430ba7f3fd9929271d6dccfa68444822945e9c8",
+      "declaration": "OAI.SingleLatticeCovering.single_lattice_covering",
+      "extra_axioms": [],
+      "index_zero_based": 152,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648272735,
+      "solution_git_blob": "d9d6d174adce8de87af728c4ebd214c764adc848",
+      "solution_module": "OAI.Geometry.LatticeCovering.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "5090f8a0ab9ded6bb9d8c6e8bedc9b2c6da23b264b67221a10a89f49d7d9b4dd",
+      "build_exit": 0,
+      "build_log_sha256": "38f9883639f7304bda5725a088c8159e3b87befc17d79e68af2ef4dafe959612",
+      "comparator_config": "lean/ComparatorChallenges/SurfaceConeCandidateSupport.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "760584b99ae21762968525d45f570f2b241761cb",
+      "declaration": "OAI.SmallCM.candidate_ring_properties",
+      "extra_axioms": [],
+      "index_zero_based": 153,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648272735,
+      "solution_git_blob": "2ca62b92e5eaf9fa4bb30eb15f26547231e5459c",
+      "solution_module": "OAI.AlgebraicGeometry.SurfaceCones.CandidateRing",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "49100e35e7c22d6549af93cbd2f454e1dec7da82832a8ea1399e094d078d1849",
+      "build_exit": 0,
+      "build_log_sha256": "fd09b020c558f2f475264f9adbf72f6193577eea2a41ce4814e6588e36a6c3c2",
+      "comparator_config": "lean/ComparatorChallenges/IsometricImmersion.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "a18a75d25f5c27d3120b00bd90b30f285c45e422",
+      "declaration": "OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion",
+      "extra_axioms": [],
+      "index_zero_based": 154,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648272735,
+      "solution_git_blob": "745a1f8562954cf3b5bc1272be8e6384d8abe13b",
+      "solution_module": "OAI.Geometry.IsometricImmersion.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ee8602b670bcb6d23945984c8b253acf90616a19582dd290f0ff5ca548f27df9",
+      "build_exit": 0,
+      "build_log_sha256": "536f9637f5ada8c73ccadd1f36aa0958266f904d6b555a14f946d5f96d31a3ca",
+      "comparator_config": "lean/ComparatorChallenges/StableCoordinateFour.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "75057560d0d24b5089f24de1fe9ad337ce2a3048",
+      "declaration": "OAI.StableCoordinate.principal_package",
+      "extra_axioms": [],
+      "index_zero_based": 155,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648276369,
+      "solution_git_blob": "be01c3547d23f1e1a8268901d0bb95614afeb078",
+      "solution_module": "OAI.AlgebraicGeometry.StableCoordinate.Principal",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "0b65bf11da4806605e20ebc2f5598f215f9441c6bfd4c143e7213f1ab137f7af",
+      "build_exit": 0,
+      "build_log_sha256": "6af3b29c226e4fd5dafcb0050c848f31f2dee36212485da56c4b9edc0f4de996",
+      "comparator_config": "lean/ComparatorChallenges/StrictMeans.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "72e96466e0e995a225d8faa5eaa2d1dc5e692585",
+      "declaration": "OAI.StrictInverseFirstPower.main",
+      "extra_axioms": [],
+      "index_zero_based": 156,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648276369,
+      "solution_git_blob": "4eb6b25d21a8a22cb5d3cb6811b23e7e51cf756b",
+      "solution_module": "OAI.Analysis.StrictMeans.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "90361bcf08c13b2f3b1c80b26b246f9ffd73ae496f2e15af0d22fef7e21252ef",
+      "build_exit": 0,
+      "build_log_sha256": "8394d77584c4193a56a6ff236939f1cffb16b95f52cda6b8761bd626be6b2787",
+      "comparator_config": "lean/ComparatorChallenges/StrongThinTree.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "2e1aed048e4bdb8768926d55bc5d1abf2264baab",
+      "declaration": "OAI.StrongThinTree.strongThinTree",
+      "extra_axioms": [],
+      "index_zero_based": 157,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648276369,
+      "solution_git_blob": "88f3f50750f5f0e20402df9b52dbe4cf44439faa",
+      "solution_module": "OAI.Combinatorics.ThinTrees.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "fed18f5a9b0034747986d5e90109d894974022ba94fa4094f3ff84140a0bc189",
+      "build_exit": 0,
+      "build_log_sha256": "7d75f4b028ca83a452cb4489ebb52d46b515cabea1711d5c4dd33d596835c784",
+      "comparator_config": "lean/ComparatorChallenges/StructuralCrouzeix.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "40f6557d32d962f5fe44891a756eae44959dd320",
+      "declaration": "OAI.StructuralCrouzeixReference.challenge",
+      "extra_axioms": [],
+      "index_zero_based": 158,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648276369,
+      "solution_git_blob": "9da30a18756928338f04aeaede68daaeda142431",
+      "solution_module": "OAI.Analysis.StructuralCrouzeix.Endpoint",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "5105d16655705dbc6295b3e76ae785919032e89b20582e1b237e262408de9506",
+      "build_exit": 0,
+      "build_log_sha256": "9c2a721091fc0385e1b7e02a26b44f9f113eae9c44c9f8a6a1bf370e6f7b1ea9",
+      "comparator_config": "lean/ComparatorChallenges/SubpolynomialLp.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "26e824aed6a0a0a43652b8b19b16179f22806d1e",
+      "declaration": "OAI.SubpolynomialLp.source_main",
+      "extra_axioms": [],
+      "index_zero_based": 159,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648276369,
+      "solution_git_blob": "89fd9157b9c84b1d9fe47fb94b5a804014bfa5a3",
+      "solution_module": "OAI.Analysis.LpDimension.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "887f51a0d25fbac40904661c2b42b9e7b062ea86a34e314493dfd054b41ce7af",
+      "build_exit": 0,
+      "build_log_sha256": "914875e559d15e553c90d55f3ae9233400d85e29ec5107ad77d2666b0bba7b4e",
+      "comparator_config": "lean/ComparatorChallenges/SubsphereCurrent.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c846f4f1c2e86afe8cf5cdabf05ec729fe83880f",
+      "declaration": "OAI.SubsphereCurrent.full_current_main_scope",
+      "extra_axioms": [],
+      "index_zero_based": 160,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648279916,
+      "solution_git_blob": "2648df4435758b3c83e4e6cd936113e4468acfe8",
+      "solution_module": "OAI.Probability.Subsphere.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "1a550871dbe7841215a652ce99e9f0b43cea0b389c01795043e9bbf08443252d",
+      "build_exit": 0,
+      "build_log_sha256": "2cd95400c8ff2aa59562ad33be7dfdfde0c6187037c0b684c9ec9196143a2bb1",
+      "comparator_config": "lean/ComparatorChallenges/Superstring.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "dcc1c93d8fdf75eba9175ffb8167c52760320ddf",
+      "declaration": "OAI.Superstring.main",
+      "extra_axioms": [],
+      "index_zero_based": 161,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648279916,
+      "solution_git_blob": "5bf7362ec44e24c2608bbbc1e89299f6e8bf8e09",
+      "solution_module": "OAI.Computability.Superstring.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "ce6ad2f58dfdcf0bb5060a88ec650b046862f1e608cf495edd7d98fa1e0c66c1",
+      "build_exit": 0,
+      "build_log_sha256": "6d4006e90a2c07393ea59b9d9c278f3ef9aa70fa21d8531bd43c42f41d66f548",
+      "comparator_config": "lean/ComparatorChallenges/MahlerConjecture.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "410a7c012b122da7d8a7f78e6214e1f9856e9d9b",
+      "declaration": "OAI.SymmetricMahler.symmetric_mahler",
+      "extra_axioms": [],
+      "index_zero_based": 162,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648279916,
+      "solution_git_blob": "d5c55dee7e95a66312217de1f875ea8cb7508e62",
+      "solution_module": "OAI.Analysis.Mahler.MainTheorem",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b361624d9722595a1dbfa1c0f3d262848a0c812e4e0e75020580ad1b6ee3e8df",
+      "build_exit": 0,
+      "build_log_sha256": "5dcbcc6dc87a0d8368c32cc5b07400c692dc8ee980d8337d26a59d581534cbdf",
+      "comparator_config": "lean/ComparatorChallenges/SymmetricMahlerEquality.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "66a8a1cce3bf09078a04b4f9a2da2174e8d9c3d1",
+      "declaration": "OAI.SymmetricMahler.symmetric_mahler_equality",
+      "extra_axioms": [],
+      "index_zero_based": 163,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648279916,
+      "solution_git_blob": "60f060d2ed0bcead291a6223d18cbcbfd14e5732",
+      "solution_module": "OAI.Analysis.Mahler.Classification",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "681bc859b98e2b99fd5d50f0f6b28ee90a6be9fbba675705c08dc5a099c22393",
+      "build_exit": 0,
+      "build_log_sha256": "76d161191bb85971a745e97922cb53f66870a98ff8dbd97bdb832d8232d97349",
+      "comparator_config": "lean/ComparatorChallenges/SymmetricPolar.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "9fb1ac5bb143503a4fda4c4055d2a890951a62e0",
+      "declaration": "OAI.SymmetricPolar.symmetric_polar_main",
+      "extra_axioms": [],
+      "index_zero_based": 164,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648279916,
+      "solution_git_blob": "1b51f466a7102e0851387484f9ed44a0c8e8ff4f",
+      "solution_module": "OAI.Geometry.PolarProducts.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "f358e332f38697dd8aa49cc2858f8b23c99e1c2c62f7a6da2bb3850fafb7e3f3",
+      "build_exit": 0,
+      "build_log_sha256": "2cd686d1a37423c0a31a61b07ac5dc8779bee40fdc62f57fac4464497ac3bf3c",
+      "comparator_config": "lean/ComparatorChallenges/Tachikawa.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "713243b57a351b5d2c9a3f3d92cce6c65c67d050",
+      "declaration": "OAI.Tachikawa.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 165,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648283218,
+      "solution_git_blob": "2c40d68e07299fd14cb55ebde46c8febe772fe36",
+      "solution_module": "OAI.RingTheory.Tachikawa.Counterexample",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "f833d92f04a916adff63826992d842530407f842b504c6a3c0bced21e42f6e48",
+      "build_exit": 0,
+      "build_log_sha256": "0db8ec6de4908c260d4aeb6f3e10330500d5b7b4b49c185033931cbb9e43571c",
+      "comparator_config": "lean/ComparatorChallenges/TalagrandDiscreteConvexity.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "a56f93e0f5992c8aaaf87d4c71fa150998797e64",
+      "declaration": "OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity",
+      "extra_axioms": [],
+      "index_zero_based": 166,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648283218,
+      "solution_git_blob": "9dc92872ef4727dab6ab1a6ffb35e27a8905b490",
+      "solution_module": "OAI.Combinatorics.DiscreteConvexity.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "feae27849587c4c9316a4018ba5f3ea3febbfc30ba6e2e80e3da323ddff73e52",
+      "build_exit": 0,
+      "build_log_sha256": "aecb9c73e561cf661df24323590a569c453acfee413abad719e5532f52801a0b",
+      "comparator_config": "lean/ComparatorChallenges/TalagrandExpectationThreshold.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c1ac413a6bc6b61094952222b99d304269688e1b",
+      "declaration": "OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence",
+      "extra_axioms": [],
+      "index_zero_based": 167,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648283218,
+      "solution_git_blob": "ab98e4ee229ca69d4bb3e8fb23bbe2f604d41b2a",
+      "solution_module": "OAI.Combinatorics.ExpectationThreshold.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "8f5a92b5c8d653f5f55da3d92b2ccbff6c09a41a00bf12406b066a29652ba6fd",
+      "comparator_config": "lean/ComparatorChallenges/TamingCompatibility.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "d46322e905c8a9352677dcfb190ce348a9b81f45",
+      "declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+      "extra_axioms": null,
+      "index_zero_based": 168,
+      "observed_axioms": null,
+      "run_id": 40648283218,
+      "solution_git_blob": "0e1765dba48224edb030f870bdd1ba8cdaeaf1df",
+      "solution_module": "OAI.Geometry.TamingCompatibility.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4d166f05ec9f01c1e3a841851657ff98cf839eff1ab45fb1ae1b868031cdb66b",
+      "build_exit": 0,
+      "build_log_sha256": "e86afd669a6c3d618b70a13dc1ef6b70d1d89ff8ad826367faa53782c1fab58c",
+      "comparator_config": "lean/ComparatorChallenges/ThompsonNonamenability.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "97cbe571f91d4afb329c4006dbc493974e5696e1",
+      "declaration": "OAI.ThompsonNonamenability.thompson_F_nonamenable_composition",
+      "extra_axioms": [],
+      "index_zero_based": 169,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40648283218,
+      "solution_git_blob": "e75c76192edeffdadb156a278ae0df5c0a85adee",
+      "solution_module": "OAI.GroupTheory.Thompson.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4053588aa5fb4f0dcf100c338262fcd0df1691bd5bc3b8b88e94605a5645eab3",
+      "build_exit": 0,
+      "build_log_sha256": "8ff6143b7d36f5453a92e1e4d1ea1b010af1d28879acdf7a0b24a00d9216baaa",
+      "comparator_config": "lean/ComparatorChallenges/ThorpWeightedCompatibility.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "fcf2f01aa08275391d69a2cec7017fc80d9b96b6",
+      "declaration": "OAI.ThorpCompatibility.weightedCompatibility_main",
+      "extra_axioms": [],
+      "index_zero_based": 170,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649187612,
+      "solution_git_blob": "af86a5473bfc6b511da4a75e481f416f0d4f9817",
+      "solution_module": "OAI.Probability.ThorpCompatibility.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "86ba351973e6050679a63fc11fc5a87f05f089d770da87d719dc029cbe864dbc",
+      "build_exit": 0,
+      "build_log_sha256": "42d64918ff89394533adab07463b503705fdaacca8c5ad8625982d50c2bb4d77",
+      "comparator_config": "lean/ComparatorChallenges/ThorpRouting.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "837ecb1a32bdf890e7464ace955ad8f41c70ae8b",
+      "declaration": "OAI.ThorpNine.main",
+      "extra_axioms": [],
+      "index_zero_based": 171,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649187612,
+      "solution_git_blob": "94d3657952538ab7f7f080b0d86d7bd7623f3205",
+      "solution_module": "OAI.Probability.ThorpRouting.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b0d9b018f29c090ec16197b67255914b5adac0bb64684932dd0c80b34c4b2e9b",
+      "build_exit": 0,
+      "build_log_sha256": "d2e23880560c61e94c30e3c67b0ea4586a5209052f7067358bcbf250597e7d53",
+      "comparator_config": "lean/ComparatorChallenges/ConjugatePoints.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "d7a6585828b2e657c4b2a9b83cfceeffb1658186",
+      "declaration": "OAI.ThreeManifold.main_theorem",
+      "extra_axioms": [],
+      "index_zero_based": 172,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649187612,
+      "solution_git_blob": "db23829c13ab91f98097cf35a96dd56b223ebb98",
+      "solution_module": "OAI.Geometry.ConjugatePoints.ThreeManifold",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4de0de998e9cd89f80c96ea2eed5c710b69dfaf738d6df41069f3407acce4234",
+      "build_exit": 0,
+      "build_log_sha256": "d3ebb5f53e3d07da0e0c8708292f39460ded3014cc7e62ead056a589ec6dc884",
+      "comparator_config": "lean/ComparatorChallenges/EntangledGames.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "407463e1ac7ec77f1b7038f08fec42d4a67c31eb",
+      "declaration": "OAI.ThresholdParallelRepetition.threshold_parallel_repetition",
+      "extra_axioms": [],
+      "index_zero_based": 173,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649187612,
+      "solution_git_blob": "74477774624f178ccad6632df4b832870cce0ee5",
+      "solution_module": "OAI.Probability.EntangledGames.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "a0b029e6ea7daaf9f53adae113bef7319aa867deefcf8d9cb5766c40538bb5a5",
+      "build_exit": 0,
+      "build_log_sha256": "4dcf9265e54dd49aaaa6b13587bb6e898b163d187631ca6ba06808bb67e0a001",
+      "comparator_config": "lean/ComparatorChallenges/TingleySphereIsometry.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "32459dd80428ef43ab96d561995fbe7ae7659e4f",
+      "declaration": "OAI.Tingley.tingley_sphere_isometry_full",
+      "extra_axioms": [],
+      "index_zero_based": 174,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649187612,
+      "solution_git_blob": "e36a6391a16f2b9e9ca06063858d4ceffcda0d07",
+      "solution_module": "OAI.Analysis.SphereIsometry.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "6785fa8e05b29ac8da5e8f2fa34128cf26d13e28759d9ef0d93933b81de5d9e1",
+      "build_exit": 0,
+      "build_log_sha256": "ce2f8deebb3693a52f5e91ea42919de22c4b062e8eebaeeddf227c12921d5d8c",
+      "comparator_config": "lean/ComparatorChallenges/TorsionFreeZeroDivisors.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "2c51b21215bd7b38258dc2118811785e6feccf76",
+      "declaration": "OAI.TorsionFreeZeroDivisors.main",
+      "extra_axioms": [],
+      "index_zero_based": 175,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649191986,
+      "solution_git_blob": "0445881d0021c9e816c4656d2d7d779ac26c86ee",
+      "solution_module": "OAI.Algebra.GroupRing.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "46185947a61d3f0a4eb564f1c1d337993d2f2d4c04ce0b63da4671759b495ef5",
+      "build_exit": 0,
+      "build_log_sha256": "e1c7eed2e36766b2c85349c097f89bf7a8cc28c88925d83df5b55671f59ad11c",
+      "comparator_config": "lean/ComparatorChallenges/TraceIdealTransportSupport.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "5c89a31c11c8920c181bafdf91c85a474b83da0d",
+      "declaration": "OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_finIdeal",
+      "extra_axioms": [],
+      "index_zero_based": 176,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649191986,
+      "solution_git_blob": "4b387ab059c84367e4de6d0348fff1f29b09d0eb",
+      "solution_module": "OAI.Analysis.TraceCone.IdealTransport",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "6533961f7b3f92021a428c3b3e60e4e5c3aa330fb762d290420d178f0e208ace",
+      "build_exit": 0,
+      "build_log_sha256": "633f51061e06a6908312e614c211c17ee3f51c61bffec2f1d9df9ca41b108415",
+      "comparator_config": "lean/ComparatorChallenges/TraceIdealTransportSupport.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "5c89a31c11c8920c181bafdf91c85a474b83da0d",
+      "declaration": "OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_zeroIdeal",
+      "extra_axioms": [],
+      "index_zero_based": 177,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649191986,
+      "solution_git_blob": "4b387ab059c84367e4de6d0348fff1f29b09d0eb",
+      "solution_module": "OAI.Analysis.TraceCone.IdealTransport",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "fd41d5a089213667ffc9c3dc587ae2b9d8b4f881fb25e197147324d7a3c8da09",
+      "build_exit": 0,
+      "build_log_sha256": "633f51061e06a6908312e614c211c17ee3f51c61bffec2f1d9df9ca41b108415",
+      "comparator_config": "lean/ComparatorChallenges/TraceIdealTransportSupport.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "5c89a31c11c8920c181bafdf91c85a474b83da0d",
+      "declaration": "OAI.TraceConeClassification.closed_ideal_weight_exists",
+      "extra_axioms": [],
+      "index_zero_based": 178,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649191986,
+      "solution_git_blob": "dc6f37eea43e005895a90c39991c4e87fa142a3e",
+      "solution_module": "OAI.Analysis.TraceCone.IdealTransport",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "6bfd051cafc2ff3b5e889cf920dd274ac26dd5a1b28a67729ee06d578a967752",
+      "build_exit": 0,
+      "build_log_sha256": "41c1515f7fce90c0b14fa28187a30bc54ca36f7f3ed974a5fa4f977969763a5b",
+      "comparator_config": "lean/ComparatorChallenges/TriangularHilbert.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "203392a7d268d1e73c0ea0c0a8a3d25b14f02410",
+      "declaration": "OAI.TriangularHilbert.main_estimate",
+      "extra_axioms": [],
+      "index_zero_based": 179,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649191986,
+      "solution_git_blob": "79bef397195538364db8addcdf0850d38d85e417",
+      "solution_module": "OAI.Analysis.TriangularHilbert.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b2a2eacebd095aeea65ea60559ec90d0fbf4d39935fa6130e2b12775e80a43d0",
+      "build_exit": 0,
+      "build_log_sha256": "7cbd61cf18caa7ffcfdc066fa8ff254840906857875999db18d96424a751cf49",
+      "comparator_config": "lean/ComparatorChallenges/DegreeRigidity.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "652ff1e016a349e79084c9c58505d976eb29a5e5",
+      "declaration": "OAI.TuringRigidity.ManuscriptMain.rigidity",
+      "extra_axioms": [],
+      "index_zero_based": 180,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649195365,
+      "solution_git_blob": "e82b234e0219f58dc2d609278fe70985c80967e7",
+      "solution_module": "OAI.Computability.DegreeRigidity.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "d7192e507409afd0f7ab12a17c60591bea658573a1acb1935396adb47b963d76",
+      "build_exit": 0,
+      "build_log_sha256": "1b1ef13fd1810178139430553cc03fd787f9bdef8dc393a80e022f6783432cdb",
+      "comparator_config": "lean/ComparatorChallenges/TwoWayComplementation.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "0c7fe26768a254f5e5e7828a18ecefb1fd718e0f",
+      "declaration": "OAI.TwoWayComplementation.complementation_lower_bound_finite",
+      "extra_axioms": [],
+      "index_zero_based": 181,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649195365,
+      "solution_git_blob": "39e982dc1acba2a325614b46a90922a4d59c2643",
+      "solution_module": "OAI.Combinatorics.TwoWayAutomata.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4fa4ed77b43a198419ae9e48f120bc1359ef3a1c230bd973c8e5ba723464388f",
+      "build_exit": 0,
+      "build_log_sha256": "ad6b88ed24808bd7ace2238be013e8449c19cc1f37c05b76a7d93e387ed7f1e5",
+      "comparator_config": "lean/ComparatorChallenges/TwoWayDeterminization.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "d46cc55595f3c3a741ed4a568a22992dabff831a",
+      "declaration": "OAI.TwoWayComplementation.explicit_family_main",
+      "extra_axioms": [],
+      "index_zero_based": 182,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649195365,
+      "solution_git_blob": "89d9abada59ed8333aac1e8132bc39db08afcd2c",
+      "solution_module": "OAI.Combinatorics.TwoWayAutomata.ExplicitFamily",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "20ec8db269aafaf7e2d60e83bf5ab8b4dd609d0b26dd98eb8ba07c09b48c3f47",
+      "build_exit": 0,
+      "build_log_sha256": "4997074e1fca4fd535c819d2c06eb1c527b7c15f788d357f2de020985f56ba67",
+      "comparator_config": "lean/ComparatorChallenges/UniformSparsestCut.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c84a168e2692c861687b5d83bc5f136a5c854b35",
+      "declaration": "OAI.UniformSparsestCut.mainGap",
+      "extra_axioms": [],
+      "index_zero_based": 183,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649195365,
+      "solution_git_blob": "ad60be7a89d0c9442500beaa8eaa77127042fabd",
+      "solution_module": "OAI.Combinatorics.SparsestCut.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "1bc08ac98629abdb13f9c16f7c56814b23a95ccc64dcb492c122d75f4a904d61",
+      "build_exit": 0,
+      "build_log_sha256": "2bf3b86d60da0053feb75d631127cb4ed6dcc6691002d1c0d61fa453f09e412e",
+      "comparator_config": "lean/ComparatorChallenges/UniqueGamesTheorem.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "9eafa9cbbd76b1d3bbaa0ad85fe3a6af483cd78b",
+      "declaration": "OAI.UniqueGamesTheorem.theorem11",
+      "extra_axioms": [],
+      "index_zero_based": 184,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649195365,
+      "solution_git_blob": "5946d0262d07a5b1e55778ab984ecf9b6d5b8a4c",
+      "solution_module": "OAI.Computability.UniqueGames.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "c190100039a1850274344fa67d4e1c46b0c20d6dbcdaef24381e4aa71d3d56d8",
+      "build_exit": 0,
+      "build_log_sha256": "9980511173dbf64bd13e94734c34cc3c13346ccb8ce340e0254903de57f36bc6",
+      "comparator_config": "lean/ComparatorChallenges/KahlerSplitting.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "60a69e89e1977b3a473525a79d876bba39f82532",
+      "declaration": "OAI.UniversalCoverSplitting.main",
+      "extra_axioms": [],
+      "index_zero_based": 185,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649435194,
+      "solution_git_blob": "d849609f2c19f7d22f15ecf368c048782589422b",
+      "solution_module": "OAI.Geometry.KahlerSplitting.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "33a8cb747f64c82e91dfecd07010ad5cca4e4f841a4a11c8d6e4bc0389462e58",
+      "build_exit": 0,
+      "build_log_sha256": "c7e018dc770318ce65999962868c921a4f5a31c8879ba193a95ed8fb9fde7cd7",
+      "comparator_config": "lean/ComparatorChallenges/UniversalFInfinity.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "223eda13a0d5d57a11b3aedeecd4a3a0b7967836",
+      "declaration": "OAI.UniversalFInfinity.universal_group_of_type_FInfinity",
+      "extra_axioms": [],
+      "index_zero_based": 186,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649435194,
+      "solution_git_blob": "977795ae054cc3d46261c68a4d9cbf028ce8331a",
+      "solution_module": "OAI.GroupTheory.UniversalGroup.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "4dac67fc2efd54bdbc1c800410bce0a8cf2d780e7dae0ae8828100ab561a561e",
+      "build_exit": 0,
+      "build_log_sha256": "b39a6559c58bc22dd14f95934d810b4e8254b247c2a64ddc918a1d9f712f9228",
+      "comparator_config": "lean/ComparatorChallenges/VertexCover.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c53e8279ecb8e1952aa49294c5788d1b3be4f1bf",
+      "declaration": "OAI.VertexCover.every_fixed_factor_below_two",
+      "extra_axioms": [],
+      "index_zero_based": 187,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649435194,
+      "solution_git_blob": "073e2397866c1b22b34df5ccd2db964c9173b295",
+      "solution_module": "OAI.Computability.VertexCover.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "d4937709d9aa7af895410581cafee7dd354171d6319495b2d3cb78df17df458c",
+      "build_exit": 0,
+      "build_log_sha256": "cf3585e7517d194a74d168df4b1594d1ac34e140d014c88a6b12b1875123703a",
+      "comparator_config": "lean/ComparatorChallenges/WeakHessian.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "942159005dddd1337ac8a1decb1a874755c03dfd",
+      "declaration": "OAI.WeakHessian.every_geodesic",
+      "extra_axioms": [],
+      "index_zero_based": 188,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649435194,
+      "solution_git_blob": "a7f5316e9e9494e2ca155cfae3a763b88543a021",
+      "solution_module": "OAI.Geometry.WeakHessian.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "80e7d17310a1f494c0062d90245e36da9b08806ba452325cf3ec61e418a29910",
+      "build_exit": 0,
+      "build_log_sha256": "17df2ce729702de7c999d6768ea3d9d69007c6b655c099153398768fb0c3e0d2",
+      "comparator_config": "lean/ComparatorChallenges/WeakMTWGlobalSupport.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "f0a8b93d8fe8975109bcf8626807998f7e488d5c",
+      "declaration": "OAI.WeakMTWGlobalSupport.current_main_convexity",
+      "extra_axioms": [],
+      "index_zero_based": 189,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649435194,
+      "solution_git_blob": "f121572eb54853e3402484d36761a84591e6ef60",
+      "solution_module": "OAI.Geometry.WeakMTW.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "abc6d1987facf77b367644ef9e8d7d709f65a79e24e2da5e4c0fa8828853bbf5",
+      "comparator_config": "lean/ComparatorChallenges/BiholderTransport.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "4d4bbcf0c97812a0cb50dd71c577ae69e7ca4f66",
+      "declaration": "OAI.WeakMTWTransport.uniform_biHolder_transport",
+      "extra_axioms": null,
+      "index_zero_based": 190,
+      "observed_axioms": null,
+      "run_id": 40649439606,
+      "solution_git_blob": "158c989788d426391320bf2ef17853ccafc4f787",
+      "solution_module": "OAI.Analysis.BiholderTransport.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "9b4d8b6109b56ffe50e4fe2d0e2a2d76903f22f35ce0690aab4c30ee3ec1b80d",
+      "build_exit": 0,
+      "build_log_sha256": "4dcfc71dd92b09bae08bceaf41fe055f49003740d75cf87f7d02b4bb41c83c8e",
+      "comparator_config": "lean/ComparatorChallenges/PinnedDistances.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "d813c8063702368cb97058d3dd77055176a9a764",
+      "declaration": "OAI.WeakPinned.main",
+      "extra_axioms": [],
+      "index_zero_based": 191,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649439606,
+      "solution_git_blob": "c81398d15d7539560d4ef2fee00f61ec022cc46c",
+      "solution_module": "OAI.Geometry.PinnedDistances.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": null,
+      "axioms_log_sha256": null,
+      "build_exit": 124,
+      "build_log_sha256": "c33add3af22f1475ffcb9f55b9bc4e04134cddd4572e8deb7d526b9c3c0c5ede",
+      "comparator_config": "lean/ComparatorChallenges/YauCounterexample.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "c89cfb9140585b3e9e07d44b5f2b22ec14878a88",
+      "declaration": "OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample",
+      "extra_axioms": null,
+      "index_zero_based": 192,
+      "observed_axioms": null,
+      "run_id": 40649439606,
+      "solution_git_blob": "910c94d347793582ba0bb887125f4bdc2ede7e6c",
+      "solution_module": "OAI.Geometry.NodalSets.Main",
+      "verdict": "BUILD_FAILED_OR_INFRASTRUCTURE_BLOCKED"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "655610b0087e53d908a33199c104b208ca023be9222ed595d14b0a6428c515dc",
+      "build_exit": 0,
+      "build_log_sha256": "77149870b22eae6f708eddb6a2fe0a3291bec047a067e343a9b53bf94cac7354",
+      "comparator_config": "lean/ComparatorChallenges/SmoothYau.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "0150bc85b0d6bde269ed7d4e00e6ca4d18491e63",
+      "declaration": "OAI.YauCounterexamples.sphere_three",
+      "extra_axioms": [],
+      "index_zero_based": 193,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649439606,
+      "solution_git_blob": "86b89f18c9cade379b83b2c9b81efdf1940b9977",
+      "solution_module": "OAI.Geometry.SmoothYau.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "50f7ca09831b18af86cae1ddf5db8853419195a5a34fb590df4bcadaf3c56643",
+      "build_exit": 0,
+      "build_log_sha256": "37195b490124f5a985bc99dbd7bfb1ce4c62d9ef2d7644e5fee271f2014ceffc",
+      "comparator_config": "lean/ComparatorChallenges/SmoothYau.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "0150bc85b0d6bde269ed7d4e00e6ca4d18491e63",
+      "declaration": "OAI.YauCounterexamples.sphere_two_torus_two",
+      "extra_axioms": [],
+      "index_zero_based": 194,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649439606,
+      "solution_git_blob": "cfd7c29e4183edf531366c0b10357257b40a2551",
+      "solution_module": "OAI.Geometry.SmoothYau.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "cdea58793ee3988050a81f20936d17e2afa5f066b81fcc0885fb9ba77fe889f5",
+      "build_exit": 0,
+      "build_log_sha256": "2b4271b8916b08a080bcf291c637be7e8656db8d88f8e9a3bdccc766c9b44b19",
+      "comparator_config": "lean/ComparatorChallenges/BipartiteCrossing.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "d943a307d1bffd61b2457303c63fffe8a1d5413e",
+      "declaration": "OAI.Zarankiewicz.mainTarget_proof",
+      "extra_axioms": [],
+      "index_zero_based": 195,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649444523,
+      "solution_git_blob": "778413f96c7ed0f659a9067dcedc4c1cd2806e31",
+      "solution_module": "OAI.Combinatorics.Crossing.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "cac64322e6f12f664dde9799e969152f66ab9f1f6b62c7ad568beb7ffc71c1f7",
+      "build_exit": 0,
+      "build_log_sha256": "78bf41c403779e91f0c5c3a90d3e120dfb8f0123082c6aef5f2582dd5168d354",
+      "comparator_config": "lean/ComparatorChallenges/BinarySweep.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "836374210f81c8552fa89cee3b3d0bd8d6682664",
+      "declaration": "OAI.binary_sweep_contraction_and_mixing",
+      "extra_axioms": [],
+      "index_zero_based": 196,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649444523,
+      "solution_git_blob": "f2755428fe3c4b6f5004265dfb856d0a64c8feda",
+      "solution_module": "OAI.Probability.BinarySweep.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "bc8ef3b0998bf57df9d926136540ce812c985d32c2ac595db39893c71e2bcacd",
+      "build_exit": 0,
+      "build_log_sha256": "756398cea1544d6170c8fae797af4f15e2378a79bbe0e7579bee53ae96e982ad",
+      "comparator_config": "lean/ComparatorChallenges/CommonBasesFPRAS.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "7505bbf7576e64badd350f647c4f526b1e405058",
+      "declaration": "OAI.common_bases_fpras",
+      "extra_axioms": [],
+      "index_zero_based": 197,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649444523,
+      "solution_git_blob": "83e7e510797b85b7ef65b93d5983303245c3246b",
+      "solution_module": "OAI.Combinatorics.MatroidCounting.CommonBases",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    },
+    {
+      "axioms_exit": 0,
+      "axioms_log_sha256": "b73cd051953c371404c375ca0ed70e2148ea95a5ed8dfb9b678f08298c1e2560",
+      "build_exit": 0,
+      "build_log_sha256": "fed726c996f2f29b4783d763dcbe336c80b905c2dc06660217a8da1a5ac493af",
+      "comparator_config": "lean/ComparatorChallenges/RandomizedMeanPayoff.json",
+      "comparator_executed": false,
+      "comparator_git_blob": "293f8308c91f1423d36b711d7738262fdb95f89e",
+      "declaration": "OAI.randomized_quasipolynomial_mean_payoff",
+      "extra_axioms": [],
+      "index_zero_based": 198,
+      "observed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "run_id": 40649444523,
+      "solution_git_blob": "3a704090bf1117948a4afa153266b55f20b85e13",
+      "solution_module": "OAI.Computability.RandomMean.Main",
+      "verdict": "LEAN_REPLAY_AND_AXS_PASS"
+    }
+  ],
+  "runs": [
+    {
+      "artifact_id": 12799754585,
+      "artifact_name": "oai26-corpus-lean-130-5",
+      "files_sha256": "0eda65607ea8a8ca54fbb44ae63a2beffacd987b4c8fbf2fc8916803a44d8776",
+      "github_provider_zip_sha256": "f07aa84b82e92f0d42c11b24041ea6a218b9c12bffc144309fd83144137d1b58",
+      "index_range": [
+        130,
+        135
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "de1b50f85fc2003d27ee67cea63205eab8db09cb851bef6f18724720563986a6",
+      "run_id": 40646952848,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12800398940,
+      "artifact_name": "oai26-corpus-lean-135-5",
+      "files_sha256": "d9ae6fb6f9ca191a8348829199cf0966905b5f14c966e98fc9268353d95d36eb",
+      "github_provider_zip_sha256": "af29fd5cece60bc8243b056873705e89983b4f63799e97d9c87098e31289f7d4",
+      "index_range": [
+        135,
+        140
+      ],
+      "internal_file_hashes_verified": 18,
+      "receipt_sha256": "615fee48fa06358ebf248852d058e989585bc83140989e7ddc29cba5e15206c1",
+      "run_id": 40646956219,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "failure"
+    },
+    {
+      "artifact_id": 12799134023,
+      "artifact_name": "oai26-corpus-lean-140-5",
+      "files_sha256": "408dedc336b330aa8cb01a7dc7c31ee6c51b23b3750e0cbb4a2964abe093eb8e",
+      "github_provider_zip_sha256": "2c1e145342b64e3faf95e41b0fc6d0452799454217215bf236776a7601806dcd",
+      "index_range": [
+        140,
+        145
+      ],
+      "internal_file_hashes_verified": 18,
+      "receipt_sha256": "40f14c0b93bb80e6d2b943e5e8fe4204be6c62c76004c79c17476785f42fb344",
+      "run_id": 40646959781,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "failure"
+    },
+    {
+      "artifact_id": 12800660252,
+      "artifact_name": "oai26-corpus-lean-145-5",
+      "files_sha256": "e61c879897108a04079db0fe450f39366a8a36e4bf8df1e36b3c45cb07f90cc3",
+      "github_provider_zip_sha256": "9b149eebecbe2f836c3e066cf23df008a3a1b5238b608120e49382aa4e4a2b88",
+      "index_range": [
+        145,
+        150
+      ],
+      "internal_file_hashes_verified": 18,
+      "receipt_sha256": "dff852ddbe7c08e1319b4cccdb1aacaef8d09db3aeb176173dfef65d64c00a7b",
+      "run_id": 40646962958,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "failure"
+    },
+    {
+      "artifact_id": 12800104673,
+      "artifact_name": "oai26-corpus-lean-150-5",
+      "files_sha256": "e7fc6ac4920c25afc9d61047b61dff53a3326c93688420e0a5df28b314fc4ba1",
+      "github_provider_zip_sha256": "30024e49b9a73903433a68a053ed7cfdeed8b0325467ceebd475f725a7c5d421",
+      "index_range": [
+        150,
+        155
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "97ab951f44f29e1d8b9576d46d0495a7d9e70f4ca781c35b928a4486cf3622a6",
+      "run_id": 40648272735,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12799697529,
+      "artifact_name": "oai26-corpus-lean-155-5",
+      "files_sha256": "114daa552305c6a20e5dc339bdafc6885eed4ba7d0ea1fc9bc045740731fad8f",
+      "github_provider_zip_sha256": "cbb8cb47894844bbab8b3b456df0d861f27df0b2bf255a9117abb2d571db4b3a",
+      "index_range": [
+        155,
+        160
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "3ffd17324bd4593c8ccbe5a4c8f1dd5cae4d8c1e03570f28c2d04f9d025d8032",
+      "run_id": 40648276369,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12799273676,
+      "artifact_name": "oai26-corpus-lean-160-5",
+      "files_sha256": "b41f6b938d4ffc1672e1148411f9dd334116d8d1cca8f902c45bfa72064574ef",
+      "github_provider_zip_sha256": "8e4bfb5d8e8bbead4a3451b24d9e7f6d47d2621ff073eb743c9dac9815b9b131",
+      "index_range": [
+        160,
+        165
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "1a590d377307d58acf368afa3ae78dfab63b3c4488f0041aefaebe06dbecfa68",
+      "run_id": 40648279916,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12799823809,
+      "artifact_name": "oai26-corpus-lean-165-5",
+      "files_sha256": "754ea76a24805768a808a87ee9b71e2398ba94239efe5c128b41105f788441e9",
+      "github_provider_zip_sha256": "c81b9c662a6dfd65ac27054cb05d8a30d2b3b4da9fb14a65d8217291543ebbb3",
+      "index_range": [
+        165,
+        170
+      ],
+      "internal_file_hashes_verified": 18,
+      "receipt_sha256": "5ebc8945ad84d3a9f99a82e7682e46505ad58e0cb9d1fbf35dfa60b1e6ded0ab",
+      "run_id": 40648283218,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "failure"
+    },
+    {
+      "artifact_id": 12800825116,
+      "artifact_name": "oai26-corpus-lean-170-5",
+      "files_sha256": "8d68a30673118701896d444bb3d2869cbe506a9eded3f09a4280226e1e2f06cd",
+      "github_provider_zip_sha256": "dce8c52d5c5f13d88e7640d4d05f79e5cc521874125bb7d68756b659d548c5a4",
+      "index_range": [
+        170,
+        175
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "6b3ab473d31c9634b3e4aa726ccf497fb58f76fa54c345c94456b32d3a114cf0",
+      "run_id": 40649187612,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12799752847,
+      "artifact_name": "oai26-corpus-lean-175-5",
+      "files_sha256": "333d3fa398c06f4ddcbe9ccf93dacd31650ff63b4b3022dcfd0ae3c2aea6b487",
+      "github_provider_zip_sha256": "1ee19ad8848a2bbacc8953f20021e67c010916371497c19fab6c54d924bdff62",
+      "index_range": [
+        175,
+        180
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "a1b46a376ad3046cad40474f08a986934379a00af99ba6adb9874b7aad6b4abe",
+      "run_id": 40649191986,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12801560078,
+      "artifact_name": "oai26-corpus-lean-180-5",
+      "files_sha256": "f407494289ad139e597fa5430b7632d612cbf478886e6880290b0010f98b9988",
+      "github_provider_zip_sha256": "ca21f66eb3022a76a8fc7e2f550f70f27d5a87adb345c9f37fb263c3b881fc12",
+      "index_range": [
+        180,
+        185
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "527a950c66c41a4438af9ee09be8fd9e7d840af4fdff97a72608e173855f6159",
+      "run_id": 40649195365,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12800999070,
+      "artifact_name": "oai26-corpus-lean-185-5",
+      "files_sha256": "44a89cf99f1918e251463b45b10f9fe2c3fc257a01224492dbf333b7c935d60c",
+      "github_provider_zip_sha256": "ea78eacaac4f734998b3d89db2d3ab2a295aebf617d0367ceffdd7ee126add5f",
+      "index_range": [
+        185,
+        190
+      ],
+      "internal_file_hashes_verified": 20,
+      "receipt_sha256": "63b66bd465c5291e7e434bfc6e0e5caf8a87bdda5781c19b2ef1dc1e668e05fd",
+      "run_id": 40649435194,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "success"
+    },
+    {
+      "artifact_id": 12803101645,
+      "artifact_name": "oai26-corpus-lean-190-5",
+      "files_sha256": "ab53ee9a431913486aadd0c193b2c6775d6b516f0d30434d2232fc65b2cd44eb",
+      "github_provider_zip_sha256": "ee1c7836ef4ca48f26117579657e7473e06e7b53ef26384d14bcdb33062bfa62",
+      "index_range": [
+        190,
+        195
+      ],
+      "internal_file_hashes_verified": 16,
+      "receipt_sha256": "ac8292e867fb694bf1c90222c8a38c042f9b3948b0cc9b7bd15d164d9b8f6c1d",
+      "run_id": 40649439606,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "failure"
+    },
+    {
+      "artifact_id": 12800993636,
+      "artifact_name": "oai26-corpus-lean-195-5",
+      "files_sha256": "2353ef8d4d364256eb4c30570e09cd191e0d20c71c866cb7805ea0c853a87229",
+      "github_provider_zip_sha256": "a9c2138611e3f575eb12953bd7f55f84ed9209a4666fc588b33ca463fe9acd49",
+      "index_range": [
+        195,
+        200
+      ],
+      "internal_file_hashes_verified": 18,
+      "receipt_sha256": "745e890bdc9fd0bce36fb06e07d642d664c30c16ce1e54b86ca57aba6708ba84",
+      "run_id": 40649444523,
+      "runner_head": "dd1a0c2001a4ce6ff0c7f9a0979d590edeafa777",
+      "workflow_conclusion": "failure"
+    }
+  ],
+  "source_identity": {
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "upstream_tree": "45074722c918576d65b4c8be9686c76f508ba696"
+  },
+  "unresolved": "None in the *Lean/axiom* evidence set for covered indices 130-198 excluding 145 and 199. Historical timeout rows are retained, five corrected by separate protected single-target evidence. Comparator and manuscript-semantic alignment are separate, unproven obligations. No 145/199 replay, admission, or claim in this transaction. The original 14 GitHub ZIP digests were recorded provider metadata, not independently rehashed ZIP bytes."
+}
