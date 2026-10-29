@@ -1,0 +1,156 @@
+{
+  "record_type": "GCL_OAI26_WP03_F005_SOURCE_SEMANTIC_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F005",
+  "family_id": "005",
+  "disposition": "PROPOSITION_LEVEL_ALIGNMENT",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "pinned_lean_toolchain": "leanprover/lean4:v4.34.1",
+    "files": {
+      "manuscript_pdf": {
+        "path": "preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf",
+        "sha1": "ecbe60eb89d2d25c1d07da6232f8d9869e6c0c1d"
+      },
+      "manuscript_introduction": {
+        "path": "preprints/Catalans-constant-is-irrational-September-24-2026/build/sections/introduction.tex",
+        "sha1": "4492b3dd22f8c6bb57909c05a220aa8ee646b9cd"
+      },
+      "manuscript_conclusion": {
+        "path": "preprints/Catalans-constant-is-irrational-September-24-2026/build/sections/conclusion.tex",
+        "sha1": "d7cf816b5da984ae97b11eb8a5a8ce4140b2e708"
+      },
+      "lean_docs": {
+        "path": "lean/docs/005.md",
+        "sha1": "b8d3af65448c39017827ba4e7441b44a45f355a1"
+      },
+      "lean_proof": {
+        "path": "lean/OAI/NumberTheory/Catalan/Results/Conclusions.lean",
+        "sha1": "a21cbc0e56a4e71ec21ce765b16e6ef0adb864f0"
+      },
+      "lean_solution_entrypoint": {
+        "path": "lean/OAI/NumberTheory/Catalan/Main.lean",
+        "sha1": "752588840ac791e2a8844ce20ca0cf1da508590d"
+      },
+      "lean_challenge": {
+        "path": "lean/ComparatorChallenges/Catalan.lean",
+        "sha1": "f7941ef960ec9d0ec745f15f2ee7b2ff46bd6058"
+      },
+      "comparator_config": {
+        "path": "lean/ComparatorChallenges/Catalan.json",
+        "sha1": "78b89138b45ecbe09c061b25c2e2f6177ffd4b9b"
+      },
+      "estimate_module": {
+        "path": "lean/OAI/NumberTheory/Catalan/Estimates/ManuscriptCaseOneX4SubstitutionError.lean",
+        "sha1": "b4fd37b8c6c5e1c09cee80cd6dba0bbc41767add"
+      }
+    }
+  },
+  "manuscript": {
+    "title": "Catalan's constant is irrational",
+    "edition": "2026-09-24",
+    "pdf_sha256": "4023d0344abceb79dc46a16380dac3a662193f9d4f23e6c340b2162068b04c0e",
+    "pdf_bytes": 574388,
+    "pdf_pages": 44,
+    "main_theorem": {
+      "label": "Theorem 1.1",
+      "pdf_page": 1,
+      "proposition": "Catalan's constant is irrational",
+      "definition": "G = sum_{j>=0} (-1)^j / (2j+1)^2",
+      "additional_hypotheses": []
+    },
+    "proof_location": {
+      "pdf_page": 42,
+      "section": "8 Conclusion",
+      "summary": "Contradicts prime-scale finite-place lower and real-place upper determinant bounds under the hypothesis that G is rational."
+    },
+    "downstream_not_in_selected_comparator": [
+      "The two-cusped hyperbolic three-manifold minimum volume is irrational",
+      "Whitehead-link and (-2,3,8)-pretzel-link complement volumes are irrational",
+      "Arithmetic hyperbolic three-orbifold volumes over Q(i) are irrational"
+    ]
+  },
+  "formalization": {
+    "theorem": "OAI.InternalCatalan.catalan_irrational",
+    "solution_module": "OAI.NumberTheory.Catalan.Main",
+    "proof_file": "lean/OAI/NumberTheory/Catalan/Results/Conclusions.lean",
+    "theorem_statement": "Irrational (∑' j : ℕ, (-1 : ℝ) ^ j / ((2 * j + 1 : ℕ) : ℝ) ^ 2)",
+    "challenge_module": "ComparatorChallenges.Catalan",
+    "comparator_config_theorem_names": [
+      "OAI.InternalCatalan.catalan_irrational"
+    ],
+    "permitted_axioms_in_config": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "proof_file_contains_sorry": false,
+    "challenge_file_contains_placeholder_sorry": true,
+    "exact_declaration_text_matches_challenge": true,
+    "additional_hypotheses": [],
+    "comparator_executed_in_this_work_package": false,
+    "statement_source_bound": true,
+    "import_axiom_closure_independently_replayed": false
+  },
+  "crosswalk": {
+    "in_family_index_372": true,
+    "family_005_manuscripts": 1,
+    "inside_200_main_results": false,
+    "inside_173_source_papers": false,
+    "qualification": "This is an identifiable additional upstream Lean formalization and Comparator, not an absent proof. Do not treat it as one of WP01's 200 indexed replay passes."
+  },
+  "producer_review": {
+    "principal_claim": "The manuscript and actual Lean theorem each assert irrationality of the same explicitly written alternating series, without added hypotheses.",
+    "scope_of_comparison": "Theorem 1.1 only; the selected Comparator does not test the manuscript's hyperbolic-volume applications.",
+    "proof_scope": "The proof file imports finite-place, prime-nonvanishing and real-determinant lemmas; their manuscript-level equivalence and the full imported dependency graph were not adjudicated.",
+    "error_module_interpretation": "ManuscriptCaseOneX4SubstitutionError is an error-bound theorem name, not by itself a finding that the manuscript is false."
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "separate_authenticated_person": false,
+    "findings": [
+      "The displayed theorem is not a full definition/model-bridge proof.",
+      "The challenge's sorry is an intended placeholder, not evidence of a sorry in the solution.",
+      "The selected theorem cannot be used to declare the geometric consequences formalized.",
+      "No WP01 200-row Comparator result can be inherited merely because an additional challenge exists.",
+      "Any full-semantic-match or certification claim would exceed the present evidence."
+    ],
+    "hostile_fixture_ids": [
+      "sign-reversal",
+      "denominator-power-change",
+      "unwarranted-extra-hypothesis",
+      "claimed-comparator-success",
+      "geometric-corollary-claimed-formalized",
+      "source-head-drift",
+      "unindexed-equals-no-lean"
+    ]
+  },
+  "coverage": {
+    "pilot_families": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "007",
+      "008",
+      "009",
+      "010",
+      "011",
+      "012"
+    ],
+    "reviewed_this_transaction": [
+      "005"
+    ],
+    "other_families_not_adjudicated": true
+  },
+  "reproduction": {
+    "pdf_inspection": "git show 1581d4cbdd69a0faf34b2089614fe2a814316a6a:preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf > pinned.pdf; sha256sum pinned.pdf; parse pages 1 and 42 with pypdf",
+    "lean_inspection": "git show 1581d4cbdd69a0faf34b2089614fe2a814316a6a:lean/OAI/NumberTheory/Catalan/Results/Conclusions.lean; compare declaration to ComparatorChallenges/Catalan.lean, inspect Catalan.json",
+    "source_identity": "All files referenced by exact pinned Git blob SHA-1; formalization crosswalk at protected GCL main separately inspected."
+  },
+  "claim_boundary": "A bounded source-pinned principal proposition match only. NOT full semantic-equivalence proof; NOT independently run Comparator/axiom audit; NOT manuscript proof verification, novelty judgment or MATHCERT certification.",
+  "remaining": "Complete WP03 first twelve-family pilot and independently critical source/model checks; family 005 alone does not close parent #332."
+}
