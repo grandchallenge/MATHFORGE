@@ -1,0 +1,63 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_008_LEDGER/1",
+  "assignment_id": "GCL-OAI-26-WP01",
+  "disposition": "ONE_HARDENED_COMPARATOR_RUN_ACCEPTED_PENDING_PROTECTED_ADMISSION",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "runner_head": "14629221474bdbfccff1f9bffdc48b7a5dc4b26c",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "comparator_source_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+  "exporter_source_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "landrun_source_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+  "verification_capture": "43356d2a0ebb49ed8f195986cd356ca7",
+  "review_passes": [
+    {
+      "role": "Verifier",
+      "scope": "logical_role_scoped_audit",
+      "finding": "Downloaded exact artifact ZIP through authenticated GitHub API and independently computed sha256:656010435ddd8f2b9e2093e5dd2902e19dcd19b73e8fc7a2e7eb0ab75824d9ee, matching GitHub provider digest. All 11 receipt-listed files verified for SHA256 and byte count; pinned Lake manifest pre/post SHA256 unchanged."
+    },
+    {
+      "role": "Adversary",
+      "scope": "non_authoring_read_only_logical_pass",
+      "finding": "Verified index 8 is distinct from protected indices 0–7 and 199; exact declaration and challenge config agree with sorted protected crosswalk. Hardened exit 0, diagnostic exit null, nanoda disabled, only permitted axioms propext/Quot.sound/Classical.choice. No diagnostic fallback accepted; hostile-fixture testing not newly claimed."
+    },
+    {
+      "role": "Amanuensis",
+      "scope": "logical_role_scoped_audit",
+      "finding": "Run, attempt, artifact, immutable source and statement hashes, source/toolchain pins, and bounded claim scope preserved. No manuscript equivalence or mathematical certification asserted."
+    }
+  ],
+  "results": [
+    {
+      "index": 8,
+      "declaration": "OAI.BinPackingGap.main_results",
+      "run_id": 40902984911,
+      "run_attempt": 1,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40902984911",
+      "artifact_id": 12911762633,
+      "artifact_digest": "sha256:656010435ddd8f2b9e2093e5dd2902e19dcd19b73e8fc7a2e7eb0ab75824d9ee",
+      "receipt_sha256": "b6b38cc057c4edc0c13f451cbc201e644b61dd7facdaafdbe5c0c34ad93ef453",
+      "statement_sha256": "f72d9643f0dab3bdb18876f54b072f9720fc99491e3801f2a46214e90f7e2e50",
+      "config_sha256": "761527acf4ff186a6765baf5b3f30d7542f75b88865168de59e25e7c360ba941",
+      "solution_sha256": "a61c56a63fd72264e61ce9a83b3e9671b7a41ac4da214836c68dc0c2fc9b7d46",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "internal_file_sha256_verified": "11/11",
+      "internal_file_byte_counts_verified": "11/11",
+      "manifest_unchanged": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "comparator_kernel_log": "Lean default kernel accepts the solution; Your solution is okay!; Finished with result: success"
+    }
+  ],
+  "claim_boundary": "Exact pinned Comparator challenge acceptance only. Not paper-to-formalization semantic correspondence, theorem certification, or public MATHCERT.",
+  "unresolved": [
+    "WP01 190 remaining distinct Comparator indices after this admission, including indices 9–198",
+    "200-row terminal Comparator register",
+    "source-semantic review and certification remain separate"
+  ]
+}
