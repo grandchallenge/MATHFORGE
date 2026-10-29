@@ -1,0 +1,52 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_EXACT_PREDICATE_BRIDGE/1",
+  "upstream": "openai/math",
+  "pinned_source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "disposition": "EXACT_PREDICATE_RELATION_IDENTIFIED_NOT_OCTOBER_RATE_FORMALIZED",
+  "evidence": [
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/Model.lean",
+      "predicate": "BoundedMixed",
+      "literal_scope": "∀ a : MultiIndex, ∃ C : ℝ, 0 ≤ C ∧ ∀ t, 0 ≤ t → ∀ x, ‖mixedD a v t x‖ ≤ C",
+      "interpretation": "Per-multiindex global constant bound, not rate depending on t."
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/Model.lean",
+      "predicate": "PeriodicAfterOne",
+      "literal_scope": "∀ t, 1 ≤ t → ∀ x, v (t + 1) x = v t x",
+      "interpretation": "Eventually period one, distinct from decaying slow profile."
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/FieldBounds.lean",
+      "predicate": "RepeatsAfter",
+      "literal_scope": "∀ t, T ≤ t → v (t + 1) = v t",
+      "interpretation": "Functional equality on the eventual period."
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/FieldBounds.lean",
+      "predicate": "boundedMixed_of_compact_repeating",
+      "literal_scope": "JointSmooth v → SpatiallySupported K v → RepeatsAfter 1 v → BoundedMixed v",
+      "interpretation": "Boundedness via compact interval and periodic transport, not polynomial decay."
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/MainResult.lean",
+      "predicate": "balanced_three_stack_realization",
+      "literal_scope": "Returns BoundedMixed and PeriodicAfterOne for U M w, among other outputs.",
+      "interpretation": "This exact theorem establishes the periodic branch, not named October slow clock."
+    }
+  ],
+  "october_source_clauses": [
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "claim": "For slow profile U_alpha1 and f_alpha1, ||∂_t^h U||_{C^r} + ||∂_t^h f||_{C^r} ≤ C_(h,r)(1+t)^(-1-h).",
+      "proven_identity_with_lean_U": "NO"
+    },
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "claim": "Torus projection Pg=g−∇φ and pressure shift with effective H^(r+2)→C^r bounds.",
+      "proven_identity_with_lean_theorem": "NO"
+    }
+  ],
+  "minimal_missing_bridge": "Exact source-to-Lean construction mapping of October's distinct slow/profile and projected-force objects; a theorem deriving the rate and Poisson projection estimates from mapped definitions. Do not use periodic U to stand in for slow-profile U_alpha1.",
+  "claim_boundary": "Verified literal predicate semantics only; no exhaustive Lean search, no missing-proof certification."
+}
