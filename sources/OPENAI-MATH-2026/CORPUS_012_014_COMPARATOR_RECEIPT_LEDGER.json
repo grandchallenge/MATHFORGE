@@ -1,0 +1,50 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_12_14_LEDGER/1",
+  "decision": "THREE_PINNED_HARDENED_COMPARATOR_CHALLENGES_ACCEPTED",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "results": [
+    {
+      "index": 12,
+      "declaration": "OAI.BoundedTreePotentials.TreeCalculus.main_counterexample",
+      "run_id": 40940101025,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40940101025",
+      "artifact_id": 12928110825,
+      "artifact_digest": "sha256:52465006952d701c406817a23b946f86ac7d05e9f8308865e798ada7d7f5994e",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "accepted": true,
+      "internal_file_sha256_and_byte_count_verified": "11/11",
+      "manifest_pre_post_unchanged": true
+    },
+    {
+      "index": 13,
+      "declaration": "OAI.BoundedTreewidthL1.main_theorem",
+      "run_id": 40940268415,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40940268415",
+      "artifact_id": 12928140548,
+      "artifact_digest": "sha256:3f4008a85db4140fc0269076d39b20778a63a09cbba5724aba769aa5a46dc00c",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "accepted": true,
+      "internal_file_sha256_and_byte_count_verified": "11/11",
+      "manifest_pre_post_unchanged": true
+    },
+    {
+      "index": 14,
+      "declaration": "OAI.Brennan.Sharp.sharp_endpoints",
+      "run_id": 40940435193,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40940435193",
+      "artifact_id": 12926433796,
+      "artifact_digest": "sha256:b437bd0fc28dae57bfd3c2428eafa236cce2d80bb1c4f5e4fee4ce290a9fc46f",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "accepted": true,
+      "internal_file_sha256_and_byte_count_verified": "11/11",
+      "manifest_pre_post_unchanged": true
+    }
+  ],
+  "verification": "Authenticated GitHub artifact ZIPs downloaded and independently checked all receipt-indexed files' digest and byte lengths, read actual hardened outcome, and compared pinned manifest digests.",
+  "claim_boundary": "Exact pinned Lean Comparator acceptance only; manuscript equivalence and full certification not asserted."
+}
