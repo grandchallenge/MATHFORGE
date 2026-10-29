@@ -1,0 +1,222 @@
+name: OAI Math WP01 indexed hardened Comparator replay
+on:
+  workflow_dispatch:
+    inputs:
+      corpus_index:
+        description: 'Zero-based pinned crosswalk index 0–199'
+        required: true
+        type: number
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oai26-wp01-comparator-${{ inputs.corpus_index }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  comparator-indexed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    env:
+      GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
+      GCL_CORPUS_INDEX: "${{ inputs.corpus_index }}"
+      GCL_UPSTREAM_SHA: "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      GCL_COMPARATOR_SHA: "d03acab154d269c06e60e4de7e4cc85deebff94b"
+      GCL_EXPORT_SHA: "076e8e57707e813375e8f9da8bf989799ace9680"
+      GCL_LANDRUN_SHA: "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+    steps:
+      - name: Checkout GCL governed source lock
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Checkout immutable upstream Lean corpus
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          fetch-depth: 1
+          sparse-checkout: lean
+          persist-credentials: false
+
+      - name: Preflight exact source theorem and challenge
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/comparator-indexed
+          test "$(git -C upstream/math rev-parse HEAD)" = "$GCL_UPSTREAM_SHA"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          sha256sum upstream/math/lean/lake-manifest.json > replay/comparator-indexed/lake-manifest-pre.sha256
+          python3 - <<'PY'
+          import json, os, re, hashlib
+          from pathlib import Path
+          idx = int(os.environ["GCL_CORPUS_INDEX"])
+          assert 0 <= idx < 200
+          crosswalk = json.loads(Path("sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json").read_text())
+          rows = sorted(crosswalk["main_results"], key=lambda x:x["declaration"].encode("utf-8"))
+          assert len(rows)==200 and len({r["declaration"] for r in rows})==200
+          row = rows[idx]
+          root = Path("upstream/math")
+          config = root / row["comparator_config"]
+          solution = root / row["lean_source"]
+          assert config.is_file() and solution.is_file()
+          cfg = json.loads(config.read_text())
+          ident = re.compile(r"[A-Za-z_][A-Za-z_0-9]*(?:\.[A-Za-z_][A-Za-z_0-9]*)*\Z")
+          assert ident.fullmatch(row["declaration"])
+          assert ident.fullmatch(cfg["challenge_module"]) and ident.fullmatch(cfg["solution_module"])
+          assert cfg["theorem_names"] and row["declaration"] in cfg["theorem_names"]
+          assert set(cfg["permitted_axioms"]) <= {"propext","Classical.choice","Quot.sound"}
+          assert cfg["enable_nanoda"] is False
+          challenge = root / "lean" / (cfg["challenge_module"].replace(".","/")+".lean")
+          assert challenge.is_file()
+          assert row["lean_source"].startswith("lean/OAI/") and row["comparator_config"].startswith("lean/ComparatorChallenges/")
+          target = "ComparatorChallenges/" + config.name
+          out = Path("replay/comparator-indexed")
+          out.joinpath("selected-config.txt").write_text(target+"\n")
+          out.joinpath("selected-index.txt").write_text(str(idx)+"\n")
+          out.joinpath("selected-declaration.txt").write_text(row["declaration"]+"\n")
+          out.joinpath("selected-identity.json").write_text(json.dumps({"index":idx,"crosswalk_row":row,"config":cfg},sort_keys=True,indent=2)+"\n")
+          with out.joinpath("statement-sha256.txt").open("w") as f:
+              for p in (challenge,config,solution):
+                  f.write(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+str(p)+"\n")
+          PY
+
+      - name: Install fixed elan v1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Build pinned landrun comparator and toolchain-matched exporter
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/comparator-indexed /tmp/gcl-comparator-tools
+          {
+            go version
+            git clone https://github.com/leanprover/lean4export.git /tmp/gcl-comparator-tools/lean4export
+            git -C /tmp/gcl-comparator-tools/lean4export checkout --detach "$GCL_EXPORT_SHA"
+            test "$(git -C /tmp/gcl-comparator-tools/lean4export rev-parse HEAD)" = "$GCL_EXPORT_SHA"
+            cp upstream/math/lean/lean-toolchain /tmp/gcl-comparator-tools/lean4export/lean-toolchain
+            (cd /tmp/gcl-comparator-tools/lean4export && lake build lean4export)
+            git clone https://github.com/leanprover/comparator.git /tmp/gcl-comparator-tools/comparator
+            git -C /tmp/gcl-comparator-tools/comparator checkout --detach "$GCL_COMPARATOR_SHA"
+            test "$(git -C /tmp/gcl-comparator-tools/comparator rev-parse HEAD)" = "$GCL_COMPARATOR_SHA"
+            cp upstream/math/lean/lean-toolchain /tmp/gcl-comparator-tools/comparator/lean-toolchain
+            python3 - <<'PY'
+          from pathlib import Path
+          p = Path("/tmp/gcl-comparator-tools/comparator/lakefile.toml")
+          data = p.read_text()
+          assert 'rev = "master"' in data
+          p.write_text(data.replace('rev = "master"', 'rev = "076e8e57707e813375e8f9da8bf989799ace9680"'))
+          PY
+            (cd /tmp/gcl-comparator-tools/comparator && lake update && lake build comparator)
+            go install "github.com/zouuup/landrun/cmd/landrun@$GCL_LANDRUN_SHA"
+            test -x "$(go env GOPATH)/bin/landrun"
+            test -x /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export
+            test -x /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
+            sha256sum "$(go env GOPATH)/bin/landrun" \
+              /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export \
+              /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
+          } > replay/comparator-indexed/toolchain-build.log 2>&1
+
+      - name: Prepare exact upstream Lake environment without source drift
+        working-directory: upstream/math/lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            lake --version
+            lake update
+            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/comparator-indexed/lake-manifest-pre.sha256")"
+            lake exe cache get
+          } > "$GITHUB_WORKSPACE/replay/comparator-indexed/lake-environment.log" 2>&1
+          sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/comparator-indexed/lake-manifest-post.sha256"
+
+      - name: Comparator isolated execution and separately labelled lower-assurance diagnostic
+        working-directory: upstream/math/lean
+        shell: bash
+        run: |
+          set +e
+          export PATH="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin:$(go env GOPATH)/bin:$PATH"
+          export COMPARATOR_LEAN4EXPORT="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export"
+          export COMPARATOR_LANDRUN="$(go env GOPATH)/bin/landrun"
+          export GCL_COMPARATOR_BIN="/tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator"
+          export GCL_COMPARATOR_CONFIG="$(cat "$GITHUB_WORKSPACE/replay/comparator-indexed/selected-config.txt")"
+          systemd-run --user --wait --collect --pipe \
+            --property='RestrictAddressFamilies=~AF_UNIX' \
+            -E "PATH=$PATH" -E "COMPARATOR_LEAN4EXPORT=$COMPARATOR_LEAN4EXPORT" \
+            -E "COMPARATOR_LANDRUN=$COMPARATOR_LANDRUN" \
+            --working-directory="$(pwd)" \
+            /bin/bash -c 'lake env "$1" "$2"' \
+            comparator "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
+            > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.stdout_stderr.log" 2>&1
+          hard_rc=$?
+          echo "$hard_rc" > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.exit"
+          # If systemd user manager is unavailable, preserve a NON-CERTIFYING
+          # landrun-backed diagnostic result rather than pretending hardened execution.
+          if [ "$hard_rc" -ne 0 ]; then
+            lake env "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
+              > "$GITHUB_WORKSPACE/replay/comparator-indexed/diagnostic.stdout_stderr.log" 2>&1
+            diagnostic_rc=$?
+            echo "$diagnostic_rc" > "$GITHUB_WORKSPACE/replay/comparator-indexed/diagnostic.exit"
+          fi
+          # Hardened Comparator acceptance alone is the success condition.
+          exit "$hard_rc"
+
+      - name: Retain exact result identity and bounded claims
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root=Path("replay/comparator-indexed")
+          files={}
+          for p in sorted(root.glob("*")):
+              if p.is_file():
+                  data=p.read_bytes()
+                  files[p.name]={"bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()}
+          def code(name):
+              p=root/name
+              return int(p.read_text().strip()) if p.is_file() else None
+          hard,diagnostic=code("hardened.exit"),code("diagnostic.exit")
+          record={
+            "record_type":"GCL_OPENAI_MATH_COMPARATOR_REPLAY/1",
+            "gcl_head":os.environ.get("GITHUB_SHA"),
+            "run_id":os.environ.get("GITHUB_RUN_ID"),
+            "upstream_revision":os.environ.get("GCL_UPSTREAM_SHA"),
+            "lean_toolchain":"leanprover/lean4:v4.34.1",
+            "comparator_source_commit":os.environ.get("GCL_COMPARATOR_SHA"),
+            "exporter_source_commit":os.environ.get("GCL_EXPORT_SHA"),
+            "landrun_source_commit":os.environ.get("GCL_LANDRUN_SHA"),
+            "target":(root/"selected-declaration.txt").read_text().strip(),
+            "corpus_index":int((root/"selected-index.txt").read_text().strip()),
+            "hardened_exit":hard,
+            "diagnostic_exit":diagnostic,
+            "comparator_hardened_accepted":hard==0,
+            "diagnostic_not_certification":True,
+            "files":files,
+            "claim_boundary":"Comparator acceptance under the declared isolation policy verifies the exact pinned Lean challenge; it does not independently establish paper-to-formalization semantic correspondence, literary correctness, novel status, or MATHCERT certification."
+          }
+          (root/"REPLAY_RECEIPT.json").write_text(json.dumps(record,indent=2)+"\n")
+          PY
+
+      - name: Retain comparator and infrastructure failure evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: openai-math-comparator-indexed
+          path: replay/comparator-indexed
+          if-no-files-found: error
+          retention-days: 30
+
+
