@@ -1,0 +1,1157 @@
+{
+  "record_type": "GCL_OAI26_WP02_CANONICAL_3_14_13_RISK_REGISTER/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "history_path": "history.md",
+    "history_git_blob": "693874f398905b1bc59e01b898b223ae9956bfc2"
+  },
+  "provenance": {
+    "publisher_date": "2026-10-07",
+    "basis": "Publisher history and protected source-identity registers",
+    "evidence_registers": [
+      {
+        "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+        "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+      },
+      {
+        "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+        "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+      },
+      {
+        "path": "sources/OPENAI-MATH-2026/WP02_WITHDRAWAL_EDITION_RISK_TRIAGE.json",
+        "git_blob": "68428002d7c07ed59ceea25ed79aea0a7e74861c"
+      },
+      {
+        "path": "sources/OPENAI-MATH-2026/WP02_F342_LITERAL_CONE_STATEMENT_DELTA.json",
+        "git_blob": "073c5fcfa549c1f86daee8c331f55657857deb58"
+      },
+      {
+        "path": "sources/OPENAI-MATH-2026/WP02_F376_ADJACENT_SLOW_RATE_BRIDGE.json",
+        "git_blob": "2e31c08b15bea00239718faf3b434622048df436"
+      }
+    ],
+    "formalization_crosswalk": {
+      "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+      "git_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda"
+    }
+  },
+  "counts": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "total": 30,
+    "unique_keys": 30
+  },
+  "repair_group_counts": {
+    "lipschitz_ashkin": 4,
+    "kahler": 6,
+    "taming_hypersymplectic": 2,
+    "forced_fluid": 1,
+    "bsd_citation": 1
+  },
+  "distinction": "The publisher's 14 repaired manuscripts include the Exact BSD obsolete-citation correction; this is not part of the 13 additional citation-update editions.",
+  "exclusion_policy": {
+    "withdrawn_title_scope": [
+      "Algebraicity of Weil classes on split abelian eightfolds",
+      "Algebraicity of Kuga–Satake Correspondences for K3 Surfaces",
+      "The rational Hodge conjecture for products of K3 surfaces"
+    ],
+    "default_action": "EXCLUDE_WITHDRAWN_CLAIMS_FROM_CURRENT_ACCEPTED_OR_CERTIFIED_RESULT_COUNTS",
+    "historical_artifacts": "Preserve and label historical PDF and Lean artifacts for provenance; compilation of a historical theorem does not reinstate a withdrawn claim.",
+    "dependency_action": "Flag any surviving manuscript, comparator, formal declaration or citation that relies on a withdrawn construction for exact source-semantic review; do not silently delete unrelated valid results.",
+    "clearance": "Only a separately sourced corrected edition and explicit governed source-semantic adjudication may change an exclusion; not this inventory."
+  },
+  "rows": [
+    {
+      "key": "withdrawn:2026-10-07:algebraicity-of-weil-classes-on-split-abelian-eightfolds",
+      "category": "withdrawn_3",
+      "family_id": null,
+      "title": "Algebraicity of Weil classes on split abelian eightfolds",
+      "edition": "withdrawn_notice_2026-10-07",
+      "current_pdf_path": null,
+      "previous_pdf_path": null,
+      "current_pdf_git_blob": null,
+      "previous_pdf_git_blob": null,
+      "flags": {
+        "withdrawn": true,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "critical",
+      "source_evidence": [
+        {
+          "path": "history.md",
+          "git_blob": "693874f398905b1bc59e01b898b223ae9956bfc2"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_WITHDRAWAL_EDITION_RISK_TRIAGE.json",
+          "git_blob": "68428002d7c07ed59ceea25ed79aea0a7e74861c"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exclusion": "EXCLUDE_FROM_ACCEPTED_CURRENT_RESULT_COUNTS_AND_CERTIFICATION_INTAKE",
+      "exact_review_target": "Locate archived withdrawn README/PDF and upstream source tree entry; map dependent Lean declarations; exclude withdrawn construction from accepted result counts."
+    },
+    {
+      "key": "withdrawn:2026-10-07:algebraicity-of-kuga-satake-correspondences-for-k3-surfaces",
+      "category": "withdrawn_3",
+      "family_id": null,
+      "title": "Algebraicity of Kuga–Satake Correspondences for K3 Surfaces",
+      "edition": "withdrawn_notice_2026-10-07",
+      "current_pdf_path": null,
+      "previous_pdf_path": null,
+      "current_pdf_git_blob": null,
+      "previous_pdf_git_blob": null,
+      "flags": {
+        "withdrawn": true,
+        "proof_changed": "DEPENDENCY_INVALIDATED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "critical",
+      "source_evidence": [
+        {
+          "path": "history.md",
+          "git_blob": "693874f398905b1bc59e01b898b223ae9956bfc2"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_WITHDRAWAL_EDITION_RISK_TRIAGE.json",
+          "git_blob": "68428002d7c07ed59ceea25ed79aea0a7e74861c"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exclusion": "EXCLUDE_FROM_ACCEPTED_CURRENT_RESULT_COUNTS_AND_CERTIFICATION_INTAKE",
+      "exact_review_target": "Locate archived withdrawn edition and downstream citations/formal declarations; do not accept historical formalizations as current claims."
+    },
+    {
+      "key": "withdrawn:2026-10-07:the-rational-hodge-conjecture-for-products-of-k3-surfaces",
+      "category": "withdrawn_3",
+      "family_id": null,
+      "title": "The rational Hodge conjecture for products of K3 surfaces",
+      "edition": "withdrawn_notice_2026-10-07",
+      "current_pdf_path": null,
+      "previous_pdf_path": null,
+      "current_pdf_git_blob": null,
+      "previous_pdf_git_blob": null,
+      "flags": {
+        "withdrawn": true,
+        "proof_changed": "DEPENDENCY_INVALIDATED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "critical",
+      "source_evidence": [
+        {
+          "path": "history.md",
+          "git_blob": "693874f398905b1bc59e01b898b223ae9956bfc2"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_WITHDRAWAL_EDITION_RISK_TRIAGE.json",
+          "git_blob": "68428002d7c07ed59ceea25ed79aea0a7e74861c"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exclusion": "EXCLUDE_FROM_ACCEPTED_CURRENT_RESULT_COUNTS_AND_CERTIFICATION_INTAKE",
+      "exact_review_target": "Locate archived withdrawn edition and downstream citations/formal declarations; distinguish from other surviving rational Hodge results."
+    },
+    {
+      "key": "002:preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf",
+      "category": "repaired_14",
+      "family_id": "002",
+      "title": "Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank",
+      "edition": "Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026",
+      "current_pdf_path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf",
+      "previous_pdf_path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/exact-bsd-low-selmer-corank.pdf",
+      "current_pdf_git_blob": "4621d1c197766f11d416b7e149343d938fcd9697",
+      "previous_pdf_git_blob": "29c2cfd00923bfef0fd61a5b3ee7de9e3a1e1eb3",
+      "current_readme_path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md",
+      "current_readme_git_blob": "7bb2a165d7ca454311a6a9f5b7572eb9292071e0",
+      "publisher_version_note": "Removed obsolete supporting citation and updated references to revised manuscripts",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": false,
+        "statement_changed": "UNASSESSED",
+        "citation_only": true,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Audit obsolete reference and downstream dependency graph; this is publisher-repaired-group citation correction, not one of 13 additional citation-only manuscripts"
+    },
+    {
+      "key": "034:preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+      "category": "repaired_14",
+      "family_id": "034",
+      "title": "Conditional good minimal models for compact Kähler fourfolds",
+      "edition": "Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026",
+      "current_pdf_path": "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-5-2026/paper.pdf",
+      "current_pdf_git_blob": "50884e7bbf6538216a282d4ef79e4e3b05a0e64c",
+      "previous_pdf_git_blob": "d6d35605bf3f5056442529b7e5ebe8dae1b89a5b",
+      "current_readme_path": "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/README.md",
+      "current_readme_git_blob": "47a372cb879318b12d22ea7e49533e1ed91ed1e8",
+      "publisher_version_note": "This version clarifies the independent ordinary-MMP input and states the remaining Iitaka-subadditivity and effective-abundance hypotheses explicitly; see the [previous version](../Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-5-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+    },
+    {
+      "key": "034:preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf",
+      "category": "repaired_14",
+      "family_id": "034",
+      "title": "Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity",
+      "edition": "Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026",
+      "current_pdf_path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf",
+      "previous_pdf_path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/main.pdf",
+      "current_pdf_git_blob": "bff68637347f9cdd333f09d34f33b566bc456e9b",
+      "previous_pdf_git_blob": "b6687c67c3e8763568406bc7992e673cc8815837",
+      "current_readme_path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/README.md",
+      "current_readme_git_blob": "08e488fd489e65f64f7c39c98de137a4e4e0dfe1",
+      "publisher_version_note": "This version supplies base-presentation and multiplier-ideal arguments for the induction, including the adjoint pullback and contraction-descent steps; see the [previous version](../Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/main.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+    },
+    {
+      "key": "036:preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf",
+      "category": "repaired_14",
+      "family_id": "036",
+      "title": "Numerical semiampleness of nef adjoint classes on compact Kähler manifolds",
+      "edition": "Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026",
+      "current_pdf_path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf",
+      "previous_pdf_path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026/numerical-generalized-abundance.pdf",
+      "current_pdf_git_blob": "c2a5826f25bbd65b0c16a09e561a50c40831c8b7",
+      "previous_pdf_git_blob": "e92247b4fd69cd37b19d2390d7f520b9bcb31674",
+      "current_readme_path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/README.md",
+      "current_readme_git_blob": "0ab8ec4ac41e2cf365a78a94a60ab02f9d406ca8",
+      "publisher_version_note": "This version states the Iitaka, model, and contraction inputs used in the divisorial-decomposition argument explicitly; see the [previous version](../Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026/numerical-generalized-abundance.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+    },
+    {
+      "key": "056:preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+      "category": "repaired_14",
+      "family_id": "056",
+      "title": "Finite ordinary minimal model programs on compact Kähler fourfolds",
+      "edition": "Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026",
+      "current_pdf_path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/paper.pdf",
+      "current_pdf_git_blob": "53e784e7300eab5de4060622f8445842fc8a5624",
+      "previous_pdf_git_blob": "6a9b2e369f7a13ce03fa0575c8da178947c78c26",
+      "current_readme_path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/README.md",
+      "current_readme_git_blob": "d1a88fed653e84fef97ebe8f0e10f68402d59f77",
+      "publisher_version_note": "This version adds carrier-positivity and multiplier-ideal arguments and revises the contraction induction for ordinary negative-ray programs; see the [previous version](../Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+    },
+    {
+      "key": "056:preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+      "category": "repaired_14",
+      "family_id": "056",
+      "title": "Termination of generalized log canonical flips on compact Kähler fourfolds",
+      "edition": "Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026",
+      "current_pdf_path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+      "previous_pdf_path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+      "current_pdf_git_blob": "40fba88b158a5d18d19a68d08bb18b578f1093cf",
+      "previous_pdf_git_blob": "03d16bb5b520fa321c9744240024ebfe737ddc0c",
+      "current_readme_path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/README.md",
+      "current_readme_git_blob": "281a2d029d64157d0485a167a7208680f334fd09",
+      "publisher_version_note": "This version clarifies the independent relative MMP and birational-comparison inputs used by the proof and updates citations to revised companion papers; see the [previous version](../Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-lc-kahler-fourfolds.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+    },
+    {
+      "key": "056:preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
+      "category": "repaired_14",
+      "family_id": "056",
+      "title": "Termination of generalized-canonical flips on compact Kähler fourfolds",
+      "edition": "Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026",
+      "current_pdf_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
+      "previous_pdf_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
+      "current_pdf_git_blob": "1ff6ea1842f781c347530b98e23663c003905a13",
+      "previous_pdf_git_blob": "744e8b238ed8cde34bad1bf0bb55a423d975d02a",
+      "current_readme_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/README.md",
+      "current_readme_git_blob": "a87b833409132a7923e0d014ebb0049cc5c4ef47",
+      "publisher_version_note": "This version clarifies that only independent negativity, codimension-two smoothness, and cycle-comparison results are used from the companion fourfold paper; see the [previous version](../Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+    },
+    {
+      "key": "232:preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf",
+      "category": "repaired_14",
+      "family_id": "232",
+      "title": "Gaussian free-field limits of weighted integer Lipschitz heights",
+      "edition": "Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026",
+      "current_pdf_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/paper.pdf",
+      "current_pdf_git_blob": "3b13e66b286d341ccc6c7d2e505417c7e9f13148",
+      "previous_pdf_git_blob": "417ca16c720ef648c6892412fba2fc7a77c24c47",
+      "current_readme_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/README.md",
+      "current_readme_git_blob": "5d499e9fbe6b613386b9b69796a0fc4324e27079",
+      "publisher_version_note": "Added annulus proof of circuit estimate",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+    },
+    {
+      "key": "232:preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf",
+      "category": "repaired_14",
+      "family_id": "232",
+      "title": "The Gaussian free field limit of integer Lipschitz heights with two-arc boundary data",
+      "edition": "The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026",
+      "current_pdf_path": "preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-September-25-2026/paper.pdf",
+      "current_pdf_git_blob": "5d79a03ab7dadccedd28ad90e6d931db711a748d",
+      "previous_pdf_git_blob": "e5ed3058c1552fb8da8b8e96f24a55973f62dd7e",
+      "current_readme_path": "preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/README.md",
+      "current_readme_git_blob": "58e3f57e677a7ba96fb765060c2627154abe0c77",
+      "publisher_version_note": "Conditional cut and loop estimates derived from companion weighted annulus theorem at x=1",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+    },
+    {
+      "key": "232:preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf",
+      "category": "repaired_14",
+      "family_id": "232",
+      "title": "Uniform real Lipschitz surfaces on the triangular lattice",
+      "edition": "Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026",
+      "current_pdf_path": "preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/paper.pdf",
+      "current_pdf_git_blob": "212116f5dcdb9b87719e11e3336ffc8d1e239295",
+      "previous_pdf_git_blob": "df6b077f7e57af4e372d400cdc1de869ab5f572b",
+      "current_readme_path": "preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/README.md",
+      "current_readme_git_blob": "fa3ddc9832bfdf43085f7278ddf4625deb7cd485",
+      "publisher_version_note": "Boundary attachment, landing comparison, multiscale separation, conditional walk/hookup and whole-curve convergence repairs",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+    },
+    {
+      "key": "233:preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf",
+      "category": "repaired_14",
+      "family_id": "233",
+      "title": "The joint scaling limit of critical Ashkin-Teller currents",
+      "edition": "The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026",
+      "current_pdf_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf",
+      "previous_pdf_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/main.pdf",
+      "current_pdf_git_blob": "f7712daa289f286fa85457e696cd0a722793b84b",
+      "previous_pdf_git_blob": "1958b53f9bf31e2542623f87324612d860854728",
+      "current_readme_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/README.md",
+      "current_readme_git_blob": "496dcfbb54ce94dd6a856f0e7d32a03b7b13aeaa",
+      "publisher_version_note": "Transmission/boundary-collar corrections and signed-loop-soup/GMC replacement of excursion convergence",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+    },
+    {
+      "key": "341:preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf",
+      "category": "repaired_14",
+      "family_id": "341",
+      "title": "Deforming hypersymplectic four-manifolds to hyperkähler triples",
+      "edition": "Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026",
+      "current_pdf_path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/paper.pdf",
+      "current_pdf_git_blob": "c6abd5c685bd7217786ef8846eeb57c46301d9cf",
+      "previous_pdf_git_blob": "07a63343f3328f9387726d51ebc2ece5c240cd25",
+      "current_readme_path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/README.md",
+      "current_readme_git_blob": "c6488bd27df786c37b55486a46b440b3bfa0f92d",
+      "publisher_version_note": "Clarified prescribed cohomology-class criterion and removed unnecessary cone-comparison citation",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+    },
+    {
+      "key": "342:preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
+      "category": "repaired_14",
+      "family_id": "342",
+      "title": "Taming implies compatibility on four-manifolds",
+      "edition": "Taming-implies-compatibility-on-four-manifolds-October-6-2026",
+      "current_pdf_path": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf",
+      "current_pdf_git_blob": "2a910fe734003848f110acc18ff98d7ceabbf9d4",
+      "previous_pdf_git_blob": "a2dca11fef1401becbc1fe3a00eb595ba73b86c5",
+      "current_readme_path": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md",
+      "current_readme_git_blob": "c6c5c6eac6e3e0706e0c23fc6a105b212a351dc4",
+      "publisher_version_note": "Cone equality corrected; dimension hypothesis and counterexample added",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": true,
+        "citation_only": false,
+        "source_mismatch": true,
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": {
+        "declaration": "OAI.TamingCompatibility.taming_implies_compatibility",
+        "scope": "UNCHANGED_EXISTENCE_STATEMENT_NOT_CONE_EQUALITY",
+        "comparator": "lean/ComparatorChallenges/TamingCompatibility.json"
+      },
+      "exact_review_target": "Check conditional cone equality and exclude superseded unconditional corollary"
+    },
+    {
+      "key": "376:preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf",
+      "category": "repaired_14",
+      "family_id": "376",
+      "title": "Incompressible Box Transport and Finite Computation",
+      "edition": "Incompressible-Box-Transport-and-Finite-Computation-October-6-2026",
+      "current_pdf_path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf",
+      "previous_pdf_path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/manuscript.pdf",
+      "current_pdf_git_blob": "71a7346f671bb43119887bdcd474f00e6a73563d",
+      "previous_pdf_git_blob": "c8eae2fd6cc36d60cfdae332fbcd44d58f214f53",
+      "current_readme_path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/README.md",
+      "current_readme_git_blob": "05cc014939435cccf995561250a39dd4935d7508",
+      "publisher_version_note": "Effective torus projection, common-clock decay, projected-force and pressure estimates",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": true,
+        "statement_changed": "UNASSESSED",
+        "citation_only": false,
+        "source_mismatch": true,
+        "unresolved": true
+      },
+      "severity": "high",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+          "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        }
+      ],
+      "formal_declaration_mapping": {
+        "declaration": "OAI.ForcedComputation.torus_slow_effective_computation",
+        "scope": "ADJACENT_DECAY_THEOREM_NOT_EXACT_OCTOBER_CONSTRUCTION",
+        "comparator_target": "OAI.BalancedTransport.balanced_three_stack_realization"
+      },
+      "exact_review_target": "Check October Poisson projection and startup slow-clock bounds against selected Lean declarations"
+    },
+    {
+      "key": "001:preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "001",
+      "title": "Milne's rationality conjecture for abelian varieties",
+      "edition": "Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026",
+      "current_pdf_path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf",
+      "current_pdf_git_blob": "3780abc1f47a23e546f28190bd3db7b24419f1f9",
+      "previous_pdf_git_blob": "bae7acc9b44c976614849374dbd0dd61c00c2028",
+      "current_readme_path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/README.md",
+      "current_readme_git_blob": "d791f0ba50c386b5c0adb5ef76f87ffd83c0f8c9",
+      "publisher_version_note": "This version updates a citation to a revised manuscript in this collection; see the [previous version](../Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "002:preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+      "category": "additional_citation_13",
+      "family_id": "002",
+      "title": "The Selmer converse for elliptic curves at every prime",
+      "edition": "The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026",
+      "current_pdf_path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+      "previous_pdf_path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf",
+      "current_pdf_git_blob": "384525874a5e9989e574a5f9ce7c9883258cc732",
+      "previous_pdf_git_blob": "8beaeb72a61bdd7e126052193a73de9dde845a58",
+      "current_readme_path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/README.md",
+      "current_readme_git_blob": "24cd43c4e157a19abc0fe0f3bb726e232ba08bdf",
+      "publisher_version_note": "This version updates a citation to a revised manuscript in this collection; see the [previous version](../The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "002:preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "002",
+      "title": "The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one",
+      "edition": "The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026",
+      "current_pdf_path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf",
+      "current_pdf_git_blob": "9c1827e35640033bf16eac9fa88136079b1cc2de",
+      "previous_pdf_git_blob": "f13dc6ad9e017cc66db592d6baa5d02b768cf57f",
+      "current_readme_path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/README.md",
+      "current_readme_git_blob": "ee93c1149c55c23a58ebf3782304dcaee99c943d",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "004:preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "004",
+      "title": "A pointwise 2-converse for elliptic curves with rational two-torsion",
+      "edition": "A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026",
+      "current_pdf_path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+      "previous_pdf_path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf",
+      "current_pdf_git_blob": "1d35e83ccc541890903bfa978c1f0f73972843ca",
+      "previous_pdf_git_blob": "7951c0cb7548dd1962e387b8bd47c2ad3fdb8d46",
+      "current_readme_path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/README.md",
+      "current_readme_git_blob": "da8eabd16e0913b737cda4b5db86b4f486bf607a",
+      "publisher_version_note": "This version updates a citation to a revised manuscript in this collection; see the [previous version](../A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "004:preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+      "category": "additional_citation_13",
+      "family_id": "004",
+      "title": "Hilbert’s tenth problem over the rational numbers",
+      "edition": "Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026",
+      "current_pdf_path": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+      "previous_pdf_path": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf",
+      "current_pdf_git_blob": "b75dddd5e05503cc04a156e94bb15d6fadf8158e",
+      "previous_pdf_git_blob": "bf17a7b94d39995095188a097fc3d1ed1935a7cc",
+      "current_readme_path": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md",
+      "current_readme_git_blob": "c680be5d4071e4ee31502be2cde28bd78132db70",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "006:preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "006",
+      "title": "Goldfeld's analytic density conjecture and the 2-converse for elliptic curves",
+      "edition": "Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026",
+      "current_pdf_path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+      "current_pdf_git_blob": "58b8904f39b2a12534732010191fd35435559a61",
+      "previous_pdf_git_blob": "d9a8efaf48a62b452bc5af359930109ffddb7786",
+      "current_readme_path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md",
+      "current_readme_git_blob": "d770dda6f44ae17b4ad910ee4207d462ff4bfcc8",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "006:preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "006",
+      "title": "The mean analytic rank of quadratic twists of elliptic curves",
+      "edition": "The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026",
+      "current_pdf_path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf",
+      "current_pdf_git_blob": "fef228e3a2a26c0b1302fbd6f85de0da1c87a3ba",
+      "previous_pdf_git_blob": "53f910214dd53bfb89d53910942fe621127e76a9",
+      "current_readme_path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/README.md",
+      "current_readme_git_blob": "cab8cc252be664eafc7055d16842e9e33654c52c",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "010:preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "010",
+      "title": "Fontaine–Mazur modularity at the prime 2",
+      "edition": "Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026",
+      "current_pdf_path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf",
+      "current_pdf_git_blob": "dea72dd57adfbe896cafccc6097b012bcd6dbb07",
+      "previous_pdf_git_blob": "8b5e64266d9c90e4c83727630228bdecc5ffd070",
+      "current_readme_path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/README.md",
+      "current_readme_git_blob": "84288dcd13b2e2becaf5a5add06f4ef072c90d32",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "010:preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
+      "category": "additional_citation_13",
+      "family_id": "010",
+      "title": "Unrestricted pro-modularity at the prime two",
+      "edition": "Unrestricted-pro-modularity-at-the-prime-two-October-6-2026",
+      "current_pdf_path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
+      "previous_pdf_path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf",
+      "current_pdf_git_blob": "60af9a2ac3e85261ded26474e61783dde8eb2f13",
+      "previous_pdf_git_blob": "079f0197466e2f15d758785201241d8c3cc6f729",
+      "current_readme_path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/README.md",
+      "current_readme_git_blob": "2517d6ae71d6306e0f15aedc402bbcdf40ad8042",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "019:preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf",
+      "category": "additional_citation_13",
+      "family_id": "019",
+      "title": "The p-adic section conjecture",
+      "edition": "The-p-adic-section-conjecture-October-6-2026",
+      "current_pdf_path": "preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf",
+      "previous_pdf_path": "preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf",
+      "current_pdf_git_blob": "5d83521ccc50a2c7f990474b14841a982f1bcefc",
+      "previous_pdf_git_blob": "dc7c8b3906f9481acc2c4c949b3dc40b22a35b0f",
+      "current_readme_path": "preprints/The-p-adic-section-conjecture-October-6-2026/README.md",
+      "current_readme_git_blob": "55e40ba31f6cd3d1862486ca62ee2db4ddef7f51",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-p-adic-section-conjecture-September-24-2026/main.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "032:preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "032",
+      "title": "Abelian covers, Gale correspondences, and the Hodge conjecture for powers",
+      "edition": "Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026",
+      "current_pdf_path": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-September-30-2026/paper.pdf",
+      "current_pdf_git_blob": "870a7a7289064b392bd08712aafb2df881b57261",
+      "previous_pdf_git_blob": "7551c9081201efcc684608bd1f6079f7c089c954",
+      "current_readme_path": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/README.md",
+      "current_readme_git_blob": "d9b256307bca27bc8c1391a5d06b8d070369c0c5",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-September-30-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "032:preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "032",
+      "title": "The rational Hodge conjecture for CM abelian varieties",
+      "edition": "The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026",
+      "current_pdf_path": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf",
+      "current_pdf_git_blob": "21f050785b78ada57073df66a4ee144eb389e769",
+      "previous_pdf_git_blob": "390b3239c56fa24592369ee5eb869a798c748791",
+      "current_readme_path": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md",
+      "current_readme_git_blob": "64bae604ba32d35fa2ab08b1556659cbc42a1b5c",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    },
+    {
+      "key": "032:preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf",
+      "category": "additional_citation_13",
+      "family_id": "032",
+      "title": "Weil classes and Hodge classes on abelian powers",
+      "edition": "Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026",
+      "current_pdf_path": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf",
+      "previous_pdf_path": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf",
+      "current_pdf_git_blob": "0dada317c4cf6c6d8d087b2dd29f7dc0195b48a1",
+      "previous_pdf_git_blob": "9487900e108aa113e8d93655f22825d2196432da",
+      "current_readme_path": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/README.md",
+      "current_readme_git_blob": "1c3c96e39209c8887d8717be8e9147e06b177249",
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "severity": "medium",
+      "source_evidence": [
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+          "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+        }
+      ],
+      "formal_declaration_mapping": "NOT_ESTABLISHED",
+      "exact_review_target": "Diff current and prior PDF references; resolve the precise revised-paper citation target and its surviving dependency; inspect lean/docs and selected declaration for source-version mismatch"
+    }
+  ],
+  "high_priority_risk_cases": [
+    {
+      "rank": 1,
+      "id": "WP02-WITHDRAWAL-CHAIN",
+      "severity": "critical",
+      "affected_keys": [
+        "withdrawn:2026-10-07:algebraicity-of-weil-classes-on-split-abelian-eightfolds",
+        "withdrawn:2026-10-07:algebraicity-of-kuga-satake-correspondences-for-k3-surfaces",
+        "withdrawn:2026-10-07:the-rational-hodge-conjecture-for-products-of-k3-surfaces"
+      ],
+      "primary_source": {
+        "path": "history.md",
+        "git_blob": "693874f398905b1bc59e01b898b223ae9956bfc2"
+      },
+      "finding": "Publisher states a sign error invalidates stabilization-trace cancellation in Weil classes and two dependent K3 manuscripts; all three withdrawn.",
+      "replay": "Read pinned history.md October 7 withdrawals and compare titles to three excluded rows; investigate withdrawn README notices and dependency references.",
+      "unresolved": "Archived PDF/README identities, affected Lean declarations and downstream citation graph."
+    },
+    {
+      "rank": 2,
+      "id": "WP02-F342-CONE-HYPOTHESIS",
+      "severity": "high",
+      "affected_keys": [
+        "342:preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf"
+      ],
+      "primary_source": {
+        "path": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex",
+        "git_blob": "d9b79cce7dd94790552a15e9d5685b24f144f917"
+      },
+      "historical_source": {
+        "path": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/build/sections/01-introduction.tex",
+        "git_blob": "797ccd700e3e15d3a0b94791f0db090361490b47"
+      },
+      "finding": "September unconditional cone equality was restricted in October to h_J^- = b_2^+(X)-1; selected Lean main existence theorem is unchanged and does not prove the cone statement.",
+      "replay": "Compare cor:taming-cones in both pinned introduction TeX files and comparator TamingCompatibility.json; inspect admitted literal-delta register.",
+      "unresolved": "Review new cone proof, counterexample and downstream use of old unconditional corollary."
+    },
+    {
+      "rank": 3,
+      "id": "WP02-F376-PROJECTION-CLOCK",
+      "severity": "high",
+      "affected_keys": [
+        "376:preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf"
+      ],
+      "primary_source": {
+        "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+        "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518"
+      },
+      "second_source": {
+        "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+        "git_blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41"
+      },
+      "finding": "October uses startup clock sigma(2t-1)/(1+t) and general torus Helmholtz projection/pressure shift; adjacent Lean slowFromRest uses V(log(1+t),x)/(1+t) and does not establish the same projected-force theorem.",
+      "replay": "Read pinned clocks.tex and analysis.tex and compare SlowProgram.lean and TorusSlowMain.lean declarations in adjacent bridge receipt.",
+      "unresolved": "Exact source-to-Lean correspondence for October projection, pressure and startup-clock estimates."
+    },
+    {
+      "rank": 4,
+      "id": "WP02-KAHLER-PROOF-DEPENDENCIES",
+      "severity": "high",
+      "affected_keys": [
+        "034:preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+        "034:preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf",
+        "036:preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf",
+        "056:preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+        "056:preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+        "056:preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf"
+      ],
+      "primary_source": {
+        "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
+        "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+      },
+      "finding": "Six revised Kähler editions have exact prior/current blobs but hypothesis and dependency proof deltas remain unreviewed.",
+      "replay": "For each paired PDF Git blob, compare revised and preceding theorem hypotheses and references.",
+      "unresolved": "Six theorem-level comparisons and affected formal declarations."
+    },
+    {
+      "rank": 5,
+      "id": "WP02-CITATION-GRAPH",
+      "severity": "medium",
+      "affected_keys": [
+        "001:preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
+        "002:preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+        "002:preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+        "004:preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+        "004:preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+        "006:preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+        "006:preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+        "010:preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+        "010:preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
+        "019:preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf",
+        "032:preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf",
+        "032:preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf",
+        "032:preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf"
+      ],
+      "primary_source": {
+        "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+        "git_blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e"
+      },
+      "finding": "Thirteen additional publisher-described citation updates are edition-identified but exact reference targets have not been diffed.",
+      "replay": "Diff bibliography/reference text of each pinned prior/current PDF pair.",
+      "unresolved": "Citation target dependency graph and potential reliance on withdrawn claims."
+    }
+  ],
+  "regression_fixtures": [
+    {
+      "family_id": "342",
+      "name": "September versus October cone-hypothesis delta",
+      "evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP02_F342_LITERAL_CONE_STATEMENT_DELTA.json",
+        "git_blob": "073c5fcfa549c1f86daee8c331f55657857deb58"
+      },
+      "status": "SOURCE_DELTA_ADMITTED_SEMANTIC_PROOF_REVIEW_PENDING"
+    },
+    {
+      "family_id": "337",
+      "name": "Sharp CAT(0) filling path and Comparator fixture",
+      "evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP02_WITHDRAWAL_EDITION_RISK_TRIAGE.json",
+        "git_blob": "68428002d7c07ed59ceea25ed79aea0a7e74861c"
+      },
+      "status": "PINNED_DOCS_AND_INDEX_PATH_AGREE_HISTORICAL_PATH_REPAIR_NOT_PROVEN",
+      "review_target": "Replay current PDF path and comparator SharpCAT0Filling/FillingCoefficient; do not infer historical fix from present path alone."
+    }
+  ],
+  "crosswalk_limitations": {
+    "withdrawn_family_ids": "UNMAPPED",
+    "withdrawn_archived_editions": "UNRESOLVED",
+    "repaired_formal_declarations": "ONLY_342_DIRECT_AND_376_ADJACENT_IDENTIFIED_HERE",
+    "additional_citation_formal_declarations": "UNASSESSED",
+    "source_semantic_review": "NOT_COMPLETED"
+  },
+  "acceptance": {
+    "identity_counts": "COMPLETE_3_14_13",
+    "risk_register": "SOURCED_GAPS_RETAINED",
+    "terminal_disposition": "SOURCED_GAPS_RETAINED",
+    "open_obligations": [
+      "Withdrawn archived editions and dependent declarations",
+      "14 repaired-edition exact theorem/hypothesis semantic comparisons except the recorded family 342 literal delta",
+      "13 PDF reference diffs and dependency graph",
+      "Family 376 October exact Lean correspondence",
+      "Family 337 historical path regression provenance"
+    ]
+  },
+  "claim_boundary": "PROTECTED_SOURCE_IDENTITY_AND_RISK_TRIAGE_ONLY_NO_MATHCERT_CERTIFICATION"
+}
