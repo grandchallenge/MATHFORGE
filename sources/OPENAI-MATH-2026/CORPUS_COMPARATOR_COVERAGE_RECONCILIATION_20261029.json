@@ -1,0 +1,81 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_COVERAGE_RECONCILIATION/1",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "protected_main_at_reconciliation": "df9609ceb7f20a6062ae177fcb19a35f2fff9fce",
+  "source": "protected CORPUS_*_COMPARATOR_RECEIPT_LEDGER.json entries plus protected 200-row FORMALIZATION_CROSSWALK.json",
+  "scope": "Comparator acceptance only; no manuscript semantic correspondence, novelty, or certification",
+  "total_corpus": 200,
+  "admitted_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    199
+  ],
+  "admitted_count": 24,
+  "unadmitted_count": 176,
+  "unadmitted_ranges": [
+    "23-198"
+  ],
+  "latest_admitted_indexed_runs": [
+    {
+      "index": 20,
+      "run_id": 40966566273,
+      "artifact_id": 12938082755
+    },
+    {
+      "index": 21,
+      "run_id": 40967131551,
+      "artifact_id": 12940400338
+    },
+    {
+      "index": 22,
+      "run_id": 40968502169,
+      "artifact_id": 12939298073
+    }
+  ],
+  "latest_admission_pr": 402,
+  "latest_protected_merge": "df9609ceb7f20a6062ae177fcb19a35f2fff9fce",
+  "prior_accounting_correction": "Prior 20-22 ledger's 23/200 total omits separately admitted index199; 23 is the count of indices 0-22 alone. Correct corpus-wide total is 24/200, with 176 remaining. Earlier interim counts may likewise exclude index199; this reconciliation supersedes aggregate counts only, not original replay evidence.",
+  "workflow_history_reconciliation": {
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "observed_repository_run_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "observed_active_indexed_runs": 0,
+    "latest_indexed_run_id": 40968502169,
+    "latest_indexed_run_index": 22,
+    "indices_23_25_dispatch_status": "NO_MATCHING_INDEXED_RUN_OBSERVED_IN_RECONCILED_HISTORY; NOT_DISPATCHED_THIS_ITERATION",
+    "transport": "GCL_Commander system_status enabled but run_bash returned internal/UNAVAILABLE on indexed history read and minimal bounded probe; GitHub connector authenticated reads succeeded; connector does not expose workflow_dispatch; no dispatch attempted after uncertain transport."
+  },
+  "roles": {
+    "verifier": "Reconciled protected ledger file identities, sorted protected 200-row crosswalk, PR402 protected merge, and GitHub workflow run history. No new artifact acceptance asserted.",
+    "adversary_non_authoring_read_only": "Checked disjointness of 0-22 and 199, prior ledger omission of 199 in aggregate arithmetic, and that a technical transport failure is not a Comparator failure. No independent external identity asserted.",
+    "amanuensis": "Append-only aggregate correction; original immutable replay evidence remains unchanged."
+  },
+  "next_action": "Once authorized workflow dispatch transport is healthy, recheck run history and dispatch distinct indices 23,24,25 within three slots; collect and verify exact artifacts before protected admission.",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN"
+}
