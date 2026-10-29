@@ -1,0 +1,113 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_009_011_LEDGER/1",
+  "assignment_id": "GCL-OAI-26-WP01",
+  "disposition": "THREE_HARDENED_COMPARATOR_RUNS_ACCEPTED_AWAITING_PROTECTED_ADMISSION",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "runner_head": "b5c702266cff8d0793bb04871c8a2ebfeee96cf4",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "comparator_source_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+  "exporter_source_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "landrun_source_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+  "verification_capture": "040b9a7b7806413ab7e916c2c05a0094",
+  "review_passes": [
+    {
+      "role": "Verifier",
+      "scope": "logical_role_scoped_audit",
+      "finding": "Downloaded exact artifacts from GitHub run IDs; independently recomputed all 11/11 receipt-listed SHA256 values and byte counts per run, including exact selected-identity, logs, and source hashes. Verified source pins, manifest pre/post equality, terminal SUCCESS and hardened exit 0."
+    },
+    {
+      "role": "Adversary",
+      "scope": "non_authoring_read_only_logical_pass",
+      "finding": "Compared index/declaration against UTF8-sorted protected 200-row crosswalk, confirmed distinct from previously admitted 0–8 and 199. Checked exact selected config permits only propext, Quot.sound, Classical.choice, nanoda=false, diagnostic_exit=null. No fallback or paper-semantic assertion."
+    },
+    {
+      "role": "Amanuensis",
+      "scope": "logical_role_scoped_audit",
+      "finding": "Retained exact workflow run/attempt, provider-reported artifact digest, independently computed receipt hash, statement/config/solution source hashes, and bounded claims. Provider ZIP digests are recorded as GitHub-reported and were not independently recomputed."
+    }
+  ],
+  "results": [
+    {
+      "index": 9,
+      "declaration": "OAI.BinaryMatching.deterministic_approximate_counting",
+      "run_id": 40910611816,
+      "artifact_id": 12914452544,
+      "artifact_digest": "sha256:669b1e44f8e14ddaf2f6470ffed6f02dc46799bb66cd82babeffd5035ae1e52e",
+      "receipt_sha256": "03beb39a60476b89339e27db3b34183e643169ab3c828a0e5f705e6302bf3d79",
+      "statement_sha256": "05f2ae77b70ff97e2f9cd960662a68fb3664ffae184d2c36bbd6c330955dd090",
+      "config_sha256": "9ec0cd858949e16333ae9d64e68c2a25a1d1f03b59c6af0c90cc79731f2e9c9a",
+      "solution_sha256": "299750c99714c599fb9dd9d988bbc20c0ba617b9aad8be4f05da8cc43bd36eb0",
+      "run_attempt": 1,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40910611816",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "internal_file_sha256_verified": "11/11",
+      "internal_file_byte_counts_verified": "11/11",
+      "manifest_unchanged": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "comparator_kernel_log": "Lean default kernel accepts the solution; Your solution is okay!; Finished with result: success"
+    },
+    {
+      "index": 10,
+      "declaration": "OAI.BorsukNine.main_theorem",
+      "run_id": 40910968529,
+      "artifact_id": 12915995404,
+      "artifact_digest": "sha256:e94a4966615dc6302d81d6431e843c107e99438f80520316a708f1976c4dc6e9",
+      "receipt_sha256": "9e068324645a79c3ec2dc64e5422d974f50889b6794a7a6f82ce9206718c6e20",
+      "statement_sha256": "c097288178f7b71023274b9cc3e5b600fad2e9b4c85bd635b7bf06c307fc631c",
+      "config_sha256": "166280fe4f1677ef284ff142354470b9fb18b030ce8ff5632d9790c8aa5e4f43",
+      "solution_sha256": "d0eba420bfb1ea328656febc8f52fdc9709831729d114ce1785d2fff18da9ae8",
+      "run_attempt": 1,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40910968529",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "internal_file_sha256_verified": "11/11",
+      "internal_file_byte_counts_verified": "11/11",
+      "manifest_unchanged": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "comparator_kernel_log": "Lean default kernel accepts the solution; Your solution is okay!; Finished with result: success"
+    },
+    {
+      "index": 11,
+      "declaration": "OAI.BoundedRecovery.bounded_recovery",
+      "run_id": 40911341294,
+      "artifact_id": 12914003165,
+      "artifact_digest": "sha256:88ec1c7f39d690d36d2ab79fda62262f52552635902e3b77dd22df916a338747",
+      "receipt_sha256": "8a3068f31519cb0d975a52817df6fe169387987ebc8b1c433e76a046aa913513",
+      "statement_sha256": "98f18329535c8721e16943c3edf930b6cbb4f7c4ee34e8be1d4e4a2b4cd0e6fc",
+      "config_sha256": "bf415d887efe5963971791efc7b454bfd48c1fed5bad363b8d21b99c2a11f6f9",
+      "solution_sha256": "9b63efbb0898643a950c9634e7a9e7e68b9f7a0d0bf6d562a6eebc9c8b3428b4",
+      "run_attempt": 1,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40911341294",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "internal_file_sha256_verified": "11/11",
+      "internal_file_byte_counts_verified": "11/11",
+      "manifest_unchanged": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "comparator_kernel_log": "Lean default kernel accepts the solution; Your solution is okay!; Finished with result: success"
+    }
+  ],
+  "claim_boundary": "Exact pinned hardened Comparator challenge acceptance only; no manuscript-to-formalization semantic equivalence, literary correctness, theorem certification, or public MATHCERT.",
+  "unresolved": [
+    "188 remaining distinct Comparator indices after protected admission of indices 0–11 and 199",
+    "200-row terminal Comparator register",
+    "separate source-semantic and certification obligations"
+  ]
+}
