@@ -1,0 +1,87 @@
+{
+  "record_type": "GCL_OAI26_WP02_F342_CONE_STATEMENT_DELTA/1",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "history_blob": "693874f398905b1bc59e01b898b223ae9956bfc2"
+  },
+  "family_id": "342",
+  "title": "Taming implies compatibility on four-manifolds",
+  "editions": {
+    "previous": {
+      "date": "2026-09-23",
+      "pdf": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf",
+      "pdf_git_blob": "a2dca11fef1401becbc1fe3a00eb595ba73b86c5",
+      "readme_git_blob": "667a0eba3dabe21e9e1547bf8bc83ab7488bed14",
+      "intro": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/build/sections/01-introduction.tex",
+      "intro_git_blob": "797ccd700e3e15d3a0b94791f0db090361490b47"
+    },
+    "revised": {
+      "date": "2026-10-06",
+      "pdf": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
+      "pdf_git_blob": "2a910fe734003848f110acc18ff98d7ceabbf9d4",
+      "readme_git_blob": "c6c5c6eac6e3e0706e0c23fc6a105b212a351dc4",
+      "intro": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex",
+      "intro_git_blob": "d9b79cce7dd94790552a15e9d5685b24f144f917",
+      "new_cones_section": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex",
+      "new_cones_git_blob": "fad0e1b6763068c4059cd51765d5baea439e0a84"
+    }
+  },
+  "literal_delta": {
+    "unchanged_main_theorem": {
+      "old_intro_lines": "23-27",
+      "new_intro_lines": "23-27",
+      "statement": "If a smooth almost complex structure J on a closed connected smooth real four-manifold X is tamed by a symplectic form, then there is a smooth symplectic form compatible with J.",
+      "comparison": "IDENTICAL_IN_THE_TWO_PINNED_INTRODUCTIONS"
+    },
+    "superseded_unconditional_cone_equality": {
+      "old_intro_lines": "37-53",
+      "old_label": "cor:taming-cones",
+      "old_statement_tex": "\\mathcal K_J^t=\\mathcal K_J^c+H_J^-",
+      "old_hypotheses": "Only the hypotheses of thm:main; no h_J^- = b_2^+-1 condition",
+      "revised_intro_lines": "60-70",
+      "revised_label": "cor:taming-cones",
+      "revised_statement_tex": "h_J^-=b_2^+(X)-1 \\implies \\mathcal K_J^t=\\mathcal K_J^c+H_J^-",
+      "effect": "Unconditional cone equality is no longer asserted; the equality is conditional on the dimension identity."
+    },
+    "new_cone_characterization": {
+      "revised_intro_lines": "37-58",
+      "new_label": "thm:taming-cones",
+      "definitions_tex": "\\mathcal V=(H_J^-)^\\perp;\\quad\\mathcal C=\\mathcal K_J^t\\cap\\mathcal V",
+      "new_statement_tex": "\\mathcal K_J^c=\\{a\\in\\mathcal C:a\\cdot y>0\\ \\forall 0\\ne y\\in\\overline{\\mathcal C}\\}",
+      "additional_statement_tex": "\\mathcal K_J^t=\\mathcal C+H_J^-"
+    },
+    "counterexample": {
+      "revised_intro_lines": "74-77",
+      "revised_cones_section_lines": "375-416",
+      "claim": "Four-torus strict inclusion K_J^c+H_J^- subsetneq K_J^t when h_J^- < b_2^+-1, including example with H_J^-=0",
+      "role": "Demonstrates old unrestricted cone-equality statement is false in the revised construction; not an independently replayed counterexample."
+    }
+  },
+  "formalization_scope": {
+    "upstream_crosswalk": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "formal_source": "lean/OAI/Geometry/TamingCompatibility/Main.lean",
+    "formal_source_git_blob": "0e1765dba48224edb030f870bdd1ba8cdaeaf1df",
+    "comparator": "lean/ComparatorChallenges/TamingCompatibility.json",
+    "comparator_git_blob": "d46322e905c8a9352677dcfb190ce348a9b81f45",
+    "selected_declarations": [
+      "OAI.TamingCompatibility.taming_implies_compatibility"
+    ],
+    "direct_theorem_scope": "Existence of some J-compatible symplectic form from existence of a J-taming symplectic form, not a prescribed cohomology class.",
+    "cone_theorem_selected_by_comparator": false,
+    "source_to_lean_conclusion": "Comparator's selected top-line theorem has unchanged paper statement across editions; it does not by itself verify the superseded unconditional cone corollary, revised conditional corollary, or strict-inclusion example.",
+    "replay": "NOT_RUN",
+    "semantic_proof_review": "NOT_PERFORMED"
+  },
+  "flags": {
+    "withdrawn": false,
+    "proof_changed": true,
+    "statement_changed": true,
+    "citation_only": false,
+    "source_mismatch": true,
+    "unresolved": true
+  },
+  "risk": "HIGH",
+  "exact_review_target": "Any family-342 assertion of unconditional K_J^t=K_J^c+H_J^- must be rejected or restricted to h_J^-=b_2^+-1; audit downstream reliance and revised cone proof.",
+  "claim_boundary": "PINNED_LITERAL_SOURCE_AND_COMPARATOR_SCOPE_ONLY_NOT_LEAN_REPLAY_NOT_MATHEMATICAL_CERTIFICATION"
+}
