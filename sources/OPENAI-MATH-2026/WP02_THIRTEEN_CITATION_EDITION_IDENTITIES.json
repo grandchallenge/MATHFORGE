@@ -1,0 +1,343 @@
+{
+  "record_type": "GCL_OAI26_WP02_THIRTEEN_CITATION_EDITION_IDENTITIES/1",
+  "source_repository": "openai/math",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "publisher_history": "history.md",
+  "publisher_history_blob": "693874f398905b1bc59e01b898b223ae9956bfc2",
+  "publisher_reported_count": 13,
+  "verified_count": 13,
+  "upstream_update_commit": "301488868beec11bfd897168433b0a64f5258559",
+  "upstream_update_parent": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "old_preprints_tree": "272ca94583c1dca3188bbc3a1caa068cb7af4b55",
+  "new_preprints_tree": "df0564b2deaab87e07854b6344d8c2f037682e77",
+  "method": "Upstream Oct 8 preprints-tree diff: 27 added edition directories, 14 publisher-listed repaired editions excluded, remaining 13 independently verified via pinned README citation-update version notes, exact prior links, current/prior PDF Git blobs, and GCL manuscript-index family mapping.",
+  "rows": [
+    {
+      "family_id": "001",
+      "title": "Milne's rationality conjecture for abelian varieties",
+      "current_edition": {
+        "pdf": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
+        "pdf_git_blob": "3780abc1f47a23e546f28190bd3db7b24419f1f9",
+        "readme": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/README.md",
+        "readme_git_blob": "d791f0ba50c386b5c0adb5ef76f87ffd83c0f8c9"
+      },
+      "previous_edition": {
+        "pdf": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf",
+        "pdf_git_blob": "bae7acc9b44c976614849374dbd0dd61c00c2028"
+      },
+      "publisher_version_note": "This version updates a citation to a revised manuscript in this collection; see the [previous version](../Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "002",
+      "title": "The Selmer converse for elliptic curves at every prime",
+      "current_edition": {
+        "pdf": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+        "pdf_git_blob": "384525874a5e9989e574a5f9ce7c9883258cc732",
+        "readme": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/README.md",
+        "readme_git_blob": "24cd43c4e157a19abc0fe0f3bb726e232ba08bdf"
+      },
+      "previous_edition": {
+        "pdf": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf",
+        "pdf_git_blob": "8beaeb72a61bdd7e126052193a73de9dde845a58"
+      },
+      "publisher_version_note": "This version updates a citation to a revised manuscript in this collection; see the [previous version](../The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "002",
+      "title": "The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one",
+      "current_edition": {
+        "pdf": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+        "pdf_git_blob": "9c1827e35640033bf16eac9fa88136079b1cc2de",
+        "readme": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/README.md",
+        "readme_git_blob": "ee93c1149c55c23a58ebf3782304dcaee99c943d"
+      },
+      "previous_edition": {
+        "pdf": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf",
+        "pdf_git_blob": "f13dc6ad9e017cc66db592d6baa5d02b768cf57f"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "004",
+      "title": "A pointwise 2-converse for elliptic curves with rational two-torsion",
+      "current_edition": {
+        "pdf": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+        "pdf_git_blob": "1d35e83ccc541890903bfa978c1f0f73972843ca",
+        "readme": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/README.md",
+        "readme_git_blob": "da8eabd16e0913b737cda4b5db86b4f486bf607a"
+      },
+      "previous_edition": {
+        "pdf": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf",
+        "pdf_git_blob": "7951c0cb7548dd1962e387b8bd47c2ad3fdb8d46"
+      },
+      "publisher_version_note": "This version updates a citation to a revised manuscript in this collection; see the [previous version](../A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "004",
+      "title": "Hilbert’s tenth problem over the rational numbers",
+      "current_edition": {
+        "pdf": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+        "pdf_git_blob": "b75dddd5e05503cc04a156e94bb15d6fadf8158e",
+        "readme": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md",
+        "readme_git_blob": "c680be5d4071e4ee31502be2cde28bd78132db70"
+      },
+      "previous_edition": {
+        "pdf": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf",
+        "pdf_git_blob": "bf17a7b94d39995095188a097fc3d1ed1935a7cc"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "006",
+      "title": "Goldfeld's analytic density conjecture and the 2-converse for elliptic curves",
+      "current_edition": {
+        "pdf": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+        "pdf_git_blob": "58b8904f39b2a12534732010191fd35435559a61",
+        "readme": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md",
+        "readme_git_blob": "d770dda6f44ae17b4ad910ee4207d462ff4bfcc8"
+      },
+      "previous_edition": {
+        "pdf": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+        "pdf_git_blob": "d9a8efaf48a62b452bc5af359930109ffddb7786"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "006",
+      "title": "The mean analytic rank of quadratic twists of elliptic curves",
+      "current_edition": {
+        "pdf": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+        "pdf_git_blob": "fef228e3a2a26c0b1302fbd6f85de0da1c87a3ba",
+        "readme": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/README.md",
+        "readme_git_blob": "cab8cc252be664eafc7055d16842e9e33654c52c"
+      },
+      "previous_edition": {
+        "pdf": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf",
+        "pdf_git_blob": "53f910214dd53bfb89d53910942fe621127e76a9"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "010",
+      "title": "Fontaine–Mazur modularity at the prime 2",
+      "current_edition": {
+        "pdf": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+        "pdf_git_blob": "dea72dd57adfbe896cafccc6097b012bcd6dbb07",
+        "readme": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/README.md",
+        "readme_git_blob": "84288dcd13b2e2becaf5a5add06f4ef072c90d32"
+      },
+      "previous_edition": {
+        "pdf": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf",
+        "pdf_git_blob": "8b5e64266d9c90e4c83727630228bdecc5ffd070"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "010",
+      "title": "Unrestricted pro-modularity at the prime two",
+      "current_edition": {
+        "pdf": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
+        "pdf_git_blob": "60af9a2ac3e85261ded26474e61783dde8eb2f13",
+        "readme": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/README.md",
+        "readme_git_blob": "2517d6ae71d6306e0f15aedc402bbcdf40ad8042"
+      },
+      "previous_edition": {
+        "pdf": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf",
+        "pdf_git_blob": "079f0197466e2f15d758785201241d8c3cc6f729"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "019",
+      "title": "The p-adic section conjecture",
+      "current_edition": {
+        "pdf": "preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf",
+        "pdf_git_blob": "5d83521ccc50a2c7f990474b14841a982f1bcefc",
+        "readme": "preprints/The-p-adic-section-conjecture-October-6-2026/README.md",
+        "readme_git_blob": "55e40ba31f6cd3d1862486ca62ee2db4ddef7f51"
+      },
+      "previous_edition": {
+        "pdf": "preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf",
+        "pdf_git_blob": "dc7c8b3906f9481acc2c4c949b3dc40b22a35b0f"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-p-adic-section-conjecture-September-24-2026/main.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "032",
+      "title": "Abelian covers, Gale correspondences, and the Hodge conjecture for powers",
+      "current_edition": {
+        "pdf": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf",
+        "pdf_git_blob": "870a7a7289064b392bd08712aafb2df881b57261",
+        "readme": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/README.md",
+        "readme_git_blob": "d9b256307bca27bc8c1391a5d06b8d070369c0c5"
+      },
+      "previous_edition": {
+        "pdf": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-September-30-2026/paper.pdf",
+        "pdf_git_blob": "7551c9081201efcc684608bd1f6079f7c089c954"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-September-30-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "032",
+      "title": "The rational Hodge conjecture for CM abelian varieties",
+      "current_edition": {
+        "pdf": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf",
+        "pdf_git_blob": "21f050785b78ada57073df66a4ee144eb389e769",
+        "readme": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md",
+        "readme_git_blob": "64bae604ba32d35fa2ab08b1556659cbc42a1b5c"
+      },
+      "previous_edition": {
+        "pdf": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf",
+        "pdf_git_blob": "390b3239c56fa24592369ee5eb869a798c748791"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    },
+    {
+      "family_id": "032",
+      "title": "Weil classes and Hodge classes on abelian powers",
+      "current_edition": {
+        "pdf": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf",
+        "pdf_git_blob": "0dada317c4cf6c6d8d087b2dd29f7dc0195b48a1",
+        "readme": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/README.md",
+        "readme_git_blob": "1c3c96e39209c8887d8717be8e9147e06b177249"
+      },
+      "previous_edition": {
+        "pdf": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf",
+        "pdf_git_blob": "9487900e108aa113e8d93655f22825d2196432da"
+      },
+      "publisher_version_note": "This version updates citations to revised manuscripts in this collection; see the [previous version](../Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf).",
+      "flags": {
+        "withdrawn": false,
+        "proof_changed": "UNASSESSED",
+        "statement_changed": "UNASSESSED",
+        "citation_only": "PUBLISHER_VERSION_NOTE",
+        "source_mismatch": "UNASSESSED",
+        "unresolved": true
+      },
+      "formal_declaration_mapping": "UNASSESSED",
+      "literal_delta": "PENDING_PDF_COMPARISON"
+    }
+  ],
+  "unresolved": "PDF text-only citation diff; exact dependency targets; lean/docs/declaration mappings; integrated 3/14/13 risk register; mathematical certification.",
+  "claim_boundary": "Publisher-described citation edition identity and Git blob verification, not proof or theorem certification."
+}
