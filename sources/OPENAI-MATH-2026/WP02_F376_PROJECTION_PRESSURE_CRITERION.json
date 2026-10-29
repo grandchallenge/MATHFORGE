@@ -1,0 +1,109 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_PROJECTION_PRESSURE_CRITERION/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repo": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "scope": "One exact algebraic bridge criterion for October torus force projection versus Lean zero-pressure/solenoidal-force construction; no certification.",
+  "sources": [
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "clauses": [
+        "bc:input-offset-W",
+        "bc:input-offset-profiles",
+        "bc:input-offset-force",
+        "bc:input-offset-common-rate"
+      ]
+    },
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "git_blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41",
+      "clauses": [
+        "prop:projection-l2",
+        "eq:projection-estimate"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowBundle.lean",
+      "git_blob": "8a4c02497f9c10945480492f240d989f9b66d061",
+      "declarations": [
+        "SlowFluidProperties",
+        "slow_initialized_bundle"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowProgram.lean",
+      "git_blob": "d2964e26b20fcfc2f7bc0b7f4cf19446250dc6eb",
+      "declarations": [
+        "slowFromRest",
+        "slowFromRest_solution"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "git_blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "declarations": [
+        "torus_slow_effective_computation"
+      ]
+    }
+  ],
+  "assumptions": [
+    "W is a smooth, spatially periodic, divergence-free vector field on flat T_L^3 with zero spatial mean.",
+    "alpha is a smooth scalar function of time, independent of x.",
+    "nu is the fixed viscosity; A(W)=(W·grad)W; Delta acts spatially.",
+    "The torus Poisson potential is normalized to spatial mean zero."
+  ],
+  "paper_force": "U_alpha=alpha(t) W(x); g_alpha=alpha'(t) W+alpha(t)^2 A(W)-nu alpha(t) Delta W.",
+  "proved_algebra": [
+    {
+      "step": 1,
+      "identity": "div g_alpha=alpha(t)^2 div A(W)",
+      "reason": "div W=0, div Delta W=Delta div W=0; time coefficients are spatial constants."
+    },
+    {
+      "step": 2,
+      "identity": "phi_alpha(t,x)=alpha(t)^2 phi_W(x), with Delta phi_W=div A(W), mean(phi_W)=0",
+      "reason": "Uniqueness of mean-zero torus Poisson solution and step 1."
+    },
+    {
+      "step": 3,
+      "identity": "Q g_alpha=alpha(t)^2 grad phi_W; P g_alpha=alpha' W+alpha^2 [A(W)-grad phi_W]-nu alpha Delta W",
+      "reason": "Paper defines Qg=grad phi, Pg=g-Qg."
+    },
+    {
+      "step": 4,
+      "identity": "p_projected(t,x)=-alpha(t)^2 phi_W(x) when the unprojected pressure is zero",
+      "reason": "Paper's pressure shift p->p-phi."
+    },
+    {
+      "step": 5,
+      "identity": "div A(W)=sum_{i,j} (partial_i W_j)(partial_j W_i)",
+      "reason": "Differentiate div[(W·grad)W] and use div W=0."
+    }
+  ],
+  "necessary_and_sufficient": "At any t with alpha(t) != 0, P g_alpha(t)=g_alpha(t) iff div A(W)=0 everywhere, equivalently phi_W=0. This is a criterion for unprojected-force equality, not a statement that the paper's W satisfies or violates it.",
+  "lean_comparison": {
+    "actual": "SlowFluidProperties requires Solenoidal(force nu U), IsClassicalSolution ... (fun _ => 0), and uniqueness with pressure zero; slow_initialized_bundle uses initializedProgram_zero_advection to construct that bundle.",
+    "difference": "ZeroAdvection V is stronger than merely div A(V)=0. The October manuscript allows general autonomous W and explicitly projects the force, with pressure -phi. A direct identity of the unprojected forces or zero-pressure bundles requires the above criterion and an independent velocity/coordinate identification.",
+    "not_established": [
+      "Whether the specific manuscript W has div A(W)=0.",
+      "Any identification of W with initializedProgram or slowFromRest's log-time V.",
+      "An exact Lean theorem for the paper's general projection operator and quantitative H^(r+2) to C^r estimate."
+    ]
+  },
+  "independent_sanity_example": {
+    "domain": "(R/2pi Z)^3",
+    "W": "(sin y, sin x, 0)",
+    "div_W": "0",
+    "A_W": "(sin x cos y, sin y cos x, 0)",
+    "div_A_W": "2 cos x cos y",
+    "phi_W": "-cos x cos y",
+    "P_A_W": "0",
+    "interpretation": "Even divergence-free, mean-zero W can produce a non-solenoidal raw residual; projection can change the force and pressure. This is a toy field, not the manuscript's W."
+  },
+  "review_target": "Compute div[(W·grad)W] for the October autonomous W on its source chart and collar, then check whether the resulting phi_W vanishes. If nonzero, retain projected pressure as a distinct mathematical object; map the projection theorem and norm estimates separately to Lean.",
+  "disposition": "PROJECTION_PRESSURE_EQUIVALENCE_CRITERION_PROVED_SOURCE_W_UNTESTED",
+  "claim_boundary": "Elementary analytic derivation with pinned source definitions; no full Lean replay, manuscript proof validation, or MATHCERT certification."
+}
