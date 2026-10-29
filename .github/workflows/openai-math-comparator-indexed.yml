@@ -75,13 +75,13 @@ jobs:
           assert row["lean_source"].startswith("lean/OAI/") and row["comparator_config"].startswith("lean/ComparatorChallenges/")
           target = "ComparatorChallenges/" + config.name
           out = Path("replay/comparator-indexed")
-          out.joinpath("selected-config.txt").write_text(target+"\\n")
-          out.joinpath("selected-index.txt").write_text(str(idx)+"\\n")
-          out.joinpath("selected-declaration.txt").write_text(row["declaration"]+"\\n")
-          out.joinpath("selected-identity.json").write_text(json.dumps({"index":idx,"crosswalk_row":row,"config":cfg},sort_keys=True,indent=2)+"\\n")
+          out.joinpath("selected-config.txt").write_text(target+"\n")
+          out.joinpath("selected-index.txt").write_text(str(idx)+"\n")
+          out.joinpath("selected-declaration.txt").write_text(row["declaration"]+"\n")
+          out.joinpath("selected-identity.json").write_text(json.dumps({"index":idx,"crosswalk_row":row,"config":cfg},sort_keys=True,indent=2)+"\n")
           with out.joinpath("statement-sha256.txt").open("w") as f:
               for p in (challenge,config,solution):
-                  f.write(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+str(p)+"\\n")
+                  f.write(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+str(p)+"\n")
           PY
 
       - name: Install fixed elan v1.4.2
