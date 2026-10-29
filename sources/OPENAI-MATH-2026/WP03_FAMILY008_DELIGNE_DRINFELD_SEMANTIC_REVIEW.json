@@ -1,0 +1,210 @@
+{
+  "record_type": "GCL_OAI26_WP03_F008_SOURCE_SEMANTIC_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F008",
+  "family_id": "008",
+  "disposition": "PROPOSITION_LEVEL_ALIGNMENT",
+  "claim_boundary": "Bounded source-pinned principal theorem statement correspondence; neither full definition/model-bridge equivalence nor independent Comparator proof acceptance nor mathematical certification.",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "files": {
+      "manuscript_pdf": {
+        "path": "preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf",
+        "blob": "0aa3328661d35567ec7e2dfb802b0351003e7a31"
+      },
+      "manuscript_main_tex": {
+        "path": "preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/build/paper.tex",
+        "blob": "f17500a86d4cf7e344e8f1c2c193223ede60c56a"
+      },
+      "manuscript_theorem_intro": {
+        "path": "preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/build/sections/01-introduction.tex",
+        "blob": "11c104e7deedd05826e466b6f7f4eea1a69a01b3"
+      },
+      "manuscript_proof_end": {
+        "path": "preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/build/sections/08-induction.tex",
+        "blob": "9851e872133f1b21019ac85312d583aa25e1be85"
+      },
+      "lean_scope_doc": {
+        "path": "lean/docs/008.md",
+        "blob": "f227db94ecd5f03a621ea359e3733946e7dab3d1"
+      },
+      "lean_foundations": {
+        "path": "lean/OAI/Algebra/Drinfeld/Foundations.lean",
+        "blob": "04320b5982c12c9d638b6f7119f6e83c69ca6c13"
+      },
+      "lean_solution": {
+        "path": "lean/OAI/Algebra/Drinfeld/Completion.lean",
+        "blob": "98a996a90f4f57a205a3e3e8673a8528e8e3dbbf"
+      },
+      "lean_challenge": {
+        "path": "lean/ComparatorChallenges/DeligneDrinfeld.lean",
+        "blob": "35b7ac31d724c1b5383d30513443ecabda05e53c"
+      },
+      "comparator_config": {
+        "path": "lean/ComparatorChallenges/DeligneDrinfeld.json",
+        "blob": "479c2ef4d2352da81193e5ff8248f2cf86f484d7"
+      }
+    }
+  },
+  "manuscript": {
+    "title": "The Deligne–Drinfeld conjecture",
+    "edition": "2026-09-23",
+    "pdf_sha256": "5ae63f326803a634e7c6dc5684ce7062ea0ac6940a88a75c7052875382dbc762",
+    "pdf_bytes": 539601,
+    "pdf_pages": 41,
+    "main_result": {
+      "number": "Theorem 1.1",
+      "pdf_page": 2,
+      "original_section": "sections/01-introduction.tex",
+      "statement": "There exist homogeneous elements σ_(2k+1) in W_(2k+1) for every k>=1 for which the free rational Lie algebra on odd-weight generators maps isomorphically to the solution space W with the Ihara bracket; weight completions induce a continuous graded isomorphism.",
+      "extra_hypotheses": []
+    },
+    "proof": {
+      "pdf_page": 40,
+      "section": "sections/08-induction.tex",
+      "summary": "Use dimension upper bound, constructed integral generators and Hall-basis independence to show freeness and spanning, W's bracket closure, then degreewise extension to the weight completion."
+    },
+    "formalization_scope_exclusions": [
+      "Regularized transport proposition",
+      "Graph-complex H^0(GC_2) corollary using external Willwacher comparison",
+      "Other graph-complex degrees"
+    ]
+  },
+  "lean": {
+    "index_zero_based": 38,
+    "declaration": "OAI.DeligneDrinfeld.main",
+    "solution_module": "OAI.Algebra.Drinfeld.Completion",
+    "actual_proof": "theorem main : MainStatement := CategoricalValues.main_of_oddSolutions odd_solution",
+    "challenge_module": "ComparatorChallenges.DeligneDrinfeld",
+    "main_statement_features": [
+      "LinearEquiv over ℚ between OddFree and W",
+      "Graded equivalence by weight pieces Fn and Ln",
+      "Ihara-bracket preservation",
+      "Completed and completedInv mutual inverse",
+      "Continuity in both directions",
+      "Componentwise convolution bracket identity for completions"
+    ],
+    "source_challenge_normalized_identity": {
+      "IsSolution": true,
+      "MainStatement": true,
+      "oddWeight": true,
+      "Graded": true
+    },
+    "is_solution_conditions": [
+      "antisymmetry (two-term)",
+      "three-term equation",
+      "pentagon in rational t4 braid Lie quotient"
+    ],
+    "odd_weights": "oddWeight k = 2*k+3 (k : ℕ), corresponding to manuscript 3,5,7,...",
+    "comparator_config_theorem_names": [
+      "OAI.DeligneDrinfeld.main"
+    ],
+    "permitted_axioms_in_config": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "challenge_placeholder_sorry": true,
+    "source_main_proof_explicit": true,
+    "comparator_executed_in_review": false,
+    "manuscript_definition_bridge_independently_proved": false
+  },
+  "prior_separate_wp01_lean_evidence": {
+    "ledger_path": "sources/OPENAI-MATH-2026/CORPUS_25_89_LEAN_RECEIPT_LEDGER.json",
+    "ledger_blob": "530e9a65b37345957f29049b5b24353f0fe8887d",
+    "index": 38,
+    "run_id": 40490625900,
+    "run_head": "d015a4cc6a153a9af54b95f2ef3450036aeb0bd5",
+    "artifact_id": 12730006514,
+    "build_exit": 0,
+    "axioms_exit": 0,
+    "observed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "extra_axioms": [],
+    "comparator_executed": false,
+    "qualifier": "Existing protected compilation and #print axioms evidence; read back, not newly executed or independently certified here."
+  },
+  "crosswalk": {
+    "family_in_372_family_manuscript_index": true,
+    "pinned_family_manuscripts": 1,
+    "declaration_indexed_in_200": true,
+    "main_result_index_zero_based": 38,
+    "family_binding_field_in_raw_declaration_crosswalk": "UNRECONCILED",
+    "manual_family_binding_supported_by": [
+      "Family 008 index entry",
+      "Lean docs/008.md pointing to same PDF and Comparator",
+      "Exact source solution/config/theorem identity"
+    ],
+    "guardrail": "Manual source-evidence family edge does not retroactively rewrite the raw crosswalk or imply 200 semantic matches."
+  },
+  "producer_review": {
+    "principal_proposition": "The manuscript and Lean define rational free Lie algebras, odd weights starting at three, a graded isomorphism onto equations' solution space, preservation of the Ihara bracket and a continuous weight-completion isomorphism.",
+    "detailed_checks": [
+      "Lean IsSolution explicitly includes the manuscript's antisymmetry, 3-term, and four-strand pentagon equations via t4.",
+      "Lean OddFree is the rational free Lie algebra on ℕ, weighted 2k+3; Fn and Wn are matching formalized homogeneous pieces.",
+      "Lean MainStatement requires a graded linear equivalence preserving the Ihara bracket, inverses and continuity for completion maps, and bracket convolution on weight components.",
+      "The actual proof theorem main in Completion.lean is not the Comparator's sorry placeholder.",
+      "Main result on PDF p2 and proof conclusion on p40 are from the same pinned 2026-09-23 edition."
+    ],
+    "limits": "No theorem-level proof of equivalence for all imported implementation objects, topological conventions and independent mathematical argument; no systematic proof of manuscript's graph-complex application."
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "separate_authenticated_identity": false,
+    "negative_controls": [
+      "Change odd generator weight from 2k+3 to 2k+1",
+      "Remove braid pentagon equation",
+      "Drop bracket preservation",
+      "Omit completion continuity",
+      "Classify graph-complex consequence as formalized",
+      "Treat challenge sorry as proof",
+      "Promote historical Lean replay to Comparator",
+      "Mark complete 12-family WP03 pilot"
+    ],
+    "assessment": "No observed contradiction in displayed principal theorem. Source/model and proof-dependency equivalence are not fully proved. Preserve proposition-level rather than full semantic-match classification."
+  },
+  "coverage": {
+    "required_pilot_families": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "007",
+      "008",
+      "009",
+      "010",
+      "011",
+      "012"
+    ],
+    "reviewed_this_transaction": [
+      "008"
+    ],
+    "earlier_protected_case": [
+      "005"
+    ],
+    "remaining_pilot_not_adjudicated": true
+  },
+  "reproduction": {
+    "source_files_read_at_exact_upstream_commit": true,
+    "checked_pdf_pages": [
+      2,
+      40
+    ],
+    "normalized_lean_source_vs_challenge_definitions": [
+      "IsSolution",
+      "MainStatement",
+      "oddWeight",
+      "Graded"
+    ],
+    "source_sha_verified": true,
+    "run_verdict_verified_separately": true
+  },
+  "remaining": "Continue WP03 required pilot families; no 12-family pilot closure, no Comparator adjudication or MATHCERT promotion."
+}
