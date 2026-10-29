@@ -1,0 +1,49 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_2_4_LEDGER/1",
+  "decision": "THREE_HARDENED_COMPARATOR_RUNS_ACCEPTED",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "validation_capture": "6f1c0305e1c64a5c84014dbdb5bdf3c7",
+  "results": [
+    {
+      "index": 2,
+      "declaration": "OAI.ArExplicit.Statement.main",
+      "run_id": 40871034299,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40871034299",
+      "artifact_id": 12898301556,
+      "artifact_digest": "sha256:7baa6aef5748b937f5d2903549cfdf1d864829d0409879d9318ca7b9550057af",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "accepted": true,
+      "internal_sha256_verified": "11/11",
+      "manifest_unchanged": true
+    },
+    {
+      "index": 3,
+      "declaration": "OAI.ArnoldCounterexample.main",
+      "run_id": 40874920549,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40874920549",
+      "artifact_id": 12899096327,
+      "artifact_digest": "sha256:f7794f240eb079f11d4b9675f2b91b47a5d63098c3ffb79da0914863b3985467",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "accepted": true,
+      "internal_sha256_verified": "11/11",
+      "manifest_unchanged": true
+    },
+    {
+      "index": 4,
+      "declaration": "OAI.ArtinCAT0.main",
+      "run_id": 40876494824,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40876494824",
+      "artifact_id": 12898338860,
+      "artifact_digest": "sha256:aee49e42ec6e35e3effd542fce05dd2273e0e80bdcae4fea4c740c3d1d2cce0a",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "accepted": true,
+      "internal_sha256_verified": "11/11",
+      "manifest_unchanged": true
+    }
+  ],
+  "claim_boundary": "Exact pinned comparator challenge acceptance only. Semantic paper/formal correspondence, certification, and remaining declarations unresolved."
+}
