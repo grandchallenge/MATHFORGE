@@ -1,0 +1,49 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_INDEX0_EVIDENCE/1",
+  "decision": "EXACT_HARDENED_COMPARATOR_REPLAY_ACCEPTED",
+  "scope": "Zero-based index 0 pinned Lean Comparator only, not manuscript-semantic or public certification",
+  "repository": "grandchallenge/MATHFORGE",
+  "workflow_protected_head": "c44cd8134fb41106457a24d904fcbac11ce9019c",
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+  },
+  "challenge": {
+    "index_zero_based": 0,
+    "declaration": "OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras",
+    "comparator_config": "lean/ComparatorChallenges/CommutingDerivations.json",
+    "solution_module": "OAI.AlgebraicGeometry.CommutingDerivations.OrdinaryExtraMain"
+  },
+  "replay": {
+    "run_id": 40848290808,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40848290808",
+    "conclusion": "success",
+    "hardened_exit": 0,
+    "diagnostic_exit": null,
+    "comparator_hardened_accepted": true
+  },
+  "artifact": {
+    "artifact_id": 12885419909,
+    "name": "openai-math-comparator-index0",
+    "provider_digest": "sha256:7dcfe2aec8bfb1b441751e9bf0685868ef3103fb754ff56f4c39451fe4ae5ac9",
+    "internal_sha256_checks": {
+      "passed": 7,
+      "total": 7
+    },
+    "manifest_unchanged": true
+  },
+  "verification": {
+    "capture": "5b13c0386bf3482497cc5e500d8040ff",
+    "acceptance_lines": [
+      "Lean default kernel accepts the solution",
+      "Your solution is okay!",
+      "Finished with result: success"
+    ]
+  },
+  "unresolved": [
+    "Other corpus Comparator challenges",
+    "Paper-to-Lean semantic correspondence",
+    "Whole WP01 closure"
+  ]
+}
