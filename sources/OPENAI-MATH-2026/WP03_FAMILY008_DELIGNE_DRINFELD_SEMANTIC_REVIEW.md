@@ -40,4 +40,4 @@ A separate nonauthoring **logical critic** examined likely overclaims: source/ch
 
 **Unresolved:** exact model/definition bridge and dependency proof correspondence, external graph-complex consequence, actual Comparator acceptance, full mathematical certification. WP03's twelve-family first pilot is **not** completed by this one case.
 
-Machine-readable details, exact source Git blobs, ten-source hash pins, provenance and hostile controls are in `WP03_FAMILY008_DELIGNE_DRINFELD_SEMANTIC_REVIEW.json` and `tests/test_openai_math_wp03_family008.py`.
+Machine-readable details, exact source Git blobs, nine source-file Git blob pins, provenance and hostile controls are in `WP03_FAMILY008_DELIGNE_DRINFELD_SEMANTIC_REVIEW.json` and `tests/test_openai_math_wp03_family008.py`.
