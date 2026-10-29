@@ -64,7 +64,7 @@ jobs:
           solution = root / row["lean_source"]
           assert config.is_file() and solution.is_file()
           cfg = json.loads(config.read_text())
-          ident = re.compile(r"[A-Za-z_][A-Za-z_0-9]*(?:\\.[A-Za-z_][A-Za-z_0-9]*)*\\Z")
+          ident = re.compile(r"[A-Za-z_][A-Za-z_0-9]*(?:\.[A-Za-z_][A-Za-z_0-9]*)*\Z")
           assert ident.fullmatch(row["declaration"])
           assert ident.fullmatch(cfg["challenge_module"]) and ident.fullmatch(cfg["solution_module"])
           assert cfg["theorem_names"] and row["declaration"] in cfg["theorem_names"]
