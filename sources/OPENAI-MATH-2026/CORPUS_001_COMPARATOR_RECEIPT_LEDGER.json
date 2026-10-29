@@ -1,0 +1,39 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "HARDENED_COMPARATOR_ACCEPTED",
+  "claim_boundary": "Exact pinned index-1 challenge only; not manuscript-level semantic or public certification",
+  "source": {
+    "repo": "openai/math",
+    "sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "lean": "leanprover/lean4:v4.34.1",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+  },
+  "challenge": {
+    "index": 1,
+    "declaration": "OAI.AbhyankarSathaye.exists_noncoordinate_polynomial",
+    "config": "lean/ComparatorChallenges/AbhyankarSathaye.json"
+  },
+  "execution": {
+    "run_id": 40863984053,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/40863984053",
+    "head_sha": "155083ab01ec949d6a302956f804a95d8e4ab871",
+    "hardened_exit": 0,
+    "hardened_accepted": true,
+    "diagnostic_exit": null
+  },
+  "artifact": {
+    "id": 12892503452,
+    "digest": "sha256:43c968832d4b22f87da356df5ddfa8fa4a558e98d355a3b9756b90428ad0af9d",
+    "internal_hashes_verified": 11,
+    "internal_hashes_total": 11,
+    "manifest_pre_post_equal": true
+  },
+  "verification": {
+    "chad_capture": "fb48e1c0756848a286768f4f132c7769"
+  },
+  "outstanding": [
+    "Other declaration Comparator challenges",
+    "Semantic equivalence",
+    "WP01 parent closure"
+  ]
+}
