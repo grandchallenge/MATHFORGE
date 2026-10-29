@@ -1,0 +1,106 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_ACTUAL_SOURCE_W_SCALING_WITNESS/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "October 6, 2026; companion September 27, 2026"
+  },
+  "material_provenance": [
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "clauses": [
+        "bc:input-offset-W",
+        "bc:input-offset-profiles",
+        "bc:input-offset-force",
+        "bc:input-offset-common-rate"
+      ],
+      "role": "Imports companion seven-row compiler, planar routing V and spatial-clock field W; sets chi_star=1 near J_star."
+    },
+    {
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "git_blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "clauses": [
+        "eq:compiler-table",
+        "eq:branch-table",
+        "eq:actual-branch",
+        "eq:smooth-step",
+        "eq:Hamiltonian-pulse",
+        "Routing without collisions"
+      ],
+      "role": "Expanded row-2 d=+1, nonempty branch rectangles, parking centers, 5N equal slots, cutoff-one scaling Hamiltonian."
+    },
+    {
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_PROJECTION_PRESSURE_CRITERION.json",
+      "repository": "grandchallenge/MATHFORGE",
+      "git_blob": "e7545cc6d6696e29f0aee99eefcf75908806eba5",
+      "role": "Already admitted Poisson-projection equivalence criterion, not duplicated here."
+    }
+  ],
+  "scope": "Evaluate div[(W·grad)W] for the actual October 6 autonomous source field on a concrete source-defined scaling-pulse interior; distinguish raw zero-pressure force from projected nonzero-pressure force. Source-level derivation, not formal Lean certification.",
+  "source_definitions": {
+    "alphabet": "Gamma includes a blank symbol; T=(Q\\{q_H}) x Gamma is nonempty because the construction adds a fresh nonhalting dummy start; L={bottom,E} disjoint_union T; Sigma=Gamma x {0,1} x L; K=|Sigma| >=6; B=2K+2 >=14.",
+    "row": "For any tau in T and a in Gamma, compiler-table row 2 (A_tau,(a,0,bottom)) -> (F_tau,(a,1,bottom),+1) is an expanded rule (bottom != E). It yields a nonempty closed source rectangle with nonempty interior; choose its branch index r in {1,...,N}.",
+    "parking": "pi_r=(1/2+r/(4(N+1)),3/4), with 1<=r<=N and N the number of expanded branches.",
+    "slot": "The 5N equal slots consist of 2N extraction, N scaling (in branch index order), 2N insertion. The r-th scaling slot is [s0,s1]=[(2N+r-1)/(5N),(2N+r)/(5N)].",
+    "midpoint": "z_r=(s0+s1)/2=(2N+r-1/2)/(5N); q_r=(pi_r.x,pi_r.y,z_r) on T^3.",
+    "cutoffs": "The companion's scaling cutoff chi_r equals one on a neighborhood of the parked active rectangle and its center pi_r; October chi_star equals one near J_star=[1/8,7/8] x [1/32,7/8], which contains pi_r.",
+    "pulse": "beta(u)=E(u)/(E(u)+E(1-u)), E(u)=exp(-1/u) for u>0 and zero otherwise; theta(s)=beta(3(s-s0)/(s1-s0)-1); G=(log mu)(X-pi1)(Y-pi2); mu=B^(-1).",
+    "lift": "October W=(V1(Z,X,Y),V2(Z,X,Y),partial_X(X chi_star(X,Y))). Near q_r, chi_star=1, so W=(V1,V2,1)."
+  },
+  "derivation": [
+    {
+      "step": 1,
+      "identity": "beta'(1/2)=2; theta'(z_r)=3*beta'(1/2)/(s1-s0)=30N.",
+      "justification": "E(1/2)=exp(-2), E'(1/2)=4 exp(-2), and s1-s0=1/(5N)."
+    },
+    {
+      "step": 2,
+      "identity": "Near q_r at phase Z, V=(c(Z)(X-pi1), -c(Z)(Y-pi2)), c(Z)=theta'(Z) log(B^(-1)).",
+      "justification": "The Hamiltonian pulse with chi_r=1 and G=(log mu)(X-pi1)(Y-pi2) is exactly linear on the active rectangle."
+    },
+    {
+      "step": 3,
+      "identity": "At q_r, c(z_r)=-30N log B; D_(X,Y)V=diag(c,-c); det(D_(X,Y)V)=-900 N^2 (log B)^2.",
+      "justification": "Direct differentiation; B>=14."
+    },
+    {
+      "step": 4,
+      "identity": "Near q_r, DW=[[c,0,(X-pi1)c'],[0,-c,-(Y-pi2)c'],[0,0,0]]; div[(W·grad)W]=tr[(DW)^2]=2c^2.",
+      "justification": "div W=0 and W3=1 on the chi_star=1 neighborhood. The Z derivatives appear in the third column but cancel from tr[(DW)^2]; this uses the actual 3D autonomous lift, not a planar-only surrogate."
+    },
+    {
+      "step": 5,
+      "identity": "div[(W·grad)W](q_r)=1800 N^2 (log B)^2 > 0.",
+      "justification": "Substitute c(z_r)=-30N log B; N>=1, B>=14."
+    },
+    {
+      "step": 6,
+      "identity": "Delta phi_W=div[(W·grad)W], mean(phi_W)=0 implies phi_W not identically zero; P g_alpha=g_alpha-alpha(t)^2 grad(phi_W), p_projected=-alpha(t)^2 phi_W.",
+      "justification": "The admitted projection criterion; the right-hand side of Poisson is nonzero at q_r, so grad(phi_W) is not identically zero."
+    },
+    {
+      "step": 7,
+      "identity": "For slow profile alpha_1(t)=sigma(2t-1)/(1+t), alpha_1(t)=1/(1+t)>0 for t>=1; hence P g_alpha1(t) != g_alpha1(t) as spatial fields for every t>=1.",
+      "justification": "October source states sigma(2t-1)=1 after t>=1."
+    }
+  ],
+  "symbolic_replay": {
+    "method": "SymPy 1-symbolic Jacobian check, executed locally as a source-independent algebraic sanity check (not Lean replay).",
+    "code": "import sympy as s\nX,Y,Z,p1,p2=s.symbols('X Y Z p1 p2', real=True)\nc=s.Function('c')(Z)\nW=s.Matrix([c*(X-p1),-c*(Y-p2),s.Integer(1)])\ncoords=s.Matrix([X,Y,Z]); J=W.jacobian(coords); A=J*W\nassert s.simplify(sum(s.diff(A[i],coords[i]) for i in range(3))-2*c**2)==0\n",
+    "observed": "PASS: div[(W·grad)W] = 2*c(Z)^2 even with Z-dependent c."
+  },
+  "interpretation": {
+    "raw_force": "The October corollary permits an unprojected general force with prescribed pressure zero. The source-level nonzero divergence does not contradict that raw-force formulation.",
+    "projected_force": "Its Leray-projected force requires nontrivial mean-zero pressure -alpha^2 phi_W. The pressure correction is not redundant for the imported source W.",
+    "lean_boundary": "This does not establish an exact source-to-Lean velocity identity, a Lean projection theorem, or a contradiction with Lean's distinct zero-advection, zero-pressure slow bundle. Direct identification of raw and projected forces is ruled out for the October source W; other transformations require separate proofs."
+  },
+  "remaining": {
+    "numeric_instantiation": "The compiler counts K,N and row-2 branch enumeration r remain machine/input-dependent and are not replaced by invented integers; the exact coordinate is a finite, source-defined parametric rational point. Numerical substitution is unnecessary for the nonvanishing theorem.",
+    "formalization": "No Lean replay or MATHCERT certification performed.",
+    "source_scope": "This conclusion applies to the imported companion scaling pulse in the October source field and to the projected pressure; it does not adjudicate the paper's full computational universality or its uniqueness claims."
+  },
+  "disposition": "SOURCE_ACTUAL_W_NONZERO_PROJECTION_WITNESS_DERIVED",
+  "claim_boundary": "SOURCE_LOCKED_ANALYTIC_EVIDENCE_ONLY_NOT_FORMALIZATION_OR_MATHEMATICAL_CERTIFICATION"
+}
