@@ -1,0 +1,149 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_POINTWISE_ADVECTION_NONIDENTITY/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "scope": "One bounded source-locked mathematical correspondence test: exhibit an actual point with nonzero October advective acceleration, then compare against the pinned Lean zero-advection construction and its force definition. This is a same-coordinate, same-velocity nonidentity, not a theorem-equivalence or MATHCERT claim.",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "exact_parent_main": "e34fe7f07666aaac42a9d5f28783d32d1dae67ab",
+  "sources": [
+    {
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "git_blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "clauses": [
+        "eq:compiler-table row 2",
+        "eq:branch-table d=1",
+        "eq:state-squares",
+        "eq:actual-branch",
+        "eq:smooth-step",
+        "eq:Hamiltonian-pulse",
+        "Routing without collisions"
+      ]
+    },
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "clauses": [
+        "bc:input-offset-W",
+        "bc:input-offset-profiles",
+        "bc:input-offset-force"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ShearFlows/Model.lean",
+      "git_blob": "430988962d758fb91fe07e3080a07f2cf3f850ed",
+      "declarations": [
+        "advection",
+        "ZeroAdvection",
+        "force"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/LoadedMachine.lean",
+      "git_blob": "66f4de474db954fce373c684626e0bc7e21cb401",
+      "declarations": [
+        "loadedMachineVelocity"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowBundle.lean",
+      "git_blob": "8a4c02497f9c10945480492f240d989f9b66d061",
+      "declarations": [
+        "slow_initialized_bundle",
+        "initializedProgram_zero_advection"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowProgram.lean",
+      "git_blob": "d2964e26b20fcfc2f7bc0b7f4cf19446250dc6eb",
+      "declarations": [
+        "slowFromRest",
+        "slowFromRest_zero_advection"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "git_blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "declarations": [
+        "torusSlowVelocity",
+        "torusSlowForce",
+        "torus_slow_effective_computation"
+      ]
+    },
+    {
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_ACTUAL_W_SCALING_PRESSURE_WITNESS.json",
+      "repository": "grandchallenge/MATHFORGE",
+      "git_blob": "29b84d11196e1fd90e4c23e6e03ce4803a01b742",
+      "role": "Already admitted midpoint divergence result; this record adds an explicit off-center nonzero advection point and exact Lean nonidentity."
+    }
+  ],
+  "parameterization": {
+    "compiler": "Choose a realized row-2 d=+1 branch r, with N>=1 expanded branches, full alphabet size K>=6, B=2K+2>=14, m compiled states and lambda=1/[100(m+N+1)].",
+    "source_rectangle": "The row-2 d=+1 domain is [0,1] x I_a; its actual source rectangle has horizontal width lambda. After parking at pi_r=(1/2+r/[4(N+1)],3/4), midpoint scaling mu=B^-1 has horizontal width lambda/sqrt(B).",
+    "phase": "z_r=(2N+r-1/2)/(5N), the midpoint of scaling slot [(2N+r-1)/(5N),(2N+r)/(5N)].",
+    "point": "epsilon=lambda/(4B)>0; Q_r=(pi_r.x+epsilon,pi_r.y,z_r). Since epsilon<lambda/[2 sqrt(B)], Q_r lies strictly inside the midpoint-scaled active rectangle. The pulse cutoff chi=1 there, and the October chi_star=1 near J_star containing Q_r.",
+    "slow_time": "For physical t>=1, alpha_1(t)=1/(1+t)>0."
+  },
+  "derivation": [
+    {
+      "step": 1,
+      "identity": "beta(1-u)=1-beta(u) for 0<u<1, so beta''(1/2)=0; beta'(1/2)=2.",
+      "reason": "E(u)=exp(-1/u) for u>0 and beta(u)=E(u)/[E(u)+E(1-u)]."
+    },
+    {
+      "step": 2,
+      "identity": "At z_r, theta'(z_r)=30N and theta''(z_r)=0.",
+      "reason": "The scaling slot has length 1/(5N), theta(s)=beta(3(s-s0)/(s1-s0)-1), and its midpoint maps to beta argument 1/2."
+    },
+    {
+      "step": 3,
+      "identity": "For c(Z)=theta'(Z) log(B^-1), c(z_r)=-30N log B and c'(z_r)=0.",
+      "reason": "Row-2 displacement d=+1 gives mu=B^-1."
+    },
+    {
+      "step": 4,
+      "identity": "Near Q_r, W=(c(Z)(X-pi1),-c(Z)(Y-pi2),1).",
+      "reason": "Companion Hamiltonian pulse chi=1 on the active scaled rectangle; October chi_star=1 near J_star, so partial_X(X chi_star)=1."
+    },
+    {
+      "step": 5,
+      "identity": "A(W)=(W·grad)W=((c^2+c')(X-pi1),(c^2-c')(Y-pi2),0).",
+      "reason": "Differentiate the full three-dimensional autonomous W, including its Z dependence and W3=1."
+    },
+    {
+      "step": 6,
+      "identity": "A(W)(Q_r)=(900 N^2 (log B)^2 epsilon,0,0)=(225 lambda N^2 (log B)^2/B,0,0) != 0.",
+      "reason": "At Q_r, X-pi1=epsilon, Y-pi2=0, c'=0 and epsilon>0."
+    },
+    {
+      "step": 7,
+      "identity": "A(U_alpha1)(t,Q_r)=(225 lambda N^2 (log B)^2/[B(1+t)^2],0,0) !=0 for every t>=1.",
+      "reason": "U_alpha1=alpha_1(t)W and spatial advection is quadratic in a spatially constant scalar factor."
+    },
+    {
+      "step": 8,
+      "identity": "g_alpha1(t,Q_r) - force_Lean(nu,U_alpha1)(t,Q_r) = A(U_alpha1)(t,Q_r) !=0.",
+      "reason": "Pinned Lean force nu U = partial_t U - nu Delta U, whereas October raw force adds (U·grad)U."
+    }
+  ],
+  "lean_correspondence": {
+    "definitions": "Pinned Model.lean defines advection U x=fderiv U x (U x), ZeroAdvection V = forall t x, advection (V t) x=0, and force nu V = timeDerivative V - nu laplacian V.",
+    "construction": "Pinned TorusSlowMain defines torusSlowVelocity=slowFromRest(loadedMachineVelocity ...); LoadedMachine defines loadedMachineVelocity=initializedProgram(...); SlowBundle uses initializedProgram_zero_advection; SlowProgram proves slowFromRest_zero_advection. Therefore every valid-input torusSlowVelocity is ZeroAdvection.",
+    "no_go": "For any valid Lean input, literal same-coordinate equality torusSlowVelocity I hI = U_alpha1 is impossible, because the left side has ZeroAdvection and the right side has nonzero advection at Q_r for every t>=1. Even identifying only the raw force g_alpha1 with Lean's force of that same October velocity fails at Q_r.",
+    "scope": "This excludes literal field/force identification on the common unit torus with the same time and coordinates. It does not exclude a separately proved coordinate/time transformation, another Lean construction, an independently formalized projected-pressure theorem, or equivalence of high-level computational decision properties."
+  },
+  "local_symbolic_replay": {
+    "method": "Python SymPy local algebraic sanity replay; no Lean compiler or theorem replay.",
+    "script": "import sympy as s\nX,Y,Z,p1,p2,eps,c0=s.symbols('X Y Z p1 p2 eps c0',real=True)\nc=s.Function('c')(Z)\nW=s.Matrix([c*(X-p1),-c*(Y-p2),1]); A=W.jacobian([X,Y,Z])*W\nassert [s.simplify(z.subs({X:p1+eps,Y:p2,s.diff(c,Z):0,c:c0})) for z in A]==[c0**2*eps,0,0]\nu=s.symbols('u',positive=True); E=lambda x:s.exp(-1/x)\nbeta=E(u)/(E(u)+E(1-u))\nassert s.simplify(s.diff(beta,u,2).subs(u,s.Rational(1,2)))==0",
+    "observed": "PASS: pointwise acceleration (c0^2 epsilon,0,0), beta''(1/2)=0."
+  },
+  "novelty_relative_to_admitted": "PR #398 proves div A(W)(q_r)>0 at the pulse center, which alone does not show A(W)(q_r)!=0 (indeed A(W)(q_r)=0). This record evaluates A(W) at a source-justified off-center interior point and establishes direct incompatibility with Lean ZeroAdvection.",
+  "disposition": "SOURCE_LOCKED_POINTWISE_ADVECTION_NONIDENTITY_DERIVED",
+  "claim_boundary": "SOURCE_LEVEL_ANALYTIC_NONIDENTITY_ONLY_NO_LEAN_REPLAY_NO_MATHCERT_CERTIFICATION",
+  "unresolved": [
+    "Formal Lean representation and proof of the October W and Q_r construction are absent.",
+    "No proof of a transformed correspondence, projected-force equivalence or full manuscript validity.",
+    "K,N,m,r are finite source-defined parameters, not fabricated numerical instance counts."
+  ]
+}
