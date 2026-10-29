@@ -1,0 +1,45 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_GROUP_4/1",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "group": "Lipschitz heights and Ashkin–Teller currents",
+  "confirmed_count": 4,
+  "rows": [
+    {
+      "family": "232",
+      "title": "Gaussian free-field limits of weighted integer Lipschitz heights",
+      "note": "Annulus proof for discrete circuit estimate",
+      "edition": "October-6-2026",
+      "previous_edition": "September-25-2026",
+      "verification": "Exact pinned upstream manuscript README version note",
+      "lean_semantics": "NOT_REVIEWED"
+    },
+    {
+      "family": "232",
+      "title": "The Gaussian free field limit of integer Lipschitz heights with two-arc boundary data",
+      "note": "Conditional cut/loop estimates from companion annulus circuit theorem at x=1",
+      "edition": "October-6-2026",
+      "previous_edition": "September-25-2026",
+      "verification": "Exact pinned upstream manuscript README version note",
+      "lean_semantics": "NOT_REVIEWED"
+    },
+    {
+      "family": "232",
+      "title": "Uniform real Lipschitz surfaces on the triangular lattice",
+      "note": "Boundary attachment, landing, separation, conditional walk and convergence repairs",
+      "edition": "October-6-2026",
+      "previous_edition": "September-25-2026",
+      "verification": "Exact pinned upstream manuscript README version note",
+      "lean_semantics": "NOT_REVIEWED"
+    },
+    {
+      "family": "233",
+      "title": "The joint scaling limit of critical Ashkin-Teller currents",
+      "note": "Transmission/boundary-collar corrections and signed-loop-soup/GMC proof replacement",
+      "edition": "October-6-2026",
+      "previous_edition": "September-25-2026",
+      "verification": "Exact pinned upstream manuscript README version note",
+      "lean_semantics": "NOT_REVIEWED"
+    }
+  ],
+  "boundary": "Edition identity and publisher version notes only; no mathematical certification"
+}
