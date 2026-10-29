@@ -1,0 +1,69 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_ADJACENT_SLOW_RATE_BRIDGE/1",
+  "source_repository": "openai/math",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_family": "376",
+  "disposition": "ADJACENT_LEAN_RATE_FOUND_EXACT_OCTOBER_PROFILE_AND_PROJECTION_EQUIVALENCE_UNRESOLVED",
+  "october_manuscript": {
+    "readme": {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/README.md",
+      "blob": "05cc014939435cccf995561250a39dd4935d7508",
+      "version_note": "Adds effective torus-projection, common-clock decay, projected-force and pressure estimates"
+    },
+    "slow_clock": {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "literal_profile": "alpha_1(t)=sigma(2t-1)/(1+t); U_alpha=alpha W; f_alpha=alpha' W + alpha^2 (W dot grad) W - nu alpha Delta W",
+      "rate": "For all h,r >= 0: ||partial_t^h U_alpha1||_C^r + ||partial_t^h f_alpha1||_C^r <= C_h,r (1+t)^(-1-h)",
+      "note": "After t >= 1, the source profile has alpha_1(t)=1/(1+t)."
+    },
+    "projection": {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41",
+      "literal": "On T_L^3: Delta phi=div g, Qg=grad phi, Pg=g-Qg, pressure shift p->p-phi; ||partial_t^h Pg||_C^r and ||partial_t^h Qg||_C^r <= S_L ||partial_t^h g||_H^(r+2), ||partial_t^h phi||_C^(r+1) <= S_L d_L ||partial_t^h g||_H^(r+2)."
+    }
+  },
+  "lean_adjacent": {
+    "main_theorem": {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "name": "OAI.ForcedComputation.torus_slow_effective_computation",
+      "literal_scope": "SlowFluidProperties 1 nu U plus for every spatial word beta and temporal n, common C>=0 bounds both U and force nu U by C*(1+t)^(-1-n); effective force evaluation and a fixed-particle halting equivalence."
+    },
+    "construction": {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowProgram.lean",
+      "blob": "d2964e26b20fcfc2f7bc0b7f4cf19446250dc6eb",
+      "name": "OAI.ForcedComputation.slowFromRest",
+      "literal": "If t<=0 then 0, otherwise (1+t)^(-1)*V(log(1+t),x)."
+    },
+    "velocity_bound": {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowVelocityBounds.lean",
+      "name": "slowFromRest_spatial_time_decay",
+      "scope": "All spatial words and temporal derivative orders n, inverse-time rate (1+t)^(-1-n).",
+      "blob": "6857175c336e44629f38217bdef545e103ad4fe4"
+    },
+    "force_bound": {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowForce.lean",
+      "blob": "36d068affe2e056302c368dc7b654ec838e70dee",
+      "name": "slowFromRest_force_spatial_time_decay",
+      "scope": "Same inverse-time rate for force under ZeroAdvection V."
+    },
+    "fluid_contract": {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowBundle.lean",
+      "blob": "8a4c02497f9c10945480492f240d989f9b66d061",
+      "name": "SlowFluidProperties",
+      "scope": "Spatially periodic, solenoidal velocity and force, both mean zero; classical NS solution with pressure identically zero, uniqueness in its declared class."
+    }
+  },
+  "correspondence": {
+    "common_mathematical_feature": "A theorem-level Lean construction does prove an inverse-time common mixed-derivative rate, contrary to any inference that no related rate theorem exists outside BalancedTransport.",
+    "structural_difference": "The October manuscript uses autonomous W with startup factor sigma(2t-1)/(1+t), whereas the inspected Lean construction uses a log-time evaluation V(log(1+t),x)/(1+t). Equality of the resulting fields is not established by these files.",
+    "projection_difference": "October's general Helmholtz/Poisson projection and pressure shift is not stated by the inspected SlowFluidProperties theorem, which instead asserts solenoidal force and zero pressure for its constructed solution.",
+    "formalization_index": "lean/docs/376.md (blob b43f10df2d8fb85337f2b74abe299de009d0ad38) links September 27 edition; the October 6 correction is not explicitly edition-mapped there.",
+    "comparator_target": "lean/ComparatorChallenges/ForcedNavierStokesComputation.json targets OAI.BalancedTransport.balanced_three_stack_realization, not OAI.ForcedComputation.torus_slow_effective_computation.",
+    "identity_status": "UNPROVED",
+    "mathematical_certification": "NOT_CLAIMED"
+  },
+  "next_action": "Compare October's autonomous W, startup sigma and projected force with Lean slowFromRest and source companion theorem under exact spatial normalization; do not substitute adjacent rate theorem for October's corrected projection.",
+  "claim_boundary": "Source-locked theorem signature and construction comparison only; no full import graph scan, Lean replay, mathematical certification or claim of theorem equivalence."
+}
