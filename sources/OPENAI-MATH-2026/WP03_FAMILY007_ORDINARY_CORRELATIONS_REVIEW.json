@@ -1,0 +1,89 @@
+{
+  "record_type": "GCL_OAI26_WP03_F007_PROPOSITION_TRIAGE/1",
+  "assignment_id": "GCL-OAI-26-WP03/F007",
+  "family_id": "007",
+  "disposition": "BOUNDED_THREE_RESULT_STATEMENT_ALIGNMENT",
+  "claim_boundary": "Displayed manuscript theorem/corollary compared against identified Lean theorem signatures; not complete definition bridge, proof-step verification, Comparator execution, or certification.",
+  "source": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "pdf_path": "preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf",
+    "pdf_git_blob": "a1fa025a59ecbfc5176d16cfdc6e0afd418cc82e",
+    "pdf_sha256": "ccb6f339a7505db7ab158dae4b739164ed8dda32be4012b0310198dd32f5c70a",
+    "pdf_pages": 87,
+    "manuscript_introduction_blob": "da38786f2b27248f49985c1e7f3d8a95fd152f81",
+    "lean_source_path": "lean/OAI/NumberTheory/TwoPointCorrelations/FinalMain.lean",
+    "lean_source_blob": "2bd48811e73bbdc80c1f738fa889a14189186408",
+    "comparator_config_path": "lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.json",
+    "comparator_config_blob": "96dbfcd015da7bb0d32f30e17a3b8a6743bf1fe5",
+    "comparator_challenge_blob": "8764f91cc16967f765b4f19c4378ff8fb5f29cd0",
+    "additional_comparator_config_blob": "cb4de1493992994f9b031eae8ab081fe02218964",
+    "additional_comparator_challenge_blob": "914f601065031ff59b509058cb3d9d709fd0b23e"
+  },
+  "results": [
+    {
+      "manuscript": "A logarithmic saving for affine Liouville correlations",
+      "lean": "OAI.OrdinaryTwoPointCorrelations.liouville_log_saving",
+      "finding": "Both specify an absolute positive logarithmic exponent, all fixed positive-slope nonproportional affine pairs, Liouville correlations, real cutoffs at least three, and a form-dependent positive constant.",
+      "limitation": "Lean's affineSum, liouville and nat-floor definitions have not been independently unfolded to establish exact normalization."
+    },
+    {
+      "manuscript": "Binary corrected Elliott",
+      "lean": "OAI.OrdinaryTwoPointCorrelations.binary_corrected_elliott",
+      "finding": "Both require two one-bounded complex multiplicative functions, uniform nonpretentiousness for at least one original factor, two distinct nonnegative shifts, and ordinary N-normalized correlation tending to zero.",
+      "limitation": "UniformlyNonpretentious, correlationSum and complex denominator conventions need separate fully unfolded semantic inspection."
+    },
+    {
+      "manuscript": "Affine correlations (corollary)",
+      "lean": "OAI.OrdinaryTwoPointCorrelations.affine_corrected_elliott",
+      "finding": "Both require fixed positive slopes and nonproportional affine shifts with one uniformly nonpretentious factor; their ordinary normalized affine correlation tends to zero.",
+      "limitation": "Exact affineSum, shift and uniform-nonpretentiousness model bridge is not independently proved."
+    }
+  ],
+  "crosswalk": {
+    "family_in_manuscript_index": true,
+    "manuscript_count": 1,
+    "main_result_200_index_status": "NOT_PRESENT_AS_THESE_THREE_DECLARATIONS_IN_SORTED_MAIN_RESULT_CROSSWALK",
+    "qualification": "These are three auxiliary/source-visible Comparator declarations, not three new WP01 corpus passes."
+  },
+  "comparator": {
+    "config_selected_theorems": [
+      "OAI.OrdinaryTwoPointCorrelations.liouville_log_saving",
+      "OAI.OrdinaryTwoPointCorrelations.binary_corrected_elliott",
+      "OAI.OrdinaryTwoPointCorrelations.affine_corrected_elliott"
+    ],
+    "other_config_selected_theorems": [
+      "OAI.OrdinaryCorrelations.binary_corrected_elliott"
+    ],
+    "executed_this_review": false
+  },
+  "critic": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "findings": [
+      "Do not convert ordinary averages into logarithmically averaged claims.",
+      "Do not drop nonproportionality or uniform nonpretentiousness conditions.",
+      "Do not claim all imported definitions coincide based on the displayed signatures.",
+      "The single manuscript contains multiple distinct results; each requires separate proposition matching.",
+      "A Comparator challenge placeholder is not a proof acceptance receipt."
+    ],
+    "hostile_mutations": [
+      "ordinary-to-logarithmic",
+      "drop-nonproportionality",
+      "drop-uniformity",
+      "change-paper-hash",
+      "invent-comparator-pass",
+      "claim-full-bridge"
+    ]
+  },
+  "review": {
+    "source_pages": [
+      1
+    ],
+    "source_tex": "build/introduction.tex",
+    "source_lean": "lean/OAI/NumberTheory/TwoPointCorrelations/FinalMain.lean",
+    "proof_dependent_results_exhaustively_checked": false,
+    "all_imported_definitions_checked": false,
+    "mathematical_certification": false
+  },
+  "remaining": "Full unfolded definitions and actual Comparator executions remain independent WP03/WP01 obligations; first 12-family pilot remains incomplete."
+}
