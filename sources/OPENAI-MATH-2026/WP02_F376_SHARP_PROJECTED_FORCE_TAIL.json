@@ -60,9 +60,10 @@
   "theorem": "For the actual source-defined row-2 scaling branch and every fixed nu>0, projected force has nonzero asymptotic (1+t)^(1+h) partial_t^h P f_alpha1 -> (-1)^(h+1) nu h! Delta W; at Q_r the leading coefficient has absolute value nu h! 13500 lambda N^3 log(B)/B. Thus the manuscript's (1+t)^(-1-h) projected-force bound cannot be improved to any strictly faster uniform power. The projected pressure instead has exact (1+t)^(-2-h) rate and nonzero spatial profile.",
   "independent_replay": {
     "command": "python3 - <<'PY'\nimport sympy as s\nu=s.symbols('u',positive=True)\nE=lambda x:s.exp(-1/x)\nbeta=E(u)/(E(u)+E(1-u))\nassert [s.simplify(s.diff(beta,u,k).subs(u,s.Rational(1,2))) for k in range(4)]==[s.Rational(1,2),2,0,-16]\nX,Y,Z,p1,p2=s.symbols('X Y Z p1 p2',real=True)\nc=s.Function('c')(Z)\nW=s.Matrix([c*(X-p1),-c*(Y-p2),1])\nlap=s.Matrix([sum(s.diff(W[i],q,2) for q in [X,Y,Z]) for i in range(3)])\nassert all(s.simplify(v)==0 for v in lap-s.Matrix([(X-p1)*s.diff(c,Z,2),-(Y-p2)*s.diff(c,Z,2),0]))\nN,B,lam=s.symbols('N B lam',positive=True)\ncc=s.simplify(-16*(15*N)**3*(-s.log(B)))\nassert s.simplify(cc-54000*N**3*s.log(B))==0\nassert s.simplify(cc*lam/(4*B)-13500*lam*N**3*s.log(B)/B)==0\nprint('PASS 4/4: beta jet, 3D Laplacian, pulse c second derivative, nonzero off-center coefficient')\nPY",
-    "observed": "Exact source-locked replay pending post-correction; independent SymPy equality normalizes algebraically equivalent signs.",
-    "execution_capture": "c0e71c122cd643d7a899ea585e94eaad",
-    "scope": "SymPy exact algebraic replay is not a Lean proof or independent mathematical certification."
+    "observed": "PASS 4/4: beta jet, 3D Laplacian, pulse c second derivative, nonzero off-center coefficient; separate time-derivative review PASS 10/10 (h=0..4).",
+    "execution_capture": "4e7eae5224b64445bc1eaeb763e6bc83",
+    "scope": "SymPy exact algebraic replay is not a Lean proof or independent mathematical certification.",
+    "execution_receipt_sha256": "fd03ae20f5a26650a7b9a77d03b9a537689a8035811a5341d5011b0c9b6f6931"
   },
   "comparison_to_prior": [
     "WP02_F376_POINTWISE_ADVECTION_NONIDENTITY proves nonzero advective acceleration at Q_r; it does not calculate beta''' or the Laplacian leading term of projected force.",
