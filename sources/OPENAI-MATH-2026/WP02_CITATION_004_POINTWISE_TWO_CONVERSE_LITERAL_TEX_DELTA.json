@@ -1,0 +1,149 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_004_POINTWISE_TWO_CONVERSE_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "canonical_register": {
+    "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+    "zero_based_row": 3,
+    "family_id": "004",
+    "title": "A pointwise 2-converse for elliptic curves with rational two-torsion",
+    "risk_flags": "citation_only; no theorem or proof text changed in complete inspected TeX build tree"
+  },
+  "scope": "One previously unprotected canonical citation-edition literal comparison; not a source upgrade or mathematical certification",
+  "previous_edition": {
+    "root": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026",
+    "pdf_path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf",
+    "pdf_blob": "7951c0cb7548dd1962e387b8bd47c2ad3fdb8d46",
+    "build_tree": "fad5d661c3730a3013100bc28d21cdf8e3100fc1",
+    "paper_tex_blob": "58717023df4626c2dfa5761e3441fecd5253d9f3",
+    "references_bib_blob": "86d03180a99880a3856718fc89455f7a5436995b"
+  },
+  "current_edition": {
+    "root": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026",
+    "pdf_path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+    "pdf_blob": "1d35e83ccc541890903bfa978c1f0f73972843ca",
+    "build_tree": "1fb1d7a7e5f260f140e323eb435399dce233dc0b",
+    "paper_tex_blob": "8b71e1d9df391376eba07b86698bf8814b54af2c",
+    "references_bib_blob": "288913b4a877a3018a6f89e3c8889c202d44d0d1"
+  },
+  "build_tree_comparison": {
+    "recursive_complete": true,
+    "relative_file_count_each": 12,
+    "unchanged_mathematical_section_count": 10,
+    "unchanged_sections_tree": "c761bf96c37430047a07cd91b1d060e944f62859",
+    "unchanged_files": [
+      {
+        "path": "sections/coefficients.tex",
+        "git_blob_sha1": "f157e7a7c87f49f28fa7b96e1b34b75e999272b7"
+      },
+      {
+        "path": "sections/cyclotomic.tex",
+        "git_blob_sha1": "a8765b85855763d84971b10275891bad7d4b4ff2"
+      },
+      {
+        "path": "sections/graphs.tex",
+        "git_blob_sha1": "d19ed4fa05674965262e896c89712d58161b5a03"
+      },
+      {
+        "path": "sections/introduction.tex",
+        "git_blob_sha1": "6062f09f1b5d1df7f6bc7c702b9c9ad87290fc03"
+      },
+      {
+        "path": "sections/nonvanishing.tex",
+        "git_blob_sha1": "59cba16a3c86bc372a50104a0c069f76a5dac0be"
+      },
+      {
+        "path": "sections/pointwise.tex",
+        "git_blob_sha1": "822e27ec2ab5042306a0669ddc0a87029471a207"
+      },
+      {
+        "path": "sections/preliminaries.tex",
+        "git_blob_sha1": "073b1469233eebf281bcda64303b60b26f084079"
+      },
+      {
+        "path": "sections/proof-roadmap-figure.tex",
+        "git_blob_sha1": "043e4957ca626620f2835c3af8a5c1c938941e37"
+      },
+      {
+        "path": "sections/ring-determinants.tex",
+        "git_blob_sha1": "7ec6e3040f458cbd24369e8ed756d64a624d3cdf"
+      },
+      {
+        "path": "sections/ring-limits.tex",
+        "git_blob_sha1": "66b580aec1ce59f468e769bf904428b99cb95343"
+      }
+    ],
+    "changed_files": [
+      "paper.tex",
+      "references.bib"
+    ],
+    "note": "Recursive tree reads included the sections tree entry plus its ten child blobs; only the twelve file blobs are counted."
+  },
+  "literal_deltas": [
+    {
+      "path": "build/paper.tex",
+      "old_line": 56,
+      "new_line": 56,
+      "old_text": "\\date{September 24, 2026}",
+      "new_text": "\\date{October 7, 2026}",
+      "line_count_old": 80,
+      "line_count_new": 80,
+      "all_other_lines_equal": true
+    },
+    {
+      "path": "build/references.bib",
+      "old_line": 353,
+      "new_line": 353,
+      "bib_key": "OpenAIGoldfeldTwoConverse2026",
+      "old_cited_edition": "Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+      "new_cited_edition": "Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+      "line_count_old": 355,
+      "line_count_new": 355,
+      "all_other_lines_equal": true
+    }
+  ],
+  "citation_dependency": {
+    "citation_key": "OpenAIGoldfeldTwoConverse2026",
+    "citing_file": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex",
+    "citing_blob": "6062f09f1b5d1df7f6bc7c702b9c9ad87290fc03",
+    "cite_line": 39,
+    "quoted_role": "The broader companion Theorem 1.1 proves the 2-converse without the rational-two-torsion hypothesis; this manuscript supplies a separate treatment and explicitly says the broader converse is not a proof input (lines 39-43).",
+    "cited_file": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex",
+    "cited_blob": "f4d7f4c773949bebc808ba9ebf53655d5b34ee0b",
+    "cited_theorem": "The 2-converse, first theorem in cited introduction (full 2-power Selmer corank 0 or 1 implies analytic and Mordell–Weil ranks equal the corank and finiteness of Sha, without rational torsion restrictions).",
+    "dependency_direction": "broader companion comparison, explicitly NOT an input to this manuscript's proof",
+    "semantic_status": "The stated scope of the cited theorem covers the comparison; correctness not adjudicated."
+  },
+  "replay": {
+    "transport": "Authenticated GitHub read-only API through GCL CHAD and GitHub connector; CHAD became intermittently unavailable after successful source checks",
+    "commands": [
+      "gh api 'repos/openai/math/git/trees/fad5d661c3730a3013100bc28d21cdf8e3100fc1?recursive=1' --jq '.tree[]|[.path,.sha,.type]|@tsv'",
+      "gh api 'repos/openai/math/git/trees/1fb1d7a7e5f260f140e323eb435399dce233dc0b?recursive=1' --jq '.tree[]|[.path,.sha,.type]|@tsv'",
+      "gh api repos/openai/math/git/blobs/{blob_sha} (base64 decode, recompute Git blob SHA-1 and compare full newline-split lines)",
+      "Read pinned introduction.tex lines 39-43 and cited Goldfeld October 7 introduction theorem 1.1"
+    ],
+    "observations": [
+      "Both recursive trees contain the same twelve file paths and the same ten mathematical-section blob SHA1s.",
+      "Both changed TeX files were fetched by pinned Git blob and independently SHA1-checked; full line-array comparison finds exactly one changed line in each.",
+      "The citation key is unchanged, the target PDF edition changes September 23 to October 7.",
+      "The only citation-key use in the complete pointwise manuscript section tree is introduction.tex:39, with explicit nondependency language.",
+      "The cited October theorem's displayed hypotheses and conclusion cover the broader no-rational-two-torsion claim."
+    ],
+    "execution_capture_ids": [
+      "cf80c86c0cdb4e3090d5cf8b6364175c",
+      "644dc09f74654927b5935ef7040697bf",
+      "7146bb1f26a6403d85d1b542c00c1462"
+    ]
+  },
+  "unresolved": [
+    "Rendered PDF semantic equality not independently established.",
+    "The broader cited Goldfeld theorem's proof is not independently adjudicated.",
+    "No exact Lean theorem correspondence or Comparator semantic replay is asserted.",
+    "Indirect dependencies and withdrawal transitivity are not certified."
+  ],
+  "claim_boundary": "PINNED_SOURCE_TREE_AND_LITERAL_TEX_DEPENDENCY_DIRECTION_ONLY_NOT_PDF_EQUIVALENCE_LEAN_OR_MATHCERT_CERTIFICATION",
+  "disposition": "BOUNDED_CITATION_SOURCE_DELTA_EVIDENCE_CANDIDATE_AWAITING_PROTECTED_ADMISSION"
+}
