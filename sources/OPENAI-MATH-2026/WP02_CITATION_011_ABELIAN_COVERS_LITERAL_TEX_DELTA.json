@@ -1,0 +1,155 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_011_ABELIAN_COVERS_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "canonical_register": {
+    "path": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+    "blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e",
+    "index_zero_based": 10,
+    "family_id": "032",
+    "title": "Abelian covers, Gale correspondences, and the Hodge conjecture for powers"
+  },
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "bounded_obligation": "Protect a complete literal September 30 versus October 6 TeX source delta and classify the two revised citations as explicit theorem/proof-tool dependencies, without claiming theorem validity or rendered-PDF equivalence.",
+  "editions": {
+    "previous": {
+      "root": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-September-30-2026",
+      "build_file": "build/paper.tex",
+      "build_file_git_blob": "2da1fbdf409a3ec44e3a8d5a8fa756d4486a358c",
+      "pdf_git_blob": "7551c9081201efcc684608bd1f6079f7c089c954"
+    },
+    "current": {
+      "root": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026",
+      "build_file": "build/paper.tex",
+      "build_file_git_blob": "0088171f5929a6438c6c0f6de82de781fb929b5d",
+      "pdf_git_blob": "870a7a7289064b392bd08712aafb2df881b57261"
+    }
+  },
+  "literal_comparison": {
+    "complete_build_directories_checked": true,
+    "relative_build_paths_both": [
+      "paper.tex"
+    ],
+    "git_blob_hash_verified_for_both": true,
+    "source_line_count_each_including_terminal_empty_line": 3780,
+    "changed_line_count": 3,
+    "changed_lines": [
+      {
+        "line": 42,
+        "kind": "publication_date",
+        "previous": "\\date{September 30, 2026}",
+        "current": "\\date{October 6, 2026}"
+      },
+      {
+        "line": 3740,
+        "kind": "CM_Hodge_citation_target",
+        "previous_edition": "The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf",
+        "current_edition": "The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf"
+      },
+      {
+        "line": 3747,
+        "kind": "abelian_powers_citation_target",
+        "previous_edition": "Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf",
+        "current_edition": "Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf"
+      }
+    ],
+    "unchanged_line_count": 3777,
+    "mathematical_statement_or_proof_source_delta": "NONE_IN_COMPLETE_INSPECTED_BUILD_TEX",
+    "pdf_rendered_semantic_equivalence": "NOT_CHECKED"
+  },
+  "theorem_dependency": {
+    "CM_Hodge": {
+      "citation_key": "OpenAICM",
+      "citation_uses_count": 3,
+      "citation_use_lines": [
+        234,
+        345,
+        3582
+      ],
+      "specific_uses": [
+        "Theorem 1.1 as common Hodge input",
+        "Theorem 1.1 and Lemma 2.3 for CM-supplied convention",
+        "Theorem 1.1 for the c=1 source-family Hodge hypothesis"
+      ],
+      "revised_target": "The rational Hodge conjecture for CM abelian varieties, October 6, 2026",
+      "role": "EXPLICIT_MATERIAL_THEOREM_INPUT",
+      "validity": "UNADJUDICATED"
+    },
+    "abelian_powers": {
+      "citation_key": "OpenAIAbelianPowers",
+      "citation_uses_count": 7,
+      "citation_use_lines": [
+        317,
+        380,
+        391,
+        396,
+        403,
+        442,
+        466
+      ],
+      "imported_results": [
+        "Section 2 companion proof location",
+        "Lemma 2.1 CM operations",
+        "Lemma 2.2 admissible operations",
+        "Lemma 2.3 tensor stabilizer",
+        "Lemma 2.4 toric summands",
+        "Theorem 2.5 saturated determinant criterion",
+        "Lemma 2.6 correspondence transfer"
+      ],
+      "revised_target": "Weil classes and Hodge classes on abelian powers, October 6, 2026",
+      "role": "EXPLICIT_MATERIAL_PROOF_TOOL_IMPORT",
+      "validity": "UNADJUDICATED"
+    },
+    "withdrawal_screen": {
+      "source_statement_at_line_318": "No result on split Weil classes is used in this paper.",
+      "classification": "AUTHOR_ASSERTION_ONLY_NOT_INDEPENDENT_TRANSITIVE_DEPENDENCY_CLEARANCE",
+      "prior_issue_level_proof_block_screen": [
+        "https://github.com/grandchallenge/MATHFORGE/issues/331#issuecomment-6516560178",
+        "https://github.com/grandchallenge/MATHFORGE/issues/331#issuecomment-6516579612"
+      ]
+    },
+    "dependency_direction": "Abelian covers cites both surviving October Hodge manuscripts as actual mathematical inputs, not merely unused bibliography links. No theorem validity or absence of indirect withdrawn dependencies follows from this source-level classification."
+  },
+  "formalization_mapping": {
+    "family_id": "032",
+    "exact_lean_declaration_correspondence": "NOT_ESTABLISHED"
+  },
+  "replay": {
+    "transport": "Authenticated gh GitHub API read of pinned openai/math Git blobs and pinned contents directory listings",
+    "method": "Read both complete build directories at source commit, each exactly paper.tex; fetch both Git blobs; decode and recompute Git SHA1 over blob header plus bytes; compare every line of both complete sources; locate exact changed line indices and both bibliography keys and citation-use locations.",
+    "assertions": [
+      "PASS exact pinned old/new build directories each contain only paper.tex",
+      "PASS old and current paper.tex Git blob identities verified from raw bytes",
+      "PASS both complete TeX line arrays equal length with exactly three changed lines",
+      "PASS line 42 changes publication date only",
+      "PASS lines 3740 and 3747 update exactly the two stated bibliography target editions",
+      "PASS three explicit CM Hodge citation uses at lines 234, 345, 3582",
+      "PASS seven explicit abelian-powers citation uses at lines 317, 380, 391, 396, 403, 442, 466",
+      "PASS canonical register index 10 family 032 edition/PDF identities match"
+    ],
+    "chad_execution_capture_ids": [
+      "2e0554e79ffe4c6b8f7e512cbae3d245",
+      "1888228dc95749549e0b6c6e45302cd0",
+      "8364d246310540efb48ca43274c039fb"
+    ]
+  },
+  "flags": {
+    "withdrawn": false,
+    "proof_changed": false,
+    "statement_changed": false,
+    "citation_only": "TEX_SOURCE_CONFIRMED",
+    "source_mismatch": "PDF_RENDER_UNASSESSED",
+    "unresolved": true
+  },
+  "severity": "HIGH_TWO_MATERIAL_CITED_THEOREM_DEPENDENCIES",
+  "unresolved": [
+    "Validity and edition-to-edition semantics of CM Hodge Theorem 1.1/Lemma 2.3 and imported abelian-powers Lemmas 2.1-2.4, 2.6/Theorem 2.5 are unadjudicated.",
+    "Indirect dependencies on withdrawn manuscripts are not exhaustively cleared by the author's assertion or bounded citation screens.",
+    "Rendered-PDF equivalence and exact source-to-Lean theorem correspondence are not established.",
+    "Family 376 October manuscript-to-Lean correspondence and source-semantic certification remain unresolved."
+  ],
+  "disposition": "F032_CITATION_011_ABELIAN_COVERS_LITERAL_TEX_AND_DUAL_THEOREM_DEPENDENCY_EVIDENCE_ONLY",
+  "claim_boundary": "PINNED_LITERAL_TEX_AND_EXPLICIT_CITATION_USE_CORRESPONDENCE_ONLY_NOT_MATHCERT_CERTIFICATION"
+}
