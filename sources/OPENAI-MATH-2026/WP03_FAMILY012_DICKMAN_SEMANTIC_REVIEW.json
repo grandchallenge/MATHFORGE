@@ -1,0 +1,106 @@
+{
+  "record_type": "GCL_OAI26_WP03_F012_SEMANTIC_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F012",
+  "family_id": "012",
+  "disposition": "PROPOSITION_LEVEL_ALIGNMENT",
+  "claim_boundary": "Pinned manuscript Theorem 1 and Corollary 2 displayed proposition alignment; no independently proved definition/model equivalence, proof-body equivalence, Comparator replay or MATHCERT.",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "pdf_path": "preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+    "intro_path": "preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex",
+    "intro_blob": "148765fb95c33fee7ad7c9e31500c16da5eebf59",
+    "solution_path": "lean/OAI/NumberTheory/JointDickman/PaperMain.lean",
+    "solution_blob": "ccc0cf7b37c5163324aec1a6b91dd9efd22d7aec",
+    "challenge_blob": "df9a8e2616a7485c59f8fc9c50291eb7601cb1ce",
+    "config_blob": "7267219acc9f42d882a8704c66c94435235d5b9c"
+  },
+  "manuscript": {
+    "title": "The joint Dickman law for consecutive integers",
+    "edition": "2026-09-24",
+    "main_claim": "For every 0<a,b<1, ordinary natural density of 2<=n<=X where P+(n)<=n^a and P+(n+1)<=n^b converges to rho(1/a)rho(1/b). X ranges over all real cutoffs.",
+    "order_corollary": "Both strict orderings of P+(n),P+(n+1) have ordinary natural density one half.",
+    "additional_claims_outside_selected_theorem": [
+      "Fixed-threshold X^a,X^b limit and full joint distribution presentation",
+      "Upper-tail independence corollaries and proof's analytic steps"
+    ]
+  },
+  "formalization": {
+    "module": "OAI.NumberTheory.JointDickman.PaperMain",
+    "theorems": [
+      "OAI.JointDickmanPaper.joint_law",
+      "OAI.JointDickmanPaper.increasing_order",
+      "OAI.JointDickmanPaper.decreasing_order"
+    ],
+    "source_signatures": [
+      "Tendsto (realDensity (fun n => (n.maxPrimeFac : ℝ) ≤ (n : ℝ) ^ a ∧ ((n + 1).maxPrimeFac : ℝ) ≤ (n : ℝ) ^ b)) atTop (𝓝 (rho (1/a)*rho (1/b))) for 0<a,b<1",
+      "Tendsto (realDensity (fun n => n.maxPrimeFac < (n+1).maxPrimeFac)) atTop (𝓝 (1/2))",
+      "Tendsto (realDensity (fun n => (n+1).maxPrimeFac < n.maxPrimeFac)) atTop (𝓝 (1/2))"
+    ],
+    "challenge_config_theorem_names": [
+      "OAI.JointDickmanPaper.joint_law",
+      "OAI.JointDickmanPaper.increasing_order",
+      "OAI.JointDickmanPaper.decreasing_order"
+    ],
+    "proof_wrappers": [
+      "jointDickmanLaw_unconditional",
+      "increasingOrderLaw_unconditional",
+      "decreasingOrderLaw_unconditional"
+    ],
+    "challenge_has_placeholder_sorry": true,
+    "proof_entrypoints_non_sorry": true,
+    "comparator_executed_in_review": false,
+    "axiom_closure_replayed_in_review": false
+  },
+  "producer_review": {
+    "positive_checks": [
+      "Both thresholds use n^a and n^b rather than (n+1)^b or X^b.",
+      "All real X cutoffs are represented through realDensity and floor(X), with n starting at 2.",
+      "Both strict orders are separate theorems; equality cases are not assigned half-density.",
+      "Parameter bounds 0<a,b<1 and marginal rho(1/a)*rho(1/b) match.",
+      "The selected Comparator config lists exactly these three declarations."
+    ],
+    "gaps": [
+      "The underlying definitions realDensity, Dickman.rho and n.maxPrimeFac have not been independently proved equivalent to manuscript conventions.",
+      "Full imported proof chain and paper's distribution and upper-tail corollaries not reviewed.",
+      "Compiler/axiom audit and Comparator execution not newly performed."
+    ]
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "independently_authenticated": false,
+    "hostile_cases": [
+      "moving_threshold_n_to_X",
+      "shift_nplus1_on_second_threshold",
+      "drop_domain_0_1",
+      "replace_ordinary_with_log_density",
+      "conflate_equal_and_strict_order",
+      "fabricate_comparator_pass",
+      "claim_full_definition_bridge",
+      "claim_pilot_completion"
+    ],
+    "finding": "No observed mismatch in the three displayed result signatures. An exact mathematical definition bridge and proof verification remain outstanding."
+  },
+  "coverage": {
+    "required_pilot": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "007",
+      "008",
+      "009",
+      "010",
+      "011",
+      "012"
+    ],
+    "completed_this_case": [
+      "012"
+    ],
+    "other_pilot_open": true
+  },
+  "remaining": "Finish other WP03 families and definition equivalence; no certification or novelty claim."
+}
