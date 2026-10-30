@@ -1,0 +1,79 @@
+{
+  "record_type": "GCL_OAI26_WP03_F006_BOUNDED_COVERAGE_REVIEW/1",
+  "family_id": "006",
+  "assignment_id": "GCL-OAI-26-WP03/F006",
+  "disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "manuscripts": [
+      {
+        "path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+        "blob": "58b8904f39b2a12534732010191fd35435559a61",
+        "intro_blob": "f4d7f4c773949bebc808ba9ebf53655d5b34ee0b"
+      },
+      {
+        "path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+        "blob": "fef228e3a2a26c0b1302fbd6f85de0da1c87a3ba",
+        "intro_blob": "3ecb6f3c162de34dc41002ae25741b99a429e82d"
+      }
+    ]
+  },
+  "source_assertions": [
+    {
+      "manuscript": "Goldfeld's analytic density conjecture and the 2-converse",
+      "date": "2026-10-07",
+      "theorems": [
+        "For every elliptic curve E/Q with full 2-power Selmer corank 0 or 1, analytic and Mordell–Weil ranks equal that corank and Sha is finite.",
+        "In signed squarefree quadratic twist ordering, analytic rank 0 and 1 each have density 1/2, with rank >=2 zero density."
+      ],
+      "qualifiers": [
+        "Full 2-power Selmer corank, not merely Mordell–Weil rank <=1.",
+        "Signed positive and negative squarefree twist parameters by absolute value; fixed E."
+      ]
+    },
+    {
+      "manuscript": "The mean analytic rank of quadratic twists of elliptic curves",
+      "date": "2026-10-06",
+      "theorems": [
+        "For every E/Q, mean analytic rank across signed squarefree quadratic twists converges to 1/2.",
+        "Analytic tail estimate for ranks above R with limsup Y-normalized sum bounded by C_E/R, for R>=R_E."
+      ],
+      "qualifiers": [
+        "Mean needs tail control beyond half-density of rank 0 and rank 1.",
+        "Algebraic rank moment corollaries are distinct from analytic higher moment claims."
+      ]
+    }
+  ],
+  "index_assessment": {
+    "family_in_manuscript_index": true,
+    "manuscript_count": 2,
+    "upstream_lean_docs_006_present": false,
+    "matched_main_result_in_200_crosswalk": false,
+    "matched_goldfeld_named_comparator": false,
+    "claim_limit": "The indexed source-to-Comparator paths lack an identified candidate; does not exclude unindexed modules or theorem names."
+  },
+  "producer_review": {
+    "finding": "Both manuscript main theorem targets are located and pinned. No family-006 matching formalization in indexed scope. Neither manuscript is declared proved in Lean or semantically matched.",
+    "recovery": "Search unindexed Lean declarations and add exact source-model bridge only if a relevant theorem can be identified."
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "independent_identity": false,
+    "cases": [
+      "do-not-conflate-analytic-density-with-mean",
+      "do-not-substitute-mw-rank-for-full-selmer-corank",
+      "do-not-drop-analytic-tail",
+      "do-not-infer-no-lean-anywhere",
+      "do-not-certify-paper",
+      "do-not-assume-bsd-leading-formula"
+    ]
+  },
+  "claim_boundary": "Bounded negative indexed lookup, NOT proof of absent formalization anywhere, NOT mathematical result validation, full proof semantic match, Comparator PASS or MATHCERT certification.",
+  "coverage": {
+    "family_index_review_complete": true,
+    "semantic_alignment_established": false,
+    "pilot_12_family_complete": false
+  },
+  "remaining": "Unindexed Lean search and actual semantic bridge; other pilot family reviews."
+}
