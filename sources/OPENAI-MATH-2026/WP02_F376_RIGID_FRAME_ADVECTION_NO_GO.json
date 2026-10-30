@@ -1,0 +1,101 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_RIGID_FRAME_ADVECTION_NO_GO/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "Incompressible Box Transport and Finite Computation, October 6, 2026"
+  },
+  "candidate_base_main": "2880d125244d3467e47a1a9a79aa34e54a7e0211",
+  "scope": "One bounded mathematical correspondence obstruction: strengthen admitted same-coordinate pointwise nonidentity to fixed rigid torus relabelings with nonzero time-dependent scalar amplitude and source-time reparameterization. This is NOT an arbitrary-diffeomorphism or PDE equivalence claim.",
+  "material_sources": [
+    {
+      "repository": "openai/math",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "clauses": [
+        "bc:input-offset-W",
+        "bc:input-offset-profiles",
+        "bc:input-offset-force"
+      ],
+      "role": "October U(t,x)=alpha_1(t)W(x), with alpha_1(t)=1/(1+t) for t>=1."
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ShearFlows/Model.lean",
+      "git_blob": "430988962d758fb91fe07e3080a07f2cf3f850ed",
+      "declarations": [
+        "advection",
+        "ZeroAdvection"
+      ],
+      "role": "Lean advection is fderiv U x (U x), and ZeroAdvection means it vanishes for all times and points."
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowProgram.lean",
+      "git_blob": "d2964e26b20fcfc2f7bc0b7f4cf19446250dc6eb",
+      "declarations": [
+        "slowFromRest",
+        "slowFromRest_zero_advection"
+      ]
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "git_blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "declarations": [
+        "torusSlowVelocity",
+        "torus_slow_effective_computation"
+      ]
+    },
+    {
+      "repository": "grandchallenge/MATHFORGE",
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_POINTWISE_ADVECTION_NONIDENTITY.json",
+      "git_blob": "e5fc3c8d284ccafbf51374f2eba43c7b9405a1aa",
+      "role": "Previously admitted source-justified off-center Q_r and nonzero advective acceleration; not claimed anew."
+    },
+    {
+      "repository": "grandchallenge/MATHFORGE",
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_PROJECTED_PRESSURE_CURVATURE_NO_GO.json",
+      "git_blob": "59c88657bc3f8ba3b2ea71e7e8e91578b91c2877",
+      "role": "Previously admitted pressure obstruction, not required for the new advection invariance."
+    }
+  ],
+  "hypotheses": [
+    "Use the source-justified off-center Q_r=(pi_r.x+epsilon,pi_r.y,z_r) with epsilon=lambda/(4B)>0, c(z_r)=-30 N log B, c'(z_r)=0, N>=1, B>=14, lambda>0, from the admitted pointwise witness.",
+    "Let R be a fixed signed permutation matrix R in O(3,Z), so R^T R=I and it induces an isometry of the cubic periodic torus; let b be a fixed torus translation.",
+    "Let tau(t) be any source-time reparameterization and a(t) any scalar amplitude. Require at least one t0 with tau(t0)>=1 and a(t0)!=0; no differentiability in time is needed for the spatial advection identity.",
+    "Define the candidate transformed field V(t,x)=a(t) R U(tau(t),R^T(x-b)), with U(s,y)=alpha_1(s)W(y) and alpha_1(s)=1/(1+s) for s>=1."
+  ],
+  "new_mathematical_statement": {
+    "rigid_covariance": "A(V)(t,x)=a(t)^2 R A(U(tau(t),.))(R^T(x-b)), where A(F)=(F dot grad)F; the identity follows from the spatial chain rule and R^T R=I.",
+    "source_witness": "At x_r=R Q_r+b (mod torus), A(V)(t,x_r)=[a(t)^2/(1+tau(t))^2]*R*(225 lambda N^2 (log B)^2/B,0,0) for tau(t)>=1.",
+    "nonvanishing": "At any t0 with tau(t0)>=1 and a(t0)!=0, A(V)(t0,x_r)!=0 because R is invertible and the source coefficient is strictly positive.",
+    "lean_consequence": "Such V cannot equal any valid-input pinned Lean torusSlowVelocity, since that Lean construction has ZeroAdvection. This excludes fixed rigid spatial torus relabelings, arbitrary source-time reparameterizations meeting the witness time, and nonzero scalar rescalings within the stated ansatz."
+  },
+  "proof": [
+    "For fixed t, write y=R^T(x-b), u(y)=U(tau(t),y), and v(x)=a(t) R u(y). By the chain rule D_x v=a(t) R(D_y u)R^T.",
+    "Multiply by v(x)=a(t) R u(y): (D_x v)v=a(t)^2 R(D_y u)R^T R u(y)=a(t)^2 R (D_y u)u(y).",
+    "The admitted source-specific W chart gives A(W)(Q_r)=(225 lambda N^2 log(B)^2/B,0,0), and U(s)=W/(1+s) for s>=1, hence A(U(s))(Q_r)=(1+s)^(-2) A(W)(Q_r).",
+    "Evaluate at x_r=R Q_r+b and t0. The nonzero vector cannot become zero under invertible R or multiplication by a(t0)^2/(1+tau(t0))^2>0.",
+    "By the pinned Lean Model.lean definition, ZeroAdvection requires A(V)(t,x)=0 for all t,x. Pinned SlowProgram.lean and TorusSlowMain.lean establish that property for the Lean torus slow construction, so equality is impossible under this explicit transformation class."
+  ],
+  "replay": {
+    "tool": "Python SymPy 1.14.0, local symbolic check; not CHAD, not Lean compilation or mathematical certification",
+    "script": "import sympy as s\nX,Y,Z=s.symbols('X Y Z',real=True)\np1,p2=s.symbols('p1 p2',real=True)\nq=s.Matrix([X,Y,Z])\nc=s.Function('c')\nW=s.Matrix([c(Z)*(X-p1),-c(Z)*(Y-p2),1])\nA=s.simplify(W.jacobian(q)*W)\na=s.symbols('a',real=True,nonzero=True)\nb=s.Matrix([s.Rational(1,7),s.Rational(1,5),s.Rational(1,3)])\nrotations=[\n s.Matrix([[0,1,0],[-1,0,0],[0,0,1]]),\n s.diag(-1,1,1),\n s.Matrix([[0,0,-1],[0,1,0],[1,0,0]])]\nfor R in rotations:\n assert R.T*R==s.eye(3) and abs(R.det())==1\n y=R.T*(q-b)\n V=s.simplify(a*R*W.subs({X:y[0],Y:y[1],Z:y[2]},simultaneous=True))\n predicted=s.simplify(a*a*R*A.subs({X:y[0],Y:y[1],Z:y[2]},simultaneous=True))\n assert all(s.simplify(z)==0 for z in V.jacobian(q)*V-predicted)\n print('PASS det',R.det(),'difference [0,0,0]')",
+    "observed": [
+      "PASS det 1 difference [0,0,0] (xy quarter-turn)",
+      "PASS det -1 difference [0,0,0] (x reflection)",
+      "PASS det 1 difference [0,0,0] (xz signed permutation)"
+    ],
+    "method": "Three exact symbolic signed-permutation/translation tests with an arbitrary differentiable c(Z) and symbolic nonzero amplitude a; proof above covers all fixed R in O(3,Z)."
+  },
+  "novelty_relative_to_admitted": "The prior pointwise witness excluded literal same-coordinate equality. This establishes nonidentity for the explicit larger class of fixed rigid spatial relabelings, scalar amplitude changes and source-time reparameterizations, without inventing an arbitrary transformation no-go.",
+  "unresolved": [
+    "A nonlinear spatial diffeomorphism, time-dependent moving frame, non-rigid field transformation, or distinct Lean construction is not covered.",
+    "The October projected-pressure Poisson equation and quantitative Sobolev estimates have not been formalized in Lean by this evidence.",
+    "No complete theorem-level correspondence or MATHCERT mathematical certification is established."
+  ],
+  "disposition": "RIGID_TORUS_RELABELLING_ADVECTION_CORRESPONDENCE_EXCLUDED",
+  "claim_boundary": "SOURCE_LOCKED_ANALYTIC_OBSTRUCTION_ONLY_NOT_GENERAL_TRANSFORMED_EQUIVALENCE_OR_LEAN_CERTIFICATION"
+}
