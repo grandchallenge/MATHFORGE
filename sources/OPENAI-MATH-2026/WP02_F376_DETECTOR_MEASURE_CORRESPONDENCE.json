@@ -1,0 +1,109 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_DETECTOR_MEASURE_CORRESPONDENCE/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "Incompressible Box Transport and Finite Computation, October 6, 2026"
+  },
+  "candidate_base_main": "38007b19aa4eabd0e2c63dc93870e7a1321aa95a",
+  "scope": "One bounded exact source-to-adjacent-Lean detector-geometry comparison. Distinguishes the October input-offset detector from the pinned TorusSlowMain theorem's detector. Not an indexed Comparator equivalence or theorem certification.",
+  "material_sources": [
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "label": "bc:input-offset-event",
+      "exact": "On T^3, initial label P=(1/4,1/4,0), detector strip O={1/32<Y<1/8}."
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "git_blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "declaration": "OAI.ForcedComputation.torus_slow_effective_computation",
+      "exact": "For torusSlowVelocity, Halts I iff there exists t>=0 with 1/2 < (Psi t ![1/4,1/2,1/2]) 0 < 1; detector is coordinate Fin 3 zero, not the source's Y coordinate."
+    },
+    {
+      "path": "lean/docs/376.md",
+      "git_blob": "b43f10df2d8fb85337f2b74abe299de009d0ad38",
+      "role": "Family 376 index groups multiple related formalization scopes and still links the September 27 edition of the October target manuscript."
+    },
+    {
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_ADJACENT_SLOW_RATE_BRIDGE.json",
+      "repository": "grandchallenge/MATHFORGE",
+      "git_blob": "2e31c08b15bea00239718faf3b434622048df436",
+      "role": "Previously admitted adjacent Lean rate bridge; not duplicated here."
+    },
+    {
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_RIGID_FRAME_ADVECTION_NO_GO.json",
+      "repository": "grandchallenge/MATHFORGE",
+      "git_blob": "4252baaffc7fbfb49f854159350af307c5c0d1e2",
+      "role": "Previously admitted velocity nonidentity; not duplicated here."
+    }
+  ],
+  "geometry": {
+    "source": {
+      "period": "unit flat three-torus",
+      "coordinate": "Y (second coordinate)",
+      "initial_label": [
+        "1/4",
+        "1/4",
+        "0"
+      ],
+      "detector_interval": [
+        "1/32",
+        "1/8"
+      ],
+      "normalized_Haar_measure": "3/32"
+    },
+    "lean_adjacent": {
+      "period": "unit spatial period from SlowFluidProperties 1",
+      "coordinate": "Fin 3 index 0 (first coordinate)",
+      "initial_label": [
+        "1/4",
+        "1/2",
+        "1/2"
+      ],
+      "detector_interval": [
+        "1/2",
+        "1"
+      ],
+      "normalized_Haar_measure": "1/2"
+    },
+    "exact_difference": "13/32",
+    "ratio_lean_to_source": "16/3"
+  },
+  "theorem": "Let O_src and O_lean be the two detector subsets of the unit flat 3-torus defined by the exact source and Lean coordinate inequalities. There is no normalized-Haar-measure-preserving bijection F:T^3->T^3 such that F(O_src)=O_lean, since mu(O_src)=3/32 and mu(O_lean)=1/2. In particular no volume-preserving smooth torus diffeomorphism or rigid torus isometry identifies these entire detector sets.",
+  "proof": "Each detector is the product of an open interval in one unit-circle coordinate with two unrestricted unit-circle factors. Thus normalized Haar measure equals interval length: 1/8-1/32=3/32 for the October source, and 1-1/2=1/2 for the Lean adjacent theorem. A measure-preserving bijection satisfies mu(F(O_src))=mu(O_src), contradicting 3/32 != 1/2 if F(O_src)=O_lean. The coordinate-index difference does not affect the volume computation. Endpoints have measure zero.",
+  "positive_controls": [
+    "Both statements are fixed-particle halting detectors on spatially unit-periodic three-dimensional geometries, with concrete initial labels and open detector slabs.",
+    "A spatial translation can match the initial points alone; this does not identify the detector sets."
+  ],
+  "hostile_controls": [
+    "Reject the claim that equal halting truth values imply equal detector sets or conjugate velocity fields.",
+    "Reject the claim that this excludes arbitrary non-volume-preserving diffeomorphisms or event equivalence under different observation predicates.",
+    "Reject the claim that the October manuscript is refuted, that the Lean theorem is false, or that the two constructions must be identical."
+  ],
+  "replay": {
+    "tool": "Authenticated CHAD Bash, gh API pinned-blob retrieval, Python 3 fractions.Fraction; no Lean compilation",
+    "source_command": "gh api 'repos/openai/math/contents/<exact path>?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a' (each of the three source paths above), decode base64 and assert the exact git_blob; assert literal detector and initial-label expressions; compute rational interval lengths using fractions.Fraction.",
+    "python_arithmetic": "from fractions import Fraction as F\nsource=F(1,8)-F(1,32)\nlean=F(1)-F(1,2)\nassert (source,lean,lean-source,lean/source)==(F(3,32),F(1,2),F(13,32),F(16,3))",
+    "observed": [
+      "PASS pinned path/blob paper 1aa909f39fc3b9417de71af92a75e89262535518",
+      "PASS pinned path/blob lean d11b59663b6e194a00565a149454c8481f185843",
+      "PASS pinned path/blob index b43f10df2d8fb85337f2b74abe299de009d0ad38",
+      "PASS source detector measure 3/32 Lean adjacent detector measure 1/2 difference 13/32 ratio 16/3",
+      "PASS no normalized-Haar-measure-preserving torus bijection can identify both detector sets"
+    ],
+    "control_run_id": "841bdd4288d94ecc825ee1ff1b4842e1",
+    "execution_receipt_sha256": "7f3e8e1c740f1211829d76a2b93dad6302462ce13d913069159ccc26d714923e",
+    "execution_origin": "LOCAL_OS_ONLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "platform_delivery_attested": false
+  },
+  "disposition": "DETECTOR_SET_VOLUME_PRESERVING_CORRESPONDENCE_EXCLUDED_FOR_ADJACENT_LEAN_THEOREM",
+  "unresolved": [
+    "An explicit mapping between October's autonomous input-offset W, slow profile and projected pressure and any pinned Lean construction is not established.",
+    "A different observer or a non-volume-preserving map could encode the same halting event; this detector-set obstruction does not exclude that.",
+    "The October Poisson/Helmholtz estimates and their Lean formalization remain unestablished.",
+    "The family 376 formalization index links September 27; it does not assert October 6 theorem-level correspondence."
+  ],
+  "claim_boundary": "SOURCE_LOCKED_DETECTOR_GEOMETRY_ONLY_NOT_FULL_SOURCE_TO_LEAN_EQUIVALENCE_OR_MATHCERT_CERTIFICATION"
+}
