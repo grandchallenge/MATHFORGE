@@ -1,0 +1,96 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": "openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "family_id": "004",
+  "title": "Hilbert’s tenth problem over the rational numbers",
+  "edition_pair": {
+    "previous": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026",
+    "current": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026",
+    "previous_pdf_blob": "bf17a7b94d39995095188a097fc3d1ed1935a7cc",
+    "current_pdf_blob": "b75dddd5e05503cc04a156e94bb15d6fadf8158e",
+    "previous_build_tree": "aed7b3dbe545e77d694f409e39c33c7f5c7e068c",
+    "current_build_tree": "6379ec3c27cdf8555090228af8433dca5af4b407"
+  },
+  "complete_build_tree_comparison": {
+    "method": "GitHub git/trees API recursive=1 for both exact build tree SHAs; both truncated=false, 13 entries each, same path set. Fetched all four changed UTF-8 TeX blobs from pinned upstream and compared complete arrays of lines.",
+    "old_entry_count": 13,
+    "new_entry_count": 13,
+    "old_truncated": false,
+    "new_truncated": false,
+    "unchanged_subtrees": [
+      {
+        "path": "figures",
+        "sha": "a48a9d8c56bcaf80803dfab90a6e7c258a4ab02d"
+      },
+      {
+        "path": "sections",
+        "sha": "c3917979932249e228d6eecc1de6ffc688ee27d4"
+      }
+    ],
+    "unchanged_source_blob_count": 8,
+    "changed_files": [
+      {
+        "path": "build/main.tex",
+        "previous_blob": "34364a71cc4e21eb6c138381d97fa890be2ab24e",
+        "current_blob": "4fea499933293b1929acb05694f80e503dddee00",
+        "previous_lines": 82,
+        "current_lines": 82,
+        "changed_lines": [
+          {
+            "line": 60,
+            "previous": "\\date{September 24, 2026}",
+            "current": "\\date{October 6, 2026}"
+          }
+        ]
+      },
+      {
+        "path": "build/references/references.bib",
+        "previous_blob": "1414c968df2b4ca7fbfdea2ce9c49ab14e6751de",
+        "current_blob": "a4cf43d7d124c8feee69292b870013c36d754b8f",
+        "previous_lines": 1079,
+        "current_lines": 1079,
+        "changed_lines": [
+          {
+            "line": 20,
+            "dependency": "A pointwise 2-converse for elliptic curves with rational two-torsion",
+            "family_id": "004",
+            "previous_pdf": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf",
+            "current_pdf": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+            "previous_target_blob": "7951c0cb7548dd1962e387b8bd47c2ad3fdb8d46",
+            "current_target_blob": "1d35e83ccc541890903bfa978c1f0f73972843ca"
+          },
+          {
+            "line": 28,
+            "dependency": "Goldfeld's analytic density conjecture and the 2-converse for elliptic curves",
+            "family_id": "006",
+            "previous_pdf": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+            "current_pdf": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+            "previous_target_blob": "d9a8efaf48a62b452bc5af359930109ffddb7786",
+            "current_target_blob": "58b8904f39b2a12534732010191fd35435559a61"
+          },
+          {
+            "line": 36,
+            "dependency": "Fontaine–Mazur modularity at the prime 2",
+            "family_id": "010",
+            "previous_pdf": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf",
+            "current_pdf": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+            "previous_target_blob": "8b5e64266d9c90e4c83727630228bdecc5ffd070",
+            "current_target_blob": "dea72dd57adfbe896cafccc6097b012bcd6dbb07"
+          }
+        ]
+      }
+    ]
+  },
+  "source_conclusion": "All unchanged sections/figures are Git-tree-identical. In the two changed files, the only literal TeX edits are one date line and three bibliography PDF-version links. No changed theorem or proof source text within the pinned build trees.",
+  "flags": {
+    "withdrawn": false,
+    "proof_changed": false,
+    "statement_changed": false,
+    "citation_only": true,
+    "source_mismatch": "NOT_ADJUDICATED",
+    "unresolved": true
+  },
+  "claim_boundary": "PINNED_TEX_SOURCE_TREE_AND_LITERAL_LINE_DELTA_ONLY; PDF rendering, cited-manuscript validity, dependency semantics, exact Lean declaration correspondence, and MATHCERT certification not established.",
+  "next_review_target": "Audit whether any of the three updated cited manuscripts changes a theorem used in the Hilbert-tenth argument; preserve mutable github.com/blob/main citation-link caveat and verify pinned target editions."
+}
