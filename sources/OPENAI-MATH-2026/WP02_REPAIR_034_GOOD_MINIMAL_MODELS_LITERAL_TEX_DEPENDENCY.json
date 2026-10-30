@@ -77,12 +77,20 @@
   "revised_dependency": {
     "citation_key": "GrantMMP",
     "manuscript": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026",
-    "source_path": "build/sections/01-introduction.tex",
-    "source_blob": "e443057699e94113311ea8f1d67a538045193376",
-    "theorem_label": "thm:finite",
-    "theorem_lines": "84-119",
+    "source_path": "build/sections/06-perturbation.tex",
+    "source_blob": "2b981ad868e22818e49dfa63ac9c5a8911da3cb5",
+    "theorem_label": "repair:thm:reduction",
+    "theorem_lines": "2548-2567",
     "observed_scope": "States termination of every maximal ordinary negative-ray program for normal globally Weil-Q-factorial compact Kähler klt fourfolds; pseudo-effective endpoint is nef; optional strong global Q-factoriality preserved; intrinsic canonical rational line-bundle formulation included; first model is X.",
-    "dependency_status": "Statement-to-citation scope compatible at source level; proof validity and cited subsidiary propositions not independently adjudicated. Companion is itself a repaired-14 manuscript, so its own proof repair is a separate high-risk dependency."
+    "dependency_status": "Statement-to-citation scope compatible at source level; proof validity and cited subsidiary propositions not independently adjudicated. Companion is itself a repaired-14 manuscript, so its own proof repair is a separate high-risk dependency.",
+    "citing_manuscript_locator": "Theorem 6.24",
+    "additional_companion_consequence": {
+      "path": "build/sections/01-introduction.tex",
+      "blob": "e443057699e94113311ea8f1d67a538045193376",
+      "label": "thm:finite",
+      "lines": "84-119",
+      "relationship": "The finite-program theorem in section 06 explicitly says it implies this introductory theorem."
+    }
   },
   "formalization_crosswalk": {
     "repository": "grandchallenge/MATHFORGE",
@@ -100,14 +108,15 @@
       "Exactly five file blobs changed and eighteen are identical",
       "Main theorem thm:main block identical in both editions (1150 characters)",
       "Premises.tex LCS yields exactly three change hunks; explicit new companion theorem locators match revised bibliography",
-      "Companion current source theorem thm:finite explicitly supplies the claimed category and pseudo-effective nef endpoint",
+      "Companion current source theorem repair:thm:reduction (06-perturbation.tex:2548-2567) explicitly states arbitrary-ray termination, intrinsic canonical line bundle, pseudo-effective nef endpoint, discrepancy inequalities and preservation of strong factoriality.",
       "GCL formalization crosswalk source_papers contains no direct title or edition match"
     ],
     "reproducibility": [
       "gh api 'repos/openai/math/git/trees/9c84d9cf8a09b4d8e5e5341fb59714950b1b9ba3?recursive=1'",
       "gh api 'repos/openai/math/git/trees/b5ecfbceab1941ac67c09799897c11220f11af66?recursive=1'",
       "gh api 'repos/openai/math/contents/preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-5-2026/build/sections/introduction.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a'",
-      "gh api 'repos/openai/math/contents/preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/build/sections/introduction.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a'"
+      "gh api 'repos/openai/math/contents/preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/build/sections/introduction.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a'",
+      "gh api 'repos/openai/math/contents/preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/build/sections/06-perturbation.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a'"
     ],
     "limits": "TeX source comparison only; rendered PDF equality and correctness of the new cited theorem are not established. No Lean compilation or formal theorem proof was performed."
   },
