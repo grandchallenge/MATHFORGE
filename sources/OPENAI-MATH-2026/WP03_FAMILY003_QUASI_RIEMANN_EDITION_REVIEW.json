@@ -1,0 +1,109 @@
+{
+  "record_type": "GCL_OAI26_WP03_F003_THREE_EDITION_SEMANTIC_TRIAGE/1",
+  "assignment_id": "GCL-OAI-26-WP03/F003",
+  "family_id": "003",
+  "disposition": "PROPOSITION_LEVEL_ALIGNMENT_WITH_VERSION_DISTINCTION",
+  "claim_boundary": "Pinned manuscript displayed theorem to selected Lean statement alignment only; no exhaustive model bridge, manuscript proof equivalence, Comparator execution, originality evaluation or certification.",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "doc_blob": "cf794e93da2e1a494434153f5b91f2990fe9fd60",
+    "manuscript_source_files": [
+      {
+        "path": "preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex",
+        "git_blob": "268c4e3206d460c617d3d2129742a72b831b3def",
+        "date": "2026-09-30"
+      },
+      {
+        "path": "preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/build/paper2.tex",
+        "git_blob": "2000faddbbebac5de0ecfe0b962534ea61a852d5",
+        "date": "2026-10-05"
+      },
+      {
+        "path": "preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/build/paper.tex",
+        "git_blob": "7e41c77c252348369ca0fb99cbe389271ba6ce86",
+        "date": "2026-10-01"
+      }
+    ],
+    "lean_source_files": [
+      {
+        "path": "lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+        "git_blob": "46c67f4000906b1391a471d6e6396ac0da3c16a5"
+      },
+      {
+        "path": "lean/OAI/NumberTheory/DirichletL/Hecke/Nonvanishing.lean",
+        "git_blob": "4fb158e2dc0d50f71a313ca1c6bdc56923c9d201"
+      },
+      {
+        "path": "lean/OAI/NumberTheory/SiegelZeros/Main.lean",
+        "git_blob": "8d91d7cbf0de605e993f12f0904ec94dbc1817ac"
+      }
+    ]
+  },
+  "source_results": [
+    {
+      "source_edition": "2026-09-30",
+      "main_bound": "Re(s)>7/8",
+      "statement": "Finite-order Hecke L-functions over Q(sqrt(-3)), all Dirichlet L-functions, including Riemann zeta, have no zeros for Re(s)>7/8, excluding principal poles at s=1.",
+      "status": "MAIN_THEOREM_DISPLAYED_BOUND_ALIGNMENT"
+    },
+    {
+      "source_edition": "2026-10-05",
+      "main_bound": "Re(s)>11/12",
+      "statement": "Separate manuscript claims a weaker fixed zero-free region for Hecke over Q(sqrt(-3)) and Dirichlet L-functions, explicitly referring to 7/8 paper as stronger.",
+      "status": "WEAKER_DISTINCT_EDITION_NOT_RELABELED_AS_7_8"
+    },
+    {
+      "source_edition": "2026-10-01",
+      "main_bound": "one uniform c/log q gap",
+      "statement": "For primitive nonprincipal real Dirichlet character with conductor q>=3, any real zero beta in (0,1) satisfies (1-beta)log(q)>=c, where c>0 absolute.",
+      "status": "UNIFORM_LOGARITHMIC_GAP_DISPLAYED_ALIGNMENT"
+    }
+  ],
+  "lean_targets": [
+    {
+      "theorem": "OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
+      "config": "lean/ComparatorChallenges/QuasiRiemannHypothesis.json",
+      "config_blob": "acf552468fc23c1a27d685d33983c58c50040542",
+      "scope": "Riemann zeta nonvanishing at Re(s)>7/8"
+    },
+    {
+      "theorem": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "config": "lean/ComparatorChallenges/DirichletSevenEighths.json",
+      "config_blob": "a946bfcf544ad212fbd46056dbff913c2d75247c",
+      "scope": "Dirichlet character nonvanishing Re(s)>7/8 with principal character pole excluded"
+    },
+    {
+      "theorem": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "config": "lean/ComparatorChallenges/HeckeSevenEighths.json",
+      "config_blob": "139442c594171660b9e4ce80ab01aa978bb32c51",
+      "scope": "Finite-order Hecke-family L-function nonvanishing Re(s)>7/8 excluding principal pole"
+    },
+    {
+      "theorem": "OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap",
+      "config": "lean/ComparatorChallenges/SiegelZeros.json",
+      "config_blob": "25989d64aa0ee538fed5921864ddfad283e61e27",
+      "scope": "Named uniform real-zero-gap target; signature not independently unfolded in this review"
+    }
+  ],
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "separate_identity": false,
+    "limits": [
+      "Do not equate October 5 11/12 paper with stronger September 30 7/8 theorem.",
+      "Principal character s=1 poles excluded; no claim that L-functions have finite nonzero values at pole.",
+      "Uniform Landau–Siegel logarithmic gap is not blanket nonexistence of every real zero in (0,1).",
+      "Named Siegel target has not had its full signature and imported definitions examined.",
+      "No Comparator proof acceptance or complete manuscript proof equivalence from textual signatures."
+    ]
+  },
+  "coverage": {
+    "manuscript_count": 3,
+    "manuscripts_identified": 3,
+    "first_pilot_family_review_complete_at_displayed_scope": true,
+    "deep_semantic_bridge_complete": false,
+    "other_pilot_families_open": true
+  },
+  "unresolved": "Full imported-definition bridge (especially SiegelZeros), exact PDF byte digests, end-to-end Comparator runs and math certification are out of scope."
+}
