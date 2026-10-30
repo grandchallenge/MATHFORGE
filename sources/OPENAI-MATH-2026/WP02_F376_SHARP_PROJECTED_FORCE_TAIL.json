@@ -29,13 +29,13 @@
     {
       "path": "sources/OPENAI-MATH-2026/WP02_F376_POINTWISE_ADVECTION_NONIDENTITY.json",
       "repository": "grandchallenge/MATHFORGE",
-      "blob": "[read from protected tree]",
+      "blob": "e5fc3c8d284ccafbf51374f2eba43c7b9405a1aa",
       "role": "previously admitted branch r, slot z_r, off-center interior Q_r; no new compiler instance invented"
     },
     {
       "path": "sources/OPENAI-MATH-2026/WP02_F376_ACTUAL_W_SCALING_PRESSURE_WITNESS.json",
       "repository": "grandchallenge/MATHFORGE",
-      "blob": "[read from protected tree]",
+      "blob": "29b84d11196e1fd90e4c23e6e03ce4803a01b742",
       "role": "previously admitted nonzero div advection and nontrivial pressure"
     }
   ],
