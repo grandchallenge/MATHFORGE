@@ -1,0 +1,180 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_019_PADIC_SELMER_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "target": {
+    "citation_register_index_zero_based": 9,
+    "family_id": "019",
+    "title": "The p-adic section conjecture",
+    "previous_edition": "September 24, 2026",
+    "revised_edition": "October 6, 2026",
+    "previous_pdf": {
+      "path": "preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf",
+      "git_blob": "dc7c8b3906f9481acc2c4c949b3dc40b22a35b0f"
+    },
+    "revised_pdf": {
+      "path": "preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf",
+      "git_blob": "5d83521ccc50a2c7f990474b14841a982f1bcefc"
+    }
+  },
+  "upstream_build": {
+    "previous_tree": "9ab59b20de874fdbeffd03763411801338f584df",
+    "revised_tree": "246a29c2fe0f5133bebb7ac46e91f8d711b5a984",
+    "both_recursive_trees_complete": true,
+    "identical_path_sets": true,
+    "source_files_each": 11,
+    "identical_section_tree": "4c29d97fd5fadf16b791684a5dc4885e975edf60",
+    "identical_figures_tree": "f03a1618fa70f90df7ceab3e83af04453f980292",
+    "unchanged_section_files": 8,
+    "unchanged_figure_files": 1,
+    "changed_source_files": 2
+  },
+  "changed_files": [
+    {
+      "relative_path": "build/main.tex",
+      "previous_blob": "8154de5686bd727710b5b85b024b06facd3728bf",
+      "revised_blob": "dfda9c203691fbb6d84aac0ed34c02cb9cedec47",
+      "previous_lines": 56,
+      "revised_lines": 56,
+      "changed_lines": [
+        {
+          "line": 25,
+          "previous": "\\date{September 24, 2026}",
+          "revised": "\\date{October 6, 2026}"
+        }
+      ]
+    },
+    {
+      "relative_path": "build/references.bib",
+      "previous_blob": "de9de1e6517ee01ddc2929efbc15ce348563aba6",
+      "revised_blob": "83f665a54485cf116de3ec950c6b87191b4378e7",
+      "previous_lines": 344,
+      "revised_lines": 344,
+      "changed_lines": [
+        {
+          "line": 341,
+          "bibtex_key": "OpenAISelmerConverse2026",
+          "previous_target": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf",
+          "previous_target_git_blob": "8beaeb72a61bdd7e126052193a73de9dde845a58",
+          "revised_target": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+          "revised_target_git_blob": "384525874a5e9989e574a5f9ce7c9883258cc732"
+        }
+      ]
+    }
+  ],
+  "unchanged_files": [
+    {
+      "path": "build/figures/parallel-edges.tex",
+      "blob": "5d31d9198cea31c712e54ace281a8e4fc41d2932"
+    },
+    {
+      "path": "build/sections/01-introduction.tex",
+      "blob": "406c12d9f012ef3bf11d81a7afa74ffdf88804dc",
+      "citation_lines": [
+        256
+      ]
+    },
+    {
+      "path": "build/sections/02-preliminaries.tex",
+      "blob": "8a4427b780ffdff5145a10c3b94a6cdab2a30c1c"
+    },
+    {
+      "path": "build/sections/03-patching.tex",
+      "blob": "1b04ffa760402208f5614ea691ef99d4cef6b3ae"
+    },
+    {
+      "path": "build/sections/04-tame-roots.tex",
+      "blob": "32580970231154cf4c2138b103f4677f5b83939d"
+    },
+    {
+      "path": "build/sections/05-arbitrary-roots.tex",
+      "blob": "c6b6b2574ad9dd2a2735cc1062ca71a9d16896c9"
+    },
+    {
+      "path": "build/sections/06-realization.tex",
+      "blob": "e0b9200ed1345753eddf155896100043a05b47de"
+    },
+    {
+      "path": "build/sections/07-sections.tex",
+      "blob": "f49972eecf96eb9e3c056a40740e9b8fc01adaf2"
+    },
+    {
+      "path": "build/sections/08-global-sections.tex",
+      "blob": "84cebc97e2b5f953785dcbff3f3cf8ce52e01fb2",
+      "citation_lines": [
+        204
+      ]
+    }
+  ],
+  "dependency_review": {
+    "citation_key": "OpenAISelmerConverse2026",
+    "explicit_citation_occurrences": 2,
+    "classification": "MATERIAL_INPUT_TO_NAMED_COROLLARY_NOT_MERELY_BIBLIOGRAPHIC",
+    "sites": [
+      {
+        "path": "build/sections/01-introduction.tex",
+        "line": 256,
+        "role": "Introduction identifies Selmer Theorem 1.1 as arithmetic test for an elliptic target, using full p-power Selmer corank zero."
+      },
+      {
+        "path": "build/sections/08-global-sections.tex",
+        "line": 204,
+        "role": "Proof of cor:global-selmer-target invokes Selmer Theorem 1.1 to infer Mordell-Weil rank zero and finiteness of full Tate-Shafarevich group; then applies cor:global-abelian-target(i)."
+      }
+    ],
+    "cited_theorem": {
+      "path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex",
+      "blob": "553f4809afa0d22a18a5e1943281717a27fac579",
+      "lines": "25-37",
+      "label": "thm:main",
+      "stated_implication": "For every elliptic curve A_0/Q and every prime p, s_p(A_0)=r with r in {0,1} implies analytic order and Mordell-Weil rank r and finiteness of the entire Sha(A_0/Q).",
+      "logical_fit": "The dependent corollary invokes exactly the r=0 specialization; source-statement compatibility is checked, theorem correctness is not."
+    },
+    "scope": "The p-adic manuscript's theorem/proof TeX sections did not change; its corollary still depends materially on the validity of the cited Selmer converse, and changing the cited edition does not prove it."
+  },
+  "replay": {
+    "read_only_commands": [
+      "gh api 'repos/openai/math/git/trees/9ab59b20de874fdbeffd03763411801338f584df?recursive=1'",
+      "gh api 'repos/openai/math/git/trees/246a29c2fe0f5133bebb7ac46e91f8d711b5a984?recursive=1'",
+      "gh api repos/openai/math/git/blobs/8154de5686bd727710b5b85b024b06facd3728bf",
+      "gh api repos/openai/math/git/blobs/dfda9c203691fbb6d84aac0ed34c02cb9cedec47",
+      "gh api repos/openai/math/git/blobs/de9de1e6517ee01ddc2929efbc15ce348563aba6",
+      "gh api repos/openai/math/git/blobs/83f665a54485cf116de3ec950c6b87191b4378e7"
+    ],
+    "expected": {
+      "source_file_count_each": 11,
+      "changed_main_lines": [
+        25
+      ],
+      "changed_bib_lines": [
+        341
+      ],
+      "unchanged_section_count": 8,
+      "unchanged_figure_count": 1,
+      "explicit_selmer_citation_occurrences": 2
+    }
+  },
+  "findings": {
+    "theorem_proof_section_git_blobs_unchanged": true,
+    "manuscript_date_only_change": true,
+    "bibliography_only_change": true,
+    "updated_citation_targets": 1,
+    "downstream_corollary_dependency_material": true,
+    "cited_theorem_statement_compatible_with_use": true,
+    "cited_theorem_validity": "NOT_ADJUDICATED",
+    "rendered_pdf_semantics": "NOT_ASSESSED",
+    "source_to_lean_correspondence": "NOT_ESTABLISHED",
+    "mathematical_certification": "NOT_CLAIMED"
+  },
+  "limits": [
+    "Source-locked literal TeX comparison, not PDF-render equivalence or mathematical correctness.",
+    "Source-statement compatibility of Selmer Theorem 1.1 with the dependent corollary does not prove that theorem.",
+    "No new Lean replay, Comparator equivalence, or MATHCERT certification.",
+    "Other distinct citation editions and family 376 October-to-Lean correspondence remain outstanding."
+  ],
+  "disposition": "LITERAL_CITATION_SOURCE_COMPARISON_RESOLVED_PENDING_PROTECTED_ADMISSION",
+  "claim_boundary": "SOURCE_LOCKED_LITERAL_TEX_AND_DEPENDENCY_MAPPING_ONLY_NOT_MATHEMATICAL_CERTIFICATION"
+}
