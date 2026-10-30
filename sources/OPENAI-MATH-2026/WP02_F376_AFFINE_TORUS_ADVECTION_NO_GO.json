@@ -1,0 +1,173 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_AFFINE_TORUS_ADVECTION_NO_GO/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "Incompressible Box Transport and Finite Computation, October 6, 2026"
+  },
+  "candidate_base_main": "6446c454d5e75d9c8734b796e8625b49eed9e8ee",
+  "bounded_obligation": "Extend the already admitted rigid-torus advection obstruction to every fixed affine automorphism of the flat cubic torus with linear part in GL(3,Z), including non-isometric integer shears. This is a source-to-Lean construction-level nonidentity, not a claim about general diffeomorphisms or equivalence of Navier-Stokes equations under non-isometric changes of metric.",
+  "source_material": [
+    {
+      "repository": "openai/math",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "lines": "84-106, 115-139",
+      "role": "Autonomous W, October slow velocity U(s)=alpha_1(s)W, alpha_1(s)=(1+s)^-1 for s>=1, raw and projected forces"
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ShearFlows/Model.lean",
+      "git_blob": "430988962d758fb91fe07e3080a07f2cf3f850ed",
+      "role": "Lean advection operator and ZeroAdvection predicate"
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowProgram.lean",
+      "git_blob": "d2964e26b20fcfc2f7bc0b7f4cf19446250dc6eb",
+      "lines": "17-18, 79-86",
+      "role": "slowFromRest and zero-advection preservation"
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowBundle.lean",
+      "git_blob": "8a4c02497f9c10945480492f240d989f9b66d061",
+      "lines": "11-20, 30-46",
+      "role": "SlowFluidProperties and initializedProgram_zero_advection dependency"
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "git_blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "lines": "29-43",
+      "role": "torusSlowVelocity and torus_slow_effective_computation"
+    },
+    {
+      "repository": "grandchallenge/MATHFORGE",
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_RIGID_FRAME_ADVECTION_NO_GO.json",
+      "git_blob": "4252baaffc7fbfb49f854159350af307c5c0d1e2",
+      "role": "Previously admitted signed-permutation isometry case and off-center nonzero advection witness; do not re-admit"
+    },
+    {
+      "repository": "grandchallenge/MATHFORGE",
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_POINTWISE_ADVECTION_NONIDENTITY.json",
+      "git_blob": "e5fc3c8d284ccafbf51374f2eba43c7b9405a1aa",
+      "role": "Previously admitted exact source pulse witness Q_r"
+    }
+  ],
+  "hypotheses": [
+    "Use the previously source-justified row-2 d=+1 scaling pulse with N>=1, B=2K+2>=14, lambda=1/[100(m+N+1)]>0, epsilon=lambda/(4B)>0, and Q_r=(pi_r.x+epsilon,pi_r.y,z_r) in a cutoff-one neighborhood.",
+    "In the local chart W(X,Y,Z)=(c(Z)(X-pi_1),-c(Z)(Y-pi_2),1), with c(z_r)=-30 N log B and c'(z_r)=0.",
+    "Let A be any fixed integer 3x3 matrix with det A=+1 or -1. Thus A and A^-1 preserve the integer lattice and define a smooth affine automorphism x -> A x+b of T^3; b is a fixed torus translation.",
+    "Let a(t) be any scalar amplitude and tau(t) any source-time reparameterization. Assume at least one t0 satisfies a(t0)!=0 and tau(t0)>=1; no time differentiability is needed for this spatial advection identity.",
+    "Define V(t,x)=a(t) A U(tau(t),A^-1(x-b)), where U(s,y)=alpha_1(s)W(y). All equalities involving x are interpreted on the torus using periodic lifts."
+  ],
+  "theorem": {
+    "affine_covariance": "For every fixed t and x, (V(t)·∇)V(t,x)=a(t)^2 A [(U(tau(t))·∇)U(tau(t))](A^-1(x-b)).",
+    "source_witness": "At Q_r, (W·∇)W(Q_r)=C e_1, C=225 lambda N^2 (log B)^2/B>0. For s>=1, (U(s)·∇)U(s)(Q_r)=C(1+s)^-2 e_1.",
+    "transformed_witness": "At x_r=A Q_r+b mod Z^3, (V(t)·∇)V(t,x_r)=a(t)^2 C(1+tau(t))^-2 A e_1 whenever tau(t)>=1. Since A is invertible, A e_1 !=0.",
+    "consequence": "No field of this affine-torus-pushforward ansatz can equal the pinned Lean torusSlowVelocity at a time t0 with nonzero a(t0) and tau(t0)>=1, because that Lean field has identically zero advection."
+  },
+  "proof": [
+    "For y=A^-1(x-b) and u(y)=U(tau(t),y), the spatial Jacobian is D_x V=a(t) A (D_y u) A^-1. This holds because A and b are independent of x and t is held fixed.",
+    "Multiplying by V=a(t) A u gives (D_x V)V=a(t)^2 A(D_y u)A^-1 A u=a(t)^2 A(D_y u)u. Orthogonality is NOT required.",
+    "At the admitted source witness, c'(z_r)=0, c(z_r)^2=900 N^2(log B)^2, X-pi_1=epsilon=lambda/(4B), and Y-pi_2=0, giving C=225 lambda N^2(log B)^2/B>0.",
+    "For s>=1, alpha_1(s)=1/(1+s), so spatial advection scales by alpha_1(s)^2. At x_r=A Q_r+b the transformed witness is nonzero because a(t0)^2>0, (1+tau(t0))^-2>0, C>0 and A e_1!=0.",
+    "The pinned Lean slowFromRest_zero_advection and initializedProgram_zero_advection feed SlowFluidProperties and torusSlowVelocity; hence its advection vanishes everywhere. Equality at the transformed witness is impossible."
+  ],
+  "exact_nonorthogonal_examples": [
+    {
+      "A": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "det": 1,
+      "Ae1": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "A": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "det": 1,
+      "Ae1": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "A": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "det": -1,
+      "Ae1": [
+        2,
+        1,
+        0
+      ]
+    }
+  ],
+  "replay": {
+    "tool": "CHAD WSL Python SymPy exact symbolic differentiation",
+    "command": "python3 - <<'PY'\nimport sympy as s\nX,Y,Z,p1,p2,a=s.symbols('X Y Z p1 p2 a',real=True)\nq=s.Matrix([X,Y,Z]); c=s.Function('c'); W=s.Matrix([c(Z)*(X-p1),-c(Z)*(Y-p2),1]); adv=W.jacobian(q)*W\nb=s.Matrix([s.Rational(1,7),s.Rational(1,5),s.Rational(1,3)])\nAs=[s.Matrix([[1,0,0],[1,1,0],[0,0,1]]),s.Matrix([[1,1,0],[0,1,1],[0,0,1]]),s.Matrix([[2,1,0],[1,1,0],[0,0,-1]])]\nfor A in As:\n assert abs(A.det())==1 and A.T*A!=s.eye(3)\n y=A.inv()*(q-b)\n V=a*A*W.subs({X:y[0],Y:y[1],Z:y[2]},simultaneous=True)\n predicted=a*a*A*adv.subs({X:y[0],Y:y[1],Z:y[2]},simultaneous=True)\n assert all(s.simplify(v)==0 for v in V.jacobian(q)*V-predicted)\n print('PASS non-orthogonal GL(3,Z) det',A.det(),'A e1=',list(A[:,0]))\nprint('PASS 3/3: affine covariance for non-isometric torus automorphisms')\nPY",
+    "observed": "PASS 3/3, all exact symbolic Jacobian residuals zero; nonorthogonal unimodular matrices with determinants 1,1,-1",
+    "execution_capture": "9d5be9146c9a4d39881b78f6ede26163",
+    "execution_receipt_sha256": "f7fc2efe7a15d59fff886e06d2f9f8bf5953947662d45be8a79a677b27157fa7",
+    "limits": "Three illustrative exact non-isometric matrices tested. General GL(3,Z) statement follows from the written chain-rule proof, not finite test enumeration. No Lean compilation or independent mathematical certification."
+  },
+  "nonduplication": "WP02_F376_RIGID_FRAME_ADVECTION_NO_GO covers only R in O(3,Z), i.e. signed permutations. Here nonorthogonal unimodular shears are explicitly covered and replayed. Earlier rate, phase, pressure, and citation records are reused without changes.",
+  "caveats": [
+    "Nonorthogonal A changes the Euclidean metric and Laplacian; this is a vector-field advection identity, NOT a claim that the standard-viscosity Navier-Stokes PDE is invariant under arbitrary GL(3,Z) coordinate changes.",
+    "This does not cover time-dependent moving spatial frames, nonlinear diffeomorphisms, more general velocity modifications, or distinct Lean constructions.",
+    "The source October pressure projection and quantitative Poisson estimates are not thereby Lean-formalized.",
+    "The 3-withdrawal/14-repair/13-citation canonical register remains unchanged; all thirteen citation literal comparisons have protected evidence. WP01 deferred indices 145 and 199 are untouched."
+  ],
+  "disposition": "FIXED_AFFINE_TORUS_AUTOMORPHISM_ADVECTION_CORRESPONDENCE_EXCLUDED",
+  "claim_boundary": "SOURCE_LOCKED_ANALYTIC_NONIDENTITY_FOR_GL3Z_AFFINE_PUSHFORWARDS_ONLY; NOT_FULL_LEAN_EQUIVALENCE_OR_MATHCERT_CERTIFICATION"
+}
