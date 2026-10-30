@@ -1,0 +1,101 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_PROJECTED_PRESSURE_CURVATURE_NO_GO/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "Incompressible Box Transport and Finite Computation, October 6, 2026",
+    "note": "Current upstream main 4eaee87548250b2682affda7d05d947c05554bae was observed separately; no claims here use it."
+  },
+  "candidate_base_main": "8a31c145d5a109694f011c8d974462ffeabf4e5d",
+  "scope": "One new exact pressure-Laplacian identity and same-velocity force/pressure compatibility obstruction for the actual source-defined scaling pulse. This sharpens prior nonzero-projection evidence, without asserting Lean equivalence or mathematical certification.",
+  "material_sources": [
+    {
+      "repository": "openai/math",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "labels": [
+        "bc:input-offset-W",
+        "bc:input-offset-profiles",
+        "bc:input-offset-force",
+        "bc:input-offset-common-rate"
+      ],
+      "role": "Defines autonomous W, alpha_1, raw residual g_alpha and projected-pressure application."
+    },
+    {
+      "repository": "openai/math",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "git_blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41",
+      "labels": [
+        "prop:projection-l2",
+        "lem:p2-realization"
+      ],
+      "role": "Defines Poisson projection, pressure shift and NS residual sign convention."
+    },
+    {
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowBundle.lean",
+      "git_blob": "8a4c02497f9c10945480492f240d989f9b66d061",
+      "declarations": [
+        "SlowFluidProperties",
+        "slow_initialized_bundle"
+      ],
+      "role": "Different pinned Lean construction has Solenoidal(force nu U), IsClassicalSolution ... (fun _ => 0)."
+    },
+    {
+      "repository": "grandchallenge/MATHFORGE",
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_ACTUAL_W_SCALING_PRESSURE_WITNESS.json",
+      "git_blob": "29b84d11196e1fd90e4c23e6e03ce4803a01b742",
+      "role": "Admitted source-specific q_r, c(z_r) and divergence witness; not rederived as a separate admission."
+    },
+    {
+      "repository": "grandchallenge/MATHFORGE",
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_PROJECTION_PRESSURE_CRITERION.json",
+      "git_blob": "e7545cc6d6696e29f0aee99eefcf75908806eba5",
+      "role": "Previously admitted generic projection and Poisson identity."
+    }
+  ],
+  "hypotheses": [
+    "Fixed physical viscosity nu; smooth periodic divergence-free autonomous W imported from the companion source, with source-defined scaling-pulse neighborhood where W=(c(Z)(X-pi_1),-c(Z)(Y-pi_2),1).",
+    "N>=1 expanded compiler branches, B=2K+2>=14, scaling-slot midpoint z_r=(2N+r-1/2)/(5N), q_r=(pi_r.x,pi_r.y,z_r), and c(z_r)=-30N log B, from the protected actual-W witness.",
+    "October slow alpha_1(t)=sigma(2t-1)/(1+t)=1/(1+t) for t>=1.",
+    "Raw residual g=U_t+(U.grad)U-nu Delta U, U=alpha_1 W; projected force f=Pg=g-grad phi, Delta phi=div g, mean(phi)=0, projected pressure p=-phi."
+  ],
+  "new_mathematical_statement": {
+    "exact_pressure_curvature": "For every t>=1, Delta p_projected(t,q_r) = -1800*N^2*(log B)^2/(1+t)^2 < 0.",
+    "gauge_invariance": "Every pressure representative p_projected+c(t) has the same nonzero Laplacian at q_r. Therefore no spatially constant (in particular zero) pressure can represent the same velocity U with a solenoidal forcing.",
+    "same_velocity_no_go": "For any smooth pair (f,p) satisfying U_t+(U.grad)U = nu Delta U - grad p + f and div f=0 for this exact U, necessarily Delta p=-div g. At q_r and t>=1 this is strictly negative. Hence f solenoidal and grad p=0 are incompatible for the same U.",
+    "raw_force_allowed": "The paper's separate raw general-force realization (g,0) is not contradicted: div g is allowed to be nonzero."
+  },
+  "derivation": [
+    "On the cutoff-one scaling-pulse neighborhood W=(c(Z)(X-pi_1),-c(Z)(Y-pi_2),1), so div W=0 and div[(W.grad)W]=tr[(DW)^2]=2c(Z)^2. The c'(Z) terms are present in DW but do not enter the trace of its square.",
+    "Because alpha depends only on t, div U_t=alpha' div W=0 and div Delta U=Delta div U=0. Therefore div g=alpha(t)^2 div[(W.grad)W]=2alpha(t)^2 c(Z)^2 on that neighborhood, independent of nu.",
+    "At q_r, c(z_r)=-30N log B; for t>=1, alpha_1(t)=1/(1+t). Thus div g(t,q_r)=1800 N^2 (log B)^2/(1+t)^2 > 0.",
+    "Taking divergence of g=-grad p+f with div f=0 gives Delta p=-div g. In particular Delta p(t,q_r) is the claimed negative expression; adding a function of t to p leaves this invariant.",
+    "For the paper's mean-zero projection phi, Delta phi=div g, f=g-grad phi, p=-phi. Hence the derived curvature is exactly the projected pressure's curvature; this is an identity, not a lower bound on a global norm."
+  ],
+  "replay": {
+    "tool": "Python 3 + SymPy 1.14.0 on authenticated CHAD shell; source-independent algebraic replay, not Lean compilation",
+    "code": "import sympy as s\nX,Y,Z,t,p1,p2,nu=s.symbols('X Y Z t p1 p2 nu', real=True)\nc=s.Function('c')(Z); a=s.Function('a')(t)\ncoords=(X,Y,Z)\nW=s.Matrix([c*(X-p1),-c*(Y-p2),1]); U=a*W\nA=U.jacobian(coords)*U\nG=U.diff(t)+A-nu*s.Matrix([sum(s.diff(U[i],z,2) for z in coords) for i in range(3)])\ndiv=lambda v:s.simplify(sum(s.diff(v[i],coords[i]) for i in range(3)))\nassert div(U)==0\nassert s.simplify(div(G)-2*a**2*c**2)==0\nassert s.simplify(div(A)-2*a**2*c**2)==0\nprint('PASS div U = 0')\nprint('PASS div g = 2 alpha(t)^2 c(Z)^2 independent of nu and c prime')\nprint('PASS for c(z_r)=-30N log B, t>=1: Delta p(t,q_r)=-1800 N^2 log(B)^2/(1+t)^2')",
+    "observed": [
+      "PASS div U = 0",
+      "PASS div g = 2 alpha(t)^2 c(Z)^2 independent of nu and c prime",
+      "PASS for c(z_r)=-30N log B, t>=1: Delta p(t,q_r)=-1800 N^2 log(B)^2/(1+t)^2"
+    ],
+    "gcl_control_run_id": "51a7969769804ffc8310a947c4ff8a10",
+    "local_execution_receipt_sha256": "79748c0988579c3cf0e25f6b85231bd881d8ca2edc9006435f389e5c4852f882",
+    "execution_origin": "LOCAL_OS_ONLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "platform_delivery_attested": false
+  },
+  "formal_correspondence": {
+    "lean_fact": "Pinned SlowFluidProperties demands solenoidal force and identically zero pressure for its own constructed U. The October actual W slow U cannot satisfy both demands with the same physical velocity and coordinates, by the gauge-invariant pressure curvature obstruction.",
+    "qualification": "This is a conditional source-level same-velocity impossibility, not a contradiction with Lean: the Lean velocity is a different construction. It does not rule out arbitrary non-affine transformations or a separate Lean formalization of the projected formulation.",
+    "unresolved": [
+      "Exact October W-to-Lean transformed construction mapping",
+      "Lean theorem formalizing torus Poisson projection and quantitative Sobolev bounds",
+      "Full mathematical validity of source manuscript and mathematical certification"
+    ]
+  },
+  "disposition": "SOURCE_LOCKED_EXACT_PRESSURE_CURVATURE_AND_ZERO_PRESSURE_SOLENOIDAL_NO_GO",
+  "claim_boundary": "SOURCE_LOCKED_ANALYTIC_EVIDENCE_ONLY; NOT_LEAN_FORMALIZATION_OR_MATHCERT_CERTIFICATION"
+}
