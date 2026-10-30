@@ -1,0 +1,82 @@
+{
+  "record_type": "GCL_OAI26_WP03_F002_BOUNDED_INDEX_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F002",
+  "family_id": "002",
+  "disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_introductions": [
+      {
+        "title": "Exact Birch–Swinnerton–Dyer Formula from Low Selmer Corank",
+        "path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/sections/01-introduction.tex",
+        "blob": "8afa7de5ae4ade572e70565d81d624bd34476c4e",
+        "date": "2026-10-07"
+      },
+      {
+        "title": "The Selmer converse for elliptic curves at every prime",
+        "path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex",
+        "blob": "553f4809afa0d22a18a5e1943281717a27fac579",
+        "date": "2026-10-07"
+      },
+      {
+        "title": "The two-primary Birch–Swinnerton–Dyer formula in Selmer corank at most one",
+        "path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/01-introduction.tex",
+        "blob": "3f6fb17bc250067d9fa2f9933f099310dac56a39",
+        "date": "2026-10-06"
+      }
+    ]
+  },
+  "manuscript_claims": [
+    {
+      "name": "full_BSD",
+      "claim": "For any E/Q and any prime q with full q-primary Selmer corank 0 or 1, analytic/Mordell–Weil ranks equal the corank, Sha is finite, and the normalized full BSD leading coefficient equals Omega*Reg*#Sha*product(Tamagawa)/#torsion^2, with the period and height conventions fixed in source.",
+      "distinct_obligation": "Exact leading-term equality at all primes, not implied by rank equality and finiteness alone."
+    },
+    {
+      "name": "all_prime_converse",
+      "claim": "For any E/Q and prime p, full p-primary Selmer corank 0 or 1 implies analytic and Mordell–Weil ranks equal the corank and finiteness of the entire Tate–Shafarevich group.",
+      "distinct_obligation": "Converse does not itself establish the BSD leading-term formula."
+    },
+    {
+      "name": "two_primary_BSD",
+      "claim": "For E/Q with 2-primary Selmer corank at most one, ranks agree and Sha finite; BSD quotient Q_E is positive rational and v_2(Q_E)=v_2(#Sha).",
+      "distinct_obligation": "Only the valuation at 2, not all odd-prime valuations."
+    }
+  ],
+  "index_assessment": {
+    "source_manuscript_count": 3,
+    "crosswalk_path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "crosswalk_main_result_count": 200,
+    "named_BSD_Selmer_crosswalk_hits": 0,
+    "upstream_lean_docs_002_present": false,
+    "upstream_comparator_entry_count": 833,
+    "named_BSD_Selmer_comparator_hits": 0,
+    "search_scope": "Pinned 200 main-result crosswalk entries, lean/docs filenames and named ComparatorChallenges directory entries. Not an exhaustive text/AST scan of every Lean source or semantic equivalence check."
+  },
+  "producer_review": {
+    "status": "BOUNDED_INDEXED_SEARCH_NEGATIVE",
+    "finding": "Three distinct manuscript main claims source-pinned, no named indexed comparator target identified; no source-to-Lean proposition equality asserted."
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "separate_authenticated_identity": false,
+    "hostile_cases": [
+      "do_not_upgrade_two_primary_to_full_BSD",
+      "do_not_upgrade_rank_converse_to_leading_coefficient",
+      "do_not_omit_Sha_finiteness",
+      "do_not_drop_full_Selmer_corank_hypothesis",
+      "do_not_claim_absent_all_Lean_formalization",
+      "do_not_claim_Comparator_pass",
+      "do_not_claim_certification"
+    ]
+  },
+  "coverage": {
+    "bounded_family_source_inventory_reviewed": true,
+    "full_semantic_bridge_complete": false,
+    "all_12_pilot_families_complete": false
+  },
+  "claim_boundary": "No named indexed match identified: does NOT establish no Lean theorem anywhere, manuscript mathematical correctness, full proof semantics, comparator replay, or MATHCERT certification.",
+  "remaining": "Wider unindexed Lean declaration search and complete mathematical source-proof comparison required if a candidate appears."
+}
