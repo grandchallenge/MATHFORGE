@@ -1,0 +1,88 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_034_LEDGER/1",
+  "decision": "ONE_PINNED_HARDENED_COMPARATOR_CHALLENGE_ACCEPTED",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+  "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+  "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "crosswalk_git_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+  "workflow_git_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "results": [
+    {
+      "index": 34,
+      "declaration": "OAI.CriticalSK.critical_mixing_bounds",
+      "run_id": 41056177153,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41056177153",
+      "job_id": 124064164662,
+      "artifact_id": 12979212140,
+      "artifact_digest": "sha256:da6cbcab8ccffa34ba7b4650b3ddfd2cf95d14847ea8e3073ae99695ba7ef0aa",
+      "zip_sha256": "da6cbcab8ccffa34ba7b4650b3ddfd2cf95d14847ea8e3073ae99695ba7ef0aa",
+      "zip_bytes": 18440,
+      "receipt_sha256": "1092ab196095bcf9ccf0514b0cefd7cd8824eee337dec80b5b78c8e64cab25b7",
+      "runner_head": "aaef03205ad225ec67ff9e9d5a30394087cb64f3",
+      "run_attempt": 1,
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "challenge": "lean/ComparatorChallenges/CriticalSKMixing.lean",
+      "config": "lean/ComparatorChallenges/CriticalSKMixing.json",
+      "source": "lean/OAI/MathematicalPhysics/CriticalMixing/Main.lean",
+      "challenge_sha256": "16c41c4533f545eb81b40e5698199ea80ecee4e86d5db0b1a5594b51ba1a5499",
+      "config_sha256": "b87c7aec463827b9a2b5998ff22deb78b6af2dfd0b026e4eb26e574c3fdad466",
+      "solution_sha256": "948b3bfcb31664020f3fe0acf39f71d0535237ff130174ea09cb26b1578ea9d4",
+      "challenge_git_blob": "990194ad19caefcfa7a5c4ecd104051a91b6f3ba",
+      "config_git_blob": "c159cdd22fe3dec446256aa9005fd79664d4e2c7",
+      "solution_git_blob": "3daf45778658a94bbf635ae15df6957cf1282bb1",
+      "receipt_listed_files_sha256_and_bytes_verified": "11/11",
+      "artifact_zip_sha256_independently_recomputed": true,
+      "selected_identity_matches_protected_crosswalk": true,
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_artifacts_present": false,
+      "comparator_hardened_accepted": true,
+      "manifest_pre_post_unchanged": true,
+      "kernel_acceptance_log_observed": true,
+      "comparator_success_log_observed": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "enable_nanoda": false,
+      "challenge_placeholder_sorry_not_counted_as_solution": true
+    }
+  ],
+  "coverage": {
+    "previously_protected_indices": "0-33,199",
+    "previously_protected_count": 35,
+    "new_distinct_indices": [
+      34
+    ],
+    "protected_count_if_candidate_merged": 36,
+    "remaining_if_merged": 164,
+    "parent_issue": 330,
+    "parent_disposition": "OPEN"
+  },
+  "workflow_history": {
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "historical_indexed_runs_before_new_dispatch": 34,
+    "latest_verified_completed_run_id": 41056177153,
+    "latest_verified_completed_run_index": 34,
+    "active_runs_after_index35_dispatch": [
+      41062216028
+    ],
+    "index35_dispatch": "CONFIRMED_RUN_41062216028; AWAITING_ARTIFACT",
+    "index36_dispatch": "AMBIGUOUS_TRANSPORT; NO_RUN_OBSERVED_AT_FIRST_AUTHENTICATED_READBACK; NO_RETRY; SLOT_RESERVED_UNTIL_RESOLVED",
+    "bounded_concurrency_limit": 3,
+    "dispatch_during_admission": "NONE"
+  },
+  "audits": {
+    "verifier": "Fetched run 41056177153 attempt 1 and job 124064164662: terminal success, all steps passed. Downloaded artifact 12979212140 via authenticated GitHub connector; independently recomputed exact ZIP SHA256 da6cbcab8ccffa34ba7b4650b3ddfd2cf95d14847ea8e3073ae99695ba7ef0aa equal to provider digest; verified all 11/11 receipt-listed file SHA256 and byte counts and REPLAY_RECEIPT.json SHA256 1092ab196095bcf9ccf0514b0cefd7cd8824eee337dec80b5b78c8e64cab25b7. Receipt selected index 34 and declaration match sorted immutable 200-entry crosswalk. Immutable upstream config/challenge/solution Git blob identities checked via authenticated GitHub connector at source pin. Manifest pre/post digest identical. Hardened exit 0, no diagnostic fallback; Lean default kernel accepts solution and Comparator prints 'Your solution is okay!'.",
+    "adversary_non_authoring_read_only": "Separate logical read-only adversarial pass: protected ledgers admit 0-33 and 199, excluding 34; no double admission. Workflow run_number 34 alone was not used as index identity; exact artifact selected-index and selected-identity were checked. Challenge's expected sorry placeholder is not counted as solution; hardened solution kernel and Comparator acceptance are independently observed in log. No fallback substitution, no source drift, no unsupported paper-to-Lean or certification claim. This logical pass does not represent an independent human or physical GitHub identity.",
+    "amanuensis": "Append-only exact evidence ledger for index 34, candidate-only status until protected merge and readback. Protected count remains 35 until merged; becomes 36 after protected readback. Parent #330 remains open, with 164 further indices after admission. Index35 is executing and index36 ambiguous; do not blindly retry."
+  },
+  "transport": "GCL_Commander healthy authenticated probe and gh API history readback; dispatched index35 with verified run 41062216028. A subsequent attempted guarded index36 command returned INTERNAL without an execution receipt. Checked system_status, performed one minimal successful recovery probe and read authenticated GitHub run history: no index36 run at first readback. Treat remote effect as uncertain and reserve slot; do not blindly replay. GitHub connector remained healthy for source, workflow, run, artifact and protected Git operations.",
+  "claim_boundary": "EXACT_PINNED_LEAN_COMPARATOR_ACCEPTANCE_ONLY; not manuscript-to-Lean semantic equivalence, novelty, MATHCERT or public certification."
+}
