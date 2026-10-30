@@ -210,7 +210,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": false,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -220,10 +220,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_034_GOOD_MINIMAL_MODELS_LITERAL_TEX_DEPENDENCY.json",
+          "git_blob": "53aecf563a86b116381dc47932c023a2c3ae1280"
         }
       ],
       "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+      "exact_review_target": "Check the source-pinned companion GrantMMP Theorem 6.24 and auxiliary Lemma 3.2/Propositions 3.4,6.23 for arbitrary-ray termination, intrinsic-adjoint scope, strong-factoriality preservation; separately trace exact Lean theorem mapping. Do not treat a cited theorem as certified.",
+      "literal_hypothesis_conclusion_delta": "The main theorem thm:main is literally identical across Oct 5/6 TeX (1150 characters; all three named assumptions remain). Abstract and premise explanation change the MMP from an outstanding conditional input to one claimed supplied independently by repaired companion GrantMMP Oct 6 Theorem 6.24, Lemma 3.2, Propositions 3.4/6.23. Conclusion unchanged; cited theorem validity and semantic coverage unadjudicated."
     },
     {
       "key": "034:preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf",
