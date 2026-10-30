@@ -1,0 +1,131 @@
+{
+  "record_type": "GCL_OAI26_WP02_F034_CONDITIONAL_GOOD_MINIMAL_MODELS_SOURCE_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "bounded_obligation": "One canonical repaired-14 row: family 034, Conditional good minimal models for compact Kähler fourfolds, October 5 to October 6 2026; literal complete TeX source and theorem-dependency comparison.",
+  "editions": {
+    "old": {
+      "root": "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-5-2026",
+      "build_tree_sha": "9c84d9cf8a09b4d8e5e5341fb59714950b1b9ba3",
+      "pdf_sha": "d6d35605bf3f5056442529b7e5ebe8dae1b89a5b"
+    },
+    "revised": {
+      "root": "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026",
+      "build_tree_sha": "b5ecfbceab1941ac67c09799897c11220f11af66",
+      "pdf_sha": "50884e7bbf6538216a282d4ef79e4e3b05a0e64c",
+      "readme_sha": "47a372cb879318b12d22ea7e49533e1ed91ed1e8"
+    }
+  },
+  "complete_tree_comparison": {
+    "old_file_count": 23,
+    "new_file_count": 23,
+    "same_relative_paths": true,
+    "changed_file_count": 5,
+    "identical_file_count": 18,
+    "recursive_tree_truncated": false,
+    "changed_files": [
+      {
+        "path": "build/main.tex",
+        "old_blob": "490559f320a05b435607a93b1b3894ab0ab829ad",
+        "new_blob": "e240034eb0f8c62a1771c7758dd8c0fbe22c5015",
+        "delta": "Publication date October 5 -> October 6; abstract removes the MMP from the list of remaining conditional assumptions and states the ordinary MMP supplies the nef endpoint."
+      },
+      {
+        "path": "build/sections/introduction.tex",
+        "old_blob": "556c63bd17918eb0a0bdd8608111fd9c04cbbdb4",
+        "new_blob": "22a8d5f896b4168911dfb7a3d5d78998e769155d",
+        "delta": "At old line 24/new line 24, revised prose identifies three inputs but says the MMP input is supplied by companion GrantMMP Theorem 6.24 and Proposition 3.4, independently of orbifold Iitaka subadditivity; the remaining conditional premises are subadditivity and effective abundance."
+      },
+      {
+        "path": "build/sections/premises.tex",
+        "old_blob": "485651a2502de8a7c3081efe5e8d196fe12a539a",
+        "new_blob": "1748f1b5ce9ddefd7b1175eb8b93f9c6f532d527",
+        "delta": "Three LCS change hunks: section title 'three hypotheses' -> 'three inputs'; old lines 235-238 cite GrantMMP Theorem 6.20/Proposition 3.4 and new lines 235-247 cite Theorem 6.24, Lemma 3.2, Propositions 3.4 and 6.23, spelling out intrinsic canonical-sheaf, strong-factoriality, arbitrary-ray termination and discrepancy scope; final wording 'hypotheses' -> 'inputs'."
+      },
+      {
+        "path": "build/appendices/projective_exclusions.tex",
+        "old_blob": "35ab039f9d119ccffd8ea1fba134b857dc51dd73",
+        "new_blob": "70273447e2ff0bfbfe592d33bdc0f708e28a8523",
+        "delta": "Lines 220-224 vs 220-223 reword the numerical-dimension qualification, keeping the same cited Fujino Theorem 3.2 and the same good-model premise."
+      },
+      {
+        "path": "build/references.bib",
+        "old_blob": "bcfb117480318bbd731c6be527157b863cddcbe1",
+        "new_blob": "d80216508424e61d2c3bde05bffa3360dce9a918",
+        "delta": "GrantMMP reference updates October 5 -> October 6 and theorem locator from Theorem 6.20/Proposition 3.4 to Theorem 6.24/Lemma 3.2/Propositions 3.4 and 6.23."
+      }
+    ]
+  },
+  "main_theorem_literal_check": {
+    "label": "thm:main",
+    "source": "build/sections/introduction.tex",
+    "old_begin_line": 32,
+    "new_begin_line": 35,
+    "theorem_block_characters_old": 1150,
+    "theorem_block_characters_new": 1150,
+    "identical": true,
+    "explicit_assumptions": [
+      "hyp:campana",
+      "hyp:mmp",
+      "hyp:effective-abundance"
+    ],
+    "conclusion": "The theorem block is literally identical; the three named assumptions remain in the formal theorem statement. The edition changes the stated justification of the MMP premise, not the displayed theorem conclusion."
+  },
+  "revised_dependency": {
+    "citation_key": "GrantMMP",
+    "manuscript": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026",
+    "source_path": "build/sections/01-introduction.tex",
+    "source_blob": "e443057699e94113311ea8f1d67a538045193376",
+    "theorem_label": "thm:finite",
+    "theorem_lines": "84-119",
+    "observed_scope": "States termination of every maximal ordinary negative-ray program for normal globally Weil-Q-factorial compact Kähler klt fourfolds; pseudo-effective endpoint is nef; optional strong global Q-factoriality preserved; intrinsic canonical rational line-bundle formulation included; first model is X.",
+    "dependency_status": "Statement-to-citation scope compatible at source level; proof validity and cited subsidiary propositions not independently adjudicated. Companion is itself a repaired-14 manuscript, so its own proof repair is a separate high-risk dependency."
+  },
+  "formalization_crosswalk": {
+    "repository": "grandchallenge/MATHFORGE",
+    "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "source_papers_count": 173,
+    "exact_title_or_edition_match": false,
+    "mapping_status": "NOT_ESTABLISHED",
+    "caveat": "Absence of direct source_papers entry does not prove absence of relevant Lean declarations or imported formal results."
+  },
+  "verification": {
+    "method": "Authenticated GitHub read-only pinned contents and recursive Git tree API; exact Git blob SHA and line-level LCS comparison; literal theorem block equality; source-pinned companion theorem inspection.",
+    "assertions": [
+      "Both pinned build trees returned untruncated recursive listings with identical 23 relative file paths",
+      "Exactly five file blobs changed and eighteen are identical",
+      "Main theorem thm:main block identical in both editions (1150 characters)",
+      "Premises.tex LCS yields exactly three change hunks; explicit new companion theorem locators match revised bibliography",
+      "Companion current source theorem thm:finite explicitly supplies the claimed category and pseudo-effective nef endpoint",
+      "GCL formalization crosswalk source_papers contains no direct title or edition match"
+    ],
+    "reproducibility": [
+      "gh api 'repos/openai/math/git/trees/9c84d9cf8a09b4d8e5e5341fb59714950b1b9ba3?recursive=1'",
+      "gh api 'repos/openai/math/git/trees/b5ecfbceab1941ac67c09799897c11220f11af66?recursive=1'",
+      "gh api 'repos/openai/math/contents/preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-5-2026/build/sections/introduction.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a'",
+      "gh api 'repos/openai/math/contents/preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/build/sections/introduction.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a'"
+    ],
+    "limits": "TeX source comparison only; rendered PDF equality and correctness of the new cited theorem are not established. No Lean compilation or formal theorem proof was performed."
+  },
+  "risk_register_disposition": {
+    "category": "repaired_14",
+    "family_id": "034",
+    "title": "Conditional good minimal models for compact Kähler fourfolds",
+    "flags": {
+      "withdrawn": false,
+      "proof_changed": true,
+      "statement_changed": false,
+      "citation_only": false,
+      "source_mismatch": "UNASSESSED",
+      "unresolved": true
+    },
+    "severity": "high",
+    "next_target": "Independently audit GrantMMP Theorem 6.24, Lemma 3.2, Propositions 3.4/6.23 against the claimed arbitrary-ray and intrinsic-adjoint hypotheses; trace any Lean declaration correspondence before semantic promotion."
+  },
+  "claim_boundary": "PINNED_LITERAL_TEX_AND_CITED_THEOREM_SCOPE_ONLY_NOT_PROOF_VALIDITY_OR_LEAN_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "exclusions": "No change to 3 withdrawals, 14 repairs, 13 citation identity counts; no deferred WP01 indices 145/199 or generic queue automation touched."
+}
