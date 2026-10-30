@@ -1,0 +1,54 @@
+{
+  "record_type": "OAI26_WP03_F011_NEIGHBOR_DECLARATION_DISAMBIGUATION/1",
+  "family": "011",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "predecessor_review": "sources/OPENAI-MATH-2026/WP03_FAMILY011_PRIME_PREDECESSORS_INDEXED_COVERAGE.json",
+  "disposition": "FOUR_NEARBY_COMPARATOR_NAMES_NOT_PROPOSITION_MATCHES",
+  "targets": [
+    {
+      "config": "TotientAsymptotic",
+      "config_blob": "2322df92270f0bfa55eda8a1544bd765759681b6",
+      "implementation": "lean/OAI/NumberTheory/TotientAsymptotic/UnconditionalMain.lean",
+      "implementation_blob": "60225f2c27398c81d0f330b12ff88393cdf63cc5",
+      "finding": "Selected statements quantify TendstoUniformlyOn, V/mainTerm and weighted totient counting functions; no theorem of infinitude of n with fiber g(n)>n^(1-epsilon) or shifted-prime lower bound."
+    },
+    {
+      "config": "TotientCompanionZero",
+      "config_blob": "704bb1bb7f8f6b8ddc698670f6a8d522cf1c617b",
+      "implementation": "lean/OAI/NumberTheory/TotientAsymptotic/Main.lean",
+      "implementation_blob": "2f3f673b65f9bb058cccb8a4a24e50bb619d2696",
+      "finding": "Target is companion_zero_case in a totient asymptotic module, not a matching target for the source prime-predecessor family. Exact declaration may be transitively imported; semantic match not demonstrated."
+    },
+    {
+      "config": "SmoothObstruction",
+      "config_blob": "58c76b20ae8ccccf293206f2e455178f5e194eec",
+      "implementation": "lean/OAI/Dynamics/SmoothObstruction/Main.lean",
+      "implementation_blob": "14ebe0aebe09a2b10090df619308c58e7848e095",
+      "finding": "main constructs ergodic probability-preserving system with no smooth positive-volume model; different mathematical domain."
+    },
+    {
+      "config": "SmoothInitialForm",
+      "config_blob": "93704ed5123303dce703f2ad4d3a5e5a8c5fca4b",
+      "implementation": "lean/OAI/Algebra/Determinantal/InitialForm.lean",
+      "implementation_blob": "a17d2687a4fc11ea1a470e2c2a390e2977642f48",
+      "finding": "smooth_initial_form_lower_bound concerns homogeneous polynomial components and singularity, not smooth prime predecessors."
+    }
+  ],
+  "source_claims": [
+    "Infinitely many high-multiplicity totient fibers, smooth shifted primes count >=x^(1-o(1))",
+    "Prime-predecessor normalized largest-factor joint PD(1) law",
+    "Infinitely many squarefree p-1 with even prime factor count"
+  ],
+  "audit": {
+    "producer": "Selected Comparator configs and pinned Lean theorem declaration bodies inspected; name similarities do not establish matching mathematical statements.",
+    "adversary_read_only": "TotientCompanionZero is a neighboring target whose exact imported signature was not found in inspected entry module; don't state stronger claims than the available signature evidence.",
+    "referee_read_only": "No new matched candidate or full family proof-semantic correspondence; scoped negative candidate disambiguation only."
+  },
+  "boundaries": {
+    "not_proof_of_no_unindexed_declaration": true,
+    "full_semantic_match": false,
+    "certification": false,
+    "WP03_complete": false
+  },
+  "next_action": "Search nonindexed upstream Lean modules and exact theorem texts for source-matched propositions, prioritizing specific g(n) fiber growth, PD(1) convergence, or Möbius parity infinitude."
+}
