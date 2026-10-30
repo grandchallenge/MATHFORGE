@@ -8,6 +8,6 @@ class Review(unittest.TestCase):
  def test_positive(self):self.assertTrue(valid(json.loads(P.read_text())))
  def test_hostile(self):
   d=json.loads(P.read_text())
-  for f in [lambda z:z.__setitem__("disposition","FULL_THEOREM_PROVED"),lambda z:z["upstream"].__setitem__("blob","0"*40),lambda z:z["exact_comparison"].__setitem__("lean_exponent_theorem","all epsilon"),lambda z:z["exact_comparison"].__setitem__("gap","none"),lambda z:z["coverage"].__setitem__("source_main_theorem_matched",True),lambda z:z["coverage"].__setitem__("all_WP03_certified",True)]:
+  for f in [lambda z:z.__setitem__("disposition","FULL_THEOREM_PROVED"),lambda z:z["upstream"].__setitem__("blob","0"*40),lambda z:z["exact_comparison"].__setitem__("lean_exponent_theorem","all epsilon"),lambda z:z["exact_comparison"].__setitem__("source_quantifier","none"),lambda z:z["coverage"].__setitem__("source_main_theorem_matched",True),lambda z:z["coverage"].__setitem__("all_WP03_certified",True)]:
    z=copy.deepcopy(d);f(z);self.assertFalse(valid(z))
 if __name__=="__main__":unittest.main()
