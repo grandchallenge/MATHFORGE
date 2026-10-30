@@ -1,0 +1,155 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_056_FINITE_ORDINARY_MMP_SOURCE_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "comparison": {
+    "family_id": "056",
+    "title": "Finite ordinary minimal model programs on compact Kähler fourfolds",
+    "previous_edition": "October-5-2026",
+    "revised_edition": "October-6-2026",
+    "pdf_blobs": {
+      "previous": "6a9b2e369f7a13ce03fa0575c8da178947c78c26",
+      "revised": "53e784e7300eab5de4060622f8445842fc8a5624"
+    },
+    "files": {
+      "oldIntro": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/build/sections/01-introduction.tex",
+        "git_blob": "23eb4d195f2ad48a99c3c8e1659eb3f0c18c5374",
+        "lines": 192
+      },
+      "newIntro": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/build/sections/01-introduction.tex",
+        "git_blob": "e443057699e94113311ea8f1d67a538045193376",
+        "lines": 192
+      },
+      "oldProof": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/build/sections/06-perturbation.tex",
+        "git_blob": "f41d321cfaf1e02524471cf21a01320f0fc62387",
+        "lines": 2155
+      },
+      "newProof": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/build/sections/06-perturbation.tex",
+        "git_blob": "2b981ad868e22818e49dfa63ac9c5a8911da3cb5",
+        "lines": 2615
+      },
+      "oldEndpoint": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/build/sections/07-endpoints.tex",
+        "git_blob": "e9b5f160e78d6ae2843afbb703a779bc639ea4e4",
+        "lines": 113
+      },
+      "newEndpoint": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/build/sections/07-endpoints.tex",
+        "git_blob": "e9b5f160e78d6ae2843afbb703a779bc639ea4e4",
+        "lines": 113
+      },
+      "oldReadme": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/README.md",
+        "git_blob": "8a06e04c4767c99e1d2d7f5184ee3d1895606f03",
+        "lines": 19
+      },
+      "newReadme": {
+        "path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/README.md",
+        "git_blob": "d1a88fed653e84fef97ebe8f0e10f68402d59f77",
+        "lines": 22
+      }
+    }
+  },
+  "theorem_comparison": {
+    "main_theorem": {
+      "label": "thm:finite",
+      "path": "build/sections/01-introduction.tex",
+      "literal_equal": true,
+      "old_length": 1635,
+      "new_length": 1635
+    },
+    "supporting_finite_programs": {
+      "label": "repair:thm:reduction",
+      "path": "build/sections/06-perturbation.tex",
+      "literal_equal": true,
+      "old_length": 1102,
+      "new_length": 1102
+    },
+    "conclusion": "The two inspected displayed theorem blocks are literally unchanged. This does not establish that their proofs are valid or that all other statements in the complete manuscript are unchanged."
+  },
+  "proof_repair": {
+    "section": "build/sections/06-perturbation.tex",
+    "previous_lines": 2155,
+    "revised_lines": 2615,
+    "added_labels": [
+      {
+        "label": "repair:lem:carrier-margin",
+        "line": 1602
+      },
+      {
+        "label": "repair:lem:emc-transfer",
+        "line": 1681
+      },
+      {
+        "label": "repair:lem:multiplier-scheme-transfer",
+        "line": 1718
+      },
+      {
+        "label": "repair:lem:surface-base-positivity",
+        "line": 1772
+      },
+      {
+        "label": "repair:eq:surface-base-adjoint",
+        "line": 1821
+      },
+      {
+        "label": "repair:eq:surface-relative-positive",
+        "line": 1850
+      }
+    ],
+    "removed_labels": [],
+    "description": "The revised proof section adds a Kähler carrier-margin lemma, effective morphism contraction (EMC) transfer, generalized multiplier-ideal scheme transfer, and surface Mori-base positivity, with two labelled surface-positivity equations. This is a material new proof-justification dependency, not a new conclusion in the two compared theorem blocks.",
+    "revised_readme_version_note": "This version adds carrier-positivity and multiplier-ideal arguments and revises the contraction induction for ordinary negative-ray programs."
+  },
+  "dependency": {
+    "old_companion_citation": "\\cite[Theorem~1.1]{OAI:Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026}",
+    "new_companion_citation": "\\cite[Theorem~1.1]{OAI:Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026}",
+    "first_changed_introduction_line": 145,
+    "interpretation": "The cited generalized log-canonical flip termination edition changes from October 5 to October 7; the manuscript says it uses this companion only for existing rational flip sequences, with independent supporting results preceding the use. This is an asserted dependency direction, not independent proof validation."
+  },
+  "endpoint_section": {
+    "literal_equal": true,
+    "git_blob": "e9b5f160e78d6ae2843afbb703a779bc639ea4e4"
+  },
+  "formalization": {
+    "crosswalk_path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "exact_edition_path_match": false,
+    "conclusion": "No exact edition-path match in the inspected GCL crosswalk; related Lean declarations may still exist. Exact source-to-Lean theorem correspondence NOT_ESTABLISHED."
+  },
+  "replay": {
+    "method": "Authenticated GitHub fetch_file at the exact pinned commit; compare exact TeX theorem-environment substrings, complete section-7 bytes, and section-6 label sets; verify October edition citation text and exact GCL crosswalk string match.",
+    "checks": {
+      "source_pin_exact": true,
+      "main_theorem_literal_equal": true,
+      "section6_finite_programs_theorem_literal_equal": true,
+      "endpoint_section_identical": true,
+      "new_lemma_and_equation_labels_exact": true,
+      "no_removed_section6_labels": true,
+      "prior_companion_citation": true,
+      "revised_companion_citation": true,
+      "crosswalk_exact_title_absent": true
+    },
+    "passed": 9,
+    "total": 9
+  },
+  "claim_boundary": "PINNED_LITERAL_TEX_THEOREM_AND_PROOF_DEPENDENCY_EVIDENCE_ONLY; NOT_RENDERED_PDF_EQUIVALENCE; NOT_LEAN_FORMALIZATION; NOT_MATHEMATICAL_CERTIFICATION",
+  "unresolved": [
+    "F056_NEW_CARRIER_AND_MULTIPLIER_IDEAL_LEMMAS_PROOF_VALIDITY_UNADJUDICATED",
+    "F056_OCTOBER7_FLIP_TERMINATION_DEPENDENCY_VALIDITY_UNADJUDICATED",
+    "F056_EXACT_LEAN_THEOREM_CORRESPONDENCE_UNESTABLISHED",
+    "F376_OCTOBER_TO_LEAN_THEOREM_EQUIVALENCE_UNESTABLISHED"
+  ],
+  "scope_exclusions": [
+    "WP01 indices 145 and 199 not retried",
+    "Canonical 3/14/13 identity counts unchanged",
+    "Generic GCL queue-reduction automation unchanged"
+  ]
+}
