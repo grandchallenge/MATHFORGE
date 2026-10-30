@@ -1,0 +1,87 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_036_LEDGER/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+  "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+  "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "lake_manifest_git_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+  "crosswalk_git_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+  "workflow_git_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "results": [
+    {
+      "index": 36,
+      "declaration": "OAI.CurrentProjection.fiberBlockMain",
+      "run_id": 41076842668,
+      "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41076842668",
+      "workflow_run_number": 43,
+      "run_attempt": 1,
+      "job_id": 124135192456,
+      "runner_head": "eb9712f8ac11fc8af5ef217e7faa568a3cf72c24",
+      "run_status": "completed",
+      "run_conclusion": "success",
+      "artifact_id": 12988387347,
+      "zip_bytes": 10681,
+      "zip_sha256": "0d86bd0f87afa4f55ab227e3ff37aa43890825750d06ea41c9e4f4a8157a90ad",
+      "receipt_sha256": "3da1e051c939988f234d8f3dd1d468676b44152ec18fc9dd575e22c2bc7d1d47",
+      "challenge": "lean/ComparatorChallenges/GaussianReplacement.lean",
+      "config": "lean/ComparatorChallenges/GaussianReplacement.json",
+      "source": "lean/OAI/Probability/GaussianReplacement/FiberBlock.lean",
+      "challenge_git_blob": "5853b619cbf223a36963bc5c7c542debb9b3f3ee",
+      "config_git_blob": "a93c443f9490463df2be4d5d81bca97ea20f065f",
+      "solution_git_blob": "f4ac8e1ea3d987123d7c49a2fa2eaf5450e7bf6e",
+      "challenge_sha256": "18f2b4bd0dd5218ebd587955fdefe71848ba04f2338c8ea6312353e84b0c1b43",
+      "config_sha256": "70df646c99002e72d45e482740c7edbcdbe9b325aff4defbef69d035cec460e4",
+      "solution_sha256": "7f47c791fa56941ef5edc0fcb56830b97508a65bb520ee230bd84cb008427016",
+      "receipt_listed_files_sha256_and_bytes_verified": "11/11",
+      "artifact_zip_sha256_independently_recomputed": true,
+      "selected_identity_matches_protected_crosswalk": true,
+      "upstream_raw_sha256_independently_recomputed": true,
+      "manifest_pre_post_unchanged": true,
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_artifacts_present": false,
+      "kernel_acceptance_log_observed": true,
+      "comparator_success_log_observed": true,
+      "comparator_hardened_accepted": true,
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "enable_nanoda": false,
+      "challenge_placeholder_sorry_not_counted_as_solution": true,
+      "same_comparator_config_as_index_37_but_distinct_corpus_declaration": true
+    }
+  ],
+  "coverage": {
+    "protected_before_candidate": 42,
+    "protected_after_merge_if_verified": 43,
+    "total_corpus": 200,
+    "outstanding_after_merge_if_verified": 157,
+    "admitted_before_candidate": "0-35,37-41,199",
+    "index_42": {
+      "run_id": 41075950739,
+      "dispatch_confirmed": true,
+      "acceptance": "NOT_YET_VERIFIED"
+    },
+    "index_43": {
+      "run_id": 41076140621,
+      "dispatch_confirmed": true,
+      "acceptance": "NOT_YET_VERIFIED"
+    },
+    "concurrency_at_evidence_review": "TWO_ACTIVE_DISTINCT_INDEXED_RUNS_42_AND_43; INDEX36_COMPLETED",
+    "index_37_distinction": "Shared Comparator config is not a shared declaration or receipt; index37 already admitted and is not recounted."
+  },
+  "audits": {
+    "verifier": "Independently downloaded artifact ZIP, recomputed ZIP SHA256 against GitHub artifact digest and byte count, verified all 11/11 receipt-listed file SHA256/byte counts; confirmed exact corpus index36 and selected declaration; independently recomputed immutable upstream source/config/challenge and manifest SHA256 and compared Git blobs; verified hardened exit zero, no diagnostic fallback, Lean kernel and Comparator acceptance.",
+    "adversary_non_authoring_read_only": "Distinct read-only logical audit checked no index36 ledger among the 22 existing protected ledgers, index36 is separate from previously admitted index37 despite shared GaussianReplacement config, workflow run_number43 is not corpus index43, and no semantic manuscript or MATHCERT certification claim is made.",
+    "amanuensis": "Append-only evidence with immutable source, workflow, run, artifact, receipt and crosswalk identities. Candidate is not protected-admitted until PR merge and exact protected-main readback. Issue #330 remains open."
+  },
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "Exact pinned hardened Comparator acceptance only; manuscript semantic correspondence, novelty, and MATHCERT/public certification remain separate."
+}
