@@ -308,7 +308,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": false,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -318,10 +318,14 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_056_FINITE_ORDINARY_MMP_LITERAL_THEOREM_AND_PROOF_DELTA.json",
+          "git_blob": "d5e39d2f962f5cb5449a105f09429a83aa7e871b"
         }
       ],
       "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+      "exact_review_target": "Adjudicate October 6 added carrier-margin, EMC/multiplier-ideal transfer and surface-base positivity lemmas, plus October 7 flip-termination dependency; displayed thm:finite and repair:thm:reduction remain literally unchanged in inspected TeX. Map exact source theorem to Lean, if any; do not infer proof validity."
     },
     {
       "key": "056:preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf",
