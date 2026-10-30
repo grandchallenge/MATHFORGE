@@ -1,0 +1,129 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_006_GOLDFELD_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "target": {
+    "family_id": "006",
+    "title": "Goldfeld's analytic density conjecture and the 2-converse for elliptic curves",
+    "previous_edition": "September 23, 2026",
+    "revised_edition": "October 7, 2026",
+    "previous_pdf": {
+      "path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+      "git_blob": "d9a8efaf48a62b452bc5af359930109ffddb7786"
+    },
+    "revised_pdf": {
+      "path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+      "git_blob": "58b8904f39b2a12534732010191fd35435559a61"
+    },
+    "revised_readme": {
+      "path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md",
+      "git_blob": "d770dda6f44ae17b4ad910ee4207d462ff4bfcc8"
+    }
+  },
+  "upstream_build": {
+    "previous_tree": "8d886f0978a7b84522065e809b44d4a6035adef9",
+    "revised_tree": "edab7a571c25aabbfc88e5aacd760753ad566338",
+    "both_recursive_trees_complete": true,
+    "each_tree_entry_count": 17,
+    "each_source_file_count": 16,
+    "unchanged_sections_tree": "c3e139942ff492b179f45ab8ed44d44f43854364",
+    "unchanged_section_file_count": 14,
+    "changed_source_file_count": 2
+  },
+  "changed_files": [
+    {
+      "relative_path": "build/main.tex",
+      "previous_blob": "9457456ea970dfed6de7e502e3e2523d4f0a8225",
+      "revised_blob": "ba4cd5368fbcf067858df9ceaeb23d2ca1e02900",
+      "previous_lines": 109,
+      "revised_lines": 109,
+      "changed_lines": [
+        {
+          "line": 78,
+          "previous": "\\date{September 23, 2026}",
+          "revised": "\\date{October 7, 2026}"
+        }
+      ]
+    },
+    {
+      "relative_path": "build/references.bib",
+      "previous_blob": "a2124b5dd07d22457225726de92bd784369e32b3",
+      "revised_blob": "812f9d3dbdead291d5e65470e16f011e04da04c7",
+      "previous_lines": 1094,
+      "revised_lines": 1094,
+      "changed_line_count": 3,
+      "changed_citation_targets": [
+        {
+          "line": 895,
+          "title": "The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one",
+          "family_id": "002",
+          "previous_pdf": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf",
+          "previous_blob": "f13dc6ad9e017cc66db592d6baa5d02b768cf57f",
+          "revised_pdf": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+          "revised_blob": "9c1827e35640033bf16eac9fa88136079b1cc2de"
+        },
+        {
+          "line": 903,
+          "title": "The Selmer converse for elliptic curves at every prime",
+          "family_id": "002",
+          "previous_pdf": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf",
+          "previous_blob": "8beaeb72a61bdd7e126052193a73de9dde845a58",
+          "revised_pdf": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+          "revised_blob": "384525874a5e9989e574a5f9ce7c9883258cc732"
+        },
+        {
+          "line": 1058,
+          "title": "The mean analytic rank of quadratic twists of elliptic curves",
+          "family_id": "006",
+          "previous_pdf": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf",
+          "previous_blob": "53f910214dd53bfb89d53910942fe621127e76a9",
+          "revised_pdf": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+          "revised_blob": "fef228e3a2a26c0b1302fbd6f85de0da1c87a3ba"
+        }
+      ]
+    }
+  ],
+  "method": "Pinned upstream GitHub contents and recursive Git trees. Compared complete UTF-8 text line arrays of both changed files; each pair has identical line count and all other lines compare exactly equal. All other 14 TeX source blobs have identical Git SHA-1 across editions. Citation PDF identities cross-checked against protected WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json at blob e92dd54208dd888d6237ec7aa383c693f8d1a46e.",
+  "replay": {
+    "source_ref": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "commands": [
+      "git ls-tree -r 1581d4cbdd69a0faf34b2089614fe2a814316a6a -- preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/build preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build",
+      "git show 1581d4cbdd69a0faf34b2089614fe2a814316a6a:preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/build/main.tex",
+      "git show 1581d4cbdd69a0faf34b2089614fe2a814316a6a:preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/main.tex",
+      "git show 1581d4cbdd69a0faf34b2089614fe2a814316a6a:preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/build/references.bib",
+      "git show 1581d4cbdd69a0faf34b2089614fe2a814316a6a:preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/references.bib"
+    ],
+    "expected": {
+      "changed_main_lines": [
+        78
+      ],
+      "changed_bibliography_lines": [
+        895,
+        903,
+        1058
+      ],
+      "identical_sections_tree": true,
+      "all_other_lines_identical": true
+    }
+  },
+  "findings": {
+    "source_text_date_only_change": true,
+    "source_text_bibliography_only_change": true,
+    "available_tex_theorem_and_proof_sections_unchanged": true,
+    "pdf_binary_identical": false,
+    "citation_target_count": 3,
+    "source_to_lean_correspondence": "NOT_ESTABLISHED",
+    "dependent_manuscript_semantics": "NOT_ADJUDICATED"
+  },
+  "limits": [
+    "This is a complete pinned TeX build-source comparison, not a PDF rendering or mathematical-proof validation.",
+    "The changed bibliography links use mutable github.com/openai/math/blob/main URLs in the source; this record instead binds the exact commit and PDF blob identities.",
+    "The revised two-primary BSD, Selmer converse, and mean analytic rank claims have not been validated as dependencies.",
+    "No Lean declaration equivalence, Comparator replay, source-semantic certification, or MATHCERT promotion is claimed."
+  ],
+  "disposition": "SIXTH_OF_THIRTEEN_CITATION_EDITION_LITERAL_SOURCE_DELTAS_RESOLVED",
+  "claim_boundary": "PINNED_SOURCE_TREE_AND_LITERAL_TEX_CORRESPONDENCE_ONLY_NOT_MATHEMATICAL_CERTIFICATION"
+}
