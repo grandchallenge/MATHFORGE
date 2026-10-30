@@ -1,0 +1,50 @@
+{
+  "record_type": "OAI26_WP03_F011_UNINDEXED_ACTUAL_DECLARATION/1",
+  "family_id": "011",
+  "disposition": "PARTIAL_FORMAL_SUPPORT_FIBER_LEMMAS_MAIN_EXPONENT_GAP",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "upstream": {
+    "path": "lean/OAI/NumberTheory/TotientFibers/FiniteFiber.lean",
+    "blob": "217cfe4d7f9c39981eabe9bbeeb8458febb0fc76",
+    "lean_declarations": [
+      "OAI.TotientFibers.fiber",
+      "OAI.TotientFibers.g",
+      "OAI.TotientFibers.fiber_finite",
+      "OAI.TotientFibers.two_le_g_prime_pred",
+      "OAI.TotientFibers.totient_large_fibers_of_one_le",
+      "OAI.TotientFibers.finite_pigeonhole"
+    ],
+    "companion_path": "lean/OAI/NumberTheory/TotientAsymptotic/ShiftedPrimeCount.lean",
+    "companion_blob": "0369b219ac84c917452cb71d2b1449ab3f2eb342"
+  },
+  "manuscript": {
+    "path": "preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex",
+    "blob": "3d9d4c55c1f30d7736e7c7427b97cb0461f06040",
+    "claim": "For every real epsilon>0 there are infinitely many positive n with g(n)>n^(1-epsilon), where g(n) is the number of positive integer totient preimages."
+  },
+  "exact_comparison": {
+    "matched_definition": "Lean g(n) is the finite cardinality of {m>0 : Nat.totient m=n}; this directly models manuscript g(n).",
+    "lean_exponent_theorem": "totient_large_fibers_of_one_le assumes 1<=epsilon, establishing the infinitude inequality only for epsilon>=1.",
+    "source_quantifier": "Manuscript requires all epsilon>0; in particular 0<epsilon<1, where the exponent 1-epsilon is positive.",
+    "gap": "No all-positive-epsilon main theorem established from the inspected Lean declaration; the only found named infinitude theorem has strictly weaker parameter range.",
+    "support": "finite_pigeonhole formulates conditional combinatorial transfer with explicit supply and smoothness hypotheses; not an unconditional source-level prime-supply theorem.",
+    "adjacent": "ShiftedPrimeCount.lean defines and bounds a tuple-based shiftedPrimeSet, not the source statement of x^(1-o(1)) many smooth predecessors."
+  },
+  "coverage": {
+    "unindexed_main_concept_found": true,
+    "source_main_theorem_matched": false,
+    "full_family011_proved": false,
+    "all_WP03_certified": false
+  },
+  "search_scope": "Pinned NumberTheory and Probability Lean subtree names, targeted module source files; search was not an exhaustive complete AST-equivalence scan of all imported modules.",
+  "critic": {
+    "role": "NON_AUTHORING_READ_ONLY",
+    "forbidden_inferences": [
+      "epsilon>=1 implies all epsilon>0",
+      "conditional_pigeonhole proves source prime supply",
+      "matching definition certifies main theorem",
+      "absence of other theorem proven repository-wide"
+    ]
+  },
+  "next_action": "Identify and replay the exact prime-supply input for 0<epsilon<1; examine any unindexed proof of shifted-prime bound, then establish source equivalence only after full theorem signature and dependencies."
+}
