@@ -1,0 +1,76 @@
+{
+  "record_type": "GCL_OAI26_WP03_F010_BOUNDED_INDEX_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F010",
+  "family_id": "010",
+  "disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "introductions": [
+      {
+        "title": "Unrestricted pro-modularity at the prime two",
+        "path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/build/source/sections/introduction.tex",
+        "blob": "8ed0f2c8c7188b5518cca2c1852178d3a5cb0286",
+        "date": "2026-10-06"
+      },
+      {
+        "title": "The Dimension of the Two-Adic Hecke Algebra at Odd Level",
+        "path": "preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/build/main.tex",
+        "blob": "2062b92ebaaf703861ff18deca6341c3243d0a16",
+        "date": "2026-10-05"
+      },
+      {
+        "title": "Fontaine-Mazur modularity at the prime 2",
+        "path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/build/sections/introduction.tex",
+        "blob": "7ec908e661050a5dfa8ca2cb9a1501b6b41c62cc",
+        "date": "2026-10-06"
+      }
+    ]
+  },
+  "results": [
+    {
+      "name": "unrestricted_pro_modularity",
+      "statement": "For any continuous odd absolutely irreducible two-dimensional 2-adic Galois representation unramified outside finitely many primes, existence of an odd tame level N and continuous homomorphism from the full varying-weight 2-adic Hecke algebra matching Frobenius traces and determinants.",
+      "boundary": "Pro-modular occurrence, not classical cuspidal modularity without regular de Rham hypotheses."
+    },
+    {
+      "name": "hecke_dimension",
+      "statement": "Every irreducible component of full 2-adic Hecke algebra for every odd positive tame level N has Krull dimension exactly four.",
+      "boundary": "Dimension statement, not modularity of individual Galois representations."
+    },
+    {
+      "name": "fontaine_mazur",
+      "statement": "Continuous irreducible odd two-dimensional 2-adic representations, finitely ramified and regular de Rham at 2, are Tate twists of classical cuspidal eigenform Galois representations.",
+      "boundary": "Requires regular de Rham and distinct Hodge–Tate weights; stronger classicality is not implied by pro-modular occurrence alone."
+    }
+  ],
+  "indexed_search": {
+    "upstream_docs_010_present": false,
+    "comparator_directory_entries": 833,
+    "named_matches_for_modularity_hecke_fontaine_mazur": 0,
+    "contrast": "HeckeSevenEighths comparator concerns Hecke L-functions' zero-free region, not Hecke algebra modularity or dimension.",
+    "search_boundary": "Only indexed Comparator filenames, named candidate lookup and lean/docs enumeration were checked, not an exhaustive Lean AST/semantic search."
+  },
+  "producer_review": {
+    "finding": "Three source theorems have distinct hypotheses and conclusions; no named indexed formalization target identified."
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "hostile_cases": [
+      "conflate-pro-modularity-and-classicality",
+      "drop-regular-deRham",
+      "infer-dimension-implies-modularity",
+      "confuse-Hecke-L-function-and-Hecke-algebra",
+      "claim-no-Lean-anywhere",
+      "claim-comparator-pass",
+      "claim-certification"
+    ]
+  },
+  "coverage": {
+    "three_manuscripts_pinned": true,
+    "complete_formal_semantic_bridge": false,
+    "pilot_complete": false
+  },
+  "claim_boundary": "Source-index negative result only: no claim that all Lean formalizations are absent, any mathematical theorem proved, full Comparator replay complete, or certification granted.",
+  "remaining": "Search unindexed Lean definitions and theorem statements; compare imported models and replay any formal theorem discovered."
+}
