@@ -1,0 +1,80 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_SHARP_PROJECTED_FORCE_TAIL/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "October 6, 2026",
+    "companion_edition": "September 27, 2026"
+  },
+  "material_provenance": [
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "lines": "65-139",
+      "role": "W, slow profile alpha_1, raw force, fixed positive viscosity, claimed common decay, and projection"
+    },
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41",
+      "lines": "164-251",
+      "role": "mean-zero Helmholtz-Leray projection P and pressure p -> p-phi"
+    },
+    {
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "lines": "569-624",
+      "role": "smooth step beta, slot theta, cutoff-one Hamiltonian scaling pulse"
+    },
+    {
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_POINTWISE_ADVECTION_NONIDENTITY.json",
+      "repository": "grandchallenge/MATHFORGE",
+      "blob": "[read from protected tree]",
+      "role": "previously admitted branch r, slot z_r, off-center interior Q_r; no new compiler instance invented"
+    },
+    {
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_ACTUAL_W_SCALING_PRESSURE_WITNESS.json",
+      "repository": "grandchallenge/MATHFORGE",
+      "blob": "[read from protected tree]",
+      "role": "previously admitted nonzero div advection and nontrivial pressure"
+    }
+  ],
+  "scope": "One source-level sharpness theorem for the October 6 slow profile's projected force, obtained by differentiating the actual source scaling pulse one order further; it is not a Lean theorem, a manuscript-wide proof, or mathematical certification.",
+  "parameters": {
+    "compiler": "Choose the already justified row-2 d=+1 branch r, with N>=1 expanded branches, full alphabet K>=6, B=2K+2>=14, m controls, lambda=1/[100(m+N+1)], positive viscosity nu>0.",
+    "scaling_slot": "[s0,s1]=[(2N+r-1)/(5N),(2N+r)/(5N)], length 1/(5N), midpoint z_r=(2N+r-1/2)/(5N).",
+    "parking": "pi_r=(1/2+r/[4(N+1)],3/4), epsilon=lambda/(4B)>0; Q_r=(pi_r.x+epsilon,pi_r.y,z_r) lies in the active midpoint-scaled rectangle and a cutoff-one neighborhood.",
+    "local_velocity": "On a neighborhood of Q_r, W=(c(Z)(X-pi_1),-c(Z)(Y-pi_2),1), c(Z)=theta'(Z) log(B^-1), theta(Z)=beta(3(Z-s0)/(s1-s0)-1), beta(u)=E(u)/(E(u)+E(1-u)), E(u)=exp(-1/u) for u>0, 0 otherwise."
+  },
+  "exact_derivation": [
+    "At u=1/2 the smooth step has beta=1/2, beta'=2, beta''=0, beta'''=-16. For example beta(u)=1/(1+exp(1/u-1/(1-u))) for 0<u<1; the Taylor expansion at 1/2 yields these derivatives.",
+    "The slot argument has derivative 3/(s1-s0)=15N, so theta'''(z_r)=beta'''(1/2)(15N)^3=-54000 N^3.",
+    "Therefore c''(z_r)=theta'''(z_r) log(B^-1)=54000 N^3 log B>0.",
+    "The full spatial Laplacian of the local three-dimensional W is Delta W=(c''(Z)(X-pi_1),-c''(Z)(Y-pi_2),0). Hence Delta W(Q_r)=(13500 lambda N^3 log(B)/B,0,0), which is nonzero.",
+    "For t>=1, alpha_1(t)=1/(1+t), alpha_1'(t)=-(1+t)^-2, and the raw force is f_raw(t)=-(1+t)^-2 W+(1+t)^-2 A(W)-nu(1+t)^-1 Delta W, where A(W)=(W·grad)W.",
+    "W is divergence-free and spatially mean-zero on the torus; Delta W is likewise divergence-free and mean-zero. The Leray projection therefore satisfies P W=W and P Delta W=Delta W. Consequently f_projected(t)=P f_raw(t)=-(nu/(1+t)) Delta W+(P A(W)-W)/(1+t)^2.",
+    "For every integer h>=0, (1+t)^(1+h) partial_t^h f_projected(t,x) tends pointwise (indeed in each finite C^r norm for fixed smooth W) to (-1)^(h+1) nu h! Delta W(x), as t tends to infinity.",
+    "At Q_r the first coordinate of this limit is (-1)^(h+1) nu h! 13500 lambda N^3 log(B)/B, nonzero. Therefore no global C^r upper bound O((1+t)^(-1-h-delta)) with delta>0 can hold for the projected force, for any r>=0. The October common exponent 1+h is sharp for this actual construction when nu>0.",
+    "With Delta phi_W=div A(W), mean(phi_W)=0, the projected mean-zero pressure is p_projected(t)=-(1+t)^-2 phi_W. The earlier protected positive divergence witness at q_r shows phi_W is nonzero. Hence its C^r decay exponent 2+h is also sharp for every h,r>=0; this is stronger than the common 1+h envelope asserted in the manuscript."
+  ],
+  "theorem": "For the actual source-defined row-2 scaling branch and every fixed nu>0, projected force has nonzero asymptotic (1+t)^(1+h) partial_t^h P f_alpha1 -> (-1)^(h+1) nu h! Delta W; at Q_r the leading coefficient has absolute value nu h! 13500 lambda N^3 log(B)/B. Thus the manuscript's (1+t)^(-1-h) projected-force bound cannot be improved to any strictly faster uniform power. The projected pressure instead has exact (1+t)^(-2-h) rate and nonzero spatial profile.",
+  "independent_replay": {
+    "command": "python3 - <<'PY'\nimport sympy as s\nu=s.symbols('u',positive=True)\nE=lambda x:s.exp(-1/x)\nbeta=E(u)/(E(u)+E(1-u))\nassert [s.simplify(s.diff(beta,u,k).subs(u,s.Rational(1,2))) for k in range(4)]==[s.Rational(1,2),2,0,-16]\nX,Y,Z,p1,p2=s.symbols('X Y Z p1 p2',real=True)\nc=s.Function('c')(Z)\nW=s.Matrix([c*(X-p1),-c*(Y-p2),1])\nlap=s.Matrix([sum(s.diff(W[i],q,2) for q in [X,Y,Z]) for i in range(3)])\nassert lap==s.Matrix([(X-p1)*s.diff(c,Z,2),-(Y-p2)*s.diff(c,Z,2),0])\nN,B,lam=s.symbols('N B lam',positive=True)\ncc=s.simplify(-16*(15*N)**3*(-s.log(B)))\nassert s.simplify(cc-54000*N**3*s.log(B))==0\nassert s.simplify(cc*lam/(4*B)-13500*lam*N**3*s.log(B)/B)==0\nprint('PASS 4/4: beta jet, 3D Laplacian, pulse c second derivative, nonzero off-center coefficient')\nPY",
+    "observed": "PASS: beta derivatives [1/2,2,0,-16]; Laplacian ((X-p1)c'',-(Y-p2)c'',0); c''=54000 N^3 log(B); Delta W(Q_r)_1=13500 lambda N^3 log(B)/B.",
+    "execution_capture": "c0e71c122cd643d7a899ea585e94eaad",
+    "scope": "SymPy exact algebraic replay is not a Lean proof or independent mathematical certification."
+  },
+  "comparison_to_prior": [
+    "WP02_F376_POINTWISE_ADVECTION_NONIDENTITY proves nonzero advective acceleration at Q_r; it does not calculate beta''' or the Laplacian leading term of projected force.",
+    "WP02_F376_PROJECTED_PRESSURE_CURVATURE_NO_GO proves a nontrivial projected pressure; it does not prove the sharp temporal asymptotic of force or pressure.",
+    "WP02_F376_SLOW_CLOCK_PHASE_OFFSET_BRIDGE compares phase clocks, not sharp projected-force rates."
+  ],
+  "boundaries": [
+    "Requires the previously source-justified row-2 branch and cutoff-one neighborhood; no numerical compiler parameters or machine instance are invented.",
+    "The asymptotic is for the October autonomous W slow profile, not for the distinct pinned Lean torusSlowVelocity or BalancedTransport periodic construction.",
+    "No full October-to-Lean theorem equivalence, quantitative Poisson estimate formalization, manuscript validity, or MATHCERT certification follows.",
+    "Canonical 3 withdrawals, 14 repairs, 13 citation entries remain unchanged; all 13 protected citation literal comparisons already admitted; deferred WP01 145/199 untouched."
+  ],
+  "disposition": "SOURCE_LOCKED_SHARP_SLOW_PROJECTED_FORCE_AND_PRESSURE_TAIL_DERIVED",
+  "claim_boundary": "F376_OCTOBER_PROJECTED_FORCE_RATE_SHARPNESS_SOURCE_LEVEL_ONLY_LEAN_CORRESPONDENCE_UNADJUDICATED"
+}
