@@ -308,7 +308,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": false,
+        "statement_changed": "UNASSESSED",
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -325,7 +325,7 @@
         }
       ],
       "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Adjudicate October 6 added carrier-margin, EMC/multiplier-ideal transfer and surface-base positivity lemmas, plus October 7 flip-termination dependency; displayed thm:finite and repair:thm:reduction remain literally unchanged in inspected TeX. Map exact source theorem to Lean, if any; do not infer proof validity."
+      "exact_review_target": "Adjudicate October 6 added carrier-margin, EMC/multiplier-ideal transfer and surface-base positivity lemmas, plus October 7 flip-termination dependency. The two inspected top-line theorem blocks thm:finite and repair:thm:reduction are literally unchanged; other manuscript statements remain UNASSESSED. Map exact source theorem to Lean, if any; do not infer proof validity."
     },
     {
       "key": "056:preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf",
