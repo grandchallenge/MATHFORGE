@@ -7,7 +7,7 @@
     "edition": "Incompressible Box Transport and Finite Computation, October 6, 2026"
   },
   "candidate_base_main": "38007b19aa4eabd0e2c63dc93870e7a1321aa95a",
-  "scope": "One bounded exact source-to-adjacent-Lean detector-geometry comparison. Distinguishes the October input-offset detector from the pinned TorusSlowMain theorem's detector. Not an indexed Comparator equivalence or theorem certification.",
+  "scope": "One bounded exact source-to-adjacent-Lean observer-geometry comparison. Distinguishes the October torus detector from the pinned TorusSlowMain theorem's lifted-coordinate detector. Not an indexed Comparator equivalence or theorem certification.",
   "material_sources": [
     {
       "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
@@ -20,6 +20,12 @@
       "git_blob": "d11b59663b6e194a00565a149454c8481f185843",
       "declaration": "OAI.ForcedComputation.torus_slow_effective_computation",
       "exact": "For torusSlowVelocity, Halts I iff there exists t>=0 with 1/2 < (Psi t ![1/4,1/2,1/2]) 0 < 1; detector is coordinate Fin 3 zero, not the source's Y coordinate."
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ShearFlows/Model.lean",
+      "git_blob": "430988962d758fb91fe07e3080a07f2cf3f850ed",
+      "declaration": "OAI.ShearFlows.IsMaterialFlow",
+      "role": "The Lean material flow is a lift on Space=Fin 3→R with lattice equivariance, not a quotient-valued trajectory; its event predicate is evaluated on a real coordinate."
     },
     {
       "path": "lean/docs/376.md",
@@ -41,7 +47,7 @@
   ],
   "geometry": {
     "source": {
-      "period": "unit flat three-torus",
+      "period": "Source states a detector on T^3; its periodic lift to R^3 is lattice-invariant",
       "coordinate": "Y (second coordinate)",
       "initial_label": [
         "1/4",
@@ -52,10 +58,10 @@
         "1/32",
         "1/8"
       ],
-      "normalized_Haar_measure": "3/32"
+      "fundamental_cell_fraction": "3/32"
     },
     "lean_adjacent": {
-      "period": "unit spatial period from SlowFluidProperties 1",
+      "period": "Lean defines a unit-periodic velocity on R^3 with lattice-equivariant material flow; the observer tests an unwrapped real coordinate, not a mod-one torus predicate",
       "coordinate": "Fin 3 index 0 (first coordinate)",
       "initial_label": [
         "1/4",
@@ -66,21 +72,24 @@
         "1/2",
         "1"
       ],
-      "normalized_Haar_measure": "1/2"
+      "fundamental_cell_fraction": "1/2"
     },
     "exact_difference": "13/32",
     "ratio_lean_to_source": "16/3"
   },
-  "theorem": "Let O_src and O_lean be the two detector subsets of the unit flat 3-torus defined by the exact source and Lean coordinate inequalities. There is no normalized-Haar-measure-preserving bijection F:T^3->T^3 such that F(O_src)=O_lean, since mu(O_src)=3/32 and mu(O_lean)=1/2. In particular no volume-preserving smooth torus diffeomorphism or rigid torus isometry identifies these entire detector sets.",
-  "proof": "Each detector is the product of an open interval in one unit-circle coordinate with two unrestricted unit-circle factors. Thus normalized Haar measure equals interval length: 1/8-1/32=3/32 for the October source, and 1-1/2=1/2 for the Lean adjacent theorem. A measure-preserving bijection satisfies mu(F(O_src))=mu(O_src), contradicting 3/32 != 1/2 if F(O_src)=O_lean. The coordinate-index difference does not affect the volume computation. Endpoints have measure zero.",
+  "theorem": "Let S⊂R^3 be the Z^3-periodic lift of the October source torus detector {1/32<Y<1/8}, and E⊂R^3 be the actual Lean adjacent lifted-coordinate observer {1/2<x_0<1}. No bijection F:R^3→R^3 satisfying F(x+n)=F(x)+A n for every n∈Z^3 and A∈GL(3,Z) can satisfy F(S)=E: S is lattice-invariant while E is not. Independently, the selected detector slabs inside the unit fundamental cell Q=[0,1)^3 have unequal Lebesgue fractions 3/32 and 1/2, so no measure-preserving bijection Q→Q identifies these restricted slabs.",
+  "proof": "S+Z^3=S by the source's torus interpretation. If F(S)=E and F(x+n)=F(x)+An with A∈GL(3,Z), then E+An=F(S+n)=E for all n, and A Z^3=Z^3. But E+e_0 differs from E (e.g. a point with first coordinate 3/4 belongs to E, its translate by e_0 does not). This proves the lattice-equivariant obstruction without requiring volume preservation. For the separate fundamental-cell comparison, the detector fractions are interval lengths 1/8−1/32=3/32 and 1−1/2=1/2, unequal; a Lebesgue-measure-preserving bijection Q→Q cannot identify the restricted slabs. This second statement is about Q, not a claim that the Lean observer descends to the torus.",
   "positive_controls": [
     "Both statements are fixed-particle halting detectors on spatially unit-periodic three-dimensional geometries, with concrete initial labels and open detector slabs.",
-    "A spatial translation can match the initial points alone; this does not identify the detector sets."
+    "A spatial translation can match the initial points alone; this does not identify the detector sets.",
+    "Lean IsMaterialFlow is lattice-equivariant, but its event set is an unwrapped-coordinate strip; the source torus detector has a lattice-periodic lift."
   ],
   "hostile_controls": [
     "Reject the claim that equal halting truth values imply equal detector sets or conjugate velocity fields.",
     "Reject the claim that this excludes arbitrary non-volume-preserving diffeomorphisms or event equivalence under different observation predicates.",
-    "Reject the claim that the October manuscript is refuted, that the Lean theorem is false, or that the two constructions must be identical."
+    "Reject the claim that the October manuscript is refuted, that the Lean theorem is false, or that the two constructions must be identical.",
+    "Reject the claim that the Lean observer {1/2<x_0<1} itself descends to a torus subset: its defining inequality is not invariant under x_0→x_0+1.",
+    "Reject the claim that the unit-cell volume calculation alone excludes all torus or Euclidean transformations: it excludes only measure-preserving cell maps, while the lattice-equivariance argument has its separate stated hypotheses."
   ],
   "replay": {
     "tool": "Authenticated CHAD Bash, gh API pinned-blob retrieval, Python 3 fractions.Fraction; no Lean compilation",
@@ -91,19 +100,21 @@
       "PASS pinned path/blob lean d11b59663b6e194a00565a149454c8481f185843",
       "PASS pinned path/blob index b43f10df2d8fb85337f2b74abe299de009d0ad38",
       "PASS source detector measure 3/32 Lean adjacent detector measure 1/2 difference 13/32 ratio 16/3",
-      "PASS no normalized-Haar-measure-preserving torus bijection can identify both detector sets"
+      "PASS no normalized-Haar-measure-preserving torus bijection can identify both detector sets",
+      "PASS source periodic lift is Z^3-invariant; Lean lifted observer is not invariant under e_0 translation (witness x_0=3/4)."
     ],
     "control_run_id": "841bdd4288d94ecc825ee1ff1b4842e1",
     "execution_receipt_sha256": "7f3e8e1c740f1211829d76a2b93dad6302462ce13d913069159ccc26d714923e",
     "execution_origin": "LOCAL_OS_ONLY_NOT_INDEPENDENTLY_AUTHENTICATED",
     "platform_delivery_attested": false
   },
-  "disposition": "DETECTOR_SET_VOLUME_PRESERVING_CORRESPONDENCE_EXCLUDED_FOR_ADJACENT_LEAN_THEOREM",
+  "disposition": "SOURCE_TORUS_VS_LEAN_LIFTED_OBSERVER_LATTICE_EQUIVARIANT_CORRESPONDENCE_EXCLUDED",
   "unresolved": [
     "An explicit mapping between October's autonomous input-offset W, slow profile and projected pressure and any pinned Lean construction is not established.",
     "A different observer or a non-volume-preserving map could encode the same halting event; this detector-set obstruction does not exclude that.",
     "The October Poisson/Helmholtz estimates and their Lean formalization remain unestablished.",
-    "The family 376 formalization index links September 27; it does not assert October 6 theorem-level correspondence."
+    "The family 376 formalization index links September 27; it does not assert October 6 theorem-level correspondence.",
+    "The Lean observer is defined on the real-coordinate lift; any quotient-observer identification requires an additional convention not present in the displayed theorem."
   ],
   "claim_boundary": "SOURCE_LOCKED_DETECTOR_GEOMETRY_ONLY_NOT_FULL_SOURCE_TO_LEAN_EQUIVALENCE_OR_MATHCERT_CERTIFICATION"
 }
