@@ -1,0 +1,129 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_COVERAGE_RECONCILIATION/1",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+  "protected_main_before_candidate": "43f45e9b7e2babb4642ff64d83a0daeadb0a0c43",
+  "source": "Protected CORPUS_*_COMPARATOR_RECEIPT_LEDGER.json entries (including separately admitted index 199), immutable 200-row FORMALIZATION_CROSSWALK.json, and three exact downloaded ZIP receipts",
+  "scope": "Comparator acceptance only; not manuscript semantic correspondence or mathematical certification",
+  "total_corpus": 200,
+  "previously_protected_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    199
+  ],
+  "previously_protected_count": 27,
+  "new_candidate_indices": [
+    26,
+    27,
+    28
+  ],
+  "candidate_admitted_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    199
+  ],
+  "candidate_admitted_count": 30,
+  "unadmitted_count_if_candidate_merged": 170,
+  "unadmitted_ranges_if_candidate_merged": [
+    "29-198"
+  ],
+  "latest_indexed_runs": [
+    {
+      "index": 26,
+      "run_id": 40992569150,
+      "artifact_id": 12949839156
+    },
+    {
+      "index": 27,
+      "run_id": 40993386465,
+      "artifact_id": 12950671621
+    },
+    {
+      "index": 28,
+      "run_id": 40993597111,
+      "artifact_id": 12951490554
+    }
+  ],
+  "latest_evidence_ledger": "CORPUS_026_028_COMPARATOR_RECEIPT_LEDGER.json",
+  "prior_coverage_ledger": "CORPUS_COMPARATOR_COVERAGE_RECONCILIATION_20261029.json",
+  "prior_coverage_superseded_for_count": true,
+  "workflow_history_reconciliation": {
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "observed_repository_run_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "observed_active_indexed_runs": 0,
+    "latest_indexed_run_id": 40993597111,
+    "latest_indexed_run_index": 28,
+    "latest_three_status": "COMPLETED_SUCCESS; NOT PREVIOUSLY PROTECTED ADMITTED",
+    "next_distinct_indices": [
+      29,
+      30,
+      31
+    ],
+    "dispatch_status": "NOT_DISPATCHED_IN_THIS_CANDIDATE; MUST RECONCILE RUN HISTORY IMMEDIATELY BEFORE ANY DISPATCH",
+    "bounded_concurrency_limit": 3
+  },
+  "roles": {
+    "verifier": "Checked protected ledgers for indices 0-25 and 199, exact immutable crosswalk, three latest runs, 33/33 internal file hashes and bytes, three ZIP digests, pinned toolchain/manifest, hardened exits and kernel acceptance.",
+    "adversary_non_authoring_read_only": "Checked no duplicate indices, disjointness, no active indexed run, fallback exclusion, and absence of semantic/certification promotion.",
+    "amanuensis": "Append-only current candidate coverage correction. Protected count changes only on protected merge and exact-main readback."
+  },
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "No manuscript semantic equivalence or MATHCERT/public certification inferred."
+}
