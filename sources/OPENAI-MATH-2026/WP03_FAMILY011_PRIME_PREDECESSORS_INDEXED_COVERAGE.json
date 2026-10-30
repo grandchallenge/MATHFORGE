@@ -1,0 +1,75 @@
+{
+  "record_type": "GCL_OAI26_WP03_F011_BOUNDED_INDEX_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F011",
+  "family_id": "011",
+  "disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "manuscripts": [
+      {
+        "title": "Weighted Dilation Graphs, Smooth Shifted Primes and Totient Fibers",
+        "intro": "preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex",
+        "blob": "3d9d4c55c1f30d7736e7c7427b97cb0461f06040",
+        "claims": [
+          "For all epsilon>0, infinitely many n have totient-fiber cardinality g(n)>n^(1-epsilon).",
+          "For each fixed 0<delta<1/4, number of primes 2x<p<=5x with largest prime factor P+(p-1)<=x^delta is >=x^(1-o(1)); not a positive limiting proportion."
+        ]
+      },
+      {
+        "title": "Poisson–Dirichlet Law for Prime Predecessors",
+        "intro": "preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/01-introduction.tex",
+        "blob": "79950676c100e2d2d9252cc5465707a0d8f6c891",
+        "claims": [
+          "For each fixed k and bounded continuous F, ordinary prime-averaged distribution of k largest logarithmically normalized prime factors (with multiplicity) of p-1 tends to Poisson–Dirichlet PD(1).",
+          "Statement implies stronger fixed-u Dickman smoothness asymptotic, not simply the subpower-count lower bound of the companion."
+        ]
+      },
+      {
+        "title": "Prime Predecessors with an Even Number of Prime Factors",
+        "intro": "preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/main.tex",
+        "blob": "837740bf086f56d9c20fba6b3c7ff20ff53b581d",
+        "claims": [
+          "Infinitely many prime p with p-1 squarefree and Omega(p-1) even, equivalently Möbius mu(p-1)=1.",
+          "Parity assertion requires distinct signed-correlation work, not implied merely by predecessor smoothness."
+        ]
+      }
+    ]
+  },
+  "indexed_search": {
+    "upstream_lean_docs_011_present": false,
+    "comparator_filename_count": 833,
+    "notable_similar_names": [
+      "TotientAsymptotic",
+      "TotientCompanionZero",
+      "SmoothInitialForm",
+      "SmoothObstruction"
+    ],
+    "direct_named_prime_predecessor_Poisson_Dirichlet_match": false,
+    "similar_name_limit": "Nearby Totient/Smooth comparators were not presumed equivalent; their theorem signatures would require separate review. Filename absence alone cannot exclude alternative Lean representation."
+  },
+  "producer_review": {
+    "finding": "All three distinct mathematical main statements located, scoped and source-pinned; none directly mapped in pinned family scope index. Not declaring no theorem anywhere."
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "hostile_cases": [
+      "conflate_subpower_count_with_positive_proportion",
+      "conflate_PD1_with_only_largest_prime",
+      "omit_multiplicity",
+      "infer_parity_from_smoothness",
+      "infer_totient_fiber_from_PD_without_transfer",
+      "declare_no_Lean_anywhere",
+      "fabricate_Comparator_pass",
+      "claim_certification"
+    ]
+  },
+  "coverage": {
+    "initial_review_of_family011_complete": true,
+    "all_twelve_pilot_initial_reviews_present": true,
+    "full_semantic_bridge_complete": false,
+    "WP03_parent_complete": false
+  },
+  "claim_boundary": "All twelve initial family reviews represented after this admission; that is NOT all twelve proof-semantic matches, formal proof verification, or certification. Family 011 is a bounded indexed lookup, not a mathematical correctness adjudication.",
+  "remaining": "Inspect neighboring Totient/Smooth comparator theorem declarations and search all unindexed Lean material for exact proposition bridges; cross-verify manuscript proofs and run pinned comparator where applicable."
+}
