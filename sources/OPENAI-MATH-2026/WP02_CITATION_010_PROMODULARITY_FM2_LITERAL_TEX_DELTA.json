@@ -1,0 +1,208 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_010_PROMODULARITY_FM2_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "target": {
+    "citation_register_index_zero_based": 8,
+    "run_comparison_ordinal": 10,
+    "family_id": "010",
+    "title": "Unrestricted pro-modularity at the prime two",
+    "previous_edition": "October 4, 2026",
+    "revised_edition": "October 6, 2026",
+    "previous_pdf": {
+      "path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf",
+      "git_blob": "079f0197466e2f15d758785201241d8c3cc6f729"
+    },
+    "revised_pdf": {
+      "path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
+      "git_blob": "60af9a2ac3e85261ded26474e61783dde8eb2f13"
+    }
+  },
+  "upstream_build": {
+    "previous_tree": "613611181ae8bfd5af0f5a6d16957d8f08539afe",
+    "revised_tree": "2a641ed16799e3a51408871290322aae728d5b50",
+    "both_recursive_trees_complete": true,
+    "identical_path_sets": true,
+    "source_files_each": 8,
+    "identical_section_tree": "df073b7f7587ca9d2c5e0d7ef5624d33017a1170",
+    "unchanged_section_files": 6,
+    "changed_source_files": 2
+  },
+  "changed_files": [
+    {
+      "relative_path": "build/source/main.tex",
+      "previous_blob": "5c38468a78df48424cba6b905c00929b48a2f696",
+      "revised_blob": "2eac4b5bce91e8361131cc88d4dc2a79c07619da",
+      "previous_lines": 76,
+      "revised_lines": 76,
+      "changed_lines": [
+        {
+          "line": 53,
+          "previous": "\\date{October 4, 2026}",
+          "revised": "\\date{October 6, 2026}"
+        }
+      ]
+    },
+    {
+      "relative_path": "build/source/refs.bib",
+      "previous_blob": "29f357f97f95fff16f39ddba4267fc0d643acd63",
+      "revised_blob": "b310c129baa7bfe5f86342b61769a428f7606521",
+      "previous_lines": 347,
+      "revised_lines": 347,
+      "changed_lines": [
+        {
+          "line": 234,
+          "bibtex_key": "FM2",
+          "previous_target": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf",
+          "previous_target_git_blob": "8b5e64266d9c90e4c83727630228bdecc5ffd070",
+          "revised_target": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+          "revised_target_git_blob": "dea72dd57adfbe896cafccc6097b012bcd6dbb07"
+        }
+      ]
+    }
+  ],
+  "unchanged_sections": [
+    {
+      "path": "build/source/sections/conclusion.tex",
+      "blob": "c1d9e12d9bcbd82a01dd67f920a4d043d05bd08b",
+      "fm2_citation_lines": []
+    },
+    {
+      "path": "build/source/sections/diagonal.tex",
+      "blob": "986ada7738107495836e9339312db7e675194129",
+      "fm2_citation_lines": [
+        136
+      ]
+    },
+    {
+      "path": "build/source/sections/family.tex",
+      "blob": "9e241470645319996b261b9294c016b177b93e93",
+      "fm2_citation_lines": [
+        128,
+        135,
+        147,
+        163,
+        203,
+        230,
+        246,
+        248,
+        275,
+        287,
+        290,
+        321,
+        327,
+        332,
+        337,
+        352,
+        370,
+        371,
+        374,
+        413,
+        425,
+        428,
+        443,
+        521,
+        540
+      ]
+    },
+    {
+      "path": "build/source/sections/hecke.tex",
+      "blob": "42017b1ca8402b9e8497db336bda7a0e78a65c8d",
+      "fm2_citation_lines": [
+        293
+      ]
+    },
+    {
+      "path": "build/source/sections/introduction.tex",
+      "blob": "8ed0f2c8c7188b5518cca2c1852178d3a5cb0286",
+      "fm2_citation_lines": [
+        97,
+        118,
+        155
+      ]
+    },
+    {
+      "path": "build/source/sections/regular-point.tex",
+      "blob": "b939f548d0d891259bb7c5e0518a5223ee1c14e6",
+      "fm2_citation_lines": [
+        47,
+        111,
+        354,
+        368,
+        390,
+        399
+      ]
+    }
+  ],
+  "dependency_review": {
+    "citation_key": "FM2",
+    "total_explicit_citation_occurrences": 36,
+    "classification": "MATERIAL_PROOF_INPUT_NOT_MERELY_BIBLIOGRAPHIC",
+    "examples": [
+      {
+        "path": "build/source/sections/introduction.tex",
+        "line": 118,
+        "dependency": "Fontaine–Mazur Theorem 1.1 supplies classical modularity up to Tate twist at a regular de Rham point"
+      },
+      {
+        "path": "build/source/sections/family.tex",
+        "line": 275,
+        "dependency": "Fontaine–Mazur Theorem 5.1 is invoked as localized propagation input"
+      },
+      {
+        "path": "build/source/sections/family.tex",
+        "line": 248,
+        "dependency": "Fontaine–Mazur Theorem 7.1 is distinguished as requiring a regular de Rham target, not available at this intermediate stage"
+      },
+      {
+        "path": "build/source/sections/regular-point.tex",
+        "line": 399,
+        "dependency": "Fontaine–Mazur Theorem 1.1 is invoked after enumerating continuity, irreducibility, oddness, finite ramification and distinct de Rham weights"
+      }
+    ],
+    "review_boundary": "The revised cited Fontaine–Mazur theorem's correctness, exact change impact and source-to-Lean semantic correspondence are not adjudicated."
+  },
+  "method": "Pinned upstream commit; fetched both edition directories, complete nontruncated recursive build trees, and all changed TeX/BibTeX files; compared path sets and Git blob identities; complete line-by-line diff of two changed files; searched all six unchanged section files for literal {FM2} citations.",
+  "replay": {
+    "read_only_commands": [
+      "gh api 'repos/openai/math/git/trees/613611181ae8bfd5af0f5a6d16957d8f08539afe?recursive=1'",
+      "gh api 'repos/openai/math/git/trees/2a641ed16799e3a51408871290322aae728d5b50?recursive=1'",
+      "gh api repos/openai/math/git/blobs/5c38468a78df48424cba6b905c00929b48a2f696",
+      "gh api repos/openai/math/git/blobs/2eac4b5bce91e8361131cc88d4dc2a79c07619da",
+      "gh api repos/openai/math/git/blobs/29f357f97f95fff16f39ddba4267fc0d643acd63",
+      "gh api repos/openai/math/git/blobs/b310c129baa7bfe5f86342b61769a428f7606521"
+    ],
+    "expected": {
+      "source_file_count_each": 8,
+      "changed_main_lines": [
+        53
+      ],
+      "changed_bib_lines": [
+        234
+      ],
+      "unchanged_section_count": 6,
+      "explicit_fm2_citation_occurrences": 36
+    }
+  },
+  "findings": {
+    "theorem_proof_section_git_blobs_unchanged": true,
+    "manuscript_date_only_change": true,
+    "bibliography_only_change": true,
+    "updated_citation_targets": 1,
+    "cited_theorem_dependency_material": true,
+    "rendered_pdf_semantics": "NOT_ASSESSED",
+    "source_to_lean_correspondence": "NOT_ESTABLISHED",
+    "mathematical_certification": "NOT_CLAIMED"
+  },
+  "limits": [
+    "The source tree comparison is not a PDF render or mathematical proof check.",
+    "The changed bibliography target points to a manuscript used in the proof at 36 explicit source citation sites; the revised cited theorem is not independently validated.",
+    "No new Lean replay, Comparator semantic equivalence, mathematical certification, or claim promotion.",
+    "Other citation-edition cases and family 376 October-to-Lean transformed correspondence remain outstanding."
+  ],
+  "disposition": "TENTH_LITERAL_CITATION_SOURCE_COMPARISON_RESOLVED_PENDING_PROTECTED_ADMISSION",
+  "claim_boundary": "SOURCE_LOCKED_LITERAL_TEX_AND_DEPENDENCY_MAPPING_ONLY_NOT_MATHEMATICAL_CERTIFICATION"
+}
