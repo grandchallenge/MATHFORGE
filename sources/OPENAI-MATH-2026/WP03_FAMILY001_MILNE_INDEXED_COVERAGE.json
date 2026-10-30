@@ -1,0 +1,73 @@
+{
+  "record_type": "GCL_OAI26_WP03_F001_INDEXED_COVERAGE_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F001",
+  "family_id": "001",
+  "disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+  "claim_boundary": "No indexed corresponding Lean main-result, docs/001.md, or named Milne/Hodge/rationality Comparator challenge found at pinned upstream commit. This is NOT evidence of no Lean formalization anywhere and NOT an evaluation of mathematical truth, proof completeness, novelty or certification.",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "files": {
+      "manuscript_pdf": {
+        "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
+        "blob": "3780abc1f47a23e546f28190bd3db7b24419f1f9"
+      },
+      "introduction": {
+        "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/sections/00_intro.tex",
+        "blob": "c926c1c540c138a4b46274f672fc0f4c43547358"
+      },
+      "proof_conclusion": {
+        "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/sections/05_reduction.tex",
+        "blob": "fdf72c10b047fdc86f9192781880cfc791c3c9bb"
+      }
+    }
+  },
+  "manuscript": {
+    "title": "Milne’s rationality conjecture for abelian varieties",
+    "edition": "2026-10-07",
+    "pdf_pages": 36,
+    "pdf_sha256": "640701a0ea8d8026d2f019e571e052f2d106cad3f5216cf6f7fca0d643873234",
+    "main_theorem": "For every rational Hodge class gamma on a good-reduction abelian variety A/Qbar, and complementary Cartier divisors D_i on A_0, the specialized ℓ-adic and crystalline top-degree traces all equal one rational q for this fixed data, including residual characteristic p.",
+    "distinctions": [
+      "Main theorem is rationality of common pairings, not algebraic representation of arbitrary Hodge classes.",
+      "Separate algebraicity consequence uses the CM Hodge theorem as an extra input.",
+      "No comparison between different reduction places is claimed."
+    ]
+  },
+  "indexed_evidence": {
+    "manuscript_family_count": 1,
+    "manuscript_family_index_path": "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json",
+    "formalization_crosswalk_path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "crosswalk_rows": 200,
+    "crosswalk_milne_hodge_rationality_hits": 0,
+    "source_docs_001_present": false,
+    "comparator_directory_entry_count": 833,
+    "comparator_name_milne_hodge_rationality_specialization_hits": 0,
+    "search_boundary": "Exact upstream lean/docs directory enumeration, names of indexed ComparatorChallenges and 200 main-result crosswalk rows only. Absence in these indexes is not a repository-wide proof of no equivalent theorem under an unrelated name."
+  },
+  "producer_review": {
+    "result": "Manuscript main theorem is source-pinned and the expected indexed formalization/comparator route is absent. A proposition-level match is not justified.",
+    "next_evidence": "If a Lean declaration is identified later, bind its exact statement, definitions, proof and challenge and reopen WP03 family 001 semantic comparison."
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "independently_authenticated": false,
+    "hostile_cases": [
+      "infer-no-lean-anywhere",
+      "infer-paper-is-false",
+      "infer-paper-is-certified",
+      "conflate-rationality-with-algebraicity",
+      "invent-comparator-match",
+      "invent-other-reduction-place-comparison",
+      "promote-index-miss-to-proof-gap"
+    ]
+  },
+  "coverage": {
+    "family_review_complete_for_indexed_lookup": true,
+    "semantic_proposition_alignment_established": false,
+    "remaining_pilot_families_open": true
+  },
+  "unresolved": "Substantive Lean proof/model coverage for this manuscript is not identified. Any unindexed declaration requires a wider search before an absolute UNFORMALIZED conclusion."
+}
