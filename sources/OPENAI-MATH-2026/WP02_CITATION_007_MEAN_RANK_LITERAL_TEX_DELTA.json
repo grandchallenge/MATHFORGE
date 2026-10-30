@@ -1,0 +1,125 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_007_MEAN_RANK_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "target": {
+    "family_id": "006",
+    "title": "The mean analytic rank of quadratic twists of elliptic curves",
+    "previous_edition": "September 23, 2026",
+    "revised_edition": "October 6, 2026",
+    "previous_pdf": {
+      "path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf",
+      "git_blob": "53f910214dd53bfb89d53910942fe621127e76a9"
+    },
+    "revised_pdf": {
+      "path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+      "git_blob": "fef228e3a2a26c0b1302fbd6f85de0da1c87a3ba"
+    },
+    "revised_readme": {
+      "path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/README.md",
+      "git_blob": "cab8cc252be664eafc7055d16842e9e33654c52c"
+    }
+  },
+  "upstream_build": {
+    "previous_tree": "9d91787ce3b974701fbca76a494329989b7731f4",
+    "revised_tree": "a2912a7926f3cd74c85324317d49beaaf50cf82a",
+    "both_recursive_trees_complete": true,
+    "each_tree_entry_count": 10,
+    "each_source_file_count": 9,
+    "unchanged_sections_tree": "a92d7544360fb5f016effd743ff18d2cfbbb6256",
+    "unchanged_section_file_count": 7,
+    "changed_source_file_count": 2
+  },
+  "changed_files": [
+    {
+      "relative_path": "build/main.tex",
+      "previous_blob": "595e3fc3310346c36db80d6b2452967443b34ada",
+      "revised_blob": "765b351985ab103fd947e2a8476b39c2511ed44b",
+      "previous_lines": 62,
+      "revised_lines": 62,
+      "changed_lines": [
+        {
+          "line": 41,
+          "previous": "\\date{September 23, 2026}",
+          "revised": "\\date{October 6, 2026}"
+        }
+      ]
+    },
+    {
+      "relative_path": "build/references.bib",
+      "previous_blob": "5ae52873f4f723ac6ee279db63394b0944ccb171",
+      "revised_blob": "126afa7f503866c169ca559306ac450cdbaae553",
+      "previous_lines": 257,
+      "revised_lines": 257,
+      "changed_lines": [
+        {
+          "line": 55,
+          "bibtex_key": "OpenAIAnalyticDensityV2",
+          "previous_pdf": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+          "previous_pdf_git_blob": "d9a8efaf48a62b452bc5af359930109ffddb7786",
+          "revised_pdf": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+          "revised_pdf_git_blob": "58b8904f39b2a12534732010191fd35435559a61",
+          "cited_statement": "Theorem 1.2"
+        }
+      ]
+    }
+  ],
+  "exact_dependency_use": [
+    {
+      "source_path": "build/sections/introduction.tex",
+      "git_blob": "3ecb6f3c162de34dc41002ae25741b99a429e82d",
+      "line": 36,
+      "expression": "\\cite[Theorem~1.2]{OpenAIAnalyticDensityV2}",
+      "role": "Cites rank-zero/rank-one analytic density as an input to the mean analytic rank argument (lines 35-43)"
+    },
+    {
+      "source_path": "build/sections/algebraic.tex",
+      "git_blob": "9ee6c2298af0ed896c0d0ae0a106d4231e72ea4a",
+      "line": 14,
+      "expression": "\\cite[Theorem~1.2]{OpenAIAnalyticDensityV2}",
+      "role": "Cites rank-equality and density conclusions in proof of algebraic-moments corollary (lines 10-20)"
+    }
+  ],
+  "method": "At pinned upstream commit, traversed both preprints edition trees, recursively enumerated complete build trees, compared all source-file blob identities, decoded both changed Git blobs for main.tex and references.bib and performed complete line-array diffs. Independently decoded the seven unchanged section blobs and located two explicit proof/dependency uses of the revised citation key. Source reference URL uses mutable /blob/main; identities above are immutable commit and Git blob pins.",
+  "replay": {
+    "source_ref": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "commands": [
+      "gh api repos/openai/math/git/trees/9d91787ce3b974701fbca76a494329989b7731f4?recursive=1",
+      "gh api repos/openai/math/git/trees/a2912a7926f3cd74c85324317d49beaaf50cf82a?recursive=1",
+      "gh api repos/openai/math/git/blobs/595e3fc3310346c36db80d6b2452967443b34ada",
+      "gh api repos/openai/math/git/blobs/765b351985ab103fd947e2a8476b39c2511ed44b",
+      "gh api repos/openai/math/git/blobs/5ae52873f4f723ac6ee279db63394b0944ccb171",
+      "gh api repos/openai/math/git/blobs/126afa7f503866c169ca559306ac450cdbaae553"
+    ],
+    "expected": {
+      "changed_main_lines": [
+        41
+      ],
+      "changed_bibliography_lines": [
+        55
+      ],
+      "identical_sections_tree": true,
+      "all_other_lines_identical": true
+    }
+  },
+  "findings": {
+    "source_text_date_only_change": true,
+    "source_text_bibliography_only_change": true,
+    "available_tex_theorem_and_proof_sections_unchanged": true,
+    "pdf_binary_identical": false,
+    "citation_target_count": 1,
+    "dependency_is_explicitly_used_in_proof": true,
+    "source_to_lean_correspondence": "NOT_ESTABLISHED",
+    "dependent_manuscript_semantics": "NOT_ADJUDICATED"
+  },
+  "limits": [
+    "The exact TeX source-tree delta does not establish that the revised cited Goldfeld Theorem 1.2 is valid or unchanged.",
+    "Explicit proof-use of the Goldfeld reference makes the dependency semantically material despite no change to the dependent manuscript's theorem/proof source.",
+    "No rendered PDF comparison, Lean theorem equivalence, Comparator replay or mathematical certification is claimed."
+  ],
+  "disposition": "SEVENTH_OF_THIRTEEN_CITATION_EDITION_LITERAL_SOURCE_DELTAS_RESOLVED",
+  "claim_boundary": "PINNED_SOURCE_TREE_AND_LITERAL_TEX_CORRESPONDENCE_ONLY_NOT_MATHEMATICAL_CERTIFICATION"
+}
