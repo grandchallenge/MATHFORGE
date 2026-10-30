@@ -1,0 +1,58 @@
+{
+  "record_type": "GCL_OAI26_WP03_F004_INDEXED_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F004",
+  "family_id": "004",
+  "disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+  "scope": "Two manuscript family; pinned indexed source/Lean comparator reconnaissance only. Absence from indexed paths does not establish no theorem under another Lean name.",
+  "source": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "manuscripts": [
+      {
+        "title": "Hilbert's tenth problem over the rational numbers",
+        "paper": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+        "intro_git_blob": "693a8ab0c2c42e664b50992e6cf605177125a7ad",
+        "main_claim": "No algorithm determines whether arbitrary integer-coefficient polynomial in variable input dimension has a rational zero."
+      },
+      {
+        "title": "A pointwise 2-converse for elliptic curves with rational two-torsion",
+        "paper": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+        "main_tex_git_blob": "8b71e1d9df391376eba07b86698bf8814b54af2c",
+        "main_claim": "For rational elliptic curves with nonzero rational 2-torsion, 2-power Selmer corank 0 or 1 forces analytic and Mordell-Weil ranks equal to the corank and finiteness of Sha; arbitrary reduction at 2 allowed."
+      }
+    ]
+  },
+  "index": {
+    "formalization_crosswalk_path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "main_result_count": 200,
+    "matching_named_h10q_rows": 0,
+    "lean_docs_004_present": false,
+    "named_h10q_comparator_hits": 0,
+    "comparator_search_terms": [
+      "HilbertsTenth",
+      "H10Q",
+      "DiophantineRational"
+    ],
+    "limitations": "Comparator filename matching and mapped crosswalk records are not complete repository-wide source/definition search."
+  },
+  "review": {
+    "producer": "Found two distinct source claims, one rational-decidability result, other elliptic 2-converse, not to be conflated.",
+    "non_authoring_read_only_critic": "Reject any inference that no possible Lean theorem exists, that H10Q has been proven true by indexing, or that the auxiliary converse is the H10Q theorem.",
+    "adversarial_cases": [
+      "infer-total-nonformalization",
+      "certify-mathematics",
+      "merge-the-two-theorems",
+      "drop-2-torsion-hypothesis",
+      "assume-crosswalk-is-all-Lean",
+      "claim-comparator-pass"
+    ]
+  },
+  "coverage": {
+    "family_source_inventory_complete": true,
+    "indexed_correspondence_identified": false,
+    "semantic_equivalence_proved": false,
+    "pilot_complete": false
+  },
+  "remaining": "Search unindexed Lean theorem declarations and separately assess source proof hypotheses/auxiliary converse. No Comparator replay or public certification claimed."
+}
