@@ -1,0 +1,101 @@
+{
+  "record_type": "GCL_OAI26_WP03_F009_PARTIAL_SEMANTIC_REVIEW/1",
+  "assignment_id": "GCL-OAI-26-WP03/F009",
+  "family_id": "009",
+  "disposition": "PARTIAL_MAIN_THEOREM_COVERAGE_INJECTIVITY_ONLY",
+  "claim_boundary": "Manuscript bijection theorem is NOT matched in full by selected Lean injectivity statement; existence/surjectivity and the family's other two manuscripts are unreviewed. No Comparator execution, complete imported-model equivalence or MATHCERT certification.",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "files": {
+      "formal_scope_doc": {
+        "path": "lean/docs/009.md",
+        "git_blob": "f5cb872d28dab31ab4cdccea8956676ffd2e37c1"
+      },
+      "manuscript_intro": {
+        "path": "preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/build/introduction.tex",
+        "git_blob": "a1b052285ded0ec86649397e97f8509c56fa561a"
+      },
+      "manuscript_proof_end": {
+        "path": "preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/build/reconstruction.tex",
+        "git_blob": "426798f9120ca1af5299bd6351237fe04e562a7c"
+      },
+      "lean_solution": {
+        "path": "lean/OAI/Algebra/BogomolovPop/Injectivity.lean",
+        "git_blob": "13e184237fe9ba63a29a37759380186b3966edac"
+      },
+      "lean_comparator": {
+        "path": "lean/ComparatorChallenges/BogomolovPopInjectivity.lean",
+        "git_blob": "b0446666dc770587524b19249d3d865a584e655f"
+      },
+      "comparator_config": {
+        "path": "lean/ComparatorChallenges/BogomolovPopInjectivity.json",
+        "git_blob": "0e15aa9446aebad38c9aae88d0c78d4ef09f881d"
+      }
+    }
+  },
+  "manuscript": {
+    "title": "The Bogomolov–Pop reconstruction theorem",
+    "date": "2026-09-23",
+    "pdf_pages": 26,
+    "pdf_sha256": "4d805627401fffef78e1f0d8e21a0585f6c733e8be90643d0065cd27ffaa24f2",
+    "main_theorem": "For algebraically closed constants of characteristic != ell and relative transcendence degrees >=2, canonical map from perfect-closure field isomorphisms modulo Frobenius to bracket-compatible pro-ell abelian-by-central Galois data modulo ell-adic scalar units is BIJECTIVE.",
+    "main_theorem_component_results": [
+      "well-defined canonical map",
+      "surjectivity/existence for all admissible Galois isomorphisms",
+      "injectivity/uniqueness modulo Frobenius and scalar units"
+    ],
+    "source_proof_end": "build/reconstruction.tex concludes existence/surjectivity and uniqueness/injectivity of canonical correspondence."
+  },
+  "lean": {
+    "selected_theorem": "OAI.BogomolovPop.main_graph_injective",
+    "module": "OAI.Algebra.BogomolovPop.Injectivity",
+    "challenge_module": "ComparatorChallenges.BogomolovPopInjectivity",
+    "theorem_summary": "For field isomorphism classes a,a' and one b in IsomCUnits, PhiGraph a b and PhiGraph a' b imply a = a', with conditions on algebraically closed constants, finite-type extensions, transcendence degrees >=2, prime ell not equal to field characteristics.",
+    "main_statement_contains_surjectivity": false,
+    "main_statement_contains_injectivity": true,
+    "challenge_placeholder_sorry": true,
+    "solution_uses_explicit_proof": true,
+    "config_definitions": [],
+    "comparator_executed_in_review": false
+  },
+  "family_scope": {
+    "family_manuscript_count": 3,
+    "reviewed_manuscript": "preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf",
+    "not_reviewed_manuscripts": [
+      "preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf",
+      "preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf"
+    ]
+  },
+  "producer_review": {
+    "finding": "Selected theorem aligns with the UNIQUENESS/INJECTIVITY portion of the manuscript's stated bijection; it does not state or prove the existence/surjectivity half. Do not treat a complete reconstruction theorem as covered by this selected Comparator.",
+    "scope_gaps": [
+      "Neither a canonical map's surjectivity nor full manuscript main theorem is in selected Comparator statement.",
+      "A full theorem-level bridge from PhiGraph, IsomF/IsomCUnits and quotient relations to manuscript's exact canonical Phi is not independently proved.",
+      "Two later source editions within family 009 remain for independent review."
+    ]
+  },
+  "critic_review": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+    "separate_authenticated_identity": false,
+    "adversarial_cases": [
+      "infer-bijection-from-injectivity",
+      "assert-surjectivity-proved",
+      "drop-prime-characteristic-hypotheses",
+      "replace-frobenius-ambiguity-with-equality",
+      "claim-other-manuscripts-covered",
+      "fabricate-comparator-pass",
+      "claim-full-semantic-equivalence",
+      "claim-pilot-family-complete"
+    ]
+  },
+  "coverage": {
+    "reviewed_this_unit": [
+      "009-injectivity-component"
+    ],
+    "full_family_review_complete": false,
+    "twelve_family_pilot_complete": false
+  },
+  "remaining": "Identify source-pinned complete surjectivity theorem/Comparator (if any), check full canonical map and model definitions, examine the two later manuscript variants; preserve partial classification until proved."
+}
