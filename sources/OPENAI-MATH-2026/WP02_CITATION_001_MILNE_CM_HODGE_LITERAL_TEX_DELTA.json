@@ -1,0 +1,141 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_001_MILNE_CM_HODGE_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "canonical_register": {
+    "file": "sources/OPENAI-MATH-2026/WP02_THIRTEEN_CITATION_EDITION_IDENTITIES.json",
+    "blob": "e92dd54208dd888d6237ec7aa383c693f8d1a46e",
+    "index_zero_based": 0,
+    "family_id": "001",
+    "title": "Milne's rationality conjecture for abelian varieties"
+  },
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "bounded_obligation": "Pinned complete paired TeX-build literal source comparison of September 23 and October 7 Milne rationality editions, with proof-dependency separation between the main rational-pairing theorem and the algebraic-specialization corollary. This is source evidence only.",
+  "editions": {
+    "previous": {
+      "root": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026",
+      "pdf_git_blob": "bae7acc9b44c976614849374dbd0dd61c00c2028",
+      "build_tree": "3269ccf94f8e3968c1b021178ead3bb8d9d436d7",
+      "main_blob": "4f79814bd6b07d0617cd898622135af76df6ca23",
+      "references_blob": "ced251a5ef0e91b52a04cfb90c18b9620d3df89a"
+    },
+    "current": {
+      "root": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026",
+      "pdf_git_blob": "3780abc1f47a23e546f28190bd3db7b24419f1f9",
+      "build_tree": "9aba10e04ba6890f7621c7eebc291bf69fd69aec",
+      "main_blob": "e79d6ed2b434f8abf47bee6b9f7efe8123a3aad7",
+      "references_blob": "aca2d21ca77b497895931a1da82f248f18bc71fb"
+    }
+  },
+  "literal_comparison": {
+    "build_file_paths_identical": true,
+    "build_file_count_each": 9,
+    "mathematical_sections_count": 6,
+    "mathematical_sections_git_tree_both": "c410df9205cd34a76de541da8266e598453b196b",
+    "figure_blob_both": "11faf2a28398c6684476d42ebe40e756dc98bc1e",
+    "changed_source_files": [
+      "main.tex",
+      "references.tex"
+    ],
+    "main_tex": {
+      "line_count_each": 74,
+      "changed_lines": [
+        {
+          "line": 53,
+          "old": "\\date{September 23, 2026}",
+          "new": "\\date{October 7, 2026}"
+        }
+      ]
+    },
+    "references_tex": {
+      "line_count_each": 275,
+      "changed_lines": [
+        {
+          "line": 240,
+          "citation_key": "OpenAICMHodge2026",
+          "old_target": "The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf",
+          "new_target": "The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf"
+        }
+      ]
+    },
+    "conclusion": "All six mathematical sections and the figure source have identical Git blobs. The only differences in the nine-file TeX build tree are the publication date and a CM Hodge manuscript citation URL. This does not assert PDF glyph/semantic equivalence."
+  },
+  "theorem_dependency": {
+    "cited_source": {
+      "title": "The rational Hodge conjecture for CM abelian varieties",
+      "old_edition": "September-30-2026",
+      "new_edition": "October-6-2026",
+      "target": "Theorem 1.1",
+      "validity": "NOT_INDEPENDENTLY_ADJUDICATED"
+    },
+    "milne_introduction": {
+      "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/sections/00_intro.tex",
+      "blob": "c926c1c540c138a4b46274f672fc0f4c43547358",
+      "lines": [
+        106,
+        112
+      ],
+      "role": "Explicitly states CM Hodge is an additional input to algebraic-specialization corollary and not the proof of thm:main."
+    },
+    "milne_main_proof": {
+      "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/sections/05_reduction.tex",
+      "blob": "fdf72c10b047fdc86f9192781880cfc791c3c9bb",
+      "lines": [
+        227,
+        248
+      ],
+      "role": "Theorem thm:main derives rational Lefschetz pairings from CM transport cor:cm-transport, CM pairing cor:cm-pairing and pairing functoriality; this proof segment does not invoke OpenAICMHodge2026."
+    },
+    "milne_algebraic_specialization": {
+      "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/sections/05_reduction.tex",
+      "blob": "fdf72c10b047fdc86f9192781880cfc791c3c9bb",
+      "statement_lines": [
+        370,
+        398
+      ],
+      "proof_citation_line": 412,
+      "label": "cor:algebraic-specialization",
+      "role": "Theorem 1.1 is invoked to algebraize the transported CM Hodge class kappa; this is necessary for the stronger one-rational-algebraic-cycle specialization conclusion."
+    },
+    "cross_manuscript_guard": "Previously admitted CM Hodge citation record WP02_CITATION_012_CM_HODGE_MILNE_LITERAL_TEX_DELTA.json locates Milne cor:cm-transport and cor:algebraic-specialization as consequences references. The latter depends on CM Hodge theorem 1.1, and cannot be used as independent proof of that theorem. The main Milne rational-pairing theorem is separately argued in its source. A citation cycle is not, by itself, proof circularity.",
+    "logical_dependency_direction": "Milne thm:main (rational pairing) is source-declared independent of CM Hodge Theorem 1.1; Milne cor:algebraic-specialization requires both Milne transport and CM Hodge Theorem 1.1. This is a source-traced dependency classification, not independent proof validation."
+  },
+  "formalization_mapping": {
+    "family_id": "001",
+    "index_path": "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json",
+    "index_blob": "7a0b00eb9bfdeb59b157a98ee6522fc685580152",
+    "exact_lean_declaration_correspondence": "NOT_ESTABLISHED"
+  },
+  "replay": {
+    "transport": "Authenticated GitHub API at pinned openai/math commit",
+    "method": "Fetch both nine-file build trees recursively; assert identical relative blob paths, identical six-section tree and figure blob, exactly two differing files. Compare main.tex and references.tex line-for-line, preserving final empty line. Locate cited theorem at intro lines 106-112 and 05_reduction lines 370-412; inspect thm:main proof lines 227-248. Cross-check family 001 and canonical citation register index zero.",
+    "assertions": [
+      "PASS pinned old/new build trees each nine files",
+      "PASS identical six mathematical section blobs and one figure source blob",
+      "PASS main.tex exactly one changed date line of 74",
+      "PASS references.tex exactly one changed citation URL line of 275",
+      "PASS source proof separates main rational pairing theorem from algebraic specialization corollary",
+      "PASS cor:algebraic-specialization explicitly invokes CM Hodge Theorem 1.1",
+      "PASS canonical family 001 citation register edition/blob identities match"
+    ]
+  },
+  "flags": {
+    "withdrawn": false,
+    "proof_changed": false,
+    "statement_changed": false,
+    "citation_only": "TEX_SOURCE_CONFIRMED",
+    "source_mismatch": "PDF_RENDER_UNASSESSED",
+    "unresolved": true
+  },
+  "severity": "HIGH_CITED_THEOREM_DEPENDENCY",
+  "disposition": "F001_CITATION_001_LITERAL_TEX_AND_CM_HODGE_DEPENDENCY_DIRECTION_EVIDENCE_ONLY",
+  "unresolved": [
+    "Rendered PDF equivalence has not been checked.",
+    "CM Hodge Theorem 1.1 validity and Milne main theorem proof dependencies have not been independently adjudicated.",
+    "Exact source-to-Lean theorem-level correspondence has not been established.",
+    "Remaining family 004 and family 032 citation entries require protected documentary admission."
+  ],
+  "claim_boundary": "PINNED_LITERAL_TEX_AND_SOURCE_PROOF_DEPENDENCY_ONLY_NOT_LEAN_OR_MATHCERT_CERTIFICATION"
+}
