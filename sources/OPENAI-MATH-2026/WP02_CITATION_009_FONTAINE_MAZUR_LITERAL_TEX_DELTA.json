@@ -1,0 +1,129 @@
+{
+  "record_type": "GCL_OAI26_WP02_CITATION_009_FONTAINE_MAZUR_LITERAL_TEX_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "target": {
+    "citation_register_index": 8,
+    "comparison_ordinal": 9,
+    "family_id": "010",
+    "title": "Fontaine–Mazur modularity at the prime 2",
+    "previous_edition": "September 23, 2026",
+    "revised_edition": "October 6, 2026",
+    "previous_pdf": {
+      "path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf",
+      "git_blob": "8b5e64266d9c90e4c83727630228bdecc5ffd070"
+    },
+    "revised_pdf": {
+      "path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+      "git_blob": "dea72dd57adfbe896cafccc6097b012bcd6dbb07"
+    },
+    "revised_readme": {
+      "path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/README.md",
+      "git_blob": "84288dcd13b2e2becaf5a5add06f4ef072c90d32"
+    }
+  },
+  "upstream_edition_trees": {
+    "previous": "0ee45180189a3993a01e33c1936e427d0c5166eb",
+    "revised": "b01dad92005597ad3c3da844f61b93ba8afd55e8"
+  },
+  "upstream_build": {
+    "previous_tree": "24ea305248515dc8667c8a7f6f289de3b98c69b9",
+    "revised_tree": "f2e26f6fe9ce4c79f7569b0d88c6c9d6f10a97ae",
+    "both_recursive_trees_complete": true,
+    "each_source_file_count": 10,
+    "identical_path_sets": true,
+    "unchanged_sections_tree": "9cce524daf4b0e3b4bbe45b925fe449c6dba3f5e",
+    "unchanged_section_file_count": 8,
+    "changed_source_file_count": 2
+  },
+  "changed_files": [
+    {
+      "relative_path": "build/main.tex",
+      "previous_blob": "9f0b2d476e8a8182f7f06292a896f935a849ca96",
+      "revised_blob": "61d2ae9ba481ae03cbcfcf919443118bcf162303",
+      "previous_lines": 91,
+      "revised_lines": 91,
+      "changed_lines": [
+        {
+          "line": 59,
+          "previous": "\\date{September 23, 2026}",
+          "revised": "\\date{October 6, 2026}"
+        }
+      ]
+    },
+    {
+      "relative_path": "build/references.bib",
+      "previous_blob": "beb54de8d8659e9162a74601b024aca024d8f095",
+      "revised_blob": "552e5d0e1e1ddd7f24097c72ef836e76f2bc69c5",
+      "previous_lines": 753,
+      "revised_lines": 753,
+      "changed_lines": [
+        {
+          "line": 727,
+          "bibtex_key": "OpenAIH10Q2026",
+          "previous_pdf": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf",
+          "previous_pdf_git_blob": "bf17a7b94d39995095188a097fc3d1ed1935a7cc",
+          "revised_pdf": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+          "revised_pdf_git_blob": "b75dddd5e05503cc04a156e94bb15d6fadf8158e",
+          "bibliography_note": "Section~4"
+        }
+      ]
+    }
+  ],
+  "citation_use": [
+    {
+      "source_path": "build/sections/introduction.tex",
+      "git_blob": "7ec908e661050a5dfa8ca2cb9a1501b6b41c62cc",
+      "line": 43,
+      "expression": "\\cite[Section~4]{OpenAIH10Q2026}",
+      "context_lines": [
+        41,
+        44
+      ],
+      "semantic_direction": "The Fontaine–Mazur manuscript identifies its own main modularity theorem as an input used by the cited Hilbert-tenth manuscript's height argument. The citation points to an application downstream, not to an input proving Fontaine–Mazur itself."
+    }
+  ],
+  "method": "At pinned upstream commit, inspected both edition trees and complete recursive build trees (truncated=false), compared every file path and Git blob SHA, decoded and line-diffed the complete two changed TeX/BibTeX files, and located the sole H10 citation use in unchanged introduction.tex. Bibliography URLs contain mutable /blob/main; evidence uses immutable source commit and blob identities.",
+  "replay": {
+    "commands": [
+      "gh api repos/openai/math/git/trees/24ea305248515dc8667c8a7f6f289de3b98c69b9?recursive=1",
+      "gh api repos/openai/math/git/trees/f2e26f6fe9ce4c79f7569b0d88c6c9d6f10a97ae?recursive=1",
+      "gh api repos/openai/math/git/blobs/9f0b2d476e8a8182f7f06292a896f935a849ca96",
+      "gh api repos/openai/math/git/blobs/61d2ae9ba481ae03cbcfcf919443118bcf162303",
+      "gh api repos/openai/math/git/blobs/beb54de8d8659e9162a74601b024aca024d8f095",
+      "gh api repos/openai/math/git/blobs/552e5d0e1e1ddd7f24097c72ef836e76f2bc69c5",
+      "gh api repos/openai/math/git/blobs/7ec908e661050a5dfa8ca2cb9a1501b6b41c62cc"
+    ],
+    "expected": {
+      "changed_main_lines": [
+        59
+      ],
+      "changed_bibliography_lines": [
+        727
+      ],
+      "all_eight_sections_identical": true,
+      "all_other_source_lines_identical": true
+    }
+  },
+  "findings": {
+    "available_tex_theorem_and_proof_sections_unchanged": true,
+    "manuscript_date_only_change": true,
+    "bibliography_only_change": true,
+    "updated_citation_targets": 1,
+    "pdf_binary_identical": false,
+    "citation_dependency_direction": "FONTAINE_MAZUR_THEOREM_TO_H10_APPLICATION",
+    "source_to_lean_correspondence": "NOT_ESTABLISHED",
+    "citation_semantics": "NOT_ADJUDICATED"
+  },
+  "limits": [
+    "Source-TeX equality does not establish rendered-PDF semantic equivalence or correctness of either theorem.",
+    "The introduction cites Hilbert-tenth Section 4 as an application; it is not evidence that Fontaine–Mazur's proof depends on Hilbert-tenth.",
+    "The cited H10 October edition is a distinct manuscript and its exact theorem-level dependency and validity remain unadjudicated.",
+    "No Lean replay, Comparator equivalence, mathematical certification, or source-upgrade claim is made."
+  ],
+  "disposition": "NINTH_OF_THIRTEEN_CITATION_EDITION_LITERAL_SOURCE_DELTAS_RESOLVED",
+  "claim_boundary": "PINNED_SOURCE_TREE_AND_LITERAL_TEX_CORRESPONDENCE_ONLY_NOT_MATHEMATICAL_CERTIFICATION"
+}
