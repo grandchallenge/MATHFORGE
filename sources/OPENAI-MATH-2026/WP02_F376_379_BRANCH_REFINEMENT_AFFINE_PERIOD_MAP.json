@@ -1,0 +1,122 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_BRANCH_REFINEMENT_AND_AFFINE_PERIOD_MAP/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "editions": [
+      "379 September 27 2026 stationary companion",
+      "376 October 6 2026 depends on 379"
+    ]
+  },
+  "candidate_base": "grandchallenge/MATHFORGE@6859ac268a0e9b9a43aa7d36236223d56b9548d3",
+  "scope": "One new source-to-Lean comparison: branch-cylinder refinement, algebraic move maps, conditional branch-count delta, and already-existing Lean period theorem. No source-field identity or mathematical certification.",
+  "source_files": [
+    {
+      "role": "source379",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "git_blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "verified_literal_anchor_count": 5
+    },
+    {
+      "role": "leanBranches",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/Branches.lean",
+      "git_blob": "b3dc8fd069c0e938f0058dc01aabb5ecb560278b",
+      "verified_literal_anchor_count": 4
+    },
+    {
+      "role": "leanRectangles",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/InstructionRectangles.lean",
+      "git_blob": "5470d6308ff7ede0bd33c872ff3fdf67f46b9507",
+      "verified_literal_anchor_count": 6
+    },
+    {
+      "role": "leanMoves",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/GappedInstructions.lean",
+      "git_blob": "9cf6908cdea8518da9957446f52e611597a3609b",
+      "verified_literal_anchor_count": 3
+    },
+    {
+      "role": "leanAffine",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ShearFlows/Model.lean",
+      "git_blob": "430988962d758fb91fe07e3080a07f2cf3f850ed",
+      "verified_literal_anchor_count": 3
+    },
+    {
+      "role": "leanRecorder",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/RecorderCoordinates.lean",
+      "git_blob": "8c668820f1fb47ef815ce77718e435649a07e233",
+      "verified_literal_anchor_count": 3
+    },
+    {
+      "role": "leanGeometry",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/FiniteGeometry.lean",
+      "git_blob": "2c82a57373589d2f8dd8808107070d695a7b8a69",
+      "verified_literal_anchor_count": 3
+    },
+    {
+      "role": "leanPeriod",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarProcessorData.lean",
+      "git_blob": "ad4813593d073be6cb290ca5eb9482456363a6e8",
+      "verified_literal_anchor_count": 5
+    },
+    {
+      "role": "leanRouting",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/NormalizedPlanarRouting.lean",
+      "git_blob": "f3a94a154a09d7536dd8fcbd7b295b363e6db226",
+      "verified_literal_anchor_count": 3
+    },
+    {
+      "role": "leanShift",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarInitialShift.lean",
+      "git_blob": "b5535db08d639c76e5b4ff19667745e3d0d5c33e",
+      "verified_literal_anchor_count": 3
+    },
+    {
+      "role": "leanCompiler",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarProgram.lean",
+      "git_blob": "cd2a0496de9aebf318cd6d63e2a3b77a7d64fdeb",
+      "verified_literal_anchor_count": 4
+    }
+  ],
+  "findings": {
+    "source_branch_domains": "Pinned 379 build/main.tex lines 531-566: for displacement d=1 or 0 the source table uses [0,1] × I_a; for d=-1 it uses I_e × I_a. The source says it counts each d=0 or d=1 rule once and each d=-1 rule once for each e in Σ. Source affine map is F_r(w)=h_r+diag(B^{-d},B^{d})(w-d_r), with B=2|Σ|+2. Source period map is asserted on a positive neighborhood of each whole D_r (lines 433-451,717-723).",
+    "lean_branch_refinement": "Pinned Branches.lean compileBranches flatMaps every instructionTable entry over allSymbols M, including right and stay, and records b.left. FiniteGeometry.lean geometricBranches dedups the branch list; Branch.source_key_injective makes distinct (source,read,left) branch keys. InstructionRectangles.lean sourceBox B l a is I_l × I_a for ALL three HeadMove values; targetBox for right/stay is also a refinement by l. This is a finer cylinder partition than the source's right/stay [0,1] domains. It is not a theorem that the two full source rectangle families or global planar fields are identical.",
+    "branch_count_conditional": "IF the source and Lean are supplied the same compiled instruction table and alphabet size K, and that table has R right, S stay, L left entries, then source N_s=R+S+K*L, whereas Lean's compileBranches creates N_l=K*(R+S+L) distinct branch keys (subject to the stated key injectivity). N_l-N_s=(K-1)*(R+S). This is strictly positive if K>1 and R+S>0. The actual source compiler and Lean freshMachine have not been identified; hence no unconditional equality or numerical count is asserted. Source 5N_s slots and Lean 8N_l pulses are not automatically comparable using the same N.",
+    "move_formula_overlap": "For B≠0, on the refined source cylinder I_l×I_a, the source table and Lean's GappedInstructions rightMove/stayMove/leftMove have identical displayed algebraic coordinate functions: right ((b+x)/B,By-a); stay (x,y+(b-a)/B); left (Bx-l,l/B+(b+By-a)/B²). These are formal algebraic expressions with digit values l,a,b, not a proof that source and Lean encode the same compiled machine, digits, state offsets, or spatial cutoffs.",
+    "affine_and_normalization": "Pinned ShearFlows/Model.lean Instruction.affine is target.center + diag(factor,factor^-1)*(x-source.center); InstructionRectangles.headFactor maps right/stay/left to B^-1/1/B, matching source B^-d under d=1/0/-1. RecorderCoordinates.branchInstruction and FiniteGeometry.geometricInstruction scale the radix instruction into state rectangles. PlanarProcessorData.translatedInstruction_affine shows global initialShift translation conjugates the affine instruction; PlanarInitialShift.initialShift_spec places the initialized Lean point at (1/4,1/4). This is a conditional coordinate/affine bridge, not an exact source-versus-Lean parameter identification.",
+    "lean_period_theorem": "Pinned PlanarProcessorData.lean normalizedInstruction_period states that for an IsPlanarTransition Ψ of planarSlice(normalizedHamiltonian I hI), and any y in normalizedNeighborhood I hI b, Ψ 0 1 y = (normalizedInstruction I hI b).affine y. normalizedInstruction_neighborhood states that this open neighborhood contains the refined normalized source rectangle. NormalizedPlanarRouting.normalized_branch_planar and normalized_planar_step supply branch/corridor and encoded-step routes for Lean's own construction. These theorems give a positive full-period endpoint correspondence for each LEAN refined branch, without requiring equal intermediate pulse schedules.",
+    "domain_counterexample": "For K=2, B=6, odd digit cylinders I_1=[1/6,2/6], I_3=[3/6,4/6] leave nonempty gaps in [0,1]. Thus the union of Lean's right/stay refined source domains does not cover the source's entire [0,1] horizontal domain. The source's whole-rectangle period-map statement cannot be inferred from Lean's refined-neighborhood theorem by mere union. This is a domain-level obstruction to naive full-rectangle identification, not a contradiction on encoded tape points.",
+    "narrow_closed_gap": "The source and Lean branch maps agree algebraically after matching digit and center/factor parameters, and Lean has an explicit normalized full-period theorem on its refined domains. The previously unexamined right/stay cylinder refinement is a material source-semantic boundary. Temporal reparametrization, exact machine correspondence, and global velocity identity remain unresolved."
+  },
+  "replay": {
+    "method": "Authenticated exact-commit GitHub UTF-8 reads; 11/11 expected GitHub-reported blob identities matched; 42/42 corrected literal anchors matched. Independent SymPy simplification of all three move formulas and branch-count difference.",
+    "blob_matches": 11,
+    "blob_total": 11,
+    "anchors_matched": 42,
+    "anchors_total": 42,
+    "symbolic_move_identities": "PASS 3/3 (right,stay,left)",
+    "symbolic_branch_count_identity": "PASS 1/1: K*(R+S+L)-(R+S+K*L)=(K-1)*(R+S)",
+    "sympy_reproducer": "import sympy as s; B,x,y,a,b,l,K,R,S,L=s.symbols('B x y a b l K R S L',nonzero=True); moves=[(((b+x)/B,B*y-a),((b+x)/B,B*y-a)),((x,y+(b-a)/B),(x,(b+B*y-a)/B)),((B*x-l,l/B+(b+B*y-a)/B**2),(B*x-l,(l+(b+B*y-a)/B)/B))]; assert all(all(s.simplify(u-v)==0 for u,v in zip(src,lean)) for src,lean in moves); assert s.simplify(K*(R+S+L)-(R+S+K*L)-(K-1)*(R+S))==0",
+    "limitations": "No Lean compilation, kernel audit, independent cryptographic Git blob recomputation, machine-table isomorphism, exact source field identity, rendered PDF comparison or mathematical certification."
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false,
+    "canonical_register": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "canonical_register_blob": "8bc99b7d7f9473f44da1429be61b6f8249631aeb"
+  },
+  "unresolved": [
+    "F376_379_SOURCE_RIGHT_STAY_COARSE_RECTANGLES_VS_LEAN_LEFT_SYMBOL_REFINED_CYLINDERS_NOT_GLOBALLY_IDENTIFIED",
+    "F376_379_SOURCE_COMPILER_BRANCH_TABLE_TO_LEAN_FRESH_MACHINE_ISOMORPHISM_UNADJUDICATED",
+    "F376_379_SOURCE_5NS_VS_LEAN_8NL_TEMPORAL_REPARAMETRIZATION_AND_PERIOD_FIELD_EQUIVALENCE_UNADJUDICATED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_MATHCERT_UNADJUDICATED"
+  ],
+  "next_obligation": "Identify the exact source compiler-to-Lean freshMachine instruction-table mapping and whether right/stay cylinder refinement preserves the encoded-tape dynamics and observation, without claiming the source whole-rectangle extension is identical.",
+  "claim_boundary": "PINNED_BRANCH_DOMAIN_REFINEMENT_AND_CONDITIONAL_AFFINE_ENDPOINT_CORRESPONDENCE_ONLY_NOT_FULL_SOURCE_TO_LEAN_SEMANTIC_EQUIVALENCE_OR_CERTIFICATION",
+  "exclusions": "WP01 indices 145/199 untouched; generic GCL queue-reduction automation unchanged."
+}
