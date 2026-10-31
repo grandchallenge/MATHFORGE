@@ -1,0 +1,133 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_056_GLC_FLIPS_LITERAL_STATEMENT_AUXILIARY_SCOPE/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "current_upstream_main_seen": "4eaee87548250b2682affda7d05d947c05554bae",
+    "newer_source_used": false
+  },
+  "candidate_base_protected_main": "8349d8525a1f943af2c652c986bf8d248d8fdef2",
+  "scope": "One previously UNASSESSED repaired-14 family 056 entry: exact Oct 5 to Oct 7 source TeX statement, dependency-scope and citation delta for Termination of generalized log canonical flips on compact Kähler fourfolds. This is a literal source audit, not a validity or Lean certification.",
+  "edition": {
+    "old": "October 5, 2026",
+    "current": "October 7, 2026",
+    "old_pdf": {
+      "path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+      "blob": "03d16bb5b520fa321c9744240024ebfe737ddc0c"
+    },
+    "current_pdf": {
+      "path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+      "blob": "40fba88b158a5d18d19a68d08bb18b578f1093cf"
+    },
+    "current_readme": {
+      "path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/README.md",
+      "blob": "281a2d029d64157d0485a167a7208680f334fd09"
+    }
+  },
+  "source_trees": {
+    "old_build": "dc7dee2482e8c470fba3bc81cd8f977589139347",
+    "current_build": "02324151996b8fb367ef839c2a7422edc0677a1b",
+    "old_file_count": 12,
+    "current_file_count": 12,
+    "common_paths": 12,
+    "identical_blobs": 8,
+    "changed_blobs": 4
+  },
+  "changed_files": [
+    {
+      "relative_path": "main.tex",
+      "old_blob": "6eae93c21766ea3f406cff5d3ba800de900b4094",
+      "current_blob": "c35595d7f23306ff139ba441d2188429f8ea83ff",
+      "delta": "date October 5 -> October 7 only"
+    },
+    {
+      "relative_path": "references.tex",
+      "old_blob": "d51b92a536118049adcad52455ffa51bf501ae8c",
+      "current_blob": "8742b50ae63a880098d1cac969ba561705658c99",
+      "delta": "two exact bibliography link targets updated: Finite ordinary MMP Oct 5 -> Oct 6 and generalized-canonical flips Oct 5 -> Oct 6"
+    },
+    {
+      "relative_path": "sections/02-preliminaries.tex",
+      "old_blob": "8c248b618fd08902bd6f009cf7e9ab4c6d64adc4",
+      "current_blob": "cd8bb955402e8b5eddb3ce9e9e71d7ae4dabe2b3",
+      "delta": "24-line new Scope of the auxiliary inputs paragraph; identifies precise external dependency slices and exclusion of companion absolute contraction/minimal-model and fourfold termination results"
+    },
+    {
+      "relative_path": "termination-generalized-lc-kahler-fourfolds.tex",
+      "old_blob": "79e25a51718b98085cc941dba8b600f3cdf307e3",
+      "current_blob": "0a3a341c54f65adf20513b89d06fa600b3cfba9d",
+      "delta": "flattened generated source duplicates the date, new scope paragraph and two citation target changes; not a second independent mathematical change"
+    }
+  ],
+  "literal_statement_comparison": {
+    "theorem_environments": {
+      "old": 5,
+      "current": 5,
+      "identical": true
+    },
+    "lemma_environments": {
+      "old": 15,
+      "current": 15,
+      "identical": true
+    },
+    "proposition_environments": {
+      "old": 10,
+      "current": 10,
+      "identical": true
+    },
+    "main_theorem_label": "thm:main",
+    "main_theorem_block_characters": 1585,
+    "main_theorem_sha256": "0c4daed1f8be08925f6d924c3f39dfc90ce9f33a23a78d2c20f1416446738e70",
+    "main_theorem_hypotheses_and_conclusion": "Literally unchanged: generalized log canonical Q-Cartier fourfold data, small projective flip diagrams and the conclusion that the flip sequence is finite. No added theorem hypotheses in the inspected TeX.",
+    "old_flattened_sha256": "219ee53d14e3640bddb8117cb2fb32523706aa3d66695b2f22d7ccd6be9b532b",
+    "current_flattened_sha256": "f6efabc5f7d980505491c7e8f7f83c9aed7175527f747b1551d0792caf75d01b"
+  },
+  "new_auxiliary_scope": {
+    "location": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/build/sections/02-preliminaries.tex",
+    "source_literal_anchor": "Scope of the auxiliary inputs.",
+    "KahlerAuxiliary": "Sections 9-11 relative projective arguments, low-place calculation, Proposition 9.7 continuation, Lemma 9.8 finite generation, Proposition 9.9 finite run, Proposition 9.11 extraction; Section 11 special termination/gdlt modification uses Section 10 threefold termination. Explicitly excludes Section 6 absolute supporting-contraction and minimal-model results.",
+    "CanonicalKahler": "Proposition 2.1 common model, Lemma 2.2 analytic negativity, Lemma 2.3 terminal codimension-two smoothness only; excludes companion fourfold termination theorem.",
+    "strong_factoriality": "Relative constructions retain strong-factoriality assumptions; paragraph says these do not add hypotheses to main theorem's given flip sequence.",
+    "interpretation": "A material clarification of proof-dependency scope and potential circularity, not an independent demonstration that those cited inputs are correct or sufficient."
+  },
+  "formalization_crosswalk": {
+    "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "source_papers": 173,
+    "main_results": 200,
+    "direct_title_match": false,
+    "exact_Lean_declaration": "NOT_ESTABLISHED",
+    "limitation": "Negative match only within pinned indexed source_papers/main_results, not a repository-wide proof of absence."
+  },
+  "replay": {
+    "method": "Authenticated gh api exact pinned Git trees and Git blobs; base64 decoded source bytes, Python difflib unified diffs and regex comparison of complete theorem/lemma/proposition environments; SHA256 of main theorem and flattened sources.",
+    "observed": [
+      "12/12 identical relative paths; 8 identical Git blobs, 4 changed",
+      "5/5 theorem, 15/15 lemma, 10/10 proposition environments literally identical",
+      "1 new 24-line dependency-scope paragraph in sections/02-preliminaries.tex; 2 bibliography URL revisions; metadata date change",
+      "Main theorem SHA256 and flattened SHA256 recorded above"
+    ],
+    "source_integrity": "GitHub-reported blob identities at immutable upstream commit; no independent Lean kernel replay or PDF rendering comparison."
+  },
+  "risk_register": {
+    "path": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "category": "repaired_14",
+    "family_id": "056",
+    "inventory": {
+      "withdrawn": 3,
+      "repaired": 14,
+      "citation_updates": 13,
+      "total": 30
+    },
+    "update": "Set this one entry's statement_changed=false for complete inspected TeX environments; retain proof_changed=true and unresolved=true; attach exact evidence and scoped Lean mapping gap."
+  },
+  "unresolved": [
+    "Actual correctness/sufficiency and independence of imported auxiliary theorems, including possible circularity",
+    "No exact Lean declaration correspondence for this manuscript established",
+    "Rendered PDF and mathematical certification not adjudicated"
+  ],
+  "disposition": "F056_GLC_FLIPS_OCT7_LITERAL_STATEMENT_UNCHANGED_AUXILIARY_DEPENDENCY_SCOPE_REPAIRED",
+  "claim_boundary": "SOURCE_LOCKED_LITERAL_TEX_AND_DEPENDENCY_DESCRIPTION_ONLY_NOT_PROOF_VALIDITY_OR_LEAN_COMPILATION_OR_MATHCERT_CERTIFICATION",
+  "exclusions": "WP01 deferred indices 145/199 untouched; generic GCL queue-reduction automation untouched."
+}
