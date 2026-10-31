@@ -1,0 +1,95 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "repo": "openai/math",
+    "sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+  },
+  "runner": {
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "runner_head": "38d7a86b594257bf3691a60e673e62fbf39879e0",
+    "run_id": 41181232116,
+    "run_number": 55,
+    "run_attempt": 1,
+    "job_id": 124478870858,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41181232116",
+    "run_status": "completed",
+    "run_conclusion": "success"
+  },
+  "target": {
+    "index": 55,
+    "declaration": "OAI.Fifths.Single.capped",
+    "challenge": "lean/ComparatorChallenges/OneTapeSpace.lean",
+    "config": "lean/ComparatorChallenges/OneTapeSpace.json",
+    "solution": "lean/OAI/Computability/SpaceSimulation/Main.lean",
+    "challenge_blob": "662fe3383a4d94c82d8327108d757bee00547775",
+    "config_blob": "ee45b5d9d29b7a11ca555e8e8b0c704b5e18c60c",
+    "solution_blob": "7bc46021e50c0c88ea2a63741889db254061b6f2",
+    "challenge_sha256": "8582043a2836b5625a970d63f9c0c508347ad1c39ef12a7aef0168e555e02c81",
+    "config_sha256": "b5f9be3f8393148089887b527cfc44f0a55d15e8db95888376e23360b026ec2d",
+    "solution_sha256": "c8f8cd39bea6aff51d192b4fd500c091bcd18c5020edc4932e8dd6746b284033",
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "enable_nanoda": false
+  },
+  "artifact": {
+    "artifact_id": 13035705546,
+    "zip_bytes": 10308,
+    "zip_sha256": "fb8586c5b2a6a54519afb1eab14a8f5a7c0dca1bfe78c248b836175980e87b1e",
+    "receipt_sha256": "007256f89ff32d3cff24c8f569522b0f4b29437e9b7b49ecbb0957578590bf9d",
+    "zip_exact_members": 12,
+    "receipt_listed_sha256_and_byte_counts": "11/11",
+    "zip_digest_and_size_match_provider": true,
+    "selected_index_and_declaration_match_crosswalk": true,
+    "source_challenge_config_sha256_recomputed_against_immutable_upstream": true,
+    "source_git_blobs_checked": true,
+    "manifest_pre_post_unchanged": true,
+    "hardened_exit": 0,
+    "diagnostic_exit": null,
+    "diagnostic_artifacts_present": false,
+    "comparator_hardened_accepted": true,
+    "kernel_acceptance_log_observed": true,
+    "comparator_success_log_observed": true,
+    "log_acceptance": [
+      "Lean default kernel accepts the solution",
+      "Your solution is okay!",
+      "Finished with result: success"
+    ],
+    "challenge_placeholder_sorry_not_counted_as_solution": true
+  },
+  "coverage": {
+    "protected_before_candidate": 56,
+    "protected_indices_before_candidate": "0-54,199",
+    "candidate_index": 55,
+    "protected_if_merged": 57,
+    "outstanding_if_merged": 143,
+    "protected_ledger_files_before_candidate": 32,
+    "historical_indexed_runs": 55,
+    "all_indexed_runs_terminal_success": true,
+    "active_indexed_runs": 0,
+    "duplicate_admission": false,
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Downloaded authenticated GitHub Actions ZIP artifact 13035705546 for run 41181232116, job 124478870858; independently hashed exact 10308-byte ZIP SHA256 fb8586c5b2a6a54519afb1eab14a8f5a7c0dca1bfe78c248b836175980e87b1e, matching provider metadata. Verified exact 12 ZIP members and 11/11 receipt-listed SHA256 and byte counts; receipt SHA256 007256f89ff32d3cff24c8f569522b0f4b29437e9b7b49ecbb0957578590bf9d. Independently fetched exact pinned upstream challenge/config/solution and Lake manifest through authenticated GitHub connector; recomputed SHA256 and checked Git blobs, crosswalk-selected index55/declaration/config membership, hardened exit 0, absent diagnostic, Lean default kernel and Comparator acceptance.",
+    "adversary_non_authoring_read_only": "Separate non-authoring logical read-only audit checked exact protected main 38d7a86b594257bf3691a60e673e62fbf39879e0, 32 protected ledgers covering indices 0-54 and 199 without index55 duplicate, and all 55 indexed workflow runs (numbers 1-55) terminal success, none active. Resolved earlier uncertain index55 dispatch to unique confirmed run 41181232116 by selected artifact identity, not run_number alone. Verified only permitted axioms and Nanoda disabled; challenge placeholder not solution; unchanged pinned Lake manifest. No manuscript semantic correspondence or certification claim.",
+    "amanuensis": "Append-only index55 candidate ledger on ordinary branch, pending protected PR merge and exact protected-main readback. Parent issue #330 stays open. No separate physical GitHub identities or routine Human Steward approval required."
+  },
+  "transport": "Authenticated GitHub connector read policy, exact protected main, 16 repository Actions history pages (55 indexed runs), job and artifact metadata, and downloaded artifact. Independent local SHA256/byte verification of connector-delivered ZIP. GCL_Commander minimal read-only command succeeded initially but later failed internally; system_status was checked and one bounded recovery probe failed; no further CHAD commands or duplicate dispatch. Index55 ambiguous previous dispatch resolved by confirmed run/artifact identity.",
+  "next_action": "Protect-admit exact index55 evidence through PR and protected main readback; then freshly reconcile all run history and dispatch distinct unadmitted indices 56-58 within three concurrent slots when authenticated execution transport is healthy. Separate semantic manuscript correspondence and public certification."
+}
