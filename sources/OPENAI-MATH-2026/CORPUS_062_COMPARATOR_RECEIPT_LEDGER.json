@@ -1,0 +1,101 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+    "runner_head": "24f043988fe860a95a65baac9a4dcdec69532203"
+  },
+  "entries": [
+    {
+      "index": 62,
+      "declaration": "OAI.Generator.single_generation_of_II1_separable_predual",
+      "runner": {
+        "run_id": 41205817343,
+        "job_id": 124550575880,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41205817343",
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "24f043988fe860a95a65baac9a4dcdec69532203"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/FactorGeneration.lean",
+        "config": "lean/ComparatorChallenges/FactorGeneration.json",
+        "solution": "lean/OAI/Analysis/FactorGeneration/Main.lean",
+        "challenge_sha256": "2e6b0087e27aa2814dd212e5957af3b56670ea2ce07ae049a47908ada5581bb5",
+        "config_sha256": "4088aa35a7a507a148ff9ca928421bc372bd765c0b0e41c6cf1a0888fc11ef10",
+        "solution_sha256": "4753cdbc2e8b15aa5c4d9c21bee3ee37eb9ff95c1dc9d43cb6758d687d0a8392",
+        "challenge_blob": "a8b9d4d4b4fe8864fdec3053e0bca4b70e197f66",
+        "config_blob": "61565541cc63e581fa5e0d14458616de519b9448",
+        "solution_blob": "cb864e7290dcce253f962970fb75ebb510e52a3e",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13046211733,
+        "zip_bytes": 11056,
+        "zip_sha256": "3f2110324109f81fc3c1d4cb043f1f0c96f8eca89408ed5e358f470c5cde8592",
+        "receipt_sha256": "5523e8fb844da353b8de2dee84eacfc2516ee459541299f64bdf57aa28cbc0ce",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ],
+  "coverage": {
+    "protected_before_candidate": 64,
+    "protected_indices_before_candidate": "0-61,63,199",
+    "candidate_indices": [
+      62,
+      64
+    ],
+    "protected_if_merged": 66,
+    "outstanding_if_merged": 134,
+    "duplicate_admission": false,
+    "prior_protected_ledger_files": 36,
+    "historical_indexed_runs": 64,
+    "active_indexed_runs_at_review": 0,
+    "all_indexed_runs_successful": true,
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Downloaded ZIP for run 41205817343 through authenticated GitHub connector. Independently matched provider ZIP SHA256 and 11056 byte size; checked 12 unique ZIP members and 11/11 receipt-listed SHA256 and byte counts. Recomputed exact pinned challenge/config/solution and Lake manifest SHA256 from immutable openai/math source and checked Git blobs. Verified UTF-8-sorted 200-row crosswalk index 62, Lean 4.34.1, hardened exit zero, no diagnostic fallback, and Lean kernel and Comparator success logs.",
+    "adversary_non_authoring_read_only": "Distinct logical non-authoring read-only audit of run, receipt, source and prior coverage. Indices 62 and 64 are distinct, previously unadmitted, and neither duplicates protected 0–61,63,199. No diagnostic fallback; Nanoda disabled; only allowed axioms; challenge placeholder not promoted as solution. Logical role only, not a separate identity or independent mathematical certification.",
+    "amanuensis": "Append-only exact one-index receipt ledger. Source, runner, job, artifact and evidence identities retained; protected coverage remains 64/200 until candidate PR merge and readback. Keep issue #330 OPEN; manuscript-semantic correspondence and public MATHCERT certification are separate."
+  },
+  "transport": "GCL_Commander system_status returned internal error and one bounded minimal run_bash recovery probe also failed; authenticated GitHub connector retrieved all 64 indexed workflow runs, the exact two terminal ZIP artifacts, immutable sources, and protected state. No new dispatch attempted; transport failure is not a GitHub or mathematical failure.",
+  "next_action": "Review exact candidate and relevant protected checks; merge through protected controls and read back main. Then reconcile live run history and dispatch eligible distinct indices 65–67 when authenticated execution transport is healthy; keep #330 open."
+}
