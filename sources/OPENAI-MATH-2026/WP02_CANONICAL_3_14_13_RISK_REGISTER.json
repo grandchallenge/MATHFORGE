@@ -282,7 +282,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": false,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -292,10 +292,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_036_NUMERICAL_SEMIAMPLENESS_OCT6_LITERAL_STATEMENTS_AND_DEPENDENCIES.json",
+          "git_blob": "078f65e30ddb659f8d50ce0f2b8f1a9e15fdf4ef"
         }
       ],
-      "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+      "formal_declaration_mapping": "NO_DIRECT_TITLE_OR_PATH_MATCH_IN_PINNED_CROSSWALK; EXACT_LEAN_DECLARATION_NOT_ESTABLISHED",
+      "exact_review_target": "Adjudicate October 6 Log abundance Theorem 3.55/Proposition 3.30 and LI Corollary 6.2 applicability, sufficiency, independence and circularity for the numerical semiampleness proof; identify exact Lean declaration if any. All 39 literal theorem/lemma/proposition/corollary environments are unchanged, but revised proof dependencies remain unresolved.",
+      "literal_hypothesis_conclusion_delta": "October 4/6 TeX: main theorem thm:main hypotheses and conclusion literally identical; all 39 included mathematical statement environments (3 theorems, 24 lemmas, 9 propositions, 3 corollaries) literally unchanged. October 6 adds explicit dependency scope for log abundance K Theorem 3.55/Proposition 3.30, LI Corollary 6.2, and companion theorem numbers; source comparison does not establish proof sufficiency or independence."
     },
     {
       "key": "056:preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf",

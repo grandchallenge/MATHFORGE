@@ -1,0 +1,162 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_036_NUMERICAL_SEMIAMPLENESS_OCT6_LITERAL_SOURCE_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "newer_source_used": false
+  },
+  "candidate_base_protected_main": "74d55f2d3438de78ee9e0b59b44b248aa449b190",
+  "scope": "One previously unassessed repaired-14 entry: family 036 numerical semiampleness, October 4 to October 6. Source-edition literal statement and proof-dependency documentary audit; not mathematical validation.",
+  "editions": {
+    "previous": {
+      "date": "2026-10-04",
+      "root": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026",
+      "pdf": {
+        "path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026/numerical-generalized-abundance.pdf",
+        "git_blob": "e92247b4fd69cd37b19d2390d7f520b9bcb31674"
+      },
+      "build_tree": "ec59a6aa1a3e2183cee655d8438caf5c415254ac"
+    },
+    "current": {
+      "date": "2026-10-06",
+      "root": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026",
+      "pdf": {
+        "path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf",
+        "git_blob": "c2a5826f25bbd65b0c16a09e561a50c40831c8b7"
+      },
+      "readme": {
+        "path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/README.md",
+        "git_blob": "0ab8ec4ac41e2cf365a78a94a60ab02f9d406ca8"
+      },
+      "build_tree": "cf4e877dc88cc0e0064fc455f398728da5e782af"
+    }
+  },
+  "source_file_comparison": {
+    "method": "Enumerate complete pinned Git build trees recursively, compare all twelve build-file Git blob identities, extract literal LaTeX statement environments from the seven directly included section files, and line-compare changed source files.",
+    "build_files_total": 12,
+    "changed_build_files": 4,
+    "unchanged_build_files": 8,
+    "changed": [
+      {
+        "path": "build/main.tex",
+        "previous_blob": "16f06878f9f8747995ccd98670034b4a36e41bc4",
+        "current_blob": "a2b366385f1124f6bf8fa341b030bd0ede2334a1",
+        "delta": "Driver date only, October 4 to October 6; abstract unchanged."
+      },
+      {
+        "path": "build/sections/01-introduction.tex",
+        "previous_blob": "e0c6b0fe24ee4db8f26fce7cf754b2a08fa8bd51",
+        "current_blob": "03bc09bc7b92fdb4417d265cc95093bc28e1fa53",
+        "delta": "Two prose passages change: description of threefold abundance sources and an explicit logarithmic Iitaka reference to LI Corollary 6.2; both theorem environments unchanged."
+      },
+      {
+        "path": "build/sections/02-preliminaries.tex",
+        "previous_blob": "0b943794fec21537c9fc9e3ceaf4d84b12e5af24",
+        "current_blob": "0908906a30f8630f16ec80f67656af2c49cc99b2",
+        "delta": "Adds explicit restricted model/contraction dependency on K Theorem 3.55 and K Proposition 3.30; spells out gklt base, nef carrier, modified-big boundary, multiplier-ideal descent and non-klt closed-subspace contraction. Recasts logarithmic Iitaka hypothesis as K Assumption 1.1 supplied by LI Corollary 6.2. Five literal statement environments unchanged."
+      },
+      {
+        "path": "build/companions.bib",
+        "previous_blob": "51ec80d0e4b61a16d78bd92b5b02ffd7147f9348",
+        "current_blob": "cf76c842ea698f853ff925031498a9dd38d9b0f5",
+        "delta": "K companion advances log-abundance October 4 to October 6 and adds precise theorem/proposition/lemma numbers; LI citation adds Corollary 6.2, Lemmas 4.1/4.3, Proposition 4.5."
+      }
+    ],
+    "unchanged": [
+      {
+        "path": "build/figures/zero-two-diagonals.tex",
+        "git_blob": "4857702c33569a5b7eadbfdb0d2f0d4a1f7ab124"
+      },
+      {
+        "path": "build/literature.bib",
+        "git_blob": "94591fd6bd8ee8b53dabf619536d09275abeb1f1"
+      },
+      {
+        "path": "build/preamble.tex",
+        "git_blob": "cb37e04a151339ad4bdbd5f12c4e61154030a90f"
+      },
+      {
+        "path": "build/sections/03-descent.tex",
+        "git_blob": "c350a8eaa26b9c0be695f739976436561efcdc22"
+      },
+      {
+        "path": "build/sections/04-adjoint.tex",
+        "git_blob": "db2d5e289a4c3cd8f09098dbbb07054dc5bfc9c8"
+      },
+      {
+        "path": "build/sections/05-zero.tex",
+        "git_blob": "e8f00dd0229d3fa98f9852d09602e83b61f385e9"
+      },
+      {
+        "path": "build/sections/06-cycles.tex",
+        "git_blob": "5d3889c3b98ee42a309f1819aa0e54421103f62f"
+      },
+      {
+        "path": "build/sections/07-completion.tex",
+        "git_blob": "9a66881313ff7d2c4f80aae9a437f55f9ced3a0b"
+      }
+    ]
+  },
+  "literal_statement_comparison": {
+    "included_section_pairs": 7,
+    "unchanged_section_blob_pairs": 5,
+    "changed_section_pairs": 2,
+    "method": "Regex-extract complete theorem, lemma, proposition, corollary, definition, remark, claim, hypothesis and convention environments; compare literal text in changed section pairs and rely on identical Git blobs for five other section pairs.",
+    "counts_per_edition": {
+      "theorem": 3,
+      "lemma": 24,
+      "proposition": 9,
+      "corollary": 3,
+      "total": 39
+    },
+    "identical_environments": 39,
+    "added_environments": 0,
+    "removed_environments": 0,
+    "modified_environments": 0,
+    "main_theorem_label": "thm:main",
+    "main_theorem_hypotheses_and_conclusion": "LITERALLY_UNCHANGED",
+    "scope_limit": "Literal TeX source environments; not proof correctness, PDF rendering equivalence, semantic equivalence or mathematical certification."
+  },
+  "dependency_delta": {
+    "new_explicit_K_references": [
+      "Log abundance October 6 Theorem 3.55",
+      "Log abundance October 6 Proposition 3.30",
+      "Log abundance October 6 Theorem 2.13",
+      "Log abundance October 6 Lemma 3.6",
+      "Log abundance October 6 Proposition 3.8"
+    ],
+    "new_explicit_LI_references": [
+      "LI Corollary 6.2",
+      "LI Lemmas 4.1 and 4.3",
+      "LI Proposition 4.5"
+    ],
+    "interpretation": "The repaired manuscript clarifies exact model/contraction and logarithmic Iitaka dependencies without changing its 39 literal mathematical statements. Source correspondence alone cannot establish sufficiency, independence, absence of circularity or applicability of the cited results."
+  },
+  "formalization_crosswalk": {
+    "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "git_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "direct_title_or_path_match": false,
+    "exact_Lean_declaration": "NOT_ESTABLISHED",
+    "limitation": "Text search for numerical semiampleness/title/path in pinned crosswalk; not exhaustive Lean-source inspection."
+  },
+  "risk_register": {
+    "path": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "row_key": "036:preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf",
+    "category": "repaired_14",
+    "update": "Set statement_changed=false at complete literal statement-environment scope; retain proof_changed=true, citation_only=false, source_mismatch=UNASSESSED, unresolved=true; preserve 3/14/13 and 30 distinct entries."
+  },
+  "replay": {
+    "source": "GitHub authenticated exact-commit contents and Git tree/blob API; compare all 12 build paths, seven included section pairs, 39 extracted environments, and line changes in two changed sections and bibliography.",
+    "toolchain": "Source text / Git blob comparison only; Lean toolchain not invoked",
+    "checks": [
+      "12/12 build-file paths accounted for",
+      "7/7 included TeX section pairs accounted for",
+      "39/39 mathematical statement environments literally identical",
+      "4/4 changed build-file blobs distinguished",
+      "8/8 unchanged build-file blob pairs verified"
+    ]
+  },
+  "claim_boundary": "SOURCE_OR_FORMAL_EVIDENCE_ONLY; mathematical dependency sufficiency and exact Lean correspondence UNADJUDICATED; no Lean replay or certification.",
+  "unresolved": "F036_NUMERICAL_SEMIAMPLENESS_OCT6_K_THEOREM_3_55_BASE_PRESENTATION_AND_LI_COR_6_2_DEPENDENCY_SUFFICIENCY_INDEPENDENCE_UNADJUDICATED"
+}
