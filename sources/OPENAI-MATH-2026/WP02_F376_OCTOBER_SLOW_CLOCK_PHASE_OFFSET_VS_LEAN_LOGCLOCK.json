@@ -1,0 +1,108 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_OCTOBER_SLOW_CLOCK_PHASE_OFFSET_VS_LEAN_LOGCLOCK/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "family 376 October 6 2026, input-offset slow torus alternative"
+  },
+  "candidate_base": "grandchallenge/MATHFORGE@58de5c05a6e5e9d5893cd92852f56f1252719a51",
+  "scope": "One new exact scalar internal-clock comparison: October autonomous stationary-companion slow profile versus pinned Lean logClock/slowFromRest; not a re-admission of the previously recorded adjacent inverse-time rate or source-to-Lean startup-ramp identity.",
+  "source_files": [
+    {
+      "role": "october_clocks",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "anchors": [
+        "\\alpha_1=\\sigma(2t-1)/(1+t)",
+        "s_{\\alpha_1}(t)=s_{\\alpha_1}(1)+\\log((1+t)/2)",
+        "The new path is $X(\\log(1+t);a_0)$."
+      ]
+    },
+    {
+      "role": "lean_startup",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StartupClock.lean",
+      "git_blob": "8939c866e30d10f2d5926718039c780efec81514",
+      "anchors": [
+        "def startupRamp (t : ℝ) : ℝ := Real.smoothTransition (2 * t - 1)",
+        "theorem startupRamp_tail"
+      ]
+    },
+    {
+      "role": "lean_slow",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowProgram.lean",
+      "git_blob": "d2964e26b20fcfc2f7bc0b7f4cf19446250dc6eb",
+      "anchors": [
+        "def slowFromRest (V : Velocity)",
+        "if y.1 ≤ 0 then 0 else (1 + y.1)⁻¹ • V (Real.log (1 + y.1), y.2)",
+        "theorem slowFromRest_eq"
+      ]
+    },
+    {
+      "role": "lean_reparam",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/Reparametrization.lean",
+      "git_blob": "c5aa29c0d4ecb1ae3a56d05ad3a8d45313d5d58c",
+      "anchors": [
+        "noncomputable def logClock (t : ℝ) : ℝ := Real.log (1 + t)",
+        "theorem logClock_onto",
+        "theorem logClock_hasDerivAt"
+      ]
+    },
+    {
+      "role": "lean_torus_slow",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "git_blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "anchors": [
+        "noncomputable def torusSlowVelocity",
+        "slowFromRest (loadedMachineVelocity torusSlowStart (1 / 2) I hI)",
+        "theorem torus_slow_effective_computation"
+      ]
+    }
+  ],
+  "mathematical_comparison": {
+    "source_definition": "rho(s)=exp(-1/s) for s>0, zero otherwise; sigma(s)=rho(s)/(rho(s)+rho(1-s)); alpha1(t)=sigma(2t-1)/(1+t); s1(t)=integral_0^t alpha1(r) dr.",
+    "source_tail": "For t>=1, sigma(2t-1)=1, hence alpha1(t)=1/(1+t) and s1(t)=s1(1)+log((1+t)/2).",
+    "lean_clock": "Reparametrization.logClock(t)=log(1+t), derivative 1/(1+t) on t>=0. SlowProgram.slowFromRest V(t,x)=0 for t<=0, otherwise (1+t)^-1 V(log(1+t),x).",
+    "strict_phase_offset_proof": [
+      "On [0,1/2], sigma(2r-1)=0. On (1/2,1), 0<sigma(2r-1)<1 because both rho(2r-1) and rho(2-2r) are strictly positive.",
+      "Thus 0<s1(1)=integral_(1/2)^1 sigma(2r-1)/(1+r) dr < integral_0^1 1/(1+r) dr = log 2.",
+      "Set Delta=s1(1)-log 2. Then -log 2 < Delta < 0, so Delta is strictly nonzero.",
+      "For every t>=1, s1(t)=log(1+t)+Delta, whereas Lean logClock(t)=log(1+t). Hence the scalar internal clocks differ by the fixed nonzero Delta throughout the tail."
+    ],
+    "construction_separation": "October U_alpha1(t,x)=alpha1(t) W(x) with autonomous companion W; Lean torusSlowVelocity uses slowFromRest of loadedMachineVelocity, a time-dependent input evaluated at logClock(t). Equal inverse-time tail factors and decay rates do not identify the internal phase, loaded field, observer, full trajectory or force.",
+    "positive_bridge": "The October manuscript's distinct Euclidean logarithmic-template subsection uses the literal X(log(1+t);a0), which agrees at scalar-clock level with pinned Lean logClock. That subsection must not be silently substituted for the autonomous torus alpha1 alternative.",
+    "consequence": "Any exact source-to-Lean orbit equivalence for the October slow torus alternative must explicitly handle the nonzero internal phase shift Delta and independently identify the autonomous source W with the relevant Lean loaded field or an appropriate conjugacy; the adjacent torus_slow_effective_computation theorem alone is not the requested October formalization."
+  },
+  "replay": {
+    "method": "Authenticated GitHub exact-ref UTF-8 file reads and GitHub-reported blob SHA checks, with literal anchor matching; elementary integral inequalities proved by positivity of the source smooth step and exact log antiderivative.",
+    "source_file_blob_checks": "5/5 PASS",
+    "literal_anchor_checks": "14/14 PASS",
+    "analytic_steps": "4/4 checked by explicit inequalities and fundamental theorem of calculus; no computer algebra or independent kernel proof claimed.",
+    "reproduce": "At openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a fetch each source_files path; compare its GitHub blob SHA and test all anchors literally; use 0<sigma(2r-1)<1 for 1/2<r<1, then integrate 1/(1+r) from 0 to 1 to obtain log 2.",
+    "limitations": "This is a source-locked analytic clock comparison and theorem-signature mapping, not a Lean compilation, full construction isomorphism, source theorem validity audit or MATHCERT certification."
+  },
+  "prior_admissions_not_duplicated": [
+    "PR #385 adjacent Lean inverse-time decay rate and general structural nonidentity",
+    "PR #460 exact scalar startupRamp correspondence",
+    "PR #470 terminal coordinate-band mismatch"
+  ],
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false,
+    "canonical_register": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "canonical_register_blob": "8bc99b7d7f9473f44da1429be61b6f8249631aeb"
+  },
+  "unresolved": [
+    "F376_OCTOBER_AUTONOMOUS_W_TO_LEAN_LOADED_MACHINE_VELOCITY_ORBIT_CONJUGACY_UNADJUDICATED",
+    "F376_OCTOBER_SLOW_PROFILE_TO_LEAN_LOGCLOCK_NONZERO_PHASE_OFFSET_REQUIRES_EXPLICIT_ALIGNMENT",
+    "F376_OCTOBER_POISSON_PROJECTED_FORCE_AND_PRESSURE_TO_LEAN_THEOREM_UNMAPPED",
+    "F376_379_SOURCE_COMPILER_BRANCH_TABLE_AND_SPATIAL_FIELD_ISOMORPHISM_UNADJUDICATED",
+    "F376_MATHEMATICAL_CERTIFICATION_UNADJUDICATED"
+  ],
+  "next_obligation": "For a common pinned source/Lean machine and input, specify the required phase/coordinate conjugacy and test observer preservation; do not infer identity from inverse-time rates or same event detector.",
+  "claim_boundary": "SOURCE_LOCKED_SCALAR_CLOCK_AND_ANALYTIC_PHASE_COMPARISON_ONLY_NOT_FULL_FORMAL_EQUIVALENCE_OR_MATHEMATICAL_CERTIFICATION",
+  "exclusions": "Deferred WP01 indices 145/199 untouched; generic GCL queue-reduction automation untouched."
+}
