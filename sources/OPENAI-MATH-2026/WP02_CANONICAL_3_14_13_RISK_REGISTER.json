@@ -379,7 +379,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": false,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -389,10 +389,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_056_GENERALIZED_CANONICAL_OCT6_LITERAL_STATEMENT_AND_DEPENDENCY_SCOPE.json",
+          "git_blob": "d4c4079d3843b7362d8eef219234ab41d8fbd849"
         }
       ],
-      "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+      "formal_declaration_mapping": "NO_DIRECT_TITLE_MATCH_IN_PINNED_173_SOURCE_200_MAIN_RESULT_CROSSWALK; EXACT_LEAN_DECLARATION_NOT_ESTABLISHED",
+      "exact_review_target": "Verify source dependency sufficiency and noncircularity for the cited OrdinaryKahler negativity, terminal codimension-two smoothness and analytic cycle comparison; establish exact Lean theorem mapping if any. No claim of mathematical validity or proof certification.",
+      "literal_hypothesis_conclusion_delta": "Oct 5/6 inspected complete TeX inputs: 1 theorem, 9 lemmas and 4 propositions literally identical, including thm:termination. Six of seven section blobs and the bibliography blob are identical. Oct 6 adds an introduction paragraph narrowing OrdinaryKahler imports to negativity, terminal codimension-two smoothness and analytic cycle comparison, excluding its canonical bundle formula and absolute supporting-contraction theorem. The driver date changes; the mathematical sufficiency/independence of the cited inputs remains unadjudicated."
     },
     {
       "key": "232:preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf",

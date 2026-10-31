@@ -1,0 +1,172 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_056_GENERALIZED_CANONICAL_OCT6_LITERAL_SOURCE_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "newer_source_used": false
+  },
+  "candidate_base_protected_main": "06c3564cdf519e3a9034f8553b5edd55656c4218",
+  "scope": "Exactly one previously unassessed repaired-14 entry, family 056, Termination of generalized-canonical flips on compact Kähler fourfolds, October 5 to October 6. This is source-edition comparison, not mathematical proof review.",
+  "edition": {
+    "old": "October 5, 2026",
+    "current": "October 6, 2026",
+    "old_pdf": {
+      "path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
+      "git_blob": "744e8b238ed8cde34bad1bf0bb55a423d975d02a"
+    },
+    "current_pdf": {
+      "path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
+      "git_blob": "1ff6ea1842f781c347530b98e23663c003905a13"
+    },
+    "current_readme": {
+      "path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/README.md",
+      "git_blob": "a87b833409132a7923e0d014ebb0049cc5c4ef47"
+    }
+  },
+  "source_file_comparison": {
+    "files": [
+      {
+        "relative_path": "build/build/paper.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/paper.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/paper.tex",
+        "old_blob": "68c61b3e16f44d20d3ec71078e278496bcfd5686",
+        "current_blob": "74117d2cb1244ae28fe52900bf646e5819c27955",
+        "delta": "date October 5 to October 6 only"
+      },
+      {
+        "relative_path": "build/build/sections/01-introduction.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/sections/01-introduction.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/01-introduction.tex",
+        "old_blob": "5243a3224254c404a98c913b88827cabb905eba2",
+        "current_blob": "f0b1b94a7def6fa733fa3dcdca5d0152eda308e4",
+        "delta": "new scope clarification for OrdinaryKahler citation; 333 additional characters"
+      },
+      {
+        "relative_path": "build/build/sections/02-foundations.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/sections/02-foundations.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/02-foundations.tex",
+        "old_blob": "484bceb303c5d3ee400c6808f9a114fe46a31d0c",
+        "current_blob": "484bceb303c5d3ee400c6808f9a114fe46a31d0c",
+        "delta": "identical"
+      },
+      {
+        "relative_path": "build/build/sections/03-comparison.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/sections/03-comparison.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/03-comparison.tex",
+        "old_blob": "b46f5a7fcb0d17b89117c03dc671615aa7141887",
+        "current_blob": "b46f5a7fcb0d17b89117c03dc671615aa7141887",
+        "delta": "identical"
+      },
+      {
+        "relative_path": "build/build/sections/04-low-places.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/sections/04-low-places.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/04-low-places.tex",
+        "old_blob": "a208e7448f320ea762a3f3116a4d62295845e4cd",
+        "current_blob": "a208e7448f320ea762a3f3116a4d62295845e4cd",
+        "delta": "identical"
+      },
+      {
+        "relative_path": "build/build/sections/05-witnesses.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/sections/05-witnesses.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/05-witnesses.tex",
+        "old_blob": "a41ddd6178aa34b0ade485155dc1c9944d018c48",
+        "current_blob": "a41ddd6178aa34b0ade485155dc1c9944d018c48",
+        "delta": "identical"
+      },
+      {
+        "relative_path": "build/build/sections/06-cycles.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/sections/06-cycles.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/06-cycles.tex",
+        "old_blob": "967442a646af261af40f3bf18e96085395ae40ce",
+        "current_blob": "967442a646af261af40f3bf18e96085395ae40ce",
+        "delta": "identical"
+      },
+      {
+        "relative_path": "build/build/sections/07-termination.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/sections/07-termination.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/07-termination.tex",
+        "old_blob": "799c796fe3739c8deed77c0bcf22b7fb56e6b9e7",
+        "current_blob": "799c796fe3739c8deed77c0bcf22b7fb56e6b9e7",
+        "delta": "identical"
+      },
+      {
+        "relative_path": "build/build/references.tex",
+        "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/build/build/references.tex",
+        "current_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/references.tex",
+        "old_blob": "c71778aa49f59ab967948872ad712456aa6711bd",
+        "current_blob": "c71778aa49f59ab967948872ad712456aa6711bd",
+        "delta": "identical"
+      }
+    ],
+    "compared_pairs": 9,
+    "identical_blobs": 7,
+    "changed_blobs": 2,
+    "scope_limit": "These are the nine exact source files directly included by build/build/paper.tex. No claim about all ancillary build artifacts."
+  },
+  "literal_statement_comparison": {
+    "theorem_environments": {
+      "old": 1,
+      "current": 1,
+      "identical": true
+    },
+    "lemma_environments": {
+      "old": 9,
+      "current": 9,
+      "identical": true
+    },
+    "proposition_environments": {
+      "old": 4,
+      "current": 4,
+      "identical": true
+    },
+    "main_theorem_label": "thm:termination",
+    "hypotheses_and_conclusion": "All 14 theorem/lemma/proposition blocks in the seven included sections are literally identical. Main theorem still assumes globally Weil Q-factorial compact Kähler fourfolds, fixed rational b-nef data, initial canonical discrepancy bounds, projective small flip diagrams with opposite ample signs, and concludes that the sequence is finite.",
+    "scope_limit": "Literal environment equality in inspected included TeX is not a proof of semantic validity or PDF-rendered identity."
+  },
+  "new_dependency_scope": {
+    "location": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/build/build/sections/01-introduction.tex",
+    "literal_anchor": "The references to \\cite{OrdinaryKahler} concern only this negativity",
+    "text_delta": "October 6 adds that OrdinaryKahler is used only for the negativity statement, terminal smoothness in codimension two and cycle comparison. It expressly excludes a canonical bundle formula or absolute supporting-contraction theorem from that companion; the small projective diagrams are hypotheses rather than imported existence results.",
+    "interpretation": "Dependency-scope clarification, not an independently established demonstration that the proof is complete, noncircular or sufficient."
+  },
+  "formalization_crosswalk": {
+    "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "git_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "source_papers": 173,
+    "main_results": 200,
+    "direct_title_match": false,
+    "exact_Lean_declaration": "NOT_ESTABLISHED",
+    "limitation": "Negative direct-title match in indexed crosswalk only; no repository-wide proof of absence."
+  },
+  "risk_register": {
+    "path": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "category": "repaired_14",
+    "family_id": "056",
+    "inventory": {
+      "withdrawn": 3,
+      "repaired": 14,
+      "additional_citation_updates": 13,
+      "unique_entries": 30
+    },
+    "update": "Set only this edition row statement_changed=false; retain proof_changed=true, unresolved=true; attach exact source evidence and scope-limited Lean gap."
+  },
+  "replay": {
+    "method": "Authenticated GitHub fetch_file at immutable pinned commit; exact GitHub-reported Git blob SHA identity; JavaScript byte-string comparison of nine TeX source pairs and regex extraction of complete theorem/lemma/proposition environments in seven included sections.",
+    "observed": [
+      "9/9 source file pairs inspected",
+      "7/9 identical Git blobs; 2/9 changed (date in driver and dependency scope in introduction)",
+      "1/1 theorem, 9/9 lemmas, 4/4 propositions literally identical across included sections",
+      "references.tex identical Git blob"
+    ],
+    "limitations": "No PDF rendering, Lean compiler replay, formal theorem correspondence, independent mathematical proof adjudication or MATHCERT certification."
+  },
+  "unresolved": [
+    "Mathematical validity/sufficiency of OrdinaryKahler imported negativity, codimension-two smoothness and cycle comparison results",
+    "Whether the October 6 dependency exclusion fully prevents circularity",
+    "Exact Lean declaration mapping and semantic correspondence"
+  ],
+  "disposition": "F056_GENERALIZED_CANONICAL_OCT6_STATEMENTS_UNCHANGED_DEPENDENCY_SCOPE_CLARIFIED",
+  "claim_boundary": "PINNED_SOURCE_LITERAL_TEX_AND_DEPENDENCY_DESCRIPTION_ONLY_NOT_MATHEMATICAL_CERTIFICATION",
+  "exclusions": "Deferred WP01 indices 145/199 and generic GCL queue-reduction automation untouched."
+}
