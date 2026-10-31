@@ -544,7 +544,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": false,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -554,10 +554,14 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_341_HYPERSYMPLECTIC_OCT7_PRESCRIBED_CLASS_DELTA.json",
+          "git_blob": "b643192a358c0d050c21c81e16fe9cd254e036bc"
         }
       ],
       "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+      "exact_review_target": "Adjudicate the October 7 prescribed-class criterion thm:taming-cone under closed definite-pair and b^+=3 hypotheses; check independence from general tame/compatible cone comparison and dependence on October 6 Taming companion; establish exact Lean mapping. All 57 literal statement environments are unchanged, but proof-dependency sufficiency is unresolved."
     },
     {
       "key": "342:preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
