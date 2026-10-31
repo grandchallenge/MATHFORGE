@@ -1,0 +1,74 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_TRACKED_CORRIDOR_CLOCK_ORBIT_BRIDGE/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "candidate_base": {
+    "repository": "grandchallenge/MATHFORGE",
+    "protected_main_sha": "138fbbe34f5249d9cd0378b67d53e7e87193c0a6"
+  },
+  "scope": "Exactly one source-to-Lean property-level tracked-corridor clock and conditional orbit-lifting crosswalk; no global field identity or mathematical certification.",
+  "primary_files": [
+    {
+      "role": "companion379",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "lines": "433-460,835-859"
+    },
+    {
+      "role": "leanClock",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/UnitSpatialClock.lean",
+      "blob": "b404b9c090a5645e5833c4a77a54c3ad1c46530b",
+      "lines": "13-35"
+    },
+    {
+      "role": "leanOrbit",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/SpatialSuspension.lean",
+      "blob": "5434dde6edf0b84a613e2bf61da99743be636527",
+      "lines": "12-13,47-90,112-123"
+    }
+  ],
+  "findings": {
+    "geometric_region": "The source September 27 planar-processor theorem gives J_*=[1/8,7/8]×[1/32,7/8]. Lean clockRectangle has precisely those coordinatewise closed bounds. Both are in the unit-square chart.",
+    "clock_on_corridor": "Lean unitSpatialClock_one proves unitSpatialClock(x)=1 whenever x∈clockRectangle.carrier. Hence the source manuscript's assertion ψ(s)∈J_* over a tracked segment, after coordinate identification, supplies the hg clock=1 hypothesis for g=unitSpatialClock.",
+    "conditional_orbit_lifting": "Lean spatialSuspension_tracks_interval already proves equality of a candidate suspension path and a material flow on Icc a b when continuity hc, initial match hp, planar derivative hψ for the SAME V, clock hg, Lipschitz hK, and material flow hΦ hold. The corridor observation addresses only hg. It does not identify source V with Lean normalizedHamiltonian, construct hΦ, or discharge hK.",
+    "prior_normalization": "Prior shared-cutoff global mismatch g_Lean−g_source=−(1/2)Cx'Cy is compatible with equality of the clock value 1 on the common corridor; no global extensional equality follows.",
+    "source_status": "The source's tracked-trajectory containment is a manuscript claim, not independently validated. This is a literal source and conditional Lean theorem-hypothesis correspondence, not a proof of the manuscript's claim."
+  },
+  "bridge": {
+    "substitution": "g:=unitSpatialClock; for s∈Ico a b, ψ(s)∈clockRectangle.carrier implies g(ψ(s))=1 by unitSpatialClock_one.",
+    "remaining_hypotheses": [
+      "hψ: matching planar V and its trajectory derivative",
+      "hc and hp: candidate path continuity and initial match",
+      "hK and hΦ: Lipschitz and material-flow hypotheses",
+      "global clock identity (not needed for this conditional lemma)",
+      "October slow profile, Poisson projection and full semantic equivalence"
+    ]
+  },
+  "replay": {
+    "method": "Authenticated exact-ref GitHub UTF-8 reads and GitHub-reported blob SHA comparisons, literal anchor checks and direct theorem-hypothesis inspection; no Lean compilation or independent proof verification.",
+    "pinned_blobs_passed": 3,
+    "pinned_blobs_total": 3,
+    "literal_anchors_passed": 17,
+    "literal_anchors_total": 17
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false
+  },
+  "unresolved": [
+    "F376_379_SOURCE_PLANAR_V_TO_LEAN_NORMALIZED_HAMILTONIAN_TRAJECTORY_IDENTITY_UNADJUDICATED",
+    "F376_379_SOURCE_FLOW_LIPSCHITZ_AND_MATERIAL_FLOW_HYPOTHESES_UNADJUDICATED",
+    "F376_379_GLOBAL_SPATIAL_CLOCK_IDENTITY_UNADJUDICATED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_MATHCERT_UNADJUDICATED"
+  ],
+  "next_obligation": "Compare the planar processor V and compiled Lean normalizedHamiltonian on the common corridor and separately verify hψ, hK and hΦ.",
+  "claim_boundary": "SOURCE_GEOMETRY_AND_EXISTING_LEAN_CONDITIONAL_THEOREM_MAPPING_ONLY_NOT_NEW_PROOF_OR_COMPILATION_OR_CERTIFICATION",
+  "exclusions": "No WP01 indices 145/199; no generic GCL queue automation."
+}
