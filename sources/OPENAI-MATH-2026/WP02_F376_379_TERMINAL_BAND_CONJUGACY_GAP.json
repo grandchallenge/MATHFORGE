@@ -1,0 +1,155 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_HALTING_BAND_CONJUGACY_AND_DETECTOR_GAP/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "editions": [
+      "family 376 October 6 2026 input-offset corollary",
+      "family 379 September 27 2026 stationary companion"
+    ]
+  },
+  "candidate_base": "grandchallenge/MATHFORGE@8dc7daca6fb59aea2db4f74a28f9f1b2ea74429b",
+  "scope": "One exact source-to-Lean geometric comparison of terminal encoded-point vertical bands, including the pinned Lean affine coordinate conjugacy and rational initial shift; source and Lean observation equivalence is not conflated with equality of the encodings or fields.",
+  "source_files": [
+    {
+      "role": "october376",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "anchors": [
+        "\\label{bc:input-offset-state-squares}",
+        "\\lambda=\\frac1{100(m+N+1)}",
+        "The halt control has lower height $1/16$",
+        "initial code is $(1/4,1/4)$",
+        "\\label{bc:input-offset-event}",
+        "O=\\{1/32<Y<1/8\\}",
+        "\\cite[Theorem~4.1 and Section~5]{OpenAI379StationaryA2}"
+      ]
+    },
+    {
+      "role": "september379",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "git_blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "anchors": [
+        "\\label{eq:state-squares}",
+        "\\lambda=\\frac1{100(m+N+1)}",
+        "1/16,&i=R_{q_{\\rm H}}",
+        "The initialized code is exactly $p=(1/4,1/4)$.",
+        "H=\\{(X,Y)\\in\\mathbb T^2:1/32<Y<1/8\\}"
+      ]
+    },
+    {
+      "role": "leanLabels",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/FiniteLabels.lean",
+      "git_blob": "c18cd8b50fe3780738fe6883ae0bc6430006321b",
+      "anchors": [
+        "def bandScale",
+        "1 / (64 * ((controlEnumeration M).length + 1))",
+        "def stateOffset",
+        "3 / 4 else 1 / 4",
+        "theorem bandScale_le"
+      ]
+    },
+    {
+      "role": "leanConjugacy",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarConjugacy.lean",
+      "git_blob": "0d954f9091727f97ca45946aebcdf201e47a7271",
+      "anchors": [
+        "def map (a b ε c : ℚ)",
+        "![(a : ℝ) + (ε : ℝ) * x 1, (b : ℝ) - (c : ℝ) * x 0]",
+        "def instruction (a b ε c : ℚ)",
+        "r.factor⁻¹"
+      ]
+    },
+    {
+      "role": "leanRecorder",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarRecorder.lean",
+      "git_blob": "f790c0fd9a074e33a67e816fe57e8e01d5340433",
+      "anchors": [
+        "def coordinateMap",
+        "(43 / 128)",
+        "(11 / 32)",
+        "def point",
+        "def observer",
+        "1 / 32 < x 1 ∧ x 1 < 1 / 8"
+      ]
+    },
+    {
+      "role": "leanObservation",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/RecorderObservation.lean",
+      "git_blob": "abe4f6f419a646e3c4de114c150850f749ba1a9b",
+      "anchors": [
+        "theorem codedPoint_first",
+        "3 / 4 : ℝ",
+        "1 / 4",
+        "encode_mem_unit"
+      ]
+    },
+    {
+      "role": "leanShift",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarInitialShift.lean",
+      "git_blob": "b5535db08d639c76e5b4ff19667745e3d0d5c33e",
+      "anchors": [
+        "def initialShift",
+        "theorem initialShift_spec",
+        "![1 / 4, 1 / 4]",
+        "theorem initialShift_small",
+        "3 / 1024",
+        "theorem shifted_halting_clearance",
+        "theorem normalized_run_observer_iff"
+      ]
+    },
+    {
+      "role": "leanTranslation",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarProcessorData.lean",
+      "git_blob": "ad4813593d073be6cb290ca5eb9482456363a6e8",
+      "anchors": [
+        "def normalizedInstruction",
+        "translatedInstruction (initialShift (freshInput I)",
+        "theorem translatedInstruction_affine",
+        "theorem normalizedInstruction_period"
+      ]
+    }
+  ],
+  "finding": {
+    "source_terminal_band": "The October 6 family-376 clocks.tex and September 27 companion specify Psi_i(x,y)=(a_*+lambda*x,b_i+lambda*y), terminal b_H=1/16, lambda=1/[100(m+N+1)]. Since m,N are finite nonnegative counts and a tape radix code y lies in [0,1], every source terminal encoded point has 1/16 <= Y <= 1/16+lambda <= 29/400. The actual m,N are positive, so the last inequality is strict.",
+    "lean_preconjugacy": "Pinned RecorderObservation.codedPoint_first and FiniteLabels.stateOffset give preconjugacy first coordinate u_0=(3/4 if halting else 1/4)+kappa*(x-1/2), with 0<=x<=1 and 0<kappa=bandScale<=1/64.",
+    "lean_conjugacy": "Pinned PlanarRecorder.coordinateMap is PlanarConjugacy.map(shift,43/128,compression,11/32). Its physical vertical coordinate is Y=43/128-(11/32)*u_0, regardless of horizontal compression. The terminal center is 5/64 and the nonterminal center is 1/4. This coordinate rotation/reflection with positive determinant is not the source's literal scalar Psi_i embedding.",
+    "lean_translation": "Pinned PlanarInitialShift.initialShift_spec sends the initialized recorder point to (1/4,1/4). For freshInput, fresh_initial_nonhalting plus initialShift_small gives |delta_Y|<=3/1024. PlanarProcessorData.normalizedInstruction applies exactly this translation to the program, so the normalized encoded points use the same delta.",
+    "sharp_uniform_bounds": "For every Lean valid input and any terminal recorder configuration of its fresh machine, the normalized physical Y is in [297/4096,343/4096]. For any nonterminal recorder configuration it is in [1001/4096,1047/4096]. These follow from the codedPoint_first identity, |x-1/2|<=1/2, kappa<=1/64, and |delta_Y|<=3/1024. The total deviation is at most 11/4096+12/4096=23/4096.",
+    "disjoint_terminal_bands": "The source terminal upper bound 29/400 is strictly below the normalized Lean terminal lower bound 297/4096; their difference is exactly 1/102400. Hence the two terminal encoded-point vertical bands are disjoint under literal physical-coordinate identification, even after Lean's input-dependent initial shift. This rules out literal equality of the two terminal coordinate embeddings; it does NOT rule out a nontrivial coordinate conjugacy or identical halting observations.",
+    "observer_preservation": "Both source terminal Y in [1/16,29/400] and Lean normalized terminal Y in [297/4096,343/4096] lie strictly inside the same detector (1/32,1/8). Lean normalized_run_observer_iff supplies its own halting equivalence; the source companion asserts its own. Agreement of the detector event is a property-level bridge, not proof of equal complete trajectories.",
+    "comparison_to_prior": "Prior PR #467 mapped the three affine move formulas on refined cylinders and noted the normalized initial point, and PR #468 mapped the seven-row compiler. Neither identified the explicit normalized terminal vertical center, the uniform disjointness gap, or the source-vs-Lean terminal encoding obstruction. This record does not re-admit those earlier claims."
+  },
+  "replay": {
+    "method": "Authenticated GitHub exact-ref UTF-8 reads, GitHub-reported Git blob SHA and literal-anchor checks, plus local Python stdlib Fraction exact arithmetic.",
+    "pinned_blob_matches": 8,
+    "pinned_blob_total": 8,
+    "literal_anchor_matches": 42,
+    "literal_anchor_total": 42,
+    "arithmetic_assertions": 8,
+    "arithmetic_passed": 8,
+    "python3_command": "python3 - <<'PY'\nfrom fractions import Fraction as F\nsource_upper=F(1,16)+F(1,100)\nlean_centre_h=F(43,128)-F(11,32)*F(3,4)\nlean_centre_n=F(43,128)-F(11,32)*F(1,4)\nhalfwidth=F(11,32)*F(1,64)*F(1,2)\nvertical_shift=F(3,1024)\nerror=halfwidth+vertical_shift\nlo_h,hi_h=lean_centre_h-error,lean_centre_h+error\nlo_n,hi_n=lean_centre_n-error,lean_centre_n+error\nassert (lean_centre_h,lean_centre_n)==(F(5,64),F(1,4))\nassert error==F(23,4096)\nassert (lo_h,hi_h)==(F(297,4096),F(343,4096))\nassert (lo_n,hi_n)==(F(1001,4096),F(1047,4096))\nassert lo_h-source_upper==F(1,102400)>0\nassert F(1,32)<F(1,16)<=source_upper<F(1,8)\nassert F(1,32)<lo_h<=hi_h<F(1,8)\nassert F(3,16)<lo_n<=hi_n<F(7,8)\nprint(\"PASS 8/8 exact rational center, error, bounds, separation and observer checks\")\nPY",
+    "observed": "PASS 8/8 exact rational center, error, bounds, separation and observer checks",
+    "limitations": "No new Lean compilation, kernel proof, source field identity, exact machine representation isomorphism, rendered-PDF equivalence, or MATHCERT certification."
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false,
+    "canonical_register": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "canonical_register_blob": "8bc99b7d7f9473f44da1429be61b6f8249631aeb"
+  },
+  "unresolved": [
+    "F376_379_SOURCE_TERMINAL_STATE_EMBEDDING_TO_LEAN_NORMALIZED_HALTING_BAND_REQUIRES_NONTRIVIAL_COORDINATE_CONJUGACY",
+    "F376_379_SOURCE_COMPILER_TO_LEAN_MACHINE_REPRESENTATION_AND_BRANCH_TABLE_EXACT_ISOMORPHISM_UNADJUDICATED",
+    "F376_379_FULL_TEMPORAL_PULSE_AND_SPATIAL_VELOCITY_FIELD_IDENTITY_UNADJUDICATED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_MATHEMATICAL_CERTIFICATION_UNADJUDICATED"
+  ],
+  "next_obligation": "Construct or refute a common concrete source/Lean machine-and-symbol enumeration, and then specify a coordinate conjugacy that matches encoded orbits and detector events; do not demand literal terminal-square equality.",
+  "claim_boundary": "PINNED_SOURCE_AND_LEAN_GEOMETRIC_ENCODING_COMPARISON_ONLY_NOT_GLOBAL_FIELD_EQUIVALENCE_OR_MATHEMATICAL_CERTIFICATION",
+  "exclusions": "WP01 indices 145/199 untouched; generic GCL queue-reduction automation unchanged."
+}
