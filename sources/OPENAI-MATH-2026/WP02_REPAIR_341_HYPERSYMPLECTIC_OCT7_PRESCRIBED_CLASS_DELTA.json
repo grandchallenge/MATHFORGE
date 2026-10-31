@@ -1,0 +1,161 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_341_HYPERSYMPLECTIC_OCT7_LITERAL_SOURCE_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "newer_source_used": false
+  },
+  "candidate_base_protected_main": "fd0dcea4dc1a9374f8bb4d8f2b8934b15246d803",
+  "scope": "Exactly one previously unassessed repaired-14 entry: family 341 hypersymplectic four-manifold deformation, September 23 to October 7. Source-edition and citation dependency comparison only.",
+  "edition": {
+    "old": "September 23, 2026",
+    "current": "October 7, 2026",
+    "old_pdf": {
+      "path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/paper.pdf",
+      "git_blob": "07a63343f3328f9387726d51ebc2ece5c240cd25"
+    },
+    "current_pdf": {
+      "path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf",
+      "git_blob": "c6abd5c685bd7217786ef8846eeb57c46301d9cf"
+    },
+    "current_readme": {
+      "path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/README.md",
+      "git_blob": "c6488bd27df786c37b55486a46b440b3bfa0f92d",
+      "version_note": "Clarified prescribed cohomology-class criterion; removed unnecessary cone-comparison citation; updated companion-paper citation."
+    }
+  },
+  "source_file_comparison": {
+    "old_root": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026",
+    "current_root": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026",
+    "changed_files": [
+      {
+        "path": "build/main.tex",
+        "old_blob": "0a950c3ecb8cdd5d96fa86014d75e6e9cf6350f0",
+        "current_blob": "5b58ae879c5331977fe2e1d5a995d305636b7e32",
+        "delta": "Only date changes from September 23 to October 7, 2026."
+      },
+      {
+        "path": "build/sections/01-introduction.tex",
+        "old_blob": "ed193ab3860fe8d8aa02f70200192f5ac8d5eead",
+        "current_blob": "9b592bdd0a1c2984660fe5c4d3af8c99169471cc",
+        "delta": "Remove Li-Zhang tame/compatible cone comparison citation; replace 'additional class criterion' with explicit thm:taming-cone under closed definite-pair and b^+=3 hypotheses, using class separator; clarify independence from general tame/compatible cone comparison. Three theorem/corollary literal environments remain unchanged."
+      },
+      {
+        "path": "build/references.bib",
+        "old_blob": "beddeb13d72c68c2761df773320064dc52aa7a9b",
+        "current_blob": "2b5f688e2bf9f4d6879486be9a63338bd714c029",
+        "delta": "OpenAITaming2026 bibliography entry changes its link from September 23 companion PDF to October 6 companion edition reference; one line changed."
+      }
+    ],
+    "unchanged_file_blobs": [
+      {
+        "path": "build/preamble.tex",
+        "git_blob": "fe716c2ec1035982cd8ea8c35b9d1531489e6649"
+      },
+      {
+        "path": "build/sections/02-definite-pairs.tex",
+        "git_blob": "08e25d984165f05449d8ab4c9c40325ee2b72ddf"
+      },
+      {
+        "path": "build/sections/03-current-energy.tex",
+        "git_blob": "d8da925d773dad8f6522bff2584d95f51dd1efef"
+      },
+      {
+        "path": "build/sections/04-density-splitting.tex",
+        "git_blob": "ee1e07477253f387888553fdf84cde814459af94"
+      },
+      {
+        "path": "build/sections/05-families.tex",
+        "git_blob": "70b77f7f93cb11a5f0e103c592027f2ce9395760"
+      },
+      {
+        "path": "build/sections/06-lattice-chamber.tex",
+        "git_blob": "41c22c957200f409cf14cf7962c1cb6b1e3a18f9"
+      },
+      {
+        "path": "build/sections/07-pencil.tex",
+        "git_blob": "61e121a346e9869933e355ec078cf1e716ef0bad"
+      },
+      {
+        "path": "build/sections/08-local-models.tex",
+        "git_blob": "780bbb29e16cdcbae2707563890e8f012d167398"
+      },
+      {
+        "path": "build/sections/09-regular-preparation.tex",
+        "git_blob": "6a997c2c9f52a3eb54b771542fdbdebab6c8b8da"
+      },
+      {
+        "path": "build/sections/10-auxiliary-volume.tex",
+        "git_blob": "19d43d68c53ad206d8b56c5ad62d010fb9458282"
+      },
+      {
+        "path": "build/sections/11-endpoint.tex",
+        "git_blob": "8a470f70aa39aad1368c8853c344db125c9018b0"
+      }
+    ],
+    "figures_tree_git_blob": "4b5f240a4597fa91c7a50573e7ea998ad51fe1dd",
+    "inspected_direct_tex_pairs": 14,
+    "identical_direct_tex_blobs": 11,
+    "changed_direct_tex_blobs": 3,
+    "identical_section_pairs": 10,
+    "changed_section_pairs": 1
+  },
+  "literal_statement_comparison": {
+    "method": "Extract complete LaTeX theorem, lemma, proposition, corollary, definition, remark and claim environments from eleven included sections; compare the three introduction environments literally and use identical Git blob identities for the remaining ten section files.",
+    "counts_per_edition": {
+      "theorem": 7,
+      "lemma": 33,
+      "proposition": 9,
+      "corollary": 5,
+      "definition": 1,
+      "remark": 2,
+      "total": 57
+    },
+    "identical_environments": 57,
+    "added_environments": 0,
+    "removed_environments": 0,
+    "main_theorem_label": "thm:main",
+    "main_theorem_hypotheses_and_conclusion": "LITERALLY_UNCHANGED",
+    "scope_limit": "Literal TeX comparison, not rendered PDF identity or mathematical proof validity."
+  },
+  "dependency_delta": {
+    "location": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/build/sections/01-introduction.tex",
+    "old_citation": "LiZhang2009 tame-versus-compatible cone comparison",
+    "new_source_criterion": "thm:taming-cone under closed definite-pair and b^+=3 hypotheses; class separator and closed normalized density thresholds",
+    "updated_companion_citation": "OpenAITaming2026 now references the October 6 Taming-implies-compatibility-on-four-manifolds edition instead of September 23",
+    "interpretation": "Prescribed-class argument is explicitly internalized rather than attributed to a general tame/compatible cone comparison. This does not establish the criterion's correctness or independence from other arguments."
+  },
+  "formalization_crosswalk": {
+    "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "git_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "direct_title_match": false,
+    "exact_Lean_declaration": "NOT_ESTABLISHED",
+    "limitation": "Text search for family 341/hypersymplectic title in this indexed crosswalk only; not an exhaustive Lean source audit."
+  },
+  "risk_register": {
+    "path": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "row_key": "341:preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf",
+    "category": "repaired_14",
+    "update": "Set statement_changed=false at literal theorem-environment scope; preserve proof_changed=true, source_mismatch=UNASSESSED and unresolved=true. Inventory remains 3/14/13."
+  },
+  "replay": {
+    "method": "Authenticated GitHub exact-commit contents and GitHub-reported Git blob SHA comparison; 11 section source identities, 14 directly included TeX files, exact introduction line diff, and regex extraction of complete statement environments.",
+    "observed": [
+      "11/11 section pairs inspected by Git blob; 10 identical, 1 introduction changed",
+      "14/14 directly included TeX source pairs inspected by Git blob; 11 identical, 3 changed",
+      "57/57 literal mathematical statement environments identical",
+      "Main driver date-only delta; references.bib companion citation-only delta",
+      "Publisher version note and both edition PDF blobs pinned"
+    ],
+    "limitations": "No independent Git blob hashing, PDF render comparison, Lean kernel compilation, semantic proof adjudication, dependency-cycle validation or MATHCERT certification."
+  },
+  "unresolved": [
+    "Proof sufficiency of the prescribed-class criterion thm:taming-cone and its independence from general cone comparison",
+    "Whether the October 6 Taming companion's changed cone hypothesis affects any actual dependency used here",
+    "Exact Lean declaration mapping and downstream source-semantic correspondence",
+    "Rendered PDF equivalence and mathematical certification"
+  ],
+  "disposition": "F341_HYPERSYMPLECTIC_OCT7_PRESCRIBED_CLASS_CITATION_SCOPE_SOURCE_DELTA_ONLY",
+  "claim_boundary": "PINNED_SOURCE_LITERAL_STATEMENT_AND_DEPENDENCY_SCOPE_EVIDENCE_ONLY_NOT_LEAN_COMPILATION_OR_MATHEMATICAL_CERTIFICATION"
+}
