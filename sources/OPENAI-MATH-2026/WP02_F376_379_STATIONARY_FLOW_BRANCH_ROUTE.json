@@ -1,0 +1,111 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_STATIONARY_FLOW_BRANCH_ROUTE/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "candidate_base": {
+    "repository": "grandchallenge/MATHFORGE",
+    "protected_main_sha": "090adf2ffb3c9f9519c2b9474a2d3ac8f0018f08"
+  },
+  "scope": "Exactly one existing Lean internal proof-route correspondence: material-flow witness and compiled branch tracking for the stationary family-379 companion used by October family 376. Not an identification of the manuscript V with the compiled Lean V.",
+  "source_files": [
+    {
+      "role": "companion379",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "anchors": [
+        "thm:planar-processor",
+        "eq:autonomous-suspension",
+        "Crucially, $g=1$ on a neighborhood of $J_*$"
+      ]
+    },
+    {
+      "role": "genericConditionalLemma",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/SpatialSuspension.lean",
+      "blob": "5434dde6edf0b84a613e2bf61da99743be636527",
+      "anchors": [
+        "theorem spatialSuspension_tracks_interval",
+        "(hK : LipschitzWith K (spatialSuspension V g))",
+        "(hΦ : IsMaterialFlow 1"
+      ]
+    },
+    {
+      "role": "leanFlowExistence",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StationaryProgram.lean",
+      "blob": "2b277ef3384f7a1089cab9b9843a022b9e6b32ea",
+      "anchors": [
+        "theorem stationary_program_flows",
+        "∃ Φ : ℝ → Space → Space,",
+        "IsMaterialFlow 1 (fun y =>",
+        "startup_materialFlow"
+      ]
+    },
+    {
+      "role": "leanCompiledBranch",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/NormalizedSuspensionRouting.lean",
+      "blob": "60c09a9cc24d1e33e5055faeaa6e177f659be3a2",
+      "anchors": [
+        "theorem normalized_branch_suspension_in",
+        "theorem normalized_branch_suspension",
+        "normalizedCurve_ode",
+        "normalizedCurve_clock"
+      ]
+    },
+    {
+      "role": "leanObservation",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StationaryObservation.lean",
+      "blob": "a5478e43a8b2b6aadcae70d38ebb1ab2f8e987f6",
+      "anchors": [
+        "theorem normalized_suspension_step",
+        "theorem stationary_suspension_observation",
+        "normalized_branch_suspension"
+      ]
+    },
+    {
+      "role": "leanMain",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StationaryMain.lean",
+      "blob": "b3486d994a3a59be52fdeb30a0304815ea4dbc08",
+      "anchors": [
+        "theorem stationary_effective_computation",
+        "stationary_program_flows I hI",
+        "stationary_suspension_observation I hI hΦ"
+      ]
+    }
+  ],
+  "findings": {
+    "direct_flow_witness": "stationary_program_flows existentially supplies Φ satisfying IsMaterialFlow 1 (fun y => SpatialExpression.suspensionField (normalizedHamiltonian I hI) y.2) Φ. This is the same field/hΦ signature consumed by normalized_branch_suspension_in, normalized_branch_suspension and normalized_suspension_step.",
+    "compiled_branch_route": "normalized_branch_suspension_in invokes sparse_suspension with normalizedCurve_ode, normalizedCurve_clock, anchors, smoothness and clockRectangle hypotheses. normalized_branch_suspension specializes to S=clockRectangle.carrier. normalized_suspension_step then obtains one-period branch endpoint equality. stationary_suspension_observation derives the reachability/halting equivalence from these compiled branch lemmas.",
+    "main_route": "stationary_effective_computation obtains Φ and hΦ via stationary_program_flows and then applies stationary_suspension_observation I hI hΦ. The final stationary velocity flow is time-reparameterized by accumulatedClock startupRamp; the autonomous Φ is the intermediate suspension flow, not the startup-velocity flow.",
+    "distinction_from_generic_lemma": "The generic spatialSuspension_tracks_interval requires caller-supplied hψ, hc, hp, hg, hK and hΦ. The pinned stationary programme uses a different specialized compiled branch route, whose public branch theorem signature requires hΦ but no separately supplied hK. This does not assert that Lipschitz or uniqueness arguments are absent from the underlying imported proof of sparse_suspension.",
+    "source_comparison": "The September 27 companion's source-level V and g construction and its corridor-tracking assertion have the same broad purpose as the compiled Lean branch/flow route. Their exact extensional field identity, cutoff choice, pulse ordering and machine encoding equivalence are NOT established by this internal Lean theorem dependency graph.",
+    "closed_narrow_gap": "The previously named missing hΦ witness for the compiled Lean stationary suspension is resolved at the theorem-statement and import-path level: stationary_program_flows supplies it. It is not resolved for the manuscript's independently specified V or W."
+  },
+  "replay": {
+    "method": "Authenticated GitHub exact-commit UTF-8 file reads; six GitHub-reported Git blob SHA matches and twenty literal source/Lean anchors. The first source anchor was corrected from an incorrect search literal before final replay. No independent compiler run, transitive kernel audit or cryptographic blob recomputation.",
+    "blob_matches": 6,
+    "blob_total": 6,
+    "anchors_matched": 20,
+    "anchors_total": 20,
+    "assertions_passed": 26,
+    "assertions_total": 26
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false
+  },
+  "unresolved": [
+    "F376_379_SOURCE_PLANAR_V_TO_LEAN_NORMALIZED_HAMILTONIAN_EXTENT_AND_PULSE_SCHEDULE_IDENTITY_UNADJUDICATED",
+    "F376_379_SOURCE_W_TO_LEAN_SUSPENSION_FIELD_EXTENT_IDENTITY_UNADJUDICATED",
+    "F376_379_SOURCE_CUTOFF_GLOBAL_SPATIAL_CLOCK_IDENTITY_UNADJUDICATED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_MATHCERT_UNADJUDICATED"
+  ],
+  "next_obligation": "Inspect source 5N phase slots and pulse cutoffs against Lean normalizedPulse and processorExpression at exact pinned paths; prove a qualified field correspondence on tracked corridors or record an explicit counterexample, without treating Lean's internal proof as source theorem equivalence.",
+  "claim_boundary": "PINNED_LEAN_INTERNAL_THEOREM_DEPENDENCY_AND_SOURCE_PURPOSE_CORRESPONDENCE_ONLY_NOT_SOURCE_FIELD_IDENTITY_NOT_COMPILATION_NOT_CERTIFICATION",
+  "exclusions": "No WP01 deferred indices 145/199, no generic GCL queue-reduction automation changes."
+}
