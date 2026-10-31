@@ -246,7 +246,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": true,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -256,10 +256,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_034_LOG_ABUNDANCE_OCT6_AUXILIARY_STATEMENTS_AND_BASE_PRESENTATION.json",
+          "git_blob": "852821900601e5513e36325d3c53eda3744846ae"
         }
       ],
-      "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+      "formal_declaration_mapping": "NO_DIRECT_TITLE_OR_PATH_MATCH_IN_PINNED_173_SOURCE_200_MAIN_RESULT_CROSSWALK; EXACT_LEAN_DECLARATION_NOT_ESTABLISHED",
+      "exact_review_target": "Review mathematical sufficiency and independence of five newly added base-presentation/multiplier-ideal/contraction-descent auxiliary statements and changed induction applications; map exact Lean declaration if any. Main theorem text unchanged; no proof certification.",
+      "literal_hypothesis_conclusion_delta": "Oct 4/6 TeX: thm:main hypotheses and conclusion literally identical. All 96 old theorem/lemma/proposition/corollary environments are unchanged; Oct 6 adds five auxiliary statement environments (3 lemmas, 1 proposition, 1 corollary) via sections/03c-base-presentations.tex, changing the statement inventory. Proof replaces cited projective canonical bundle formula with internally stated base-presentation and multiplier-ideal descent arguments. Mathematical sufficiency and independence unadjudicated."
     },
     {
       "key": "036:preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf",
