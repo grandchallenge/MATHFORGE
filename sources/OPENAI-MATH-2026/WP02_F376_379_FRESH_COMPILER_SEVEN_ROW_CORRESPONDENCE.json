@@ -1,0 +1,201 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_FRESH_COMPILER_SEVEN_ROW_CORRESPONDENCE/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "editions": [
+      "379 September 27 2026 stationary companion",
+      "376 October 6 2026 cites 379"
+    ]
+  },
+  "candidate_base": "grandchallenge/MATHFORGE@6fe76d32674cddb0eda41d445ccc25293ed9c980",
+  "scope": "One source-locked mapping of the manuscript's fresh initial-state augmentation and seven-row reversible compiler to pinned Lean control, history and local-step definitions; distinguish the machine-level bridge from exact planar compiler/field equivalence.",
+  "source_files": [
+    {
+      "role": "manuscript379",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "git_blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "verified_literal_anchors": [
+        "\\label{eq:compiler-table}",
+        "We also add\na fresh initial state",
+        "R_{q_{\\rm start}}",
+        "\\label{eq:branch-table}",
+        "4+2(n+2-h')"
+      ]
+    },
+    {
+      "role": "leanSevenRows",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/Recorder.lean",
+      "git_blob": "938601c64fd87b117f511dbfbb9b738160a579d3",
+      "verified_literal_anchors": [
+        "inductive LocalStep",
+        "| work (q : Q)",
+        "| setMark",
+        "| right",
+        "| record",
+        "| advance",
+        "| left",
+        "| clearMark",
+        "def evalLocal",
+        "theorem LocalStep.predecessor_unique"
+      ]
+    },
+    {
+      "role": "leanFreshMachine",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/FreshMachine.lean",
+      "git_blob": "9cb3ab148294b16b08ca307805c8b1f78c85cfa1",
+      "verified_literal_anchors": [
+        "def freshMachine",
+        "some (1, a, (1 : Fin 3))",
+        "freshMachine_instruction_zero",
+        "freshMachine_instruction_succ",
+        "freshInput_configuration",
+        "freshInput_halts_iff",
+        "freshMachine_no_incoming"
+      ]
+    },
+    {
+      "role": "leanFiniteTable",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/FiniteRecorder.lean",
+      "git_blob": "dd8e128bc7144541e99bc30f3136ffb72e90edcf",
+      "verified_literal_anchors": [
+        "def instructionTable",
+        "theorem mem_instructionTable_iff",
+        "def finiteInitializedRecorder",
+        "theorem finite_recorder_halts_iff"
+      ]
+    },
+    {
+      "role": "leanBranchExpansion",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/Branches.lean",
+      "git_blob": "b3dc8fd069c0e938f0058dc01aabb5ecb560278b",
+      "verified_literal_anchors": [
+        "def compileBranches",
+        "(allSymbols M).map",
+        "theorem mem_compileBranches"
+      ]
+    },
+    {
+      "role": "leanCheckpointProof",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/RecorderRun.lean",
+      "git_blob": "cc246fad64ae6c045fa4e40810a1e0cd2ff9eaaa",
+      "verified_literal_anchors": [
+        "def checkpointAt",
+        "theorem checkpoint_successor",
+        "theorem halting_checkpoint_iff",
+        "2 * k + 6"
+      ]
+    },
+    {
+      "role": "leanGeometryBridge",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarRecorder.lean",
+      "git_blob": "f790c0fd9a074e33a67e816fe57e8e01d5340433",
+      "verified_literal_anchors": [
+        "theorem step_realized",
+        "theorem run_observer_iff",
+        "def point",
+        "def compression"
+      ]
+    },
+    {
+      "role": "leanShiftBridge",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarInitialShift.lean",
+      "git_blob": "b5535db08d639c76e5b4ff19667745e3d0d5c33e",
+      "verified_literal_anchors": [
+        "theorem initialShift_spec",
+        "theorem normalized_run_observer_iff",
+        "theorem fresh_initial_nonhalting"
+      ]
+    }
+  ],
+  "findings": {
+    "fresh_initial_state": "Source 379 compiler section explicitly inserts q_start with unchanged symbol and head, then enters former initial state, before defining the seven-row reversible recorder. Pinned Lean FreshMachine.freshMachine adds state 0, shifts old state q to q+1, inserts a state-0 instruction some (1,a,(1 : Fin 3)), and shifts old target states. The Fin 3 movement encoding is converted to signed movement by subtracting 1 in RecorderMachine.ofMachine and FiniteRecorder.finiteMachine, so this inserted step is stationary. This is the same one-step normalization PURPOSE, not a byte-identical machine table.",
+    "fresh_step_proved_in_lean": "FreshMachine.lean contains freshMachine_initial_step, freshMachine_step_lift, freshInput_configuration and freshInput_halts_iff. In particular configurationAt(freshInput I)(n+1)=liftConfiguration(configurationAt I n) under ValidInput, and Halts(freshInput I) iff Halts(I). This identifies a positive input-level one-step simulation already proved for Lean's own machine. The source manuscript gives the corresponding informal construction, but no source-to-Lean definitional equality is asserted.",
+    "control_history_dictionary": {
+      "R_q": "Control.checkpoint q",
+      "A_(q,a)": "Control.mark (q,a)",
+      "F_(q,a)": "Control.scanRight (q,a)",
+      "C_q": "Control.advance q",
+      "L_q": "Control.scanLeft q",
+      "source E": "History.frontier",
+      "source bottom": "History.empty",
+      "source (data,mark,history)": "Lean Symbol=(data,history,mark); a permutation of the last two components"
+    },
+    "seven_rows": [
+      {
+        "source": 1,
+        "lean": "LocalStep.work",
+        "guard": "nonhalting checkpoint, history != frontier, marker false",
+        "move": "machine move d"
+      },
+      {
+        "source": 2,
+        "lean": "LocalStep.setMark",
+        "guard": "history != frontier, marker false",
+        "move": "+1"
+      },
+      {
+        "source": 3,
+        "lean": "LocalStep.right",
+        "guard": "history != frontier, marker false",
+        "move": "+1"
+      },
+      {
+        "source": 4,
+        "lean": "LocalStep.record",
+        "guard": "history frontier, marker false",
+        "move": "+1"
+      },
+      {
+        "source": 5,
+        "lean": "LocalStep.advance",
+        "guard": "history empty, marker false",
+        "move": "-1"
+      },
+      {
+        "source": 6,
+        "lean": "LocalStep.left",
+        "guard": "history != frontier, marker false",
+        "move": "-1"
+      },
+      {
+        "source": 7,
+        "lean": "LocalStep.clearMark",
+        "guard": "history != frontier, marker true",
+        "move": "0"
+      }
+    ],
+    "compiler_table_bridge": "FiniteRecorder.instructionTable enumerates finite controls and symbols, evaluates the seven-row evalLocal, and mem_instructionTable_iff identifies table membership with LocalStep. Branches.compileBranches then expands every instruction-table entry over allSymbols for the left-neighbor digit; this branch expansion is NOT the same as the source's coarse right/stay rectangle enumeration (already recorded in PR #467).",
+    "recorder_and_observer": "RecorderRun.checkpointAt initializes frontier at g0=2 and empty history elsewhere with false marker; checkpoint_successor and halting_checkpoint_iff establish Lean recorder simulation. FiniteRecorder.finite_recorder_halts_iff and PlanarRecorder.step_realized/run_observer_iff connect its own encoded points to affine moves and observation; PlanarInitialShift.normalized_run_observer_iff includes the fresh-state shift. These are preexisting pinned Lean statements, not a new Lean proof.",
+    "exact_limit": "The source says it normalizes to a single halting state and total nonhalting table; Lean normalizes instructions and uses a freshMachine and finiteMachine construction. The exact input-machine representation, source compiler's state/alphabet enumerations, source geometric state-square offsets, branch indices, and spatial field are not shown definitionally equal. A row-by-row dictionary plus one-step Lean simulation is insufficient for complete manuscript-to-Lean theorem equivalence."
+  },
+  "replay": {
+    "method": "Authenticated GitHub exact-commit fetch_file, GitHub-reported Git blob SHA comparisons and literal anchor substring assertions; no shell/Lean compilation.",
+    "pinned_blob_matches": 8,
+    "pinned_blob_total": 8,
+    "literal_anchor_matches": 40,
+    "literal_anchor_total": 40,
+    "all_pass": true,
+    "proof_scope": "Source-to-Lean syntactic/structural correspondence and identification of existing Lean theorems, not independently checked Lean kernel replay or proof validity."
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false,
+    "canonical_register": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "canonical_register_blob": "8bc99b7d7f9473f44da1429be61b6f8249631aeb"
+  },
+  "unresolved": [
+    "F376_379_SOURCE_COMPILER_TO_LEAN_MACHINE_REPRESENTATION_AND_BRANCH_TABLE_EXACT_ISOMORPHISM_UNADJUDICATED",
+    "F376_379_SOURCE_COARSE_RIGHT_STAY_RECTANGLE_TO_LEAN_REFINED_DOMAIN_FULL_EQUIVALENCE_UNADJUDICATED",
+    "F376_379_TEMPORAL_PULSE_AND_GLOBAL_VELOCITY_FIELD_IDENTITY_UNADJUDICATED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_MATHEMATICAL_CERTIFICATION_UNADJUDICATED"
+  ],
+  "next_obligation": "Identify the source's normalized machine/table against Lean's freshMachine+finiteMachine on a concrete common machine input, then compare branch enumerations and digit/geometry parameters; do not infer whole-rectangle equivalence from encoded orbit equivalence.",
+  "claim_boundary": "SOURCE_TO_LEAN_FRESH_STATE_AND_SEVEN_ROW_STRUCTURAL_MAPPING_ONLY_NO_EXACT_GLOBAL_COMPILER_EQUIVALENCE_OR_MATHCERT",
+  "exclusions": "WP01 indices 145/199 not retried; generic GCL queue-reduction automation unchanged."
+}
