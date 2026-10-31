@@ -1,0 +1,158 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_PULSE_SCHEDULE_AND_SCALING_BRIDGE/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "family 379 September 27 2026; used by family 376 October 6"
+  },
+  "candidate_base": {
+    "repository": "grandchallenge/MATHFORGE",
+    "protected_main_sha": "38d7a86b594257bf3691a60e673e62fbf39879e0"
+  },
+  "scope": "One new source-to-Lean pulse schedule comparison and conditional scaling endpoint algebra; not global source V equals Lean normalizedHamiltonian, not an edition upgrade.",
+  "source_files": [
+    {
+      "role": "companion379",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "anchors": [
+        "period into $5N$ equal slots",
+        "\\theta(s)=\\beta",
+        "apply the scaling $A_r$",
+        "eq:Hamiltonian-pulse",
+        "\\operatorname{diag}(\\mu,\\mu^{-1})"
+      ]
+    },
+    {
+      "role": "leanActionCompiler",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarProgram.lean",
+      "blob": "cd2a0496de9aebf318cd6d63e2a3b77a7d64fdeb",
+      "anchors": [
+        "| scale (k : Fin 4)",
+        "def actions",
+        "sourceOrder M hM",
+        "targetOrder M hM",
+        "| .scale 0 => .vertical",
+        "| .scale 1 => .horizontal",
+        "| .scale 2 => .vertical",
+        "| .scale _ => .horizontal"
+      ]
+    },
+    {
+      "role": "leanActionLength",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarActionOrder.lean",
+      "blob": "72dfeba3830970a391756db828e6487b9e742850",
+      "anchors": [
+        "theorem actions_length",
+        "(actions M hM).length = 8 *",
+        "sourceOrder_perm",
+        "targetOrder_perm"
+      ]
+    },
+    {
+      "role": "leanTiming",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarTiming.lean",
+      "blob": "27607d4ce374799eecf39f971ac46a817890d8b7",
+      "anchors": [
+        "def start",
+        "def finish",
+        "def pulse",
+        "smoothPulse (start k) (finish k)"
+      ]
+    },
+    {
+      "role": "leanExpression",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarPulseExpressions.lean",
+      "blob": "a8343d3ba6ba091c31137b0e1ada1ca258aad368",
+      "anchors": [
+        "def Pulse.expression",
+        "PeriodicExpr.intervalPulse p.start p.finish",
+        "def processorExpression"
+      ]
+    },
+    {
+      "role": "leanNormalization",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/NormalizedPlanarProgram.lean",
+      "blob": "6b610e0d0f79ac2a24ef91706b8ade4a619356bc",
+      "anchors": [
+        "def normalizedPulse",
+        "freshMachine I.1",
+        "initialShift",
+        "def normalizedHamiltonian",
+        "processorExpression (normalizedPulse I hI)"
+      ]
+    },
+    {
+      "role": "leanPulse",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarPulse.lean",
+      "blob": "3f82de83c148aea08f58c97d197e380213755c1c",
+      "anchors": [
+        "def Pulse.hamiltonian",
+        "def Pulse.velocity",
+        "smoothPulse p.start p.finish t",
+        "def processorHamiltonian"
+      ]
+    },
+    {
+      "role": "leanHamiltonian",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarHamiltonian.lean",
+      "blob": "67a0ef0bde695398861c26b4a337a344d2eb8f28",
+      "anchors": [
+        "def field (H",
+        "theorem field_horizontal",
+        "theorem field_vertical",
+        "theorem fourShearPath_final"
+      ]
+    },
+    {
+      "role": "leanAnisotropic",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/PlanarAnisotropic.lean",
+      "blob": "c4687b2d2a5f153c4a914fffb49536771e2de354",
+      "anchors": [
+        "def anisotropicPotential",
+        "theorem anisotropicRoute_final",
+        "c 0 + μ * (w 0 - c 0)",
+        "c 1 + (w 1 - c 1) / μ"
+      ]
+    }
+  ],
+  "findings": {
+    "source_schedule": "Pinned manuscript build/main.tex lines 577-604,635-643: 5N equal phase slots for N branches; 2 extraction translations per branch, one reciprocal diagonal scaling per branch, 2 insertion translations per branch. On a source slot [s0,s1], theta(s)=beta(3(s-s0)/(s1-s0)-1), with its nonconstant portion in the middle third. Its source scaling potential uses log(mu) and has endpoint linear map diag(mu,mu^-1).",
+    "lean_schedule": "Pinned PlanarProgram.lean Phase.scale(k:Fin 4), actions and Action.primitive; PlanarActionOrder.lean theorem actions_length: actions.length=8*geometricBranches.length, grouped as 2N extraction, 4N shear-scaling, 2N insertion. PlanarTiming.lean start_i=(2i+1)/(2(n+1)), finish_i=(i+1)/(n+1), n=8N, so pulses occupy the latter half of each of n cells, followed by an idle final cell. ProcessorExpression sums these pulse expressions.",
+    "schedule_conclusion": "For equal positive branch counts N, the source's 5N-slot time parametrization and Lean's 8N-pulse plus final idle cell parametrization are not the same literal schedule. Different numbers and placements of primitive pulses preclude identifying the two fields merely by matching their source descriptions. This is a construction-level mismatch, NOT a counterexample to equal full-period endpoint maps or computational behavior.",
+    "scaling_coefficients": "Set q=r.factor and a=(3/8)/epsilon, with epsilon=parkingScale>0. Lean Action.primitive scaling phases have vertical(-q*a), horizontal((q^-1-1)/a), vertical(a), horizontal((q-1)/a). These coincide with the coefficients of anisotropicPotential(epsilon,3/8,q,c).",
+    "scaling_matrix_identity": "Let V(t)=[[1,0],[t,1]], H(t)=[[1,t],[0,1]]. For q != 0 and a != 0, H((q-1)/a) * V(a) * H((q^-1-1)/a) * V(-q*a) = diag(q,q^-1). Direct SymPy simplification produced Matrix([[q,0],[0,1/q]]) and equality True. Pinned Lean anisotropicRoute_final independently states the reciprocal-diagonal endpoint for its own route. Matching q with the source mu and matching centers, source rectangles, normalized machine encoding, and full-period map remain separate obligations.",
+    "normalized_dependency": "normalizedPulse translates compiledPulse from freshMachine/freshInput by initialShift; normalizedHamiltonian=processorExpression(normalizedPulse). Source manuscript branch table and the Lean fresh-machine normalized branch table have not been proved extensionally identical.",
+    "narrow_closed_gap": "The pulse-count, temporal-support and four-shear endpoint relation are now source-locked and reproducible. The earlier exact source-field identity gap is refined: literal pulse schedule equality is unavailable, while an algebraic endpoint scaling bridge exists."
+  },
+  "replay": {
+    "method": "Authenticated GitHub exact-commit UTF-8 file reads; 9/9 GitHub-reported blob identities checked and 41/41 literal anchors matched. Independent local SymPy symbolic 2x2 matrix multiplication: identity True.",
+    "blob_matches": 9,
+    "blob_total": 9,
+    "anchors_matched": 41,
+    "anchors_total": 41,
+    "symbolic_matrix_checks_passed": 1,
+    "symbolic_matrix_checks_total": 1,
+    "sympy_reproducer": "import sympy as s; q,a=s.symbols('q a',nonzero=True); H=lambda t:s.Matrix([[1,t],[0,1]]); V=lambda t:s.Matrix([[1,0],[t,1]]); assert s.simplify(H((q-1)/a)*V(a)*H((1/q-1)/a)*V(-q*a)-s.diag(q,1/q))==s.zeros(2)",
+    "limitations": "No independent cryptographic Git blob recomputation, Lean compilation, kernel audit, full source/Lean extensional equality, or mathematical certification."
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false
+  },
+  "unresolved": [
+    "F376_379_SOURCE_5N_VS_LEAN_8N_TEMPORAL_REPARAMETRIZATION_AND_FULL_PERIOD_MAP_EQUIVALENCE_UNADJUDICATED",
+    "F376_379_SOURCE_BRANCH_TABLE_TO_LEAN_FRESH_MACHINE_NORMALIZED_BRANCH_IDENTITY_UNADJUDICATED",
+    "F376_379_SOURCE_PLANAR_V_TO_LEAN_NORMALIZED_HAMILTONIAN_EXTENT_IDENTITY_UNADJUDICATED",
+    "F376_379_SOURCE_W_TO_LEAN_SUSPENSION_FIELD_EXTENT_IDENTITY_UNADJUDICATED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_MATHCERT_UNADJUDICATED"
+  ],
+  "next_obligation": "Compare one complete source branch affine period map to the pinned Lean compiled and normalized branch endpoint theorems under explicit machine/branch/center/initialShift identifications; do not require identical intermediate time profiles.",
+  "claim_boundary": "PINNED_SOURCE_AND_LEAN_DECLARATION_CORRESPONDENCE_PLUS_SYMBOLIC_ENDPOINT_ALGEBRA_ONLY_NOT_SOURCE_FIELD_IDENTITY_NOT_COMPILATION_NOT_CERTIFICATION",
+  "exclusions": "WP01 deferred indices 145/199 untouched; generic GCL queue-reduction automation unchanged."
+}
