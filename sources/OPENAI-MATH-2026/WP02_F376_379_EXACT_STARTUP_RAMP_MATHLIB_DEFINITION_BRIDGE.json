@@ -21,7 +21,7 @@
       "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
       "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
       "lines": "196-202",
-      "definition": "E(s)=exp(-1/s) for s>0 and 0 for s<=0; beta(s)=E(s)/(E(s)+E(1-s)); source stationary alpha(t)=beta(2t-1) at lines 859-864."
+      "definition": "E(s)=exp(-1/s) for s>0 and 0 for s<=0; beta(s)=E(s)/(E(s)+E(1-s)); source stationary alpha(t)=beta(2t-1) at lines 866-869."
     },
     {
       "role": "October 6 F376 source sigma",
