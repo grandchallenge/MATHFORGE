@@ -1,0 +1,98 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_EXACT_CLOCK_SEMICONJUGACY_AND_PULLBACK/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "family 376 October 6 2026 autonomous slow torus profile"
+  },
+  "candidate_base": "grandchallenge/MATHFORGE@bbf5663128133f9b5ff7d4a9a810eb55ef34028f",
+  "bounded_obligation": "Construct and classify the exact source October slow clock to pinned Lean logarithmic clock time map, including its startup noninvertibility and the precise conditional velocity pullback. This is distinct from previously admitted nonzero constant phase delay (#446, #472).",
+  "source_files": [
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "git_blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41",
+      "anchors": [
+        "\\rho(s)=",
+        "\\sigma(s)="
+      ]
+    },
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "git_blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "anchors": [
+        "\\alpha_1=\\sigma(2t-1)/(1+t)",
+        "s_{\\alpha_1}(t)=s_{\\alpha_1}(1)+\\log((1+t)/2)",
+        "U_\\alpha=\\alpha W"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/Reparametrization.lean",
+      "git_blob": "c5aa29c0d4ecb1ae3a56d05ad3a8d45313d5d58c",
+      "anchors": [
+        "def OntoClock",
+        "theorem reaches_comp_iff",
+        "noncomputable def logClock (t : ℝ) : ℝ := Real.log (1 + t)",
+        "theorem logClock_onto"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/SlowProgram.lean",
+      "git_blob": "d2964e26b20fcfc2f7bc0b7f4cf19446250dc6eb",
+      "anchors": [
+        "def slowFromRest (V : Velocity)",
+        "if y.1 ≤ 0 then 0 else (1 + y.1)⁻¹ • V (Real.log (1 + y.1), y.2)"
+      ]
+    }
+  ],
+  "definitions": {
+    "source": "For t>=0, alpha(t)=sigma(2t-1)/(1+t), S(t)=integral_0^t alpha(r) dr; source U(t,x)=alpha(t)W(x).",
+    "lean": "L(u)=log(1+u) for u>=0; slowFromRest V(u,x)=0 for u<=0 and (1+u)^-1 V(L(u),x) for u>0.",
+    "bridge": "Define h(t)=exp(S(t))-1 for t>=0. Then L(h(t))=S(t) exactly.",
+    "delay": "D=log 2-S(1), with log(3/2)<D<log 2, already admitted in PR #446."
+  },
+  "analytic_proof": [
+    "Because sigma(2t-1)=0 for 0<=t<=1/2 and 0<sigma(2t-1)<=1 for t>1/2, S(0)=0, S(t)=0 on [0,1/2], and S is strictly increasing on (1/2,infinity).",
+    "Since alpha(t)=1/(1+t) for t>=1, S(t)=log(1+t)-D there. Hence S is continuous, nonnegative and unbounded and maps [0,infinity) onto [0,infinity).",
+    "By definition h=exp(S)-1 is nonnegative, continuous, smooth on nonnegative times, onto [0,infinity), zero on [0,1/2], strictly increasing on (1/2,infinity), and h(0)=0.",
+    "The Lean log clock satisfies L(h(t))=log(exp(S(t)))=S(t) for every t>=0. Differentiation gives h'(t)=exp(S(t))alpha(t)=(1+h(t))alpha(t), including the zero startup.",
+    "For t>=1, h(t)=exp(-D)(1+t)-1 and h'(t)=exp(-D). In particular 0<h(1)=2exp(-D)-1<1/3. The map h is not injective on [0,infinity) and therefore is not a global time homeomorphism/diffeomorphism; its restriction (1/2,infinity)->(0,infinity) is a smooth increasing bijection.",
+    "For every time-dependent velocity V(s,x), at t>1/2 the pinned Lean definition gives h'(t) slowFromRest(V)(h(t),x)=[h'(t)/(1+h(t))] V(L(h(t)),x)=alpha(t)V(S(t),x). For 0<=t<=1/2 both sides are zero because alpha=h'=0 and h=0. Thus the identity holds for every t>=0 pointwise.",
+    "Specializing V(s,x)=W(x) yields exactly source U(t,x)=alpha(t)W(x) as the pullback h'(t) slowFromRest(V)(h(t),x), with V a hypothetical time-independent input. This does not identify the actual Lean loadedMachineVelocity with W.",
+    "For any trajectory X(s), X(S(t))=X(L(h(t))) pointwise. Since S is onto [0,infinity), existential observation reachability for the same X and O is preserved. This is an analytic instantiation candidate for the generic Lean OntoClock/reaches_comp_iff API, not a newly compiled Lean theorem."
+  ],
+  "novelty_and_limits": {
+    "positive_bridge": "The phase offset can be absorbed by an explicit noninvertible startup time semiconjugacy; the tail map is affine in 1+t. This resolves the scalar-clock alignment formula and identifies exactly why a global invertible clock change is unavailable.",
+    "not_established": [
+      "No equality between source autonomous W and pinned Lean loadedMachineVelocity (time dependent).",
+      "No machine/branch, spatial coordinate, observer or initial-state conjugacy.",
+      "No Lean proof that this particular h or S satisfies OntoClock, no new Lean compilation.",
+      "No projected force/pressure identity, manuscript-wide theorem equivalence, MATHCERT certification or public mathematical claim promotion."
+    ],
+    "next_mathematical_boundary": "F376_SOURCE_AUTONOMOUS_W_TO_LEAN_LOADED_MACHINE_VELOCITY_AND_OBSERVER_CONJUGACY_UNADJUDICATED"
+  },
+  "replay": {
+    "source_file_blob_checks": "4/4 PASS; authenticated exact-ref GitHub reads",
+    "literal_anchor_checks": "11/11 PASS; exact literal substring assertions",
+    "analytic_steps": "8/8 reviewed by explicit elementary identities, calculus and monotonicity; not kernel certified",
+    "numerical_sanity": "Composite Simpson n=20000 for S(1) yields 0.1346327400963249, D=0.5585144404636204; eight t values [0,0.25,0.5,0.75,1,2,4,10] satisfy log(1+h)=S and h'/(1+h)=alpha to 1e-12 in IEEE double arithmetic.",
+    "reproduce_python": "python3 - <<'PY'\nfrom math import exp,expm1,log,log1p\nrho=lambda x:exp(-1/x) if x>0 else 0.\ndef sigma(x):\n a,b=rho(x),rho(1-x)\n return a/(a+b)\ndef alpha(t): return sigma(2*t-1)/(1+t)\ndef S(t,n=20000):\n if t==0:return 0.\n d=t/n\n return d/3*(alpha(0)+alpha(t)+sum((4 if i%2 else 2)*alpha(i*d) for i in range(1,n)))\ns1=S(1);D=log(2)-s1\nassert log(1.5)<D<log(2)\nfor t in [0,.25,.5,.75,1,2,4,10]:\n s=S(t) if t<1 else s1+log((1+t)/2)\n h=expm1(s);hd=exp(s)*alpha(t)\n assert abs(log1p(h)-s)<1e-12\n assert abs(hd/(1+h)-alpha(t))<1e-12\n if t>=1:assert abs(h-(exp(-D)*(1+t)-1))<1e-12\nassert 0<expm1(s1)<1/3\nprint('PASS: 4 source blobs, 11 literal anchors (separate authenticated reads); scalar analytic sanity 8/8')\nPY"
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false,
+    "canonical_register": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "canonical_blob": "8bc99b7d7f9473f44da1429be61b6f8249631aeb"
+  },
+  "prior_admissions_not_duplicated": [
+    "PR #446 exact nonzero phase delay",
+    "PR #472 source-vs-Lean scalar clock mismatch",
+    "PR #460 startup ramp identity",
+    "PR #448 projected-force tail"
+  ],
+  "exclusions": "WP01 deferred indices 145/199 and generic GCL queue-reduction automation untouched.",
+  "claim_boundary": "SOURCE_LOCKED_ANALYTIC_TIME_SEMICONJUGACY_AND_CONDITIONAL_FIELD_PULLBACK_ONLY_NOT_FULL_LEAN_EQUIVALENCE_OR_MATHEMATICAL_CERTIFICATION"
+}
