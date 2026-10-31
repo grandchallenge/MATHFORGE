@@ -1,0 +1,245 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_034_LOG_ABUNDANCE_OCT6_AUXILIARY_STATEMENT_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "newer_source_used": false
+  },
+  "candidate_base_protected_main": "5311ca05fc35c09d2ea25a81f7487a350ee5935f",
+  "scope": "One previously unassessed publisher-repaired-14 row: family 034 Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity, October 4 to October 6, 2026.",
+  "edition": {
+    "old": "October 4, 2026",
+    "current": "October 6, 2026",
+    "old_pdf": {
+      "path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/main.pdf",
+      "git_blob": "b6687c67c3e8763568406bc7992e673cc8815837"
+    },
+    "current_pdf": {
+      "path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf",
+      "git_blob": "bff68637347f9cdd333f09d34f33b566bc456e9b"
+    },
+    "current_readme": {
+      "path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/README.md",
+      "git_blob": "08e488fd489e65f64f7c39c98de137a4e4e0dfe1"
+    }
+  },
+  "source_tree": {
+    "old_build": "ed8aeae3232f6979ffe5257335a516ad4716f6be",
+    "new_build": "a8863efa287db4130afe3b6b08b31200645dd917",
+    "old_sections": "537c7b7362ca47facc420059a3d4f6986905ef77",
+    "new_sections": "5db9d0dc3869e5314fc6fe2ed3316ddd696bc773"
+  },
+  "source_file_comparison": {
+    "old_section_files": 11,
+    "new_section_files": 12,
+    "unchanged_section_blob_pairs": 8,
+    "changed_section_blob_pairs": 3,
+    "new_section_files_added": 1,
+    "changed_pairs": [
+      {
+        "edition": "October-4-2026",
+        "path": "build/sections/01-introduction.tex",
+        "git_blob": "b2a3c72ec2acced419d8a92af6badaf5092a9be6"
+      },
+      {
+        "edition": "October-6-2026",
+        "path": "build/sections/01-introduction.tex",
+        "git_blob": "9a8bcd5b4f67b2549804f0e3a0b0888ce6e3a91c"
+      },
+      {
+        "edition": "October-4-2026",
+        "path": "build/sections/03a-program-foundations.tex",
+        "git_blob": "41ed792624999946da467ab643005a3ec2aee471"
+      },
+      {
+        "edition": "October-6-2026",
+        "path": "build/sections/03a-program-foundations.tex",
+        "git_blob": "e5993db5a98170a0c043a9bf201b9cdfbdcb5031"
+      },
+      {
+        "edition": "October-4-2026",
+        "path": "build/sections/03c-restricted-induction.tex",
+        "git_blob": "1c1cff9a1399f4b8c9301e0d315ef5add5b90b77"
+      },
+      {
+        "edition": "October-6-2026",
+        "path": "build/sections/03c-restricted-induction.tex",
+        "git_blob": "759c17634532afca877563c94a5d94ffd231373c"
+      }
+    ],
+    "new_file": {
+      "path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/build/sections/03c-base-presentations.tex",
+      "git_blob": "169d76499ab63bea2f46f21a707490d868f8521a",
+      "chars": 27671
+    },
+    "unchanged_section_blobs": [
+      {
+        "relative_path": "02-inductive-reduction.tex",
+        "git_blob": "16c9097c10576439dadc9d5f6ff06d682ae6b9fd"
+      },
+      {
+        "relative_path": "03-programs.tex",
+        "git_blob": "2c45f610cd0a31e77271927ec9e0413f391b6d79"
+      },
+      {
+        "relative_path": "03b-projective-good-model.tex",
+        "git_blob": "3030f6b6689c8aa4a7f87272e7e3e6ed536d2432"
+      },
+      {
+        "relative_path": "04-boundary.tex",
+        "git_blob": "64933743a22ff8ef8fc258686390cc5985c6667d"
+      },
+      {
+        "relative_path": "05-projective-program-input.tex",
+        "git_blob": "29fa116c007561188bd8e7d048600b5d20777b04"
+      },
+      {
+        "relative_path": "05-rank-one.tex",
+        "git_blob": "f262f4c3cad7d85942be5109db3fc376c7b7c43c"
+      },
+      {
+        "relative_path": "06-simple-nonvanishing.tex",
+        "git_blob": "4a42d1a150fec8bfce4e73f5e0cf2c7ba1064197"
+      },
+      {
+        "relative_path": "07-signed-rigidity.tex",
+        "git_blob": "0cfc5c96c711a4fd848746a4d1df3607c2771f2b"
+      }
+    ],
+    "driver": {
+      "old_blob": "cc5e9ca8b2315d1ce4ebadda1cb85426e31286f0",
+      "new_blob": "cd9173cc55808a4c3aec06f0cc08e74fe0d8655e",
+      "change": "Edition date October 4 -> October 6"
+    },
+    "preamble": {
+      "same_blob": "bbb33c37fd72c415429bad5ab072ca2b9767b513"
+    },
+    "bibliography": {
+      "old_blob": "cd38f79fc00b657c8d2b24196dede79dc3704dc1",
+      "new_blob": "29454448e1dd198c1bb02e334aec15e3acb2c4d3",
+      "changes": [
+        "Conditional good minimal models citation advances October 5 -> October 6",
+        "Adds GuanZhouOptimal2015 and PopoviciRegularization2004 bibliography entries"
+      ]
+    }
+  },
+  "literal_statement_audit": {
+    "method": "Compare complete literal TeX theorem/lemma/proposition/corollary/claim/conjecture environments in all changed source sections; identical Git blobs for eight other section pairs; count new file separately. This is not semantic theorem proof checking.",
+    "changed_section_counts": [
+      {
+        "path": "build/sections/01-introduction.tex",
+        "old": 1,
+        "new": 1,
+        "identical": 1
+      },
+      {
+        "path": "build/sections/03a-program-foundations.tex",
+        "old": 9,
+        "new": 9,
+        "identical": 9
+      },
+      {
+        "path": "build/sections/03c-restricted-induction.tex",
+        "old": 21,
+        "new": 21,
+        "identical": 21
+      }
+    ],
+    "unchanged_sections_statement_count": 65,
+    "old_total_statement_environments": 96,
+    "new_total_statement_environments": 101,
+    "old_statements_literally_preserved": 96,
+    "added_statements": 5,
+    "added_statement_labels": [
+      {
+        "type": "lemma",
+        "label": "prog:base-presentation-preparation"
+      },
+      {
+        "type": "proposition",
+        "label": "prog:base-presentation"
+      },
+      {
+        "type": "lemma",
+        "label": "prog:base-emc"
+      },
+      {
+        "type": "lemma",
+        "label": "prog:multiplier-transport"
+      },
+      {
+        "type": "corollary",
+        "label": "prog:base-emc-induction"
+      }
+    ],
+    "main_theorem": {
+      "label": "thm:main",
+      "literal_change": false,
+      "hypothesis_delta": "NONE: retains Assumption asm:log-iitaka, normal irreducible compact Kähler X, effective rational log canonical boundary, rational Cartier K_X+Delta and analytic nefness.",
+      "conclusion_delta": "NONE: semiampleness and surjectivity of evaluation for some positive Cartier multiple are unchanged."
+    }
+  },
+  "proof_dependency_delta": [
+    "October 6 restricted induction removes projective canonical bundle formula from declared independent inputs and inserts sections/03c-base-presentations.",
+    "New adjoint-preserving preparation, projective base presentation, multiplier-ideal transport, closed-subspace contraction and lower-dimensional base contraction statements are added as explicit internal proof obligations.",
+    "Existing induction proof changes applications of projective canonical bundle formula to Proposition prog:base-presentation, adds crepant multiplier transport and contraction descent, and clarifies positive Kähler class after exceptional correction.",
+    "Introduction adds summary of fibrewise L2 positivity, regularization, base presentation and Stein-factor induction.",
+    "All 96 pre-existing statement environments are literally unchanged; five new auxiliary statement environments make statement_changed=true even though the main theorem is unchanged."
+  ],
+  "formalization_crosswalk": {
+    "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "git_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "source_papers": 173,
+    "main_results": 200,
+    "direct_title_or_path_match": false,
+    "exact_lean_declaration": "NOT_ESTABLISHED",
+    "scope_limit": "No direct title/path match in pinned crosswalk is not proof of absence of relevant Lean declarations."
+  },
+  "risk_disposition": {
+    "withdrawn": false,
+    "proof_changed": true,
+    "statement_changed": true,
+    "citation_only": false,
+    "source_mismatch": "UNASSESSED",
+    "unresolved": true,
+    "severity": "high"
+  },
+  "replay": {
+    "upstream_ref": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "verified_changed_source_blobs": 7,
+    "changed_source_blob_matches": 7,
+    "unchanged_section_blob_identity_pairs": 8,
+    "existing_literal_statement_environments_identical": 96,
+    "added_statement_environments": 5,
+    "method": "Authenticated GitHub exact-ref source file and directory reads; literal TeX environment extraction; GitHub-reported immutable Git blob identities; source JSON readback.",
+    "commands_for_operator": [
+      "git -C math checkout --detach 1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "git -C math diff --no-index -- preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/build/sections/03c-restricted-induction.tex preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/build/sections/03c-restricted-induction.tex"
+    ],
+    "not_performed": [
+      "Independent PDF rendering comparison",
+      "Lean compilation or kernel replay",
+      "Mathematical proof sufficiency/independence review",
+      "MATHCERT certification"
+    ]
+  },
+  "unresolved": [
+    "F034_LOG_ABUNDANCE_NEW_BASE_PRESENTATION_MULTIPLIER_IDEAL_AND_CONTRACTION_LEMMAS_MATHEMATICAL_SUFFICIENCY_UNADJUDICATED",
+    "F034_LOG_ABUNDANCE_EXACT_LEAN_DECLARATION_AND_SOURCE_SEMANTIC_CORRESPONDENCE_UNADJUDICATED",
+    "F034_LOG_ABUNDANCE_RENDERED_PDF_EQUIVALENCE_UNASSESSED"
+  ],
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "total_unique": 30,
+    "changed": false
+  },
+  "claim_boundary": "SOURCE_LOCKED_LITERAL_STATEMENT_AND_PROOF_DEPENDENCY_DELTA_ONLY_NOT_LEAN_COMPILATION_NOT_PROOF_VALIDITY_NOT_MATHCERT_CERTIFICATION",
+  "prior_admission_not_duplicated": [
+    "MATHFORGE PR #451: F034 conditional good minimal models",
+    "MATHFORGE PR #475: F056 generalized log canonical flips",
+    "MATHFORGE PR #476: F056 generalized canonical flips"
+  ]
+}
