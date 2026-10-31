@@ -1,0 +1,91 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_EXACT_STARTUP_RAMP_MATHLIB_DEFINITION_BRIDGE/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "lake_manifest_path": "lean/lake-manifest.json",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "mathlib_repository": "leanprover-community/mathlib4",
+    "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612"
+  },
+  "candidate_base": {
+    "repository": "grandchallenge/MATHFORGE",
+    "protected_main_sha": "4e6f3bd472e0b2354c2a3a347d3cc7320c9beddb"
+  },
+  "scope": "One bounded exact scalar function identification, resolving the startup-ramp identity gap in the previously protected F376 October -> 379 companion -> stationary Lean signature map. No claim of identity of the autonomous spatial field, Hamiltonian, detector quotient, projected pressure, October slow profile, or theorem proof.",
+  "primary_files": [
+    {
+      "role": "September 27 companion source beta",
+      "repository": "openai/math",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "lines": "196-202",
+      "definition": "E(s)=exp(-1/s) for s>0 and 0 for s<=0; beta(s)=E(s)/(E(s)+E(1-s)); source stationary alpha(t)=beta(2t-1) at lines 859-864."
+    },
+    {
+      "role": "October 6 F376 source sigma",
+      "repository": "openai/math",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41",
+      "lines": "269-274",
+      "definition": "rho(s)=exp(-1/s) for s>0 and 0 for s<=0; sigma(s)=rho(s)/(rho(s)+rho(1-s))."
+    },
+    {
+      "role": "Pinned Lean startup",
+      "repository": "openai/math",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StartupClock.lean",
+      "blob": "8939c866e30d10f2d5926718039c780efec81514",
+      "lines": "68-69",
+      "definition": "startupRamp(t)=Real.smoothTransition(2*t-1)."
+    },
+    {
+      "role": "Pinned mathlib implementation",
+      "repository": "leanprover-community/mathlib4",
+      "path": "Mathlib/Analysis/SpecialFunctions/SmoothTransition.lean",
+      "blob": "cd24266ad8eb620150d7dd302ea1d6932745c14b",
+      "lines": "39-40,146-147,157-159",
+      "definition": "expNegInvGlue(s)=if s<=0 then 0 else exp(-s^-1); Real.smoothTransition(s)=expNegInvGlue(s)/(expNegInvGlue(s)+expNegInvGlue(1-s)); positive denominator theorem."
+    }
+  ],
+  "derived_identity": {
+    "statement": "For every real s, companion beta(s) = October F376 sigma(s) = pinned Mathlib Real.smoothTransition(s); hence for every real t, companion alpha(t) = pinned Lean startupRamp(t).",
+    "reasoning": [
+      "All three numerator base functions E, rho, and expNegInvGlue are defined by exactly the same two branches on the real line, using exp(-1/s) for s>0 and 0 otherwise.",
+      "Every denominator is strictly positive: for any real s, at least one of s or 1-s is positive, and the corresponding exp(-1/u) is positive. Pinned mathlib theorem Real.smoothTransition.pos_denom records this.",
+      "Substitution of identical numerator and denominator expressions yields pointwise equality of beta, sigma, and Real.smoothTransition for all s; substituting s=2*t-1 yields the stationary ramp equality for all t.",
+      "The October slow scalar alpha_1(t)=sigma(2t-1)/(1+t) is NOT equal to startupRamp(t) in general; for t>=1 it is (1+t)^-1 whereas startupRamp(t)=1. The identity here concerns the common startup transition sigma(2t-1), not the slow profile alpha_1."
+    ],
+    "proof_status": "SOURCE_DEFINITIONAL_MATHEMATICAL_IDENTIFICATION_BY_UNFOLDING; no Lean lemma asserting manuscript-to-Lean equality was compiled or admitted."
+  },
+  "replay": {
+    "method": "Authenticated exact-ref GitHub source and mathlib reads; verified source-locked manifest mathlib revision, Git blob SHA and literal defining expressions. Algebraic pointwise equality follows by unfolding the four definitions and denominator positivity; no numerical approximation needed.",
+    "assertions": [
+      "Source companion main.tex pinned blob and E/beta definitions match",
+      "October analysis.tex pinned blob and rho/sigma definitions match",
+      "Lean StartupClock.lean pinned blob and startupRamp definition match",
+      "Lean lake-manifest.json pinned blob pins mathlib d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "Mathlib SmoothTransition.lean at pinned revision has pinned blob and expNegInvGlue definition",
+      "Mathlib SmoothTransition.lean at pinned revision has smoothTransition quotient definition",
+      "Mathlib SmoothTransition.lean at pinned revision has positive denominator theorem",
+      "Algebraic identity and the distinct slow profile have been checked against these exact definitions"
+    ],
+    "observed": "PASS 8/8 source/definition/analytic assertions; no independent Lean compilation, transitive import proof or mathematical certification.",
+    "reproduce": "git -C openai-math show 1581d4cbdd69a0faf34b2089614fe2a814316a6a:<path> and git -C mathlib4 show d13f23b723b8a846827a245b89c10fc7d3f11612:Mathlib/Analysis/SpecialFunctions/SmoothTransition.lean; compare exact lines and Git blob IDs listed above."
+  },
+  "relation_to_admitted_evidence": "Narrows the explicit ramp-identity gap in WP02_F376_OCTOBER_379_COMPANION_STATIONARY_LEAN_CROSSWALK.json (protected blob bcaf6d32635e30400bc4c33849bbae28a7758040), without re-admitting that earlier positive observer/signature bridge.",
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "changed": false
+  },
+  "unresolved": [
+    "F376_379_SOURCE_SPATIAL_CHI_STAR_TO_LEAN_PLANAR_MASK_AND_NORMALIZED_HAMILTONIAN_EXTENT_IDENTITY_UNADJUDICATED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_FULL_TRANSITIVE_IMPORT_AND_MANUSCRIPT_TO_LEAN_THEOREM_SEMANTIC_EQUIVALENCE_UNADJUDICATED",
+    "Rendered PDF equivalence, mathematical proof validity and MATHCERT certification not established"
+  ],
+  "claim_boundary": "EXACT_SOURCE_LOCKED_SCALAR_RAMP_DEFINITION_CORRESPONDENCE_ONLY_NOT_FULL_CONSTRUCTION_EQUIVALENCE_OR_MATHEMATICAL_CERTIFICATION",
+  "exclusions": "Deferred WP01 indices 145/199 and generic GCL queue-reduction automation untouched."
+}
