@@ -1,0 +1,95 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "repo": "openai/math",
+    "sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+  },
+  "runner": {
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "runner_head": "97b6d985423b63512ae95c9ddeaa4e84d13cdf5a",
+    "run_id": 41157097083,
+    "run_number": 53,
+    "run_attempt": 1,
+    "job_id": 124406186405,
+    "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41157097083",
+    "run_status": "completed",
+    "run_conclusion": "success"
+  },
+  "target": {
+    "index": 53,
+    "declaration": "OAI.ExactFourier.main_theorem",
+    "challenge": "lean/ComparatorChallenges/ExactFourier.lean",
+    "config": "lean/ComparatorChallenges/ExactFourier.json",
+    "solution": "lean/OAI/Computability/FourierCircuit/Main.lean",
+    "challenge_blob": "35b81d31dcf1a9b30d0e1511092be5b26f7989d9",
+    "config_blob": "eadf04c3e09caf9407a677899121c391909ea52a",
+    "solution_blob": "a054afb45c1792326ba43360828d94f7edc22d08",
+    "challenge_sha256": "93b33a2b9f6543dd0b893c3a5a504df19a1a39476072c6d7ebe18133a820ef6d",
+    "config_sha256": "5c80971062c12f3ec364ae482fbd1e0d954c81c36437f3faa0b2c56562d1892c",
+    "solution_sha256": "ff1fb1bc4b5ec26f1722d41d9603898b3361844af1cb4a78e0233a6bc6de582b",
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "enable_nanoda": false
+  },
+  "artifact": {
+    "artifact_id": 13025788408,
+    "zip_bytes": 10439,
+    "zip_sha256": "6b48f9e6b2d2ed30552a3b9d67cc711ec567231e95b246087e6df54efb13b3a5",
+    "receipt_sha256": "098ecc8b4d48fc68afa02fe050d53f26754554ab1e88a035f5055d3cc1000f1b",
+    "zip_exact_members": 12,
+    "receipt_listed_sha256_and_byte_counts": "11/11",
+    "zip_digest_and_size_match_provider": true,
+    "selected_index_and_declaration_match_crosswalk": true,
+    "source_challenge_config_sha256_recomputed_against_immutable_upstream": true,
+    "source_git_blobs_checked": true,
+    "manifest_pre_post_unchanged": true,
+    "hardened_exit": 0,
+    "diagnostic_exit": null,
+    "diagnostic_artifacts_present": false,
+    "comparator_hardened_accepted": true,
+    "kernel_acceptance_log_observed": true,
+    "comparator_success_log_observed": true,
+    "log_acceptance": [
+      "Lean default kernel accepts the solution",
+      "Your solution is okay!",
+      "Finished with result: success"
+    ],
+    "challenge_placeholder_sorry_not_counted_as_solution": true
+  },
+  "coverage": {
+    "protected_before_candidate": 53,
+    "protected_indices_before_candidate": "0-52,199",
+    "candidate_index": 53,
+    "protected_if_merged": 54,
+    "outstanding_if_merged": 146,
+    "protected_ledger_files_before_candidate": 30,
+    "historical_indexed_runs": 53,
+    "all_indexed_runs_terminal_success": true,
+    "active_indexed_runs": 0,
+    "duplicate_admission": false,
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Independently recomputed ZIP SHA256 and exact 10439 bytes against GitHub provider metadata; exact 12 ZIP members and all 11 receipt-listed SHA256 and byte-count pairs passed. Recomputed immutable upstream challenge/config/solution SHA256 and Git blob identities, exact crosswalk index 53 and manifest. Hardened exit 0, no fallback, Lean kernel and Comparator success observed.",
+    "adversary_non_authoring_read_only": "Separate non-authoring logical audit checked index 53 excluded from protected 0-52,199; run 53 terminal success, 53 indexed runs total and zero active; selected index/declaration read from artifact rather than run_number; allowed axioms only, Nanoda disabled, no diagnostic fallback, no manuscript-semantic or certification claim.",
+    "amanuensis": "Append-only exact receipt ledger on candidate branch. Do not claim protected admission before PR merge and protected-main readback. Keep issue 330 open."
+  },
+  "transport": "GitHub connector read all indexed run history, downloaded artifact, and independently read current protected main; GCL_Commander had intermittent internal transport failure, system status and minimal bounded recovery probe checked, later authenticated source-hash preflight succeeded. No new workflow dispatch before admission.",
+  "next_action": "Protect-admit this verified evidence through PR and exact-main readback; then reconcile current indexed history and dispatch distinct unadmitted indices 54-56, up to three concurrent."
+}
