@@ -343,7 +343,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": false,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -353,10 +353,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_056_GLC_FLIPS_OCT7_LITERAL_STATEMENT_AND_AUXILIARY_SCOPE.json",
+          "git_blob": "e87e64ff736c69b55d05f232c50b501d927fffce"
         }
       ],
-      "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare revised theorem dependencies and hypotheses against prior edition and selected Lean declarations; do not infer semantic coverage from edition identity"
+      "formal_declaration_mapping": "NO_DIRECT_TITLE_MATCH_IN_PINNED_173_SOURCE_200_MAIN_RESULT_CROSSWALK; EXACT_LEAN_DECLARATION_NOT_ESTABLISHED",
+      "exact_review_target": "Verify mathematical sufficiency/independence of revised Oct 7 auxiliary input scope and possible circular dependencies (relative MMP Prop 9.7/9.9/9.11, Lemma 9.8, threefold termination, common-model/negativity/codim-two smoothness); establish any exact Lean declaration match. Source statement unchanged does not certify proof.",
+      "literal_hypothesis_conclusion_delta": "Oct 5/7 complete source TeX comparison: 5 theorem, 15 lemma, and 10 proposition environments literally identical (including 1,585-character thm:main; SHA256 0c4daed1f8be08925f6d924c3f39dfc90ce9f33a23a78d2c20f1416446738e70). The new 24-line preliminary paragraph narrows claimed independent auxiliary imports to KahlerAuxiliary §§9–11 and CanonicalKahler Props 2.1/Lemmas 2.2–2.3, excludes their absolute Section 6 and fourfold termination results, and preserves strong-factoriality assumptions only for relative constructions. Two bibliography links update companion editions. Proof validity and exact Lean mapping remain unresolved."
     },
     {
       "key": "056:preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
