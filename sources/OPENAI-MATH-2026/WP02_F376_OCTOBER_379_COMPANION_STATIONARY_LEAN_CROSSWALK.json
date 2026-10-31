@@ -1,0 +1,198 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_OCTOBER_379_COMPANION_STATIONARY_LEAN_CROSSWALK/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "note": "All path/blob identities are at the pinned commit; GitHub default-branch code-search snippets were used only for path discovery and are not cited as source evidence."
+  },
+  "candidate_base": {
+    "repository": "grandchallenge/MATHFORGE",
+    "protected_main_sha": "97b6d985423b63512ae95c9ddeaa4e84d13cdf5a"
+  },
+  "scope": "One bounded, positive, source-locked cross-manuscript dependency map: family 376 October input-offset corollary cites the September 27 eventually-stationary companion (379); the companion's stationary theorem has a closely aligned Lean stationary theorem with matching fixed observer geometry. This does not establish the October slow-profile or Poisson-projection Lean equivalence.",
+  "source_paths": [
+    {
+      "role": "October family 376 imported construction and profile",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/clocks.tex",
+      "blob": "1aa909f39fc3b9417de71af92a75e89262535518",
+      "anchors": [
+        "bc:input-offset-event",
+        "bc:input-offset-W",
+        "bc:input-offset-profiles",
+        "bc:input-offset-force",
+        "bc:input-offset-common-rate"
+      ],
+      "citation": "OpenAI379StationaryA2, Theorem 4.1, Section 5, Proposition 6.1"
+    },
+    {
+      "role": "September 27 companion 379",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "anchors": [
+        "thm:main",
+        "thm:planar-processor",
+        "eq:autonomous-suspension",
+        "eq:steady-force",
+        "prop:scalar-clock"
+      ]
+    },
+    {
+      "role": "Companion citation edition",
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/references.bib",
+      "blob": "9c389b5b1cc42f296f16e62c4317efb379099faf",
+      "anchor": "OpenAI379StationaryA2"
+    }
+  ],
+  "lean_paths": [
+    {
+      "role": "Companion stationary headline theorem",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StationaryMain.lean",
+      "blob": "b3486d994a3a59be52fdeb30a0304815ea4dbc08",
+      "declaration": "OAI.ForcedComputation.stationary_effective_computation"
+    },
+    {
+      "role": "Concrete stationary velocity and force",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StationaryProgram.lean",
+      "blob": "2b277ef3384f7a1089cab9b9843a022b9e6b32ea",
+      "declarations": [
+        "stationaryVelocity",
+        "stationaryForce",
+        "stationary_program_flows"
+      ]
+    },
+    {
+      "role": "Exact observer and initial label",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/SuspensionObservation.lean",
+      "blob": "3aaabcc6f5d045746e34a294d6a0048719d2516a",
+      "declarations": [
+        "stationaryObserver",
+        "stationaryStartingPoint",
+        "normalized_suspension_observation"
+      ]
+    },
+    {
+      "role": "Spatial suspension formula",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/SuspensionExpressions.lean",
+      "blob": "32c59125e3f80d8b41ed85b21fdcd100eb3565aa",
+      "declaration": "SpatialExpression.suspensionField"
+    },
+    {
+      "role": "Unit spatial clock",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/UnitSpatialClock.lean",
+      "blob": "b404b9c090a5645e5833c4a77a54c3ad1c46530b",
+      "declaration": "unitSpatialClock"
+    },
+    {
+      "role": "Stationary startup time change",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/StartupClock.lean",
+      "blob": "8939c866e30d10f2d5926718039c780efec81514",
+      "declarations": [
+        "startupRamp",
+        "accumulatedClock"
+      ]
+    },
+    {
+      "role": "Adjacent but distinct slow theorem",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/TorusSlowMain.lean",
+      "blob": "d11b59663b6e194a00565a149454c8481f185843",
+      "declaration": "OAI.ForcedComputation.torus_slow_effective_computation"
+    }
+  ],
+  "correspondence": [
+    {
+      "source": "Companion thm:main stationary force from rest for a fixed computable viscosity",
+      "lean": "stationary_effective_computation: StationaryFluidProperties 1 ν (stationaryVelocity I hI) and finite evaluators",
+      "status": "ALIGNED_AT_HEADLINE_AND_FORMAL_SIGNATURE_LEVEL",
+      "limitation": "The manuscript's deterministic-machine input and Lean Alternating.ValidInput require a separate representation bridge; proof semantics not assessed."
+    },
+    {
+      "source": "Companion fixed label P=(1/4,1/4,0)",
+      "lean": "stationaryStartingPoint = ![1/4,1/4,0]",
+      "status": "LITERALLY_MATCHED"
+    },
+    {
+      "source": "Companion observer O={1/32<Y<1/8}",
+      "lean": "stationaryObserver={x | 1/32<x 1 ∧ x 1<1/8}",
+      "status": "LITERALLY_MATCHED_AS_LIFTED_COORDINATE_PREDICATE",
+      "limitation": "Source torus set versus Lean real-coordinate lift requires explicit quotient convention."
+    },
+    {
+      "source": "Companion W=(V1(Z,X,Y),V2(Z,X,Y),∂X(Xχ*))",
+      "lean": "SpatialExpression.suspensionField(normalizedHamiltonian) with third component unitSpatialClock=planarMask 1 clockRectangle (1/128)",
+      "status": "SAME_SUSPENSION_ARCHITECTURE_NOT_FIELD_IDENTITY",
+      "limitation": "The source cutoff χ* and Lean planarMask expression have not been proved extensionally equal."
+    },
+    {
+      "source": "Companion α0(t)=σ(2t−1), stationary after time 1",
+      "lean": "startupRamp(t)=Real.smoothTransition(2*t−1), stationaryVelocity=hamiltonianStartupVelocity(normalizedHamiltonian)",
+      "status": "SAME_RAMP_SHAPE_NOT_EXACT_FUNCTION_IDENTITY",
+      "limitation": "No pinned lemma identifying manuscript σ with Lean Real.smoothTransition has been checked."
+    },
+    {
+      "source": "Companion raw force α'W+α²(W·∇)W−ναΔW with zero prescribed pressure",
+      "lean": "stationaryForce ν I hI = residual ν (stationaryVelocity I hI)",
+      "status": "STRUCTURALLY_ALIGNED",
+      "limitation": "Requires actual field/ramp identity before equality of force functions can be concluded."
+    },
+    {
+      "source": "October family 376 slow α1=σ(2t−1)/(1+t) and all-order rate",
+      "lean": "torus_slow_effective_computation proves analogous inverse-time rates for slowFromRest(loadedMachineVelocity ...)",
+      "status": "ADJACENT_RATE_ONLY_NOT_OCTOBER_PROFILE_IDENTITY",
+      "limitation": "Distinct construction, scalar phase offset and observer were already recorded in other protected WP02 evidence."
+    },
+    {
+      "source": "October family 376 torus Poisson projection Pg=g−∇φ and pressure −φ, quantitative H^(r+2)→C^r",
+      "lean": "Neither stationary_effective_computation nor torus_slow_effective_computation has these quantitative projection operators as explicit theorem conclusions",
+      "status": "NOT_MAPPED_AT_INSPECTED_THEOREM_SIGNATURES",
+      "limitation": "No claim of absence from every transitive import or arbitrary other Lean declaration."
+    }
+  ],
+  "direct_imports": {
+    "stationary_main": [
+      "Programs.StationaryProgram",
+      "Programs.StationaryObservation"
+    ],
+    "stationary_program": [
+      "Programs.NormalizedPlanarProgram",
+      "Flow.HamiltonianStartup"
+    ],
+    "stationary_observation": [
+      "Programs.NormalizedSuspensionRouting",
+      "Flow.PlanarDormantZero",
+      "Flow.PlanarStepBranch",
+      "Flow.SuspensionObservation"
+    ],
+    "note": "This records inspected direct import edges, not an exhaustive transitive import closure."
+  },
+  "new_finding": "The October family-376 citation points to a companion whose stationary Lean theorem matches both the exact fixed particle and the exact Y-strip observer, unlike the previously inspected adjacent TorusSlowMain detector. This supplies a better source-to-Lean starting point for the October input-offset geometry. It does not transfer the October-only slow profile or projected-pressure estimates.",
+  "replay": {
+    "method": "Authenticated GitHub connector exact-ref UTF-8 contents reads and reported Git blob identities, deterministic literal anchor assertions; no local CHAD execution, independent Git-object recomputation or Lean compilation.",
+    "observed": "PASS 19/19 path/blob/anchor assertions on nine pinned source/Lean files",
+    "assertion_count": 19,
+    "source_file_count": 9,
+    "verification_limit": "GitHub-returned blob SHA and exact-ref content were checked against pinned expected identities; this is not independent cryptographic recomputation."
+  },
+  "related_existing_evidence": [
+    "WP02_F376_BALANCED_THREE_STACK_CLAUSE_CROSSWALK.json",
+    "WP02_F376_ADJACENT_SLOW_RATE_BRIDGE.json",
+    "WP02_F376_SLOW_CLOCK_PHASE_OFFSET_BRIDGE.json",
+    "WP02_F376_DETECTOR_MEASURE_CORRESPONDENCE.json",
+    "WP02_F376_PROJECTION_PRESSURE_CRITERION.json"
+  ],
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "changed": false
+  },
+  "disposition": "F376_OCTOBER_TO_379_COMPANION_STATIONARY_LEAN_POSITIVE_OBSERVER_AND_ARCHITECTURE_BRIDGE",
+  "next_obligation": "Check exact source χ* versus Lean planarMask/normalizedHamiltonian and σ versus Real.smoothTransition; separately map October slow α1 and Poisson projection to actual Lean propositions or retain the explicit gap.",
+  "unresolved": [
+    "Exact equality of companion's planar processor/suspension W to Lean normalizedHamiltonian/suspensionField",
+    "Exact source sigma to Lean startupRamp identity",
+    "October slow-profile and Poisson/Helmholtz projection and projected pressure theorem correspondence",
+    "Full transitive import graph, rendered PDF equivalence, independent proof validity and MATHCERT certification"
+  ],
+  "claim_boundary": "SOURCE_LOCKED_LITERAL_AND_SIGNATURE_CROSSWALK_ONLY_NOT_FULL_OCTOBER_TO_LEAN_EQUIVALENCE_OR_MATHCERT"
+}
