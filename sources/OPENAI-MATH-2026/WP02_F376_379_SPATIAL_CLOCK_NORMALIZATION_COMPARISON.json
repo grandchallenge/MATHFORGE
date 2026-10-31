@@ -1,0 +1,99 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_379_SPATIAL_CLOCK_NORMALIZATION_COMPARISON/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "candidate_base": {
+    "repository": "grandchallenge/MATHFORGE",
+    "protected_main_sha": "0dc028efa261d432006e48b921d38af5beeff7e6"
+  },
+  "scope": "One bounded source-to-Lean spatial-clock formula audit, following the admitted scalar startup-ramp identity. Distinguish equal plateau/mean-zero behavior from unproved global field identity; exhibit a concrete normalization mismatch for the naive shared-cutoff identification.",
+  "primary_files": [
+    {
+      "role": "379 September 27 companion autonomous suspension",
+      "path": "preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/build/main.tex",
+      "blob": "cfb8c3d315b164d3cf00231720ff1e076981ac65",
+      "lines": "835-847",
+      "anchor": "g(X,Y)=∂_X(X χ_*(X,Y)), χ_*=1 near J_*, compact support in open square; W=(V1,V2,g)"
+    },
+    {
+      "role": "Lean fixed clock rectangle and plateau",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/UnitSpatialClock.lean",
+      "blob": "b404b9c090a5645e5833c4a77a54c3ad1c46530b",
+      "lines": "14-34",
+      "anchor": "clockRectangle=[1/8,7/8]×[1/32,7/8], unitSpatialClock=planarMask 1 clockRectangle (1/128); unitSpatialClock_one on carrier"
+    },
+    {
+      "role": "Lean planar mask factorization",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ShearFlows/Construction.lean",
+      "blob": "ad35ca7adbab55266401ac70dbf2b6e71ae98351",
+      "lines": "148-154,171-182",
+      "anchor": "planarMask= circleMask(L,a,b,c,d,p)(X) * circleCutoff(L,a',b',c',d')(Y); p=R.center 0"
+    },
+    {
+      "role": "Lean centered derivative mask",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ShearFlows/Extension.lean",
+      "blob": "00526a88ad8a48043fe017bcda44fb9ad74659d3",
+      "lines": "119-123",
+      "anchor": "circleMask=deriv(periodize L (fun x => (x-p)*closedCutoff a b c d x))"
+    },
+    {
+      "role": "Lean suspension third coordinate",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Flow/SuspensionExpressions.lean",
+      "blob": "32c59125e3f80d8b41ed85b21fdcd100eb3565aa",
+      "lines": "102-105",
+      "anchor": "suspensionField(e)(x) third component=unitSpatialClock(horizontal x)"
+    },
+    {
+      "role": "Lean planar Hamiltonian construction",
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/NormalizedPlanarProgram.lean",
+      "blob": "6b610e0d0f79ac2a24ef91706b8ade4a619356bc",
+      "lines": "47-52",
+      "anchor": "normalizedHamiltonian=processorExpression(normalizedPulse I hI)"
+    }
+  ],
+  "calculation": {
+    "coordinate_convention": "Within the open unit-square chart where the periodized cutoff has only its zero translate, write Cx(X)=closedCutoff(a,b,c,d)(X), Cy(Y)=closedCutoff(a',b',c',d')(Y). For the canonical aligned separable choice χ_*(X,Y)=Cx(X)Cy(Y), not an assertion that the manuscript uniquely selects this χ_*.",
+    "source_third_component": "g_source(X,Y)=∂_X(X Cx(X) Cy(Y))=[Cx(X)+X Cx'(X)] Cy(Y).",
+    "lean_third_component": "g_Lean(X,Y)=∂_X((X-p) Cx(X)) Cy(Y)=[Cx(X)+(X-p) Cx'(X)] Cy(Y), p=(1/8+7/8)/2=1/2.",
+    "difference": "g_Lean-g_source=-(1/2) Cx'(X) Cy(Y) on the open chart under the stated shared-cutoff choice.",
+    "nonidentity_for_shared_cutoff": "The smooth cutoff Cx changes from zero to one across its left collar, so its derivative is nonzero at some collar point by the mean value theorem. Choosing Y in the Cy=1 plateau gives a nonzero difference. Thus identifying χ_* with the same separable Lean cutoff does NOT yield global extensional equality of the clock fields.",
+    "common_properties": "Both are smooth, compactly supported in the chart and periodicized; both equal 1 on their respective protected plateaus and have zero torus mean by being X-derivatives of compactly supported/periodized potentials. Those properties are sufficient for the source's tracked-corridor clock argument, but not a proof of full field identity.",
+    "limitations": "The source leaves χ_* specified by qualitative support/plateau conditions and a rational-margin recipe rather than an exact Lean term. The calculation refutes only the naive same-cutoff substitution, not every possible χ_* or an observational equivalence theorem. No exact source planar V to normalizedHamiltonian equality is inferred."
+  },
+  "status": {
+    "shared_cutoff_global_clock_identity": "COUNTEREXAMPLE_BY_CENTERING_TERM_UNDER_EXPLICIT_CANONICAL_SHARED_CUTOFF_HYPOTHESIS",
+    "unconditional_source_chi_star_to_lean_clock_identity": "UNADJUDICATED",
+    "tracked_corridor_unit_speed": "ALIGNED_AT_PROPERTY_LEVEL_NOT_FULL_ORBIT_BRIDGE",
+    "source_planar_V_to_lean_normalizedHamiltonian": "UNADJUDICATED",
+    "october_slow_profile_and_poisson_projection": "UNMAPPED"
+  },
+  "replay": {
+    "method": "Authenticated exact-ref GitHub UTF-8 source reads; six exact Git blob identities and sixteen literal source anchors checked, followed by symbolic product-rule comparison and mean-value-theorem nonidentity under stated aligned-cutoff hypothesis.",
+    "observed": "PASS 6/6 exact pinned file/blob checks; PASS 16/16 literal anchors; analytic conditional calculation independently inspectable.",
+    "no_compilation": true,
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "prior_evidence": [
+    "WP02_F376_OCTOBER_379_COMPANION_STATIONARY_LEAN_CROSSWALK.json",
+    "WP02_F376_379_EXACT_STARTUP_RAMP_MATHLIB_DEFINITION_BRIDGE.json"
+  ],
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "changed": false
+  },
+  "unresolved": [
+    "F376_379_UNCONDITIONAL_SOURCE_CHI_STAR_TO_LEAN_UNIT_SPATIAL_CLOCK_EXTENT_IDENTITY_UNADJUDICATED",
+    "F376_379_TRACKED_ORBIT_EQUIVALENCE_AND_SOURCE_V_TO_NORMALIZED_HAMILTONIAN_UNPROVED",
+    "F376_OCTOBER_ONLY_SLOW_PROFILE_AND_POISSON_PROJECTION_TO_LEAN_UNMAPPED",
+    "F376_FULL_TRANSITIVE_SEMANTIC_CORRESPONDENCE_AND_MATHCERT_UNADJUDICATED"
+  ],
+  "next_obligation": "Prefer a property-level source-to-Lean bridge for unit clock on the tracked corridor and exact planar-processor routing, rather than assuming extensional clock identity; independently inspect October slow profile and Poisson projection.",
+  "claim_boundary": "PINNED_SOURCE_FORMULA_COMPARISON_AND_CONDITIONAL_NORMALIZATION_OBSTRUCTION_ONLY_NOT_LEAN_COMPILATION_OR_MATHEMATICAL_CERTIFICATION",
+  "exclusions": "No WP01 indices 145/199; no generic GCL queue-reduction automation changes."
+}
