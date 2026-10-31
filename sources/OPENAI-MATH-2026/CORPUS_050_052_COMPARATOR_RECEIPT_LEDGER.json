@@ -1,0 +1,214 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "runner_head": "4238c009b8256d3e40308e1b5233173871769f51",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+  },
+  "entries": [
+    {
+      "index": 50,
+      "declaration": "OAI.EuclideanRamsey.classification",
+      "runner": {
+        "run_id": 41152755650,
+        "run_number": 50,
+        "run_attempt": 1,
+        "job_id": 124392787178,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41152755650",
+        "run_status": "completed",
+        "run_conclusion": "success"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/EuclideanRamsey.lean",
+        "config": "lean/ComparatorChallenges/EuclideanRamsey.json",
+        "solution": "lean/OAI/Combinatorics/EuclideanRamsey/Main.lean",
+        "challenge_sha256": "cb2ede9a1f7b6c2784acfcace10de725268779be904e8b81771e79044233ac0c",
+        "config_sha256": "2d7a4422593f70e170f5fc41c87e33f8afae5ad3cf795000c09181d9fad76872",
+        "solution_sha256": "ef5469b2619bccdd0dfd386e0c9e45be29321e8fcb117b1de8be6db3517658a5",
+        "challenge_blob": "6268acd3bf3f2537607064aae93b425aed117b4c",
+        "config_blob": "7b3d0e9dc89a1a5e254ead95031f29b8f0ccb9f2",
+        "solution_blob": "f61dbf1f08e982747098c903896971d7fd4d1524",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13024470718,
+        "zip_bytes": 10548,
+        "zip_sha256": "3799ecf5d587c1727d70e5c0595393f8c20bfdbd8e9e15f492c8df9d262355c0",
+        "receipt_sha256": "85507ca1167099ed5e1bb3b42ac86a08fbf80a5af6e77c85334255f7292ddcb5",
+        "zip_exact_members": 12,
+        "receipt_listed_files_sha256_and_bytes_verified": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_sorted_crosswalk": true,
+        "source_challenge_config_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    },
+    {
+      "index": 51,
+      "declaration": "OAI.EuclideanSteinitzBergstrom.main",
+      "runner": {
+        "run_id": 41152930214,
+        "run_number": 51,
+        "run_attempt": 1,
+        "job_id": 124393336130,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41152930214",
+        "run_status": "completed",
+        "run_conclusion": "success"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/SteinitzBergstrom.lean",
+        "config": "lean/ComparatorChallenges/SteinitzBergstrom.json",
+        "solution": "lean/OAI/Analysis/Steinitz/Main.lean",
+        "challenge_sha256": "c36334eff43ee1dc46d565c80a4a537fea67951e727ab7b88b5c64fca0dfe63d",
+        "config_sha256": "a1ddb4bf687734bb38468666b4b1b8d3194d974614786e85cfc5b4aa77532195",
+        "solution_sha256": "d234f843e8611d4725da6bff2cf0aac2ce5ec1d36db623a97a98878ef1871b51",
+        "challenge_blob": "00107bf2365bb51fb4896ce83faa21dbdc5e2bea",
+        "config_blob": "aa51c3553f77a52d8f7e084955f1109b64737bd3",
+        "solution_blob": "d953d9ec5929e37390a83f0aadccf7040d2f038f",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13024620844,
+        "zip_bytes": 10425,
+        "zip_sha256": "55059a35373d1cd49721d0107c98bf0c5907da6141d73fa319ee66c9100907a1",
+        "receipt_sha256": "bbfa3c5968236c70fe048d188bda0bd57556a3675390d7c62e8a5970d903d9fe",
+        "zip_exact_members": 12,
+        "receipt_listed_files_sha256_and_bytes_verified": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_sorted_crosswalk": true,
+        "source_challenge_config_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    },
+    {
+      "index": 52,
+      "declaration": "OAI.ExactDerandomization.exact_logarithmic_space_derandomization",
+      "runner": {
+        "run_id": 41153102831,
+        "run_number": 52,
+        "run_attempt": 1,
+        "job_id": 124393881318,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41153102831",
+        "run_status": "completed",
+        "run_conclusion": "success"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/LogspaceEquality.lean",
+        "config": "lean/ComparatorChallenges/LogspaceEquality.json",
+        "solution": "lean/OAI/Computability/Logspace/Equality.lean",
+        "challenge_sha256": "5c9ed4d04a778b61b33693eff64227a9c5b8162bf53c0b3e3938fb505831d817",
+        "config_sha256": "80a22fecb8d68504a00419c12de7d83f9a6556f01d512ef7607c1acff61118cc",
+        "solution_sha256": "4e04bb9a264ff32042267832d47423079a0d72b9880994b5e84957d672d5fbe9",
+        "challenge_blob": "692a4bdc0de7de093d83abdcb7a2bb1ccb7d476b",
+        "config_blob": "06ca6c6af3ecbe3b426f36b54c7ec9b4e319d117",
+        "solution_blob": "5397fc4cc54b4aefd0898108746b1f301c5c2ce7",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13024161765,
+        "zip_bytes": 10516,
+        "zip_sha256": "013c1de4598181ea86dc0fb641e11fa0e5c41dd475acc3388a7d608bd1fbc3fc",
+        "receipt_sha256": "87b69d4e3da5a6ea4067b2713b0e02b8eb2489715048ba52bc72626a5568678e",
+        "zip_exact_members": 12,
+        "receipt_listed_files_sha256_and_bytes_verified": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_sorted_crosswalk": true,
+        "source_challenge_config_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ],
+  "coverage": {
+    "protected_before_candidate": 51,
+    "protected_indices_before_candidate": "0-49,199",
+    "candidate_indices": [
+      50,
+      51,
+      52
+    ],
+    "protected_if_merged": 54,
+    "unadmitted_if_merged": 146,
+    "duplicate_admission": false,
+    "prior_protected_ledger_files": 29,
+    "historical_indexed_runs": 52,
+    "observed_run_numbers": "1-52",
+    "all_indexed_runs_terminal_success": true,
+    "active_indexed_runs": 0,
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Downloaded all three authenticated GitHub Actions ZIP artifacts; independently recomputed provider-matching ZIP SHA256 and exact byte sizes, verified exact 12 ZIP members per artifact and all 33/33 receipt-listed SHA256 and byte counts. Checked each selected declaration and index against immutable sorted 200-row crosswalk. Independently recomputed nine pinned upstream challenge/config/solution SHA256 digests and manifest SHA256 from GitHub source at exact upstream commit, and checked source Git blob identities. All three hardened exits zero, no diagnostic fallback, Lean kernel and Comparator acceptance in exact logs.",
+    "adversary_non_authoring_read_only": "Distinct logical read-only audit of three non-overlapping indices 50-52 against protected 0-49 and 199, no duplicate admissions or active indexed runs, all 52 historical indexed workflow runs completed successfully, allowed axioms and Nanoda disabled, no challenge-placeholder promotion, source pin and exact manifest, and no inference of manuscript equivalence or public certification. Logical role is not a separate GitHub identity.",
+    "amanuensis": "Append-only three-index evidence ledger with exact run, job, artifact, source, receipt and checks; candidate does not claim protected admission before PR merge and main readback. Parent #330 remains open."
+  },
+  "transport": "Authenticated GitHub connector successfully read workflow history and downloaded artifacts; GCL_Commander initially healthy for a minimal command and full history reconciliation, then suffered an internal transport error and bounded recovery attempt timed out. No dispatch attempted in this candidate; transport errors were not classified as GitHub failures.",
+  "next_action": "Protected PR checks, merge and exact main readback; fresh run history reconciliation before any further distinct dispatch 53-55 within concurrency limit three."
+}
