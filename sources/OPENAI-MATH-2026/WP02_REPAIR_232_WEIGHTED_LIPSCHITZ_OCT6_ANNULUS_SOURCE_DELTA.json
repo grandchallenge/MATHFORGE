@@ -1,0 +1,221 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_232_WEIGHTED_ANNULUS_SOURCE_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "publisher_history": "history.md",
+    "edition_comparison": "September 25 to October 6, 2026"
+  },
+  "comparison": {
+    "family_id": "232",
+    "title": "Gaussian free-field limits of weighted integer Lipschitz heights",
+    "previous_edition": "September-25-2026",
+    "revised_edition": "October-6-2026",
+    "pdfs": {
+      "previous": {
+        "path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/paper.pdf",
+        "git_blob": "417ca16c720ef648c6892412fba2fc7a77c24c47"
+      },
+      "revised": {
+        "path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf",
+        "git_blob": "3b13e66b286d341ccc6c7d2e505417c7e9f13148"
+      }
+    },
+    "drivers": {
+      "previous": {
+        "path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/main.tex",
+        "git_blob": "c1624a26534584c7cf7e87e92b962d52c362b4f9"
+      },
+      "revised": {
+        "path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/main.tex",
+        "git_blob": "b87799edb517481cc251e749bb116e39d2fc94c8"
+      }
+    },
+    "section_pairs": [
+      {
+        "name": "01-introduction.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/01-introduction.tex",
+        "previous_blob": "d22f0b41ee2d5702f5934e3b2d4b9e6aa2520a73",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/01-introduction.tex",
+        "revised_blob": "6e44bdc7ccd7aae811acceef6b9098705f871248",
+        "byte_identical": false
+      },
+      {
+        "name": "02-discrete.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/02-discrete.tex",
+        "previous_blob": "347f22aac0239b3873955e7b3b2bd9a5e70e03a5",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/02-discrete.tex",
+        "revised_blob": "2853b875624de551f0d674c78065ff9f8ffdbd75",
+        "byte_identical": false
+      },
+      {
+        "name": "03-moments.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/03-moments.tex",
+        "previous_blob": "81451bc9f0334e5ddbae07a1f43961141aa44425",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/03-moments.tex",
+        "revised_blob": "81451bc9f0334e5ddbae07a1f43961141aa44425",
+        "byte_identical": true
+      },
+      {
+        "name": "04-plane.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/04-plane.tex",
+        "previous_blob": "685772f0eb58506047af628e5642c7448dad5c0d",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/04-plane.tex",
+        "revised_blob": "685772f0eb58506047af628e5642c7448dad5c0d",
+        "byte_identical": true
+      },
+      {
+        "name": "05-pins.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/05-pins.tex",
+        "previous_blob": "48f4e367fb688e2eab7c6f2094a2a92e743f8ec8",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/05-pins.tex",
+        "revised_blob": "48f4e367fb688e2eab7c6f2094a2a92e743f8ec8",
+        "byte_identical": true
+      },
+      {
+        "name": "06-boundary.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/06-boundary.tex",
+        "previous_blob": "94907afebc5c0e548dda8dd25e3c6edf47265c95",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/06-boundary.tex",
+        "revised_blob": "94907afebc5c0e548dda8dd25e3c6edf47265c95",
+        "byte_identical": true
+      },
+      {
+        "name": "07-limit.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/07-limit.tex",
+        "previous_blob": "ac61f44946656e625f072d16096ec92c404243d8",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/07-limit.tex",
+        "revised_blob": "ac61f44946656e625f072d16096ec92c404243d8",
+        "byte_identical": true
+      },
+      {
+        "name": "08-scalar-spectra.tex",
+        "previous_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/build/sections/08-scalar-spectra.tex",
+        "previous_blob": "a56fd62fc101425ab6c4c0bbae4d3e35b455dbb4",
+        "revised_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/08-scalar-spectra.tex",
+        "revised_blob": "a56fd62fc101425ab6c4c0bbae4d3e35b455dbb4",
+        "byte_identical": true
+      }
+    ],
+    "new_section": {
+      "path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/build/sections/09-annulus.tex",
+      "git_blob": "18787cacac49986d2104b4277efa65b1375853bd",
+      "lines": 942
+    },
+    "readme": {
+      "path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/README.md",
+      "git_blob": "5d499e9fbe6b613386b9b69796a0fc4324e27079",
+      "version_note": "This version supplies the annulus proof of the circuit estimate used in the discrete argument."
+    }
+  },
+  "literal_source_delta": {
+    "common_sections": 8,
+    "byte_identical_sections": 6,
+    "changed_sections": [
+      "01-introduction.tex",
+      "02-discrete.tex"
+    ],
+    "new_sections": [
+      "09-annulus.tex"
+    ],
+    "driver_changes": [
+      "date September 25 -> October 6",
+      "added \\input{sections/09-annulus}"
+    ],
+    "introduction_change": "Only 'the scalar spectral discussion of Usui' -> 'the spectral discussion of Usui'; the definition and thm:main blocks remain literally identical.",
+    "discrete_changes": [
+      "The circuit estimate is no longer described as the only imported crossing estimate; new text says Appendix sec:annulus supplies its proof.",
+      "The optional heading of thm:circuit-input changes from 'Glazman--Lammers circuit input' to 'Annulus circuit estimate'; the full theorem body, including its hypotheses and conclusion, is literally identical.",
+      "The citation prose changes from identifying equation (55) in GL2025 Appendix A to identifying the conclusion as that equation; the cited source remains."
+    ],
+    "original_statement_environments": 62,
+    "revised_statement_environments": 75,
+    "old_statement_bodies_literally_unchanged": 62,
+    "changed_optional_statement_headings": 1,
+    "new_auxiliary_statement_environments": 13,
+    "new_auxiliary_types": {
+      "lemma": 12,
+      "proposition": 1
+    },
+    "new_auxiliary_labels": [
+      "annulus:ambient",
+      "annulus:one-white",
+      "annulus:slide",
+      "annulus:search",
+      "annulus:duality",
+      "annulus:ports",
+      "annulus:patch",
+      "annulus:plus-equalities",
+      "annulus:straight-short",
+      "annulus:gluing",
+      "annulus:first-seed",
+      "annulus:winding",
+      "annulus:seed"
+    ],
+    "main_theorem": {
+      "label": "thm:main",
+      "body_literally_unchanged": true
+    },
+    "circuit_theorem": {
+      "label": "thm:circuit-input",
+      "body_literally_unchanged": true,
+      "optional_heading_changed": true
+    },
+    "statement_changed_for_full_manuscript_inventory": true,
+    "main_theorem_hypotheses_or_conclusion_changed": false
+  },
+  "proof_dependency": {
+    "new_section": "09-annulus.tex",
+    "role": "New 942-line annulus argument supplies the circuit estimate used in the discrete proof, with mixed-cylinder crossing, first-spin comparison, both cell orientations, winding construction, and renormalization.",
+    "external_dependency": "The new section explicitly invokes GL2025 Appendix A renormalization; its mathematical applicability and independence have not been established by this literal audit.",
+    "downstream": "The repaired two-arc Lipschitz manuscript explicitly relies on the weighted annulus theorem at x=1 according to the pinned publisher repair inventory; exact dependency proof is not adjudicated."
+  },
+  "formalization": {
+    "crosswalk_path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "inspected_scope": "173 source titles and 200 main-result declarations",
+    "exact_title_or_pdf_path_match": false,
+    "conclusion": "No exact title/PDF-path match in the pinned crosswalk; this is not proof that no related Lean declaration exists. Exact declaration and Comparator mapping NOT_ESTABLISHED."
+  },
+  "replay": {
+    "method": "Authenticated exact-ref GitHub source contents and directory Git blob reads; deterministic literal TeX environment-body comparison and LCS line-delta inspection; no Lean compilation or PDF-render comparison.",
+    "checks": [
+      "14/14 fetched source-file blob identities match pinned directory/source identities (nine revised sections, two previous changed sections, two driver files, one revised README).",
+      "Eight common section path pairs inspected; six unchanged Git blobs, two changed.",
+      "All 62 prior theorem/lemma/proposition/corollary/definition/remark/claim environment bodies remain literally identical, including thm:main and thm:circuit-input.",
+      "One theorem optional heading changed; 13 new statement environments in the new section (12 lemmas and one proposition).",
+      "Driver adds exactly one section input; other driver change is the edition date.",
+      "Pinned formalization crosswalk has no exact title/PDF path match."
+    ],
+    "status": "PASS_SOURCE_LITERAL_INSPECTION",
+    "limitation": "No independent cryptographic Git blob recomputation, full rendered-PDF equivalence, Lean compilation, mathematical proof validity, or mathematical certification."
+  },
+  "risk_register": {
+    "row_key": "232:preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf",
+    "flags": {
+      "withdrawn": false,
+      "proof_changed": true,
+      "statement_changed": true,
+      "citation_only": false,
+      "source_mismatch": "UNASSESSED",
+      "unresolved": true
+    },
+    "inventory_unchanged": {
+      "withdrawn": 3,
+      "repaired": 14,
+      "additional_citation_updates": 13,
+      "unique": 30
+    }
+  },
+  "unresolved": [
+    "F232_WEIGHTED_ANNULUS_13_NEW_AUXILIARY_STATEMENTS_AND_GL2025_RENORMALIZATION_MATHEMATICAL_SUFFICIENCY_UNADJUDICATED",
+    "F232_TWO_ARC_X_EQUALS_ONE_COMPANION_DEPENDENCY_AND_LEAN_DECLARATION_UNMAPPED"
+  ],
+  "claim_boundary": "PINNED_LITERAL_TEX_AND_PROOF_DEPENDENCY_EVIDENCE_ONLY; NOT_RENDERED_PDF_EQUIVALENCE; NOT_LEAN_COMPILATION; NOT_MATHEMATICAL_CERTIFICATION",
+  "scope_exclusions": [
+    "WP01 indices 145 and 199 not retried",
+    "No change to the generic GCL queue-reduction automation",
+    "No promotion of source correspondence to mathematical certification"
+  ]
+}

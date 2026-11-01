@@ -425,7 +425,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": true,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -435,10 +435,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_232_WEIGHTED_LIPSCHITZ_OCT6_ANNULUS_SOURCE_DELTA.json",
+          "git_blob": "9aebfef08f9fbc38e22d1630afe7cc1102dfa951"
         }
       ],
-      "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+      "formal_declaration_mapping": "NO_DIRECT_TITLE_OR_PDF_PATH_MATCH_IN_PINNED_173_SOURCE_200_MAIN_RESULT_CROSSWALK; EXACT_LEAN_DECLARATION_NOT_ESTABLISHED",
+      "exact_review_target": "Mathematically audit the 12 new annulus lemmas and mixed-cylinder seed proposition, GL2025 Appendix A renormalization applicability and both cell-orientation winding argument; then test the downstream two-arc x=1 dependency and exact Lean/Comparator declaration correspondence. All 62 old statement bodies, including thm:main and thm:circuit-input, are unchanged; the circuit theorem's optional heading changes and 13 auxiliary statements are newly inserted.",
+      "literal_hypothesis_conclusion_delta": "Sep 25/Oct 6 pinned TeX: all 62 existing theorem/lemma/proposition/corollary/definition/remark/claim bodies literally identical, including thm:main hypotheses/conclusion and thm:circuit-input body; the latter's optional heading changes from Glazman--Lammers circuit input to Annulus circuit estimate. New 942-line sections/09-annulus.tex adds 12 lemmas and one proposition, changing full manuscript statement inventory 62 -> 75. The proof now derives the circuit input through mixed-cylinder/winding arguments invoking GL2025 Appendix A renormalization. Mathematical sufficiency/independence not adjudicated."
     },
     {
       "key": "232:preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf",
