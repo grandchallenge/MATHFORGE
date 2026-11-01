@@ -1,0 +1,101 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+    "runner_head": "45a3c3b4fe033e3b9fc71e44ee76e5d7d18e7f61"
+  },
+  "entries": [
+    {
+      "index": 71,
+      "declaration": "OAI.IndependentProducts.main_exponential",
+      "runner": {
+        "run_id": 41264515714,
+        "job_id": 124724426162,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41264515714",
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "45a3c3b4fe033e3b9fc71e44ee76e5d7d18e7f61"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/IndependentProducts.lean",
+        "config": "lean/ComparatorChallenges/IndependentProducts.json",
+        "solution": "lean/OAI/Analysis/ProductSpaces/Main.lean",
+        "challenge_sha256": "e2fc5aaab473f3d9b27baaa3fb5cd6646a8d86798298fb9f1f86c809509b8827",
+        "config_sha256": "311a2588782b51d5324e1029b1550b069f58630d7008868ea979b0fb8fab9610",
+        "solution_sha256": "4758147d4f00be01a6960261c740f4295e370fa204dacbe3d5f261a5e59f646a",
+        "challenge_blob": "ce22548dc3c27f0344bd01b844aea9341999e626",
+        "config_blob": "c7aea47d3297cf2256fd5ecdba4e99aae4b103c7",
+        "solution_blob": "e69794f8c6fe46d0fc87152af7eb650e4c41b369",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13067027081,
+        "zip_bytes": 10529,
+        "zip_sha256": "50daeec55e3eb87c74c649e3e75a699a22f9b6f3cdcd1083d7851e9e7816db10",
+        "receipt_sha256": "b47c9abd5e4cab16da9ec274d2089ef1d60776a4afae3ee719a2c2a813e36760",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ],
+  "coverage": {
+    "protected_before_candidate": 72,
+    "protected_indices_before_candidate": "0-70,199",
+    "candidate_indices": [
+      71
+    ],
+    "protected_if_merged": 73,
+    "outstanding_if_merged": 127,
+    "duplicate_admission": false,
+    "prior_protected_ledger_files": 42,
+    "historical_indexed_runs": 71,
+    "active_indexed_runs_at_review": 0,
+    "all_indexed_runs_successful": true,
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Downloaded authenticated GitHub artifact ZIP 13067027081 and recomputed exact 10529-byte SHA256 50daeec55e3eb87c74c649e3e75a699a22f9b6f3cdcd1083d7851e9e7816db10 matching provider digest and size; 12 unique ZIP members, 11/11 receipt-file SHA256 and byte counts verified, REPLAY_RECEIPT.json SHA256 b47c9abd5e4cab16da9ec274d2089ef1d60776a4afae3ee719a2c2a813e36760. Independently recomputed pinned challenge/config/solution/manifest SHA256 from authenticated GitHub connector content; Git blob IDs match. Hardened exit zero; no diagnostic files; Lean kernel and Comparator success; no sorryAx in hardened log.",
+    "adversary_non_authoring_read_only": "Separate read-only logical audit: authenticated workflow_dispatch history across both pages before dispatch had 70 indexed runs, all successful, none active; 42 protected Comparator ledgers cover exactly indices 0-70 and 199, no overlap. Index71 newly dispatched once, run 41264515714 read back at exact runner SHA and completed success. Artifact selected-identity binds corpus_index=71 to OAI.IndependentProducts.main_exponential and permitted axioms; no substitution of challenge placeholder. Subsequent index72 dispatch encountered unacknowledged internal transport error, and latest GitHub readback observed no index72 run; preserve uncertainty until fresh complete reconciliation. No manuscript-semantic or certification claim.",
+    "amanuensis": "Append-only index71 evidence with immutable source, workflow, run, job, artifact, receipt and review identities; maintain open issue #330, and separate routine role-scoped audits from public independent certification."
+  },
+  "transport": "GCL_Commander initial system_status and authenticated bounded probe passed. Index71 dispatch succeeded with GCL CONTROL execution capture 7a5495a61e574e8c8e3964cfabe3600c, receipt SHA256 af4ab916b0b8951bfd6ab04da7b00e425366b42d55a5a224f6f6544034f1a95f; GitHub readback confirmed run. Index72 dispatch returned internal transport error; system_status succeeded, one minimal recovery probe failed. Authenticated GitHub connector continued for complete history, source, artifact, PR and protected operations. Index72 remains UNCERTAIN, no duplicate dispatch.",
+  "next_action": "Review exact candidate head and affected checks; protect-merge index71 and read back protected main. Reconcile index72 uncertain dispatch from complete GitHub history before any further dispatch, preserving maximum three distinct active/uncertain slots. Keep #330 OPEN."
+}
