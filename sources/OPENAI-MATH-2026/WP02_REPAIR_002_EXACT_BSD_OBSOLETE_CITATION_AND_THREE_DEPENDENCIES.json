@@ -1,0 +1,196 @@
+{
+  "record_type": "GCL_OAI26_WP02_F002_EXACT_BSD_OBSOLETE_CITATION_AND_THREE_DEPENDENCIES/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": "openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "candidate_base": "grandchallenge/MATHFORGE@18c26230c7439fc1a7e67c24864606b2ba704e95",
+  "scope": "One canonical repaired-14 row, family 002 October 3 -> October 7 exact BSD source-only citation repair. No proof or mathematical certification assessment.",
+  "manuscripts": {
+    "previous": {
+      "directory": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026",
+      "build_tree": "b1e1e64a5f97e244bd3253c0f5b50f219329de30",
+      "pdf_blob": "29c2cfd00923bfef0fd61a5b3ee7de9e3a1e1eb3"
+    },
+    "current": {
+      "directory": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026",
+      "build_tree": "c093501a2505b32f29d0e93a0816cf0b3e134874",
+      "pdf_blob": "4621d1c197766f11d416b7e149343d938fcd9697",
+      "readme_blob": "7bb2a165d7ca454311a6a9f5b7572eb9292071e0"
+    }
+  },
+  "source_files": [
+    {
+      "path": "main.tex",
+      "previous_blob": "8e05d7a7045a12f605efdcf266d9607f1f8fd6cf",
+      "current_blob": "d75e6042719f28d5014975eb18a195ef3cb10b9e",
+      "identical": false
+    },
+    {
+      "path": "references.tex",
+      "previous_blob": "24fa9cce17bd368d3e976ce5220a3a9eb0e03da6",
+      "current_blob": "a7d51622016221f621129266ef64ed6903ed2f7b",
+      "identical": false
+    },
+    {
+      "path": "sections/01-introduction.tex",
+      "previous_blob": "d59f8bfab17650f57f993248c3fd1797a4787e7f",
+      "current_blob": "8afa7de5ae4ade572e70565d81d624bd34476c4e",
+      "identical": false
+    },
+    {
+      "path": "sections/02-classical.tex",
+      "previous_blob": "723398896911b519a2481fc88126ce7143ab5196",
+      "current_blob": "723398896911b519a2481fc88126ce7143ab5196",
+      "identical": true
+    },
+    {
+      "path": "sections/03-models.tex",
+      "previous_blob": "ad833a56f919bb83b36ef2af3a090a32ef23de03",
+      "current_blob": "ad833a56f919bb83b36ef2af3a090a32ef23de03",
+      "identical": true
+    },
+    {
+      "path": "sections/04-vertical.tex",
+      "previous_blob": "90659b90574242bacb9154e5484a85d57066847d",
+      "current_blob": "90659b90574242bacb9154e5484a85d57066847d",
+      "identical": true
+    },
+    {
+      "path": "sections/05-single.tex",
+      "previous_blob": "54a0fa6160a9125c3d4bbd09f3123a79b80dd809",
+      "current_blob": "54a0fa6160a9125c3d4bbd09f3123a79b80dd809",
+      "identical": true
+    },
+    {
+      "path": "sections/06-pair.tex",
+      "previous_blob": "464c498dae7e3357257dcf2dd7b53c3e23a7bbac",
+      "current_blob": "464c498dae7e3357257dcf2dd7b53c3e23a7bbac",
+      "identical": true
+    },
+    {
+      "path": "sections/07-theta.tex",
+      "previous_blob": "76a08c1065b59964f60f9395806a9ef937c16bd",
+      "current_blob": "76a08c1065b59964f60f9395806a9ef937c16bd",
+      "identical": true
+    },
+    {
+      "path": "sections/08-extraction.tex",
+      "previous_blob": "b2858e5f47069310a766cf403b032704ce5af382",
+      "current_blob": "b2858e5f47069310a766cf403b032704ce5af382",
+      "identical": true
+    },
+    {
+      "path": "sections/09-unit.tex",
+      "previous_blob": "ee25c7a9e7dc38f8f1d298ca0708c80a2d2ccf24",
+      "current_blob": "ee25c7a9e7dc38f8f1d298ca0708c80a2d2ccf24",
+      "identical": true
+    },
+    {
+      "path": "sections/10-center.tex",
+      "previous_blob": "4ed4109705bcb3a623c587d95baaee4b9db71ac6",
+      "current_blob": "4ed4109705bcb3a623c587d95baaee4b9db71ac6",
+      "identical": true
+    }
+  ],
+  "literal_deltas": [
+    {
+      "path": "build/main.tex",
+      "line": 58,
+      "previous": "\\date{October 3, 2026}",
+      "current": "\\date{October 7, 2026}"
+    },
+    {
+      "path": "build/sections/01-introduction.tex",
+      "line": 134,
+      "previous": "methods of \\cite{B,C,Dv} provide the starting constructions.",
+      "current": "methods of \\cite{B,C} provide the starting constructions.",
+      "context": "Ordinary explanatory prose outside mathematical statement environments; the Dv citation key has no bibitem{Dv} in either edition."
+    },
+    {
+      "path": "build/references.tex",
+      "lines": [
+        147,
+        154,
+        161
+      ],
+      "change": "Exactly three OAI companion PDF edition paths updated; titles and bibitem keys Goldfeld, C, B unchanged",
+      "target_pdfs": [
+        {
+          "key": "Goldfeld",
+          "previous": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+          "previous_blob": "d9a8efaf48a62b452bc5af359930109ffddb7786",
+          "current": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+          "current_blob": "58b8904f39b2a12534732010191fd35435559a61",
+          "bibliography_line": 147
+        },
+        {
+          "key": "C",
+          "previous": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf",
+          "previous_blob": "8beaeb72a61bdd7e126052193a73de9dde845a58",
+          "current": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+          "current_blob": "384525874a5e9989e574a5f9ce7c9883258cc732",
+          "bibliography_line": 154
+        },
+        {
+          "key": "B",
+          "previous": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf",
+          "previous_blob": "f13dc6ad9e017cc66db592d6baa5d02b768cf57f",
+          "current": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+          "current_blob": "9c1827e35640033bf16eac9fa88136079b1cc2de",
+          "bibliography_line": 161
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "recursive_build_trees_complete": true,
+    "build_file_pairs": 12,
+    "identical_build_blobs": 9,
+    "changed_build_blobs": 3,
+    "unchanged_section_blobs": 9,
+    "changed_section_blobs": 1,
+    "changed_intro_lines": 1,
+    "changed_driver_lines": 1,
+    "changed_bibliography_lines": 3,
+    "old_Dv_bibitem_present": false,
+    "new_Dv_bibitem_present": false,
+    "other_section_Dv_mentions": 0,
+    "all_other_section_files_blob_identical": true,
+    "statement_environment_delta": "NO_CHANGES_TO_EXISTING_STATEMENT_TEXT: only introduction prose citation line changed; all other sections byte-identical",
+    "lean_crosswalk": {
+      "path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+      "blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+      "metadata_sources": 173,
+      "main_result_declarations": 200,
+      "exact_title_or_path_match": false,
+      "interpretation": "No exact title/path match in pinned crosswalk; does not establish absence of relevant Lean declarations"
+    }
+  },
+  "replay": {
+    "method": "Authenticated GitHub exact-ref GET git/trees?recursive=1, fetch_file, contents metadata; compare 12 Git blob pairs and literal lines",
+    "commands": [
+      "GET https://api.github.com/repos/openai/math/git/trees/b1e1e64a5f97e244bd3253c0f5b50f219329de30?recursive=1",
+      "GET https://api.github.com/repos/openai/math/git/trees/c093501a2505b32f29d0e93a0816cf0b3e134874?recursive=1",
+      "GET https://api.github.com/repos/openai/math/contents/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/build/sections/01-introduction.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "GET https://api.github.com/repos/openai/math/contents/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/sections/01-introduction.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "GET https://api.github.com/repos/openai/math/contents/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/build/references.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "GET https://api.github.com/repos/openai/math/contents/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/references.tex?ref=1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    ],
+    "notes": "GitHub-reported immutable blob IDs compared; not a locally rebuilt PDF or compiled Lean proof."
+  },
+  "risk_register_update": {
+    "category": "repaired_14",
+    "family_id": "002",
+    "statement_changed": false,
+    "proof_changed": false,
+    "citation_only": true,
+    "unresolved": true,
+    "source_mismatch": "UNASSESSED"
+  },
+  "unresolved": [
+    "F002_EXACT_BSD_UPDATED_GOLDFELD_SELME_CONVERSE_TWO_PRIMARY_DEPENDENCY_MATHEMATICAL_SUFFICIENCY_UNADJUDICATED",
+    "F002_EXACT_BSD_FORMAL_DECLARATION_CORRESPONDENCE_UNESTABLISHED",
+    "F002_PDF_RENDERED_EQUIVALENCE_NOT_CHECKED"
+  ],
+  "claim_boundary": "PINNED_LITERAL_TEX_CITATION_AND_BLOB_CORRESPONDENCE_ONLY_NOT_MATHEMATICAL_PROOF_OR_CERTIFICATION",
+  "exclusions": "Deferred WP01 indices 145/199 and generic GCL queue automation untouched; 3/14/13 canonical inventory unchanged."
+}
