@@ -1,0 +1,108 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+    "runner_head": "da7de93e417c80434ee38eb6a0db3b75431c983f"
+  },
+  "entries": [
+    {
+      "index": 75,
+      "declaration": "OAI.Kaplansky.kaplansky_quasitrace_counterexample",
+      "runner": {
+        "run_id": 41273469436,
+        "job_id": 124750812327,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41273469436",
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "da7de93e417c80434ee38eb6a0db3b75431c983f"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/KaplanskyQuasitrace.lean",
+        "config": "lean/ComparatorChallenges/KaplanskyQuasitrace.json",
+        "solution": "lean/OAI/Analysis/Kaplansky/Main.lean",
+        "challenge_sha256": "2036e2a1555f6d789950f47c471d081854b3871f4bac90459343dc3b8af2d3f8",
+        "config_sha256": "e0eeb8758e6ac605038ed26b0ce7ff86f9e52efcc6fb08e17eccc15ba316f3ac",
+        "solution_sha256": "63e244d411fe541fe96d7ec9f285a2b99a0bc62230fa8202f73af06bdef5d7ff",
+        "challenge_blob": "00e9ac6caf61bb945684394040ecafa76ce9574d",
+        "config_blob": "1799a3b039d6fa47d476b5c9701ef26908e39770",
+        "solution_blob": "ffb1fc0ec38088de3f0ab903dacff54d56fdac14",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13070936247,
+        "zip_bytes": 11596,
+        "zip_sha256": "5f2231871c76ee4f1c509210cd63acd039abd1bbedad3db5e8ef4a03aaac4e67",
+        "receipt_sha256": "4d9d4d0271f5a4858341f8a6386718298e1bd9fa494b54f0b4938dc5fd284adf",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ],
+  "coverage": {
+    "protected_at_candidate_construction": 73,
+    "protected_indices_at_candidate_construction": "0-71,199",
+    "candidate_indices": [
+      75
+    ],
+    "other_pending_protected_prs": [
+      488
+    ],
+    "other_pending_indices": [
+      72,
+      73
+    ],
+    "index_74": "RUNNING_NOT_ADMITTED",
+    "protected_if_this_candidate_only_merged": 74,
+    "protected_if_both_pending_candidates_merged": 76,
+    "duplicate_admission": false,
+    "prior_protected_ledger_files": 43,
+    "historical_indexed_runs": 75,
+    "active_indexed_runs_at_review": 1,
+    "active_index": "74",
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Downloaded authenticated GitHub artifact ZIP 13070936247 (11596 bytes, SHA256 5f2231871c76ee4f1c509210cd63acd039abd1bbedad3db5e8ef4a03aaac4e67), independently recomputed provider digest and size, 12 unique ZIP members, 11/11 receipt-file SHA256 and byte counts, and REPLAY_RECEIPT.json SHA256 4d9d4d0271f5a4858341f8a6386718298e1bd9fa494b54f0b4938dc5fd284adf. Independently fetched immutable upstream challenge/config/solution via authenticated GitHub connector, recomputed SHA256 and checked Git blob IDs; manifest SHA256 cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794 unchanged pre/post. Hardened exit 0; no diagnostic fallback, no sorryAx; Lean kernel and Comparator acceptance observed.",
+    "adversary_non_authoring_read_only": "Distinct read-only logical audit: 75 distinct indexed workflow run numbers 1-75 in authenticated GitHub history, 74 in progress, 75 completed success; no duplicate indexed run or protected admission. Crosswalk sorted UTF-8 index75 binds exactly OAI.Kaplansky.kaplansky_quasitrace_counterexample; permitted axioms limited to propext, Quot.sound, Classical.choice and Nanoda disabled. PR #488 separately owns pending indices 72-73; no duplicate ledger. Challenge placeholder not treated as proof; no semantic or public certification claim.",
+    "amanuensis": "Append-only single-index 75 evidence with immutable source, workflow, run, job, artifact, SHA256, byte counts, role review, protected PR and merge readback to follow. Preserve #330 OPEN. No separate physical agent identities or routine Human Steward approval."
+  },
+  "next_action": "Review exact candidate head and affected CI; protected merge and readback only if controls pass. Reconcile PR #488 and running index74 independently; keep issue #330 OPEN."
+}
