@@ -179,7 +179,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": false,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": false,
         "citation_only": true,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -189,10 +189,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_002_EXACT_BSD_OBSOLETE_CITATION_AND_THREE_DEPENDENCIES.json",
+          "git_blob": "7de3f03c5ae2d908836bf03afbe468275da8e3c1"
         }
       ],
-      "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Audit obsolete reference and downstream dependency graph; this is publisher-repaired-group citation correction, not one of 13 additional citation-only manuscripts"
+      "formal_declaration_mapping": "NO_EXACT_TITLE_OR_PATH_MATCH_IN_PINNED_173_SOURCE_200_MAIN_RESULT_CROSSWALK; EXACT_LEAN_DECLARATION_NOT_ESTABLISHED",
+      "exact_review_target": "Validate mathematical sufficiency and independence of October 7 Goldfeld, Selmer converse, and October 6 two-primary BSD companion inputs for the exact BSD argument; establish exact Lean declaration if any. Source-only Oct 3/7 build comparison: 12 files, 9 identical blobs, 3 changed (date, 3 bibliography edition links, removal of undefined Dv cite in introduction prose). All existing mathematical statement text unchanged; PDF rendering and mathematical certification unadjudicated.",
+      "literal_hypothesis_conclusion_delta": "Oct 3/7 source TeX: all nine mathematical sections other than introduction are byte-identical; the sole introduction delta is removing Dv from prose citation \\cite{B,C,Dv} -> \\cite{B,C}, outside statement environments. Driver changes only date and references.tex updates exactly three companion edition URLs; no theorem/lemma/proposition hypotheses or conclusions changed. Obsolete Dv has no bibliography item in either edition."
     },
     {
       "key": "034:preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
