@@ -1,0 +1,157 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+    "runner_head": "18c26230c7439fc1a7e67c24864606b2ba704e95"
+  },
+  "entries": [
+    {
+      "index": 72,
+      "declaration": "OAI.IndependentProducts.main_general",
+      "runner": {
+        "run_id": 41270594727,
+        "job_id": 124742393085,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41270594727",
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "18c26230c7439fc1a7e67c24864606b2ba704e95"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/IndependentProducts.lean",
+        "config": "lean/ComparatorChallenges/IndependentProducts.json",
+        "solution": "lean/OAI/Analysis/ProductSpaces/WeakNullity.lean",
+        "challenge_sha256": "e2fc5aaab473f3d9b27baaa3fb5cd6646a8d86798298fb9f1f86c809509b8827",
+        "config_sha256": "311a2588782b51d5324e1029b1550b069f58630d7008868ea979b0fb8fab9610",
+        "solution_sha256": "1dcd9d7d4945343d06a7b4d008d969f40a02ccb2126fdccf6e09ac7eefaa83bf",
+        "challenge_blob": "ce22548dc3c27f0344bd01b844aea9341999e626",
+        "config_blob": "c7aea47d3297cf2256fd5ecdba4e99aae4b103c7",
+        "solution_blob": "8829db711c60c7d18e7b2aa9469fe5005ba5547b",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13069461117,
+        "zip_bytes": 10003,
+        "zip_sha256": "fa1446228a7e08bc510c7a28c55d11ee02b4742784eb88416275bfd6510c35e0",
+        "receipt_sha256": "fd6c3d4ce3449cf979194843aa05aaf89f618bc2659c76317b92a95f802eae91",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    },
+    {
+      "index": 73,
+      "declaration": "OAI.InfiniteMatroidCounterexample.main",
+      "runner": {
+        "run_id": 41270732970,
+        "job_id": 124742793926,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41270732970",
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "18c26230c7439fc1a7e67c24864606b2ba704e95"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/InfiniteMatroid.lean",
+        "config": "lean/ComparatorChallenges/InfiniteMatroid.json",
+        "solution": "lean/OAI/Combinatorics/InfiniteMatroid/Main.lean",
+        "challenge_sha256": "802e9bf69b2c5d9be56f2899ef69f5470910cf059b419d3e8f770f1523cae3a7",
+        "config_sha256": "8d56594400ee353792bc7153086072fc05762cc5cafd4d9cc7e48db525e13b82",
+        "solution_sha256": "4c47af8f801dac7b53cc4429295eae85a1e7ea8607b7faf2c17320c0d060b25b",
+        "challenge_blob": "f9253fd9949297356bc99360d3ffa54a88b944f3",
+        "config_blob": "f5c41097f552dcaf3d189fdadc2fb17df3f8b90e",
+        "solution_blob": "83f4d579908a794de66d79bfcf81377492b63d00",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13069730487,
+        "zip_bytes": 10162,
+        "zip_sha256": "176cdc029dcaa9db93da20737d59430f2aa2fee3fec757cc720e601d48b01a5a",
+        "receipt_sha256": "6ffe079694821f994d532b11c7477f4e2b61d4f280a6d35834c018fdf1f8c0e7",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ],
+  "coverage": {
+    "protected_before_candidate": 73,
+    "protected_indices_before_candidate": "0-71,199",
+    "candidate_indices": [
+      72,
+      73
+    ],
+    "protected_if_merged": 75,
+    "outstanding_if_merged": 125,
+    "duplicate_admission": false,
+    "prior_protected_ledger_files": 43,
+    "historical_indexed_runs": 74,
+    "active_indexed_runs_at_review": 1,
+    "completed_successful_indexed_runs_at_review": 73,
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Logical Verifier pass: authenticated GitHub artifact downloads 13069461117 (10003 bytes, ZIP SHA256 fa1446228a7e08bc510c7a28c55d11ee02b4742784eb88416275bfd6510c35e0) and 13069730487 (10162 bytes, ZIP SHA256 176cdc029dcaa9db93da20737d59430f2aa2fee3fec757cc720e601d48b01a5a). Both provider ZIP digest and size matched; each ZIP has 12 unique members and 11/11 receipt-file SHA256 and byte-count checks. REPLAY_RECEIPT.json SHA256: index72 fd6c3d4ce3449cf979194843aa05aaf89f618bc2659c76317b92a95f802eae91, index73 6ffe079694821f994d532b11c7477f4e2b61d4f280a6d35834c018fdf1f8c0e7. Independently recomputed six pinned upstream file SHA256 values from authenticated GitHub connector contents; Git blob IDs match; pinned manifest cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794 unchanged pre/post. Both hardened exits zero; no diagnostic files or sorryAx in hardened logs; Lean kernel and Comparator success observed.",
+    "adversary_non_authoring_read_only": "Separate read-only logical Adversary pass: authenticated GitHub run-history reconciled 74 distinct indexed runs, 73 completed successful and one active index74; 43 protected receipt ledgers previously cover 0-71 and 199. Exact runner head 18c26230c7439fc1a7e67c24864606b2ba704e95 and selected indices/declarations 72/73 match immutable 200-row crosswalk blob 5fc50adc9430a91f22f1c3913bdfec62fe75acda. No duplicate run or admission, no diagnostic fallback, no challenge placeholder mistaken for solution. Semantic manuscript correspondence and public certification not claimed.",
+    "amanuensis": "Logical Amanuensis pass: append-only combined index72-73 ledger with immutable source, workflow, run/job, provider artifact/receipt, review and material-closure identities; issue #330 remains OPEN; evidence only, not MATHCERT certification."
+  },
+  "transport": "Authenticated GitHub connector supplied policy, exact main, workflow, run/job/artifact metadata, artifact ZIP downloads, pinned upstream files and source blob identities. GCL_Commander initial health and readback succeeded; one later read command failed internally, system_status was rechecked and a minimal bounded recovery probe succeeded; no mutation was replayed. Connector evidence verification proceeded independently of CHAD transport.",
+  "next_action": "Protected exact-head review, affected CI, protected merge and readback for indices 72-73. Index74 run 41270864177 remains in progress, must not be duplicated. Fresh run-history reconciliation before any further dispatch, max three distinct concurrent runs. Keep #330 OPEN."
+}
