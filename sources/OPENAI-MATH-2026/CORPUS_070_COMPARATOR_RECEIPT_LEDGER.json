@@ -1,0 +1,101 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+    "runner_head": "58dd1fae1705b4d3a23253f49ff86169141b9d43"
+  },
+  "entries": [
+    {
+      "index": 70,
+      "declaration": "OAI.HyperbolicObstruction.main",
+      "runner": {
+        "run_id": 41252575878,
+        "job_id": 124688971872,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41252575878",
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "58dd1fae1705b4d3a23253f49ff86169141b9d43"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/HyperbolicObstruction.lean",
+        "config": "lean/ComparatorChallenges/HyperbolicObstruction.json",
+        "solution": "lean/OAI/Geometry/HyperbolicGroups/Main.lean",
+        "challenge_sha256": "f136a867a33fa3dac21e614675a938f939711221431f67d474224bc01b319c29",
+        "config_sha256": "6aa9d01af2d443e2c3e0819ffefa45a81bc80a3825f636da0445365a17b351cc",
+        "solution_sha256": "5f4fbf00c2351d4db384dd028783939612f840a81cf8c43d2bec0202d8a5769b",
+        "challenge_blob": "48a977c226cfce90f8ffe3cb503be7508b31ced3",
+        "config_blob": "b64d87122934dabda5040a37935f1267e2bb6f7c",
+        "solution_blob": "5bddbc582f58b3d8042ebe907ad53975f20a85fb",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13062796251,
+        "zip_bytes": 14893,
+        "zip_sha256": "a1b12d9908b28b81bb69a68a9bf2cd4460da0bcbc543b9310f69a5532c73f32d",
+        "receipt_sha256": "7b48d3e61e592b846c82ee14aa11ac0dfe12a281468e734fa54105ab5635c6d0",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ],
+  "coverage": {
+    "protected_before_candidate": 71,
+    "protected_indices_before_candidate": "0-69,199",
+    "candidate_indices": [
+      70
+    ],
+    "protected_if_merged": 72,
+    "outstanding_if_merged": 128,
+    "duplicate_admission": false,
+    "prior_protected_ledger_files": 41,
+    "historical_indexed_runs": 70,
+    "active_indexed_runs_at_review": 0,
+    "all_indexed_runs_successful": true,
+    "run_number_not_substituted_for_selected_identity": true
+  },
+  "audits": {
+    "verifier": "Downloaded GitHub artifact ZIP 13062796251, recomputed 14,893-byte provider SHA256 a1b12d9908b28b81bb69a68a9bf2cd4460da0bcbc543b9310f69a5532c73f32d; verified 12 unique ZIP members and all 11 receipt-listed SHA256/byte counts, receipt SHA256 7b48d3e61e592b846c82ee14aa11ac0dfe12a281468e734fa54105ab5635c6d0. Recomputed SHA256 of exact pinned challenge, configuration, solution and Lake manifest using authenticated GitHub connector source bytes, checked Git blob identities. Hardened exit zero, no diagnostic fallback, Lean kernel acceptance, Comparator success, no sorryAx.",
+    "adversary_non_authoring_read_only": "Distinct read-only logical pass: 156 workflow_dispatch events over two GitHub pages, 70 indexed runs 1-70 unique and gapless, all completed success; protected main 41 Comparator ledgers cover 0-69 and 199, index70 not yet admitted, no duplicate run. Exact declaration/index and permitted axioms verified; Nanoda disabled; challenge placeholder is not the solution. No semantic manuscript or public certification claim.",
+    "amanuensis": "Append-only exact-source evidence for index70 with workflow, runner, job, artifact, receipt, source and SHA identities. Keep issue #330 OPEN until all 200 declarations and documentary obligations complete. Logical roles are not separate GitHub identities or independent public certification."
+  },
+  "transport": "GCL_Commander initial system_status was healthy; bounded run_bash failed internally. System status rechecked and one minimal bounded recovery probe failed. GitHub connector independently read policy, workflow, run history, pinned source, job and artifact metadata and downloaded ZIP. No new workflow dispatch attempted; earlier ambiguous index71 attempt remains reserved for later reconciliation.",
+  "next_action": "Review exact candidate and affected checks; protect-merge and read back index70. Fresh run-history reconciliation before any index71/72 dispatch, max three active/uncertain distinct slots; keep #330 OPEN."
+}
