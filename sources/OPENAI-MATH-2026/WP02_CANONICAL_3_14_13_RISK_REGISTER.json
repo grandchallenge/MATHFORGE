@@ -461,7 +461,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": true,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -471,10 +471,14 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_232_TWO_ARC_X1_WEIGHTED_ANNULUS_DEPENDENCY.json",
+          "git_blob": "c4fab7d29b89f8a1b265718ea2992518d89b2547"
         }
       ],
       "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+      "exact_review_target": "Validate the two new October cut/loop statements lem:local-circuit and prop:loop-estimates, exact x=1 excluded-boundary-cell identification with weighted annulus Theorem 2.3, GL2025 Appendix A assumptions and downstream moment bounds; establish any exact Lean declaration correspondence. Main theorem and all 49 prior complete statement environments are literally unchanged; two new auxiliary statements are added. No mathematical sufficiency or certification claimed."
     },
     {
       "key": "232:preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf",
