@@ -1,0 +1,186 @@
+{
+  "record_type": "GCL_OAI26_WP02_REPAIR_233_ASHKIN_TELLER_OCT6_SOURCE_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repo": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "old_edition": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026",
+    "new_edition": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026",
+    "old_pdf_blob": "1958b53f9bf31e2542623f87324612d860854728",
+    "new_pdf_blob": "f7712daa289f286fa85457e696cd0a722793b84b",
+    "new_readme_blob": "496dcfbb54ce94dd6a856f0e7d32a03b7b13aeaa"
+  },
+  "base_protected_main": "4757612cdec6b8a00b656b9660c018a7c175eda1",
+  "scope": "Exactly one previously unassessed repaired-14 entry: family 233 Ashkin-Teller September 25 to October 6, 2026.",
+  "build_file_pairs": [
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/main.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/main.tex",
+      "old_blob": "f61ccd946790d251b567bafc74c0b2a7bcc3cdf1",
+      "new_blob": "be35998e2b0f639ba6bb2d313a0bd1e5ae8cbed9",
+      "identical": false
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/references.bib",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/references.bib",
+      "old_blob": "e9039a4a40a6a53aa719b9a1d37118f052706c79",
+      "new_blob": "ec4b3f974dc288d7998ea2cb24a2ed0d26d18c80",
+      "identical": false
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/01-introduction.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/01-introduction.tex",
+      "old_blob": "b663e9898d82601ae2f5eebb0b007066975e04c2",
+      "new_blob": "b663e9898d82601ae2f5eebb0b007066975e04c2",
+      "identical": true
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/02-model.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/02-model.tex",
+      "old_blob": "40fc1ee53e04098afcd7bd789d9109c02041b26c",
+      "new_blob": "40fc1ee53e04098afcd7bd789d9109c02041b26c",
+      "identical": true
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/03-spatial.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/03-spatial.tex",
+      "old_blob": "17f529f3727babb934aed1801d297da340a198b8",
+      "new_blob": "ab155546f1c3e27eca3b9e46277606e1ff6c383b",
+      "identical": false
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/04-spectral.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/04-spectral.tex",
+      "old_blob": "29bea53ef1062c28e385fcc3dd2f3ac5ce46d6e7",
+      "new_blob": "29bea53ef1062c28e385fcc3dd2f3ac5ce46d6e7",
+      "identical": true
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/05-screening.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/05-screening.tex",
+      "old_blob": "4cb0a8dfc42e729ced5c1f0a4d390fd632adad8f",
+      "new_blob": "4cb0a8dfc42e729ced5c1f0a4d390fd632adad8f",
+      "identical": true
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/06-gaussian.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/06-gaussian.tex",
+      "old_blob": "58a5ff9c16564ddd15fcb59538bd1ddccd23026c",
+      "new_blob": "58a5ff9c16564ddd15fcb59538bd1ddccd23026c",
+      "identical": true
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/07-local-sets.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/07-local-sets.tex",
+      "old_blob": "ce2c03fe205b75d595a445a21ea805d56e8a8dd7",
+      "new_blob": "c20ef179eb04cd2a9153124c917db55310499ed5",
+      "identical": false
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/08-local-kernel.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/08-local-kernel.tex",
+      "old_blob": "6144c4e3579968ca9d9c0a015057c93d9f542141",
+      "new_blob": "c6b9777208c85ca21e03d70beeb4f1b04a4cbc2a",
+      "identical": false
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/09-identification.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/09-identification.tex",
+      "old_blob": "2af901267cf04a783bf4ddd3ef8c43d4f6902dc5",
+      "new_blob": "2af901267cf04a783bf4ddd3ef8c43d4f6902dc5",
+      "identical": true
+    },
+    {
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/sections/10-input-conventions.tex",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/sections/10-input-conventions.tex",
+      "old_blob": "28ec0bfce27d8fcbde7aa37184284068fb40d753",
+      "new_blob": "28ec0bfce27d8fcbde7aa37184284068fb40d753",
+      "identical": true
+    }
+  ],
+  "literal_inventory": {
+    "build_files": 12,
+    "unchanged_build_files": 7,
+    "changed_build_files": 5,
+    "section_pairs": 10,
+    "identical_sections": 7,
+    "changed_sections": [
+      "03-spatial.tex",
+      "07-local-sets.tex",
+      "08-local-kernel.tex"
+    ],
+    "statement_env_old": 61,
+    "statement_env_new": 63,
+    "unchanged_old": 60,
+    "modified_old": 1,
+    "added_new": 2,
+    "removed_old": 0,
+    "parser": "Literal TeX theorem/lemma/proposition/corollary/definition/remark/claim/assumption/conjecture environments keyed by file, kind and label."
+  },
+  "main_theorem": {
+    "label": "thm:main",
+    "path": "build/sections/02-model.tex",
+    "result": "IDENTICAL_BLOB; no hypothesis or conclusion change"
+  },
+  "changed_statement": {
+    "label": "prop:cluster-counts",
+    "path": "build/sections/03-spatial.tex",
+    "old": "For one chamber, let a rectangle and its joining buffer lie",
+    "new": "For one chamber, let a lattice-aligned rectangle and its joining buffer lie",
+    "finding": "Adds a lattice-alignment condition to one proposition item; rest of its literal statement is identical."
+  },
+  "added_statements": [
+    {
+      "label": "lem:killed-graph-transfer",
+      "path": "build/sections/08-local-kernel.tex",
+      "finding": "Transfers reverse-buffer and common-kernel conclusions to source killed-graph cable approximations, preserving exit-edge bridges and asserting full/residual Green-form convergence."
+    },
+    {
+      "label": "lem:soup-forcing",
+      "path": "build/sections/08-local-kernel.tex",
+      "finding": "An outermost canonical positive/negative excursion crossing specified nested collars forces corresponding plus/minus test equal to one in a joint limit."
+    }
+  ],
+  "proof_deltas": [
+    "03-spatial: revised transmission/collar argument and lattice-aligned rectangle; 1716 to 1724 lines.",
+    "07-local-sets: replaces generic joint excursion convergence citation with ALS2018 Proposition 4.7 FPS convergence and new one-sided lem:soup-forcing.",
+    "08-local-kernel: killed-graph/metric-domain, whole-cable, completed-grid and signed loop-soup/GMC additions; 763 to 1155 lines.",
+    "references.bib: companion two-arc Lipschitz edition updated September 25 to October 6; four new keys JLQ2023Fields, ABJL2023, BSS2020, Lupu2016; 284 to 331 lines.",
+    "main.tex: date only September 25 to October 6."
+  ],
+  "lean_scope": {
+    "crosswalk_path": "sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "exact_title_or_pdf_match": false,
+    "lean_docs_233": "NOT_FOUND",
+    "exact_declaration": "NOT_ESTABLISHED",
+    "limitation": "No exhaustive Lean import audit, compiler replay or PDF rendering; negative index match does not prove no related formalization."
+  },
+  "inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "total": 30,
+    "changed": false
+  },
+  "replay": {
+    "method": "Authenticated exact-ref GitHub file reads, SHA1 comparison and literal statement extraction",
+    "build_pairs_checked": 12,
+    "old_statements": 61,
+    "new_statements": 63,
+    "unchanged": 60,
+    "modified": 1,
+    "added": 2,
+    "removed": 0,
+    "lean_compilation": "NOT_RUN"
+  },
+  "unresolved": [
+    "F233_KILLED_GRAPH_TRANSFER_AND_SIGNED_LOOP_SOUP_GMC_MATHEMATICAL_SUFFICIENCY_UNADJUDICATED",
+    "F233_LATTICE_ALIGNMENT_AND_BOUNDARY_COLLAR_SCOPE_UNADJUDICATED",
+    "F233_EXACT_LEAN_DECLARATION_UNESTABLISHED",
+    "F233_PDF_AND_MATHCERT_UNADJUDICATED"
+  ],
+  "next_review": "Validate both new auxiliary lemmas, lattice-alignment restriction and source companion assumptions before any proof-validity claim.",
+  "exclusions": "WP01 indices 145/199 and generic queue-reduction automation untouched.",
+  "claim_boundary": "PINNED_SOURCE_TEXT_AND_INDEX_EVIDENCE_ONLY_NOT_PROOF_VALIDITY_OR_MATHCERT_CERTIFICATION"
+}
