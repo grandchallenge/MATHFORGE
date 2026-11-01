@@ -1,0 +1,78 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+  },
+  "entries": [
+    {
+      "index": 85,
+      "declaration": "OAI.LittleFinitistic.extreme_left_right_asymmetry",
+      "runner": {
+        "run_id": 41299388287,
+        "job_id": 124826985102,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41299388287",
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "6b7f8ee992e606cea58c1400157416aea5702482"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/FinitisticAsymmetry.lean",
+        "config": "lean/ComparatorChallenges/FinitisticAsymmetry.json",
+        "solution": "lean/OAI/Algebra/FinitisticAsymmetry/Main.lean",
+        "challenge_sha256": "64ea38db9933f0082a04d2fa181083fbe01a7a823c9ce07f32d0835dce83cf96",
+        "config_sha256": "9a3eaf61ff768857a0ddc1562650b6391c78c38a51c15406f6b0b55a01e80141",
+        "solution_sha256": "80c3411e8d580b81fabbde9ec500eee3e38f8baa0a4a099a3e5e7282518fafa0",
+        "challenge_blob": "4870c0c503c37dd908b25a348245b95dbc13ddab",
+        "config_blob": "0631e74d2c344b7566e75508ff157ff0a90c5135",
+        "solution_blob": "80f71b7aaf2147e953e01e13b5119990296f9f5f",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13081916223,
+        "zip_bytes": 18068,
+        "zip_sha256": "d003bffda70b381e297d0c3c111afe90cea53f3939c4e73d702a0a5fd25ac251",
+        "receipt_sha256": "c01c891d4f4f5ad69b2ea2c3da990975d04063cbc761c995102bde6e2a3f0d71",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ]
+}
