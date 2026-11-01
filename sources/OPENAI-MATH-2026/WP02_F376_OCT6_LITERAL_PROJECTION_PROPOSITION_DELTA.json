@@ -1,0 +1,170 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_OCT6_LITERAL_PROJECTION_PROPOSITION_DELTA/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "previous_edition": "September 27 2026",
+    "current_edition": "October 6 2026"
+  },
+  "candidate_base_main": "fa3faffde37f0190d5fff92eeaf6bd340f1ccf97",
+  "scope": "One bounded complete 17-build-file four-type mathematical statement inventory and exact projection proposition comparison; no proof or mathematical certification.",
+  "paired_source_blobs": {
+    "unchanged_14": [
+      {
+        "file": "balanced.tex",
+        "previous_blob": "a7642b6f80d3a96f3b38bbbf1023e152b3d96f8f",
+        "current_blob": "a7642b6f80d3a96f3b38bbbf1023e152b3d96f8f"
+      },
+      {
+        "file": "coding-conventions.tex",
+        "previous_blob": "a2df908c98f7bf22a5766a9187217bf84bd44e99",
+        "current_blob": "a2df908c98f7bf22a5766a9187217bf84bd44e99"
+      },
+      {
+        "file": "compact-processors.tex",
+        "previous_blob": "a8c900d68ff8d0c87be12b942f2b0e6737acaf72",
+        "current_blob": "a8c900d68ff8d0c87be12b942f2b0e6737acaf72"
+      },
+      {
+        "file": "compilers.tex",
+        "previous_blob": "f4d02850a1314be4336e7cd6c15104e70b7b47a6",
+        "current_blob": "f4d02850a1314be4336e7cd6c15104e70b7b47a6"
+      },
+      {
+        "file": "geometry.tex",
+        "previous_blob": "ab1e31ba19b988aca78d3a8deab154c8428d85ab",
+        "current_blob": "ab1e31ba19b988aca78d3a8deab154c8428d85ab"
+      },
+      {
+        "file": "guarded-history.tex",
+        "previous_blob": "ab7cb9305d8b534e40c349f51665c8013a3edb2c",
+        "current_blob": "ab7cb9305d8b534e40c349f51665c8013a3edb2c"
+      },
+      {
+        "file": "initialization.tex",
+        "previous_blob": "c1edd3fbe76ae09ada5b7a8966965002d2a21c20",
+        "current_blob": "c1edd3fbe76ae09ada5b7a8966965002d2a21c20"
+      },
+      {
+        "file": "introduction.tex",
+        "previous_blob": "d3d9117d1d341a0523590cb2d248e422ec6cbefa",
+        "current_blob": "d3d9117d1d341a0523590cb2d248e422ec6cbefa"
+      },
+      {
+        "file": "observer-routing.tex",
+        "previous_blob": "e89f86dd3079ed2263d98f8669f6787d73ace423",
+        "current_blob": "e89f86dd3079ed2263d98f8669f6787d73ace423"
+      },
+      {
+        "file": "persistent-history.tex",
+        "previous_blob": "d616a4c812e5c688e30b062c2a60c69ac8004303",
+        "current_blob": "d616a4c812e5c688e30b062c2a60c69ac8004303"
+      },
+      {
+        "file": "references.bib",
+        "previous_blob": "9c389b5b1cc42f296f16e62c4317efb379099faf",
+        "current_blob": "9c389b5b1cc42f296f16e62c4317efb379099faf"
+      },
+      {
+        "file": "routing-conventions.tex",
+        "previous_blob": "def25e6cd287ea4a51b0368bb4ecd37a33e80c10",
+        "current_blob": "def25e6cd287ea4a51b0368bb4ecd37a33e80c10"
+      },
+      {
+        "file": "solid-routing.tex",
+        "previous_blob": "921546d966504bd9479811576be27fa929d51d87",
+        "current_blob": "921546d966504bd9479811576be27fa929d51d87"
+      },
+      {
+        "file": "torus-routing.tex",
+        "previous_blob": "42d13725693fbe7a5b84fbbcbc335824b73162e1",
+        "current_blob": "42d13725693fbe7a5b84fbbcbc335824b73162e1"
+      }
+    ],
+    "changed_3": [
+      {
+        "file": "analysis.tex",
+        "previous_blob": "78f0a0d1b7d7535339113c4552d4dd6f560ae122",
+        "current_blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41"
+      },
+      {
+        "file": "clocks.tex",
+        "previous_blob": "15c5bc7a49ee9e728eb9e6d2622b9ec069dfee68",
+        "current_blob": "1aa909f39fc3b9417de71af92a75e89262535518"
+      },
+      {
+        "file": "main.tex",
+        "previous_blob": "59f779dad3a18c3debd4f48d8cff84de5a27690b",
+        "current_blob": "900f7d70fcc200053cdf0a2a14884796d7295fd1"
+      }
+    ]
+  },
+  "statement_inventory": {
+    "types": [
+      "theorem",
+      "lemma",
+      "proposition",
+      "corollary"
+    ],
+    "previous_count": 73,
+    "current_count": 73,
+    "unchanged_complete_bodies": 72,
+    "changed_complete_bodies": 1,
+    "added": 0,
+    "removed": 0,
+    "unchanged_file_statement_count": 67,
+    "analysis_count": 4,
+    "clocks_count": 2,
+    "main_count": 0,
+    "method": "Pinned Git blob identity for 14 unchanged build files; full four-type environment-body comparisons for analysis, clocks, main. No inferred PDF glyph equivalence."
+  },
+  "changed_statement": {
+    "label": "prop:projection-l2",
+    "type": "proposition",
+    "path_previous": "preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/build/analysis.tex",
+    "path_current": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+    "previous_literal_tex": "\\begin{proposition}[Projection on a flat torus]\\label{prop:projection-l2}\nAn effective smooth mean-zero force $g$ on $\\T_L^3$ has an effective\nmean-zero potential $\\phi$ satisfying $\\Delta\\phi=\\operatorname{div}g$.\nReplacing $(g,p)$ by $(g-\\nabla\\phi,p-\\phi)$ preserves velocity and makes\nthe force solenoidal. Uniform mixed-derivative bounds, temporal $L^2$\nbounds of their spatial suprema, and separately imposed time periodicity,\neventual stationarity, or orderwise decay bounds are preserved.\n\\end{proposition}",
+    "current_literal_tex": "\\begin{proposition}[Projection on a flat torus]\\label{prop:projection-l2}\nLet $g$ be a smooth force on $[0,\\infty)\\times\\T_L^3$ with zero\nspatial mean at each time. There is a unique smooth mean-zero potential\n$\\phi$ satisfying $\\Delta\\phi=\\operatorname{div}g$. Put\n$Qg=\\nabla\\phi$ and $Pg=g-Qg$. Then $Pg$ is solenoidal and mean zero,\nand replacing $(g,p)$ by $(Pg,p-\\phi)$ preserves the velocity and the\npressure normalization.\n\nUse normalized spatial measure, frequencies $\\xi_k=2\\pi k/L$, and norms\n\\[\n \\|G\\|_{H^s}^2=\\sum_{k\\in\\Z^3}(1+|\\xi_k|^2)^s|\\widehat G(k)|^2,\n \\qquad\n \\|G\\|_{C^r}=\\max_{|\\beta|\\le r}\\|\\partial_x^\\beta G\\|_\\infty.\n\\]\nFor all integers $h,r\\ge0$, at each time,\n\\begin{equation}\\label{eq:projection-estimate}\n \\begin{aligned}\n \\max\\{\\|\\partial_t^h Pg\\|_{C^r},\\|\\partial_t^h Qg\\|_{C^r}\\}\n     &\\le S_L\\|\\partial_t^h g\\|_{H^{r+2}},\\\\\n \\|\\partial_t^h\\phi\\|_{C^{r+1}}\n     &\\le S_Ld_L\\|\\partial_t^h g\\|_{H^{r+2}},\n \\end{aligned}\n\\end{equation}\nwhere $S_L=(1+52(L/(2\\pi))^4)^{1/2}$ and\n$d_L=(1+(L/(2\\pi))^2)^{1/2}$.\n\nUniform bounds, temporal $L^2$ bounds on spatial suprema, and qualitative\nuniform decay of all mixed derivatives pass from $g$ to $Pg,Qg,\\phi$.\nA quantitative envelope for time order $h$ and output spatial order $r$\npasses to $Pg,Qg$ through order $r$ and to $\\phi$ through order $r+1$\nwhen the input derivatives through spatial order $r+2$ satisfy that\nenvelope. The constants may depend on the derivative order.\nPeriodicity and stationarity, including either property on a time tail,\nare preserved on their respective intervals.\n\nFor computable $L>0$, effective mixed-derivative evaluation and effective\nderivative bounds for $g$ on finite time slabs give effective evaluation\nand such bounds for $Pg,Qg,\\phi$. Corresponding supplied global input\nbounds give effective global bounds in each assertion above.\n\\end{proposition}",
+    "hypothesis_delta": "September: effective smooth mean-zero force g on T_L^3. October: smooth g on [0,infinity) x T_L^3, zero spatial mean at each time; effective input and bounds are separate conditional premises for computable evaluation.",
+    "conclusion_delta": "October explicitly asserts unique smooth mean-zero Poisson potential, complementary P/Q projections, solenoidal mean-zero projected force, pressure-normalization preservation, quantified all-h,r Sobolev-to-C^r estimates with S_L=sqrt(1+52(L/(2pi))^4) and d_L=sqrt(1+(L/(2pi))^2), and conditional computable evaluation. September stated qualitative projection and preservation of bounds, periodicity, stationarity and decay without these explicit constants and conditions.",
+    "classification": "MATERIAL_STATEMENT_CHANGED_NOT_ONLY_PROOF"
+  },
+  "controls": [
+    {
+      "label": "thm:bb-balanced-three-stack",
+      "file": "balanced.tex",
+      "result": "entire file blob identical"
+    },
+    {
+      "label": "bc:input-offset-event",
+      "file": "clocks.tex",
+      "result": "corollary body unchanged; October surrounding proof adds quantified estimates"
+    },
+    {
+      "label": "prop:bb-late-logclock",
+      "file": "clocks.tex",
+      "result": "statement body unchanged"
+    },
+    {
+      "file": "main.tex",
+      "result": "no four-type statement environments"
+    }
+  ],
+  "formal_correspondence": {
+    "indexed_doc": "lean/docs/376.md",
+    "indexed_edition": "September 27 2026",
+    "selected_comparator": "lean/ComparatorChallenges/ForcedNavierStokesComputation.json",
+    "selected_lean_theorem": "OAI.BalancedTransport.balanced_three_stack_realization",
+    "selected_theorem_statement_scope": "BoundedMixed and PeriodicAfterOne plus observer/material-flow properties; no explicit October S_L,d_L torus projection estimate",
+    "exact_projection_declaration": "NOT_ESTABLISHED",
+    "full_import_closure_exhaustiveness": "NOT_CLAIMED"
+  },
+  "replay": {
+    "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "procedure": "List exact 17 build files for each edition; compare Git blob SHAs; extract theorem/lemma/proposition/corollary environments by begin/end; match by label and compare literal complete bodies.",
+    "observed": "PASS 17/17 paired files; 14 identical; 3 changed; 73/73 environments; 72 unchanged; 1 modified prop:projection-l2"
+  },
+  "genuine_boundary": "F376_OCT6_PROJECTION_L2_REVISED_STATEMENT_QUANTITATIVE_TORUS_POISSON_TO_LEAN_CORRESPONDENCE_UNADJUDICATED",
+  "claim_boundary": "SOURCE_LOCKED_LITERAL_STATEMENT_EVIDENCE_ONLY_NOT_LEAN_COMPILATION_NOT_MATHCERT_CERTIFICATION"
+}
