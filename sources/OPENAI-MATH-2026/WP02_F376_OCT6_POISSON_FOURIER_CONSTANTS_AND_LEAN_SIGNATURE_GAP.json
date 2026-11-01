@@ -1,0 +1,115 @@
+{
+  "record_type": "GCL_OAI26_WP02_F376_OCT6_POISSON_FOURIER_CONSTANTS_AND_LEAN_SIGNATURE_GAP/1",
+  "assignment": "grandchallenge/MATHFORGE#331",
+  "bounded_obligation": "Check the newly explicit October 6 quantitative Fourier projection constants and compare their logical signature with the selected pinned Lean declaration; distinct from prior literal-statement and bounded keyword inspections.",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "edition": "Incompressible Box Transport and Finite Computation, October 6 2026"
+  },
+  "pinned_evidence": [
+    {
+      "path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/analysis.tex",
+      "blob": "d9262f206a70cb8bdd2268e52f244379a9b9fb41",
+      "anchors": [
+        "prop:projection-l2",
+        "eq:projection-estimate",
+        "eq:projection-tail",
+        "eq:projection-derivative-bounds"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/Model.lean",
+      "blob": "f361cc8d034c818dbbde324e893f013114acc4af",
+      "anchors": [
+        "abbrev Space := Fin 3 → ℝ",
+        "def BoundedMixed",
+        "def ZeroDataSolution",
+        "def Pressure"
+      ]
+    },
+    {
+      "path": "lean/OAI/MathematicalPhysics/NavierStokes/BalancedTransport/MainResult.lean",
+      "blob": "b468c1096cc36ba561a51c76c90417cd4b45ff97",
+      "anchors": [
+        "theorem balanced_three_stack_realization",
+        "BoundedMixed",
+        "PeriodicAfterOne",
+        "(fun _ _ => 0)"
+      ]
+    },
+    {
+      "path": "lean/ComparatorChallenges/ForcedNavierStokesComputation.json",
+      "blob": "f55d322aef19ab1e444c83cf9d9cdbf887455807",
+      "anchors": [
+        "OAI.BalancedTransport.balanced_three_stack_realization"
+      ]
+    },
+    {
+      "path": "lean/docs/376.md",
+      "blob": "b43f10df2d8fb85337f2b74abe299de009d0ad38",
+      "anchors": [
+        "Incompressible-Box-Transport-and-Finite-Computation-September-27-2026"
+      ]
+    },
+    {
+      "repository": "grandchallenge/MATHFORGE",
+      "path": "sources/OPENAI-MATH-2026/WP02_F376_OCT6_LITERAL_PROJECTION_PROPOSITION_DELTA.json",
+      "blob": "656327c244d73bd64d7d9077864c7dd41a6a5d42"
+    }
+  ],
+  "source_level_quantitative_audit": {
+    "definitions": [
+      "a=L/(2*pi)>0; xi_k=k/a; normalized spatial Fourier measure; k in Z^3",
+      "P(k)=I-xi_k xi_k^T/|xi_k|^2 and Q(k)=xi_k xi_k^T/|xi_k|^2 for k!=0; for mean-zero g, both zero at k=0",
+      "phi_hat(k)=-i(xi_k dot g_hat(k))/|xi_k|^2 for k!=0, phi_hat(0)=0"
+    ],
+    "exact_shell_count": "For |k|_infinity=n>=1, (2n+1)^3-(2n-1)^3=24n^2+2<=26n^2.",
+    "full_sum": "Sum_{k in Z^3}(1+|xi_k|^2)^(-2) <= 1+26 a^4 sum_{n>=1} n^(-2) <= 1+52 a^4 = S_L^2; use sum_{n>=1}1/n^2<=2.",
+    "tail": "For N>=1, sum_{|k|_infinity>N}(1+|xi_k|^2)^(-2) <=26 a^4 sum_{n>N}n^(-2)<=26 a^4/N. Square-root tail factor sqrt(26 a^4/N).",
+    "projection": "For each nonzero k, P(k),Q(k) are orthogonal complementary projections of Euclidean operator norm <=1. Hence ||Pg||_{H^s},||Qg||_{H^s}<=||g||_{H^s}.",
+    "potential": "For k!=0, sqrt(1+|xi_k|^2)/|xi_k|<=sqrt(1+a^2)=d_L, since |k|>=1. Therefore ||phi||_{H^(s+1)}<=d_L||g||_{H^s}.",
+    "sobolev_to_uniform": "Cauchy-Schwarz and |xi_k^beta|<=(1+|xi_k|^2)^(|beta|/2) give ||G||_{C^r}<=S_L||G||_{H^(r+2)}. Combining with P,Q and phi yields the displayed S_L and S_L*d_L bounds for all integer r>=0; temporal derivatives commute with time-independent Fourier multipliers for smooth g.",
+    "gauge": "-grad(p-phi)+Pg=-grad p+g, with phi spatial mean zero, so the pressure's spatial mean normalization is preserved.",
+    "finite_mode_checks": [
+      "Longitudinal mean-zero g=(sin(2*pi*x_1/L),0,0) has Pg=0, Qg=g and phi=-(L/(2*pi))*cos(2*pi*x_1/L).",
+      "Transverse mean-zero g=(0,sin(2*pi*x_1/L),0) has Pg=g, Qg=0, phi=0."
+    ],
+    "result": "PASS: the manuscript's 52 shell coefficient, d_L multiplier and 26/N tail coefficient follow from the displayed Fourier assumptions. This is a bounded independent analytic calculation, not a Lean proof or validation of every effectiveness claim.",
+    "unverified": [
+      "Computable Fourier coefficient quadrature and uniform error algorithms are not independently implemented here.",
+      "The general PDE manuscript's global construction, smoothness, and source-to-Lean semantic equivalence are not proved here."
+    ]
+  },
+  "exact_replay": {
+    "tool": "local Python 3 standard library fractions, exact rational arithmetic; no Lean toolchain",
+    "observed": "PASS: 1000 exact shell counts/upper bounds; 99 finite tail bounds; 400 exact scalar multiplier checks",
+    "procedure": "For n=1..1000 assert (2n+1)^3-(2n-1)^3=24n^2+2<=26n^2; for N=1..99 assert sum_{n=N+1}^{10000} 1/n^2<=1/N using Fraction; for rational a in {1/10,1,10,100} and n=1..100 assert 1+(a/n)^2<=1+a^2. The infinite-series bound is established by the symbolic integral comparison above, not by these finite tests."
+  },
+  "selected_lean_signature_comparison": {
+    "comparator_target": "OAI.BalancedTransport.balanced_three_stack_realization",
+    "comparator_file": "lean/ComparatorChallenges/ForcedNavierStokesComputation.json",
+    "actual_selected_scope": "An existential machine-indexed construction of smooth fields on Space=Fin 3->R, with BoundedMixed and PeriodicAfterOne, a zero-pressure ZeroDataSolution and an observer/halting equivalence.",
+    "october_proposition_scope": "A universal operation on arbitrary smooth, time-dependent, spatially mean-zero forces on the flat torus T_L^3 for every L>0, with unique mean-zero Poisson potential, Fourier P/Q, all h,r quantitative H^(r+2)->C^r estimates and conditional effective evaluation.",
+    "strict_logical_difference": "An existential zero-pressure Euclidean construction and qualitative BoundedMixed bounds do not by themselves entail a universal torus Poisson projection or its explicit constants. This is a signature mismatch, not proof of nonexistence elsewhere in the full Lean corpus.",
+    "exact_projection_lean_declaration": "NOT_ESTABLISHED",
+    "full_transitive_import_closure": "NOT_EXHAUSTIVELY_INSPECTED",
+    "required_bridge": [
+      "A torus period-lattice/quotient and normalized Fourier measure model with arbitrary L>0",
+      "Mean-zero Poisson inversion and Fourier multiplier definitions for P,Q,phi",
+      "Sobolev H^s and C^r norms and explicit constants S_L,d_L and Fourier-tail bound",
+      "Commutation with time derivatives and effective Fourier quadrature under stated input assumptions",
+      "A theorem statement relating the manuscript's general projection to the relevant formal Navier-Stokes solution and pressure"
+    ]
+  },
+  "canonical_inventory": {
+    "withdrawn": 3,
+    "repaired": 14,
+    "additional_citation_updates": 13,
+    "unique_entries": 30,
+    "counts_changed": false
+  },
+  "disposition": "SOURCE_LEVEL_QUANTITATIVE_PROJECTION_CONSTANTS_CHECKED_SELECTED_LEAN_SIGNATURE_GAP_RETAINED",
+  "unresolved": "F376_OCT6_GENERAL_TORUS_POISSON_PROJECTION_S_L_D_L_ESTIMATE_EXACT_LEAN_DECLARATION_AND_EFFECTIVE_EVALUATION_UNADJUDICATED",
+  "claim_boundary": "BOUNDED_ANALYTIC_AND_PINNED_SOURCE_SIGNATURE_EVIDENCE_ONLY_NO_LEAN_COMPILATION_NO_FULL_MANUSCRIPT_PROOF_VALIDATION_NO_MATHCERT_CERTIFICATION"
+}

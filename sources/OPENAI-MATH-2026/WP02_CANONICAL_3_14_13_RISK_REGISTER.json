@@ -652,10 +652,14 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_F376_OCT6_LITERAL_PROJECTION_PROPOSITION_DELTA.json",
           "git_blob": "656327c244d73bd64d7d9077864c7dd41a6a5d42"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_F376_OCT6_POISSON_FOURIER_CONSTANTS_AND_LEAN_SIGNATURE_GAP.json",
+          "git_blob": "9177efbfb7b00a384498ef5885fca3be6de7bd71"
         }
       ],
       "formal_declaration_mapping": "Selected Lean OAI.BalancedTransport.balanced_three_stack_realization corresponds to unchanged balanced main theorem only; October prop:projection-l2 exact Lean declaration NOT_ESTABLISHED; no exhaustive Lean import-closure claim.",
-      "exact_review_target": "F376 Oct 6 prop:projection-l2 materially changed (73 original/revised environments, 72 unchanged, 1 rewritten). Establish exact Lean declaration or separately formalize torus mean-zero Poisson projection, quantitative S_L,d_L Sobolev-to-C^r estimates and effective Fourier evaluation; validate proof and hypotheses. Separately map October slow profile, observer and projected pressure to selected Lean constructions. Do not promote source correspondence to certification.",
+      "exact_review_target": "October prop:projection-l2 S_L,d_L and Fourier-tail coefficients checked by bounded source-level analytic calculation (see new WP02_F376_OCT6_POISSON_FOURIER_CONSTANTS_AND_LEAN_SIGNATURE_GAP.json); exact general-torus Poisson projection declaration, effective evaluation, imported theorem mapping and mathematical certification remain unadjudicated. Separately map slow profile, observer and projected pressure.",
       "literal_hypothesis_conclusion_delta": "Pinned Sep 27/Oct 6 recursive build: 17/17 paired files, 14 identical blobs, 3 changed. All 73 theorem/lemma/proposition/corollary environments retained, 72 literally unchanged, exactly prop:projection-l2 in analysis.tex materially rewritten. September assumes effective smooth mean-zero g; October assumes smooth time-dependent g with zero spatial mean and makes effectiveness conditional for evaluation, adds unique Poisson potential, P/Q projection, quantified S_L,d_L H^(r+2)->C^r bounds, and computable Fourier truncation. Input-offset corollary and balanced-three-stack theorem statements unchanged. This is source evidence only; projection theorem/estimate Lean mapping and mathematical sufficiency unadjudicated."
     },
     {
