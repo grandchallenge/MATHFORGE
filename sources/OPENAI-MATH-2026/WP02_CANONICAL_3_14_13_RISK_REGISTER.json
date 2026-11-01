@@ -532,7 +532,7 @@
       "flags": {
         "withdrawn": false,
         "proof_changed": true,
-        "statement_changed": "UNASSESSED",
+        "statement_changed": true,
         "citation_only": false,
         "source_mismatch": "UNASSESSED",
         "unresolved": true
@@ -542,10 +542,15 @@
         {
           "path": "sources/OPENAI-MATH-2026/WP02_FOURTEEN_REPAIRED_EDITION_IDENTITIES.json",
           "git_blob": "cf7a0a526375372c0e0258e88f39b9d4012c071d"
+        },
+        {
+          "path": "sources/OPENAI-MATH-2026/WP02_REPAIR_233_ASHKIN_TELLER_OCT6_SOURCE_DELTA.json",
+          "git_blob": "7e1d057432aa740cfd4411a0257adf4ba3cd9253"
         }
       ],
-      "formal_declaration_mapping": "NOT_ESTABLISHED",
-      "exact_review_target": "Compare exact repaired proof/hypotheses to preceding edition and inspect formal declaration dependencies"
+      "formal_declaration_mapping": "NO_DIRECT_TITLE_OR_PDF_PATH_MATCH_IN_PINNED_173_SOURCE_200_MAIN_RESULT_CROSSWALK; lean/docs/233.md NOT_FOUND; EXACT_LEAN_DECLARATION_NOT_ESTABLISHED",
+      "exact_review_target": "Substantively validate Oct 6 killed-graph Green-form/common-kernel transfer and signed-loop-soup/GMC one-sided forcing lemmas; check lattice-aligned transmission and boundary-collar assumptions, ALS2018/JLQ2023Fields/Lupu2016 dependency sufficiency and exact Lean correspondence. Source-only 12 build pairs (7 identical, 5 changed); PDF and mathematical certification unadjudicated.",
+      "literal_hypothesis_conclusion_delta": "Sept 25/Oct 6 source: all 61 old statement environments tracked; 60 literally unchanged, one proposition prop:cluster-counts item 1 strengthens 'a rectangle' to 'a lattice-aligned rectangle'. Main theorem thm:main in byte-identical 02-model.tex unchanged. Oct 6 adds two lemmas lem:killed-graph-transfer and lem:soup-forcing in 08-local-kernel.tex; statement inventory 61 -> 63. This is a source statement-scope change, not proof validation."
     },
     {
       "key": "341:preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf",
