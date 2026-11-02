@@ -1,0 +1,81 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+  },
+  "entries": [
+    {
+      "index": 107,
+      "declaration": "OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice",
+      "runner": {
+        "run_id": 41460274104,
+        "job_id": 125386968245,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41460274104",
+        "run_number": 107,
+        "run_attempt": 2,
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "b9a240bae5c2e47101318695f281e4f468d86733",
+        "previous_attempt": "attempt 1 failed at Lake environment; superseded by successful attempt 2; no separate index acceptance"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/PartitionPrinciple.lean",
+        "config": "lean/ComparatorChallenges/PartitionPrinciple.json",
+        "solution": "lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean",
+        "challenge_sha256": "cc1cca2e6092c94b100b4408b2bff5bfe896b7537fb7a89f14353ea6a08f9b46",
+        "config_sha256": "b397ff9f33531c0eb896a3fbda9431057789716b54beca87884716cf28bcdbe5",
+        "solution_sha256": "86b26769694fd509710b5553fbb735fb17b57665b3b0e1e4a8e18bded93db7b3",
+        "challenge_blob": "e551315f882d35ba66f9f24bd67f27ce30cfd2f5",
+        "config_blob": "c280139691ba247c85ac7f2f9d027e6187c974be",
+        "solution_blob": "70884df9515d0b4af6f7a6acaf9aba13a2e8793b",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13162910212,
+        "zip_bytes": 23626,
+        "zip_sha256": "6b2a9c4511159bcfa841e82581a2da495964258ea83a8a9c2a130c5d74705303",
+        "receipt_sha256": "7930e5b5f77762b15ab192134aec1f2f449ffe00dacbfc4063e40e8f44c286ef",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ]
+}
