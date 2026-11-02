@@ -1,0 +1,256 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION",
+  "source": {
+    "source_repo": "openai/math",
+    "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "source_tree": "45074722c918576d65b4c8be9686c76f508ba696",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lake_manifest_blob": "67d01d2717d0aaff59fb8814bb53581b961f42b4",
+    "crosswalk_blob": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+    "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+  },
+  "entries": [
+    {
+      "index": 106,
+      "declaration": "OAI.Paper320.quantitative_separation",
+      "runner": {
+        "run_id": 41459900464,
+        "job_id": 125325988273,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41459900464",
+        "run_number": 106,
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "b9a240bae5c2e47101318695f281e4f468d86733"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/SensitivitySeparation.lean",
+        "config": "lean/ComparatorChallenges/SensitivitySeparation.json",
+        "solution": "lean/OAI/Combinatorics/Sensitivity/Separation.lean",
+        "challenge_sha256": "76405c3a09039be254192bdb453af6121987ffd3a3236a7303fc4979d9361eae",
+        "config_sha256": "d5ab43d4dc9111caf9c679c50d7127ee73f6aa1f831f8cc689a1de761fc99897",
+        "solution_sha256": "7e87439c7016f29521d7795779fe8ba94ea094ab8cd6539b4a139e9e7638ec0b",
+        "challenge_blob": "b2cf871bc3bb38194fc1b742666210f11498918b",
+        "config_blob": "4a045e5a5b2d3879ea54f5d6a790869a70d36da1",
+        "solution_blob": "d72f424a9e90900da6e5f35ba4f486287eadf342",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13149200992,
+        "zip_bytes": 10484,
+        "zip_sha256": "a6f887a5a6027f88a56203b8251f486bad6e85d9db53542667c9719b54c45d6c",
+        "receipt_sha256": "e02d0d0fa6774ab2122b592e3fc474b68c3c11b8bf289fcc01dd89dd7e3ee115",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    },
+    {
+      "index": 108,
+      "declaration": "OAI.PerfectCompleteness.Theorem11.exists_reduction",
+      "runner": {
+        "run_id": 41460637510,
+        "job_id": 125328466515,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41460637510",
+        "run_number": 108,
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "b9a240bae5c2e47101318695f281e4f468d86733"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/PerfectCompleteness.lean",
+        "config": "lean/ComparatorChallenges/PerfectCompleteness.json",
+        "solution": "lean/OAI/Computability/PerfectCompleteness/Theorem11.lean",
+        "challenge_sha256": "7270211455879e01db9b7a745f543418e709b7eb17279b7fa42408429e0f7ef8",
+        "config_sha256": "76c8b8409b50e0718945eb1d45c842412024de1257a8a8122ed5019c75631ef1",
+        "solution_sha256": "7575eee3dffa75245b9714fbf22bc7b0ba682174e5046eaeabc0382141aaba4a",
+        "challenge_blob": "e6ce53557019808040aaee908d802fbeeb63b166",
+        "config_blob": "c8a63fa00611be828228a68dc728f703cca66754",
+        "solution_blob": "a01231ded2e43551949ac614f6d7c48a7d1d1d66",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13153288104,
+        "zip_bytes": 23361,
+        "zip_sha256": "3244fc305cceb3cfda2a3612ff3cfb57e4e9cbb714e95626b9ed4ee9cf1693ac",
+        "receipt_sha256": "c0e9f90ab4bf40b2d7cdcbddc750ea7eedf3edafd36b1ba2ae81a9bd73fb76c8",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    },
+    {
+      "index": 109,
+      "declaration": "OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality",
+      "runner": {
+        "run_id": 41467470642,
+        "job_id": 125352060053,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41467470642",
+        "run_number": 109,
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "b9a240bae5c2e47101318695f281e4f468d86733"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/PeriodicTilingThree.lean",
+        "config": "lean/ComparatorChallenges/PeriodicTilingThree.json",
+        "solution": "lean/OAI/Geometry/PeriodicTiling/Counterexample.lean",
+        "challenge_sha256": "056c498ce4a6e7b71b688eb8c499ebef70ad1bddfea98b7215d480eb11e08bba",
+        "config_sha256": "e87378eda65c42e0ecdf457306ef3f79db0ee94dbfe99f890ba1b351a64ce147",
+        "solution_sha256": "2a7cac9d5ec1cfe91911599ebe9d58cff2b704e33296cb6495f00bb0ee6617ef",
+        "challenge_blob": "9eb75b99b57afe0f7a9e24035095d9c9015acb52",
+        "config_blob": "493068b9b0425bd3a2852ce3e0ce2c0c98acc189",
+        "solution_blob": "7988070a1c82287df771ea98f9b211c95542f573",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13154016898,
+        "zip_bytes": 11640,
+        "zip_sha256": "c7f87ff07e00e103130a0bfbafcc4519065b34a85b9109967c93f686cd5ed33e",
+        "receipt_sha256": "b003471e18b37949493584f095121fdc75f73ed1a790f3211feb2de36c242449",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    },
+    {
+      "index": 110,
+      "declaration": "OAI.PettyProjection.petty_projection_volume",
+      "runner": {
+        "run_id": 41468188009,
+        "job_id": 125354511281,
+        "run_url": "https://github.com/grandchallenge/MATHFORGE/actions/runs/41468188009",
+        "run_number": 110,
+        "run_status": "completed",
+        "run_conclusion": "success",
+        "runner_head": "b9a240bae5c2e47101318695f281e4f468d86733"
+      },
+      "target": {
+        "challenge": "lean/ComparatorChallenges/PettyProjectionVolume.lean",
+        "config": "lean/ComparatorChallenges/PettyProjectionVolume.json",
+        "solution": "lean/OAI/Geometry/ProjectionBodies/Main.lean",
+        "challenge_sha256": "29270000c1c8332fef7657ed9f81f89a472d902e2a8a6eb4c4a28934c9f528f3",
+        "config_sha256": "ae1ee5160f9bd4ba896faa928b8cab668cf983bd4bb3b0dd1874806a0334ae4b",
+        "solution_sha256": "a744cab448f1bd18e34ec01e7d2fdbfe515add1224092fdf4cf2ebea831edee3",
+        "challenge_blob": "680a631459c84863752d24ea9ad899e069de69f8",
+        "config_blob": "0c8e4f11c04b90920715aa3f6c6fd04d08411147",
+        "solution_blob": "ea4c5cc4c021e62cc1f8a7c37e9f97ac18549dd0",
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "enable_nanoda": false
+      },
+      "artifact": {
+        "artifact_id": 13154229130,
+        "zip_bytes": 10592,
+        "zip_sha256": "30cd1e0556c731ba0b30e8c6546ec70b7711b50c806319e52fb451b01054e26c",
+        "receipt_sha256": "b81b0767c774a6459963ce4e7fcdf149054dd6a03bdb65cfcad66f1343192bae",
+        "zip_exact_members": 12,
+        "receipt_listed_sha256_and_byte_counts": "11/11",
+        "zip_digest_and_size_match_provider": true,
+        "selected_index_and_declaration_match_crosswalk": true,
+        "source_challenge_config_solution_sha256_recomputed_against_immutable_upstream": true,
+        "source_git_blobs_checked": true,
+        "manifest_pre_post_unchanged": true,
+        "hardened_exit": 0,
+        "diagnostic_exit": null,
+        "diagnostic_artifacts_present": false,
+        "comparator_hardened_accepted": true,
+        "kernel_acceptance_log_observed": true,
+        "comparator_success_log_observed": true,
+        "sorryAx_in_hardened_log": false,
+        "log_acceptance": [
+          "Lean default kernel accepts the solution",
+          "Your solution is okay!",
+          "Finished with result: success"
+        ],
+        "challenge_placeholder_sorry_not_counted_as_solution": true
+      }
+    }
+  ],
+  "excluded_run": {
+    "run_id": 41460274104,
+    "run_number": 107,
+    "job_id": 125327232930,
+    "status": "completed",
+    "conclusion": "failure",
+    "artifact_count": 0,
+    "disposition": "NOT_ADMITTED; failure in upstream Lake environment step, inspect/recover separately; not a comparator acceptance"
+  }
+}
