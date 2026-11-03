@@ -1,0 +1,262 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "protected_parent_sha": "4ba9bc214f1b26284fe9f60eb3002c892f3f2018",
+  "protected_parent_admitted_count": 130,
+  "claim_boundary": "COMPARATOR_EVIDENCE_ONLY_NOT_MANUSCRIPT_SEMANTIC_CORRESPONDENCE_OR_PUBLIC_CERTIFICATION",
+  "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "entries": [
+    {
+      "index": 129,
+      "declaration": "OAI.QuadricCounterexample.main_theorem",
+      "run_id": 41559563772,
+      "artifact_id": 13195784600,
+      "artifact_provider_bytes": 10601,
+      "zip_sha256": "6ba472b6deff3b28e43914ab77c4a3f3a7bb4b4e4299df1c084d2d7dc202138f",
+      "receipt_sha256": "26bf926c12b4563b8f063eb6958a5e30ec7f725582ecfc219262df7a5770a301",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/QuadricBundles.lean",
+          "sha256": "de366a18291196c1089c1f5a65b89c046806345edef5fb1679c881fe05b3b9f7",
+          "git_blob": "0e56aea69f438c79cb66100f8d02deb4508e95f8"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/QuadricBundles.json",
+          "sha256": "e8dd5512653fec19023cca766e782d657b3ec6dca33347b87fb1620a49ffa64f",
+          "git_blob": "60fda5b8c043d927c7a90b3d23be58aa0083bba0"
+        },
+        "solution": {
+          "path": "lean/OAI/Geometry/QuadricBundles/Main.lean",
+          "sha256": "48bdbc35aa568a4bc84d050838bb5bde97ed09d8522f351aba96578c54734747",
+          "git_blob": "c8ca05a3ad6304a026ea95e1c75639489c3f3ced"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 130,
+      "declaration": "OAI.QuantitativeVanDerWaerden.uniform_lower_bound",
+      "run_id": 41559567067,
+      "artifact_id": 13197036974,
+      "artifact_provider_bytes": 12037,
+      "zip_sha256": "534e8dba719aa51416fd74477db1bc6ffa38efe492011fa7f641f95d268e2bd0",
+      "receipt_sha256": "a2c46116b0d36468dfbbf752ce55ed04644b764626400dc756dc9db39566efee",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/QuantitativeVanDerWaerden.lean",
+          "sha256": "1caa563bbf7a5602adb8cdbbc06aaf1e3d4d5fe27ed4bebf2bf44cf2937a6593",
+          "git_blob": "bee3f5a820455ead2a00f8fdc08d4ae5276cba2a"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/QuantitativeVanDerWaerden.json",
+          "sha256": "0fcea93df537b8451e08f27d23231cb1b05b515afee53c5d1d8b33dfcfd814fa",
+          "git_blob": "10b1770000baae70cfe28b4890143ff9960273af"
+        },
+        "solution": {
+          "path": "lean/OAI/Combinatorics/ProgressionColoring/Main.lean",
+          "sha256": "631fc2737af9923814430ba8de89038abcd047a935a63dedccfb1f103ba4ed90",
+          "git_blob": "d8ca9d7ce4f064bf9573aefb9e1e136063d2d991"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 131,
+      "declaration": "OAI.QuarticPowerFree.allDegrees",
+      "run_id": 41559569841,
+      "artifact_id": 13196898497,
+      "artifact_provider_bytes": 10653,
+      "zip_sha256": "da2b745ac5c475ee3fe61f7ac61f641e02babdbacc53f6e5de3234042bf5a445",
+      "receipt_sha256": "f79b51e003eb18fe21e182d605cdce2a1ed5dab41b1ef8b8b0eabc7d9335b0d9",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/PowerFreeValues.lean",
+          "sha256": "5e42de8cf6611fb73cab28849edb8b473ab16a047c1fc29ec042463e87a1f2f1",
+          "git_blob": "515e91fe8f60e8b63c74de87a313b34b12054061"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/PowerFreeValues.json",
+          "sha256": "d47857339c42028297f4f800bb4ad35d38ba3a9949b9e6542189f9dd7f8fac2d",
+          "git_blob": "84b9f8c3fc3318671f528228d592038f77484e90"
+        },
+        "solution": {
+          "path": "lean/OAI/NumberTheory/PowerFree/Main.lean",
+          "sha256": "45ebf810c864d3b8f0d48c95e1728f11a854ed644b6d943924a50cbf90503d73",
+          "git_blob": "4f47d76e0cd0031883e447747c088b7fd945c6d8"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 132,
+      "declaration": "OAI.QuinticLienard.main",
+      "run_id": 41570867769,
+      "artifact_id": 13201978215,
+      "artifact_provider_bytes": 11740,
+      "zip_sha256": "5166f8822f634069ca3b929ed7e2292d11f32a2afd7c373dfcc37e18ce90b3fc",
+      "receipt_sha256": "c5effc4ba0904d567084bb385bc7811f37b1f8d4623be60d948d9fde9faa5b4c",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/QuinticLienard.lean",
+          "sha256": "cb34f454db432f46902a17036812adde4c73fe276d6d7a8a8b21797ace40d000",
+          "git_blob": "aaa3712a73aa86b4c6a7a0e0a6007eb62feb135a"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/QuinticLienard.json",
+          "sha256": "52e78108c45ce22cf96adafd9826f378ad61b6e222891b5dbade39ab1e805d95",
+          "git_blob": "89f4500a1b15d5455e81e76f583faf1751db83b1"
+        },
+        "solution": {
+          "path": "lean/OAI/Analysis/LienardCycles/Main.lean",
+          "sha256": "13baacc8e7d7def3b6104d31b329dc0f4da0cb0e6adc1f87e367e416d9ac00c5",
+          "git_blob": "f8db625152ccc3b35e4d723f2ee41caf3f5bc803"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 133,
+      "declaration": "OAI.RVM.global_classical_solution",
+      "run_id": 41570870937,
+      "artifact_id": 13202956438,
+      "artifact_provider_bytes": 13222,
+      "zip_sha256": "5ec6a97cc159630e8b40dfe6ec7c896f512afd80d44d410bb6d7d96d549014e6",
+      "receipt_sha256": "dfdaf02eb9ae96c9518633002c72903ce119b6db53b0525291f1d3dc3bdfab14",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/VlasovMaxwell.lean",
+          "sha256": "67941fd3f10cf129d42dc4ef6ea6b8585fb90ad942108d7d71827ce9960b9cf5",
+          "git_blob": "38b6c73916a07c182e16c50652c1a7e30b5412d0"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/VlasovMaxwell.json",
+          "sha256": "423df2cf9e072e1dc4bcdc848b1c37cb9a3b684109075c2122ea3f1825445a32",
+          "git_blob": "558493b4107fdcb3df27126603008c47ec4a2554"
+        },
+        "solution": {
+          "path": "lean/OAI/Analysis/VlasovMaxwell/Main.lean",
+          "sha256": "32271d189735ec576f8000b501aa70502e7d32dbaa071b160615a5d615369b50",
+          "git_blob": "27c4af45312b02fffdd8b3014084dc5d398a36a7"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 134,
+      "declaration": "OAI.RadialTransition.main",
+      "run_id": 41570874176,
+      "artifact_id": 13201484297,
+      "artifact_provider_bytes": 11147,
+      "zip_sha256": "b57d0269abafa7ee65d938371d4f092ffede4cbe487852f95775287fdfb19f5b",
+      "receipt_sha256": "20f7d33a03607e3f48ce169a2dc48c1d9d20cd230a670232f561639261d8e4f4",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/RadialTransition.lean",
+          "sha256": "305e7a1b2a0cb643b5bc8667dca0e2f138b64c3b375b3f79ffe169103dc7e8ad",
+          "git_blob": "09f994133923301f8ed387a7238a877ebeeeca58"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/RadialTransition.json",
+          "sha256": "42edad6787773f71f917cc6e43b4eca05dc25488c6f82f611d1c61115a60a399",
+          "git_blob": "6ed1573978a57563159dbacef4ace97c6605ac2b"
+        },
+        "solution": {
+          "path": "lean/OAI/Probability/RadialTransition/Main.lean",
+          "sha256": "a01b8194beacc038e03f1e8fcd12c3a4787de18efceb67eee8706e8faeaedc08",
+          "git_blob": "f33fe6bc671ac5533e40a1fdb7e8f7f9a52a9940"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 135,
+      "declaration": "OAI.RationalHitting.main",
+      "run_id": 41578119770,
+      "artifact_id": 13204983570,
+      "artifact_provider_bytes": 10306,
+      "zip_sha256": "49d5a63d4c313e03d31abf9501d96b3eb1b19555ccc3f5d9f771b69ee653e54f",
+      "receipt_sha256": "6233576ad760cba05dde76a34a00c536ffb41fdb37152b70c83386e2a0751113",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/RationalHitting.lean",
+          "sha256": "c0fc0d9740d4ef195918447f4da9605e75760845cae1163c534d6299c6e4877f",
+          "git_blob": "7693842d66f4f3660251b4571903e2f8ec6980a8"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/RationalHitting.json",
+          "sha256": "2b135eaf875cd6c699fd8dd9b9b8073f11da8ef767c581fd2e1b65d15d250dee",
+          "git_blob": "c13cb85bb4833ab52f05c20b4576fded30c0f610"
+        },
+        "solution": {
+          "path": "lean/OAI/Computability/RationalHitting/Main.lean",
+          "sha256": "1de92103466695d67f6bbdbf44690af033aab4fb7e232228a702d3434e5203cd",
+          "git_blob": "e175e44e4ed74294984eb07dab58c5232cc7eed3"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 136,
+      "declaration": "OAI.ReflexiveFixedPoints.exists_fixedPoint_of_canonicallyReflexive",
+      "run_id": 41578123011,
+      "artifact_id": 13204907834,
+      "artifact_provider_bytes": 12171,
+      "zip_sha256": "885e80c9110578e3787dd5777da83001ca99198afd24c655f29f333ea7c93092",
+      "receipt_sha256": "b8fd923372342437b3fe3d48938ec91ac6d6d596ad5402127a21a6a1d0369765",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/ReflexiveFixedPoints.lean",
+          "sha256": "e82d18ae968de9efbb0ea83aa401e95302a4b80686949107a3d0223335718d0d",
+          "git_blob": "1c99bec5eeebf53ed44a6a91e627a5b6c98d06a6"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/ReflexiveFixedPoints.json",
+          "sha256": "9f178244093f7f2f109a6421da773b4f655512b030a965aca11257626c840537",
+          "git_blob": "509dbadd66ed99e390c6bae370a8a48a2af44597"
+        },
+        "solution": {
+          "path": "lean/OAI/Analysis/Nonexpansive/Main.lean",
+          "sha256": "02b364de8f10014d374fd1260635240e7977a1646c92f82257919baf604dd66a",
+          "git_blob": "d73feb22ad2901005b4a1259b24a6104af33dc70"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    }
+  ]
+}
