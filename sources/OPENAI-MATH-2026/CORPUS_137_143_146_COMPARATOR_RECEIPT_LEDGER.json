@@ -1,0 +1,262 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "protected_parent_sha": "612ae8e9b97484fb9e7711093e65feb9af8df4f3",
+  "protected_parent_admitted_count": 138,
+  "claim_boundary": "COMPARATOR_EVIDENCE_ONLY_NOT_MANUSCRIPT_SEMANTIC_CORRESPONDENCE_OR_PUBLIC_CERTIFICATION",
+  "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "entries": [
+    {
+      "index": 137,
+      "declaration": "OAI.Release061.main",
+      "run_id": 41578126098,
+      "artifact_id": 13205004983,
+      "artifact_provider_bytes": 14639,
+      "zip_sha256": "bddc195affd0e02d4874f062e31fe1df42cb061ba95c785261d8b88b381e1019",
+      "receipt_sha256": "31c7d04d89b4e4408296655fd9e37a426bf8becc8ffb9bc16d523653347de040",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/SymmetricDomains.lean",
+          "sha256": "2d838d21d7431014cea2d5af5bc4b64121075333c5833b4cfc5efb73c4a1f1ce",
+          "git_blob": "05d033b97fd40b6b643588da4a63194d9685bcf1"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/SymmetricDomains.json",
+          "sha256": "1acb77b2abcbf8d8889a0ae36f2c9c09a3a86922181de832a38d67e315e2ec06",
+          "git_blob": "9e4a05aa5b757aefb19be7dfb92c33feafb5db4c"
+        },
+        "solution": {
+          "path": "lean/OAI/Analysis/SymmetricDomains/Main.lean",
+          "sha256": "5282d167e823ba9afe35533f8c1390433e57e5dd9de7c242e77766fdc40e5c00",
+          "git_blob": "83efeb0a9ed7b02e2e515ea3cf44b244e1bcaf03"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 138,
+      "declaration": "OAI.Release075.main",
+      "run_id": 41628498537,
+      "artifact_id": 13226828304,
+      "artifact_provider_bytes": 9934,
+      "zip_sha256": "959cdb765953b4d2c8b7f227912423ee54ca9a4eca99d766d00247e9a7f3bf5a",
+      "receipt_sha256": "496ac8e7b4a2c025f86e7fed61e2f3e473c88882358e346187398d3f408a3e6d",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/TorsionFreeHyperbolic.lean",
+          "sha256": "07a6d626a7698f4e5e1b5cc19326c7efaafd0addf336f27aa3a5c9ed115fe8a5",
+          "git_blob": "83f9be6b2243d87bdc338c6e4e021a913704af90"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/TorsionFreeHyperbolic.json",
+          "sha256": "e4178f580015efa3669582be5289097579b93a8d342122fcae71ccad8e5a3a74",
+          "git_blob": "486a8c4e75596e2bfb095576b454fc32c64f5d4d"
+        },
+        "solution": {
+          "path": "lean/OAI/GroupTheory/Hyperbolic/Main.lean",
+          "sha256": "b27d2ea890d31d5cb2b92984039188817f0ee9e755f8b93bd48d904fefad2eaa",
+          "git_blob": "483243ca883b4a01be266b1e1a575c3e8ae30f0e"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 139,
+      "declaration": "OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability",
+      "run_id": 41628502848,
+      "artifact_id": 13229332413,
+      "artifact_provider_bytes": 22533,
+      "zip_sha256": "cccb1e4f67b6530e570ea1e62ff7eb54d93a6b3be8305ae95660068066128b20",
+      "receipt_sha256": "785ea1dec9772247d1b54fdeeaf055221177abec478cbfadff6aac21d76b6678",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/RieszQuantitative.lean",
+          "sha256": "6e1b35500d0313a4774dafe0ae42200202735e598191209f06e930f114f99bd0",
+          "git_blob": "d30279bd079ff248ecb471e546be1080a54c7b57"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/RieszQuantitative.json",
+          "sha256": "4656a5812cc764159634e8f191bf4e98abf20ebb130bcb31187a2c5a4623939c",
+          "git_blob": "8ed20da623efe0cf7530e87cafa9524fd0e3659c"
+        },
+        "solution": {
+          "path": "lean/OAI/Analysis/RieszRectifiability/Uniformity/Rectifiability.lean",
+          "sha256": "8eb5eb8a8cc8677e2df3520ef629fca32a08bd92d73c6550c0c13aebbdd2f780",
+          "git_blob": "0926de65656949e1f3c4cc4dd40295772448a4c9"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 140,
+      "declaration": "OAI.RyserCoveringCounterexample.exists_prime_eventually_counterexampleRank",
+      "run_id": 41628507276,
+      "artifact_id": 13227077916,
+      "artifact_provider_bytes": 13156,
+      "zip_sha256": "9c03818b4a8125fad3a20627f58dc7c1d4f1b4311add351f25197ae6cc47ee9f",
+      "receipt_sha256": "1964d83f07ff6e4a5f7c1d2cf0e18075f86c6387cce02485e50d3e61915391ba",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/RyserCovering.lean",
+          "sha256": "ce109f1b71b5131eae54916ffb0aabd36a3b90eaf0780bf2a58afec1aaf4ebe4",
+          "git_blob": "d57361e616da5348374a59ef77ac695a6a166fb4"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/RyserCovering.json",
+          "sha256": "496544b0aed472d462671c4902146331b0f0e4a4067ea1ba72a7a992f68d2864",
+          "git_blob": "e35a0eb6789730d6cf32828f48c4cdf7371e9f76"
+        },
+        "solution": {
+          "path": "lean/OAI/Combinatorics/Ryser/Construction/Main.lean",
+          "sha256": "a9e07fc87c05c763788fd6db62a04c8a18c612dfee2d6eaf5498f03d017a783b",
+          "git_blob": "20f5b060cf3cec3ffcd2086395ded1abcc5303be"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 141,
+      "declaration": "OAI.RyserOdd.eventualOddFailures_and_infinite",
+      "run_id": 41673019329,
+      "artifact_id": 13248829392,
+      "artifact_provider_bytes": 13883,
+      "zip_sha256": "7076be6167037f19be75ffc515f98cd3372a69c29241f0678cb4295f30b87e71",
+      "receipt_sha256": "2b6547ce7821fb0f3ce3f7c9a745fd715fbaf21ab4590136723609c4ac270374",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/RyserOddExtensions.lean",
+          "sha256": "99c41ea692d8c63e880c3119fa3a25eb4e04e96f775a2ccd632bb7fa9be37f9b",
+          "git_blob": "e41426a80f37da6ba537f7d9090a6ac467c99b97"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/RyserOddExtensions.json",
+          "sha256": "9333c823e95c9871e99e380ac379430f564dd6a030854ea62019057d4e8a2ce4",
+          "git_blob": "89d0069c0e2bd85ea4f4efdd6f5ac2f211054f0d"
+        },
+        "solution": {
+          "path": "lean/OAI/Combinatorics/Ryser/OddExtensions.lean",
+          "sha256": "4388f75221f7512901e2e7f2e652aa2072f09218653ba448546e86c2f8a4b49d",
+          "git_blob": "3ab8a3a9bc6270a76acd4c4edf9af8a98ef5d00d"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 142,
+      "declaration": "OAI.Saxl.saxl_conjecture",
+      "run_id": 41673024203,
+      "artifact_id": 13250591729,
+      "artifact_provider_bytes": 10466,
+      "zip_sha256": "809cdffd47b633472b5992aa2a888829aa5de0fb3303a49c70ee30df28424c71",
+      "receipt_sha256": "4c3b8e8dca2c84f90489519332a637a005fae6c3e13ec3605c0e8641b1c7612e",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/Saxl.lean",
+          "sha256": "71917234c1dc2e7fe3b8912175f5bdbb30565803ff71a1bb5ce71c889c79d683",
+          "git_blob": "6a38a2913147886cabd314918ecc596e32d5f976"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/Saxl.json",
+          "sha256": "20c77d628ecc9ed20e3eea8bb033bcd7fedd02c42449e02f2a0573187b33a770",
+          "git_blob": "de28934971681c29068ca51800717c7accd08caf"
+        },
+        "solution": {
+          "path": "lean/OAI/RepresentationTheory/Saxl/Main.lean",
+          "sha256": "d75823f7a9d4ec4cec8b0f8e445da4012da8508ad31056754210fd52781f61c0",
+          "git_blob": "4bbc2f71b96cb4d920f3e5094856ca899dd3419a"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 143,
+      "declaration": "OAI.ScalarConductivity.main_nonuniqueness",
+      "run_id": 41673029896,
+      "artifact_id": 13253021048,
+      "artifact_provider_bytes": 18951,
+      "zip_sha256": "3bba475b6e692da0fb7c65f8ebcdb78a6ff26646b9787bc473b242fc5e4f246a",
+      "receipt_sha256": "dd226e59bfff4844f184f0c2161a4b3e8162fa94374b0347d418f62c13c92e3c",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/Conductivity.lean",
+          "sha256": "646bf2f842e2a169865e984174b96b855e6a368deff70ec7e916cfafa4cf6557",
+          "git_blob": "a9ec5e895aa395a437c9386a9e790315dba193f4"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/Conductivity.json",
+          "sha256": "ca6115f52ab9f5eb5a082efa9cc3a31173e611b29be32421af9631ab49033af0",
+          "git_blob": "e6d8d20f84bedd72e8285337afcb8b0816b3d2ec"
+        },
+        "solution": {
+          "path": "lean/OAI/Analysis/Conductivity/Main.lean",
+          "sha256": "22f81441c04d3efbc997677252bddfc347584295c4ffc9d7756111619d241b7f",
+          "git_blob": "4946318f6ceb4f3dbf4ae2cbd673123e5f6f8d68"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 146,
+      "declaration": "OAI.SeymourSecondNeighborhood.exists_goodVertex",
+      "run_id": 41688407946,
+      "artifact_id": 13256267221,
+      "artifact_provider_bytes": 10610,
+      "zip_sha256": "0c3a4667594ef291008e26b1a1a5279ab7c9ca1a11493c22a1678143728e6dc1",
+      "receipt_sha256": "c5a875701b35f76f3b125b4ccfca71686972c57e279ae2120698d8fdddf7ce13",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/SeymourSecondNeighborhood.lean",
+          "sha256": "fa4a37831405b3fe7f6a88a2dce8918982195ee1757e05e4623055822d36ca98",
+          "git_blob": "70d287c3f831d0698352b144d39cdf29cac6c24b"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/SeymourSecondNeighborhood.json",
+          "sha256": "e2496b399005d74e7ae3a1467f3286120b706abe519e42d87880ca1679935778",
+          "git_blob": "30d626fa6821128e87fcfa95827c062bfddd65df"
+        },
+        "solution": {
+          "path": "lean/OAI/Combinatorics/SecondNeighborhood/Main.lean",
+          "sha256": "44637990cc5daddcb30874368807ce7a0531ac1bbbe6a21751734b291f9b35f7",
+          "git_blob": "97116f86ece4eb7e64bc818f9781456c74d3cccd"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    }
+  ]
+}
