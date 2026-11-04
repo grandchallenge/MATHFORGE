@@ -1,0 +1,129 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_path": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob_sha": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "protected_base": "d59ba22334043b557c84e2c96e029450e007fa78",
+  "receipt_members_verified": 66,
+  "source_bytes_verified": 18,
+  "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "verification": {
+    "receipt_method": "Downloaded GitHub Actions ZIPs through authenticated GitHub connector; locally recomputed SHA256 and byte length for every listed receipt member",
+    "source_method": "Authenticated gh api contents at exact upstream commit, base64 decode, independent SHA256 comparison against each artifact statement-sha256.txt",
+    "run_history": "167/167 indexed runs enumerated before dispatch, zero active",
+    "source_verification_capture": "21597c531fd64e0e94c5e4c54bb67988",
+    "source_verification_capture_receipt_sha256": "f9a26fd09057eff788167eb658c6d1481b494b46c4adf5583951443d0b96bbe7"
+  },
+  "indices": [
+    {
+      "index": 162,
+      "run_id": 41895509957,
+      "artifact_id": 13355787434,
+      "target": "OAI.SymmetricMahler.symmetric_mahler",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 163,
+      "run_id": 41895516142,
+      "artifact_id": 13356347964,
+      "target": "OAI.SymmetricMahler.symmetric_mahler_equality",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 164,
+      "run_id": 41895520737,
+      "artifact_id": 13357335571,
+      "target": "OAI.SymmetricPolar.symmetric_polar_main",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 165,
+      "run_id": 41907627531,
+      "artifact_id": 13361174268,
+      "target": "OAI.Tachikawa.main_theorem",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 166,
+      "run_id": 41907632639,
+      "artifact_id": 13362056129,
+      "target": "OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 167,
+      "run_id": 41907637525,
+      "artifact_id": 13360798099,
+      "target": "OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    }
+  ],
+  "claim_boundary": "Comparator evidence only; semantic manuscript correspondence and public certification are separate."
+}
