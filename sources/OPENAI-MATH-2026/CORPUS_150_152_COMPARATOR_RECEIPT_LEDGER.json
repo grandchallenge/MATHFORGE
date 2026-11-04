@@ -1,0 +1,107 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "protected_parent_sha": "c2168979383e9265c25595c3fce64308cdb5058e",
+  "protected_parent_admitted_count": 151,
+  "claim_boundary": "COMPARATOR_EVIDENCE_ONLY_NOT_MANUSCRIPT_SEMANTIC_CORRESPONDENCE_OR_PUBLIC_CERTIFICATION",
+  "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "entries": [
+    {
+      "index": 150,
+      "declaration": "OAI.SimpleAmenable.main",
+      "run_id": 41768236936,
+      "artifact_id": 13294429111,
+      "artifact_provider_bytes": 17834,
+      "zip_sha256": "680510b4b250c7698b24ee6b0e0001d2b2f15e74bd36486bb7fb2617cf5500ed",
+      "receipt_sha256": "528774109e86c8268dec1d2baab038facd423e456ed00f84a01d0ce1526073f6",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/SimpleAmenable.lean",
+          "sha256": "ff02a2468a0567cf22ae5ac7a7f95360c8038ad79c1df0a2a100ee2b18d0beeb",
+          "git_blob": "f5aa7393f767e42476cd02fea732c1fa1d9be5ad"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/SimpleAmenable.json",
+          "sha256": "c4b67c051efad791f2536fc945b52ad911a49799be063abf8681a20b8684eb59",
+          "git_blob": "621d5a5334092f2a6ec915b5d0d273d924ee0184"
+        },
+        "solution": {
+          "path": "lean/OAI/GroupTheory/SimpleAmenable/Main.lean",
+          "sha256": "0637bb5933bc322baf57f34d7a4cc7eb50dd36de7c2fa06fb5c5971a5fab2140",
+          "git_blob": "2f635943ed1ae0efb2057339bdef4e4fc65db0a7"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 151,
+      "declaration": "OAI.SingleFold.main",
+      "run_id": 41768240732,
+      "artifact_id": 13294410848,
+      "artifact_provider_bytes": 10078,
+      "zip_sha256": "f66fa29622cb3413657901dde35f14b667d038503586f8d8b4b61acd263b4902",
+      "receipt_sha256": "6bf46b182a6cac5dc46b176ebd23236336c24211e70faa8ab1cb8e7c24e4fbbf",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/SingleFold.lean",
+          "sha256": "a32b461c1dadec053dce0a3ddc101273021af51e987e949cac44dc5cd4012a98",
+          "git_blob": "1ca4b4e2c4aabdc4a3a8d45d661502273f4bf919"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/SingleFold.json",
+          "sha256": "c3bebcda69363690d5cf9df87f157ac35de09b7a2bd7304158059e2c366a680c",
+          "git_blob": "1bc6f3f55d586edc53c080c0014a678ead44045e"
+        },
+        "solution": {
+          "path": "lean/OAI/NumberTheory/SingleFold/Main.lean",
+          "sha256": "ae4c93ba2a67225c9ffb640f9291de84e9b382d815e27fe46fb539f1d3412b31",
+          "git_blob": "706b01d4275ccd203bcccae6623dc18d32f6370b"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    },
+    {
+      "index": 152,
+      "declaration": "OAI.SingleLatticeCovering.single_lattice_covering",
+      "run_id": 41768244379,
+      "artifact_id": 13293598905,
+      "artifact_provider_bytes": 10585,
+      "zip_sha256": "0eee450aca57f5cc21f18e8ec16308195b623e04c92b26330ed271f0a092ecc8",
+      "receipt_sha256": "22d25594866fd9337a8440bc07ec2fb784801b51b1ef8367d86e8b5207131c6c",
+      "receipt_member_sha256_byte_count": "11/11",
+      "source": {
+        "challenge": {
+          "path": "lean/ComparatorChallenges/SingleLatticeCovering.lean",
+          "sha256": "f2f6684141cab6c648c934f75685a3d85f12f37f3c2b0c83224155157a60dbcd",
+          "git_blob": "bc1206bfaa5e0914fb820077a3c289e35ee6db2a"
+        },
+        "config": {
+          "path": "lean/ComparatorChallenges/SingleLatticeCovering.json",
+          "sha256": "a0d1f9444b4c21bd5edca089b48144df91cc8edb556eb522947e22abe2f7c798",
+          "git_blob": "0430ba7f3fd9929271d6dccfa68444822945e9c8"
+        },
+        "solution": {
+          "path": "lean/OAI/Geometry/LatticeCovering/Main.lean",
+          "sha256": "ad71e420e2106602e5d6b16d6278f7c28df84e76e2261f42c278e09db741535c",
+          "git_blob": "d9d6d174adce8de87af728c4ebd214c764adc848"
+        }
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "no_sorryAx_in_hardened_log": true
+    }
+  ]
+}
