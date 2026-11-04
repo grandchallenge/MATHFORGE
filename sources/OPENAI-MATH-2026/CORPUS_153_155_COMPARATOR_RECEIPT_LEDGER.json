@@ -1,0 +1,90 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_head": "c2168979383e9265c25595c3fce64308cdb5058e",
+  "protected_base": "afb49053d4ace7a6c15d1da030a19a3d1639da7c",
+  "artifact_members_verified": 33,
+  "source_bytes_verified": 9,
+  "indices": [
+    {
+      "index": 153,
+      "run_id": 41782720950,
+      "artifact_id": 13301033666,
+      "archive_sha256": "79279b0297886cbff809a03d526f289f1e9782c81d3322b0747ecc8794f58cd8",
+      "target": "OAI.SmallCM.candidate_ring_properties",
+      "source_sha256": [
+        "c75e9be97bcb12a6c289b6652337fc32398064fe8bef7cd910110a9d96fae56e",
+        "dce1e6a3d800cb5b61ab13b7dd5cd76566960b963678f1dd238f922fcc4801f1",
+        "bea971e387a6c77c5ff5c3d533a6a3663aa9deb58f0247c203bd763cf5735aa7"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3,
+        "method": "pinned GitHub raw source SHA256 versus artifact statement-sha256.txt"
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 154,
+      "run_id": 41782724462,
+      "artifact_id": 13299963838,
+      "archive_sha256": "472cf65566f965ddb2ae2506e73232d7cc9a810ce2e91af327f79adb11ab7581",
+      "target": "OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion",
+      "source_sha256": [
+        "d4763aecca7bbf58b8e16e3e1ca919bff2ad6bc9f610a03641c8361c9319cfa9",
+        "51a377beae00c13be5c32c04dd2ce153eec24a3789fa7851475c852eb59ed646",
+        "b7e4988946b3d333e3179cf2ed87b7a58bad14da97b9bf9c69bd7239fd2b7fdf"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3,
+        "method": "pinned GitHub raw source SHA256 versus artifact statement-sha256.txt"
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 155,
+      "run_id": 41782727890,
+      "artifact_id": 13300376108,
+      "archive_sha256": "02f033ff5426873dd47f83cf1dc279f537ab02ea762655f7e7541b4a06e7a8df",
+      "target": "OAI.StableCoordinate.principal_package",
+      "source_sha256": [
+        "6fe7a164a37c2296e98fc3854dab48dfcd10af35001eb7ac488fb6c4f523f325",
+        "bcbeb10eb23938131e989ae41926998752b66660a24659b04dc4a0f8ded11cfd",
+        "cef6b29398785cf010f771dff88e86a9c8a2d1898ae227b5779895af75bf8c0b"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3,
+        "method": "pinned GitHub raw source SHA256 versus artifact statement-sha256.txt"
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    }
+  ],
+  "claim_boundary": "Comparator replay evidence only. Manuscript semantic correspondence and MATHCERT public certification are separate."
+}
