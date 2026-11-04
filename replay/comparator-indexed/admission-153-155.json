@@ -1,0 +1,104 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "parent_issue": 330,
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "protected_parent_sha": "afb49053d4ace7a6c15d1da030a19a3d1639da7c",
+  "protected_parent_admitted_count": 154,
+  "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "receipt_member_checks": "33/33",
+  "independent_upstream_source_checks": "9/9",
+  "claim_boundary": "COMPARATOR_EVIDENCE_ONLY_NOT_MANUSCRIPT_SEMANTIC_CORRESPONDENCE_OR_PUBLIC_CERTIFICATION",
+  "entries": [
+    {
+      "index": 153,
+      "declaration": "OAI.SmallCM.candidate_ring_properties",
+      "run_id": 41782720950,
+      "artifact_id": 13301033666,
+      "zip_sha256": "79279b0297886cbff809a03d526f289f1e9782c81d3322b0747ecc8794f58cd8",
+      "receipt_sha256": "f8e44187445fcc88ef0e9cd016c2744e4227a137bfe25d1ae2a3341226e31cc0",
+      "receipt_members": "11/11_SHA256_AND_BYTE_COUNT_VERIFIED",
+      "upstream_source": [
+        {
+          "path": "lean/ComparatorChallenges/SurfaceConeCandidateSupport.lean",
+          "sha256": "c75e9be97bcb12a6c289b6652337fc32398064fe8bef7cd910110a9d96fae56e",
+          "git_blob": "4860a4aa7ffedb6fb83d5256c4ca3645b5395563"
+        },
+        {
+          "path": "lean/ComparatorChallenges/SurfaceConeCandidateSupport.json",
+          "sha256": "dce1e6a3d800cb5b61ab13b7dd5cd76566960b963678f1dd238f922fcc4801f1",
+          "git_blob": "760584b99ae21762968525d45f570f2b241761cb"
+        },
+        {
+          "path": "lean/OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean",
+          "sha256": "bea971e387a6c77c5ff5c3d533a6a3663aa9deb58f0247c203bd763cf5735aa7",
+          "git_blob": "2ca62b92e5eaf9fa4bb30eb15f26547231e5459c"
+        }
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 154,
+      "declaration": "OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion",
+      "run_id": 41782724462,
+      "artifact_id": 13299963838,
+      "zip_sha256": "472cf65566f965ddb2ae2506e73232d7cc9a810ce2e91af327f79adb11ab7581",
+      "receipt_sha256": "92bcbfe533839a8fc69bef36a700ad0d047a31ed92be97b5b6a76eab5c2b73df",
+      "receipt_members": "11/11_SHA256_AND_BYTE_COUNT_VERIFIED",
+      "upstream_source": [
+        {
+          "path": "lean/ComparatorChallenges/IsometricImmersion.lean",
+          "sha256": "d4763aecca7bbf58b8e16e3e1ca919bff2ad6bc9f610a03641c8361c9319cfa9",
+          "git_blob": "9b41ea032ce83b10a0df6e06f30c23cde9dde2e3"
+        },
+        {
+          "path": "lean/ComparatorChallenges/IsometricImmersion.json",
+          "sha256": "51a377beae00c13be5c32c04dd2ce153eec24a3789fa7851475c852eb59ed646",
+          "git_blob": "a18a75d25f5c27d3120b00bd90b30f285c45e422"
+        },
+        {
+          "path": "lean/OAI/Geometry/IsometricImmersion/Main.lean",
+          "sha256": "b7e4988946b3d333e3179cf2ed87b7a58bad14da97b9bf9c69bd7239fd2b7fdf",
+          "git_blob": "745a1f8562954cf3b5bc1272be8e6384d8abe13b"
+        }
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 155,
+      "declaration": "OAI.StableCoordinate.principal_package",
+      "run_id": 41782727890,
+      "artifact_id": 13300376108,
+      "zip_sha256": "02f033ff5426873dd47f83cf1dc279f537ab02ea762655f7e7541b4a06e7a8df",
+      "receipt_sha256": "257b5aaec72dce04484f304f98ab2be93c13a741a13dbc3d84491253fee3e593",
+      "receipt_members": "11/11_SHA256_AND_BYTE_COUNT_VERIFIED",
+      "upstream_source": [
+        {
+          "path": "lean/ComparatorChallenges/StableCoordinateFour.lean",
+          "sha256": "6fe7a164a37c2296e98fc3854dab48dfcd10af35001eb7ac488fb6c4f523f325",
+          "git_blob": "214347ba79bce82f942e8e8a56ffffbdd7a1913c"
+        },
+        {
+          "path": "lean/ComparatorChallenges/StableCoordinateFour.json",
+          "sha256": "bcbeb10eb23938131e989ae41926998752b66660a24659b04dc4a0f8ded11cfd",
+          "git_blob": "75057560d0d24b5089f24de1fe9ad337ce2a3048"
+        },
+        {
+          "path": "lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean",
+          "sha256": "cef6b29398785cf010f771dff88e86a9c8a2d1898ae227b5779895af75bf8c0b",
+          "git_blob": "be01c3547d23f1e1a8268901d0bb95614afeb078"
+        }
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    }
+  ]
+}
