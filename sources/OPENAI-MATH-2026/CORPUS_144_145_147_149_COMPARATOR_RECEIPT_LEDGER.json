@@ -1,0 +1,103 @@
+{
+  "record_type": "GCL_OAI26_WP01_INDEXED_COMPARATOR_EVIDENCE/1",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN",
+  "protected_parent_sha": "af64f9f4e9e5a4e1d5b5ffbd714eb8b12ed06e67",
+  "protected_parent_admitted_count": 146,
+  "source_sha": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "claim_boundary": "COMPARATOR_EVIDENCE_ONLY_NOT_MANUSCRIPT_SEMANTIC_CORRESPONDENCE_OR_PUBLIC_CERTIFICATION",
+  "decision": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTED; CANDIDATE_AWAITING_PROTECTED_ADMISSION",
+  "entries": [
+    {
+      "index": 144,
+      "declaration": "OAI.SegmentLenses.midpoint_lens_main",
+      "run_id": 41688397564,
+      "artifact_id": 13255759511,
+      "receipt_sha256": "68ae7848d164a77b3d757bfbbb5154e22ef8968b4b4870ab71ebc83f6d741908",
+      "receipt_member_sha256_byte_count": "11/11",
+      "upstream_byte_matches": "3/3",
+      "statement_sha256": [
+        "c9d84a074da6e635c7e10bb4b2a1fc6a40d2c0487a53e8df16b82f9d5754edca  upstream/math/lean/ComparatorChallenges/MidpointLenses.lean",
+        "107feac50a26e221d39e856b630fb7810c4d02b1f2356d49607680c13f97719c  upstream/math/lean/ComparatorChallenges/MidpointLenses.json",
+        "7bd8bfd4ad29dd941cb6d0e62f5dd78af58debe65d745febf1e81378c6ff2080  upstream/math/lean/OAI/Analysis/SegmentLenses/Main.lean"
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 145,
+      "declaration": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re",
+      "run_id": 41688402483,
+      "artifact_id": 13266879874,
+      "receipt_sha256": "5628394806099d34c613ff2c2c09e52dd9a519a3eca577737fc17e4cb11db039",
+      "receipt_member_sha256_byte_count": "11/11",
+      "upstream_byte_matches": "3/3",
+      "statement_sha256": [
+        "cb5e404fa65a502c0a9006b9ad45c28914feb79e4b7b1ffcf05e4af82ed0cfc2  upstream/math/lean/ComparatorChallenges/HeckeSevenEighths.lean",
+        "04eb947847df3c1717bdb660f70a74600d0991490bb67d52cbcf0b3186e0bd5e  upstream/math/lean/ComparatorChallenges/HeckeSevenEighths.json",
+        "9e120752d0067e9b645f173846833396de6282dfa83dff7dc83b7fd500af47d5  upstream/math/lean/OAI/NumberTheory/DirichletL/Hecke/Nonvanishing.lean"
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 147,
+      "declaration": "OAI.SharpLiebThirring.sharp_lieb_thirring",
+      "run_id": 41722853268,
+      "artifact_id": 13274067367,
+      "receipt_sha256": "3cf55a455d83ccd5da156d48f80e5d053f33ce2bf72a97c2efff69bca7de1a54",
+      "receipt_member_sha256_byte_count": "11/11",
+      "upstream_byte_matches": "3/3",
+      "statement_sha256": [
+        "008bcfc167bb1931b14682171578ab2422a7176658bafd95dafb8feb13ab8ade  upstream/math/lean/ComparatorChallenges/LiebThirring.lean",
+        "f268c47258b1afc0c96bffe7b35757b86657050ebaf9a6c3c67f4e7a9f38955a  upstream/math/lean/ComparatorChallenges/LiebThirring.json",
+        "0cdcb02e908d87d1ee4586fe7108960f7785190cc77b1c9f2297864951428c3b  upstream/math/lean/OAI/Analysis/LiebThirring/Main.lean"
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 148,
+      "declaration": "OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap",
+      "run_id": 41723181984,
+      "artifact_id": 13276375194,
+      "receipt_sha256": "c64e87f910d2f5dbcc305d0735bfc4a412ffb50b15a822cb710a55880ec64e30",
+      "receipt_member_sha256_byte_count": "11/11",
+      "upstream_byte_matches": "3/3",
+      "statement_sha256": [
+        "bedaac0248a641910f79a380d9702d82c6bfbbfd3760a69d27c72c5d8fb136ce  upstream/math/lean/ComparatorChallenges/SiegelZeros.lean",
+        "620696740156c4503f27ac17760adf1b638f621ad81ab4cde7a0f8df32c4b643  upstream/math/lean/ComparatorChallenges/SiegelZeros.json",
+        "e9444a0cbee391a4443ebddd3ccf0a70aa857e0122321421ec984e748f9098bf  upstream/math/lean/OAI/NumberTheory/SiegelZeros/Conclusions/Theorem.lean"
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 149,
+      "declaration": "OAI.SignedDisk.CenteredDiskEndpoint.main_signed_finite_band",
+      "run_id": 41723186879,
+      "artifact_id": 13276005123,
+      "receipt_sha256": "c606a28839c978f10620a403f6e63a126500e48f7770b95a32756ebec391a4df",
+      "receipt_member_sha256_byte_count": "11/11",
+      "upstream_byte_matches": "3/3",
+      "statement_sha256": [
+        "b3bca8a51f58611e232ed51e4b15829a43d5a7974244a2d73a74ed7468d29488  upstream/math/lean/ComparatorChallenges/SignedFiniteBand.lean",
+        "7b103eb07fd637dcfb02923cd4df2e83b88200253e742b746629b1539d6fcec0  upstream/math/lean/ComparatorChallenges/SignedFiniteBand.json",
+        "cbba3da3041f082fa40f1cb3cca9a3fe50fbf4d00d0094e57aa8a5d8c69ef358  upstream/math/lean/OAI/Analysis/SignedDisk/Main.lean"
+      ],
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_accepted": true,
+      "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    }
+  ]
+}
