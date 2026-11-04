@@ -1,0 +1,90 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_head": "afb49053d4ace7a6c15d1da030a19a3d1639da7c",
+  "protected_base": "b4645a82f1bef0739f36015ae126abedbd048795",
+  "artifact_members_verified": 33,
+  "source_bytes_verified": 9,
+  "indices": [
+    {
+      "index": 156,
+      "run_id": 41792978535,
+      "artifact_id": 13305241792,
+      "archive_sha256": "8f5cdcbde7fccdcc043391d0d89452ed098df82c408a6c44ed75632a9f6dfe6c",
+      "target": "OAI.StrictInverseFirstPower.main",
+      "source_sha256": [
+        "64ab7a216f4e12c8a54433a38082552e7c35af1631bdaefc3a9be99e7f30cfd0",
+        "58a197ec633d9c0ff4bbccacdea7901d40a41640d4f76028a61fe57d2f8f608c",
+        "8b4ca621394d03a2cf3fafb60e6d32b0352f7cf8847e188cfbc48d7f5142a9e7"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3,
+        "method": "Pinned GitHub contents API at immutable source revision; SHA256 of decoded bytes versus artifact statement-sha256.txt"
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 157,
+      "run_id": 41792982212,
+      "artifact_id": 13304651876,
+      "archive_sha256": "7d538bb015ac1ba9fbd57dce06365b43eb2e58568cec97ea7aa8fa2b7cc16eb9",
+      "target": "OAI.StrongThinTree.strongThinTree",
+      "source_sha256": [
+        "f8ca2f8c8078052bbd345b09087ad6c821d4a1db62fbaa163604e03d8c745980",
+        "c53fcd5c5352e0bda675135dfaa473672c27017d70a7f34df494634b5f3d30e7",
+        "ad1ebfbabac088b6ac4d232a864055f5231341cfb9a717ccdc8dcf50b017d3d6"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3,
+        "method": "Pinned GitHub contents API at immutable source revision; SHA256 of decoded bytes versus artifact statement-sha256.txt"
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 158,
+      "run_id": 41792986168,
+      "artifact_id": 13304597334,
+      "archive_sha256": "9df31472b5496b9706c6659974f830644dbf32c75eedbd1609ce57ae49d95184",
+      "target": "OAI.StructuralCrouzeixReference.challenge",
+      "source_sha256": [
+        "f7c09beafdb635221e63e9846043df4347994d7df7f8d7858ead113cf049f205",
+        "bb8e7bf4a71d8064a57ea0099e299caa456fdea7d2fac8f73d74845bb163b4ba",
+        "9fcce1d3babe276a302041c177e25b5e09093e4051220bb59c8add28dc3a07c3"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3,
+        "method": "Pinned GitHub contents API at immutable source revision; SHA256 of decoded bytes versus artifact statement-sha256.txt"
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    }
+  ],
+  "claim_boundary": "Comparator replay evidence only. Manuscript semantic correspondence and MATHCERT public certification are separate."
+}
