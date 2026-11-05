@@ -1,0 +1,72 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "date_utc": "2026-11-05",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "protected_base": "2f9e830558864462b28c3b6e738e04b339cafba4",
+  "workflow_path": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob_sha": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "policy_blob_sha": "747d64962e7b3fdfe8b9e4f51f65ef1e6553248d",
+  "receipt_members_verified": 22,
+  "receipt_member_failures": 0,
+  "independent_pinned_source_sha256_verified": 6,
+  "independent_pinned_source_sha256_failures": 0,
+  "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "runs": [
+    {
+      "index": 174,
+      "run_id": 42019147801,
+      "artifact_id": 13411475731,
+      "artifact_zip_sha256": "89a0115c8e466e6ba2ef3c5724818b4c05645267c1bddf0242b226137d1fc358",
+      "target": "OAI.Tingley.tingley_sphere_isometry_full",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "upstream_sha256": [
+        "fee90b109d4640af4faeebb337b39e654e57c4db645f049d654d082f25fd7303",
+        "7e50ce0afaab04e002f1d5cba129579b6a079c966238487d9329eb8fd325a12f",
+        "260b19b57b7029d273f9becec39accf9eecf90d3ae65bd1701d7ec3dca0a7873"
+      ]
+    },
+    {
+      "index": 175,
+      "run_id": 42019152778,
+      "artifact_id": 13412330741,
+      "artifact_zip_sha256": "9b646fa835e858cde19291c4afd7fcd73355fc92f8c1bbe1e29f22d196927c5d",
+      "target": "OAI.TorsionFreeZeroDivisors.main",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "upstream_sha256": [
+        "f0fa4b50cb7bab116b37c75a74fdea60fb206a35f2b0590157468c054dfec3c2",
+        "2b4e32790076384bd9c492bfdb032d0d9d6027bb98d4a6c728ebe3a5fe862f12",
+        "f5abc82f86c664f3b8653142993229a1193406c6d964981d2ab5f25c3d680c82"
+      ]
+    }
+  ],
+  "review_roles": [
+    {
+      "role": "ADVERSARY",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Independently tested all 22 archived receipt members for SHA256 and byte count, compared six source SHA256 values to immutable upstream commit, and checked failure/fallback and manifest gates; no discrepancies."
+    },
+    {
+      "role": "REFEREE",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Accept exact pinned hardened Comparator execution evidence for 174 and 175 only; no manuscript semantic correspondence or public certification."
+    }
+  ],
+  "excluded": [
+    {
+      "index": 176,
+      "run_id": 42019157029,
+      "artifact_id": 13410218746,
+      "reason": "Preflight assertion cfg.enable_nanoda is False failed; upstream pinned configuration has enable_nanoda true; no hardened execution; not admissible."
+    }
+  ],
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION"
+}
