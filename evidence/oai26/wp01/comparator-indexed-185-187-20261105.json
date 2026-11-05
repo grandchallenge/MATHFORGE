@@ -1,0 +1,69 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "date_utc": "2026-11-05",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "protected_base": "4fc06d94cf092735c045d033de12681dd50f44aa",
+  "workflow_path": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob_sha": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "policy_blob_sha": "747d64962e7b3fdfe8b9e4f51f65ef1e6553248d",
+  "receipt_members_verified": 33,
+  "receipt_member_failures": 0,
+  "independent_pinned_source_sha256_verified": 9,
+  "independent_pinned_source_sha256_failures": 0,
+  "runs": [
+    {
+      "index": 185,
+      "run_id": 42112027131,
+      "artifact_id": 13453949747,
+      "artifact_zip_sha256": "69e332294fd8e3a342f1242ddae0c4a6d2dfb9b33cefdfbee1d56c25cbe1a502",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "pinned_source_sha256": "3/3 PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_equal": true
+    },
+    {
+      "index": 186,
+      "run_id": 42112031666,
+      "artifact_id": 13453509091,
+      "artifact_zip_sha256": "678cb99784f44e5b2be45a80374a02d2937205b5ccffc26939604fe57c3dc069",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "pinned_source_sha256": "3/3 PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_equal": true
+    },
+    {
+      "index": 187,
+      "run_id": 42112035944,
+      "artifact_id": 13455716967,
+      "artifact_zip_sha256": "83ade0d1bbe3d792f840a2a40d999e98e2d66ddb83f040e0bf39edb00f4005a7",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "pinned_source_sha256": "3/3 PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_equal": true
+    }
+  ],
+  "review_roles": [
+    {
+      "role": "ADVERSARY",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Checked all three provider artifact ZIP digests, 33/33 receipt member lengths and SHA256 hashes, independently retrieved nine immutable upstream source files and checked 9/9 SHA256, confirmed exact run and source pin identities, hardened exit zero, no diagnostic fallback and unchanged Lake manifests. No semantic manuscript conclusion."
+    },
+    {
+      "role": "REFEREE",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Admit exact pinned hardened Comparator execution evidence for indices 185-187 only, conditional on protected CI and exact-head merge. No manuscript equivalence or public certification."
+    }
+  ],
+  "outstanding": "Indices 176-178 remain nanoda-incompatible; indices 188-199 require replay and admission.",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION"
+}
