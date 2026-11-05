@@ -1,0 +1,77 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_path": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob_sha": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "protected_base": "479e3e3137d68a46b534618c461e980ac958267f",
+  "receipt_members_verified": 33,
+  "source_bytes_verified": 9,
+  "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "verification": {
+    "receipt_method": "Fresh authenticated GitHub artifact ZIP download; local Python hashlib.sha256 and byte counts for all 33 receipt-listed members; 12 unique members per ZIP",
+    "source_method": "Authenticated GitHub connector base64 file contents at immutable upstream SHA; independent JavaScript SHA256 over decoded bytes, compared with statement-sha256.txt; 9/9 passed",
+    "run_history": "Full indexed active/completed run history not enumerable through available GitHub connector. No dispatch attempted.",
+    "policy": "Protected AGENTS.md blob 747d64962e7b3fdfe8b9e4f51f65ef1e6553248d; live workflow blob edee4e9de4bde46c09748c8b43427b938acba017"
+  },
+  "indices": [
+    {
+      "index": 168,
+      "run_id": 41915224953,
+      "artifact_id": 13368649017,
+      "target": "OAI.TamingCompatibility.taming_implies_compatibility",
+      "zip_sha256": "4533b94a1b4d03a2ddcd7cb5c47425caa17e1fb3673d6e290b0f429e07883ad6",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 169,
+      "run_id": 41915229749,
+      "artifact_id": 13363753629,
+      "target": "OAI.ThompsonNonamenability.thompson_F_nonamenable_composition",
+      "zip_sha256": "b1cc2e57d5724dbc89c20dabb230355edbfb862b1b371f24a365fed94afea912",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 170,
+      "run_id": 41915234299,
+      "artifact_id": 13363379330,
+      "target": "OAI.ThorpCompatibility.weightedCompatibility_main",
+      "zip_sha256": "36c7c81870542610cc9961fff0177af34e9e77a8ffd711d3779b1224caa9dc04",
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    }
+  ],
+  "claim_boundary": "Comparator evidence only; semantic manuscript correspondence and public certification are separate."
+}
