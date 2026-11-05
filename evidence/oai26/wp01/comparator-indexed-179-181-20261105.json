@@ -1,0 +1,84 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "date_utc": "2026-11-05",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "protected_base": "ff8d2c727f8c50a7182429109a55599649ca8b34",
+  "workflow_path": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob_sha": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "policy_blob_sha": "747d64962e7b3fdfe8b9e4f51f65ef1e6553248d",
+  "receipt_members_verified": 33,
+  "receipt_member_failures": 0,
+  "independent_pinned_source_sha256_verified": 9,
+  "independent_pinned_source_sha256_failures": 0,
+  "runs": [
+    {
+      "index": 179,
+      "run_id": 42064752620,
+      "artifact_id": 13434098304,
+      "artifact_zip_sha256": "04a08135f3405b65ab8490ea4b47864c6ef3874dca8ac56af476206f6af75250",
+      "target": "OAI.TriangularHilbert.main_estimate",
+      "source_sha256": [
+        "768eef032a27b868cbeba17c167787a2183aacb6368c2d1733b400d55d264acc",
+        "79a0bdc2c1be0ea4f51012679983d60b9e3fe72781293a49063e4e7a5c9a3dad",
+        "49dcd89df22c7a7567df9033079ca50e83ee41df1092be2a417ab6c54f66ed12"
+      ],
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 180,
+      "run_id": 42064758595,
+      "artifact_id": 13435342200,
+      "artifact_zip_sha256": "f62a724c60d36b927bfd59297417d665973dce63d6fc40e5ee435359a04a277f",
+      "target": "OAI.TuringRigidity.ManuscriptMain.rigidity",
+      "source_sha256": [
+        "ae3fcff2aca95957449bafd932cb00464a4432b4c1652a36be1c69a5dd32d999",
+        "8aea98b8c9d06631764ee739802c2783a4333b106c0b8f8e33153bf01ddaf7dc",
+        "a49752439a59b457b460f79c632b7b138d03031b42341b0b9db50cc7e42d1f5c"
+      ],
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    },
+    {
+      "index": 181,
+      "run_id": 42064765112,
+      "artifact_id": 13433156970,
+      "artifact_zip_sha256": "31936620c73f8d24eaa304b217ff57ebeab3e0d65639becdf82ae9168faf8c87",
+      "target": "OAI.TwoWayComplementation.complementation_lower_bound_finite",
+      "source_sha256": [
+        "4e47aa239705ac77757073930d4d88e4128e30fba8341284a42c8958a927a6bb",
+        "7fdd20593d6cdd2cd8a7f8a2a0eba06671c587af4b5f4d26dadeb86a43d21bba",
+        "731e464a61412452805add9ce1857c455d44d5183be0f01ca5656bd810b13fa1"
+      ],
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+    }
+  ],
+  "review_roles": [
+    {
+      "role": "ADVERSARY",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Read-only audit: fresh authenticated artifacts independently ZIP-hashed against GitHub provider digests; all 33 listed file SHA256 and byte counts matched; nine immutable-source reads independently SHA256 matched; index/run/target identity, hardened exit zero, no diagnostic fallback and matching pre/post Lake manifest confirmed. No new workflow dispatch without complete current history reconciliation."
+    },
+    {
+      "role": "REFEREE",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Accept exact pinned hardened Comparator evidence for indices 179, 180 and 181 only, conditional on protected CI and exact-head merge; manuscript semantic correspondence and public certification are excluded."
+    }
+  ],
+  "outstanding": "Indices 176-178 enable nanoda and require governed workflow assessment; subsequent indices remain unadmitted.",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION"
+}
