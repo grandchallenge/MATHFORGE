@@ -1,0 +1,102 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow_path": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob_sha": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "protected_base": "4e98a96f2707c76359bdc51199db6d954e4967cc",
+  "receipt_members_verified": 33,
+  "source_bytes_verified": 9,
+  "lake_manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+  "verification": {
+    "receipt_method": "Fresh GitHub artifact ZIPs; local Python SHA256 and exact byte count for all 33 receipt-listed members",
+    "source_method": "Nine independent immutable-ref GitHub base64 reads decoded and SHA256-hashed in independent JS implementation; all matched statement-sha256.txt",
+    "policy": "AGENTS.md blob 747d64962e7b3fdfe8b9e4f51f65ef1e6553248d",
+    "run_history": "Full active/completed indexed workflow history unavailable through authenticated connector; GCL run_bash transport failed after status and bounded retry. No new dispatch."
+  },
+  "logical_review": {
+    "adversary": {
+      "role": "NON_AUTHORING_READ_ONLY",
+      "finding": "All receipt bytes, source hashes, hardened exit and no-fallback verified; no semantic manuscript equivalence asserted"
+    },
+    "referee": {
+      "role": "NON_AUTHORING_READ_ONLY",
+      "finding": "Eligible for protected Comparator evidence admission only, subject to PR checks and exact merge readback"
+    }
+  },
+  "indices": [
+    {
+      "index": 171,
+      "run_id": 41967447315,
+      "artifact_id": 13388264556,
+      "target": "OAI.ThorpNine.main",
+      "zip_sha256": "1466e7305972bf5518b9993ef3067c12be4df39a60fddbbb5b793a7929e35175",
+      "source_sha256": [
+        "0a6ffa20b5320721424301ba304090c5b7e01c08c25dac0f0ca3240c17591462",
+        "9bc7a4353097aab7a6385c2dcc36b8252b5e25e94caa35d07535579ddb7ec032",
+        "46248c8fa65146ff66c4a4661ae19d5de9cf1ee974a7d9256d71317b586c07b4"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 172,
+      "run_id": 41967450636,
+      "artifact_id": 13388786569,
+      "target": "OAI.ThreeManifold.main_theorem",
+      "zip_sha256": "736e3d261b15b6d97c9ad3d3574b701a11b2f6c5b84023003e76a1ea5f90ba84",
+      "source_sha256": [
+        "e8b4c4bb21f1dc3fa18a2d21fc9ca923b54c012e07174e854e3b338bd89f9b16",
+        "41325189d075c70c053c8b662eeedad5ecad3458306386227918354ddd20f663",
+        "e4d328c9a3218ce5affbb7dd68d9eafaaa73014c6c687375d203d8c4da0c79af"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    },
+    {
+      "index": 173,
+      "run_id": 41967454389,
+      "artifact_id": 13388049131,
+      "target": "OAI.ThresholdParallelRepetition.threshold_parallel_repetition",
+      "zip_sha256": "f750a4ee2c1a8d134e848c76b9e37a804cc06f44d769c3cb38e2f9869007627b",
+      "source_sha256": [
+        "b3957e18f10af74244e7a2fc1b6cf12b14c9dc4b036f7ffe2ef2b2810e6697c0",
+        "cb52a10bf682ae1e2bb84d645be13e4c18c0539b8e0b847b565a217e06d51054",
+        "b6772bda0a22b9413609e23a487ed8bd990d92d899fa46a78f334cc0cfde728e"
+      ],
+      "receipt_member_checks": {
+        "passed": 11,
+        "total": 11,
+        "sha256_and_byte_count": true
+      },
+      "upstream_source_comparisons": {
+        "passed": 3,
+        "total": 3
+      },
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false
+    }
+  ],
+  "claim_boundary": "Comparator evidence only; manuscript correspondence and public certification separate; issue #330 remains open."
+}
