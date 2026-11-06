@@ -1,0 +1,80 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_PROTECTED_ADMISSION/1",
+  "date_utc": "2026-11-06",
+  "base_main": "d96e92e53a62b1b62a1f2f4bece84a5013442c92",
+  "source_pin": "openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "runs": [
+    {
+      "index": 194,
+      "run_id": 42280347229,
+      "artifact_id": 13536183451,
+      "zip_sha256": "c01285a818f75ce9ba0dd05642b86bef68faa09a6272c63736338c8e0bbb72fb",
+      "github_zip_digest_match": true,
+      "receipt_member_count": 11,
+      "receipt_members_byte_sha256_match": true,
+      "source_files_independently_fetched_and_sha256_matched": 3,
+      "manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "run_conclusion": "success"
+    },
+    {
+      "index": 195,
+      "run_id": 42280351939,
+      "artifact_id": 13534719753,
+      "zip_sha256": "3e0c31398c891ddabff7257b2e1dcc3530d04e70e241767a540ac98132b1472b",
+      "github_zip_digest_match": true,
+      "receipt_member_count": 11,
+      "receipt_members_byte_sha256_match": true,
+      "source_files_independently_fetched_and_sha256_matched": 3,
+      "manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "run_conclusion": "success"
+    },
+    {
+      "index": 196,
+      "run_id": 42280356892,
+      "artifact_id": 13535084714,
+      "zip_sha256": "ee088a6cacbba4fa6940a08b6a325c767ecb0a06d81e608fc638d80ecfea9726",
+      "github_zip_digest_match": true,
+      "receipt_member_count": 11,
+      "receipt_members_byte_sha256_match": true,
+      "source_files_independently_fetched_and_sha256_matched": 3,
+      "manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "run_conclusion": "success"
+    }
+  ],
+  "checks": {
+    "receipt_members": 33,
+    "receipt_members_verified": 33,
+    "source_files": 9,
+    "source_files_verified": 9,
+    "zip_digests_verified": 3,
+    "diagnostic_fallbacks": 0
+  },
+  "reviews": [
+    {
+      "role": "Adversary",
+      "mode": "non_authoring_read_only",
+      "finding": "No mismatch in ZIP digest, member hashes/byte counts, pinned upstream bytes, run identities, manifest continuity, or hardened acceptance. Boundary: no semantic correspondence or certification claim."
+    },
+    {
+      "role": "Referee",
+      "mode": "non_authoring_read_only",
+      "finding": "Technical Comparator evidence satisfies indexed admission requirements for 194–196 only. No manuscript correspondence or public certification is inferred."
+    }
+  ],
+  "execution_captures": [
+    "2a004cd252d1418f823c2d019dc49cac",
+    "f7f2b750fb344517a9dff855af40a3f5"
+  ],
+  "claim_boundary": "Technical comparator admission only; issue #330 stays open; semantic manuscript correspondence and public certification separate."
+}
