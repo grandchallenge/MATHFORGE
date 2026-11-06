@@ -1,0 +1,73 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_RECEIPT_ADMISSION/1",
+  "date_utc": "2026-11-06",
+  "source_repository": "openai/math",
+  "source_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "protected_base": "6dddeb2811d1527733c8da5aba43e2fcd472b570",
+  "workflow_path": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob_sha": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "policy_blob_sha": "747d64962e7b3fdfe8b9e4f51f65ef1e6553248d",
+  "receipt_members_verified": 33,
+  "receipt_member_failures": 0,
+  "independent_pinned_source_sha256_verified": 9,
+  "independent_pinned_source_sha256_failures": 0,
+  "verification_execution_capture": "ecbbc8674f8d482ca35b32b29110a60b",
+  "runs": [
+    {
+      "index": 191,
+      "run_id": 42260488283,
+      "artifact_id": 13525556168,
+      "artifact_zip_sha256": "37d9c9f6f586c3d80ab86587abf6dbb86eb6850472ff1fdc4068b67089656538",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "pinned_source_sha256": "3/3 PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_equal": true,
+      "job_conclusion": "success"
+    },
+    {
+      "index": 192,
+      "run_id": 42260493597,
+      "artifact_id": 13527457398,
+      "artifact_zip_sha256": "f468573034d6f757c68c33fd40f8c4ad506689f7fd916d6362f06e90bf203217",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "pinned_source_sha256": "3/3 PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_equal": true,
+      "job_conclusion": "success"
+    },
+    {
+      "index": 193,
+      "run_id": 42260498611,
+      "artifact_id": 13527525522,
+      "artifact_zip_sha256": "7aa835bc190ae46fceb8b1eea048cc651bc51827debd49eb11f0130b1eb6a56b",
+      "receipt_members": 11,
+      "receipt_sha256_and_bytes": "PASS",
+      "pinned_source_sha256": "3/3 PASS",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "diagnostic_fallback": false,
+      "lake_manifest_pre_post_equal": true,
+      "job_conclusion": "success"
+    }
+  ],
+  "review_roles": [
+    {
+      "role": "ADVERSARY",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Rechecked GitHub ZIP digest, all 33 receipt member hashes and lengths, nine exact upstream source bytes via immutable raw GitHub URLs, receipt run/index identity, hardened exit zero, diagnostic absence, and manifest equality; no adverse mismatch found. This pass is a logical role performed by the same system, not an independent agent identity."
+    },
+    {
+      "role": "REFEREE",
+      "mode": "NON_AUTHORING_READ_ONLY",
+      "finding": "Technical admission criteria satisfied for indices 191-193 subject to protected CI and exact-head merge. No manuscript correspondence or public certification inferred."
+    }
+  ],
+  "outstanding": "Indices 176-178 remain nanoda-incompatible; indices 194-199 require replay and admission.",
+  "claim_boundary": "EXACT_PINNED_HARDENED_COMPARATOR_ACCEPTANCE_ONLY; NOT_MANUSCRIPT_SEMANTIC_EQUIVALENCE_OR_MATHCERT_CERTIFICATION"
+}
