@@ -1,0 +1,50 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_PROTECTED_ADMISSION/1",
+  "date_utc": "2026-11-06",
+  "base_main": "f1295539ffeb548cb76a4caa787058fedcca660f",
+  "source_pin": "openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "runs": [
+    {
+      "index": 199,
+      "run_id": 42292101995,
+      "artifact_id": 13547059649,
+      "zip_sha256": "e4d0be2054c00c5a4f7a10e208766a1b7760b92c59b02edf484ef3c5d722053d",
+      "github_zip_digest_match": true,
+      "receipt_member_count": 11,
+      "receipt_members_byte_sha256_match": true,
+      "source_files_independently_fetched_and_sha256_matched": 3,
+      "manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "run_conclusion": "success"
+    }
+  ],
+  "checks": {
+    "receipt_members": 11,
+    "receipt_members_verified": 11,
+    "source_files": 3,
+    "source_files_verified": 3,
+    "zip_digests_verified": 1,
+    "diagnostic_fallbacks": 0
+  },
+  "reviews": [
+    {
+      "role": "Adversary",
+      "mode": "non_authoring_read_only",
+      "finding": "Independently checked artifact ZIP SHA256 against GitHub, all eleven receipt-member byte counts and SHA256 hashes, pinned source hashes for challenge, configuration and solution, immutable run/head identity, unchanged Lake manifest, hardened exit zero, and no diagnostic fallback. No discrepancy identified. This is a technical evidence check, not semantic verification."
+    },
+    {
+      "role": "Referee",
+      "mode": "non_authoring_read_only",
+      "finding": "Index 199's exact pinned technical Comparator evidence meets the established protected-admission pattern. The evidence does not resolve the separate nanoda cases 176–178 or certify manuscript correspondence, mathematical novelty, or public proof status."
+    }
+  ],
+  "execution_captures": [
+    "b226dabc2fcf4c8fa68abae376c98eef",
+    "9462564e7f7f4dc99d73dcdac1e0e557"
+  ],
+  "claim_boundary": "Technical Comparator admission for index 199 only. Issue #330 remains open pending nanoda 176–178 and other independent obligations. No semantic manuscript correspondence or public certification claimed."
+}
