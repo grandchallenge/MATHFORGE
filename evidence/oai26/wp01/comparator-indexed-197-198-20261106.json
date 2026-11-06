@@ -1,0 +1,67 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_PROTECTED_ADMISSION/1",
+  "date_utc": "2026-11-06",
+  "base_main": "510f45a6918a3737bebd0756ee2e55e64e9ebe30",
+  "source_pin": "openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_blob": "edee4e9de4bde46c09748c8b43427b938acba017",
+  "runs": [
+    {
+      "index": 197,
+      "run_id": 42292093406,
+      "artifact_id": 13540956634,
+      "zip_sha256": "bdf8a1aa19a36d0c312fd8a7c8da01d4b303d72750421087d5de5517c565d402",
+      "github_zip_digest_match": true,
+      "receipt_member_count": 11,
+      "receipt_members_byte_sha256_match": true,
+      "source_files_independently_fetched_and_sha256_matched": 3,
+      "manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "run_conclusion": "success"
+    },
+    {
+      "index": 198,
+      "run_id": 42292097591,
+      "artifact_id": 13542085159,
+      "zip_sha256": "2e9939cf0658ed4107031e7e245ed7bdc4d775b5e4ff1bab4fc340c066d51023",
+      "github_zip_digest_match": true,
+      "receipt_member_count": 11,
+      "receipt_members_byte_sha256_match": true,
+      "source_files_independently_fetched_and_sha256_matched": 3,
+      "manifest_pre_post_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "comparator_hardened_accepted": true,
+      "run_conclusion": "success"
+    }
+  ],
+  "checks": {
+    "receipt_members": 22,
+    "receipt_members_verified": 22,
+    "source_files": 6,
+    "source_files_verified": 6,
+    "zip_digests_verified": 2,
+    "diagnostic_fallbacks": 0
+  },
+  "reviews": [
+    {
+      "role": "Adversary",
+      "mode": "non_authoring_read_only",
+      "finding": "Inspected artifact digest and member checks, receipt identities, pinned upstream file bytes, manifest equality, hardened exit and fallback status. The large 1,336,009-byte source for index 197 required raw-byte retrieval because the GitHub Contents API reports encoding none; raw SHA256 matched. No technical admission discrepancy found. No semantic or certification claim."
+    },
+    {
+      "role": "Referee",
+      "mode": "non_authoring_read_only",
+      "finding": "Exact pinned technical Comparator evidence supports protected admission for indices 197 and 198 only. Index 199 remains running and is explicitly excluded. No manuscript correspondence or public certification is inferred."
+    }
+  ],
+  "execution_captures": [
+    "636bb9e00db0462c822ace4b3f70bbb0",
+    "4bd4fc1ddd5449349e4a4606331193c1",
+    "131870b7ad384874a991642e04f6c757",
+    "22e56ed2aa334617aef653219b759def"
+  ],
+  "claim_boundary": "Technical comparator admission only; issue #330 stays open; index 199 not yet admitted; nanoda 176–178 separate; semantic manuscript correspondence and public certification separate."
+}
