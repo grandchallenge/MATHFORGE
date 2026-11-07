@@ -25,6 +25,7 @@ jobs:
       GCL_COMPARATOR_SHA: "d03acab154d269c06e60e4de7e4cc85deebff94b"
       GCL_EXPORT_SHA: "076e8e57707e813375e8f9da8bf989799ace9680"
       GCL_LANDRUN_SHA: "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+      GCL_NANODA_SHA: "8de7e0c4ed3052745a7f8725164efd9e76d84c56"
     steps:
       - name: Checkout GCL governed source lock
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -123,11 +124,17 @@ jobs:
           p.write_text(data.replace('rev = "master"', 'rev = "076e8e57707e813375e8f9da8bf989799ace9680"'))
           PY
             (cd /tmp/gcl-comparator-tools/comparator && lake update && lake build comparator)
+            git clone https://github.com/ammkrn/nanoda_lib.git /tmp/gcl-comparator-tools/nanoda_lib
+            git -C /tmp/gcl-comparator-tools/nanoda_lib checkout --detach "$GCL_NANODA_SHA"
+            test "$(git -C /tmp/gcl-comparator-tools/nanoda_lib rev-parse HEAD)" = "$GCL_NANODA_SHA"
+            (cd /tmp/gcl-comparator-tools/nanoda_lib && cargo build --locked --release --bin nanoda_bin)
+            test -x /tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin
             go install "github.com/zouuup/landrun/cmd/landrun@$GCL_LANDRUN_SHA"
             test -x "$(go env GOPATH)/bin/landrun"
             test -x /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export
             test -x /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
-            sha256sum "$(go env GOPATH)/bin/landrun" \
+            sha256sum /tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin \
+              "$(go env GOPATH)/bin/landrun" \
               /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export \
               /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
           } > replay/comparator-indexed/toolchain-build.log 2>&1
@@ -150,7 +157,9 @@ jobs:
         shell: bash
         run: |
           set +e
-          export PATH="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin:$(go env GOPATH)/bin:$PATH"
+          export PATH="/tmp/gcl-comparator-tools/nanoda_lib/target/release:/tmp/gcl-comparator-tools/lean4export/.lake/build/bin:$(go env GOPATH)/bin:$PATH"
+          export COMPARATOR_NANODA="/tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin"
+          test -x "$COMPARATOR_NANODA" || exit 127
           export COMPARATOR_LEAN4EXPORT="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export"
           export COMPARATOR_LANDRUN="$(go env GOPATH)/bin/landrun"
           export GCL_COMPARATOR_BIN="/tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator"
@@ -159,6 +168,7 @@ jobs:
             --property='RestrictAddressFamilies=~AF_UNIX' \
             -E "PATH=$PATH" -E "COMPARATOR_LEAN4EXPORT=$COMPARATOR_LEAN4EXPORT" \
             -E "COMPARATOR_LANDRUN=$COMPARATOR_LANDRUN" \
+            -E "COMPARATOR_NANODA=$COMPARATOR_NANODA" \
             --working-directory="$(pwd)" \
             /bin/bash -c 'lake env "$1" "$2"' \
             comparator "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
