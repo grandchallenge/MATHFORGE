@@ -69,7 +69,12 @@ jobs:
           assert ident.fullmatch(cfg["challenge_module"]) and ident.fullmatch(cfg["solution_module"])
           assert cfg["theorem_names"] and row["declaration"] in cfg["theorem_names"]
           assert set(cfg["permitted_axioms"]) <= {"propext","Classical.choice","Quot.sound"}
-          assert cfg["enable_nanoda"] is False
+          # Respect the immutable upstream comparator configuration.  Some
+          # TraceIdealTransportSupport entries require Nanoda; rejecting them
+          # here would make the pinned corpus permanently non-replayable.
+          # Fail closed on absent, non-boolean or silently rewritten settings.
+          assert type(cfg.get("enable_nanoda")) is bool
+          assert cfg["enable_nanoda"] == json.loads(config.read_text())["enable_nanoda"]
           challenge = root / "lean" / (cfg["challenge_module"].replace(".","/")+".lean")
           assert challenge.is_file()
           assert row["lean_source"].startswith("lean/OAI/") and row["comparator_config"].startswith("lean/ComparatorChallenges/")
