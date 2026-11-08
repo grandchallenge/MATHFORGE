@@ -1,0 +1,107 @@
+{
+  "record_type": "GCL_OAI26_WP01_COMPARATOR_PROTECTED_ADMISSION_CANDIDATE/1",
+  "date_utc": "2026-11-08",
+  "base_main": "b149bb241e6e5f56e5ef7d3c62df230c54b0bacd",
+  "repair_pr": 539,
+  "repair_merge_sha": "b149bb241e6e5f56e5ef7d3c62df230c54b0bacd",
+  "source_pin": "openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "workflow": ".github/workflows/openai-math-comparator-indexed.yml",
+  "workflow_candidate_head": "3d5973819537dbf7c168267c1b0418a6653aac94",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "prior_protected_indices_count": 197,
+  "prior_protected_indices_ranges": [
+    "0-175",
+    "179-199"
+  ],
+  "previously_unadmitted_indices": [
+    176,
+    177,
+    178
+  ],
+  "workflow_history": {
+    "workflow_id": 400514585,
+    "pages_examined": "1-17",
+    "completed_runs": 203,
+    "active_runs": 0,
+    "dispatches_this_iteration": 0
+  },
+  "runs": [
+    {
+      "index": 176,
+      "run_id": 42342698159,
+      "artifact_id": 13562821071,
+      "zip_sha256": "300b60f74082df3a48999c16c02c9b493c1858cf23fa8d66766fadd3c8b79ee3",
+      "zip_bytes": 10837,
+      "source_solution_sha256": "ce1b2e54486dd3bf4cc80aa676234ae18a3946fea652746e042a4da9f3e21ff7",
+      "run_conclusion": "success",
+      "github_zip_digest_and_byte_count_match": true,
+      "receipt_members_verified": 11,
+      "receipt_members_total": 11,
+      "receipt_sha256_and_bytes_match": true,
+      "manifest_pre_post_match": true,
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "nanoda_kernel_acceptance_in_log": true,
+      "lean_kernel_acceptance_in_log": true,
+      "source_challenge_sha256": "d6c228b57bb7df92e03b09d12d23e0d3d9dda330a165e986fecfc2aabd4a2b05",
+      "source_config_sha256": "0d717e97d8b472826a27af8c44a68da8bc92261020684c08aae97265c9fe3173"
+    },
+    {
+      "index": 177,
+      "run_id": 42346757901,
+      "artifact_id": 13563878892,
+      "zip_sha256": "3402e5f232d40b8fe602db65c4414112639af7c5a14622842333b12328a8aa77",
+      "zip_bytes": 10723,
+      "source_solution_sha256": "ce1b2e54486dd3bf4cc80aa676234ae18a3946fea652746e042a4da9f3e21ff7",
+      "run_conclusion": "success",
+      "github_zip_digest_and_byte_count_match": true,
+      "receipt_members_verified": 11,
+      "receipt_members_total": 11,
+      "receipt_sha256_and_bytes_match": true,
+      "manifest_pre_post_match": true,
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "nanoda_kernel_acceptance_in_log": true,
+      "lean_kernel_acceptance_in_log": true,
+      "source_challenge_sha256": "d6c228b57bb7df92e03b09d12d23e0d3d9dda330a165e986fecfc2aabd4a2b05",
+      "source_config_sha256": "0d717e97d8b472826a27af8c44a68da8bc92261020684c08aae97265c9fe3173"
+    },
+    {
+      "index": 178,
+      "run_id": 42346759925,
+      "artifact_id": 13564191336,
+      "zip_sha256": "5c02116cbfadee40641437b8e7a8377a7f03d7d3cf53fcec2d0a049ec49ad15c",
+      "zip_bytes": 10813,
+      "source_solution_sha256": "dc498c5106478f01ea03a6dd6f59db25576cd1d466dde99fddef90cab4c4662a",
+      "run_conclusion": "success",
+      "github_zip_digest_and_byte_count_match": true,
+      "receipt_members_verified": 11,
+      "receipt_members_total": 11,
+      "receipt_sha256_and_bytes_match": true,
+      "manifest_pre_post_match": true,
+      "hardened_exit": 0,
+      "diagnostic_exit": null,
+      "nanoda_kernel_acceptance_in_log": true,
+      "lean_kernel_acceptance_in_log": true,
+      "source_challenge_sha256": "d6c228b57bb7df92e03b09d12d23e0d3d9dda330a165e986fecfc2aabd4a2b05",
+      "source_config_sha256": "0d717e97d8b472826a27af8c44a68da8bc92261020684c08aae97265c9fe3173"
+    }
+  ],
+  "checks": {
+    "fresh_zip_digests_verified": 3,
+    "fresh_zip_byte_counts_verified": 3,
+    "fresh_receipt_members_verified": 33,
+    "fresh_receipt_members_total": 33,
+    "previously_independent_upstream_source_hash_comparisons_verified": 9,
+    "previous_upstream_audit_comment": 6709075976,
+    "diagnostic_fallbacks": 0
+  },
+  "roles": {
+    "verifier": "Fresh artifact ZIP and 33 receipt-member SHA256/byte-count audit; source pin, manifest, hardened exit, Nanoda and Lean acceptance checked against receipts and logs.",
+    "adversary_non_authoring_read_only": "Review exact evidence identity, distinct indices, absence of duplicate dispatch, prior protected provenance, and no diagnostic acceptance. Technical review of repair PR #539: 5813533166.",
+    "referee_non_authoring_read_only": "Confirm technical Comparator admission only; do not infer manuscript correspondence or public certification. Final admission requires candidate PR protected checks and merge/readback."
+  },
+  "claim_boundary": "Technical Comparator receipt evidence only. No theorem-semantic correspondence or public MATHCERT certification.",
+  "parent_issue": 330,
+  "parent_disposition": "OPEN"
+}
