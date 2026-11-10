@@ -1,0 +1,20 @@
+{
+  "contract_id": "GCL-CIR-001",
+  "version": "1.0.0",
+  "component_id": "oai26_wp03_f011_parameter_bridge",
+  "owner": "GCL OAI26 WP03 F011 conditional analytic-to-Lean parameter reduction",
+  "paths": {
+    "exact": [
+      "sources/OPENAI-MATH-2026/WP03_FAMILY011_PRIME_SUPPLY_PARAMETER_BRIDGE.md",
+      "tests/test_openai_math_wp03_f011_parameter_bridge.py"
+    ],
+    "prefixes": [],
+    "test_prefixes": []
+  },
+  "depends_on": [
+    "ci_routing"
+  ],
+  "checks": [
+    "forge-reconnaissance"
+  ]
+}
