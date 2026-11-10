@@ -1,0 +1,54 @@
+{
+  "record_type": "GCL_OAI26_WP03_F011_CONDITIONAL_SUPPLY_BRIDGE_REPLAY/1",
+  "source_lock": {
+    "repository": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lake_manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "upstream_module": "lean/OAI/NumberTheory/TotientFibers/FiniteFiber.lean",
+    "upstream_module_blob": "217cfe4d7f9c39981eabe9bbeeb8458febb0fc76",
+    "manuscript_introduction": "preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex",
+    "manuscript_intro_blob": "3d9d4c55c1f30d7736e7c7427b97cb0461f06040"
+  },
+  "local_lean_replay": {
+    "source_file": "sources/OPENAI-MATH-2026/WP03_FAMILY011_CONDITIONAL_SUPPLY_BRIDGE.lean",
+    "source_sha256": "0e4b15633875c7a4c83e89c0b1587974ffe3c1f320a7545d19da8acd0d6ee9ca",
+    "chad_execution_origin": "LOCAL_OS_ONLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "source_module_lake_build_jobs": 8924,
+    "source_module_lake_exit": 0,
+    "source_module_log_sha256": "631fe1871eb433f64f370d2f5b40c6ac67b3388af5038deb5cd44a8b261f0292",
+    "exact_revised_bridge_compile_exit": 0,
+    "exact_revised_bridge_execution_capture_id": "77c51cf3d3d1457abf3fccb151a620f6",
+    "initial_axiom_audit_execution_capture_id": "5e8d444e71f94d5e8d3b95415c044742",
+    "initial_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "revised_change": "unused positive-epsilon binder renamed to _hε only; theorem statement retained"
+  },
+  "conditional_result": {
+    "declaration": "GCL.OAI26.Family011.infinite_fibers_of_supply",
+    "hypotheses": [
+      "0 < ε",
+      "ε ≤ 1",
+      "PrimeSupplyForExponent ε"
+    ],
+    "conclusion": "Set.Infinite {n : ℕ | 0 < n ∧ (n : ℝ) ^ (1 - ε) < (OAI.TotientFibers.g n : ℝ)}",
+    "proof_dependencies": [
+      "OAI.TotientFibers.finite_large_fiber_rpow",
+      "OAI.TotientFibers.infinite_of_unbounded_g"
+    ],
+    "premise": "For arbitrarily large t, exists a>=5 and finite set P of primes <= t^a, each p-1 t-smooth, |P|>t^(a-1), 4<=a*ε",
+    "claim_boundary": "Premise is unproved here and may be stronger than the published smooth-prime theorem as directly stated."
+  },
+  "missing_analytic_bridge": {
+    "status": "UNPROVED",
+    "required": "For every 0<ε<=1 construct arbitrarily large witnesses t,a,P satisfying PrimeSupplyForExponent ε, or prove another legitimate bound with theorem-compatible parameters.",
+    "source_claim": "For fixed 0<δ<1/4, primes p in (2x,5x] with P+(p-1)<=x^δ number at least x^(1-o(1)).",
+    "derivation_not_provided": "Derive parameter t and exponent a such that p<=t^a, p-1 t-smooth, #P>t^(a-1), and 4<=a ε in a manner valid for arbitrary ε>0."
+  },
+  "disposition": "CONDITIONAL_LEAN_BRIDGE_COMPILED_NONCERTIFYING",
+  "mathematical_certification": false,
+  "programme_close": false
+}
