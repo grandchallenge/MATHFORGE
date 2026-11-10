@@ -32,7 +32,7 @@ def validate_note(s):
                        "aδ = 1 + 1/(2(a-1))",
                        "(a-1)δ = 1 - 1/(2a)",
                        "PrimeSupplyForExponent ε",
-                       "fixed-\`δ\` prime-count",
+                       "prime-count assertion",
                        "not independent proof"):
         if expression not in s:
             raise ValueError("missing exact proof or scope anchor: "+expression)
