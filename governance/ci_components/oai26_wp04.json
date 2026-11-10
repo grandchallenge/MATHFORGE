@@ -1,0 +1,21 @@
+{
+  "contract_id": "GCL-CIR-001",
+  "version": "1.0.0",
+  "component_id": "oai26_wp04",
+  "owner": "GCL OAI26 WP04 source-critical review",
+  "paths": {
+    "exact": [
+      "sources/OPENAI-MATH-2026/WP04_FIRST_WAVE_12_CASE_CRITICAL_GUARDS.json",
+      "sources/OPENAI-MATH-2026/WP04_DETERMINISTIC_RANDOM_BASELINE_3.json",
+      "tests/test_openai_math_wp04_critical_guards.py"
+    ],
+    "prefixes": [],
+    "test_prefixes": []
+  },
+  "depends_on": [
+    "ci_routing"
+  ],
+  "checks": [
+    "forge-reconnaissance"
+  ]
+}
