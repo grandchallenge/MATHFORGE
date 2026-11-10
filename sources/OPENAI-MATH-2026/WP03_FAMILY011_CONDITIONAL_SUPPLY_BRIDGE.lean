@@ -15,7 +15,7 @@ def PrimeSupplyForExponent (ε : ℝ) : Prop :=
 
 /-- Conditional bridge only; does not establish its prime-supply hypothesis. -/
 theorem infinite_fibers_of_supply
-    (ε : ℝ) (hε : 0 < ε) (hεle : ε ≤ 1)
+    (ε : ℝ) (_hε : 0 < ε) (hεle : ε ≤ 1)
     (hsupply : PrimeSupplyForExponent ε) :
     Set.Infinite {n : ℕ | 0 < n ∧ (n : ℝ) ^ (1 - ε) < (OAI.TotientFibers.g n : ℝ)} := by
   apply OAI.TotientFibers.infinite_of_unbounded_g
