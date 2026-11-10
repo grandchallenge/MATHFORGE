@@ -1,0 +1,52 @@
+{
+  "record_type": "GCL_OAI26_WP04_DETERMINISTIC_RANDOM_BASELINE_SAMPLING/1",
+  "seed": "0x1581d4cb",
+  "selection_algorithm": "For each indexed family with numeric ID>12 compute x=(0x1581d4cb XOR family_ID) as uint32, then x^=x<<13, x^=x>>>17, x^=x<<5 using uint32 shifts. Select three lowest unsigned x, tie-break lexicographically by family_ID.",
+  "source": {
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "mathforge_protected_head": "fe4a69ba514ab27e8319cba9b3409984d04a1f4f",
+    "index_blob": "7a0b00eb9bfdeb59b157a98ee6522fc685580152"
+  },
+  "selection_scope": "SEPARATE_RANDOM_BASELINE_FOR_FUTURE_PRIMARY_CRITIC_REVIEW_NO_ADJUDICATED_MATHEMATICS",
+  "rows": [
+    {
+      "family_id": "267",
+      "score_uint32": 3355544028,
+      "headline": "Positive-temperature Bose–Einstein condensation and exact quantum depletion.",
+      "manuscript_paths": [
+        "preprints/Bose-Einstein-condensation-at-positive-temperature-in-the-dilute-hard-sphere-gas-October-5-2026/positive-temperature-hard-spheres.pdf",
+        "preprints/Quantum-Depletion-and-Momentum-Distribution-in-the-Dilute-Hard-Sphere-Bose-Gas-October-5-2026/Quantum-Depletion-in-the-Dilute-Hard-Sphere-Bose-Gas.pdf",
+        "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/fixed-repulsion-quantum-depletion.pdf",
+        "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf",
+        "preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf"
+      ],
+      "status": "SOURCE_SAMPLED_PRIMARY_PROOF_NOT_REVIEWED",
+      "critic_verdict": "NOT_ADJUDICATED",
+      "certification": "NO_CERTIFICATION"
+    },
+    {
+      "family_id": "266",
+      "score_uint32": 3355814397,
+      "headline": "Exactly three mutually unbiased bases in dimension six.",
+      "manuscript_paths": [
+        "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf",
+        "preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026.pdf"
+      ],
+      "status": "SOURCE_SAMPLED_PRIMARY_PROOF_NOT_REVIEWED",
+      "critic_verdict": "NOT_ADJUDICATED",
+      "certification": "NO_CERTIFICATION"
+    },
+    {
+      "family_id": "265",
+      "score_uint32": 3356084638,
+      "headline": "Area laws and tensor networks for two-dimensional gapped systems.",
+      "manuscript_paths": [
+        "preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf",
+        "preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/paper.pdf"
+      ],
+      "status": "SOURCE_SAMPLED_PRIMARY_PROOF_NOT_REVIEWED",
+      "critic_verdict": "NOT_ADJUDICATED",
+      "certification": "NO_CERTIFICATION"
+    }
+  ]
+}
