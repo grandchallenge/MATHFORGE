@@ -30,7 +30,7 @@ def validate(j, index, crosswalk, risks):
         raise ValueError("denominator mismatch")
     if d["publisher_300_to_indexed_200_mapping"] != "UNRECONCILED":
         raise ValueError("publisher count promotion")
-    if j["evidence"]["new_final_mathematical_family_verdicts"] != 0:
+    if j["new_final_mathematical_family_verdicts"] != 0:
         raise ValueError("unsupported final verdict count")
     if j["denominators"]["matched_source_papers"] != 172 or j["denominators"]["unmatched_source_papers"] != 1:
         raise ValueError("source paper denominator mismatch")
