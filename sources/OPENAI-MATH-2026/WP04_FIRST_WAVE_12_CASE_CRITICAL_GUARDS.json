@@ -14,12 +14,21 @@
       "unfamiliar_domain": 2,
       "formal_match": 5
     },
-    "random_baseline_status": "NOT_YET_SAMPLED",
+    "random_baseline_status": "SEPARATE_DETERMINISTIC_SOURCE_SAMPLE_NOT_YET_PRIMARY_REVIEWED",
     "deliberate_hostile_semantic_fixtures": [
       "003_7_8_NOT_RH",
       "009_INJECTIVITY_NOT_BIJECTION",
       "011_EPSILON_RANGE_NONENTAILMENT"
-    ]
+    ],
+    "strata_overlap": {
+      "unfamiliar_domain": [
+        "001",
+        "004",
+        "011"
+      ],
+      "reason": "Family 001 cross-place motivic/Hodge specialization is both a revision dependency and unfamiliar-domain critic target; overlap disclosed, not double-counted as a distinct family."
+    },
+    "random_baseline_path": "sources/OPENAI-MATH-2026/WP04_DETERMINISTIC_RANDOM_BASELINE_3.json"
   },
   "boundaries": {
     "mathematical_review_not_completed": true,
@@ -45,7 +54,10 @@
       "assessment": "CRITICAL_GUARD_RECHECKED_SEMANTIC_PROOF_NOT_ESTABLISHED",
       "certification": "NO_CERTIFICATION",
       "independent_primary_proof_body_review": "NOT_COMPLETED",
-      "provenance": "Direct reading of immutable protected WP03 case evidence; no external proof certification."
+      "provenance": "Direct reading of immutable protected WP03 case evidence; no external proof certification.",
+      "secondary_strata": [
+        "unfamiliar_domain"
+      ]
     },
     {
       "family_id": "002",
