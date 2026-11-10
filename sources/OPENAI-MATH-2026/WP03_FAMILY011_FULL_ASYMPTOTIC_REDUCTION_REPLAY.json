@@ -1,0 +1,72 @@
+{
+  "record_type": "GCL_OAI26_WP03_F011_FULL_ASYMPTOTIC_REDUCTION_LEAN_REPLAY/1",
+  "subject": "Family 011 smooth-prime fixed-delta count to totient-fiber infinitude, conditional on the analytic counting premise",
+  "declaration_replay": {
+    "GCL.OAI26.Family011.prime_supply_of_smooth_count": {
+      "status": "LEAN_KERNEL_ACCEPTED",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "GCL.OAI26.Family011.infinite_fibers_of_smooth_count": {
+      "status": "LEAN_KERNEL_ACCEPTED",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "scope": {
+    "finite_set": "smoothPrimeSet x δ = primes in (2x, 5x] with every prime divisor of p-1 <= x^δ",
+    "analytic_premise": "SmoothPrimeCount: for each fixed 0<δ<1/4 and each η>0, eventually over natural x the cardinality is >= x^(1-η)",
+    "conclusion": "for every ε>0, infinitely many n>0 satisfy g(n)>n^(1-ε), conditional on SmoothPrimeCount",
+    "analytic_premise_independently_proved": false,
+    "source_full_paper_semantic_equivalence_certified": false,
+    "mathcert_certification": false,
+    "no_new_axiom_or_placeholder": true
+  },
+  "source": {
+    "upstream_repository": "openai/math",
+    "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "mathforge_candidate_branch": "research/oai26-f011-full-lean-reduction-20261110",
+    "mathforge_candidate_pr": 546,
+    "mathforge_candidate_commit_at_audit": "7654c252c9e37397f0e7e5a7af560679e600ad0e",
+    "lean_file": "sources/OPENAI-MATH-2026/WP03_FAMILY011_FULL_ASYMPTOTIC_REDUCTION.lean",
+    "lean_file_git_blob_sha1": "1488cd48e97c30bb7ca907e485d27d002c101902",
+    "lean_file_sha256": "15e1690a19be5b319184225da89b0f99be23f867cd388c7323aad04a569490a5",
+    "local_audit_copy_sha256": "2f26de7ea5cfb2ef633b06dc8a7e003e1e27e13cfa9b2a3576ca45afa1a37b3e",
+    "local_audit_copy_construction": "Copy the exact pinned .lean source and append #print axioms for both named theorems plus #check SmoothPrimeCount",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "mathlib_pinned_revision": "d13f23b723b8a846827a245b89c10fc7d3f11612"
+  },
+  "execution": {
+    "local_machine": "CHAD",
+    "origin": "OS_ACCOUNT_ONLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "captured_begin_utc": "2026-11-10T15:28:15Z",
+    "captured_end_utc": "2026-11-10T15:28:24Z",
+    "command": "cd /home/jim/gcl-evidence/OAI26-WP01/math/lean && LEAN_PATH=$(cat /home/jim/gcl-evidence/OAI26-F011/full/LEAN_PATH_trimmed.txt) timeout 3600 lean -j 8 --profile /home/jim/gcl-evidence/OAI26-F011/full/FullAxiomAudit.lean",
+    "exit_code": 0,
+    "errors_reported": 0,
+    "import_seconds": 4.5,
+    "complete_stdout_stderr_log_sha256": "ca936bcd601c58cfeb9c352f4f4b308569d01880ed48ae7fd97f151208c47666",
+    "local_evidence_log": "/home/jim/gcl-evidence/OAI26-F011/full/audit_replay.log",
+    "source_integrity_and_hostile_tests": "7/7 PASS on exact candidate source and no sorry/admit/axiom source declarations",
+    "earlier_failed_replay_errors": [
+      "initial inappropriate pow monotonicity instance",
+      "Nat bound 6<=a not automatically elaborated as 5<=a",
+      "missing classical DecidablePred for real-defined Finset filter"
+    ],
+    "earlier_failed_replay_preserved": "/home/jim/gcl-evidence/OAI26-F011/full/long_replay_first_failed.log",
+    "supervisor_note": "An intermediate replay reached elaboration without error but its paused timeout wrapper returned code 124; this fresh independently completed exit-0 audit supersedes that nonaccepting status."
+  },
+  "authority": {
+    "mathematical_claim": "PROVED_CONDITIONAL_IMPLICATION_ONLY",
+    "protected_admission": "PENDING_PR_546_REVIEW_AND_MERGE",
+    "primary_analytic_theorem_independent_validation": "OPEN",
+    "role_separation": "Separate logical audit passes by same authenticated actor permitted; not independent human review"
+  }
+}
