@@ -6,7 +6,9 @@
   "paths": {
     "exact": [
       "sources/OPENAI-MATH-2026/WP03_FAMILY011_FULL_ASYMPTOTIC_REDUCTION.lean",
-      "tests/test_openai_math_wp03_f011_full_reduction.py"
+      "tests/test_openai_math_wp03_f011_full_reduction.py",
+      "sources/OPENAI-MATH-2026/WP03_FAMILY011_FULL_ASYMPTOTIC_REDUCTION_REPLAY.json",
+      "tests/test_openai_math_wp03_f011_full_replay_receipt.py"
     ],
     "prefixes": [],
     "test_prefixes": []
