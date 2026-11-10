@@ -89,6 +89,7 @@ private lemma choose_a (ε : ℝ) (hε : 0 < ε) :
 theorem prime_supply_of_smooth_count
     (hcount : SmoothPrimeCount) (ε : ℝ) (hε : 0 < ε) :
     PrimeSupplyForExponent ε := by
+  classical
   intro T
   obtain ⟨a, ha6, haε⟩ := choose_a ε hε
   let c : ℕ := a * a - 1
@@ -143,7 +144,7 @@ theorem prime_supply_of_smooth_count
     omega
   have hCard : t ^ (a - 1) < P.card := by
     have hpow : N ^ (a * (a - 1)) < N ^ (c - 1) :=
-      pow_lt_pow_right' (by omega : 1 < N) hExp
+      Nat.pow_lt_pow_right (by omega : 1 < N) hExp
     have hlt : ((t ^ (a - 1) : ℕ) : ℝ) < (x : ℝ) ^ (1 - η) := by
       rw [hxη]
       have heq : t ^ (a - 1) = N ^ (a * (a - 1)) := by
@@ -151,7 +152,7 @@ theorem prime_supply_of_smooth_count
       rw [heq]
       exact_mod_cast hpow
     exact_mod_cast lt_of_lt_of_le hlt hcountP
-  refine ⟨t, a, P, hNT.trans hNt, ha6, hNa.trans hNt, haε, ?_, ?_, ?_, hCard⟩
+  refine ⟨t, a, P, hNT.trans hNt, (by omega : 5 ≤ a), hNa.trans hNt, haε, ?_, ?_, ?_, hCard⟩
   · intro p hp
     exact (Finset.mem_filter.mp hp).2.1
   · intro p hp
