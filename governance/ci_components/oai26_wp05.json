@@ -1,0 +1,20 @@
+{
+  "contract_id": "GCL-CIR-001",
+  "version": "1.0.0",
+  "component_id": "oai26_wp05",
+  "owner": "GCL OAI26 WP05 portfolio ledger",
+  "paths": {
+    "exact": [
+      "sources/OPENAI-MATH-2026/WP05_FIRST_WAVE_372_FAMILY_VERDICT_LEDGER.json",
+      "tests/test_openai_math_wp05_first_wave.py"
+    ],
+    "prefixes": [],
+    "test_prefixes": []
+  },
+  "depends_on": [
+    "ci_routing"
+  ],
+  "checks": [
+    "forge-reconnaissance"
+  ]
+}
