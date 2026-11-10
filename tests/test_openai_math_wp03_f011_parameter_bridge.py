@@ -36,7 +36,7 @@ def validate_note(s):
                        "not independent proof"):
         if expression not in s:
             raise ValueError("missing exact proof or scope anchor: "+expression)
-    if "unconditional prime-supply theorem was proved" in s:
+    if "**Claim boundary:** conditional deduction" not in s:
         raise ValueError("false unconditional promotion")
     return True
 
