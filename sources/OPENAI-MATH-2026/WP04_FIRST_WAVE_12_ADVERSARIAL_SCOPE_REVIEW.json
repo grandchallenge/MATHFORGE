@@ -1,0 +1,260 @@
+{
+  "record_type": "GCL_OAI26_WP04_ADVERSARIAL_FIRST_WAVE_12/1",
+  "source_lock": {
+    "upstream": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "mathforge_evidence_head": "fe4a69ba514ab27e8319cba9b3409984d04a1f4f"
+  },
+  "review_provenance": {
+    "role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+    "independent_authentication": false,
+    "source_scope": "TWELVE_PROTECTED_WP02_WP03_EVIDENCE_RECORDS_NOT_FRESH_PRIMARY_PAPERS",
+    "does_not_replace": "INDEPENDENT_FULL_MATHEMATICAL_CRITIC_OR_MATHCERT"
+  },
+  "case_count": 12,
+  "selection_counts": {
+    "REVISION_DEPENDENCY": 3,
+    "FORMAL_MATCH": 3,
+    "UNFAMILIAR_DOMAIN": 3,
+    "RANDOM_BASELINE": 3
+  },
+  "selection_overlap": 0,
+  "hostile_fixture": {
+    "case": "011",
+    "mutation": "replace epsilon>=1 with all epsilon>0",
+    "expected_verdict": "REJECT_UNSUPPORTED_SCOPE_PROMOTION",
+    "observed_status": "LOGICAL_SCOPE_IMPLICATION_INVALID_NOT_A_LEAN_COUNTERMODEL"
+  },
+  "new_mathematical_refutations": 0,
+  "new_certifications": 0,
+  "rows": [
+    {
+      "family_id": "342",
+      "selection_stratum": "REVISION_DEPENDENCY",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP02_F342_LITERAL_CONE_STATEMENT_DELTA.json",
+        "git_blob_sha1": "073c5fcfa549c1f86daee8c331f55657857deb58",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "PINNED_EDITION_DELTA",
+      "mathematical_adversarial_question": "The September unconditional cone equality cannot be promoted from the unchanged main taming theorem; October imposes h_J^- = b_2^+(X)-1 and describes a four-torus strict-inclusion counterexample.",
+      "read_only_finding": "Pinned literal source editions demonstrate a hypothesis strengthening; the proposed counterexample is publisher-claimed, not independently replayed here.",
+      "review_disposition": "VERSION_HYPOTHESIS_MISMATCH",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "001",
+      "selection_stratum": "REVISION_DEPENDENCY",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY001_MILNE_INDEXED_COVERAGE.json",
+        "git_blob_sha1": "3bff24bfde28b5f6e07ea16922a6971874006cad",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+      "mathematical_adversarial_question": "Missing indexed rationality comparator does not disprove the manuscript; check dependence on the CM Hodge algebraicity input and whether trace rationality was improperly upgraded to algebraic cycles.",
+      "read_only_finding": "Only source-index absence and bounded source distinctions are established.",
+      "review_disposition": "UNRESOLVED_SOURCE_TO_FORMAL_BRIDGE",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "002",
+      "selection_stratum": "REVISION_DEPENDENCY",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY002_BSD_INDEXED_COVERAGE.json",
+        "git_blob_sha1": "f061e828fa5e3e80569136ccd2c24bffb485e79a",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+      "mathematical_adversarial_question": "Reject inferring the full BSD leading coefficient from rank/Sha converse or from a two-primary valuation; check exact q-primary assumptions and citation edition.",
+      "read_only_finding": "The three theorems have different conclusions; indexed absence establishes no theorem match.",
+      "review_disposition": "UNRESOLVED_DISTINCT_THEOREM_GAPS",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "003",
+      "selection_stratum": "FORMAL_MATCH",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY003_QUASI_RIEMANN_EDITION_REVIEW.json",
+        "git_blob_sha1": "c89250c9eea6fa97b22d950d25819dfd1175a7e3",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "PROPOSITION_LEVEL_ALIGNMENT_WITH_VERSION_DISTINCTION",
+      "mathematical_adversarial_question": "A zero-free half-plane Re(s)>7/8 cannot imply RH on Re(s)>1/2; preserve principal-character pole exception and distinguish October 11/12 edition.",
+      "read_only_finding": "Pinned theorem-level proposition alignment is partial and version-bound.",
+      "review_disposition": "PROPOSITION_ALIGNMENT_NOT_FULL_THEOREM",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "004",
+      "selection_stratum": "UNFAMILIAR_DOMAIN",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY004_H10Q_INDEXED_COVERAGE.json",
+        "git_blob_sha1": "60adb8884c88989fe6734c32e6b7c7db774dc44d",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+      "mathematical_adversarial_question": "Do not identify rational H10 undecidability with the auxiliary rational-2-torsion Selmer converse; require actual reduction, quantifier and input-polynomial bridge.",
+      "read_only_finding": "No named indexed H10Q target; index absence is not a universal nonformalization theorem.",
+      "review_disposition": "UNRESOLVED_SOURCE_TO_FORMAL_BRIDGE",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "005",
+      "selection_stratum": "FORMAL_MATCH",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY005_CATALAN_SEMANTIC_REVIEW.json",
+        "git_blob_sha1": "f266276d11ab260be7e63f2ee10724e91cca5335",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "PROPOSITION_LEVEL_ALIGNMENT",
+      "mathematical_adversarial_question": "A selected irrationality theorem for Catalan's constant does not by itself establish the separate hyperbolic-manifold volume corollaries; inspect all definitional reductions and the manuscript's critical case-one estimate.",
+      "read_only_finding": "Selected source and Lean propositions align, but proof-body bridge and additional consequences are outside this review.",
+      "review_disposition": "PROPOSITION_ALIGNMENT_NOT_FULL_THEOREM",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "006",
+      "selection_stratum": "RANDOM_BASELINE",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY006_GOLDFELD_INDEXED_COVERAGE.json",
+        "git_blob_sha1": "b4756c3b6d7239adcd7b0771033ced9803352402",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+      "mathematical_adversarial_question": "A density claim about elliptic-curve twists is not established by an indexed comparator filename search, nor by isolated 2-converse results; require family-specific density quantifiers.",
+      "read_only_finding": "Source-index lookup is negative and no semantic bridge was established.",
+      "review_disposition": "UNRESOLVED_SOURCE_TO_FORMAL_BRIDGE",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "008",
+      "selection_stratum": "UNFAMILIAR_DOMAIN",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY008_DELIGNE_DRINFELD_SEMANTIC_REVIEW.json",
+        "git_blob_sha1": "59e6f0c8f4a84e64789f8df3a478bb804e684295",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "PROPOSITION_LEVEL_ALIGNMENT",
+      "mathematical_adversarial_question": "The graded completed Lie-algebra isomorphism requires exact matching of pentagon, odd-weight generators, Ihara bracket, completion and continuity; a bare linear equivalence is insufficient.",
+      "read_only_finding": "Pinned main statement features align propositionally; model and definition bridge not independently established.",
+      "review_disposition": "PROPOSITION_ALIGNMENT_NOT_FULL_THEOREM",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "009",
+      "selection_stratum": "UNFAMILIAR_DOMAIN",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY009_BOGOMOLOV_POP_PARTIAL_REVIEW.json",
+        "git_blob_sha1": "bbecd08ebc9a7f7ca3fd2e7e2036e10ff0084780",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "PARTIAL_MAIN_THEOREM_COVERAGE_INJECTIVITY_ONLY",
+      "mathematical_adversarial_question": "Injectivity of the field-to-Galois map does not prove the manuscript's claimed bijection; require surjectivity, existence and precise Frobenius/scalar quotient correspondence.",
+      "read_only_finding": "Selected Lean theorem witnesses injectivity only; full bijection claim remains uncovered.",
+      "review_disposition": "PARTIAL_SCOPE_COUNTERWITNESS",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "010",
+      "selection_stratum": "RANDOM_BASELINE",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY010_PROMODULARITY_INDEXED_COVERAGE.json",
+        "git_blob_sha1": "e8a8d043e4edc7b2618138cd58d56ecff697f266",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "UNFORMALIZED_IN_PINNED_INDEXED_COMPARATOR_SCOPE",
+      "mathematical_adversarial_question": "Do not conflate pro-modularity with classical cuspidal modularity or discard regular de Rham hypotheses; Krull dimension of Hecke algebra is a third distinct claim.",
+      "read_only_finding": "Three pinned theorems are distinct and named indexed coverage is absent.",
+      "review_disposition": "UNRESOLVED_SOURCE_TO_FORMAL_BRIDGE",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "011",
+      "selection_stratum": "RANDOM_BASELINE",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY011_ACTUAL_UNINDEXED_FIBER_DECLARATION.json",
+        "git_blob_sha1": "369343a5a133d29b1f403cf186d4cb79b1c14b59",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "PARTIAL_FORMAL_SUPPORT_FIBER_LEMMAS_MAIN_EXPONENT_GAP",
+      "mathematical_adversarial_question": "A theorem for epsilon≥1 cannot imply a manuscript theorem for every epsilon>0; evaluate the missing 0<epsilon<1 range and whether conditional prime supply was proved.",
+      "read_only_finding": "Pinned Lean named infinitude theorem has weaker parameter scope than manuscript; precise quantifier gap.",
+      "review_disposition": "PARTIAL_SCOPE_COUNTERWITNESS",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    },
+    {
+      "family_id": "012",
+      "selection_stratum": "FORMAL_MATCH",
+      "source_evidence": {
+        "path": "sources/OPENAI-MATH-2026/WP03_FAMILY012_DICKMAN_SEMANTIC_REVIEW.json",
+        "git_blob_sha1": "7f7ad96bd8e710051b19039d245d66aa8c2710bb",
+        "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      },
+      "predecessor_disposition": "PROPOSITION_LEVEL_ALIGNMENT",
+      "mathematical_adversarial_question": "The joint Dickman law uses n-based thresholds and real-density conventions; a match requires checking rho, largest-prime-factor definitions, X cutoffs and both strict-order laws, not merely theorem names.",
+      "read_only_finding": "Selected propositions align at displayed level; model/definition and imported proof bridges not independently established.",
+      "review_disposition": "PROPOSITION_ALIGNMENT_NOT_FULL_THEOREM",
+      "requires_fresh_primary_proof_review": true,
+      "certification": "NO_CERTIFICATION",
+      "evidence_strength": "PREDECESSOR_PROTECTED_RECORD_AND_LOGICAL_SCOPE_CRITIC_ONLY",
+      "counterexample_proved_in_this_pass": false,
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_ADVERSARY_AND_REFEREE",
+      "independently_authenticated": false
+    }
+  ]
+}
