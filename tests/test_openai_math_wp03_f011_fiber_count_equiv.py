@@ -39,7 +39,7 @@ def validate(source,record):
         d=record["proof"]["theorems"][name]
         if d["lean_exit"]!=0 or set(d["axioms"])!=AXIOMS:
             raise ValueError("failed or untrusted theorem")
-    if record["proof"]["execution"]["compiler_exit"]!=0 or record["proof"]["execution"]["compiler_errors"]!=0:
+    if record["execution"]["compiler_exit"]!=0 or record["execution"]["compiler_errors"]!=0:
         raise ValueError("Lean replay incomplete")
     b=record["acceptance_limits"]
     if b["external_unconditional_theorem_proof_replayed_by_gcl"] or b["mathcert_certified"] or b["programme_closed"]:
@@ -80,7 +80,7 @@ class TestF011TotientFiberIdentity(unittest.TestCase):
     def test_sorry_axiom(self):
         self.reject(lambda x:x["proof"]["theorems"][THEOREMS[2]]["axioms"].append("sorryAx"),"untrusted")
     def test_false_lean_result(self):
-        self.reject(lambda x:x["proof"]["execution"].update(compiler_exit=1),"replay incomplete")
+        self.reject(lambda x:x["execution"].update(compiler_exit=1),"replay incomplete")
     def test_erased_zero_exclusion(self):
         with self.assertRaisesRegex(ValueError,"source hash drift"):
             validate(self.s.replace("h.sdiff (Set.finite_singleton 0)","h"),self.j)
