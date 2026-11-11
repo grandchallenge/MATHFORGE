@@ -1,0 +1,76 @@
+{
+  "record_type": "GCL_OAI26_F011_EXTERNAL_G_EQUIV_LEAN_REPLAY/1",
+  "intent": "PROVE_POSITIVE_TARGET_PREIMAGE_COUNT_IDENTITY_AND_INFINITE_SET_TRANSFER",
+  "external_source": {
+    "repo": "cadamcat/totient-fibers-lean4",
+    "commit": "f75d4f2c2d6685a0547f17fa07240377aa2c2ed4",
+    "path": "Erdos821/Challenge.lean",
+    "git_blob_sha1": "ac85c9a6a0878d18de3d923ca1a14e8213089c03",
+    "g_definition": "({m : ℕ | Nat.totient m = n} : Set ℕ).ncard",
+    "unconditional_external_theorem_replayed_by_gcl": false
+  },
+  "gcl_source": {
+    "repo": "openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "manifest_sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+    "path": "lean/OAI/NumberTheory/TotientFibers/FiniteFiber.lean",
+    "git_blob_sha1": "217cfe4d7f9c39981eabe9bbeeb8458febb0fc76",
+    "g_definition": "(OAI.TotientFibers.fiber n).ncard where fiber n = {m | 0 < m ∧ Nat.totient m = n}",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612"
+  },
+  "proof": {
+    "path": "sources/OPENAI-MATH-2026/WP03_FAMILY011_EXTERNAL_FIBER_COUNT_EQUIV.lean",
+    "git_blob_sha1": "f649ebb960794a48e5668531fd38449f7a046fc0",
+    "sha256": "30886e87944de53e0f681ccfe8d6d4a71bd5fe6607abe16e44b524bf3153c31c",
+    "theorems": {
+      "GCL.OAI26.Family011.external_fiber_count_eq_g_of_pos": {
+        "theorem": "∀ n : ℕ, 0<n → externalFiberCount n = OAI.TotientFibers.g n",
+        "lean_exit": 0,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "GCL.OAI26.Family011.infinite_gcl_of_external": {
+        "theorem": "for any real ε, infinite external-preimage fiber targets imply infinite GCL-positive targets",
+        "lean_exit": 0,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "GCL.OAI26.Family011.gcl_claim_of_external_claim": {
+        "theorem": "all-ε>0 external Erdős 821 statement implies all-ε>0 GCL positive-target statement",
+        "lean_exit": 0,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "exclusion_argument": "Nat.totient 0 = 0; definitions coincide for n>0, and removing singleton {0} from an infinite set preserves infinitude"
+  },
+  "execution": {
+    "runtime": "CHAD_LOCAL_OS_ONLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "compiler_exit": 0,
+    "compiler_errors": 0,
+    "verified_utc": "2026-11-11",
+    "compiler_log_sha256": "10f421668aa69af088709ba075d72a3761edf706c593120da9f9b69ea510f165",
+    "compiler_log_path": "/home/jim/gcl-evidence/OAI26-F011/fiber-identity/replay5.log",
+    "compiler_command": "LEAN_PATH=<exact source-pinned OAI build paths> leanprover/lean4:v4.34.1/bin/lean FiberIdentity.lean",
+    "no_sorry": true,
+    "no_fresh_axioms": true
+  },
+  "acceptance_limits": {
+    "mathematical_statement_equivalence_proved": true,
+    "external_unconditional_theorem_proof_replayed_by_gcl": false,
+    "source_mathematical_paper_independently_peer_reviewed": false,
+    "mathcert_certified": false,
+    "programme_closed": false
+  },
+  "next": "Protected exact-head CI/merge of this proof; then finish external 939-module Colab build, verification.sh, leanchecker --fresh Erdos821.Theorem, independent source criticism"
+}
