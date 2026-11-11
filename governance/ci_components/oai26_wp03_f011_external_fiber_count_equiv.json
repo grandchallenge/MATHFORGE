@@ -1,0 +1,21 @@
+{
+  "contract_id": "GCL-CIR-001",
+  "version": "1.0.0",
+  "component_id": "oai26_wp03_f011_external_fiber_count_equiv",
+  "owner": "OAI26 WP03 Family 011 external-vs-GCL totient fiber semantics",
+  "paths": {
+    "exact": [
+      "sources/OPENAI-MATH-2026/WP03_FAMILY011_EXTERNAL_FIBER_COUNT_EQUIV.lean",
+      "sources/OPENAI-MATH-2026/WP03_FAMILY011_EXTERNAL_FIBER_COUNT_EQUIV_REPLAY.json",
+      "tests/test_openai_math_wp03_f011_fiber_count_equiv.py"
+    ],
+    "prefixes": [],
+    "test_prefixes": []
+  },
+  "depends_on": [
+    "ci_routing"
+  ],
+  "checks": [
+    "forge-reconnaissance"
+  ]
+}
