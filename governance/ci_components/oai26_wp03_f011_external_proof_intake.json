@@ -1,0 +1,20 @@
+{
+  "contract_id": "GCL-CIR-001",
+  "version": "1.0.0",
+  "component_id": "oai26_wp03_f011_external_proof_intake",
+  "owner": "GCL OAI26 WP03 F011 externally sourced analytic proof candidate review",
+  "paths": {
+    "exact": [
+      "sources/OPENAI-MATH-2026/WP03_F011_EXTERNAL_ANALYTIC_LEAN_PROOF_INTAKE.json",
+      "tests/test_openai_math_wp03_f011_external_proof_intake.py"
+    ],
+    "prefixes": [],
+    "test_prefixes": []
+  },
+  "depends_on": [
+    "ci_routing"
+  ],
+  "checks": [
+    "forge-reconnaissance"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "record_type": "GCL_OAI26_F011_INDEPENDENT_LEAN_ANALYTIC_PROOF_SOURCE_INTAKE/1",
+  "claim_status": "EXTERNAL_AUTHOR_REPORT_CORROBORATED_BY_STATIC_AUDIT_GCL_FRESH_KERNEL_REPLAY_PENDING",
+  "exact_source": {
+    "project": "openai/math",
+    "gcl_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "external_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "matched_manuscript_blobs": {
+      "00-introduction.tex": "3d9d4c55c1f30d7736e7c7427b97cb0461f06040",
+      "01-preliminaries.tex": "aa78ef5bdbe4d100503813e6c3c22fc45add3e65",
+      "02-transference.tex": "54c369cc5fc46508667b5f54b5cb81221edb46ef",
+      "03-ideal-kernels.tex": "c71c959819f157b36b38c54195611d0f0666d529",
+      "04-shifted-correlations.tex": "fa02face363e1bdbbf8e20a4b1a44ac07c37865f",
+      "05-type-ii.tex": "691fdb02da72e5e6bde7eb562083ee50096c5197",
+      "06-prime-extraction.tex": "123c55cb9b0b7a44474ab326120f1d3b16013b72",
+      "07-totient-conclusion.tex": "f808e04afb8e288e90f7f6bb2fb325f2c0508d17"
+    },
+    "master_paper_tex_blob": "3e626203ee6a8f40ccdc014339a13f3f098a1b76",
+    "bibliography_blob": "3ce8384d23de5464e484a1bd59d4e34d0cd850fb",
+    "matched_files_count": 10,
+    "method": "GitHub exact-revision blob SHA-1 compare, 8 sections + paper.tex + references.bib"
+  },
+  "external_repository": {
+    "name": "cadamcat/totient-fibers-lean4",
+    "head": "f75d4f2c2d6685a0547f17fa07240377aa2c2ed4",
+    "verification_tag": "v1.0.0",
+    "verification_commit": "dfce35707a67fce7362cb2bd95af8b80a0b0373e",
+    "total_lean_modules": 939,
+    "theorems": [
+      {
+        "value": "Erdos821.Final.supply",
+        "type": "Erdos821.SmoothShiftedPrimeSupply",
+        "location": "Erdos821/Final/Assembly.lean",
+        "git_blob": "8216cca9bc541c22efbe3c50e3c699f99a85edb8"
+      },
+      {
+        "value": "Erdos821.erdos_821",
+        "type": "∀ ε > 0, infinitely many totient fibers of size > n^(1−ε)",
+        "location": "Erdos821/Theorem.lean",
+        "git_blob": "0d4c86cc63e1fc44e506a7fa688ea4bdbcaf0623"
+      }
+    ],
+    "supply_contract": {
+      "path": "Erdos821/Supply.lean",
+      "blob": "f69b9e229635324ac6dde085cf92254c8082a3f5",
+      "quantifiers": "∀ real δ, 0<δ<1/4; ∀ σ>0; ∀ᶠ real x atTop",
+      "prime_predicate": "p∈Finset.Ioc floor(2x) floor(5x); Nat.Prime p; ∀ prime q dividing p−1, (q:ℝ)≤x^δ",
+      "cardinality": "x^(1−σ) ≤ (count:ℝ)"
+    },
+    "closed_package_graph": {
+      "assembly": "Erdos821/Blueprint/Assembly.lean",
+      "interfaces": [
+        {
+          "name": "P1",
+          "interface_names": "classical_inputs",
+          "paper_section": "01-preliminaries.tex"
+        },
+        {
+          "name": "P2",
+          "interface_names": "sieve_inputs",
+          "paper_section": "01-preliminaries.tex"
+        },
+        {
+          "name": "P3",
+          "interface_names": "transference_inputs",
+          "paper_section": "02-transference.tex"
+        },
+        {
+          "name": "P4",
+          "interface_names": "ideal_inputs",
+          "paper_section": "03-ideal-kernels.tex"
+        },
+        {
+          "name": "P5",
+          "interface_names": "shifted_cancellation",
+          "paper_section": "04-shifted-correlations.tex"
+        },
+        {
+          "name": "P6",
+          "interface_names": "typeII_estimate",
+          "paper_section": "05-type-ii.tex"
+        },
+        {
+          "name": "P7",
+          "interface_names": "candidate_geometry;candidate_bounds;candidate_typeI",
+          "paper_section": "06-prime-extraction.tex"
+        },
+        {
+          "name": "P8",
+          "interface_names": "proxy_inputs",
+          "paper_section": "06-prime-extraction.tex"
+        },
+        {
+          "name": "P9",
+          "interface_names": "balanced_rough_bound",
+          "paper_section": "06-prime-extraction.tex"
+        },
+        {
+          "name": "P10",
+          "interface_names": "prime_extraction;count_from_weighted_mass",
+          "paper_section": "06-prime-extraction.tex"
+        }
+      ]
+    },
+    "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "post_v1_source_diff": "Only Erdos821/Challenge.lean changes (documentation, no theorem/proof declarations)",
+    "static_gate": {
+      "command": "python3 scripts/check_forbidden.py",
+      "gcl_exit_code": 0,
+      "observed": "forbidden constructs: 0; unexpected sorry: 0; expected sorry in Challenge.lean: 1",
+      "last_verified_source_head": "f75d4f2c2d6685a0547f17fa07240377aa2c2ed4"
+    }
+  },
+  "external_author_report": {
+    "path": "docs/verification.md",
+    "blob": "6a4f16a3c04bd89b04d83fa8e2c329a88736099d",
+    "date": "2026-10-14",
+    "build_jobs_reported": 9940,
+    "build_exit_reported": 0,
+    "leanchecker_fresh_exit_reported": 0,
+    "comparator_acceptance_reported": true,
+    "axioms_reported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "trusted_as": "AUTHOR_REPORTED_NOT_YET_GCL_REPLAYED"
+  },
+  "recognition": {
+    "source": "google-deepmind/formal-conjectures",
+    "pr": 7314,
+    "state": "MERGED",
+    "merged_at": "2026-10-22T09:53:24Z",
+    "scope": "Lists solution and proof reference; not an independent complete source audit"
+  },
+  "gcl_reproduction": {
+    "machine": "CHAD",
+    "source_root": "/home/jim/gcl-evidence/OAI26-F011/totient-independent",
+    "initial_manifest_sha256": "8df0747916e81c4d13f3ed226a6ffa5dd04760ffc13668241d603a3595c634cf",
+    "execution_script": "/home/jim/gcl-evidence/OAI26-F011/independent_replay/execute.sh",
+    "durable_log": "/home/jim/gcl-evidence/OAI26-F011/independent_replay/run.log",
+    "checkpoint_stage": "LAKE_EXE_CACHE_GET_IN_PROGRESS",
+    "kernel_replay": "PENDING",
+    "source_to_gcl_nat_adapter_replay": "PENDING",
+    "independently_authenticated": false
+  },
+  "claim_boundaries": {
+    "gcl_acceptance": false,
+    "external_analytic_proof_candidate_found": true,
+    "source_blobs_equal": true,
+    "external_author_report_not_independent_gcl_execution": true,
+    "full_primary_paper_peer_review": false,
+    "mathcert_certification": false
+  },
+  "next": "Fresh exact-source CHAD build + leanchecker, GCL real-to-nat statement adapter, exact-head protected critical review and main readback before promoting external analytical proof status"
+}
