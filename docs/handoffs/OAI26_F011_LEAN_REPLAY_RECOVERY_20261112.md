@@ -1,0 +1,21 @@
+# OAI26 Family 011 — Lean replay recovery contract
+
+**Proposal only. No replacement worker, lease, or mathematical acceptance is authorized by this document.**
+
+## Immutable source locks
+Replay5 `gcl-f011-xu-replay5-20261112`, CONTROL PR #71 merge `51c26fc2f69aa5a0b0408e2c77f0a51915dda5ee`, worker `worker_v3_merged_51c26fc.py` SHA256 `f621680a2bda36efe5c52a7eeab363251bc5768725e970687b5956ee4467f857` (verified on CHAD 2026-11-12). Upstream `cadamcat/totient-fibers-lean4@f75d4f2c2d6685a0547f17fa07240377aa2c2ed4`; manifest SHA256 `8df0747916e81c4d13f3ed226a6ffa5dd04760ffc13668241d603a3595c634cf`; Mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612`; OAI `adc7f1241b42e322a6451854ab7e4b4c146bf78a`; iut `d9465c111ec4073709f67e9fccec7e3eb374a816`; Lean toolchain `leanprover/lean4:v4.34.1`.
+
+## Diagnosed failure
+Replay5: `RECOVERY_REQUIRED`, checkpoint 2/4, `build exit=124`, expired 12-hour lease and released session at prior inspection. Worker v3 uses `subprocess.run(... timeout=16000)` for `lake build Erdos821 Challenge Verification`. Its checkpoint is JSON metadata, not compiled artifacts. A fresh session redoes toolchain installation, checkout, `lake update`, patching, and cache retrieval; it cannot reuse completed compilation from the checkpoint. Exit 124 indicates worker subprocess timeout, **not** theorem falsification. Recheck supervisor, current job state, owned session identity, and lease immediately before any new launch.
+
+## Required implementation (new protected worker v4, never mutate or resume v2/v3)
+1. Persist actual `.lake/build` and needed dependency build artifacts in a content-addressed cache keyed by source HEAD, manifest bytes SHA256, all dependency HEADs, toolchain/compiler, patch script SHA256 and applied patch state, architecture, Lake targets and build flags. Atomically publish only after complete file hashes and fsync; checkpoint must reference the published cache manifest.
+2. Restore only after verifying every source and dependency pin, every file digest, path containment, no escaping symlinks, and cache completeness. Reject stale, truncated, corrupted, incompatible or partial caches; clean rebuild rather than trust unverifiable objects. Do not reuse artifacts when any key component changes.
+3. Measure setup, download, cache restoration, build, verification and upload separately. Explicitly reserve time for artifact persistence and teardown inside the authorized lease. Do not silently extend the 16000-second timeout beyond the approved lease. If cold/warm measured runtime exceeds lease, request separately reviewed capacity/lease admission.
+4. Prove resumability by fault injection: interrupted upload, truncated manifest, corrupt blob, changed Mathlib/manifest/toolchain, wrong source/job SHA, wrong lease, duplicated owned session, timeout before/after snapshot. Validate rejection and safe recovery, including absence of concurrent owned sessions.
+5. Terminal evidence must contain exact original `lake build Erdos821 Challenge Verification`, `bash scripts/verify.sh`, `lake env leanchecker --fresh Erdos821.Theorem` command outputs, exit codes and SHA256 hashes. Verify `verify: PASS`, exactly `propext`, `Classical.choice`, `Quot.sound`, and `forbidden constructs: 0; unexpected sorry: 0;`. Confirm source/manifest/Mathlib and patch pins from actual checkout.
+6. Perform logically role-separated internal critical review of fixed-real-delta and natural positive fiber definitions, quantifiers, hypotheses, and conclusion; do not infer manuscript equivalence from successful compilation.
+7. Protected PR, CI, critical review, protected merge and explicit **new** CONTROL admission precede any replacement launch. Preserve MATHFORGE #332/#333, MATH-PROGRAMME #2850 and MATHCERT open pending their own scoped acceptance. No routine human Jimsteeg or Copilot gate.
+
+## Acceptance
+Implementation PR + deterministic tests + fault-injection receipts + internal critical adjudication + protected merge readback; then separate new job/source hash/lease admission and verified owned-session absence. Only genuine fresh build/verify/leanchecker outputs and semantic review can support a scoped Family 011 disposition. No whole-programme certification.
