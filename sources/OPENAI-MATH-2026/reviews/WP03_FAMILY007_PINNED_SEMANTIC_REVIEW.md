@@ -6,7 +6,7 @@
 
 ## Independently pinned manuscript editions
 
-1. **Ordinary two-point correlations of multiplicative functions** — `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf`; 87 pages, 819391 bytes; Git blob `60edc8ea20bc52ed80375df22f112658013894ee`; SHA-256 `ccb6f339a7505db7ab158dae4b739164ed8dda32be4012b0310198dd32f5c70a`; exact paper-path crosswalk matches: **0**.
+1. **Ordinary two-point correlations of multiplicative functions** — `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf`; 87 pages, 819391 bytes; Git blob `a1fa025a59ecbfc5176d16cfdc6e0afd418cc82e`; SHA-256 `ccb6f339a7505db7ab158dae4b739164ed8dda32be4012b0310198dd32f5c70a`; exact paper-path crosswalk matches: **0**.
 
 All document digests were calculated from actual pinned PDF bytes. The checked corpus crosswalk contains 173 `source_papers` and 200 `main_results` entries. Exact PDF paths above do not match its `source_papers`; no candidate source-to-Lean theorem equivalence is established by this index. Path absence is not proof of unformalization.
 
@@ -27,7 +27,7 @@ RESULT/1
 ASSIGNMENT_ID: GCL-OAI-26-WP03-F007
 SOURCE_SHA: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
 DISPOSITION: UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH
-EVIDENCE: 60edc8ea20bc52ed80375df22f112658013894ee
+EVIDENCE: a1fa025a59ecbfc5176d16cfdc6e0afd418cc82e
 REPLAY: PINNED_PDF_STATIC_REVIEW_ONLY; LEAN_NOT_RUN
 UNRESOLVED: Check the literal forms, nonproportionality, quantitative saving, nonpretentiousness condition, fixed residue-class extension and ordinary versus logarithmic averaging.
 CLAIM_BOUNDARY: NO_MATHCERT_CERTIFICATION
