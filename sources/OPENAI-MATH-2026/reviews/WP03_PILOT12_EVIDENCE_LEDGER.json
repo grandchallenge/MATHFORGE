@@ -36,7 +36,7 @@
           "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
           "page_count": 36,
           "byte_length": 595267,
-          "git_blob_sha1": "72cfde4183262eabe6383f245fd2c470ac65d304",
+          "git_blob_sha1": "3780abc1f47a23e546f28190bd3db7b24419f1f9",
           "sha256": "640701a0ea8d8026d2f019e571e052f2d106cad3f5216cf6f7fca0d643873234",
           "exact_source_paper_crosswalk_matches": 0
         }
@@ -56,7 +56,7 @@
           "path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf",
           "page_count": 94,
           "byte_length": 874353,
-          "git_blob_sha1": "6079dbad338ad293ce84b2f9087fe2bbcde1028d",
+          "git_blob_sha1": "4621d1c197766f11d416b7e149343d938fcd9697",
           "sha256": "64b46603e174462e5bb32d242852eb7f0afe6e519f26534e42fd3f178a16b885",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -64,7 +64,7 @@
           "path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
           "page_count": 82,
           "byte_length": 869458,
-          "git_blob_sha1": "8a63a08e2bde86b52448272457ddd659deb66781",
+          "git_blob_sha1": "384525874a5e9989e574a5f9ce7c9883258cc732",
           "sha256": "bdb2f21b345a4f0fc9943a4e39bee27fedae5cf1e6842c40b3a77bd528ddea01",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -72,7 +72,7 @@
           "path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
           "page_count": 164,
           "byte_length": 1279386,
-          "git_blob_sha1": "858a3eb094d940f8aa44f91d985f6bf0c1f2148d",
+          "git_blob_sha1": "9c1827e35640033bf16eac9fa88136079b1cc2de",
           "sha256": "734e4050dc8416c0f9ea7c9e15a29c6a8627feb53073e40b456d118f68d4dc5a",
           "exact_source_paper_crosswalk_matches": 0
         }
@@ -177,7 +177,7 @@
           "path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
           "page_count": 130,
           "byte_length": 1087540,
-          "git_blob_sha1": "406f09fd07cb7296a0c671658b609cacb4684fd4",
+          "git_blob_sha1": "58b8904f39b2a12534732010191fd35435559a61",
           "sha256": "c417858c9fe566daacb7738741dc66e211eea148b3da587eb5ee68eaad208d64",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -185,7 +185,7 @@
           "path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
           "page_count": 41,
           "byte_length": 549633,
-          "git_blob_sha1": "b397546d52b2ff52f1f43934bba00e01cf6233a0",
+          "git_blob_sha1": "fef228e3a2a26c0b1302fbd6f85de0da1c87a3ba",
           "sha256": "718fcfce4014a878685365edfb8a285a611512dea362dc5a9e1dc93d023cd7b1",
           "exact_source_paper_crosswalk_matches": 0
         }
@@ -205,7 +205,7 @@
           "path": "preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf",
           "page_count": 87,
           "byte_length": 819391,
-          "git_blob_sha1": "60edc8ea20bc52ed80375df22f112658013894ee",
+          "git_blob_sha1": "a1fa025a59ecbfc5176d16cfdc6e0afd418cc82e",
           "sha256": "ccb6f339a7505db7ab158dae4b739164ed8dda32be4012b0310198dd32f5c70a",
           "exact_source_paper_crosswalk_matches": 0
         }
@@ -225,7 +225,7 @@
           "path": "preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf",
           "page_count": 41,
           "byte_length": 539601,
-          "git_blob_sha1": "a25631759a336da517a99e5230c1cbffbb3c7cf6",
+          "git_blob_sha1": "0aa3328661d35567ec7e2dfb802b0351003e7a31",
           "sha256": "5ae63f326803a634e7c6dc5684ce7062ea0ac6940a88a75c7052875382dbc762",
           "exact_source_paper_crosswalk_matches": 1
         }
@@ -245,7 +245,7 @@
           "path": "preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf",
           "page_count": 36,
           "byte_length": 559547,
-          "git_blob_sha1": "63303a74325fc94ec1aeb6cc01a67a80cfc9691e",
+          "git_blob_sha1": "92140b503c5dcb67cd509cdf7448a8acc8666ef0",
           "sha256": "fafdf71eafc4700ada91598eba0620dc3263dd48b5879aa42af806254124bb2f",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -253,7 +253,7 @@
           "path": "preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf",
           "page_count": 11,
           "byte_length": 348272,
-          "git_blob_sha1": "03cb80d075993b29d30f5e2609a8fc8a4b464cdc",
+          "git_blob_sha1": "a08a56762d57aa8439a6d0fd2cb7ce6de3eccb86",
           "sha256": "df8a6b4a54b121c692f7221e7b606be0dde89351fcb9ab5bb3853f7c2da4da90",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -261,7 +261,7 @@
           "path": "preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf",
           "page_count": 26,
           "byte_length": 449982,
-          "git_blob_sha1": "0d19afa59d02fe732b3a2ec58535119393878757",
+          "git_blob_sha1": "1cf83cd62ae8d02c7402bf9cf2904785c0a1d93e",
           "sha256": "4d805627401fffef78e1f0d8e21a0585f6c733e8be90643d0065cd27ffaa24f2",
           "exact_source_paper_crosswalk_matches": 0
         }
@@ -281,7 +281,7 @@
           "path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
           "page_count": 29,
           "byte_length": 454918,
-          "git_blob_sha1": "16805128b34472fa449fca67ae14719b98a824e9",
+          "git_blob_sha1": "60af9a2ac3e85261ded26474e61783dde8eb2f13",
           "sha256": "ef74b48557930663cab287cabd5280854f059de298e3016cc2172106eba1a1db",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -289,7 +289,7 @@
           "path": "preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf",
           "page_count": 12,
           "byte_length": 347687,
-          "git_blob_sha1": "ec01b423e1067171de6ba747734d9aa34f9c3363",
+          "git_blob_sha1": "2d7765cad8290f158660dc8aec58f1540dc0015b",
           "sha256": "b15081ee4a06c6c609eee447ee2dffd69578ce3550cbcd923e7206c7443333c5",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -297,7 +297,7 @@
           "path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
           "page_count": 72,
           "byte_length": 767547,
-          "git_blob_sha1": "92a7e7b65f277bb040284de753ac011ca44687ff",
+          "git_blob_sha1": "dea72dd57adfbe896cafccc6097b012bcd6dbb07",
           "sha256": "3c8797c7d468cdcccbfedf719c9a758a083954ba3c3005975736eb911d26a636",
           "exact_source_paper_crosswalk_matches": 0
         }
@@ -317,7 +317,7 @@
           "path": "preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
           "page_count": 68,
           "byte_length": 802390,
-          "git_blob_sha1": "063e788b4229148cbb0f5816563ea03c1418bdad",
+          "git_blob_sha1": "3acecffeba75121b28efd194c4c2b266a9f6d77b",
           "sha256": "351692885d112277e969901e75fe56eeee0d263d5d5847d0b980fe2c8c7744c0",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -325,7 +325,7 @@
           "path": "preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
           "page_count": 74,
           "byte_length": 795971,
-          "git_blob_sha1": "99e91540b99090e11bf2b5fb9e05abfe647ee189",
+          "git_blob_sha1": "c46ae43eabf76a9c1cc53655414567ba4e5b60ae",
           "sha256": "4b54d35506a1928022ac21e6d270d30f6533423ddc5990975270a1e39a87bce7",
           "exact_source_paper_crosswalk_matches": 0
         },
@@ -333,7 +333,7 @@
           "path": "preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf",
           "page_count": 45,
           "byte_length": 599500,
-          "git_blob_sha1": "6f35ec8061dd861076882315f53cfc66913dfd25",
+          "git_blob_sha1": "73d9d9f5ed478e1c0ba049fa00a55fafea4b48a5",
           "sha256": "8ee2d8f79198dd5f09c5fbf71e309a63493d1c089772499614ee58dc8575eae9",
           "exact_source_paper_crosswalk_matches": 0
         }
@@ -353,7 +353,7 @@
           "path": "preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
           "page_count": 84,
           "byte_length": 578632,
-          "git_blob_sha1": "152b2fb1d9840703b874b3d46c13e8c8bb4cf867",
+          "git_blob_sha1": "a213750a1589b891e36184313e16df52f14df5dd",
           "sha256": "e66b4e8a1fe197d3bb2c195548cd3bdd3fba8595db1356e571205a6baab43cb3",
           "exact_source_paper_crosswalk_matches": 0
         }
