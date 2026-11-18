@@ -6,7 +6,7 @@
 
 ## Independently pinned manuscript editions
 
-1. **The joint Dickman law for consecutive integers** — `preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf`; 84 pages, 578632 bytes; Git blob `152b2fb1d9840703b874b3d46c13e8c8bb4cf867`; SHA-256 `e66b4e8a1fe197d3bb2c195548cd3bdd3fba8595db1356e571205a6baab43cb3`; exact paper-path crosswalk matches: **0**.
+1. **The joint Dickman law for consecutive integers** — `preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf`; 84 pages, 578632 bytes; Git blob `a213750a1589b891e36184313e16df52f14df5dd`; SHA-256 `e66b4e8a1fe197d3bb2c195548cd3bdd3fba8595db1356e571205a6baab43cb3`; exact paper-path crosswalk matches: **0**.
 
 The PDF bytes were retrieved at the pinned upstream commit and their content digests calculated. The GCL crosswalk has 173 source-paper rows and 200 main-result declaration/comparator rows. Literal paper-path correspondence is distinct from name-based Lean candidate discovery. Full manuscript proof verification and Lean compilation were **not** performed here.
 
@@ -31,7 +31,7 @@ RESULT/1
 ASSIGNMENT_ID: GCL-OAI-26-WP03-F012
 SOURCE_SHA: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
 DISPOSITION: UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH
-EVIDENCE: 152b2fb1d9840703b874b3d46c13e8c8bb4cf867
+EVIDENCE: a213750a1589b891e36184313e16df52f14df5dd
 REPLAY: PINNED_MANUSCRIPT_STATIC_REVIEW; LEAN_NOT_NEWLY_REPLAYED
 UNRESOLVED: Check moving n^a thresholds versus fixed X^a, ordinary rather than logarithmic averages, joint-to-ordering deduction and diagonal ties.
 CLAIM_BOUNDARY: NO_MATHCERT_CERTIFICATION
