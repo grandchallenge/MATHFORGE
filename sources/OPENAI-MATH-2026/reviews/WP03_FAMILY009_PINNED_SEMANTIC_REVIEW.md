@@ -6,9 +6,9 @@
 
 ## Independently pinned manuscript editions
 
-1. **Reconstruction of Function Fields from Mod-ℓ Milnor K-Theory** — `preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf`; 36 pages, 559547 bytes; Git blob `63303a74325fc94ec1aeb6cc01a67a80cfc9691e`; SHA-256 `fafdf71eafc4700ada91598eba0620dc3263dd48b5879aa42af806254124bb2f`; exact paper-path crosswalk matches: **0**.
-2. **Reconstruction from Milnor K-theory modulo the characteristic** — `preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf`; 11 pages, 348272 bytes; Git blob `03cb80d075993b29d30f5e2609a8fc8a4b464cdc`; SHA-256 `df8a6b4a54b121c692f7221e7b606be0dde89351fcb9ab5bb3853f7c2da4da90`; exact paper-path crosswalk matches: **0**.
-3. **The Bogomolov-Pop reconstruction theorem** — `preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf`; 26 pages, 449982 bytes; Git blob `0d19afa59d02fe732b3a2ec58535119393878757`; SHA-256 `4d805627401fffef78e1f0d8e21a0585f6c733e8be90643d0065cd27ffaa24f2`; exact paper-path crosswalk matches: **0**.
+1. **Reconstruction of Function Fields from Mod-ℓ Milnor K-Theory** — `preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf`; 36 pages, 559547 bytes; Git blob `92140b503c5dcb67cd509cdf7448a8acc8666ef0`; SHA-256 `fafdf71eafc4700ada91598eba0620dc3263dd48b5879aa42af806254124bb2f`; exact paper-path crosswalk matches: **0**.
+2. **Reconstruction from Milnor K-theory modulo the characteristic** — `preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf`; 11 pages, 348272 bytes; Git blob `a08a56762d57aa8439a6d0fd2cb7ce6de3eccb86`; SHA-256 `df8a6b4a54b121c692f7221e7b606be0dde89351fcb9ab5bb3853f7c2da4da90`; exact paper-path crosswalk matches: **0**.
+3. **The Bogomolov-Pop reconstruction theorem** — `preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf`; 26 pages, 449982 bytes; Git blob `1cf83cd62ae8d02c7402bf9cf2904785c0a1d93e`; SHA-256 `4d805627401fffef78e1f0d8e21a0585f6c733e8be90643d0065cd27ffaa24f2`; exact paper-path crosswalk matches: **0**.
 
 The PDF bytes were retrieved at the pinned upstream commit and their content digests calculated. The GCL crosswalk has 173 source-paper rows and 200 main-result declaration/comparator rows. Literal paper-path correspondence is distinct from name-based Lean candidate discovery. Full manuscript proof verification and Lean compilation were **not** performed here.
 
@@ -33,7 +33,7 @@ RESULT/1
 ASSIGNMENT_ID: GCL-OAI-26-WP03-F009
 SOURCE_SHA: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
 DISPOSITION: UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH
-EVIDENCE: 63303a74325fc94ec1aeb6cc01a67a80cfc9691e; 03cb80d075993b29d30f5e2609a8fc8a4b464cdc; 0d19afa59d02fe732b3a2ec58535119393878757
+EVIDENCE: 92140b503c5dcb67cd509cdf7448a8acc8666ef0; a08a56762d57aa8439a6d0fd2cb7ce6de3eccb86; 1cf83cd62ae8d02c7402bf9cf2904785c0a1d93e
 REPLAY: PINNED_MANUSCRIPT_STATIC_REVIEW; LEAN_NOT_NEWLY_REPLAYED
 UNRESOLVED: Compare transcendence degree at least two, characteristic, algebraically closed constant assumptions, base-field identification, scalar and Frobenius ambiguity, Kummer duality and the two forms of invariant.
 CLAIM_BOUNDARY: NO_MATHCERT_CERTIFICATION
