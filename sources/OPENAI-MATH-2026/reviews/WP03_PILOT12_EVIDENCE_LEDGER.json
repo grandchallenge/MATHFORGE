@@ -1,0 +1,363 @@
+{
+  "schema": "GCL-OAI26-WP03-PILOT12/1",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "index_blob_sha1": "7a0b00eb9bfdeb59b157a98ee6522fc685580152",
+  "crosswalk_blob_sha1": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+  "scope": "SOURCE_EDITION_BOUND_SEMANTIC_TRIAGE_NOT_PROOF_CERTIFICATION",
+  "expected_family_ids": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012"
+  ],
+  "family_count": 12,
+  "document_count": 24,
+  "certified_family_count": 0,
+  "families": [
+    {
+      "family_id": "001",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY001_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
+          "page_count": 36,
+          "byte_length": 595267,
+          "git_blob_sha1": "3780abc1f47a23e546f28190bd3db7b24419f1f9",
+          "sha256": "640701a0ea8d8026d2f019e571e052f2d106cad3f5216cf6f7fca0d643873234",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "002",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY002_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf",
+          "page_count": 94,
+          "byte_length": 874353,
+          "git_blob_sha1": "4621d1c197766f11d416b7e149343d938fcd9697",
+          "sha256": "64b46603e174462e5bb32d242852eb7f0afe6e519f26534e42fd3f178a16b885",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+          "page_count": 82,
+          "byte_length": 869458,
+          "git_blob_sha1": "384525874a5e9989e574a5f9ce7c9883258cc732",
+          "sha256": "bdb2f21b345a4f0fc9943a4e39bee27fedae5cf1e6842c40b3a77bd528ddea01",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+          "page_count": 164,
+          "byte_length": 1279386,
+          "git_blob_sha1": "9c1827e35640033bf16eac9fa88136079b1cc2de",
+          "sha256": "734e4050dc8416c0f9ea7c9e15a29c6a8627feb53073e40b456d118f68d4dc5a",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "003",
+      "disposition": "UNRESOLVED__FAMILY_WIDE_PARTIAL_PROPOSITION_ALIGNMENT",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY003_SEVEN_EIGHTHS_PINNED_SEMANTIC_AUDIT.md",
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY003_COMPANION_EDITIONS.md"
+      ],
+      "prior_review_pr": 554,
+      "pdfs": [
+        {
+          "path": "preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf",
+          "page_count": 199,
+          "byte_length": 1588969,
+          "git_blob_sha1": "8132b77eeb270a70b25df8d6609f008e83e65d91",
+          "sha256": "8fe93046f8cf5ef1ba5969c89addc02d76311adc4ee907509ff9cd96f7ec99e7",
+          "exact_source_paper_crosswalk_matches": 1
+        },
+        {
+          "path": "preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf",
+          "page_count": 49,
+          "byte_length": 784503,
+          "git_blob_sha1": "3ea94d87ffdee8db02c6ef1e563e6d166021ad2f",
+          "sha256": "f919b57829b178c8e60e7c17b018cf773e7907cf642ef5a3347d8a826e8dbf18",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf",
+          "page_count": 9,
+          "byte_length": 404812,
+          "git_blob_sha1": "e31b1a244f251439b01d930c906f4e0c91dfc3a8",
+          "sha256": "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef",
+          "exact_source_paper_crosswalk_matches": 1
+        }
+      ]
+    },
+    {
+      "family_id": "004",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY004_PINNED_SEMANTIC_COVERAGE_AUDIT.md"
+      ],
+      "prior_review_pr": 555,
+      "pdfs": [
+        {
+          "path": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+          "page_count": 62,
+          "byte_length": 701017,
+          "git_blob_sha1": "b75dddd5e05503cc04a156e94bb15d6fadf8158e",
+          "sha256": "f79236c22b981fe66aaf3ba494a466bf26db212117db47d95a31bf0315af2b30",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+          "page_count": 91,
+          "byte_length": 893027,
+          "git_blob_sha1": "1d35e83ccc541890903bfa978c1f0f73972843ca",
+          "sha256": "df42f33f68fbef7766e5679b298e68e910157f78f2266889fb757824b9e44939",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "005",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY005_CATALAN_PINNED_SEMANTIC_AUDIT.md"
+      ],
+      "prior_review_pr": 556,
+      "pdfs": [
+        {
+          "path": "preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf",
+          "page_count": 44,
+          "byte_length": 574388,
+          "git_blob_sha1": "ecbe60eb89d2d25c1d07da6232f8d9869e6c0c1d",
+          "sha256": "4023d0344abceb79dc46a16380dac3a662193f9d4f23e6c340b2162068b04c0e",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "006",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY006_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+          "page_count": 130,
+          "byte_length": 1087540,
+          "git_blob_sha1": "58b8904f39b2a12534732010191fd35435559a61",
+          "sha256": "c417858c9fe566daacb7738741dc66e211eea148b3da587eb5ee68eaad208d64",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+          "page_count": 41,
+          "byte_length": 549633,
+          "git_blob_sha1": "fef228e3a2a26c0b1302fbd6f85de0da1c87a3ba",
+          "sha256": "718fcfce4014a878685365edfb8a285a611512dea362dc5a9e1dc93d023cd7b1",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "007",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY007_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf",
+          "page_count": 87,
+          "byte_length": 819391,
+          "git_blob_sha1": "a1fa025a59ecbfc5176d16cfdc6e0afd418cc82e",
+          "sha256": "ccb6f339a7505db7ab158dae4b739164ed8dda32be4012b0310198dd32f5c70a",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "008",
+      "disposition": "UNRESOLVED__NAMED_LEAN_CANDIDATE_NEEDS_DEFINITION_BRIDGE",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY008_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf",
+          "page_count": 41,
+          "byte_length": 539601,
+          "git_blob_sha1": "0aa3328661d35567ec7e2dfb802b0351003e7a31",
+          "sha256": "5ae63f326803a634e7c6dc5684ce7062ea0ac6940a88a75c7052875382dbc762",
+          "exact_source_paper_crosswalk_matches": 1
+        }
+      ]
+    },
+    {
+      "family_id": "009",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY009_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf",
+          "page_count": 36,
+          "byte_length": 559547,
+          "git_blob_sha1": "92140b503c5dcb67cd509cdf7448a8acc8666ef0",
+          "sha256": "fafdf71eafc4700ada91598eba0620dc3263dd48b5879aa42af806254124bb2f",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf",
+          "page_count": 11,
+          "byte_length": 348272,
+          "git_blob_sha1": "a08a56762d57aa8439a6d0fd2cb7ce6de3eccb86",
+          "sha256": "df8a6b4a54b121c692f7221e7b606be0dde89351fcb9ab5bb3853f7c2da4da90",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf",
+          "page_count": 26,
+          "byte_length": 449982,
+          "git_blob_sha1": "1cf83cd62ae8d02c7402bf9cf2904785c0a1d93e",
+          "sha256": "4d805627401fffef78e1f0d8e21a0585f6c733e8be90643d0065cd27ffaa24f2",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "010",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY010_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
+          "page_count": 29,
+          "byte_length": 454918,
+          "git_blob_sha1": "60af9a2ac3e85261ded26474e61783dde8eb2f13",
+          "sha256": "ef74b48557930663cab287cabd5280854f059de298e3016cc2172106eba1a1db",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf",
+          "page_count": 12,
+          "byte_length": 347687,
+          "git_blob_sha1": "2d7765cad8290f158660dc8aec58f1540dc0015b",
+          "sha256": "b15081ee4a06c6c609eee447ee2dffd69578ce3550cbcd923e7206c7443333c5",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+          "page_count": 72,
+          "byte_length": 767547,
+          "git_blob_sha1": "dea72dd57adfbe896cafccc6097b012bcd6dbb07",
+          "sha256": "3c8797c7d468cdcccbfedf719c9a758a083954ba3c3005975736eb911d26a636",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "011",
+      "disposition": "PROPOSITION_LEVEL_ALIGNMENT__SCOPED_FIRST_MANUSCRIPT",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY011_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+          "page_count": 68,
+          "byte_length": 802390,
+          "git_blob_sha1": "3acecffeba75121b28efd194c4c2b266a9f6d77b",
+          "sha256": "351692885d112277e969901e75fe56eeee0d263d5d5847d0b980fe2c8c7744c0",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+          "page_count": 74,
+          "byte_length": 795971,
+          "git_blob_sha1": "c46ae43eabf76a9c1cc53655414567ba4e5b60ae",
+          "sha256": "4b54d35506a1928022ac21e6d270d30f6533423ddc5990975270a1e39a87bce7",
+          "exact_source_paper_crosswalk_matches": 0
+        },
+        {
+          "path": "preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf",
+          "page_count": 45,
+          "byte_length": 599500,
+          "git_blob_sha1": "73d9d9f5ed478e1c0ba049fa00a55fafea4b48a5",
+          "sha256": "8ee2d8f79198dd5f09c5fbf71e309a63493d1c089772499614ee58dc8575eae9",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    },
+    {
+      "family_id": "012",
+      "disposition": "UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH",
+      "mathematical_certification": "NO_MATHCERT_CERTIFICATION",
+      "lean_replay_this_review": "NOT_RUN",
+      "review_evidence_paths": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY012_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "prior_review_pr": null,
+      "pdfs": [
+        {
+          "path": "preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+          "page_count": 84,
+          "byte_length": 578632,
+          "git_blob_sha1": "a213750a1589b891e36184313e16df52f14df5dd",
+          "sha256": "e66b4e8a1fe197d3bb2c195548cd3bdd3fba8595db1356e571205a6baab43cb3",
+          "exact_source_paper_crosswalk_matches": 0
+        }
+      ]
+    }
+  ]
+}
