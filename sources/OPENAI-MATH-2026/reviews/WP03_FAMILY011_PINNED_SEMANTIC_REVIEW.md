@@ -6,9 +6,9 @@
 
 ## Independently pinned manuscript editions
 
-1. **Weighted dilation graphs, smooth shifted primes and totient fibers** — `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf`; 68 pages, 802390 bytes; Git blob `063e788b4229148cbb0f5816563ea03c1418bdad`; SHA-256 `351692885d112277e969901e75fe56eeee0d263d5d5847d0b980fe2c8c7744c0`; exact paper-path crosswalk matches: **0**.
-2. **The Poisson-Dirichlet law for prime predecessors** — `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf`; 74 pages, 795971 bytes; Git blob `99e91540b99090e11bf2b5fb9e05abfe647ee189`; SHA-256 `4b54d35506a1928022ac21e6d270d30f6533423ddc5990975270a1e39a87bce7`; exact paper-path crosswalk matches: **0**.
-3. **Prime Predecessors with an Even Number of Prime Factors** — `preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf`; 45 pages, 599500 bytes; Git blob `6f35ec8061dd861076882315f53cfc66913dfd25`; SHA-256 `8ee2d8f79198dd5f09c5fbf71e309a63493d1c089772499614ee58dc8575eae9`; exact paper-path crosswalk matches: **0**.
+1. **Weighted dilation graphs, smooth shifted primes and totient fibers** — `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf`; 68 pages, 802390 bytes; Git blob `3acecffeba75121b28efd194c4c2b266a9f6d77b`; SHA-256 `351692885d112277e969901e75fe56eeee0d263d5d5847d0b980fe2c8c7744c0`; exact paper-path crosswalk matches: **0**.
+2. **The Poisson-Dirichlet law for prime predecessors** — `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf`; 74 pages, 795971 bytes; Git blob `c46ae43eabf76a9c1cc53655414567ba4e5b60ae`; SHA-256 `4b54d35506a1928022ac21e6d270d30f6533423ddc5990975270a1e39a87bce7`; exact paper-path crosswalk matches: **0**.
+3. **Prime Predecessors with an Even Number of Prime Factors** — `preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf`; 45 pages, 599500 bytes; Git blob `73d9d9f5ed478e1c0ba049fa00a55fafea4b48a5`; SHA-256 `8ee2d8f79198dd5f09c5fbf71e309a63493d1c089772499614ee58dc8575eae9`; exact paper-path crosswalk matches: **0**.
 
 The PDF bytes were retrieved at the pinned upstream commit and their content digests calculated. The GCL crosswalk has 173 source-paper rows and 200 main-result declaration/comparator rows. Literal paper-path correspondence is distinct from name-based Lean candidate discovery. Full manuscript proof verification and Lean compilation were **not** performed here.
 
@@ -33,7 +33,7 @@ RESULT/1
 ASSIGNMENT_ID: GCL-OAI-26-WP03-F011
 SOURCE_SHA: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
 DISPOSITION: PROPOSITION_LEVEL_ALIGNMENT__SCOPED_FIRST_MANUSCRIPT
-EVIDENCE: 063e788b4229148cbb0f5816563ea03c1418bdad; 99e91540b99090e11bf2b5fb9e05abfe647ee189; 6f35ec8061dd861076882315f53cfc66913dfd25
+EVIDENCE: 3acecffeba75121b28efd194c4c2b266a9f6d77b; c46ae43eabf76a9c1cc53655414567ba4e5b60ae; 73d9d9f5ed478e1c0ba049fa00a55fafea4b48a5
 REPLAY: PINNED_MANUSCRIPT_STATIC_REVIEW; PRIOR_GCL_STATEMENT_BRIDGES_ONLY
 UNRESOLVED: Replay the exact external Lean proof independently and evaluate analytic lemmas; verify no δ/ε quantifier loss; preserve n>0 exception and finite vs infinite fibers; perform separate coverage tests for Poisson–Dirichlet and parity papers.
 CLAIM_BOUNDARY: NO_MATHCERT_CERTIFICATION
