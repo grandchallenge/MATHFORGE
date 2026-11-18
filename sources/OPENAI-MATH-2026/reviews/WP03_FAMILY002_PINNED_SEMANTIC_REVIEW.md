@@ -6,9 +6,9 @@
 
 ## Independently pinned manuscript editions
 
-1. **Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank** — `preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf`; 94 pages, 874353 bytes; Git blob `6079dbad338ad293ce84b2f9087fe2bbcde1028d`; SHA-256 `64b46603e174462e5bb32d242852eb7f0afe6e519f26534e42fd3f178a16b885`; exact paper-path crosswalk matches: **0**.
-2. **The Selmer converse for elliptic curves at every prime** — `preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf`; 82 pages, 869458 bytes; Git blob `8a63a08e2bde86b52448272457ddd659deb66781`; SHA-256 `bdb2f21b345a4f0fc9943a4e39bee27fedae5cf1e6842c40b3a77bd528ddea01`; exact paper-path crosswalk matches: **0**.
-3. **The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one** — `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf`; 164 pages, 1279386 bytes; Git blob `858a3eb094d940f8aa44f91d985f6bf0c1f2148d`; SHA-256 `734e4050dc8416c0f9ea7c9e15a29c6a8627feb53073e40b456d118f68d4dc5a`; exact paper-path crosswalk matches: **0**.
+1. **Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank** — `preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf`; 94 pages, 874353 bytes; Git blob `4621d1c197766f11d416b7e149343d938fcd9697`; SHA-256 `64b46603e174462e5bb32d242852eb7f0afe6e519f26534e42fd3f178a16b885`; exact paper-path crosswalk matches: **0**.
+2. **The Selmer converse for elliptic curves at every prime** — `preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf`; 82 pages, 869458 bytes; Git blob `384525874a5e9989e574a5f9ce7c9883258cc732`; SHA-256 `bdb2f21b345a4f0fc9943a4e39bee27fedae5cf1e6842c40b3a77bd528ddea01`; exact paper-path crosswalk matches: **0**.
+3. **The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one** — `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf`; 164 pages, 1279386 bytes; Git blob `9c1827e35640033bf16eac9fa88136079b1cc2de`; SHA-256 `734e4050dc8416c0f9ea7c9e15a29c6a8627feb53073e40b456d118f68d4dc5a`; exact paper-path crosswalk matches: **0**.
 
 All document digests were calculated from actual pinned PDF bytes. The checked corpus crosswalk contains 173 `source_papers` and 200 `main_results` entries. Exact PDF paths above do not match its `source_papers`; no candidate source-to-Lean theorem equivalence is established by this index. Path absence is not proof of unformalization.
 
@@ -29,7 +29,7 @@ RESULT/1
 ASSIGNMENT_ID: GCL-OAI-26-WP03-F002
 SOURCE_SHA: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
 DISPOSITION: UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH
-EVIDENCE: 6079dbad338ad293ce84b2f9087fe2bbcde1028d; 8a63a08e2bde86b52448272457ddd659deb66781; 858a3eb094d940f8aa44f91d985f6bf0c1f2148d
+EVIDENCE: 4621d1c197766f11d416b7e149343d938fcd9697; 384525874a5e9989e574a5f9ce7c9883258cc732; 9c1827e35640033bf16eac9fa88136079b1cc2de
 REPLAY: PINNED_PDF_STATIC_REVIEW_ONLY; LEAN_NOT_RUN
 UNRESOLVED: Verify every prime q and full Selmer corank quantifier, finite Sha, leading coefficient/regulator conventions and exact prime factors; no indexed Lean mapping is established.
 CLAIM_BOUNDARY: NO_MATHCERT_CERTIFICATION
