@@ -6,7 +6,7 @@
 
 ## Independently pinned manuscript editions
 
-1. **The Deligne-Drinfeld conjecture** — `preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf`; 41 pages, 539601 bytes; Git blob `a25631759a336da517a99e5230c1cbffbb3c7cf6`; SHA-256 `5ae63f326803a634e7c6dc5684ce7062ea0ac6940a88a75c7052875382dbc762`; exact paper-path crosswalk matches: **1**.
+1. **The Deligne-Drinfeld conjecture** — `preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf`; 41 pages, 539601 bytes; Git blob `0aa3328661d35567ec7e2dfb802b0351003e7a31`; SHA-256 `5ae63f326803a634e7c6dc5684ce7062ea0ac6940a88a75c7052875382dbc762`; exact paper-path crosswalk matches: **1**.
 
 The PDF bytes were retrieved at the pinned upstream commit and their content digests calculated. The GCL crosswalk has 173 source-paper rows and 200 main-result declaration/comparator rows. Literal paper-path correspondence is distinct from name-based Lean candidate discovery. Full manuscript proof verification and Lean compilation were **not** performed here.
 
@@ -31,7 +31,7 @@ RESULT/1
 ASSIGNMENT_ID: GCL-OAI-26-WP03-F008
 SOURCE_SHA: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
 DISPOSITION: UNRESOLVED__NAMED_LEAN_CANDIDATE_NEEDS_DEFINITION_BRIDGE
-EVIDENCE: a25631759a336da517a99e5230c1cbffbb3c7cf6
+EVIDENCE: 0aa3328661d35567ec7e2dfb802b0351003e7a31
 REPLAY: PINNED_MANUSCRIPT_STATIC_REVIEW; LEAN_NOT_NEWLY_REPLAYED
 UNRESOLVED: Expand `MainStatement` and all relevant definitions; check free/Ihara Lie bracket, weight grading, odd generators, completion/topology and imported proof dependencies; verify pinned Lean and axioms independently.
 CLAIM_BOUNDARY: NO_MATHCERT_CERTIFICATION
