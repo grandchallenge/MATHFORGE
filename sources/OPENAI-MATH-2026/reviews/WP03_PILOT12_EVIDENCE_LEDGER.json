@@ -111,7 +111,7 @@
           "byte_length": 404812,
           "git_blob_sha1": "e31b1a244f251439b01d930c906f4e0c91dfc3a8",
           "sha256": "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef",
-          "exact_source_paper_crosswalk_matches": 0
+          "exact_source_paper_crosswalk_matches": 1
         }
       ]
     },
