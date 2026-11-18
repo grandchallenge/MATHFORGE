@@ -6,9 +6,9 @@
 
 ## Independently pinned manuscript editions
 
-1. **Unrestricted pro-modularity at the prime two** — `preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf`; 29 pages, 454918 bytes; Git blob `16805128b34472fa449fca67ae14719b98a824e9`; SHA-256 `ef74b48557930663cab287cabd5280854f059de298e3016cc2172106eba1a1db`; exact paper-path crosswalk matches: **0**.
-2. **The Dimension of the Two-Adic Hecke Algebra at Odd Level** — `preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf`; 12 pages, 347687 bytes; Git blob `ec01b423e1067171de6ba747734d9aa34f9c3363`; SHA-256 `b15081ee4a06c6c609eee447ee2dffd69578ce3550cbcd923e7206c7443333c5`; exact paper-path crosswalk matches: **0**.
-3. **Fontaine–Mazur modularity at the prime 2** — `preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf`; 72 pages, 767547 bytes; Git blob `92a7e7b65f277bb040284de753ac011ca44687ff`; SHA-256 `3c8797c7d468cdcccbfedf719c9a758a083954ba3c3005975736eb911d26a636`; exact paper-path crosswalk matches: **0**.
+1. **Unrestricted pro-modularity at the prime two** — `preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf`; 29 pages, 454918 bytes; Git blob `60af9a2ac3e85261ded26474e61783dde8eb2f13`; SHA-256 `ef74b48557930663cab287cabd5280854f059de298e3016cc2172106eba1a1db`; exact paper-path crosswalk matches: **0**.
+2. **The Dimension of the Two-Adic Hecke Algebra at Odd Level** — `preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf`; 12 pages, 347687 bytes; Git blob `2d7765cad8290f158660dc8aec58f1540dc0015b`; SHA-256 `b15081ee4a06c6c609eee447ee2dffd69578ce3550cbcd923e7206c7443333c5`; exact paper-path crosswalk matches: **0**.
+3. **Fontaine–Mazur modularity at the prime 2** — `preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf`; 72 pages, 767547 bytes; Git blob `dea72dd57adfbe896cafccc6097b012bcd6dbb07`; SHA-256 `3c8797c7d468cdcccbfedf719c9a758a083954ba3c3005975736eb911d26a636`; exact paper-path crosswalk matches: **0**.
 
 The PDF bytes were retrieved at the pinned upstream commit and their content digests calculated. The GCL crosswalk has 173 source-paper rows and 200 main-result declaration/comparator rows. Literal paper-path correspondence is distinct from name-based Lean candidate discovery. Full manuscript proof verification and Lean compilation were **not** performed here.
 
@@ -33,7 +33,7 @@ RESULT/1
 ASSIGNMENT_ID: GCL-OAI-26-WP03-F010
 SOURCE_SHA: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
 DISPOSITION: UNRESOLVED__NO_INDEXED_FORMALIZATION_MATCH
-EVIDENCE: 16805128b34472fa449fca67ae14719b98a824e9; ec01b423e1067171de6ba747734d9aa34f9c3363; 92a7e7b65f277bb040284de753ac011ca44687ff
+EVIDENCE: 60af9a2ac3e85261ded26474e61783dde8eb2f13; 2d7765cad8290f158660dc8aec58f1540dc0015b; dea72dd57adfbe896cafccc6097b012bcd6dbb07
 REPLAY: PINNED_MANUSCRIPT_STATIC_REVIEW; LEAN_NOT_NEWLY_REPLAYED
 UNRESOLVED: Check exact completion topology, tame-level quantification, absolute irreducibility and oddness; distinguish all residual cases and Krull dimension from de Rham regularity and classical eigenforms.
 CLAIM_BOUNDARY: NO_MATHCERT_CERTIFICATION
