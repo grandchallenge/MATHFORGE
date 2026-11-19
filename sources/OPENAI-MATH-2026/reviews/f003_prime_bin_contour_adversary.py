@@ -70,10 +70,11 @@ def contour_tests():
         # An entire Mellin-like Gaussian, rapid in vertical strips.
         return mp.exp((s-mp.mpf("1.5"))**2)
 
-    def test_rho(rho, expected_crossed, label):
-        # Toy entire L_rho(s)=s-rho; the log derivative has a pole at rho.
+    def test_rho(rho, expected_crossed, label, order=1):
+        # Toy meromorphic L_rho(s)=(s-rho)^order. Its log derivative
+        # has residue -order, including positive residue for a pole.
         def integrand(s):
-            return -mellin_proxy(s)*mp.exp((s-mp.mpf("0.5"))*mp.log(D))/(s-rho)
+            return -order*mellin_proxy(s)*mp.exp((s-mp.mpf("0.5"))*mp.log(D))/(s-rho)
 
         def vertical(x):
             return mp.quad(lambda t: integrand(x+mp.j*t),
@@ -86,7 +87,7 @@ def contour_tests():
         bottom=horizontal(-halfheight)
         top=horizontal(halfheight)
         observed=(R-L-mp.j*(bottom-top))/(2*pi)
-        residue=-mellin_proxy(rho)*mp.exp((rho-mp.mpf("0.5"))*mp.log(D))
+        residue=-order*mellin_proxy(rho)*mp.exp((rho-mp.mpf("0.5"))*mp.log(D))
         if expected_crossed:
             assert left<mp.re(rho)<right
             assert abs(mp.im(rho))<halfheight
@@ -107,7 +108,11 @@ def contour_tests():
              "ZERO_FREE_CONTOUR_WITHOUT_RESIDUE")
     test_rho(mp.mpc("1.3","0.35"),True,
              "HOSTILE_INTERIOR_ZERO_REQUIRES_RESIDUE")
-    print("CONTOUR_ORIENTATION_AND_ZERO_MULTIPLICITY_MECHANISM_PASS")
+    test_rho(mp.mpc("1.3","0.35"),True,
+             "HOSTILE_DOUBLE_ZERO_GIVES_DOUBLE_RESIDUE",order=2)
+    test_rho(mp.mpc("1.1","0.35"),True,
+             "HOSTILE_PRINCIPAL_TYPE_POLE_GIVES_OPPOSITE_SIGN",order=-1)
+    print("CONTOUR_ORIENTATION_ZERO_MULTIPLICITY_AND_POLE_PASS")
 
 
 def exponent_tests():
