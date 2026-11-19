@@ -33,8 +33,8 @@ theorem gcl_LFunction_period_choice_immaterial
     (hmem : (n : O) ∈ χ.modulus)
     {s : ℂ} (hs : 0 < s.re) (hs₁ : s ≠ 1) :
     LFunction χ s =
-      LFunction ({χ with period := n, period_pos := hn,
-                        period_mem := hmem} : Character) s := by
+      LFunction (⟨χ.modulus, χ.modulus_ne_bot, χ.residue,
+                  χ.unit_trivial, n, hn, hmem⟩ : Character) s := by
   exact gcl_LFunction_eq_of_elementCoeff_eq χ _
     (by intro z; rfl) hs hs₁
 
