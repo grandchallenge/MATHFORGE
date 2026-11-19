@@ -41,7 +41,8 @@ def check(data):
         must(x["review_role"] == "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC", "role attribution changed")
         must(bool(x["source_evidence"]), "missing source evidence " + x["family_id"])
         must(bool(x["hostile_test"]) and bool(x["next_proof_obligation"]), "no adversary/obligation " + x["family_id"])
-        must(not any(x["disposition"] == term or x["disposition"].startswith(term + "__")\n                     for term in FORBIDDEN_PROMOTIONS), "unsupported promotion")
+        must(not any(x["disposition"] == term or x["disposition"].startswith(term + "__")
+                     for term in FORBIDDEN_PROMOTIONS), "unsupported promotion")
         for p in x["source_evidence"]:
             target = ROOT / p
             must(target.is_file(), "unavailable protected source evidence " + str(p))
