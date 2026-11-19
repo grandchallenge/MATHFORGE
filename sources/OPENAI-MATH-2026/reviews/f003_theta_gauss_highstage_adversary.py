@@ -109,12 +109,12 @@ def theta_checks(eps):
     R=48
     coeff=lattice_coefficients(R)
     times=tuple(mp.mpf(x) for x in ("0.25","0.5","1","2","4"))
-    vals={str(t):theta(t,coeff) for t in times}
+    vals={t:theta(t,coeff) for t in times}
     max_resid=mp.mpf(0)
     max_tail=mp.mpf(0)
     for t in times:
-        lhs=vals[str(t)]
-        rhs=eps/t * mp.conj(vals[str(1/t)])
+        lhs=vals[t]
+        rhs=eps/t * mp.conj(vals[1/t])
         residue=abs(lhs-rhs)
         trunc=gaussian_outside_box_bound(t,R)+abs(eps)/t*gaussian_outside_box_bound(1/t,R)
         assert residue<10*trunc+mp.mpf("1e-88"),(str(t),mp.nstr(residue,8))
@@ -125,7 +125,7 @@ def theta_checks(eps):
               "theta="+mp.nstr(lhs,15),
               "residual="+mp.nstr(residue,4),
               "trunc_bound="+mp.nstr(trunc,4))
-    lhs=vals["1"]
+    lhs=vals[mp.mpf(1)]
     # Reject missing sqrt(N(c))=5 normalization.
     assert abs(lhs-5*eps*mp.conj(lhs))>mp.mpf("0.2")
     # Reject conjugating the Gauss root on the wrong side.
