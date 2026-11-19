@@ -1,0 +1,330 @@
+{
+  "schema": "GCL-OAI26-WP04-ADVERSARIAL-WAVE16/1",
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "scope": "BOUNDED_SOURCE_AND_SEMANTIC_ADVERSARIAL_REVIEW__NO_MATHCERT",
+  "case_count": 16,
+  "distinct_family_count": 16,
+  "selection": {
+    "revision": [
+      "002",
+      "034",
+      "056",
+      "342",
+      "376"
+    ],
+    "formal_match": [
+      "003",
+      "008",
+      "011",
+      "342"
+    ],
+    "unfamiliar": [
+      "001",
+      "004",
+      "005",
+      "009",
+      "010"
+    ],
+    "baseline": [
+      "004",
+      "006",
+      "007",
+      "012"
+    ],
+    "baseline_rule": "predeclared low-formalization cross-domain pilot controls; not a statistically random draw; do not claim independent random sampling",
+    "note": "WP04 requires 3 random baseline cases; this is a bounded adversarial tranche with predeclared controls, NOT an unbiased random sample, so full terminal requires real seeded selection."
+  },
+  "cases": [
+    {
+      "family_id": "001",
+      "categories": [
+        "unfamiliar"
+      ],
+      "title": "Milne rationality",
+      "hostile_test": "Rational realization pairings must not be promoted to algebraicity of arbitrary Hodge classes.",
+      "source_observation": "The source separates a rational-pairing theorem from a CM-dependent algebraicity consequence.",
+      "disposition": "UNRESOLVED__SCOPE_DEPENDENCY",
+      "next_proof_obligation": "Check the CM restriction and equality of prime-to-p/crystalline realizations; find exact Lean target.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY001_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "002",
+      "categories": [
+        "revision",
+        "unfamiliar"
+      ],
+      "title": "Full BSD versus Selmer rank",
+      "hostile_test": "The revised exact leading-term BSD formula, each-prime Selmer converse and two-primary formula are inequivalent.",
+      "source_observation": "A rank equality plus finite Sha need not supply the exact leading coefficient, and a 2-primary statement does not establish all prime factors.",
+      "disposition": "UNRESOLVED__THREE_TARGETS_SEPARATED",
+      "next_proof_obligation": "Independently replay separate height/regulator, prime-by-prime local factor and q-corank hypotheses; trace citation repair.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY002_PINNED_SEMANTIC_REVIEW.md",
+        "sources/OPENAI-MATH-2026/WP02_REPAIR_002_EXACT_BSD_OBSOLETE_CITATION_AND_THREE_DEPENDENCIES.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "003",
+      "categories": [
+        "formal"
+      ],
+      "title": "Quasi-Riemann and Siegel zeros",
+      "hostile_test": "Zeta seven-eighths zero-free comparator does not prove all finite-order Hecke L-functions nor the validity of the corresponding paper's analytic method.",
+      "source_observation": "Zeta is one instance of a broader Hecke family; October five eleven-twelfths claim and October one conductor-scale real-zero theorem are separate editions.",
+      "disposition": "PROPOSITION_LEVEL_ALIGNMENT__FAMILY_WIDE_UNRESOLVED",
+      "next_proof_obligation": "Expand exact quantifiers and class fields; independently examine each source proof, not just the zeta/real zero Lean endpoints.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY003_SEVEN_EIGHTHS_PINNED_SEMANTIC_AUDIT.md",
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY003_COMPANION_EDITIONS.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "004",
+      "categories": [
+        "baseline",
+        "unfamiliar"
+      ],
+      "title": "Hilbert's tenth problem over Q",
+      "hostile_test": "An unrelated RationalHitting Lean declaration is not a legitimate default correspondence for rational undecidability.",
+      "source_observation": "The two indexed editions contain distinct H10 and pointwise elliptic converse claims; neither is resolved by a same-topic keyword hit.",
+      "disposition": "UNRESOLVED__NO_EXACT_FORMAL_MAPPING",
+      "next_proof_obligation": "Identify a theorem-level statement bridge and separate computability reduction from elliptic 2-converse.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY004_PINNED_SEMANTIC_COVERAGE_AUDIT.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "005",
+      "categories": [
+        "unfamiliar"
+      ],
+      "title": "Catalan irrationality",
+      "hostile_test": "Numerical determinant bounds conditionally contradict rationality but need their nonvanishing, arithmetic denominator and analytical estimates independently proved.",
+      "source_observation": "The strict constants in the final inequality are arithmetically compatible; this cannot validate Proposition 3.4, 4.1 or 7.1.",
+      "disposition": "UNRESOLVED__DETERMINANT_PREMISES",
+      "next_proof_obligation": "Recompute prime-index nonvanishing and full determinant lower/upper bounds with an exact certificate before theorem acceptance.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY005_CATALAN_PINNED_SEMANTIC_AUDIT.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "006",
+      "categories": [
+        "baseline"
+      ],
+      "title": "Goldfeld rank density versus mean rank",
+      "hostile_test": "Half-density for ranks zero and one does not logically force mean rank one half.",
+      "source_observation": "Explicit hostile distribution: probability 1/n of rank n and remaining ranks 0/1 in near-equal proportions has vanishing exception density but a nonvanishing mean contribution.",
+      "disposition": "UNRESOLVED__HIGH_RANK_TAIL_REQUIRED",
+      "next_proof_obligation": "Find source bound on the exceptional high-rank tail and ensure signed squarefree ordering is preserved.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY006_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "007",
+      "categories": [
+        "baseline"
+      ],
+      "title": "Ordinary Chowla/Elliott versus logarithmic averages",
+      "hostile_test": "Logarithmically averaged correlations cannot be substituted for ordinary cutoff averages.",
+      "source_observation": "The source requires nonproportional fixed affine forms, a quantitative log saving, and original-factor uniform nonpretentiousness.",
+      "disposition": "UNRESOLVED__AVERAGING_AND_PRETENTIOUSNESS",
+      "next_proof_obligation": "Check ordinary/unweighted quantification, fixed congruence classes, shifted forms and log-saving exponent.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY007_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "008",
+      "categories": [
+        "formal"
+      ],
+      "title": "Deligne–Drinfeld free Lie and completion",
+      "hostile_test": "Check for weak embedding disguised as surjection; incorrect braid signs; improper topology; a challenge-placeholder sorry mistaken for the accepted Lean solution.",
+      "source_observation": "Pinned MainStatement contains a graded bijective linear equivalence onto full W and bracket preservation; product degreewise completion maps match. Lean and isolated Comparator each PASSED on exact pins; independent weights 1–3 and two hostile errors PASS.",
+      "disposition": "VERIFIED_WITHIN_EXPLICIT_SCOPE__UNCERTIFIED",
+      "next_proof_obligation": "Still not a full independent line-by-line all-weight mathematical reconstruction or a graph-complex / transport certification.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY008_EXPANDED_DEFINITION_BRIDGE.md",
+        "sources/OPENAI-MATH-2026/reviews/WP01_F008_DUAL_REPLAY_RECEIPT.md",
+        "sources/OPENAI-MATH-2026/reviews/WP04_F008_ADVERSARIAL_MATHEMATICAL_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "009",
+      "categories": [
+        "unfamiliar"
+      ],
+      "title": "Milnor K and field reconstruction",
+      "hostile_test": "The char-p Milnor-K reconstruction cannot be obtained by setting ℓ=p in a theorem assuming ℓ≠char.",
+      "source_observation": "Mod-ℓ K-products, char-p derivations and pro-ℓ abelian-by-central Galois invariants are different reconstruction inputs.",
+      "disposition": "UNRESOLVED__INVARIANT_AND_CHARACTERISTIC",
+      "next_proof_obligation": "Prove requisite Kummer-duality bridge; preserve transcendence dimension, constant fields, perfect closure and Frobenius ambiguities.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY009_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "010",
+      "categories": [
+        "unfamiliar"
+      ],
+      "title": "Completed Hecke versus Fontaine–Mazur",
+      "hostile_test": "Pro-modularity with no de Rham hypothesis proves occurrence in completed Hecke, not that a representation arises from a classical modular form.",
+      "source_observation": "The classical result separately assumes regular de Rham at 2, while a third result is Krull dimension four of Hecke components.",
+      "disposition": "UNRESOLVED__CLASSICAL_VS_COMPLETED",
+      "next_proof_obligation": "Check oddness, irreducibility, tame level, completed topology and exact de Rham conditions; no implicit classically modular inference.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY010_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "011",
+      "categories": [
+        "formal"
+      ],
+      "title": "Totient fibers and prime predecessors",
+      "hostile_test": "Source-aligned real/natural supply and positive-target totient bridges do not verify both companion prime-factor papers.",
+      "source_observation": "Protected #548/#549 concern first manuscript only; global external full-proof independent replay remains an additional question.",
+      "disposition": "PROPOSITION_LEVEL_ALIGNMENT__FIRST_MANUSCRIPT_ONLY",
+      "next_proof_obligation": "Check fixed-delta quantifiers, n>0 fiber exception, external Lean whole proof, and separate Poisson–Dirichlet and parity results.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY011_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "012",
+      "categories": [
+        "baseline"
+      ],
+      "title": "Joint Dickman independence",
+      "hostile_test": "Two marginal Dickman laws do not imply asymptotic independence nor comparison density one half.",
+      "source_observation": "A joint distribution may have the correct marginals but perfect correlation; ordering furthermore needs diagonal/tie control.",
+      "disposition": "UNRESOLVED__JOINT_AND_DIAGONAL",
+      "next_proof_obligation": "Reproduce ordinary density two-variable smoothing, n^a threshold and tie analysis.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY012_PINNED_SEMANTIC_REVIEW.md"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "034",
+      "categories": [
+        "revision"
+      ],
+      "title": "Kähler log abundance revised proof",
+      "hostile_test": "Original and current main theorem wording is not enough: proof repair inserts a new base-presentations module and changes induction foundations.",
+      "source_observation": "The corrected October 6 source explicitly assumes logarithmic Iitaka subadditivity and differentiates analytic nefness from semiampleness of an actual line bundle.",
+      "disposition": "UNRESOLVED__PROOF_REPAIR_DEPENDENCIES",
+      "next_proof_obligation": "Verify newly introduced base-presentation and restricted-induction lemmas, and retained assumptions in any formal comparator.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/WP02_REPAIR_034_LOG_ABUNDANCE_OCT6_AUXILIARY_STATEMENTS_AND_BASE_PRESENTATION.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "056",
+      "categories": [
+        "revision"
+      ],
+      "title": "Finite ordinary minimal model programme",
+      "hostile_test": "Literally unchanged theorem text can conceal a material proof repair.",
+      "source_observation": "The October 6 perturbation section expands 2155→2615 lines and adds carrier/transfer/surface-base lemmas; theorem blocks are unchanged.",
+      "disposition": "UNRESOLVED__REVISED_PROOF_UNREPLAYED",
+      "next_proof_obligation": "Audit specific new carrier-margin, EMC-transfer, multiplier-scheme-transfer and surface-base-positivity lemmas before accepting historical proof.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/WP02_REPAIR_056_FINITE_ORDINARY_MMP_LITERAL_THEOREM_AND_PROOF_DELTA.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "342",
+      "categories": [
+        "revision",
+        "formal"
+      ],
+      "title": "Taming compatibility: withdrawn unconditional cone assertion",
+      "hostile_test": "Prior unconditional cone equality is not implied by the Lean main-existence theorem.",
+      "source_observation": "October 6 introduces required h^-_J=b²_+(X)-1 for cone equality and gives a strict-inclusion four-torus example; Lean main-existence statement is unchanged and separate.",
+      "disposition": "SEMANTIC_MISMATCH__SUPERSEDED_CONE_CLAIM",
+      "next_proof_obligation": "Rollback any statement that original unconditional cone equality is proved; retain bounded taming-to-compatible existence result subject to its own proof replay.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/WP02_F342_LITERAL_CONE_STATEMENT_DELTA.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "376",
+      "categories": [
+        "revision"
+      ],
+      "title": "Navier–Stokes finite computation edition changes",
+      "hostile_test": "A coordinate-conjugate observed event is not automatically the original physical event or exact input encoding.",
+      "source_observation": "October 6 edits analysis/clocks/main; GCL records terminal band affine conjugacy, offset choices and unresolved observational equivalence with September 27 stationary companion.",
+      "disposition": "UNRESOLVED__TERMINAL_EVENT_CONJUGACY",
+      "next_proof_obligation": "Require exact source/Lean map, detector-band pullback and field-level equivalence across companion editions; do not promote correspondence from a named affine map.",
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/WP02_F376_OCT6_LITERAL_PROJECTION_PROPOSITION_DELTA.json",
+        "sources/OPENAI-MATH-2026/WP02_F376_379_TERMINAL_BAND_CONJUGACY_GAP.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    }
+  ],
+  "withdrawal_protection": {
+    "notice_source": "sources/OPENAI-MATH-2026/WP02_CANONICAL_3_14_13_RISK_REGISTER.json",
+    "withdrawn_titles": [
+      "Algebraicity of Weil classes on split abelian eightfolds",
+      "Algebraicity of Kuga–Satake Correspondences for K3 Surfaces",
+      "The rational Hodge conjecture for products of K3 surfaces"
+    ],
+    "current_certification_allowed": false,
+    "dependency_propagation": "NOT_EXHAUSTIVELY_REVIEWED"
+  },
+  "claim_boundary": "NO_MATHCERT_CERTIFICATION"
+}
