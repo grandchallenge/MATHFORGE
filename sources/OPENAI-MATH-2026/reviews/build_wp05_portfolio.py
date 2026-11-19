@@ -26,6 +26,8 @@ INPUT_BLOBS = {
     "WP01_COMPARATOR_200_PROTECTED_RECEIPT_INDEX.json": "2766fa809aeb297c4f11dda8f90c4e5ebdc6050f",
     "CORPUS_199_6500S_LEAN_RECEIPT_LEDGER.json": "da4f6e7eafbbdf570fdc488023ca16ccdb5bf7fe",
     "CORPUS_199_COMPARATOR_RECEIPT_LEDGER.json": "addd218e196f77c8d08bb76274e634f2ed2e3cc1",
+    "CORPUS_145_6500S_LEAN_RECEIPT_LEDGER.json": "bde867330e7debe7b88af203a61e98c9f17947d1",
+    "CORPUS_144_145_147_149_COMPARATOR_RECEIPT_LEDGER.json": "dc18426ab36af5d75db9fb4e59a006bae6cbe164",
 }
 
 def load(path):
@@ -64,7 +66,8 @@ def build():
             riskrows[x["family_id"]].append(x)
     paperpaths = Counter(x["pdf_path"] for x in cross["source_papers"])
     named = {
-      "003": ["OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
+      "003": ["OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re",
+              "OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
               "OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap"],
       "008": ["OAI.DeligneDrinfeld.main"],
       "342": ["OAI.TamingCompatibility.taming_implies_compatibility"],
@@ -169,6 +172,21 @@ def build():
                         "sources/OPENAI-MATH-2026/CORPUS_199_6500S_LEAN_RECEIPT_LEDGER.json",
                         "sources/OPENAI-MATH-2026/CORPUS_199_COMPARATOR_RECEIPT_LEDGER.json"],
                     "qualification": "TECHNICAL_ZETA_SUBCLAIM_ONLY_NOT_ALL_FINITE_ORDER_HECKE_FAMILY"
+                },{
+                    "claim": "Hecke L-functions of explicit finite residue characters over CyclotomicField 3 Q in Re(s)>7/8",
+                    "declaration": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re",
+                    "crosswalk_index": 145,
+                    "lean_axioms": "EXACT_PINNED_PASS__ALLOWED_THREE",
+                    "comparator": "HARDENED_ACCEPTED",
+                    "lean_run": 40697520692,
+                    "lean_artifact": 12828145565,
+                    "comparator_run": 41688402483,
+                    "comparator_artifact": 13266879874,
+                    "evidence_paths": [
+                        "sources/OPENAI-MATH-2026/CORPUS_145_6500S_LEAN_RECEIPT_LEDGER.json",
+                        "sources/OPENAI-MATH-2026/CORPUS_144_145_147_149_COMPARATOR_RECEIPT_LEDGER.json",
+                        "sources/OPENAI-MATH-2026/reviews/WP03_FAMILY003_HECKE_145_FORMAL_SCOPE_CORRECTION.md"],
+                    "qualification": "PROPOSITION_LEVEL_HECKE_PRESENTATION_EXPLICIT__STANDARD_CHARACTER_EQUIVALENCE_UNRESOLVED"
                 }]
                 if fid == "003" else []),
             "replay_receipts": (
@@ -221,6 +239,8 @@ def build():
             "families_with_formal_exact_replay_and_comparator_imported":1,
             "corpus_wide_comparator_technical_accepted_indices": 200,
             "family003_exact_zeta_subclaim_lean_and_comparator_evidence": True,
+            "family003_exact_hecke_presentation_lean_and_comparator_evidence": True,
+            "full_standard_finite_hecke_character_equivalence_reviewed": False,
             "full_paper_hecke_claim_verified_by_index199": False,
             "distinct_formal_targets_verifiably_imported":1,
             "new_formal_targets_verified_by_wp05_generator":0,

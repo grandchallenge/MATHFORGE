@@ -66,7 +66,7 @@ def validate(d):
     source003=next(x for x in d["families"] if x["family_id"]=="003")
     require(source003["final_class"]=="UNRESOLVED", "F003 universal Hecke scope silently promoted")
     zeta=source003["claim_level_technical_results"]
-    require(len(zeta)==1 and zeta[0]["crosswalk_index"]==199 and
+    require(len(zeta)==2 and zeta[0]["crosswalk_index"]==199 and
             zeta[0]["declaration"]=="OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
             "F003 zeta subclaim not exact")
     require(zeta[0]["lean_run"]==40743532665 and
@@ -74,6 +74,17 @@ def validate(d):
             zeta[0]["qualification"]==
             "TECHNICAL_ZETA_SUBCLAIM_ONLY_NOT_ALL_FINITE_ORDER_HECKE_FAMILY",
             "stale F003 proof receipt or overreach")
+    hecke=zeta[1]
+    require(hecke["crosswalk_index"]==145 and
+            hecke["declaration"]=="OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re"
+            and hecke["lean_run"]==40697520692 and
+            hecke["comparator_run"]==41688402483 and
+            hecke["qualification"]==
+            "PROPOSITION_LEVEL_HECKE_PRESENTATION_EXPLICIT__STANDARD_CHARACTER_EQUIVALENCE_UNRESOLVED",
+            "Hecke statement result or exact historic evidence altered")
+    require(d["verification_throughput"]["family003_exact_hecke_presentation_lean_and_comparator_evidence"] is True
+            and d["verification_throughput"]["full_standard_finite_hecke_character_equivalence_reviewed"] is False,
+            "Hecke formal-domain equivalence improperly certified")
     require(len(index["families"])==EXPECTED_CATALOGUE, "source family count drift")
     require(len(cross["main_results"])==EXPECTED_FORMAL, "source declaration count drift")
     require(len(cross["source_papers"])==173, "source paper count drift")
@@ -160,7 +171,9 @@ def main():
     hostile(d,"ALTERED_SOURCE_BLOB_LOCK",lambda a: a["input_git_blob_sha1_locks"].update({"MANUSCRIPT_INDEX.json":"0"*40}))
     hostile(d,"TECHNICAL_UNDERCOUNT",lambda a:a["wp01_technical_corpus_evidence"].update(covered_distinct_comparator_indices=1))
     hostile(d,"ZETA_UNIVERSAL_HECKE_OVERREACH",lambda a:a["verification_throughput"].update(full_paper_hecke_claim_verified_by_index199=True))
-    print("WP05_CANONICAL_LEDGER_PASS 372 families, 719 documents, 200 indexed declarations; 9 hostile rollbacks, 0 certifications")
+    hostile(d,"FALSE_HECKE_FULL_EQUIVALENCE",lambda a:a["verification_throughput"].update(full_standard_finite_hecke_character_equivalence_reviewed=True))
+    hostile(d,"STALE_HECKE_PROOF_RUN",lambda a:target(a,"003")["claim_level_technical_results"][1].update(lean_run=1))
+    print("WP05_CANONICAL_LEDGER_PASS 372 families, 719 documents, 200 indexed declarations; 11 hostile rollbacks, 0 certifications")
 
 if __name__=="__main__":
     try:
