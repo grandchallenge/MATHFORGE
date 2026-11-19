@@ -13,7 +13,10 @@
     "reviews/WP03_PILOT12_EVIDENCE_LEDGER.json": "1aabf4800ae73da166258f3cdfdde8ec00da370a",
     "reviews/WP04_ADVERSARIAL_WAVE16_LEDGER.json": "747f65889cd1adfde7e4ff7170e07f6a49781bb8",
     "reviews/WP01_F008_DUAL_REPLAY_RECEIPT.md": "13f791bd5b9ae8df9900ad46a1a5ef689985ef14",
-    "reviews/WP04_F008_ADVERSARIAL_MATHEMATICAL_REVIEW.md": "ed29fa92fe9b4910954311c482c496c02174f084"
+    "reviews/WP04_F008_ADVERSARIAL_MATHEMATICAL_REVIEW.md": "ed29fa92fe9b4910954311c482c496c02174f084",
+    "WP01_COMPARATOR_200_PROTECTED_RECEIPT_INDEX.json": "2766fa809aeb297c4f11dda8f90c4e5ebdc6050f",
+    "CORPUS_199_6500S_LEAN_RECEIPT_LEDGER.json": "da4f6e7eafbbdf570fdc488023ca16ccdb5bf7fe",
+    "CORPUS_199_COMPARATOR_RECEIPT_LEDGER.json": "addd218e196f77c8d08bb76274e634f2ed2e3cc1"
   },
   "catalogue": {
     "families": 372,
@@ -53,8 +56,38 @@
       "newly_verified_theorems_within_wave": 0
     }
   ],
+  "wp01_technical_corpus_evidence": {
+    "source": "sources/OPENAI-MATH-2026/WP01_COMPARATOR_200_PROTECTED_RECEIPT_INDEX.json",
+    "covered_distinct_comparator_indices": 200,
+    "indexed_declarations": 200,
+    "protected_receipt_files": 87,
+    "duplicate_index_199_counted_once": true,
+    "index_only_bindings": [
+      176,
+      177,
+      178,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198
+    ],
+    "scope": "HARDENED_TECHNICAL_COMPARATOR_ONLY_NOT_FAMILY_SEMANTIC_MATCH"
+  },
   "verification_throughput": {
     "families_with_formal_exact_replay_and_comparator_imported": 1,
+    "corpus_wide_comparator_technical_accepted_indices": 200,
+    "family003_exact_zeta_subclaim_lean_and_comparator_evidence": true,
+    "full_paper_hecke_claim_verified_by_index199": false,
     "distinct_formal_targets_verifiably_imported": 1,
     "new_formal_targets_verified_by_wp05_generator": 0,
     "distinct_bounded_mathematical_critic_cases_in_wp04": 19,
@@ -111,6 +144,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -176,6 +210,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -234,6 +269,24 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [
+        {
+          "claim": "Riemann zeta nonvanishing Re(s)>7/8 only",
+          "declaration": "OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
+          "crosswalk_index": 199,
+          "lean_axioms": "EXACT_PINNED_PASS__ALLOWED_THREE",
+          "comparator": "HARDENED_ACCEPTED",
+          "lean_run": 40743532665,
+          "lean_artifact": 12845633244,
+          "comparator_run": 40777019339,
+          "comparator_artifact": 12859904511,
+          "evidence_paths": [
+            "sources/OPENAI-MATH-2026/CORPUS_199_6500S_LEAN_RECEIPT_LEDGER.json",
+            "sources/OPENAI-MATH-2026/CORPUS_199_COMPARATOR_RECEIPT_LEDGER.json"
+          ],
+          "qualification": "TECHNICAL_ZETA_SUBCLAIM_ONLY_NOT_ALL_FINITE_ORDER_HECKE_FAMILY"
+        }
+      ],
       "replay_receipts": null
     },
     {
@@ -289,6 +342,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -327,6 +381,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -382,6 +437,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -420,6 +476,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -467,6 +524,7 @@
       "verdict_reason": "Exact pinned Lean theorem and permissible axiom closure, independent isolated hardened Comparator, explicit bounded statement bridge and low-weight mathematical adversary; NOT complete manuscript certification.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": {
         "lean": {
           "run_id": 44298907335,
@@ -527,6 +585,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -586,6 +645,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -632,6 +692,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -670,6 +731,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -703,6 +765,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -764,6 +827,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -805,6 +869,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -850,6 +915,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -883,6 +949,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -920,6 +987,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -967,6 +1035,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1000,6 +1069,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1033,6 +1103,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1066,6 +1137,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1099,6 +1171,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1132,6 +1205,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1165,6 +1239,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1198,6 +1273,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1231,6 +1307,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1264,6 +1341,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1301,6 +1379,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1334,6 +1413,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1367,6 +1447,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1436,6 +1517,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1485,6 +1567,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1588,6 +1671,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1625,6 +1709,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1680,6 +1765,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1717,6 +1803,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1750,6 +1837,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1795,6 +1883,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1828,6 +1917,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1865,6 +1955,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1898,6 +1989,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1931,6 +2023,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -1964,6 +2057,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2001,6 +2095,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2034,6 +2129,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2067,6 +2163,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2104,6 +2201,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2137,6 +2235,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2170,6 +2269,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2207,6 +2307,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2240,6 +2341,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2273,6 +2375,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2310,6 +2413,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2382,6 +2486,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2423,6 +2528,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2460,6 +2566,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2497,6 +2604,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2530,6 +2638,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2563,6 +2672,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2596,6 +2706,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2629,6 +2740,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2666,6 +2778,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2703,6 +2816,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2736,6 +2850,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2793,6 +2908,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2826,6 +2942,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2863,6 +2980,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2900,6 +3018,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2933,6 +3052,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -2970,6 +3090,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3003,6 +3124,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3044,6 +3166,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3081,6 +3204,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3114,6 +3238,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3147,6 +3272,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3184,6 +3310,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3217,6 +3344,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3258,6 +3386,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3291,6 +3420,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3328,6 +3458,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3361,6 +3492,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3394,6 +3526,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3435,6 +3568,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3472,6 +3606,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3509,6 +3644,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3554,6 +3690,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3587,6 +3724,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3624,6 +3762,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3657,6 +3796,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3690,6 +3830,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3736,6 +3877,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3769,6 +3911,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3802,6 +3945,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3835,6 +3979,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3876,6 +4021,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3921,6 +4067,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -3954,6 +4101,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4003,6 +4151,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4036,6 +4185,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4081,6 +4231,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4114,6 +4265,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4147,6 +4299,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4188,6 +4341,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4221,6 +4375,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4254,6 +4409,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4291,6 +4447,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4324,6 +4481,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4357,6 +4515,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4394,6 +4553,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4431,6 +4591,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4468,6 +4629,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4509,6 +4671,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4546,6 +4709,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4579,6 +4743,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4616,6 +4781,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4649,6 +4815,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4682,6 +4849,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4723,6 +4891,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4756,6 +4925,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4793,6 +4963,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4826,6 +4997,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4859,6 +5031,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4892,6 +5065,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4929,6 +5103,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4966,6 +5141,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -4999,6 +5175,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5032,6 +5209,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5077,6 +5255,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5118,6 +5297,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5151,6 +5331,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5184,6 +5365,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5217,6 +5399,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5254,6 +5437,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5287,6 +5471,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5340,6 +5525,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5373,6 +5559,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5406,6 +5593,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5443,6 +5631,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5476,6 +5665,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5509,6 +5699,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5542,6 +5733,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5579,6 +5771,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5612,6 +5805,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5649,6 +5843,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5686,6 +5881,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5719,6 +5915,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5752,6 +5949,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5785,6 +5983,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5830,6 +6029,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5863,6 +6063,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5896,6 +6097,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5937,6 +6139,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -5970,6 +6173,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6003,6 +6207,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6036,6 +6241,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6069,6 +6275,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6106,6 +6313,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6139,6 +6347,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6176,6 +6385,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6209,6 +6419,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6246,6 +6457,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6279,6 +6491,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6312,6 +6525,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6349,6 +6563,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6382,6 +6597,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6415,6 +6631,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6448,6 +6665,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6485,6 +6703,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6526,6 +6745,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6559,6 +6779,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6592,6 +6813,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6625,6 +6847,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6658,6 +6881,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6691,6 +6915,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6724,6 +6949,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6765,6 +6991,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6798,6 +7025,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6835,6 +7063,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6868,6 +7097,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6905,6 +7135,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6938,6 +7169,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -6971,6 +7203,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7004,6 +7237,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7037,6 +7271,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7075,6 +7310,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7108,6 +7344,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7141,6 +7378,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7174,6 +7412,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7207,6 +7446,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7240,6 +7480,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7285,6 +7526,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7318,6 +7560,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7355,6 +7598,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7392,6 +7636,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7425,6 +7670,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7458,6 +7704,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7495,6 +7742,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7528,6 +7776,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7565,6 +7814,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7602,6 +7852,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7639,6 +7890,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7672,6 +7924,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7709,6 +7962,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7746,6 +8000,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7803,6 +8058,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7840,6 +8096,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7877,6 +8134,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7910,6 +8168,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -7959,6 +8218,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8012,6 +8272,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8049,6 +8310,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8102,6 +8364,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8139,6 +8402,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8180,6 +8444,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8213,6 +8478,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8258,6 +8524,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8316,6 +8583,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8357,6 +8625,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8390,6 +8659,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8423,6 +8693,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8484,6 +8755,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8521,6 +8793,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8562,6 +8835,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8599,6 +8873,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8632,6 +8907,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8693,6 +8969,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8736,6 +9013,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8769,6 +9047,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8814,6 +9093,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8847,6 +9127,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -8928,6 +9209,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9005,6 +9287,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9042,6 +9325,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9079,6 +9363,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9112,6 +9397,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9145,6 +9431,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9182,6 +9469,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9215,6 +9503,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9248,6 +9537,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9281,6 +9571,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9318,6 +9609,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9351,6 +9643,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9384,6 +9677,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9425,6 +9719,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9462,6 +9757,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9495,6 +9791,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9528,6 +9825,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9569,6 +9867,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9602,6 +9901,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9639,6 +9939,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9672,6 +9973,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9709,6 +10011,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9742,6 +10045,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9823,6 +10127,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9860,6 +10165,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9901,6 +10207,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9942,6 +10249,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -9983,6 +10291,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10020,6 +10329,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10057,6 +10367,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10106,6 +10417,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10143,6 +10455,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10180,6 +10493,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10217,6 +10531,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10262,6 +10577,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10295,6 +10611,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10328,6 +10645,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10365,6 +10683,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10402,6 +10721,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10435,6 +10755,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10468,6 +10789,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10501,6 +10823,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10534,6 +10857,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10567,6 +10891,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10604,6 +10929,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10637,6 +10963,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10670,6 +10997,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10703,6 +11031,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10744,6 +11073,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10781,6 +11111,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10814,6 +11145,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10847,6 +11179,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10888,6 +11221,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10925,6 +11259,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -10970,6 +11305,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11003,6 +11339,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11040,6 +11377,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11073,6 +11411,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11106,6 +11445,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11139,6 +11479,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11172,6 +11513,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11205,6 +11547,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11238,6 +11581,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11275,6 +11619,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11308,6 +11653,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11345,6 +11691,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11378,6 +11725,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11411,6 +11759,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11452,6 +11801,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11485,6 +11835,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11522,6 +11873,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11559,6 +11911,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11592,6 +11945,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11625,6 +11979,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11658,6 +12013,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11691,6 +12047,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11724,6 +12081,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11757,6 +12115,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11790,6 +12149,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11823,6 +12183,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11856,6 +12217,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11905,6 +12267,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11938,6 +12301,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -11971,6 +12335,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12004,6 +12369,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12037,6 +12403,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12070,6 +12437,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12107,6 +12475,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12144,6 +12513,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12177,6 +12547,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12210,6 +12581,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12243,6 +12615,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12276,6 +12649,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12309,6 +12683,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12366,6 +12741,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12399,6 +12775,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12432,6 +12809,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12465,6 +12843,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12502,6 +12881,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12543,6 +12923,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12580,6 +12961,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12613,6 +12995,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12646,6 +13029,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12679,6 +13063,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12722,6 +13107,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12782,6 +13168,7 @@
           "distinction": "Main existence theorem is not refuted by this statement revision."
         }
       ],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12815,6 +13202,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12848,6 +13236,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12881,6 +13270,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12918,6 +13308,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -12967,6 +13358,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13008,6 +13400,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13041,6 +13434,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13082,6 +13476,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13123,6 +13518,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13156,6 +13552,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13193,6 +13590,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13226,6 +13624,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13259,6 +13658,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13296,6 +13696,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13329,6 +13730,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13362,6 +13764,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13399,6 +13802,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13436,6 +13840,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13473,6 +13878,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13506,6 +13912,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13543,6 +13950,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13580,6 +13988,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13621,6 +14030,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13654,6 +14064,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13687,6 +14098,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13724,6 +14136,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13757,6 +14170,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13790,6 +14204,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13823,6 +14238,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13856,6 +14272,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13889,6 +14306,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13922,6 +14340,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -13955,6 +14374,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -14034,6 +14454,7 @@
       "verdict_reason": "Scoped source/semantic or revision-risk review records unresolved mathematical obligations. No exact positive whole-proof replay admitted here.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     },
     {
@@ -14067,6 +14488,7 @@
       "verdict_reason": "Catalogue source metadata is locked but no governed family-level mathematical proof adjudication imported into this portfolio.",
       "certification": "NO_CERTIFICATION",
       "claim_level_exceptions": [],
+      "claim_level_technical_results": [],
       "replay_receipts": null
     }
   ],
