@@ -115,6 +115,21 @@ def contour_tests():
     print("CONTOUR_ORIENTATION_ZERO_MULTIPLICITY_AND_POLE_PASS")
 
 
+def hostile_uniformity_without_growth():
+    # Zero-freeness by itself never bounds a logarithmic derivative
+    # uniformly. The entire functions L_k(s)=exp(k*(s-2)) have NO zeros,
+    # but L'_k(s)/L_k(s)=k. A fixed conductor/height surrogate cannot
+    # dominate arbitrarily large k. The source genuinely needs its
+    # uniform primitive L-growth/BC+Cauchy estimate, not merely hmax.
+    B=mp.mpf("3")
+    fake_complexity=mp.mpf("18")  # fixed q=1,t=0 in source's complexity
+    k=mp.mpf("1000")
+    assert k>B*mp.log(fake_complexity)
+    assert abs(mp.exp(k*(2-2)))==1  # normalized at a point
+    assert mp.exp(k*(mp.mpf("1.1")-2))!=0
+    print("HOSTILE_ZERO_FREE_WITHOUT_GROWTH_CONTROL_REJECTED")
+
+
 def exponent_tests():
     # Re l+sigma=a+8e, Re r+sigma=2.
     for a,e in product([F(51,100),F(7,8),F(1)],
@@ -159,5 +174,6 @@ if __name__=="__main__":
     geometry_tests()
     exponent_tests()
     uniformity_tests()
+    hostile_uniformity_without_growth()
     contour_tests()
     print("F003_PRIME_BIN_INDEPENDENT_CONTOUR_AUDIT_PASS")
