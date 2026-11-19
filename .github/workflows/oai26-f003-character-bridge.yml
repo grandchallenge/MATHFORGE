@@ -1,0 +1,125 @@
+name: OAI-26 F003 source-pinned Lean internal character bridge
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/oai26-f003-character-bridge.yml"
+      - "sources/OPENAI-MATH-2026/formal/F003PeriodAndRayBridge.lean"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oai26-f003-character-bridge-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  f003-bridge:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 125
+    steps:
+      - name: Checkout governed GCL candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Checkout exact upstream Lean corpus
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: upstream/math
+          sparse-checkout: lean
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify exact upstream tree and toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/oai26-f003-character-bridge
+          test "$(git -C upstream/math rev-parse HEAD)" = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          test "$(git -C upstream/math hash-object lean/OAI/NumberTheory/DirichletL/Hecke/Family.lean)" = "3d87da47cd57f0a4f11859c654e3e3202a519100"
+          test "$(git -C upstream/math hash-object lean/OAI/NumberTheory/DirichletL/Hecke/IdealBridge.lean)" = "bcb15758326db111dd0b007b79a58103a4fa659e"
+          sha256sum upstream/math/lean/lake-manifest.json > replay/oai26-f003-character-bridge/manifest-pre.sha256
+          git rev-parse HEAD > replay/oai26-f003-character-bridge/gcl-head.txt
+          git -C upstream/math rev-parse HEAD > replay/oai26-f003-character-bridge/upstream-head.txt
+          sha256sum sources/OPENAI-MATH-2026/formal/F003PeriodAndRayBridge.lean > replay/oai26-f003-character-bridge/bridge-source.sha256
+      - name: Install pinned elan 1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Prepare exact pinned dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream/math/lean
+          {
+            lake --version
+            lake update
+            test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+            lake exe cache get
+          } > "$GITHUB_WORKSPACE/replay/oai26-f003-character-bridge/environment.log" 2>&1
+      - name: Compile the candidate's three exact bridge obligations
+        shell: bash
+        run: |
+          set +e
+          cd upstream/math/lean
+          (
+            set -euo pipefail
+            lake build OAI.NumberTheory.DirichletL.Hecke.RayFamily
+            cp "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/formal/F003PeriodAndRayBridge.lean" GCLF003PeriodAndRayBridge.lean
+            cat >> GCLF003PeriodAndRayBridge.lean <<'LEAN'
+          #check OAI.SevenEighths.HeckeFamily.gcl_LFunction_eq_of_elementCoeff_eq
+          #print axioms OAI.SevenEighths.HeckeFamily.gcl_LFunction_eq_of_elementCoeff_eq
+          #check OAI.SevenEighths.HeckeFamily.gcl_LFunction_period_choice_immaterial
+          #print axioms OAI.SevenEighths.HeckeFamily.gcl_LFunction_period_choice_immaterial
+          #check OAI.SevenEighths.HeckeRayFamily.gcl_LFunction_eq_ray_ideal_tsum
+          #print axioms OAI.SevenEighths.HeckeRayFamily.gcl_LFunction_eq_ray_ideal_tsum
+          LEAN
+            lake env lean GCLF003PeriodAndRayBridge.lean
+            test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+          ) > "$GITHUB_WORKSPACE/replay/oai26-f003-character-bridge/compiler.log" 2>&1
+          status=$?
+          echo "$status" > "$GITHUB_WORKSPACE/replay/oai26-f003-character-bridge/compile.exit"
+          tail -n 100 "$GITHUB_WORKSPACE/replay/oai26-f003-character-bridge/compiler.log"
+          exit "$status"
+      - name: Capture exact candidate receipt on all outcomes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/oai26-f003-character-bridge
+          python3 - <<'PY'
+          from pathlib import Path
+          import os, json, hashlib
+          p=Path('replay/oai26-f003-character-bridge')
+          checks={}
+          for f in sorted(p.iterdir()):
+              if f.is_file() and f.name!='receipt.json':
+                  b=f.read_bytes()
+                  checks[f.name]={'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()}
+          (p/'receipt.json').write_text(json.dumps({
+              'schema':'GCL-OAI26-F003-LEAN-BRIDGE-REPLAY/1',
+              'run_id':os.environ.get('GITHUB_RUN_ID'),
+              'gcl_head':os.environ.get('GITHUB_SHA'),
+              'upstream_commit':'1581d4cbdd69a0faf34b2089614fe2a814316a6a',
+              'manifest_sha256':'cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794',
+              'compiler_exit': int((p/'compile.exit').read_text()) if (p/'compile.exit').exists() else None,
+              'files': checks,
+              'claim_boundary':'Exact Lean internal character and ray series only; NOT standard external Hecke equivalence, analytic zero-free theorem certification, or MATHCERT',
+          },indent=2)+'\n')
+          PY
+      - name: Archive both success and failure evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: oai26-f003-character-bridge
+          path: replay/oai26-f003-character-bridge
+          if-no-files-found: error
+          retention-days: 30
