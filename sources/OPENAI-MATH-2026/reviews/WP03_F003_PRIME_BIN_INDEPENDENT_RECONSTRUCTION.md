@@ -123,6 +123,40 @@ on `Re(s)≥1/2`. Primitive conductor norm does not exceed the imprimitive norm.
 
 **Important evidentiary limit:** the contour/Borel–Carathéodory argument is independently reconstructed above. The precise primitive strip growth theorem and functional-equation inputs establishing `|Lχ|≤Q^M` are *read from the pinned source*, not independently reproduced from all classical Hecke analytic foundations here. Without that input, the character-uniform derivative conclusion would not follow. The adversary includes the hostile zero-free family `L_k(s)=exp(k(s−2))` with arbitrarily large `|L_k'/L_k|=k`, which demonstrates the necessity of growth control.
 
+### 3a. The nonprincipal growth input: no use of the target zero-free claim
+
+I also traced the actual growth theorem, rather than treating it as an unexplained constant:
+
+`Hecke/LogarithmicInput.regular_right_growth` → `Hecke/Presentation.uniform_strip_bound` → `Hecke/StripActual.uniform_strip_bound` → `Hecke/Strip.uniform_strip_bound_of_functional_equation`.
+
+At the left boundary `Re(s)=−1/10`, the pinned Hecke functional equation uses
+
+```text
+Lχ(s) = εχ [sqrt(3Q)/(2π)]^(1−2s)
+         [Γ(1−s)/Γ(s)] Lbarχ(1−s),     |εχ|=1,
+```
+
+where `Q=N(conductor)` in the source model. Therefore
+
+```text
+|[sqrt(3Q)/(2π)]^(1−2s)|
+ = [sqrt(3)/(2π)]^(6/5) Q^(3/5),
+```
+
+since `Re(1−2s)=6/5`. The gamma quotient is bounded in the pinned source by
+
+`|Γ(1−s)/Γ(s)|≤[Γ(11/10)/Γ(19/10)](3+|Im(s)|)^2`.
+
+The dual `Lbarχ(1−s)` is evaluated at `Re(1−s)=11/10`, where its Euler series is uniformly bounded. The right boundary `Re(s)=11/10` also has a uniform Euler bound. Phragmén–Lindelöf in the strip `−1/10≤Re(s)≤11/10`, using the separately proved exponential vertical growth, then yields the crude but sufficient
+
+`|Lχ(s)|≤C·Q^(3/5)(3+|Im(s)|)^2`.
+
+**This is not circular at the displayed interface:** the strip bound is obtained from a functional equation, Euler-region bounds and a strip-growth condition, *not* by invoking the proposed seven-eighths zero-free theorem. The exact `3/5` conductor exponent comes from `(6/5)/2`; it is not an optimizer guess.
+
+The test script independently checks this exponent identity exactly and gamma-ratio inequality at eight disparate heights, as well as the conductor-scale identity at five values of `Q`. These finite samples are **not a proof of the gamma inequality for every height**, nor an independent derivation of the *underlying source functional equation*. For this bin theorem only the **nonprincipal** branch is needed: primitivity of the reduction and `χ.residue≠1` exclude the principal/pole branch.
+
+**Source pins:** `Hecke/Presentation.lean` blob `e2c2233f96c088289e95dd17e9eedbfeabe388a6`; `Hecke/StripActual.lean` blob `de7a55271a7293ce2814118b685c0896a020bd3f`; `Hecke/Strip.lean` blob `4627139551de70adb23ee39ea02e6c4ea9596bf7`.
+
 ## 4. Four sides and the exact boundary coefficients
 
 For `r=2−σ`, `ℓ=a+8e−σ`, and `V≥0`, the independent contour identity, using the parametrization `dz=i,dt` on vertical lines, is
@@ -183,7 +217,7 @@ Combine these, remembering the `1/(2π)` Mellin normalization:
 The standalone script performs four kinds of adversarial tests:
 
 1. **360 exact rational cases** for `a,e,T,i,σ`, including the outer/inner disk radii, `6e` buffer, `Hmax−H=T` margin, translated edges, half-power exponents and strict endpoints.
-2. **Uniformity monotonicity cases** with different conductor norms, radical norms and heights; plus a hostile zero-free family with unbounded logarithmic derivatives to prove that zero location alone is insufficient.
+2. **Uniformity monotonicity cases** with different conductor norms, radical norms and heights; plus a hostile zero-free family with unbounded logarithmic derivatives; completed-gamma sample checks to prove that zero location alone is insufficient.
 3. **Complex contour quadrature at 55 decimal digits**, using a synthetic entire Gaussian Mellin-like test factor and the toy meromorphic family `L(s)=(s−ρ)^m`. These are deliberately **not** actual Hecke L-functions or compactly supported Mellin weights; they isolate the residue calculus and orientation independently of the OAI source.
 4. **Hostile singularities:** one interior zero, a double zero (twice the residue), and a pole (opposite residue sign). The no-zero case has residual about `1.7×10^{-57}`; a single interior zero forces a substantial nonzero term, `−1.59479−0.16420i`. The pole and double-zero cases agree with residue theory at the stated precision.
 
@@ -201,7 +235,7 @@ The synthetic quadrature validates the contour manipulation, not uniform Hecke a
 | Uniform primitive logarithmic derivative | **CONDITIONAL / NOT INDEPENDENTLY SOURCE-FULLY CERTIFIED** | Borel–Carathéodory/Cauchy reconstructed; primitive strip growth/functional-equation bound requires separate independent validation |
 | Seven-eighths zero-free theorem | **UNRESOLVED** | The bin lemma assumes a zero-maximum condition, and later global energy construction remains unverified independently |
 
-**Next mathematical target:** `Hecke/LogarithmicInput.regular_strip_bound` (its `HeckePresentation.uniform_strip_bound` and `HeckePrincipalStrip.uniform_source_normalized_strip_bound` inputs), including degree-two gamma-factor normalization, conductor exponent `3/5`, nonprincipal/principal conventions and uniformity in vertical height. The next most consequential independent investigation after that is the global energy high-stage mechanism, because `polynomial_bound_in_bin` is conditional and does not itself provide a zero-free bin.
+**Next mathematical target:** independently reproduce the **actual nonprincipal Hecke functional equation and gamma quotient bound** (the source path `Hecke/StripActual.uniform_strip_bound`) against a separately specified Hecke model. The `3/5` exponent and strip interpolation already check at the algebraic level. Next investigate the global `Energy/NaturalHighStage.actual_high_stage` mechanism, because `polynomial_bound_in_bin` is conditional and cannot by itself produce a zero-free bin. The principal-character branch is separate and not a premise of this particular nonprincipal bin theorem.
 
 **Disposition:** `F003_PRIME_BIN_CONTOUR_AND_ZERO_ACCOUNTING_INDEPENDENT_PASS__PRIMITIVE_GROWTH_AND_GLOBAL_ANALYTIC_ENERGY_OPEN`.  
 **Claim boundary:** no independently certified seven-eighths zero-free theorem; no MATHCERT.
