@@ -1,9 +1,9 @@
 {
-  "schema": "GCL-OAI26-WP04-ADVERSARIAL-WAVE16/1",
+  "schema": "GCL-OAI26-WP04-ADVERSARIAL-WAVE19/1",
   "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
   "scope": "BOUNDED_SOURCE_AND_SEMANTIC_ADVERSARIAL_REVIEW__NO_MATHCERT",
-  "case_count": 16,
-  "distinct_family_count": 16,
+  "case_count": 19,
+  "distinct_family_count": 19,
   "selection": {
     "revision": [
       "002",
@@ -31,8 +31,18 @@
       "007",
       "012"
     ],
-    "baseline_rule": "predeclared low-formalization cross-domain pilot controls; not a statistically random draw; do not claim independent random sampling",
-    "note": "WP04 requires 3 random baseline cases; this is a bounded adversarial tranche with predeclared controls, NOT an unbiased random sample, so full terminal requires real seeded selection."
+    "baseline_rule": "reproducible SHA-256 rank over all 372 family IDs excluding the initial 16 fixed cases: sha256('GCL-OAI26-WP04-ADVERSARY-v1|'+source_commit+'|'+three_digit_family_id), lexicographically smallest three hashes; order 223,095,191. No substitution after inspection.",
+    "note": "16 source-risk/semantic cases + 3 truly deterministic seeded baseline draws; original 4 baseline controls remain predeclared, not random. Source PDFs independently inspected for all three seed-drawn families; no full mathematics proof replay claimed.",
+    "random_baseline": [
+      "223",
+      "095",
+      "191"
+    ],
+    "random_baseline_ordered_sha256": [
+      "00162d4f742d667cb2e6943bf556605e4054f7dceb15e7be74499a3b26fa99a0",
+      "00e53f97a64fbfbf6e2c0e4a031f948a49543541b6807919bb65bf7252e7b01c",
+      "01fc5e3e00e67723e728dd902c834163f44a080f8420"
+    ]
   },
   "cases": [
     {
@@ -274,6 +284,73 @@
       "next_proof_obligation": "Audit specific new carrier-margin, EMC-transfer, multiplier-scheme-transfer and surface-base-positivity lemmas before accepting historical proof.",
       "source_evidence": [
         "sources/OPENAI-MATH-2026/WP02_REPAIR_056_FINITE_ORDINARY_MMP_LITERAL_THEOREM_AND_PROOF_DELTA.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "095",
+      "categories": [
+        "random_baseline"
+      ],
+      "title": "Spectrahedral versus semidefinite lift",
+      "hostile_test": "A nonspectrahedral cone can nevertheless be a spectrahedral shadow. The October 5 exact-lift paper constructs a size-100 lift with 307 auxiliary variables for the earlier September 24 nonspectrahedral example. This does not refute the separate October 5 stronger claim that some other hyperbolicity cone has no finite semidefinite lift.",
+      "source_observation": "Pinned PDFs: October 5 no-lift theorem explicitly rejects every finite auxiliary matrix lift; September 24 theorem only forbids direct homogeneous LMI representation for one 23-variable cone; October 5 companion gives an exact auxiliary-variable lift of that particular cone. Quantifier over existence of a cone vs identity of specific witness must be preserved.",
+      "disposition": "UNRESOLVED__DIFFERENT_CONES_AND_LIFT_CLASSES",
+      "next_proof_obligation": "Verify first paper's no-shadow obstruction for its own example and distinguish it explicitly from the lifted 23-variable example. Do not issue a false contradiction or claim every nonspectrahedral cone is nonliftable.",
+      "primary_pdf_github_blobs": [
+        "820b7cecbcff0fea25eb323da94f07593d8f5d12",
+        "7515f77649b53cb14bbc2847d9abff6e092a8b6f",
+        "5f5d99899e05ab637c4c1f40b3b9fa1487d81e2f"
+      ],
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "191",
+      "categories": [
+        "random_baseline"
+      ],
+      "title": "Heilbronn triangle exponent improvement",
+      "hostile_test": "A bound c n^(-2+η) for all large n with one absolute fixed η>0 is strictly stronger than any bound n^(-2+o(1)) without uniform η. The lower bound is not proved merely by bounding average triangle area or excluding collinear configurations.",
+      "source_observation": "Exact September 25 PDF states absolute η,c1>0, all sufficiently large n, n points in unit square with every triple area at least c1 n^(-2+η); proof depends on determinant obstruction, residue orbit counts, and deletion/re-scaling.",
+      "disposition": "UNRESOLVED__GLOBAL_DETERMINANT_COUNT",
+      "next_proof_obligation": "Independently verify uniform η and divisor/sampling estimates, deletion of degenerate triples, and final area normalization; no formalized comparator attributed without exact mapping.",
+      "primary_pdf_github_blobs": [
+        "41ed93344ef3bfbcf430d0889dce8211f434f7e8"
+      ],
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json"
+      ],
+      "certification": "NO_CERTIFICATION",
+      "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
+      "independently_authenticated_review": false
+    },
+    {
+      "family_id": "223",
+      "categories": [
+        "random_baseline"
+      ],
+      "title": "Random-cluster interface regimes",
+      "hostile_test": "Convergence of curve shapes to SLE is not convergence of natural occupation measures. Results for 1≤q<4 do not include q=4, and subunit 0<q<1 requires a separate analysis; quenched weak disorder and massive thermal limits are not critical homogeneous scaling results.",
+      "source_observation": "Six pinned PDFs, including 110-page q∈[1,4) critical/CLE and 127-page q∈[1,4] revised critical/CLE; 207-page 0<q<1; 49-page quenched q=2 weak disorder; 50-page massive thermal; 59-page natural Minkowski occupation. Exact statements differ by q endpoint, domain approximation, type of convergence and physical perturbation.",
+      "disposition": "UNRESOLVED__SIX_DISTINCT_LIMIT_REGIMES",
+      "next_proof_obligation": "Independently examine q=4 endpoint argument, q<1 boundary assumptions, quenched convergence mode, thermal drift law, and tightness/uniform integrability of occupation mass. No family-wide formal replay implied.",
+      "primary_pdf_github_blobs": [
+        "ba6f8025997574f506569c118dbc91462f92f314",
+        "b614dae26ecd4a30f64025e45d283cb5b11455ec",
+        "2a6a7600252815942f50c413bf180fa4e4c42ef7",
+        "649e6c8ee79e4109ad4a1522b995353147b4f756",
+        "f32b9bf0f09123ce9cb44b80f5a76222c930deb3",
+        "19ebeed24251e01d0903ba88c8d83a1eac9ba8d2"
+      ],
+      "source_evidence": [
+        "sources/OPENAI-MATH-2026/MANUSCRIPT_INDEX.json"
       ],
       "certification": "NO_CERTIFICATION",
       "review_role": "NON_AUTHORING_READ_ONLY_LOGICAL_CRITIC",
