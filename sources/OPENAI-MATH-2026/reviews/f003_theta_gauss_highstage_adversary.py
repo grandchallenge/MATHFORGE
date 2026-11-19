@@ -39,6 +39,10 @@ def chi(z):
     k=LOG.get((z[0]%P,z[1]%P))
     return ZERO if k is None else ROOTS[k%4]
 
+def chi_power(z,power):
+    k=LOG.get((z[0]%P,z[1]%P))
+    return ZERO if k is None else ROOTS[(power*k)%4]
+
 def zadd(x,y):
     return (x[0]+y[0],x[1]+y[1])
 
@@ -83,12 +87,12 @@ def gauss_exact():
 def sum_gaussian(vals):
     return sum((v[0] for v in vals),0),sum((v[1] for v in vals),0)
 
-def lattice_coefficients(R):
+def lattice_coefficients(R,power=1):
     by_norm=defaultdict(lambda:ZERO)
     for a in range(-R,R+1):
         for b in range(-R,R+1):
             n=norm((a,b))
-            by_norm[n]=zadd(by_norm[n],chi((a,b)))
+            by_norm[n]=zadd(by_norm[n],chi_power((a,b),power))
     assert by_norm[0]==ZERO
     return {n:v for n,v in by_norm.items() if v!=ZERO}
 
@@ -135,6 +139,34 @@ def theta_checks(eps):
           "max_residual="+mp.nstr(max_resid,8),
           "max_tail="+mp.nstr(max_tail,8))
 
+def other_ray_characters(eps_quartic):
+    # The full set of NONPRINCIPAL unit-invariant characters mod (5)
+    # consists of powers 1,2,3 of the faithful quartic character.
+    # Their Gauss rows are finite exact Gaussian-integer calculations.
+    cases=(
+        (2,[(4,0)]+[(-1,0)]*4,mp.mpc(1)),
+        (3,[(0,0),(2,1),(-2,-1),(-2,-1),(2,1)],
+         mp.conj(eps_quartic)),
+    )
+    times=[mp.mpf(x) for x in ("0.25","1","4")]
+    for power,expected,eps in cases:
+        rows=[sum_gaussian([chi_power((a,b),power) for a in range(P)])
+              for b in range(P)]
+        assert rows==expected,(power,rows)
+        zeta=mp.exp(2j*mp.pi/5)
+        tau=sum(mp.mpc(*rows[b])*zeta**b for b in range(P))
+        assert abs(tau/5-eps)<mp.mpf("1e-92")
+        coeff=lattice_coefficients(48,power)
+        dual=lattice_coefficients(48,4-power)
+        for t in times:
+            resid=abs(theta(t,coeff)-eps/t*theta(1/t,dual))
+            tails=gaussian_outside_box_bound(t,48)+abs(eps)/t*gaussian_outside_box_bound(1/t,48)
+            assert resid<10*tails+mp.mpf("1e-88"),(power,t,resid)
+        print("RAY_CHAR_POWER_GAUSS_THETA_FE_PASS",power,
+              "root="+mp.nstr(eps,18))
+    print("ALL_THREE_NONPRINCIPAL_MOD5_RAY_CHARACTERS_TESTED_PASS")
+
+
 def capacity_checks():
     # Source Energy/PositiveHighSourceBound.PositiveHighAt:
     # x+y+6*kappa*w <= m,  5*m/6 <= x+y+w,
@@ -165,5 +197,6 @@ if __name__=="__main__":
     unit_invariance_and_primitive()
     eps=gauss_exact()
     theta_checks(eps)
+    other_ray_characters(eps)
     capacity_checks()
     print("F003_INDEPENDENT_QUARTIC_THETA_AND_HIGH_STAGE_CAPACITY_PASS")
