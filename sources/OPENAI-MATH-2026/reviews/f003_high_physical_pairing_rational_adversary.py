@@ -89,7 +89,7 @@ def two_sided_height_and_constant():
             base=Q(3)
             ell=base+max(powers)
             assert all(Z**(base+p)<=Z**ell for p in powers)
-            assert Z**(ell-1)>Z**ell is False
+            assert not (Z**(ell-1)>Z**ell)
     print("FOUR_POWER_EXPONENT_BUDGET_PASS")
 
 def last_stage_plateau():
