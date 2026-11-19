@@ -59,7 +59,7 @@ def basic_bounds():
     # Number of subsets of the Fin N slots is 2^N.
     # Since 2^10 > 10^3, this requires at least 0.3N decimal digits;
     # do not materialize this fantastically large integer.
-    digits_lower=3*(n_min//10)+1
+    digits_lower=(3*n_min)//10+1
     assert digits_lower >= 1_000_000_001
     print("SLOT_COUNT_LOWER_BOUND_PASS",n_min)
     print("SYMBOLIC_INDUCTION_DEPTH_LOWER_BOUND_PASS",out["k"])
