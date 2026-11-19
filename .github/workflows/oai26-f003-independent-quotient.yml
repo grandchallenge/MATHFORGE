@@ -1,0 +1,119 @@
+name: OAI-26 F003 independent finite ray quotient proof
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/oai26-f003-independent-quotient.yml"
+      - "sources/OPENAI-MATH-2026/formal/F003IndependentRayQuotient.lean"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oai26-f003-independent-quotient-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-ray-quotient:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - name: Checkout protected candidate source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Checkout exact pinned mathlib
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: leanprover-community/mathlib4
+          ref: d13f23b723b8a846827a245b89c10fc7d3f11612
+          path: upstream/mathlib
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify immutable source lock before execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p replay/oai26-f003-independent
+          test "$(git -C upstream/mathlib rev-parse HEAD)" = "d13f23b723b8a846827a245b89c10fc7d3f11612"
+          test "$(git -C upstream/mathlib rev-parse HEAD^{tree})" = "efa132418a56d0e38c56cc412a06df22178dac5c"
+          test "$(cat upstream/mathlib/lean-toolchain)" = "leanprover/lean4:v4.34.1"
+          test "$(sha256sum upstream/mathlib/lake-manifest.json | cut -d' ' -f1)" = "8f67b2cf24143ac091cdb425e886c2164b2fc2d6fbccd6db9454b697f9541a67"
+          git rev-parse HEAD > replay/oai26-f003-independent/gcl-head.txt
+          git -C upstream/mathlib rev-parse HEAD > replay/oai26-f003-independent/mathlib-head.txt
+          sha256sum sources/OPENAI-MATH-2026/formal/F003IndependentRayQuotient.lean > replay/oai26-f003-independent/source.sha256
+      - name: Install pinned elan bootstrap v1.4.2
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output /tmp/elan.tar.gz
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore exact pinned mathlib cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd upstream/mathlib
+          {
+            lake --version
+            lake exe cache get
+            test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "8f67b2cf24143ac091cdb425e886c2164b2fc2d6fbccd6db9454b697f9541a67"
+          } > "$GITHUB_WORKSPACE/replay/oai26-f003-independent/environment.log" 2>&1
+      - name: Compile source-independent quotient/character equivalence
+        shell: bash
+        run: |
+          set +e
+          cd upstream/mathlib
+          (
+            set -euo pipefail
+            cp "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/formal/F003IndependentRayQuotient.lean" GCLF003IndependentRayQuotient.lean
+            cat >> GCLF003IndependentRayQuotient.lean <<'LEAN'
+          #check GCL.OAI26.F003.rayCharacterEquiv
+          #print axioms GCL.OAI26.F003.rayCharacterEquiv
+          #check GCL.OAI26.F003.fromQuotient_nonunit_zero
+          #print axioms GCL.OAI26.F003.fromQuotient_nonunit_zero
+          LEAN
+            lake env lean GCLF003IndependentRayQuotient.lean
+            test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "8f67b2cf24143ac091cdb425e886c2164b2fc2d6fbccd6db9454b697f9541a67"
+          ) > "$GITHUB_WORKSPACE/replay/oai26-f003-independent/compiler.log" 2>&1
+          status=$?
+          echo "$status" > "$GITHUB_WORKSPACE/replay/oai26-f003-independent/compile.exit"
+          cat "$GITHUB_WORKSPACE/replay/oai26-f003-independent/compiler.log"
+          exit "$status"
+      - name: Record exact head, compiler and byte-hash receipt
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, hashlib, os
+          from pathlib import Path
+          root=Path("replay/oai26-f003-independent")
+          root.mkdir(parents=True,exist_ok=True)
+          f={}
+          for p in sorted(root.iterdir()):
+              if p.is_file() and p.name!="receipt.json":
+                  data=p.read_bytes()
+                  f[p.name]={"bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()}
+          (root/"receipt.json").write_text(json.dumps({
+              "schema":"GCL-OAI26-F003-INDEPENDENT-QUOTIENT-REPLAY/1",
+              "gcl_head":os.environ.get("GITHUB_SHA"),
+              "run_id":os.environ.get("GITHUB_RUN_ID"),
+              "mathlib_commit":"d13f23b723b8a846827a245b89c10fc7d3f11612",
+              "manifest_sha256":"8f67b2cf24143ac091cdb425e886c2164b2fc2d6fbccd6db9454b697f9541a67",
+              "compile_exit":int((root/"compile.exit").read_text()) if (root/"compile.exit").exists() else None,
+              "files":f,
+              "boundary":"Generic quotient-of-unit-groups character equivalence; NOT full idèle-class-Hecke equivalence or zero-free region certification"
+          },indent=2)+"\n")
+          PY
+      - name: Archive successes and failures
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: oai26-f003-independent-ray-quotient
+          path: replay/oai26-f003-independent
+          retention-days: 30
+          if-no-files-found: error
