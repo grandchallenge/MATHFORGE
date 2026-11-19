@@ -1,3 +1,6 @@
+import OAI.NumberTheory.DirichletL.Hecke.IdealBridge
+import OAI.NumberTheory.DirichletL.Hecke.RayFamily
+
 /-!
 # OAI-26 F003: internal ray-character series and lattice-period invariance
 
@@ -7,8 +10,6 @@ These lemmas establish internal model presentation independence and ideal
 Dirichlet-series correspondence; they do NOT prove equivalence with every
 external Hecke-character formalization or the 7/8 analytic estimates.
 -/
-import OAI.NumberTheory.DirichletL.Hecke.IdealBridge
-import OAI.NumberTheory.DirichletL.Hecke.RayFamily
 
 namespace OAI.SevenEighths.HeckeFamily
 
