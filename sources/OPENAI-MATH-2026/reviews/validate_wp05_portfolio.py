@@ -4,12 +4,13 @@
 A PASS means evidence bookkeeping and noninflation, NOT theorem certification.
 """
 import copy
+import hashlib
 import json
 import pathlib
 import sys
 from collections import Counter
 
-from build_wp05_portfolio import build, OUT, BASE, SOURCE, IMPORT_BASE
+from build_wp05_portfolio import build, OUT, BASE, SOURCE, IMPORT_BASE, INPUT_BLOBS
 
 EXPECTED_CATALOGUE = 372
 EXPECTED_PATHS = 719
@@ -42,6 +43,12 @@ def validate(d):
     require(d["catalogue"]["manuscript_paths"]==EXPECTED_PATHS, "manuscript denominator")
     require(d["catalogue"]["crosswalk_distinct_declarations"]==EXPECTED_FORMAL, "formal denominator")
     require(d["catalogue"]["publisher_top_line_claims"]==EXPECTED_PUBLISHER, "publisher denominator")
+    require(d["input_git_blob_sha1_locks"] == INPUT_BLOBS,
+            "source input blob-lock ledger changed")
+    for relative, expected in INPUT_BLOBS.items():
+        raw = (BASE / relative).read_bytes()
+        actual = hashlib.sha1(b"blob " + str(len(raw)).encode() + bytes([0]) + raw).hexdigest()
+        require(actual == expected, "exact pinned input mutated " + relative)
     require(len(index["families"])==EXPECTED_CATALOGUE, "source family count drift")
     require(len(cross["main_results"])==EXPECTED_FORMAL, "source declaration count drift")
     require(len(cross["source_papers"])==173, "source paper count drift")
@@ -125,7 +132,8 @@ def main():
     hostile(d,"WITHDRAWN_REINSTATEMENT",lambda a: a["withdrawn_claim_quarantine"].update(promote_without_explicit_governed_source_review=True))
     hostile(d,"OBSOLETE_CONE_REVIVAL",lambda a: target(a,"342")["claim_level_exceptions"][0].update(status="VERIFIED_WITHIN_EXPLICIT_SCOPE"))
     hostile(d,"STALE_EVIDENCE_HEAD",lambda a: a.update(imported_protected_evidence_head="0"*40))
-    print("WP05_CANONICAL_LEDGER_PASS 372 families, 719 documents, 200 indexed declarations; 6 hostile rollbacks, 0 certifications")
+    hostile(d,"ALTERED_SOURCE_BLOB_LOCK",lambda a: a["input_git_blob_sha1_locks"].update({"MANUSCRIPT_INDEX.json":"0"*40}))
+    print("WP05_CANONICAL_LEDGER_PASS 372 families, 719 documents, 200 indexed declarations; 7 hostile rollbacks, 0 certifications")
 
 if __name__=="__main__":
     try:
