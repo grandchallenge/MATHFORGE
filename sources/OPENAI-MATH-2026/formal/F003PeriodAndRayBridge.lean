@@ -47,11 +47,14 @@ noncomputable section
 
 open OAI.SevenEighths.HeckeFamily
 
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) :=
+  Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+
 /-- On the absolutely convergent half-plane, a finite ray-character
 L-function is exactly the ideal Dirichlet series of the corresponding
 unit-invariant residue character. No new analytic zero-free estimate is used. -/
 theorem gcl_LFunction_eq_ray_ideal_tsum
-    (M : Ideal O) [NeZero M]
     (ρ : OAI.SevenEighths.RayOrthogonality.rayCharacters M)
     {s : ℂ} (hs : 1 < s.re) :
     LFunction (character M ρ) s =
