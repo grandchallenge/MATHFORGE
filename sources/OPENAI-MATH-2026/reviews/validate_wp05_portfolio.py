@@ -49,6 +49,31 @@ def validate(d):
         raw = (BASE / relative).read_bytes()
         actual = hashlib.sha1(b"blob " + str(len(raw)).encode() + bytes([0]) + raw).hexdigest()
         require(actual == expected, "exact pinned input mutated " + relative)
+    technical=json.loads((BASE/"WP01_COMPARATOR_200_PROTECTED_RECEIPT_INDEX.json").read_text())
+    require(d["wp01_technical_corpus_evidence"]["covered_distinct_comparator_indices"]==200,
+            "historical comparator undercount")
+    require(d["wp01_technical_corpus_evidence"]["protected_receipt_files"]==87,
+            "technical evidence file count")
+    require(d["wp01_technical_corpus_evidence"]["scope"]==
+            "HARDENED_TECHNICAL_COMPARATOR_ONLY_NOT_FAMILY_SEMANTIC_MATCH",
+            "technical result promoted to family semantic result")
+    require(d["wp01_technical_corpus_evidence"]["index_only_bindings"]==
+            technical["index_only_bindings"], "technical index binding scope changed")
+    require(d["verification_throughput"]["corpus_wide_comparator_technical_accepted_indices"]==200,
+            "technical declaration denominator drift")
+    require(d["verification_throughput"]["full_paper_hecke_claim_verified_by_index199"] is False,
+            "zeta-only comparator promoted to universal Hecke claim")
+    source003=next(x for x in d["families"] if x["family_id"]=="003")
+    require(source003["final_class"]=="UNRESOLVED", "F003 universal Hecke scope silently promoted")
+    zeta=source003["claim_level_technical_results"]
+    require(len(zeta)==1 and zeta[0]["crosswalk_index"]==199 and
+            zeta[0]["declaration"]=="OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
+            "F003 zeta subclaim not exact")
+    require(zeta[0]["lean_run"]==40743532665 and
+            zeta[0]["comparator_run"]==40777019339 and
+            zeta[0]["qualification"]==
+            "TECHNICAL_ZETA_SUBCLAIM_ONLY_NOT_ALL_FINITE_ORDER_HECKE_FAMILY",
+            "stale F003 proof receipt or overreach")
     require(len(index["families"])==EXPECTED_CATALOGUE, "source family count drift")
     require(len(cross["main_results"])==EXPECTED_FORMAL, "source declaration count drift")
     require(len(cross["source_papers"])==173, "source paper count drift")
@@ -133,7 +158,9 @@ def main():
     hostile(d,"OBSOLETE_CONE_REVIVAL",lambda a: target(a,"342")["claim_level_exceptions"][0].update(status="VERIFIED_WITHIN_EXPLICIT_SCOPE"))
     hostile(d,"STALE_EVIDENCE_HEAD",lambda a: a.update(imported_protected_evidence_head="0"*40))
     hostile(d,"ALTERED_SOURCE_BLOB_LOCK",lambda a: a["input_git_blob_sha1_locks"].update({"MANUSCRIPT_INDEX.json":"0"*40}))
-    print("WP05_CANONICAL_LEDGER_PASS 372 families, 719 documents, 200 indexed declarations; 7 hostile rollbacks, 0 certifications")
+    hostile(d,"TECHNICAL_UNDERCOUNT",lambda a:a["wp01_technical_corpus_evidence"].update(covered_distinct_comparator_indices=1))
+    hostile(d,"ZETA_UNIVERSAL_HECKE_OVERREACH",lambda a:a["verification_throughput"].update(full_paper_hecke_claim_verified_by_index199=True))
+    print("WP05_CANONICAL_LEDGER_PASS 372 families, 719 documents, 200 indexed declarations; 9 hostile rollbacks, 0 certifications")
 
 if __name__=="__main__":
     try:
