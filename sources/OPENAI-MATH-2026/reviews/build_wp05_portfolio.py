@@ -15,6 +15,15 @@ SOURCE = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
 UPSTREAM_TREE = "45074722c918576d65b4c8be9686c76f508ba696"
 IMPORT_BASE = "fef6acbcc757a153509d6728e878c63404e8ad36"
 OUT = REV / "WP05_CANONICAL_372_FAMILY_VERDICTS.json"
+INPUT_BLOBS = {
+    "MANUSCRIPT_INDEX.json": "7a0b00eb9bfdeb59b157a98ee6522fc685580152",
+    "FORMALIZATION_CROSSWALK.json": "5fc50adc9430a91f22f1c3913bdfec62fe75acda",
+    "WP02_CANONICAL_3_14_13_RISK_REGISTER.json": "2d43ab80ca9d6a4395566d38f0afd5a464e4395e",
+    "reviews/WP03_PILOT12_EVIDENCE_LEDGER.json": "1aabf4800ae73da166258f3cdfdde8ec00da370a",
+    "reviews/WP04_ADVERSARIAL_WAVE16_LEDGER.json": "747f65889cd1adfde7e4ff7170e07a81561f1f33",
+    "reviews/WP01_F008_DUAL_REPLAY_RECEIPT.md": "13f791bd5b9ae8df9900ad46a1a5ef689985ef14",
+    "reviews/WP04_F008_ADVERSARIAL_MATHEMATICAL_REVIEW.md": "ed29fa92fe9b4910954311c482c496c02174f084",
+}
 
 def load(path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -155,6 +164,7 @@ def build():
         "schema":"GCL-OAI26-WP05-CANONICAL-372/1",
         "source_lock":{"repository":"openai/math","commit":SOURCE,"tree":UPSTREAM_TREE},
         "imported_protected_evidence_head": IMPORT_BASE,
+        "input_git_blob_sha1_locks": INPUT_BLOBS,
         "catalogue":{"families":372,"manuscript_paths":719,
                      "crosswalk_source_papers":173,
                      "crosswalk_distinct_declarations":200,
