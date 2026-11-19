@@ -137,10 +137,10 @@ when no zeros lie within the closed rectangle. Here `f(s)=M_W(s)D^(s+δ−1/2)F�
 
 Because `W` is smooth and compactly supported away from zero, `M_W` is entire. Writing `x=e^u` makes `M_W(c+it)` the Fourier transform of a smooth compactly supported function in `u`. Repeated integration by parts gives, for every `n`,
 
-``\
+```
 |M_W(ℓ+it)|≤C₂/(1+|t|)^2;
 |M_W(x+it)|≤C_n/(1+|t|)^{n+2}
-\``
+```
 
 uniformly for `x∈[ℓ,r]`. The source takes `C₂,C_n≥0` as explicit hypotheses and supplies them later from `PrimeLogProfile.uniform_mellin_decay`; at this theorem layer they are *not* silently manufactured.
 
