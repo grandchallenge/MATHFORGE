@@ -115,6 +115,29 @@ def contour_tests():
     print("CONTOUR_ORIENTATION_ZERO_MULTIPLICITY_AND_POLE_PASS")
 
 
+def primitive_gamma_strip_checks():
+    # Independently inspect the exact Q^(3/5) arithmetic from the
+    # source's completed Hecke functional equation on Re(s)=-1/10:
+    # completionScale(Q)=sqrt(3Q)/(2pi), exponent (1-2s).re=6/5.
+    sigma=F(-1,10)
+    assert F(1)-2*sigma==F(6,5)
+    assert (F(1)-2*sigma)/2==F(3,5)
+    mp.mp.dps=55
+    c=mp.gamma(mp.mpf("1.1"))/mp.gamma(mp.mpf("1.9"))
+    for t in ["0","0.01","0.1","1","3","10","100","1000"]:
+        y=mp.mpf(t)
+        z=mp.mpc("-0.1",y)
+        lhs=abs(mp.gamma(1-z)/mp.gamma(z))
+        rhs=c*(3+abs(y))**2
+        assert lhs<=rhs, (t,mp.nstr(lhs),mp.nstr(rhs))
+    for q in [1,3,5,25,10**6]:
+        Q=mp.mpf(q)
+        scale=mp.sqrt(3*Q)/(2*mp.pi)
+        rhs=(mp.sqrt(3)/(2*mp.pi))**mp.mpf("1.2")*Q**mp.mpf("0.6")
+        assert mp.almosteq(scale**mp.mpf("1.2"),rhs,rel_eps=mp.mpf("1e-48"))
+    print("COMPLETED_HECKE_GAMMA_CONDUCTOR_EXPONENT_SAMPLES_PASS",8,5)
+
+
 def hostile_uniformity_without_growth():
     # Zero-freeness by itself never bounds a logarithmic derivative
     # uniformly. The entire functions L_k(s)=exp(k*(s-2)) have NO zeros,
@@ -174,6 +197,7 @@ if __name__=="__main__":
     geometry_tests()
     exponent_tests()
     uniformity_tests()
+    primitive_gamma_strip_checks()
     hostile_uniformity_without_growth()
     contour_tests()
     print("F003_PRIME_BIN_INDEPENDENT_CONTOUR_AUDIT_PASS")
