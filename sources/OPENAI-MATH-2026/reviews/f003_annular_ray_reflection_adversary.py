@@ -80,7 +80,7 @@ def sm(items):
     for a in items:z=ga(z,a)
     return z
 def coeff(seed,z,i,shift=0):
-    return PALETTE[(seed+3*z+5*i+shift)%len(PALETTE)]
+    return PALETTE[(seed+z+5*i+shift)%len(PALETTE)]
 
 def cyclic_fourier_exact():
     nonzero=0
