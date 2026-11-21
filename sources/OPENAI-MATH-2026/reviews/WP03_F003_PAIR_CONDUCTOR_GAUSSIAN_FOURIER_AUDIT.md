@@ -8,14 +8,14 @@
 
 ## 1. Source-specific objects; no surrogate polynomial
 
-Write \(\mathcal C\) for the actual finite supported columns of any input \(s\) (including both \`CanonicalMainGaussian.child\` and \`CanonicalErrorGaussian.errorInput\`). Let \(a_I\) be the pinned \`sourceGenerator\` of column \(I\), and let \(N(I)=|O/(a_I)|=|a_I|^2>0\). The exact row is
+Write \(\mathcal C\) for the actual finite supported columns of any input \(s\) (including both `CanonicalMainGaussian.child` and `CanonicalErrorGaussian.errorInput`). Let \(a_I\) be the pinned `sourceGenerator` of column \(I\), and let \(N(I)=|O/(a_I)|=|a_I|^2>0\). The exact row is
 
 \[
 g_I(z)=\frac{1}{\sqrt{N(I)}}\sum_{x\in O/(a_I)}
   \chi_I(x)\,\psi_{a_I}(zx),
 \]
 
-where \(\chi_I=\texttt{supportedModulusCharacter}\), and \(\psi_{a_I}=\texttt{quotientTrace}\) is the **source's primitive additive character**, not a naïvely chosen lattice trace. Pinned \`Moments/Fourier.lean:residueGauss_supported_mk\`, \`Moments/GaussEnergy.lean:gaussRow\`, and \`Detector/PhysicalPoisson.lean:sexticGauss_frequency_congr\` establish this representation and periodicity. The \`MulChar\` vanishes at nonunits and has modulus 1 at units (\`Moments/SupportedCorrelation.lean\`); thus \(|\chi_I(x)|\le1\).
+where \(\chi_I=\texttt{supportedModulusCharacter}\), and \(\psi_{a_I}=\texttt{quotientTrace}\) is the **source's primitive additive character**, not a naïvely chosen lattice trace. Pinned `Moments/Fourier.lean:residueGauss_supported_mk`, `Moments/GaussEnergy.lean:gaussRow`, and `Detector/PhysicalPoisson.lean:sexticGauss_frequency_congr` establish this representation and periodicity. The `MulChar` vanishes at nonunits and has modulus 1 at units (`Moments/SupportedCorrelation.lean`); thus \(|\chi_I(x)|\le1\).
 
 The input coefficients are \(c_I=\beta_I\,\texttt{heightCoeff}(s.\eta,s.t,I)\), with \(|c_I|\le|\beta_I|\); \(P_s(z)=\sum_{I\in\mathcal C}c_Ig_I(z)\) is **exactly the actual source Gauss polynomial**. Its energy is
 
@@ -25,7 +25,7 @@ E_s(K)=\texttt{normalizedGaussSource}(s,R,\mathrm{seed},
  =\frac{1}{V_s}\sum_{z\in O}|P_s(z)|^2\Phi(N(z)/K),
 \]
 
-with \(V_s=\texttt{volume}(s)>0\), \(K>0\), \(\Phi=\texttt{QuadraticInitialBound.sieveCutoff}\in[0,1]\), real, smooth, and compactly supported in \((-\infty,2)\). Here \(\phi(x)=\Phi(|x|^2)\in C^\infty_c(\mathbb R^2)\). This is not \`paperRadialFourier\`; the latter appears **after** Poisson summation.
+with \(V_s=\texttt{volume}(s)>0\), \(K>0\), \(\Phi=\texttt{QuadraticInitialBound.sieveCutoff}\in[0,1]\), real, smooth, and compactly supported in \((-\infty,2)\). Here \(\phi(x)=\Phi(|x|^2)\in C^\infty_c(\mathbb R^2)\). This is not `paperRadialFourier`; the latter appears **after** Poisson summation.
 
 ## 2. Finite Plancherel and the zero-mean coprime theorem
 
@@ -103,7 +103,7 @@ c_\Phi\sum_{B\in\mathscr B}
 }
 \]
 
-For pairwise coprime proper columns, replace the component sum by \(\sum_I|\beta_I|^2\). The source-specific \`heightCoeff\` causes **no extra growth** in this bound. It applies unchanged to the main and nested error \`Input\` types with their exact \(K_\mathrm{main}\), \(K_\mathrm{error}\), normalizing modulus and coefficients; no substitution of a synthetic source is made.
+For pairwise coprime proper columns, replace the component sum by \(\sum_I|\beta_I|^2\). The source-specific `heightCoeff` causes **no extra growth** in this bound. It applies unchanged to the main and nested error `Input` types with their exact \(K_\mathrm{main}\), \(K_\mathrm{error}\), normalizing modulus and coefficients; no substitution of a synthetic source is made.
 
 ## 4. Quantified high-stage applicability and its limitation
 
@@ -114,28 +114,28 @@ N(I)N(J)\left(1+\sqrt{K/[N(I)N(J)]}\right)^{-A}
 \le Z^{d-A(\rho-d)/2}.
 \]
 
-Choose \(A>2(d+\gamma)/(\rho-d)\) to save at least \(Z^{-\gamma}\) per pair, **before** summing over any growing number/weight of columns. Uniformity still requires bounding \(\sum_{I,J}|\beta_I\beta_J|\) and respecting the actual \`Ready\` and family-character width gates.
+Choose \(A>2(d+\gamma)/(\rho-d)\) to save at least \(Z^{-\gamma}\) per pair, **before** summing over any growing number/weight of columns. Uniformity still requires bounding \(\sum_{I,J}|\beta_I\beta_J|\) and respecting the actual `Ready` and family-character width gates.
 
-Conversely, if \(K\lesssim N(I)N(J)\) for active correlated pairs, the displayed Poisson remainder has no power saving. It cannot be promoted to the four \`seededFactors\` powers, nor to the \`ratioPenalty^(1/6)\` natural child-energy bound merely because the theorem holds. The precise residual work is a **large pair-conductor or shared-prime** cancellation theorem at the actual \`Kmain/Kerror\`, together with the previous-stage \`ZeroAt\` and \`PositiveAt\` budgets and the nested \`υ.modulus\` gate. This identifies the mathematical gap, rather than disguising it in a period-dependent constant.
+Conversely, if \(K\lesssim N(I)N(J)\) for active correlated pairs, the displayed Poisson remainder has no power saving. It cannot be promoted to the four `seededFactors` powers, nor to the `ratioPenalty^(1/6)` natural child-energy bound merely because the theorem holds. The precise residual work is a **large pair-conductor or shared-prime** cancellation theorem at the actual `Kmain/Kerror`, together with the previous-stage `ZeroAt` and `PositiveAt` budgets and the nested `υ.modulus` gate. This identifies the mathematical gap, rather than disguising it in a period-dependent constant.
 
 ## 5. Independent adversarial limitations and source receipts
 
-The stdlib file \`f003_pair_conductor_fourier_adversary.py\` checks the Eisenstein norm/trace forms, primitive-pair Fourier orthogonality on unramified finite **integer** quotient examples, equal CRT fiber counts, full finite Plancherel for unit masks, and deliberately shows the naïve trace pairing becomes degenerate modulo 3. The latter is a hostile mutation test: the source uses the corrected primitive \`quotientTrace\`, and no defect is claimed. The finite checks validate algebraic mechanisms, **not** the infinite-lattice Poisson estimate. The proof above is an independent mathematical derivation; Lean formalization of this stronger bound has **not** been performed.
+The stdlib file `f003_pair_conductor_fourier_adversary.py` checks the Eisenstein norm/trace forms, primitive-pair Fourier orthogonality on unramified finite **integer** quotient examples, equal CRT fiber counts, full finite Plancherel for unit masks, and deliberately shows the naïve trace pairing becomes degenerate modulo 3. The latter is a hostile mutation test: the source uses the corrected primitive `quotientTrace`, and no defect is claimed. The finite checks validate algebraic mechanisms, **not** the infinite-lattice Poisson estimate. The proof above is an independent mathematical derivation; Lean formalization of this stronger bound has **not** been performed.
 
 ### Source identity ledger
 
-- \`Moments/GaussEnergy.lean\` — blob \`200d3d5c9fb828b7bd1eb4e5a7160b10c5fd65bd\`, exact \`gaussRow\`, \`gaussEnergy\`, \`gaussEnergy_poisson\`.
-- \`Moments/Fourier.lean\` — blob \`44f1801810a2e6dd2559fd585bafae8a2f508350\`, \`residueGauss_supported_mk\`, \`normalizedResidueGauss\`.
-- \`Moments/SupportedCorrelation.lean\` — blob \`60ff9177fcd60a676148d529885c01ae12869f50\`, supported multiplicative character and nonunit vanishing.
-- \`Detector/PhysicalPoisson.lean\` — blob \`e2d243d19aa9a0e35c2698d734145474107bdff2\`, \`sexticGauss_frequency_congr\`.
-- \`Moments/AmplificationChildInput.lean\` — blob \`90d172571cce6192d42d5751618619de302acd6a\`, \`normalizedGaussSource\`, \`volume\`.
-- \`Moments/FirstAmplificationChoice.lean\` — blob \`1e7a23d2f1319bd7a025a0ee8148a577c685b52d\`, \`ballProfile\` and positivity.
-- \`Energy/CanonicalMainGaussian.lean\` — blob \`149d54db73c4a8ca82646702cba3346c2b57c054\`.
-- \`Energy/CanonicalErrorGaussian.lean\` — blob \`1239786517727b801e0553c53a672003a92c8274\`.
+- `Moments/GaussEnergy.lean` — blob `200d3d5c9fb828b7bd1eb4e5a7160b10c5fd65bd`, exact `gaussRow`, `gaussEnergy`, `gaussEnergy_poisson`.
+- `Moments/Fourier.lean` — blob `44f1801810a2e6dd2559fd585bafae8a2f508350`, `residueGauss_supported_mk`, `normalizedResidueGauss`.
+- `Moments/SupportedCorrelation.lean` — blob `60ff9177fcd60a676148d529885c01ae12869f50`, supported multiplicative character and nonunit vanishing.
+- `Detector/PhysicalPoisson.lean` — blob `e2d243d19aa9a0e35c2698d734145474107bdff2`, `sexticGauss_frequency_congr`.
+- `Moments/AmplificationChildInput.lean` — blob `90d172571cce6192d42d5751618619de302acd6a`, `normalizedGaussSource`, `volume`.
+- `Moments/FirstAmplificationChoice.lean` — blob `1e7a23d2f1319bd7a025a0ee8148a577c685b52d`, `ballProfile` and positivity.
+- `Energy/CanonicalMainGaussian.lean` — blob `149d54db73c4a8ca82646702cba3346c2b57c054`.
+- `Energy/CanonicalErrorGaussian.lean` — blob `1239786517727b801e0553c53a672003a92c8274`.
 
 ### Claim ledger
 
-\`\`\`text
+```text
 RESULT/1
 ASSIGNMENT: GCL-OAI26-F003-PAIR-CONDUCTOR-GAUSSIAN/1
 PIN: openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a
@@ -147,4 +147,4 @@ LEAN FORMALIZATION OF NEW LEMMA: NOT PERFORMED
 HIGH-CONDUCTOR / SHARED-PRIME SHARP CHILD ENERGY: OPEN
 SEVEN-EIGHTHS: UNRESOLVED
 MATHCERT: NONE
-\`\`\`
+```
