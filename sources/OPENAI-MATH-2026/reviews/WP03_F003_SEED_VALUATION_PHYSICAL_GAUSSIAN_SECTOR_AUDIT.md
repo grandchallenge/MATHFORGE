@@ -34,7 +34,7 @@ Powers \(\mathfrak p^e\) in (2) are **ideal prime powers**, never powers of inte
 
 ## B. Exact six-class physical Gaussian support at each seed prime
 
-Let \(P(S)\) be the finite set of prime ideals dividing squarefree S. For \(\mathfrak p\in P(S)\), let \(q_{\mathfrak p}=N(\mathfrak p)\ge7\). At each active supported ideal \(I\), \(e_{\mathfrak p}(I):=v_{\mathfrak p}(I)\ge1\). Assign the **truncated valuation**
+Let \(P(S)\) be the finite set of prime ideals dividing squarefree S. If there are no active source columns, all conclusions are trivial; otherwise every seed prime divides an active **Supported** ideal. Pinned `Moments/FixedRay.supported_coprime_twelve` (blob `519cdf66f7972822cd8e82d58b689829dcfcceef`) excludes Eisenstein primes above 2 and 3. Thus for every \(\mathfrak p\in P(S)\) in the nonempty case, \(q_{\mathfrak p}=N(\mathfrak p)\ge7\). At each active supported ideal \(I\), \(e_{\mathfrak p}(I):=v_{\mathfrak p}(I)\ge1\). Assign the **truncated valuation**
 
 \[
 \sigma_{\mathfrak p}(I)=\min(e_{\mathfrak p}(I),6)\in\{1,2,3,4,5,6\}.
@@ -193,7 +193,7 @@ The verifier is an exact finite arithmetic check, **not** an independent Lean el
 RESULT/1
 ASSIGNMENT: GCL-OAI26-F003-SEED-VALUATION-PHYSICAL-GAUSSIAN-LARGESIEVE/1
 PIN: openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a
-SOURCE_FACTS: column_nonzero_masks; original_column_norm;
+SOURCE_FACTS: column_nonzero_masks; original_column_norm;\n supported_coprime_twelve;
  actualSextic_primePowerGauss_at_pow; primePowerGauss_support;
  sexticGauss_prime_power; canonicalCRTCharacter_mk;
  quotientProdEquivPi; ballProfile_nonneg/le_one/support_upper
