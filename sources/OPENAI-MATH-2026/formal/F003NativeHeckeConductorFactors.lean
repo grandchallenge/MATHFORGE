@@ -20,6 +20,7 @@ the global idele-to-ray map or prove global Euler/meromorphic equality.
 namespace GCL.OAI26.F003.NativeConductor
 
 open NumberField
+open IsDedekindDomain
 open Polynomial
 
 noncomputable section
