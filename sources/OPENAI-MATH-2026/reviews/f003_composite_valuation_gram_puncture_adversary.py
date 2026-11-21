@@ -166,12 +166,50 @@ def test_origin_and_projection():
         require(k+1-k==1)
         print(f"p^{k} raw exact valuation: p-free; {k+1} plain allocation partitions before cancellation")
 
+def test_hereditary_conductor_mask_and_variance():
+    # Symbolic ideal-factor model of pinned SourceCommonMask.column_nonzero_masks.
+    # This tests exponent logic, NOT the pinned Lean's tuple-level mask code.
+    for r0 in product(range(3),repeat=3):
+        for c in product(range(3),repeat=3):
+            tmain=tuple(r0[i]+c[i] for i in range(3))
+            for i in product(range(3),repeat=3):
+                main_live=all(tmain[h]*i[h]==0 for h in range(3))
+                if main_live:
+                    require(all(c[h]*i[h]==0 for h in range(3)))
+                    require(all(r0[h]*i[h]==0 for h in range(3)))
+                for k in (1,6,7):
+                    qidx=k%3
+                    terr=tuple(tmain[h]+(k if h==qidx else 0) for h in range(3))
+                    err_live=all(terr[h]*i[h]==0 for h in range(3))
+                    if err_live:
+                        require(all(tmain[h]*i[h]==0 for h in range(3)))
+                        require(i[qidx]==0)
+                # Seed and conductor noncoprime => no nonzero masked coefficient.
+                seed=tuple(1 if h==(sum(r0)+sum(c))%3 else 0 for h in range(3))
+                valid=all(tmain[h]*i[h]==0 and seed[h]<=i[h] for h in range(3))
+                if any(tmain[h]*seed[h]!=0 for h in range(3)):
+                    require(not valid)
+    # Exact Hilbert-space allocation variance identity in positive discrete
+    # scalar products: m*sum ||v_i||^2 - ||sum v_i||^2 = sum ||v_i-v_j||^2.
+    for m in (1,2,3,4,7,8):
+        for shift in range(9):
+            vectors=[tuple(F((3*j+shift+2*h)%7-3,7) for h in range(4)) for j in range(m)]
+            L=m*sum(sum(x*x for x in v) for v in vectors)
+            summed=[sum(v[h] for v in vectors) for h in range(4)]
+            L-=sum(x*x for x in summed)
+            R=sum(sum((vectors[j][h]-vectors[l][h])**2 for h in range(4))
+                  for j in range(m) for l in range(j+1,m))
+            require(L==R)
+            require(L>=0)
+    print("hereditary input conductor mask (symbolic ideals), allocation variance identity PASS")
+
 def main():
     for a,b in product(range(-33,34),repeat=2):
         require(2*enorm((a,b))==a*a+b*b+(a-b)**2)
     test_local_table()
     test_composite_product()
     test_origin_and_projection()
+    test_hereditary_conductor_mask_and_variance()
     print("EXACT ASSERTIONS",checks,"PASS")
     print("NOT CHECKED: source lean elaboration of new CRT theorem, Gaussian physical K-dependent bound or four seeded powers")
     print("PIN",PIN)
