@@ -156,7 +156,7 @@ jobs:
           cargo --version
       - name: Assert exact family source bytes and structural scan
         run: python ci/audit_openai_ten_proofs_successor_upstream.py verify --root upstream --family '${{ matrix.family }}'
-      - uses: grandchallenge/lean-action@37f8471aecd2efbeab3b1e1a75ad18fb8f5c1b01
+      - uses: grandchallenge/lean-action@f58ea9134a76be187238e5458998cc0ffffe3f6c
         with:
           lake-package-directory: upstream
           build: 'false'
