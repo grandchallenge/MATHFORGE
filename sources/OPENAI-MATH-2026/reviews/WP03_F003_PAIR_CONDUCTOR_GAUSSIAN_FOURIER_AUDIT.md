@@ -116,7 +116,7 @@ N(I)N(J)\left(1+\sqrt{K/[N(I)N(J)]}\right)^{-A}
 
 Choose \(A>2(d+\gamma)/(\rho-d)\) to save at least \(Z^{-\gamma}\) per pair, **before** summing over any growing number/weight of columns. Uniformity still requires bounding \(\sum_{I,J}|\beta_I\beta_J|\) and respecting the actual `Ready` and family-character width gates.
 
-Conversely, if \(K\lesssim N(I)N(J)\) for active correlated pairs, the displayed Poisson remainder has no power saving. It cannot be promoted to the four `seededFactors` powers, nor to the `ratioPenalty^(1/6)` natural child-energy bound merely because the theorem holds. The precise residual work is a **large pair-conductor or shared-prime** cancellation theorem at the actual `Kmain/Kerror`, together with the previous-stage `ZeroAt` and `PositiveAt` budgets and the nested `υ.modulus` gate. This identifies the mathematical gap, rather than disguising it in a period-dependent constant.
+The pinned `Moments/FirstSecondInputGates.lean:Ready` (blob `32eeccf2050a59a4c3e203405b8acc3a4725b5f1`) requires `0<K`, caps the child's volume, source radius, character conductor, puncture norm, nominal scale and frequency radius; **it does not assert** either `K>=1` or `K>N(I)N(J)` for the active column pairs. Thus the pair-period lemma genuinely covers only the `K>=1` subregime; for `0<K<1` use the earlier unconditional row-count estimate in PR #576. Nor does `Ready` force the pair-conductor gap needed for power-saving. Conversely, if \(K\lesssim N(I)N(J)\) for active correlated pairs, the displayed Poisson remainder has no power saving. It cannot be promoted to the four `seededFactors` powers, nor to the `ratioPenalty^(1/6)` natural child-energy bound merely because the theorem holds. The precise residual work is a **large pair-conductor or shared-prime** cancellation theorem at the actual `Kmain/Kerror`, together with the previous-stage `ZeroAt` and `PositiveAt` budgets and the nested `υ.modulus` gate. This identifies the mathematical gap, rather than disguising it in a period-dependent constant.
 
 ## 5. Independent adversarial limitations and source receipts
 
@@ -129,6 +129,7 @@ The stdlib file `f003_pair_conductor_fourier_adversary.py` checks the Eisenstein
 - `Moments/SupportedCorrelation.lean` — blob `60ff9177fcd60a676148d529885c01ae12869f50`, supported multiplicative character and nonunit vanishing.
 - `Detector/PhysicalPoisson.lean` — blob `e2d243d19aa9a0e35c2698d734145474107bdff2`, `sexticGauss_frequency_congr`.
 - `Moments/AmplificationChildInput.lean` — blob `90d172571cce6192d42d5751618619de302acd6a`, `normalizedGaussSource`, `volume`.
+- `Moments/FirstSecondInputGates.lean` — blob `32eeccf2050a59a4c3e203405b8acc3a4725b5f1`, precise `Ready` premises and their missing pair-conductor gap.
 - `Moments/FirstAmplificationChoice.lean` — blob `1e7a23d2f1319bd7a025a0ee8148a577c685b52d`, `ballProfile` and positivity.
 - `Energy/CanonicalMainGaussian.lean` — blob `149d54db73c4a8ca82646702cba3346c2b57c054`.
 - `Energy/CanonicalErrorGaussian.lean` — blob `1239786517727b801e0553c53a672003a92c8274`.
