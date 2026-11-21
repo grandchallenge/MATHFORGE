@@ -75,6 +75,9 @@ jobs:
           cd upstream/mathlib-native
           (
             set -euo pipefail
+            # The newly introduced native module is not in the retained remote mathlib cache.
+            # Build the exact pinned native module before compiling the GCL sidecar.
+            lake build Mathlib.NumberTheory.NumberField.HeckeLFunction
             cp "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/formal/F003NativeHeckeConductorFactors.lean" GCLF003NativeHeckeConductorFactors.lean
             cat >> GCLF003NativeHeckeConductorFactors.lean <<'LEAN'
           #check GCL.OAI26.F003.NativeConductor.localPolynomial_presentation_times_correction
