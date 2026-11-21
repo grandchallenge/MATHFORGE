@@ -33,15 +33,19 @@ variable (χ : NumberField.HeckeCharacter R K)
 /-- The local polynomial of a ray presentation extended by zero at the
 entire defining modulus. At a prime in the modulus, its polynomial is
 1 even if the underlying native Hecke character is unramified there. -/
-def presentationPolynomial (bad : Set (HeightOneSpectrum R))
-    (v : HeightOneSpectrum R) : ℂ[X] :=
-  if v ∈ bad then 1 else 1 - C (χ.localValue v) * X
+def presentationPolynomial (χ : NumberField.HeckeCharacter R K)
+    (bad : Set (HeightOneSpectrum R))
+    (v : HeightOneSpectrum R) : ℂ[X] := by
+  classical
+  exact if v ∈ bad then 1 else 1 - C (χ.localValue v) * X
 
 /-- The missing polynomial precisely at an unramified prime which the
 chosen presentation's modulus deletes. At ramified primes it is 1. -/
-def deletionCorrection (bad : Set (HeightOneSpectrum R))
-    (v : HeightOneSpectrum R) : ℂ[X] :=
-  if v ∈ bad then χ.localPolynomial v else 1
+def deletionCorrection (χ : NumberField.HeckeCharacter R K)
+    (bad : Set (HeightOneSpectrum R))
+    (v : HeightOneSpectrum R) : ℂ[X] := by
+  classical
+  exact if v ∈ bad then χ.localPolynomial v else 1
 
 theorem presentationPolynomial_of_mem
     (bad : Set (HeightOneSpectrum R)) (v : HeightOneSpectrum R)
