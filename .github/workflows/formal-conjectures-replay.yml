@@ -8,7 +8,14 @@ on:
       - "governance/external_sources.json"
       - "formal_sources/formal_conjectures/**"
       - "schemas/**"
-      - "tests/**"
+      # Only tests of this replay, its providers, and the catalog it regenerates.
+      # Other programme tests still run in Forge checks (ci.yml).
+      - "tests/test_formal_conjectures_*.py"
+      - "tests/test_semantic_catalog.py"
+      - "tests/test_catalog_delta.py"
+      - "tests/test_external_sources.py"
+      - "tests/test_discovery.py"
+      - "tests/fixtures/formal_conjectures_extract.json"
   schedule:
     - cron: "23 8 1 * *"
   workflow_dispatch:
