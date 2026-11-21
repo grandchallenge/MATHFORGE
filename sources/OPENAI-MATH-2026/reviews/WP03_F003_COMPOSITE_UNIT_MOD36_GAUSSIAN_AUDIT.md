@@ -17,7 +17,7 @@ Use the pinned source, not an inferred local phase:
   \tag{1}
   \]
   Its `ideal_norm_mod_six_of_good` also proves \(N(I)\equiv1\pmod6\). Both follow because every prime factor of a `Supported` ideal is good and has residue norm \(1\bmod6\).
-- `Detector/CalibrationRemoval.lean:sexticGauss_unit_scale` (blob **verify source at this pin**) proves
+- `Detector/CalibrationRemoval.lean:sexticGauss_unit_scale` (blob `d672bbf9e4dc9756683957368dc913afde06ebb1`) proves
   \[
   \mathrm{sexticGauss}(a,u z)=
   \texttt{idealRowHom}(u,(a))^{-1}\,
