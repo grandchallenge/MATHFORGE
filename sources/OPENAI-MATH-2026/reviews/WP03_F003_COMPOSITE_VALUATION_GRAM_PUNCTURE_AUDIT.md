@@ -1,10 +1,10 @@
-# OAI-26 Family 003 — composite sextic Gram factors, exact p-puncture, and allocation-loss obstruction
+# OAI-26 Family 003 — composite sextic Gram factors, exact hereditary conductor puncture, and allocation-loss accounting
 
 **Assignment:** GCL-OAI26-F003-COMPOSITE-VALUATION-GRAM-PUNCTURE/1  
 **Immutable source:** `openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a`  
 **Protected research predecessor:** MATHFORGE PR #583; main `1b1b7281097974ad8b4620edb96746f82f8293f6`  
 **Scope:** actual source Gaussian rows and raw amplification error families, not independently Lean-elaborated new composite lemmas  
-**Disposition:** `EXACT_COMPOSITE_LOCAL_GRAM_FACTOR_RECONSTRUCTED__RAW_ERROR_VALUATION_PUNCTURE_PROVED_IN_SOURCE__ALLOCATION_PROJECTION_LOSS_IS_SUBSTANTIVE__FULL_F003_SHARP_OPEN`  
+**Disposition:** `EXACT_COMPOSITE_GRAM_RECONSTRUCTED__EACH_MAIN_ERROR_CHILD_CONDUCTOR_PUNCTURED__ALLOCATION_CARDINALITY_AND_SHARP_POWERS_OPEN`  
 **No seven-eighths completion or MATHCERT certification.**
 
 ## 1. Exact source binding and input assumptions
@@ -38,8 +38,8 @@ Source facts at the immutable pin:
 | `Eisenstein/UnitNormalization.idealRowHom_unit_norm` | `fa4c3434d200a7fd7e38c7daa619bfa4553ab1c8` | Six global-unit eigensectors, already admitted PR #582 |
 | `Moments/AmplificationSourcePool.residualColumns_eq` | `4166c4c37e69826d2c4554712e528dfb207449c9` | Exact valuation-\(k\) error residual is \(p\)-free |
 | `Moments/AmplificationErrorPool.residual_energy_eq_punctured` | `7a589ccfedd4d0dca61550015959b8c15003afbc` | True residual energy matches the punctured original |
-| `Moments/OriginalChildEnergy.original_source_punctured_column` | `ee1338c7b068e68930073a0ef820df3e9168e296` | Coherent sum of allocated child coefficients, including cancellation on forbidden columns |
-| `Moments/AmplificationAllocationScale.frozenCoefficient_exact` | `10d65f66a2a211382657eac4aa3381788979fc45` | Under prime-slot coprimality every allocation scalar is the *same* 0/1 coprimality indicator |
+| `Moments/OriginalChildEnergy.original_source_punctured_column` | `ee1338c7b068e68930073a0ef820df3e9168e296` | Its proof establishes **individual** child residual-coprimality, not just summed cancellation |
+| `Moments/SourceCommonMask.column_nonzero_masks` | `8186f884a29ef58f3160bef5907cf369a3ca848a` | Each actual source coefficient is coprime to the current conductor and divisible by its seed |\n| `Moments/LiveSupport.live_column_original_support` | `b1b14b229ced32ad20d6e3dc0e9b8651a4db10fb` | Every allocated live nonzero coefficient is coprime to extracted C |\n| `Moments/AmplificationLiveMask.column_mask` | `c0b68ea2d09df9f552c9f82df9de69f85ffc8fbb` | Source mask preserves the individual puncture |\n| `Moments/AmplificationAllocationScale.frozenCoefficient_exact` | `10d65f66a2a211382657eac4aa3381788979fc45` | Under prime-slot coprimality every allocation scalar is the *same* 0/1 coprimality indicator |
 | `Moments/AmplificationChildEnergy.actual_amplification_child_energy` | `e29c88fc2085ed5f3b0f2daead5a7b8bc11da7e6` | Current \(k+1\) child-energy charge |
 | `Moments/AmplificationChildInput.normalizedGaussSource` | `90d172571cce6192d42d5751618619de302acd6a` | Exact normalized main/error source |
 
@@ -202,80 +202,105 @@ nonexpansive in small-radius physical Gaussian energy.}}
 
 This is an exact source-row algebraic example, **not** a claim that the chosen coefficients arise from an admissible F003 `Input`.
 
-## 5. The genuine raw error is prime-free, but its allocation majorant can lose this cancellation
+## 5. Stronger source fact: **each** genuine child is conductor-punctured
 
-This is the central consequence for the user-requested **actual** main/error child families, not a toy reformulation.
-
-For the upstream error stages \(n\in\{0,5,6\}\), set \(k=n+1\in\{1,6,7\}\) and \(P=(p)\), with the actual source's prime-slot coprimality gates. The pinned theorem `AmplificationSourcePool.residualColumns_eq` establishes exactly:
+An independent read of the **proof body** of pinned \`Moments/OriginalChildEnergy.original_source_punctured_column\` corrects a weaker earlier interpretation: in its noncoprime branch (lines 32–43) it proves directly, **for every individual allocation B**,
 
 \[
-\texttt{residualColumns}(S,p,k)
-=\big\{I\in\texttt{supportedColumns}(\texttt{residualPool}(P^k,S)):
- (I,P)=1\big\}.
+\neg\operatorname{IsCoprime}(C,I)\ \Longrightarrow\
+ \texttt{finiteColumnCoefficient}(\texttt{liveBox}_B,\texttt{liveProfile}_B)(I)=0.
 \tag{13}
 \]
 
-Equivalently, the raw error selects source columns of **exact** valuation \(v_p=k\), removes \(p^k\), and retains only \(p\)-free residual columns. The source's `AmplificationErrorPool.residual_energy_eq_punctured` proves equality of the corresponding true Gaussian energy, not just a support inclusion.
+It invokes pinned \`Moments/LiveSupport.live_column_original_support\` (blob \`b1b14b229ced32ad20d6e3dc0e9b8651a4db10fb\`). Pinned \`Moments/AmplificationLiveMask.column_mask\` (blob \`c0b68ea2d09df9f552c9f82df9de69f85ffc8fbb\`) multiplies the live coefficient by a 0/1 mask; it cannot create a nonzero coefficient at an excluded residual ideal. **The individual masked child is already coprime to C at its nonzero coefficient support.** It is NOT merely a prime-free property of the coherent sum.
 
-The actual allocation decomposition in `OriginalChildEnergy.original_source_punctured_column` gives an exact **coherent identity** between the punctured source coefficient and a sum over child allocations B. Under the prime-slot coprimality hypothesis, `AmplificationAllocationScale.frozenCoefficient_exact` sharpens the frozen weight to
+There is an even stronger **hereditary** restriction, requiring no new projection. Pinned \`Moments/SourceCommonMask.column_nonzero_masks\` (blob \`8186f884a29ef58f3160bef5907cf369a3ca848a\`) proves for every actual source:
+
+\[
+\boxed{\texttt{(original s T seed).beta}(I)\ne0
+\ \Longrightarrow\ \operatorname{IsCoprime}(I,T)
+ \ \wedge\ \mathrm{seed}\mid I.}
+\tag{14}
+\]
+
+Proof: every nonzero source coefficient has a nonzero contributing tuple; its **actual** \`profileCoefficient\` enforces \(\operatorname{IsCoprime}(I,T)\) and seed divisibility. This is a pre-existing *Lean theorem*. The following are independently reconstructed instantiations into the exact Family 003 objects using \`AmplificationChildInput.child_columns\`/\`child_profile\`, \`FirstSecondActiveErrorGates.errorInput\`, and \`FirstAnnularActiveInput.original_active\`:
+
+* **Genuine main child** \(d_m=\texttt{child}(s,C,R_0,B,\tau,t)\) has source \(\texttt{original}(d_m,R_0C,\mathrm{seed})\). Every nonzero coefficient satisfies
+  \[
+  \boxed{\operatorname{IsCoprime}(I,R_0 C),\quad \mathrm{seed}\mid I.}
+  \tag{15}
+  \]
+* **Genuine nested error child** \(d_e=\texttt{errorInput}(s,C,R_0,B,\tau,t,Q,k,B',\upsilon,v)\), \(k\in\{1,6,7\}\), has source \(\texttt{original}(d_e,(R_0C)Q^k,\mathrm{seed})\). Every nonzero coefficient satisfies
+  \[
+  \boxed{\operatorname{IsCoprime}(I,(R_0C)Q^k),\quad \mathrm{seed}\mid I.}
+  \tag{16}
+  \]
+  The \(\upsilon\)-dependent child is the **actual** \`CanonicalErrorGaussian\` input, not a synthetic replacement.
+
+Consequently, for *every active pair of nonzero coefficients* \(I,J\) in the main/error energy, their common period \(L=I\cap J\) is coprime **as an ideal** to the full input conductor in (15)/(16). In particular Q cannot appear as an ideal factor of either residual error column or pair period. No claim is made that the **integer norms** of coprime ideals are necessarily coprime (two prime ideals may lie above one rational prime).
+
+**Exact empty-case gate:** If the seed is not coprime to the respective full input conductor, (14) forces all original coefficients to vanish and the Gaussian source energy equals zero. This follows from the actual masks, not from a newly imposed hypothesis.
+
+## 6. The remaining real loss: allocation cardinality and within-sector correlation
+
+For the upstream error stages \(n\in\{0,5,6\}\), set \(k=n+1\in\{1,6,7\}\) and \(P=(p)\). The pinned theorem \`AmplificationSourcePool.residualColumns_eq\` separately proves that **raw** error extraction takes exactly p-valuation k before division, leaving only p-free residual ideals:
+
+\[
+\texttt{residualColumns}(S,p,k)=
+\{I\in\texttt{supportedColumns}(\texttt{residualPool}(P^k,S)):
+\operatorname{IsCoprime}(I,P)\}.
+\tag{17}
+\]
+
+By (13)–(16), the *individual actual allocated children* already respect the conductor puncture too. The exact polynomial allocation decomposition is \(\sum_{B\in\mathcal A} f_BP_B\). Under the prime-slot coprimality gate, pinned \`AmplificationAllocationScale.frozenCoefficient_exact\` says
 
 \[
 f_B=
 \begin{cases}
-1,&(R,P^k)=1,\\
-0,&(R,P^k)\ne1,
+1,&\operatorname{IsCoprime}(P^k,R),\\
+0,&\text{otherwise},
 \end{cases}
-\quad\text{independent of }B .
-\tag{14}
+\quad\text{independent of }B,
+\qquad m:=|\mathcal A|\le k+1.
+\tag{18}
 \]
 
-Thus when \((R,P^k)=1\), if \(P_B(z)\) is the actual Gaussian polynomial of allocation B **with its source-supplied child coefficients**, then the exact raw punctured polynomial is
+For the nonzero case, the **actual physical Gaussian** norm \(\|\cdot\|_\Phi\) gives the source's Cauchy inequality
 
 \[
-P_{\rm raw}(z)=\sum_{B\in\mathcal A}P_B(z),
-\qquad |\mathcal A|=:m\le k+1 .
-\tag{15}
+\left\|\sum_B P_B\right\|_\Phi^2
+\le m\sum_B\|P_B\|_\Phi^2\le(k+1)\sum_B\|P_B\|_\Phi^2.
+\tag{19}
 \]
 
-In particular, the *sum of allocated child coefficients* at every p-divisible residual ideal is zero, even though the source's hypotheses do not make every individual child coefficient at such an ideal zero. The original unprojected child Cauchy bound is
+An exact Hilbert variance identity identifies the possible gap:
 
 \[
-\|P_{\rm raw}\|_\Phi^2\le m\sum_B\|P_B\|_\Phi^2
-\le(k+1)\sum_B\|P_B\|_\Phi^2,
-\tag{16}
+\boxed{m\sum_B\|P_B\|_\Phi^2-\left\|\sum_B P_B\right\|_\Phi^2
+=\sum_{\{B,B'\}\subset\mathcal A}\|P_B-P_{B'}\|_\Phi^2\ge0.}
+\tag{20}
 \]
 
-where \(\|P\|_\Phi^2=\sum_z |P(z)|^2\Phi(N(z)/K)\). The constants **2,7,8** for \(k=1,6,7\) occur in the source `AmplificationChildEnergy.actual_amplification_child_energy`, and are also used in `AmplificationOriginalErrors.original_errors_to_children`.
+The factors \(k+1=\mathbf{2,7,8}\) remain the **actual** paid allocation costs unless the allowed source profiles and radii force a positive variance gap or a sharper coherent estimate. **Projector stability is not a missing obligation**: every individual child is already masked to the correct conductor. The generic two-Gauss-row projection counterexample in §4 remains correct but is **not** a counterexample to the Family 003 child construction and is not needed for the proof.
 
-There is a sharper **exact variance identity** for any \(m\) actual allocation polynomials:
+**Conductor reduction for the new exact local Gram bound:** In (9), restrict to coefficients nonzero under (15)/(16). Neither the extracted C nor Q can divide \(I\cap J\) in the relevant child. Thus they contribute **no local factor** to \(M(I,J)\), nor a norm factor to the minimal source period \(N(I\cap J)\). This is a genuine exact-conductor fact from the pinned source, not a free saving in the final power of Z: all \(\upsilon\)-modulus, \(ZeroAt/PositiveAt\), height, mesh, radius, and seed losses must still be accounted for.
 
-\[
-\boxed{\displaystyle
-m\sum_B\|P_B\|_\Phi^2-\|P_{\rm raw}\|_\Phi^2
- =\sum_{\{B,B'\}\subset\mathcal A}\|P_B-P_{B'}\|_\Phi^2\ge0.}
-\tag{17}
-\]
-
-Hence the known \((k+1)\) cost contains a mathematically explicit potentially removable *variance gap*. But neither (13) nor (14) alone gives a **positive uniform lower bound** on that gap, and deleting non-p-coprime columns **individually** from the P_B can increase energy (explicit witness above). A successful improvement must either (a) control the coherent sum before allocation Cauchy, (b) obtain a norm estimate for the projected child family with its actual `Input` and induction gates, or (c) prove a source-dependent quantitative variance lower bound after the physical radius/conductor restrictions are imposed.
-
-This locates the exact loss and blocks an unsound shortcut. No assumption that residual allocation children are individually p-free has been made.
-
-## 6. Exact adversarial replay and remaining target
+## 7. Exact adversarial replay and remaining target
 
 Companion `f003_composite_valuation_gram_puncture_adversary.py` uses exact arithmetic \(\mathbb Q+\mathbb Q\sqrt q\), not floating point, to independently evaluate both the source local valuation-shell probabilities and the closed table \(\mu_q(a,b)\) for all 0≤a,b≤18 and q∈{7,13,19,31,37}; checks two-prime CRT products, six-sector interaction examples, the q37 same-sector but pointwise-disjoint \((p,p^7)\) case, exact sixth-power origin values and the two-column projection counterexample, plus raw k∈{1,6,7} valuation and plain allocation counts. The checks **do not** independently elaborate the composite CRT theorem in Lean or replay the infinite Schwartz Poisson estimate.
 
-**Remaining proof obligation:** bound the *surviving* source-specific weighted within-sector composite CRT pair sum in (9) using genuine `ZeroAt`/`PositiveAt` induction and conductor/height/mesh losses. Establish source-dependent control of the punctured allocation variance or projector-stable child bound, including the exact origin in (12); recover all **four** seeded Gaussian powers with the canonical \(C_0,C_1\), \(\upsilon\)-conductor, seed and radius payments. The sharper finite Gram factors are an analytic ingredient, **not** by themselves the sharp Family 003 seven-eighths proof.
+**Remaining proof obligation:** bound the *surviving* source-specific weighted within-sector composite CRT pair sum in (9) using genuine `ZeroAt`/`PositiveAt` induction and conductor/height/mesh losses. Establish source-dependent control of the punctured allocation variance or projector-stable child bound, including the exact origin in (12); recover all **four** seeded Gaussian powers with the canonical \(C_0,C_1\), \(\upsilon\)-conductor, seed and radius payments. The sharper finite Gram factors and independently transported exact conductor puncture are analytic ingredients, **not** by themselves the sharp Family 003 seven-eighths proof.
 
 ```text
 RESULT/1
 ASSIGNMENT: GCL-OAI26-F003-COMPOSITE-VALUATION-GRAM-PUNCTURE/1
 SOURCE: openai/math@1581d4cbdd69a0faf34b2089614fe2a814316a6a
 PINNED FORMAL INPUT: genuine prime-power Gauss table; canonical CRT character;
- exact residualColumns_eq, residual_energy_eq_punctured, frozenCoefficient_exact;
+ exact residualColumns_eq, residual_energy_eq_punctured,\n column_nonzero_masks, live_column_original_support and frozenCoefficient_exact;
  secondDiagonal zero mode; source normalized Gauss energy
 NEW MATHEMATICAL RECONSTRUCTION: exact composite pairwise local L1 Gram factors;
  pointwise valuation-annihilation graph; improved Fourier remainder with M(I,J);
- exact composite origin obstruction; allocation Hilbert variance identity
+ exact composite origin obstruction; exact inherited input-conductor puncture\n of every nonzero main/error child coefficient; allocation Hilbert variance identity
 NEW INDEPENDENT LEAN ELABORATION: NOT PERFORMED
 SHARP FULL MAIN/ERROR CHILD GAUSSIAN ENERGY: OPEN
 FAMILY 003 SEVEN-EIGHTHS: UNRESOLVED
