@@ -16,7 +16,7 @@
 
 - `.../ThetaKernels/TPGHolds.lean`, SHA-256 `571074fd012521a7ed0c9f26c3a74e0e3ed3fa50b110979affa4566f6ba0f5ba`: `tools_holds_k` builds `Tools_k` with Siegel–Weil, box section, doubling, stabilizer, compactness, basic theta and Schwartz theory, unfolding, pairing, vacuum fixing, representation action, and Lie differential inputs; `tLift_holds_k := tLift_of_tools_k tools_holds_k (hgtEx_of_k ...)`.
 - `.../ThetaKernels/TPGTop.lean`, SHA-256 `8bbd5719adda270dc2c425180e45de3f6ac6c3c4fef21a95306e1633151a1e3f`: `tLift_of_tools_k` combines bridging, height, real-pair, Rallis, decomposition, bump, datum, tail, Schur-step, lift-aut, projective existence, and read-lift components.
-- `.../ThetaParseval/SchurStep.lean`, SHA-256 `901ac70f413697a2cf0aea6d98e06e1633151a1e3f`: correction: source SHA-256 for this file should be independently rechecked before any hash-level promotion; its inspected `IsLift` includes `aut`, `wt`, and `loc` fields.
+- `.../ThetaParseval/SchurStep.lean`, SHA-256 `901ac70f413697a2cf0aea4a35f8d3bc419699c48e01e62a8e06d49503a2e07c`: its inspected `IsLift` includes `aut`, `wt`, and `loc` fields.
 
 ## C. From theta lifts to Galois row
 
