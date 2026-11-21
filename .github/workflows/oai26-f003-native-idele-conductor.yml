@@ -18,10 +18,13 @@ jobs:
   native-idele-conductor:
     runs-on: ubuntu-24.04
     timeout-minutes: 100
+    env:
+      GCL_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
       - name: Checkout exact GCL candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: false
       - name: Checkout separately pinned native mathlib
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -36,6 +39,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p replay/oai26-f003-native-idele
+          test "$(git rev-parse HEAD)" = "$GCL_CANDIDATE_SHA"
           test "$(git -C upstream/mathlib-native rev-parse HEAD)" = "6e96f3e25b9b23468a6f155342b5a1e5e33ac8f9"
           test "$(git -C upstream/mathlib-native rev-parse HEAD^{tree})" = "b2c8b308b3b161ad602b52f65b125c724e060536"
           test "$(cat upstream/mathlib-native/lean-toolchain)" = "leanprover/lean4:v4.36.0-rc2"
@@ -113,7 +117,9 @@ jobs:
                   data[f.name]={'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)}
           (p/'receipt.json').write_text(json.dumps({
               'schema':'GCL-OAI26-F003-NATIVE-IDELE-CONDUCTOR-REPLAY/1',
-              'gcl_head':os.environ.get('GITHUB_SHA'),
+              'gcl_head':(p/'gcl-head.txt').read_text().strip() if (p/'gcl-head.txt').exists() else None,
+              'expected_head':os.environ.get('GCL_CANDIDATE_SHA'),
+              'github_event_sha':os.environ.get('GITHUB_SHA'),
               'run_id':os.environ.get('GITHUB_RUN_ID'),
               'native_mathlib_commit':'6e96f3e25b9b23468a6f155342b5a1e5e33ac8f9',
               'native_hecke_source_blob':'9dcd9a2a11f1407d47b9b0a1000259d237bdfe64',
