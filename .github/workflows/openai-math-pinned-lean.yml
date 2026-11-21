@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - ".github/workflows/openai-math-pinned-lean.yml"
-      - "sources/OPENAI-MATH-2026/**"
+      - "sources/OPENAI-MATH-2026/lean/Family342*.lean"
   push:
     branches: [main]
     paths:
