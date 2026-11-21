@@ -71,27 +71,29 @@ def lattice(B):
                  for b in range(-maxa,maxa+1)
                  if norm((a,b))<=B)
 
-def Afloor_bound(x):
-    """Exact # O-lattice points of squared norm <= rational x."""
+def Astrict_bound(x):
+    """Exact # O-lattice points of squared norm STRICTLY LESS than rational x."""
     x=F(x)
-    return len(lattice(x.numerator//x.denominator)) if x>=0 else 0
+    B=(x.numerator+x.denominator-1)//x.denominator-1
+    return len(lattice(B))
 
 def shell_data(selected,sigma,K):
     low=[j for j,t in zip(selected,sigma) if t<=5]
     d=1
     for j,t in zip(selected,sigma):
         d*=PRIMES[j][0]**(t-1)
-    # Exact inclusion-exclusion on finite Eisenstein ideal sublattices.
+    # Exact inclusion-exclusion for norm(z)<2K (strict cutoff support).
     count=0
     for m in range(len(low)+1):
         for subset in combinations(low,m):
             den=d
             for j in subset:den*=PRIMES[j][0]
-            count+=((-1)**m)*Afloor_bound(F(2)*K/den)
+            count+=((-1)**m)*Astrict_bound(F(2)*K/den)
     return d,low,count
 
 def direct_shell(selected,sigma,K):
-    B=(F(2)*K).__floor__()
+    x=F(2)*K
+    B=(x.numerator+x.denominator-1)//x.denominator-1
     total=0
     for z in lattice(B):
         ok=True
@@ -167,7 +169,7 @@ def test_exact_eisenstein_shell_count():
                     require(formula==brute,
                             (selected,sigma,str(K),formula,brute))
                     if low and F(2)*K<d: require(formula==0)
-                    if len(low)>0: require(formula<=Afloor_bound(F(2)*K/d)-1)
+                    if len(low)>0: require(formula<=Astrict_bound(F(2)*K/d)-1)
                     count+=1
         print(f"seed subset cardinality {m}: exact CRT shell inclusion-exclusion PASS")
     print("physical shell instances",count,"PASS")
