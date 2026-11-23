@@ -87,18 +87,6 @@ def outsideUnitSubgroup
   ⨆ v : {v : HeightOneSpectrum R // v ∉ bad},
     (localUnitImage (R := R) (K := K) (v : HeightOneSpectrum R)).range
 
-/-- The idèle class group is abelian, so this genuine local-unit-generated
-subgroup is normal. The instance is explicit; it is not an assumption. -/
-instance outsideUnitSubgroup_normal
-    (bad : Set (HeightOneSpectrum R)) :
-    (outsideUnitSubgroup (R := R) (K := K) bad).Normal where
-  conj_mem n hn g := by
-    have heq : g⁻¹ * n * g = n := by
-      calc
-        g⁻¹ * n * g = n * (g⁻¹ * g) := by ac_rfl
-        _ = n := by simp
-    simpa [heq] using hn
-
 /-- Explicit native character condition: local unramifiedness outside bad. -/
 def UnramifiedOutside (χ : NumberField.HeckeCharacter R K)
     (bad : Set (HeightOneSpectrum R)) : Prop :=
@@ -119,24 +107,49 @@ theorem unramifiedOutside_iff_global_kernel
   · intro h v hv
     exact (isUnramifiedAt_iff_range_le_ker χ v).mpr (h ⟨v, hv⟩)
 
+/-- The normal closure of the generated good-place unit subgroup in the
+native idèle class group. This makes the quotient group construction
+independent of implicit normality instance search. -/
+def outsideUnitNormalSubgroup
+    (bad : Set (HeightOneSpectrum R)) :
+    Subgroup (NumberField.IdeleClassGroup R K) :=
+  Subgroup.normalClosure
+    (outsideUnitSubgroup (R := R) (K := K) bad : Set (NumberField.IdeleClassGroup R K))
+
+theorem unramifiedOutside_iff_global_normal_kernel
+    (χ : NumberField.HeckeCharacter R K)
+    (bad : Set (HeightOneSpectrum R)) :
+    UnramifiedOutside χ bad ↔
+      outsideUnitNormalSubgroup (R := R) (K := K) bad ≤
+        χ.toMonoidHom.toHomUnits.ker := by
+  constructor
+  · intro h
+    exact Subgroup.normalClosure_le_normal
+      ((unramifiedOutside_iff_global_kernel χ bad).mp h)
+  · intro h
+    have hs : outsideUnitSubgroup (R := R) (K := K) bad ≤
+        outsideUnitNormalSubgroup (R := R) (K := K) bad :=
+      Subgroup.le_normalClosure
+    exact (unramifiedOutside_iff_global_kernel χ bad).mpr (hs.trans h)
+
 /-- Global quotient of the native idèle class group by local units
 outside the bad set. A necessary *intermediate* quotient, not a complete
 classical ray-class group. -/
 abbrev OutsideUnitQuotient (bad : Set (HeightOneSpectrum R)) :=
   NumberField.IdeleClassGroup R K ⧸
-    outsideUnitSubgroup (R := R) (K := K) bad
+    outsideUnitNormalSubgroup (R := R) (K := K) bad
 
 /-- Canonical global quotient homomorphism. -/
 def outsideUnitProjection (bad : Set (HeightOneSpectrum R)) :
     NumberField.IdeleClassGroup R K →*
       OutsideUnitQuotient (R := R) (K := K) bad :=
-  QuotientGroup.mk' (outsideUnitSubgroup (R := R) (K := K) bad)
+  QuotientGroup.mk' (outsideUnitNormalSubgroup (R := R) (K := K) bad)
 
-/-- The exact kernel of the global projection is the generated
+/-- The exact kernel of the global projection is the normal closure of the
 good-place local-unit subgroup, not a freely postulated ray kernel. -/
 theorem outsideUnitProjection_ker (bad : Set (HeightOneSpectrum R)) :
     (outsideUnitProjection (R := R) (K := K) bad).ker =
-      outsideUnitSubgroup (R := R) (K := K) bad := by
+      outsideUnitNormalSubgroup (R := R) (K := K) bad := by
   exact QuotientGroup.ker_mk' _
 
 /-- An unramified-outside native idèle Hecke character descends
@@ -146,7 +159,7 @@ def descendToOutsideUnitQuotient
     (bad : Set (HeightOneSpectrum R))
     (h : UnramifiedOutside χ bad) :
     OutsideUnitQuotient (R := R) (K := K) bad →* ℂˣ :=
-  QuotientGroup.lift (outsideUnitSubgroup (R := R) (K := K) bad)
+  QuotientGroup.lift (outsideUnitNormalSubgroup (R := R) (K := K) bad)
     χ.toMonoidHom.toHomUnits
     ((unramifiedOutside_iff_global_kernel χ bad).mp h)
 
