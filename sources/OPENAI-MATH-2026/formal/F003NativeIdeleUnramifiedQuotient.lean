@@ -131,7 +131,7 @@ theorem unramifiedOutside_iff_global_normal_kernel
   constructor
   · intro h
     exact Subgroup.normalClosure_le_normal
-      ((unramifiedOutside_iff_global_normal_kernel χ bad).mp h)
+      ((unramifiedOutside_iff_global_kernel χ bad).mp h)
   · intro h
     have hs : outsideUnitSubgroup (R := R) (K := K) bad ≤
         outsideUnitNormalSubgroup (R := R) (K := K) bad :=
@@ -167,7 +167,7 @@ def descendToOutsideUnitQuotient
     OutsideUnitQuotient (R := R) (K := K) bad →* ℂˣ :=
   QuotientGroup.lift (outsideUnitNormalSubgroup (R := R) (K := K) bad)
     χ.toMonoidHom.toHomUnits
-    ((unramifiedOutside_iff_global_kernel χ bad).mp h)
+    ((unramifiedOutside_iff_global_normal_kernel χ bad).mp h)
 
 /-- A descended character recovers the original at every global
 idèle class: no coefficients and no local values are changed. -/
