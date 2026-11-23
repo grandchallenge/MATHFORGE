@@ -1,5 +1,8 @@
 import Mathlib.NumberTheory.NumberField.HeckeLFunction
 import Mathlib.GroupTheory.QuotientGroup.Basic
+import Mathlib.Topology.Algebra.Group.Subgroup
+import Mathlib.Topology.Algebra.Group.Units
+import Mathlib.Topology.Algebra.Group.Quotient
 
 /-!
 # F003 global idèle class group: the unramified-outside local-unit quotient
@@ -343,6 +346,131 @@ theorem descendToRayLevel_comp
     (descendToRayLevel χ depth h).comp (rayLevelProjection depth) =
       χ.toMonoidHom.toHomUnits := by
   exact QuotientGroup.lift_comp_mk' _ _ _
+
+
+
+/-! ## Topological completion of the native finite-conductor idèle ray kernel
+
+The native Hecke character is genuinely continuous. We prove its unit-valued
+algebraic kernel is closed, so it contains the topological closure of any
+subgroup it annihilates. The closed ray-level subgroup therefore gives an
+exact quotient with continuous descended character, without equating that
+quotient to a traditional ideal ray class group.
+-/
+
+/-- The kernel of the actual native *continuous* Hecke character, viewed
+in the unit group of the complex numbers, is topologically closed. -/
+theorem nativeCharacter_ker_isClosed
+    (χ : NumberField.HeckeCharacter R K) :
+    IsClosed (χ.toMonoidHom.toHomUnits.ker : Set (NumberField.IdeleClassGroup R K)) := by
+  have hc : Continuous ((Units.coeHom ℂ).comp χ.toMonoidHom.toHomUnits) := by
+    change Continuous (χ : NumberField.IdeleClassGroup R K → ℂ)
+    exact χ.continuous
+  have hu : Continuous (χ.toMonoidHom.toHomUnits :
+      NumberField.IdeleClassGroup R K → ℂˣ) :=
+    Continuous.of_coeHom_comp hc
+  change IsClosed ((χ.toMonoidHom.toHomUnits :
+      NumberField.IdeleClassGroup R K → ℂˣ) ⁻¹' ({1} : Set ℂˣ))
+  exact isClosed_singleton.preimage hu
+
+/-- The genuine topological closure of the previously established
+finite-conductor algebraic subgroup, in the native idèle class topology. -/
+def closedRayLevelNormalSubgroup
+    (depth : HeightOneSpectrum R →₀ ℕ) :
+    Subgroup (NumberField.IdeleClassGroup R K) :=
+  (rayLevelNormalSubgroup (R := R) (K := K) depth).topologicalClosure
+
+instance closedRayLevelNormalSubgroup_normal
+    (depth : HeightOneSpectrum R →₀ ℕ) :
+    (closedRayLevelNormalSubgroup (R := R) (K := K) depth).Normal :=
+  Subgroup.is_normal_topologicalClosure _
+
+theorem closedRayLevelNormalSubgroup_isClosed
+    (depth : HeightOneSpectrum R →₀ ℕ) :
+    IsClosed (closedRayLevelNormalSubgroup (R := R) (K := K) depth :
+      Set (NumberField.IdeleClassGroup R K)) :=
+  Subgroup.isClosed_topologicalClosure _
+
+/-- Exactly the same local depth/infinity triviality condition characterizes
+annihilation of the **closed** global conductor-level subgroup. This uses
+continuity of the original native Hecke character, not an extra closed-kernel
+hypothesis. -/
+theorem rayLevelTrivial_iff_closed_global_kernel
+    (χ : NumberField.HeckeCharacter R K)
+    (depth : HeightOneSpectrum R →₀ ℕ) :
+    RayLevelTrivial χ depth ↔
+      closedRayLevelNormalSubgroup (R := R) (K := K) depth ≤
+        χ.toMonoidHom.toHomUnits.ker := by
+  constructor
+  · intro h
+    exact Subgroup.topologicalClosure_minimal
+      (rayLevelNormalSubgroup (R := R) (K := K) depth)
+      ((rayLevelTrivial_iff_global_kernel χ depth).mp h)
+      (nativeCharacter_ker_isClosed χ)
+  · intro h
+    exact (rayLevelTrivial_iff_global_kernel χ depth).mpr
+      ((Subgroup.le_topologicalClosure
+        (rayLevelNormalSubgroup (R := R) (K := K) depth)).trans h)
+
+/-- Native topologically closed conductor-level idèle quotient.
+Its identification with the arithmetic ideal ray-class group remains open. -/
+abbrev ClosedRayLevelQuotient (depth : HeightOneSpectrum R →₀ ℕ) :=
+  NumberField.IdeleClassGroup R K ⧸
+    closedRayLevelNormalSubgroup (R := R) (K := K) depth
+
+def closedRayLevelProjection (depth : HeightOneSpectrum R →₀ ℕ) :
+    NumberField.IdeleClassGroup R K →*
+      ClosedRayLevelQuotient (R := R) (K := K) depth :=
+  QuotientGroup.mk' (closedRayLevelNormalSubgroup (R := R) (K := K) depth)
+
+theorem closedRayLevelProjection_ker
+    (depth : HeightOneSpectrum R →₀ ℕ) :
+    (closedRayLevelProjection depth).ker =
+      closedRayLevelNormalSubgroup (R := R) (K := K) depth := by
+  exact QuotientGroup.ker_mk' _
+
+/-- The native character descends algebraically even after taking the
+topological closure of the conductor-level kernel. -/
+def descendToClosedRayLevel
+    (χ : NumberField.HeckeCharacter R K)
+    (depth : HeightOneSpectrum R →₀ ℕ)
+    (h : RayLevelTrivial χ depth) :
+    ClosedRayLevelQuotient (R := R) (K := K) depth →* ℂˣ :=
+  QuotientGroup.lift (closedRayLevelNormalSubgroup (R := R) (K := K) depth)
+    χ.toMonoidHom.toHomUnits
+    ((rayLevelTrivial_iff_closed_global_kernel χ depth).mp h)
+
+theorem descendToClosedRayLevel_comp
+    (χ : NumberField.HeckeCharacter R K)
+    (depth : HeightOneSpectrum R →₀ ℕ)
+    (h : RayLevelTrivial χ depth) :
+    (descendToClosedRayLevel χ depth h).comp
+        (closedRayLevelProjection depth) =
+      χ.toMonoidHom.toHomUnits := by
+  exact QuotientGroup.lift_comp_mk' _ _ _
+
+/-- The character descended to the native quotient by the *closed*
+finite-conductor kernel is continuous for the genuine quotient topology.
+This is stronger than algebraic descent and does not assume a ray-class
+correspondence. -/
+theorem descendToClosedRayLevel_continuous
+    (χ : NumberField.HeckeCharacter R K)
+    (depth : HeightOneSpectrum R →₀ ℕ)
+    (h : RayLevelTrivial χ depth) :
+    Continuous (descendToClosedRayLevel χ depth h :
+      ClosedRayLevelQuotient (R := R) (K := K) depth → ℂˣ) := by
+  have hc : Continuous ((Units.coeHom ℂ).comp χ.toMonoidHom.toHomUnits) := by
+    change Continuous (χ : NumberField.IdeleClassGroup R K → ℂ)
+    exact χ.continuous
+  have hu : Continuous (χ.toMonoidHom.toHomUnits :
+      NumberField.IdeleClassGroup R K → ℂˣ) :=
+    Continuous.of_coeHom_comp hc
+  apply (QuotientGroup.isQuotientMap_mk
+    (closedRayLevelNormalSubgroup (R := R) (K := K) depth)).continuous_iff.mpr
+  have heq := descendToClosedRayLevel_comp χ depth h
+  convert hu using 1
+  funext x
+  exact DFunLike.congr_fun heq x
 
 
 end
