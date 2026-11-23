@@ -87,6 +87,18 @@ def outsideUnitSubgroup
   ⨆ v : {v : HeightOneSpectrum R // v ∉ bad},
     (localUnitImage (R := R) (K := K) (v : HeightOneSpectrum R)).range
 
+/-- The idèle class group is abelian, so this genuine local-unit-generated
+subgroup is normal. The instance is explicit; it is not an assumption. -/
+instance outsideUnitSubgroup_normal
+    (bad : Set (HeightOneSpectrum R)) :
+    (outsideUnitSubgroup (R := R) (K := K) bad).Normal where
+  conj_mem n hn g := by
+    have heq : g⁻¹ * n * g = n := by
+      calc
+        g⁻¹ * n * g = n * (g⁻¹ * g) := by ac_rfl
+        _ = n := by simp
+    simpa [heq] using hn
+
 /-- Explicit native character condition: local unramifiedness outside bad. -/
 def UnramifiedOutside (χ : NumberField.HeckeCharacter R K)
     (bad : Set (HeightOneSpectrum R)) : Prop :=
