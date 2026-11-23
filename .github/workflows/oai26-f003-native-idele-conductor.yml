@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/oai26-f003-native-idele-conductor.yml"
       - "sources/OPENAI-MATH-2026/formal/F003NativeHeckeConductorFactors.lean"
+      - "sources/OPENAI-MATH-2026/formal/F003NativeIdeleUnramifiedQuotient.lean"
   workflow_dispatch:
 
 permissions:
@@ -47,9 +48,12 @@ jobs:
           test "$(git -C upstream/mathlib-native hash-object Mathlib/NumberTheory/NumberField/HeckeLFunction.lean)" = "9dcd9a2a11f1407d47b9b0a1000259d237bdfe64"
           test -f sources/OPENAI-MATH-2026/formal/F003NativeHeckeConductorFactors.lean
           ! grep -Eq '^[[:space:]]*(axiom|sorry|admit)([[:space:]]|$)' sources/OPENAI-MATH-2026/formal/F003NativeHeckeConductorFactors.lean
+          test -f sources/OPENAI-MATH-2026/formal/F003NativeIdeleUnramifiedQuotient.lean
+          ! grep -Eq '^[[:space:]]*(axiom|sorry|admit)([[:space:]]|$)' sources/OPENAI-MATH-2026/formal/F003NativeIdeleUnramifiedQuotient.lean
           git rev-parse HEAD > replay/oai26-f003-native-idele/gcl-head.txt
           git -C upstream/mathlib-native rev-parse HEAD > replay/oai26-f003-native-idele/native-head.txt
           sha256sum sources/OPENAI-MATH-2026/formal/F003NativeHeckeConductorFactors.lean > replay/oai26-f003-native-idele/candidate.sha256
+          sha256sum sources/OPENAI-MATH-2026/formal/F003NativeIdeleUnramifiedQuotient.lean > replay/oai26-f003-native-idele/quotient-source.sha256
           sha256sum upstream/mathlib-native/Mathlib/NumberTheory/NumberField/HeckeLFunction.lean > replay/oai26-f003-native-idele/native-hecke.sha256
           sha256sum upstream/mathlib-native/lake-manifest.json > replay/oai26-f003-native-idele/manifest-before.sha256
       - name: Install pinned elan bootstrap v1.4.2
@@ -100,6 +104,33 @@ jobs:
           printf '%s\n' "$status" > "$GITHUB_WORKSPACE/replay/oai26-f003-native-idele/compile.exit"
           tail -n 160 "$GITHUB_WORKSPACE/replay/oai26-f003-native-idele/compiler.log"
           exit "$status"
+      - name: Elaborate global native-idèle good-unit quotient and axioms
+        shell: bash
+        run: |
+          set +e
+          cd upstream/mathlib-native
+          (
+            set -euo pipefail
+            cp "$GITHUB_WORKSPACE/sources/OPENAI-MATH-2026/formal/F003NativeIdeleUnramifiedQuotient.lean" GCLF003NativeIdeleUnramifiedQuotient.lean
+            cat >> GCLF003NativeIdeleUnramifiedQuotient.lean <<'LEAN'
+          #check GCL.OAI26.F003.NativeRaySkeleton.isUnramifiedAt_iff_restrictedUnitCharacter_one
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.isUnramifiedAt_iff_restrictedUnitCharacter_one
+          #check GCL.OAI26.F003.NativeRaySkeleton.isUnramifiedAt_iff_range_le_ker
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.isUnramifiedAt_iff_range_le_ker
+          #check GCL.OAI26.F003.NativeRaySkeleton.unramifiedOutside_iff_global_kernel
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.unramifiedOutside_iff_global_kernel
+          #check GCL.OAI26.F003.NativeRaySkeleton.outsideUnitProjection_ker
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.outsideUnitProjection_ker
+          #check GCL.OAI26.F003.NativeRaySkeleton.descendToOutsideUnitQuotient_comp
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.descendToOutsideUnitQuotient_comp
+          LEAN
+            lake env lean GCLF003NativeIdeleUnramifiedQuotient.lean
+            test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "de0f8c1467a6b313a7116d73cd3bcb390261d3d0a36bf246a13dbc0ad032d762"
+          ) > "$GITHUB_WORKSPACE/replay/oai26-f003-native-idele/quotient-compiler.log" 2>&1
+          status=$?
+          printf '%s\n' "$status" > "$GITHUB_WORKSPACE/replay/oai26-f003-native-idele/quotient-compile.exit"
+          tail -n 140 "$GITHUB_WORKSPACE/replay/oai26-f003-native-idele/quotient-compiler.log"
+          exit "$status"
       - name: Capture fail-closed exact-head receipt
         if: always()
         shell: bash
@@ -125,8 +156,9 @@ jobs:
               'native_hecke_source_blob':'9dcd9a2a11f1407d47b9b0a1000259d237bdfe64',
               'native_manifest_sha256':'de0f8c1467a6b313a7116d73cd3bcb390261d3d0a36bf246a13dbc0ad032d762',
               'compilation_exit':int((p/'compile.exit').read_text()) if (p/'compile.exit').exists() else None,
+              'global_quotient_compilation_exit':int((p/'quotient-compile.exit').read_text()) if (p/'quotient-compile.exit').exists() else None,
               'files':data,
-              'claim_boundary':'Local native-idèle-conductor polynomial factorization; NOT global idèle-ray character construction, analytic continuation, or seven-eighths proof certification'
+              'claim_boundary':'Native idèle-class quotient by good finite-place unit images and algebraic descent for characters unramified outside chosen bad places. NOT full ray-class isomorphism, local conductor-depth kernel, archimedean quotient, global Euler/analytic continuation, or seven-eighths theorem certification'
           },indent=2)+'\n')
           PY
       - name: Archive source lock, compiler, axioms and failures
