@@ -228,8 +228,9 @@ a distinct obligation; this is not yet a classical ray class kernel. -/
 def rayLevelNormalSubgroup (depth : HeightOneSpectrum R →₀ ℕ) :
     Subgroup (NumberField.IdeleClassGroup R K) :=
   Subgroup.normalClosure
-    ((finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
+    (((finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
       infinityUnitSubgroup (R := R) (K := K)) :
+      Subgroup (NumberField.IdeleClassGroup R K)) :
       Set (NumberField.IdeleClassGroup R K))
 
 instance rayLevelNormalSubgroup_normal (depth : HeightOneSpectrum R →₀ ℕ) :
@@ -284,8 +285,9 @@ theorem rayLevelTrivial_iff_global_kernel
       change (finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
           infinityUnitSubgroup (R := R) (K := K)) ≤
         Subgroup.normalClosure
-          ((finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
+          (((finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
             infinityUnitSubgroup (R := R) (K := K)) :
+             Subgroup (NumberField.IdeleClassGroup R K)) :
              Set (NumberField.IdeleClassGroup R K))
       exact (Subgroup.le_normalClosure (H :=
         finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
