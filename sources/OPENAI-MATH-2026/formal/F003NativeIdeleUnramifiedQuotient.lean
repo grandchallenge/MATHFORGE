@@ -262,12 +262,16 @@ theorem rayLevelTrivial_iff_global_kernel
   · rintro ⟨hfinite, hinfty⟩
     apply Subgroup.normalClosure_le_normal
     apply sup_le
-    · unfold finiteLevelUnitSubgroup
+    · change (⨆ v : HeightOneSpectrum R,
+        (principalUnitImage (R := R) (K := K) depth v).range) ≤
+          χ.toMonoidHom.toHomUnits.ker
       refine iSup_le fun v => ?_
       intro g hg
       obtain ⟨u, rfl⟩ := hg
       exact (MonoidHom.mem_ker).mpr (hfinite v u)
-    · unfold infinityUnitSubgroup
+    · change (⨆ w : NumberField.InfinitePlace K,
+        (NumberField.IdeleClassGroup.ofCompletion R K w).range) ≤
+          χ.toMonoidHom.toHomUnits.ker
       refine iSup_le fun w => ?_
       intro g hg
       obtain ⟨u, rfl⟩ := hg
@@ -276,8 +280,14 @@ theorem rayLevelTrivial_iff_global_kernel
     have hsub :
         finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
           infinityUnitSubgroup (R := R) (K := K) ≤
-          rayLevelNormalSubgroup (R := R) (K := K) depth :=
-      Subgroup.le_normalClosure
+          rayLevelNormalSubgroup (R := R) (K := K) depth := by
+      change (finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
+          infinityUnitSubgroup (R := R) (K := K)) ≤
+        Subgroup.normalClosure
+          ((finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
+            infinityUnitSubgroup (R := R) (K := K)) :
+             Set (NumberField.IdeleClassGroup R K))
+      exact Subgroup.le_normalClosure
     have hfinite : finiteLevelUnitSubgroup (R := R) (K := K) depth ≤
         χ.toMonoidHom.toHomUnits.ker := (le_sup_left.trans (hsub.trans h))
     have hinfty : infinityUnitSubgroup (R := R) (K := K) ≤
