@@ -132,6 +132,16 @@ jobs:
           #print axioms GCL.OAI26.F003.NativeRaySkeleton.rayLevelProjection_ker
           #check GCL.OAI26.F003.NativeRaySkeleton.descendToRayLevel_comp
           #print axioms GCL.OAI26.F003.NativeRaySkeleton.descendToRayLevel_comp
+          #check GCL.OAI26.F003.NativeRaySkeleton.nativeCharacter_ker_isClosed
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.nativeCharacter_ker_isClosed
+          #check GCL.OAI26.F003.NativeRaySkeleton.rayLevelTrivial_iff_closed_global_kernel
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.rayLevelTrivial_iff_closed_global_kernel
+          #check GCL.OAI26.F003.NativeRaySkeleton.closedRayLevelProjection_ker
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.closedRayLevelProjection_ker
+          #check GCL.OAI26.F003.NativeRaySkeleton.descendToClosedRayLevel_comp
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.descendToClosedRayLevel_comp
+          #check GCL.OAI26.F003.NativeRaySkeleton.descendToClosedRayLevel_continuous
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.descendToClosedRayLevel_continuous
           LEAN
             lake env lean GCLF003NativeIdeleUnramifiedQuotient.lean
             test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "de0f8c1467a6b313a7116d73cd3bcb390261d3d0a36bf246a13dbc0ad032d762"
