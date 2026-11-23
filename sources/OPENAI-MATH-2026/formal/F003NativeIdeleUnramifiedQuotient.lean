@@ -262,6 +262,8 @@ theorem rayLevelTrivial_iff_global_kernel
   constructor
   · rintro ⟨hfinite, hinfty⟩
     apply Subgroup.normalClosure_le_normal
+    change (finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
+      infinityUnitSubgroup (R := R) (K := K)) ≤ χ.toMonoidHom.toHomUnits.ker
     apply sup_le
     · change (⨆ v : HeightOneSpectrum R,
         (principalUnitImage (R := R) (K := K) depth v).range) ≤
