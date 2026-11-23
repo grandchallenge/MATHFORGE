@@ -287,7 +287,9 @@ theorem rayLevelTrivial_iff_global_kernel
           ((finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
             infinityUnitSubgroup (R := R) (K := K)) :
              Set (NumberField.IdeleClassGroup R K))
-      exact Subgroup.le_normalClosure
+      exact (Subgroup.le_normalClosure (H :=
+        finiteLevelUnitSubgroup (R := R) (K := K) depth ⊔
+          infinityUnitSubgroup (R := R) (K := K)))
     have hfinite : finiteLevelUnitSubgroup (R := R) (K := K) depth ≤
         χ.toMonoidHom.toHomUnits.ker := (le_sup_left.trans (hsub.trans h))
     have hinfty : infinityUnitSubgroup (R := R) (K := K) ≤
