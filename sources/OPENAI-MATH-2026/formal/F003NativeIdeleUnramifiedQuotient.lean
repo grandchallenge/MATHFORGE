@@ -116,6 +116,12 @@ def outsideUnitNormalSubgroup
   Subgroup.normalClosure
     (outsideUnitSubgroup (R := R) (K := K) bad : Set (NumberField.IdeleClassGroup R K))
 
+/-- Normality is proved by construction, not supplied as a mathematical hypothesis. -/
+instance outsideUnitNormalSubgroup_normal
+    (bad : Set (HeightOneSpectrum R)) :
+    (outsideUnitNormalSubgroup (R := R) (K := K) bad).Normal :=
+  Subgroup.normalClosure_normal
+
 theorem unramifiedOutside_iff_global_normal_kernel
     (χ : NumberField.HeckeCharacter R K)
     (bad : Set (HeightOneSpectrum R)) :
@@ -125,7 +131,7 @@ theorem unramifiedOutside_iff_global_normal_kernel
   constructor
   · intro h
     exact Subgroup.normalClosure_le_normal
-      ((unramifiedOutside_iff_global_kernel χ bad).mp h)
+      ((unramifiedOutside_iff_global_normal_kernel χ bad).mp h)
   · intro h
     have hs : outsideUnitSubgroup (R := R) (K := K) bad ≤
         outsideUnitNormalSubgroup (R := R) (K := K) bad :=
@@ -148,7 +154,7 @@ def outsideUnitProjection (bad : Set (HeightOneSpectrum R)) :
 /-- The exact kernel of the global projection is the normal closure of the
 good-place local-unit subgroup, not a freely postulated ray kernel. -/
 theorem outsideUnitProjection_ker (bad : Set (HeightOneSpectrum R)) :
-    (outsideUnitProjection (R := R) (K := K) bad).ker =
+    (outsideUnitProjection bad).ker =
       outsideUnitNormalSubgroup (R := R) (K := K) bad := by
   exact QuotientGroup.ker_mk' _
 
@@ -170,7 +176,7 @@ theorem descendToOutsideUnitQuotient_comp
     (bad : Set (HeightOneSpectrum R))
     (h : UnramifiedOutside χ bad) :
     (descendToOutsideUnitQuotient χ bad h).comp
-        (outsideUnitProjection (R := R) (K := K) bad) =
+        (outsideUnitProjection bad) =
       χ.toMonoidHom.toHomUnits := by
   exact QuotientGroup.lift_comp_mk' _ _ _
 
