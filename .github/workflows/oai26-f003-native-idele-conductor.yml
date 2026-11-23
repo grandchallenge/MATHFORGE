@@ -123,6 +123,15 @@ jobs:
           #print axioms GCL.OAI26.F003.NativeRaySkeleton.outsideUnitProjection_ker
           #check GCL.OAI26.F003.NativeRaySkeleton.descendToOutsideUnitQuotient_comp
           #print axioms GCL.OAI26.F003.NativeRaySkeleton.descendToOutsideUnitQuotient_comp
+          #check GCL.OAI26.F003.NativeRaySkeleton.localPrincipalUnits
+          #check GCL.OAI26.F003.NativeRaySkeleton.principalUnitImage
+          #check GCL.OAI26.F003.NativeRaySkeleton.infinityUnitSubgroup
+          #check GCL.OAI26.F003.NativeRaySkeleton.rayLevelTrivial_iff_global_kernel
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.rayLevelTrivial_iff_global_kernel
+          #check GCL.OAI26.F003.NativeRaySkeleton.rayLevelProjection_ker
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.rayLevelProjection_ker
+          #check GCL.OAI26.F003.NativeRaySkeleton.descendToRayLevel_comp
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.descendToRayLevel_comp
           LEAN
             lake env lean GCLF003NativeIdeleUnramifiedQuotient.lean
             test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "de0f8c1467a6b313a7116d73cd3bcb390261d3d0a36bf246a13dbc0ad032d762"
