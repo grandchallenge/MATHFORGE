@@ -1,5 +1,6 @@
 import Mathlib.NumberTheory.NumberField.HeckeLFunction
 import Mathlib.GroupTheory.QuotientGroup.Basic
+import Mathlib.RingTheory.DedekindDomain.Factorization
 import Mathlib.Topology.Algebra.Group.Subgroup
 import Mathlib.Topology.Algebra.Group.Units
 import Mathlib.Topology.Algebra.Group.Quotient
@@ -471,6 +472,92 @@ theorem descendToClosedRayLevel_continuous
   convert hu using 1
   funext x
   exact DFunLike.congr_fun heq x
+
+
+
+/-! ## Actual arithmetic map from finite idèles to nonzero fractional ideals
+
+The multiplicative adic valuation of a uniformizer is exp(-1). The negative
+logarithm therefore gives the *positive* prime exponent, which is essential
+for the character orientation in the eventual ray comparison.
+-/
+
+open scoped nonZeroDivisors
+
+/-- Prime exponent of a genuine finite idèle, with the standard positive
+uniformizer convention. -/
+def finiteIdelePrimeExponent
+    (a : (FiniteAdeleRing R K)ˣ) (v : HeightOneSpectrum R) : ℤ :=
+  - WithZero.log (Valued.v (a.val v))
+
+theorem finiteIdelePrimeExponent_eventually_zero
+    (a : (FiniteAdeleRing R K)ˣ) :
+    ∀ᶠ v : HeightOneSpectrum R in Filter.cofinite,
+      finiteIdelePrimeExponent a v = 0 := by
+  filter_upwards [FiniteAdeleRing.unitsEquiv_finite_valued_eq_one a] with v hv
+  change - WithZero.log (Valued.v (a.val v)) = 0
+  change Valued.v (a.val v) = 1 at hv
+  rw [hv, WithZero.log_one, neg_zero]
+
+/-- The actual fractional ideal associated to a finite idèle, as a finite
+product of powers of the actual height-one prime ideals. -/
+def finiteIdeleFractionalIdeal (a : (FiniteAdeleRing R K)ˣ) :
+    FractionalIdeal R⁰ K :=
+  ∏ᶠ v : HeightOneSpectrum R,
+    (v.asIdeal : FractionalIdeal R⁰ K) ^ finiteIdelePrimeExponent a v
+
+theorem finiteIdeleFractionalIdeal_ne_zero (a : (FiniteAdeleRing R K)ˣ) :
+    finiteIdeleFractionalIdeal a ≠ 0 := by
+  unfold finiteIdeleFractionalIdeal
+  exact finprod_ne_zero fun v =>
+    zpow_ne_zero _ (FractionalIdeal.coeIdeal_ne_zero.mpr v.ne_bot)
+
+/-- Every ideal exponent is recovered exactly, with no inverse convention. -/
+theorem finiteIdeleFractionalIdeal_count
+    (a : (FiniteAdeleRing R K)ˣ) (v : HeightOneSpectrum R) :
+    FractionalIdeal.count K v (finiteIdeleFractionalIdeal a) =
+      finiteIdelePrimeExponent a v := by
+  unfold finiteIdeleFractionalIdeal
+  exact FractionalIdeal.count_finprod K v _
+    (finiteIdelePrimeExponent_eventually_zero a)
+
+/-- Explicit orientation at any place whose coordinate has uniformizer
+valuation. This is the positive exponent of the corresponding prime. -/
+theorem finiteIdeleFractionalIdeal_uniformizer_count
+    (a : (FiniteAdeleRing R K)ˣ) (v : HeightOneSpectrum R)
+    (h : Valued.v (a.val v) = WithZero.exp (-1)) :
+    FractionalIdeal.count K v (finiteIdeleFractionalIdeal a) = 1 := by
+  rw [finiteIdeleFractionalIdeal_count]
+  simp [finiteIdelePrimeExponent, h]
+
+/-- The arithmetic kernel is precisely the finite idèles whose prime
+exponents are all zero. -/
+theorem finiteIdeleFractionalIdeal_eq_one_iff
+    (a : (FiniteAdeleRing R K)ˣ) :
+    finiteIdeleFractionalIdeal a = 1 ↔
+      ∀ v : HeightOneSpectrum R, finiteIdelePrimeExponent a v = 0 := by
+  constructor
+  · intro h v
+    rw [← finiteIdeleFractionalIdeal_count a v, h, FractionalIdeal.count_one]
+  · intro h
+    unfold finiteIdeleFractionalIdeal
+    simp [h]
+
+/-- The native prime exponent is compatible with the multiplicative
+valuation on a nonzero integral diagonal element. -/
+theorem finiteIdeleFractionalIdeal_integral_count
+    (r : R) (hr : r ≠ 0)
+    (a : (FiniteAdeleRing R K)ˣ)
+    (hdiag : ∀ v : HeightOneSpectrum R,
+      a.val v = algebraMap R (v.adicCompletion K) r)
+    (v : HeightOneSpectrum R) :
+    FractionalIdeal.count K v (finiteIdeleFractionalIdeal a) =
+      FractionalIdeal.count K v (Ideal.span {r} : Ideal R) := by
+  rw [finiteIdeleFractionalIdeal_count, finiteIdelePrimeExponent, hdiag v]
+  rw [v.valuedAdicCompletion_eq_valuation, v.valuation_of_algebraMap,
+    v.intValuation_if_neg hr]
+  rw [WithZero.log_exp, neg_neg, FractionalIdeal.count_coeIdeal]
+  exact (Ideal.span_singleton_eq_bot.not.mpr hr)
 
 
 end
