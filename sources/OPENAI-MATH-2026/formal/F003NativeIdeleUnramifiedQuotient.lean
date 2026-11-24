@@ -6,6 +6,7 @@ import Mathlib.RingTheory.Localization.Integer
 import Mathlib.Topology.Algebra.Group.Subgroup
 import Mathlib.Topology.Algebra.Group.Units
 import Mathlib.Topology.Algebra.Group.Quotient
+import Mathlib.Tactic.Group
 
 /-!
 # F003 global idèle class group: the unramified-outside local-unit quotient
@@ -1180,6 +1181,276 @@ theorem finiteIdele_exists_diagonal_conductor_normalization
     apply conductorLocalImage_of_small_sub_one v (depth v) (π v) (hπ v).1 (hπ v).2
     change Valued.v (algebraMap K (v.adicCompletion K) k * a.val v - 1) < _
     exact hsmall ⟨v, Finsupp.mem_support_iff.mpr hv⟩
+
+
+/-! ## Global finite arithmetic ray map -/
+
+theorem normalizedRay_diagonal_eq_one
+    (depth : HeightOneSpectrum R →₀ ℕ)
+    (k : rayPrincipalGenerators (R := R) (K := K) depth) :
+    normalizedIdeleRayHom depth ⟨FiniteAdeleRing.unitEmbedding R K k.val, k.property⟩ = 1 := by
+  apply (MonoidHom.mem_ker).mp
+  apply (normalizedIdeleRayHom_mem_ker_iff depth _).mpr
+  exact ⟨k, finiteIdeleFractionalIdeal_unitEmbedding k.val⟩
+
+theorem normalizedRay_choice_independent
+    (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ)
+    (k l : Kˣ)
+    (hk : FiniteAdeleRing.unitEmbedding R K k * a ∈ conductorNormalizedIdeles depth)
+    (hl : FiniteAdeleRing.unitEmbedding R K l * a ∈ conductorNormalizedIdeles depth) :
+    normalizedIdeleRayHom depth ⟨_, hk⟩ = normalizedIdeleRayHom depth ⟨_, hl⟩ := by
+  let d := FiniteAdeleRing.unitEmbedding R K
+  let x : conductorNormalizedIdeles depth := ⟨d k * a, hk⟩
+  let y : conductorNormalizedIdeles depth := ⟨d l * a, hl⟩
+  have hratio : d (k * l⁻¹) = (x * y⁻¹).val := by
+    change d (k * l⁻¹) = (d k * a) * (d l * a)⁻¹
+    rw [map_mul, map_inv]
+    group
+  have hgen : k * l⁻¹ ∈ rayPrincipalGenerators (R := R) (K := K) depth := by
+    change d (k * l⁻¹) ∈ conductorNormalizedIdeles depth
+    rw [hratio]
+    exact (x * y⁻¹).property
+  have he : (⟨d (k * l⁻¹), hgen⟩ : conductorNormalizedIdeles depth) = x * y⁻¹ :=
+    Subtype.ext hratio
+  have hh := normalizedRay_diagonal_eq_one depth ⟨k * l⁻¹, hgen⟩
+  change normalizedIdeleRayHom depth ⟨d (k * l⁻¹), hgen⟩ = 1 at hh
+  rw [he, map_mul, map_inv] at hh
+  exact mul_inv_eq_one.mp hh
+
+def finiteRayNormalizer
+    (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ) : Kˣ :=
+  Classical.choose (finiteIdele_exists_diagonal_conductor_normalization depth a)
+
+theorem finiteRayNormalizer_spec
+    (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ) :
+    FiniteAdeleRing.unitEmbedding R K (finiteRayNormalizer depth a) * a ∈
+      conductorNormalizedIdeles depth :=
+  Classical.choose_spec (finiteIdele_exists_diagonal_conductor_normalization depth a)
+
+def globalFiniteRayValue
+    (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ) :
+    LocalCongruenceIdealRayQuotient (R := R) (K := K) depth :=
+  normalizedIdeleRayHom depth ⟨_, finiteRayNormalizer_spec depth a⟩
+
+theorem globalFiniteRayValue_eq
+    (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ) (k : Kˣ)
+    (hk : FiniteAdeleRing.unitEmbedding R K k * a ∈ conductorNormalizedIdeles depth) :
+    globalFiniteRayValue depth a = normalizedIdeleRayHom depth ⟨_, hk⟩ :=
+  normalizedRay_choice_independent depth a _ k (finiteRayNormalizer_spec depth a) hk
+
+def globalFiniteRayHom (depth : HeightOneSpectrum R →₀ ℕ) :
+    (FiniteAdeleRing R K)ˣ →* LocalCongruenceIdealRayQuotient (R := R) (K := K) depth where
+  toFun := globalFiniteRayValue depth
+  map_one' := by
+    have h : FiniteAdeleRing.unitEmbedding R K (1 : Kˣ) * 1 ∈
+        conductorNormalizedIdeles (R := R) (K := K) depth := by simp
+    rw [globalFiniteRayValue_eq depth 1 1 h]
+    have he : (⟨_, h⟩ : conductorNormalizedIdeles depth) = 1 := by
+      apply Subtype.ext
+      simp
+    rw [he, map_one]
+  map_mul' a b := by
+    let k := finiteRayNormalizer depth a
+    let l := finiteRayNormalizer depth b
+    let d := FiniteAdeleRing.unitEmbedding R K
+    let x : conductorNormalizedIdeles depth := ⟨d k * a, finiteRayNormalizer_spec depth a⟩
+    let y : conductorNormalizedIdeles depth := ⟨d l * b, finiteRayNormalizer_spec depth b⟩
+    have he : d (k * l) * (a * b) = (x * y).val := by
+      change d (k * l) * (a * b) = (d k * a) * (d l * b)
+      rw [map_mul]
+      ac_rfl
+    have h : d (k * l) * (a * b) ∈ conductorNormalizedIdeles depth := by
+      rw [he]
+      exact (x * y).property
+    change globalFiniteRayValue depth (a*b) = globalFiniteRayValue depth a * globalFiniteRayValue depth b
+    rw [globalFiniteRayValue_eq depth (a*b) (k*l) h]
+    have hs : (⟨_, h⟩ : conductorNormalizedIdeles depth) = x * y := Subtype.ext he
+    rw [hs, map_mul] <;> rfl
+
+theorem globalFiniteRayHom_of_normalized
+    (depth : HeightOneSpectrum R →₀ ℕ) (a : conductorNormalizedIdeles (R := R) (K := K) depth) :
+    globalFiniteRayHom depth a.val = normalizedIdeleRayHom depth a := by
+  have h : FiniteAdeleRing.unitEmbedding R K (1 : Kˣ) * a.val ∈ conductorNormalizedIdeles depth := by
+    simpa using a.property
+  change globalFiniteRayValue depth a.val = _
+  rw [globalFiniteRayValue_eq depth a.val 1 h]
+  have he : (⟨_, h⟩ : conductorNormalizedIdeles depth) = a := by
+    apply Subtype.ext
+    simp
+  rw [he]
+
+theorem globalFiniteRayHom_surjective (depth : HeightOneSpectrum R →₀ ℕ) :
+    Function.Surjective (globalFiniteRayHom (R := R) (K := K) depth) := by
+  intro c
+  obtain ⟨a, ha⟩ := normalizedIdeleRayHom_surjective depth c
+  exact ⟨a.val, (globalFiniteRayHom_of_normalized depth a).trans ha⟩
+
+/-- Full product, not the direct sum of individual local images. -/
+def fullFiniteRayUnits (depth : HeightOneSpectrum R →₀ ℕ) :
+    Subgroup (FiniteAdeleRing R K)ˣ :=
+  conductorNormalizedIdeles depth ⊓ (finiteIdeleIdealUnitHom (R := R) (K := K)).ker
+
+theorem mem_fullFiniteRayUnits_iff (depth : HeightOneSpectrum R →₀ ℕ)
+    (a : (FiniteAdeleRing R K)ˣ) :
+    a ∈ fullFiniteRayUnits depth ↔
+      (∀ v : HeightOneSpectrum R, Valued.v (a.val v) = 1) ∧
+      (∀ v : HeightOneSpectrum R, depth v ≠ 0 →
+        finiteIdeleCoordinate v a ∈ conductorLocalImage v (depth v)) := by
+  change (a ∈ conductorNormalizedIdeles depth ∧ a ∈ (finiteIdeleIdealUnitHom (R := R) (K := K)).ker) ↔ _
+  rw [mem_conductorNormalizedIdeles_iff, finiteIdeleIdealUnitHom_mem_ker_iff, and_comm]
+
+theorem globalFiniteRayHom_diagonal_eq_one (depth : HeightOneSpectrum R →₀ ℕ) (k : Kˣ) :
+    globalFiniteRayHom (R := R) depth (FiniteAdeleRing.unitEmbedding R K k) = 1 := by
+  let d := FiniteAdeleRing.unitEmbedding R K
+  have h : d k⁻¹ * d k ∈ conductorNormalizedIdeles depth := by
+    rw [← map_mul, inv_mul_cancel, map_one]
+    exact Subgroup.one_mem _
+  change globalFiniteRayValue depth (d k) = 1
+  rw [globalFiniteRayValue_eq depth (d k) k⁻¹ h]
+  have he : (⟨_, h⟩ : conductorNormalizedIdeles depth) = 1 := by
+    apply Subtype.ext
+    change d k⁻¹ * d k = 1
+    rw [← map_mul, inv_mul_cancel, map_one]
+  rw [he, map_one]
+
+theorem globalFiniteRayHom_fullUnits_eq_one (depth : HeightOneSpectrum R →₀ ℕ)
+    (u : (FiniteAdeleRing R K)ˣ) (hu : u ∈ fullFiniteRayUnits depth) :
+    globalFiniteRayHom depth u = 1 := by
+  have hn : u ∈ conductorNormalizedIdeles depth := hu.1
+  have hk : u ∈ (finiteIdeleIdealUnitHom (R := R) (K := K)).ker := hu.2
+  rw [globalFiniteRayHom_of_normalized depth ⟨u, hn⟩]
+  apply (MonoidHom.mem_ker).mp
+  apply (normalizedIdeleRayHom_mem_ker_iff depth _).mpr
+  refine ⟨1, ?_⟩
+  have h := congrArg (fun i : (FractionalIdeal R⁰ K)ˣ => i.val) ((MonoidHom.mem_ker).mp hk)
+  change finiteIdeleFractionalIdeal u = 1 at h
+  change finiteIdeleFractionalIdeal u = FractionalIdeal.spanSingleton R⁰ (1 : K)
+  simpa using h
+
+theorem globalFiniteRayHom_mem_ker_iff (depth : HeightOneSpectrum R →₀ ℕ)
+    (a : (FiniteAdeleRing R K)ˣ) :
+    a ∈ (globalFiniteRayHom depth).ker ↔
+      ∃ k : Kˣ, ∃ u : (FiniteAdeleRing R K)ˣ, u ∈ fullFiniteRayUnits depth ∧
+        a = FiniteAdeleRing.unitEmbedding R K k * u := by
+  let d := FiniteAdeleRing.unitEmbedding R K
+  constructor
+  · intro ha
+    let k := finiteRayNormalizer depth a
+    let x : conductorNormalizedIdeles depth := ⟨d k * a, finiteRayNormalizer_spec depth a⟩
+    have hx : x ∈ (normalizedIdeleRayHom depth).ker := by
+      rw [MonoidHom.mem_ker] at ha ⊢
+      exact ha
+    obtain ⟨g, hg⟩ := (normalizedIdeleRayHom_mem_ker_iff depth x).mp hx
+    let u := (d g.val)⁻¹ * x.val
+    have hgn : d g.val ∈ conductorNormalizedIdeles depth := g.property
+    have hun : u ∈ conductorNormalizedIdeles depth :=
+      (conductorNormalizedIdeles depth).mul_mem ((conductorNormalizedIdeles depth).inv_mem hgn) x.property
+    have hJ : finiteIdeleIdealUnitHom x.val = finiteIdeleIdealUnitHom (d g.val) := by
+      apply Units.ext
+      change finiteIdeleFractionalIdeal x.val = finiteIdeleFractionalIdeal (d g.val)
+      exact hg.trans (finiteIdeleFractionalIdeal_unitEmbedding g.val).symm
+    have huk : u ∈ (finiteIdeleIdealUnitHom (R := R) (K := K)).ker := by
+      rw [MonoidHom.mem_ker]
+      change finiteIdeleIdealUnitHom ((d g.val)⁻¹ * x.val) = 1
+      rw [map_mul, map_inv, hJ, inv_mul_cancel]
+    refine ⟨k⁻¹ * g.val, u, ⟨hun, huk⟩, ?_⟩
+    change a = d (k⁻¹ * g.val) * ((d g.val)⁻¹ * (d k * a))
+    rw [map_mul, map_inv]
+    group
+  · rintro ⟨k,u,hu,rfl⟩
+    rw [MonoidHom.mem_ker, map_mul, globalFiniteRayHom_diagonal_eq_one,
+      globalFiniteRayHom_fullUnits_eq_one depth u hu, mul_one]
+
+/-- Projection of genuine full idèles onto finite idèles. -/
+def nativeFiniteIdeleProjection : NumberField.IdeleGroup R K →* (FiniteAdeleRing R K)ˣ :=
+  Units.map { toFun := fun a : NumberField.AdeleRing R K => a.2
+              map_one' := rfl
+              map_mul' := fun _ _ => rfl }
+
+theorem nativeFiniteIdeleProjection_diagonal (k : Kˣ) :
+    nativeFiniteIdeleProjection (NumberField.IdeleGroup.unitEmbedding R K k) =
+      FiniteAdeleRing.unitEmbedding R K k := by
+  apply Units.ext
+  rfl
+
+theorem nativeFiniteIdeleProjection_surjective :
+    Function.Surjective (nativeFiniteIdeleProjection (R := R) (K := K)) := by
+  intro a
+  let b : NumberField.IdeleGroup R K :=
+    { val := (1, a.val)
+      inv := (1, a.inv)
+      val_inv := by change (1 * 1, a.val * a.inv) = (1, 1); simp
+      inv_val := by change (1 * 1, a.inv * a.val) = (1, 1); simp }
+  refine ⟨b, ?_⟩
+  apply Units.ext
+  rfl
+
+def globalIdeleRayHom (depth : HeightOneSpectrum R →₀ ℕ) :
+    NumberField.IdeleGroup R K →* LocalCongruenceIdealRayQuotient (R := R) (K := K) depth :=
+  (globalFiniteRayHom depth).comp nativeFiniteIdeleProjection
+
+theorem globalIdeleRayHom_principal_le_ker (depth : HeightOneSpectrum R →₀ ℕ) :
+    NumberField.IdeleGroup.principalSubgroup R K ≤ (globalIdeleRayHom depth).ker := by
+  rintro a ⟨k,rfl⟩
+  rw [MonoidHom.mem_ker]
+  change globalFiniteRayHom depth (nativeFiniteIdeleProjection (NumberField.IdeleGroup.unitEmbedding R K k)) = 1
+  rw [nativeFiniteIdeleProjection_diagonal, globalFiniteRayHom_diagonal_eq_one]
+
+def globalIdeleClassRayHom (depth : HeightOneSpectrum R →₀ ℕ) :
+    NumberField.IdeleClassGroup R K →* LocalCongruenceIdealRayQuotient (R := R) (K := K) depth :=
+  QuotientGroup.lift (NumberField.IdeleGroup.principalSubgroup R K)
+    (globalIdeleRayHom depth) (globalIdeleRayHom_principal_le_ker depth)
+
+theorem globalIdeleClassRayHom_surjective (depth : HeightOneSpectrum R →₀ ℕ) :
+    Function.Surjective (globalIdeleClassRayHom (R := R) (K := K) depth) := by
+  intro c
+  obtain ⟨a, ha⟩ := globalFiniteRayHom_surjective depth c
+  obtain ⟨b, hb⟩ := nativeFiniteIdeleProjection_surjective a
+  refine ⟨QuotientGroup.mk' _ b, ?_⟩
+  change globalFiniteRayHom depth (nativeFiniteIdeleProjection b) = c
+  rw [hb, ha]
+
+/-- All infinite coordinates unrestricted; finite ones in the actual product. -/
+def fullIdeleRayUnits (depth : HeightOneSpectrum R →₀ ℕ) :
+    Subgroup (NumberField.IdeleGroup R K) :=
+  (fullFiniteRayUnits depth).comap nativeFiniteIdeleProjection
+
+def fullIdeleClassRayUnits (depth : HeightOneSpectrum R →₀ ℕ) :
+    Subgroup (NumberField.IdeleClassGroup R K) :=
+  (fullIdeleRayUnits depth).map (QuotientGroup.mk' (NumberField.IdeleGroup.principalSubgroup R K))
+
+theorem globalIdeleClassRayHom_ker_eq (depth : HeightOneSpectrum R →₀ ℕ) :
+    (globalIdeleClassRayHom (R := R) (K := K) depth).ker = fullIdeleClassRayUnits depth := by
+  ext c
+  obtain ⟨a, rfl⟩ := QuotientGroup.mk'_surjective (NumberField.IdeleGroup.principalSubgroup R K) c
+  constructor
+  · intro hc
+    have h : nativeFiniteIdeleProjection a ∈ (globalFiniteRayHom depth).ker := by
+      rw [MonoidHom.mem_ker] at hc ⊢
+      exact hc
+    obtain ⟨k,u,hu,he⟩ := (globalFiniteRayHom_mem_ker_iff depth _).mp h
+    let d := NumberField.IdeleGroup.unitEmbedding R K
+    let b := (d k)⁻¹ * a
+    have hb : b ∈ fullIdeleRayUnits depth := by
+      change nativeFiniteIdeleProjection ((d k)⁻¹ * a) ∈ fullFiniteRayUnits depth
+      rw [map_mul, map_inv, nativeFiniteIdeleProjection_diagonal, he, ← mul_assoc, inv_mul_cancel, one_mul]
+      exact hu
+    refine ⟨b,hb,?_⟩
+    change QuotientGroup.mk' (NumberField.IdeleGroup.principalSubgroup R K) ((d k)⁻¹ * a) = _
+    rw [map_mul, map_inv]
+    have hd : QuotientGroup.mk' (NumberField.IdeleGroup.principalSubgroup R K) (d k) = 1 :=
+      QuotientGroup.eq_one_iff.mpr ⟨k,rfl⟩
+    rw [hd, inv_one, one_mul]
+  · rintro ⟨b,hb,he⟩
+    rw [← he, MonoidHom.mem_ker]
+    change globalFiniteRayHom depth (nativeFiniteIdeleProjection b) = 1
+    exact globalFiniteRayHom_fullUnits_eq_one depth _ hb
+
+def globalIdeleClassRayEquiv (depth : HeightOneSpectrum R →₀ ℕ) :
+    NumberField.IdeleClassGroup R K ⧸ fullIdeleClassRayUnits (R := R) (K := K) depth ≃*
+      LocalCongruenceIdealRayQuotient (R := R) (K := K) depth := by
+  rw [← globalIdeleClassRayHom_ker_eq depth]
+  exact QuotientGroup.quotientKerEquivOfSurjective _ (globalIdeleClassRayHom_surjective depth)
 
 end
 

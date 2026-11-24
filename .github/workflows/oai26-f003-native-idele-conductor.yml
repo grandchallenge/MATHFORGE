@@ -196,6 +196,20 @@ jobs:
           #print axioms GCL.OAI26.F003.NativeRaySkeleton.exists_nonzero_local_maximal_ideal_element
           #check GCL.OAI26.F003.NativeRaySkeleton.finiteIdele_exists_diagonal_conductor_normalization
           #print axioms GCL.OAI26.F003.NativeRaySkeleton.finiteIdele_exists_diagonal_conductor_normalization
+          #check GCL.OAI26.F003.NativeRaySkeleton.normalizedRay_choice_independent
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.normalizedRay_choice_independent
+          #check GCL.OAI26.F003.NativeRaySkeleton.globalFiniteRayHom_surjective
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.globalFiniteRayHom_surjective
+          #check GCL.OAI26.F003.NativeRaySkeleton.mem_fullFiniteRayUnits_iff
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.mem_fullFiniteRayUnits_iff
+          #check GCL.OAI26.F003.NativeRaySkeleton.globalFiniteRayHom_mem_ker_iff
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.globalFiniteRayHom_mem_ker_iff
+          #check GCL.OAI26.F003.NativeRaySkeleton.globalIdeleClassRayHom_surjective
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.globalIdeleClassRayHom_surjective
+          #check GCL.OAI26.F003.NativeRaySkeleton.globalIdeleClassRayHom_ker_eq
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.globalIdeleClassRayHom_ker_eq
+          #check GCL.OAI26.F003.NativeRaySkeleton.globalIdeleClassRayEquiv
+          #print axioms GCL.OAI26.F003.NativeRaySkeleton.globalIdeleClassRayEquiv
           LEAN
             lake env lean GCLF003NativeIdeleUnramifiedQuotient.lean
             test "$(sha256sum lake-manifest.json | cut -d' ' -f1)" = "de0f8c1467a6b313a7116d73cd3bcb390261d3d0a36bf246a13dbc0ad032d762"
@@ -231,7 +245,7 @@ jobs:
               'compilation_exit':int((p/'compile.exit').read_text()) if (p/'compile.exit').exists() else None,
               'global_quotient_compilation_exit':int((p/'quotient-compile.exit').read_text()) if (p/'quotient-compile.exit').exists() else None,
               'files':data,
-              'claim_boundary':'Native idèle-class quotient by good finite-place unit images and algebraic descent for characters unramified outside chosen bad places. NOT full ray-class isomorphism, local conductor-depth kernel, archimedean quotient, global Euler/analytic continuation, or seven-eighths theorem certification'
+              'claim_boundary':'Native arithmetic ray quotient and full restricted-product kernel candidate; exact-head compilation is evidence only. NOT closure of the generated local images, global residue-congruence bridge, global Euler/analytic continuation, or seven-eighths theorem certification'
           },indent=2)+'\n')
           PY
       - name: Archive source lock, compiler, axioms and failures
