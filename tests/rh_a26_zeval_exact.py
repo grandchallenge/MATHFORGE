@@ -93,6 +93,31 @@ def test_valuation():
                                 assert v(l**s*z,l)<m
                                 assert v(z,l)<=v(a,l)
                                 divisibility+=1
+    # Target positive valuation: primitive conductor 8, k=4, l=11.
+    # D is an 11-adic unit; m=2 supports a0=1, m=3 supports a0=11.
+    f,k,l,chi=8,4,11,chi8
+    T=gen(f,k,chi)/k
+    assert T==-11 and v(D(k),l)==0
+    a=f*P(k)*k*T
+    for m in (2,3):
+        F=f*l**m; M=l**m; U=units(F)
+        TF=gen(F,k,chi)/k
+        assert TF==T*(1-chi(l)*l**(k-1))
+        assert v(TF,l)==1
+        level+=1
+        b=next(b for b in U if (chi(b)*b**k-1)%l)
+        S=sum(th(F,b,u)*u**(k-1)*chi(u) for u in U)
+        err=D(k)*(b**(k-1)*chi(b)*S-2*(chi(b)*b**k-1)*TF)
+        assert (err/F).denominator==1 and v(err,l)>=m
+        weighted+=1
+        for j in (-1,0,2):
+            z=sum(th(F,b,u)*(u+M*j*(u%3+1))**(k-1)*chi(u) for u in U)
+            assert (z-S)%M==0 and v(z,l)==1
+            assert v(a,l)-v(z,l)==v(f*P(k)*k,l)
+            stable+=1; positive+=1
+            for s in range(m-1):
+                assert v(l**s*z,l)<m and v(z,l)<=v(a,l)
+                divisibility+=1
     assert exceptional and positive and stable and divisibility
     return level,weighted,stable,divisibility,positive,exceptional
 def controls():
