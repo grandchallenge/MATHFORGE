@@ -1103,9 +1103,9 @@ theorem conductorLocalImage_of_small_sub_one
     change (e.val : v.adicCompletion K) = u.val
     rw [he]
 
+set_option maxHeartbeats 800000 in
 /-- Every native finite place admits a nonzero element of its local
 maximal ideal. Use the native existence of a valuation uniformizer. -/
-set_option maxHeartbeats 800000 in
 theorem exists_nonzero_local_maximal_ideal_element (v : HeightOneSpectrum R) :
     ∃ π : v.adicCompletionIntegers K,
       π ∈ IsLocalRing.maximalIdeal (v.adicCompletionIntegers K) ∧
@@ -1121,10 +1121,10 @@ theorem exists_nonzero_local_maximal_ideal_element (v : HeightOneSpectrum R) :
     HeightOneSpectrum.adicCompletionIntegers.isUnit_iff_valued_eq_one.mp hp
   exact hlt.ne hone
 
+set_option maxHeartbeats 800000 in
 /-- Simultaneous weak approximation yields a single diagonal field unit
 normalizing every positive-depth conductor coordinate of any finite
 idèle. No congruence hypothesis on the original idèle is needed. -/
-set_option maxHeartbeats 800000 in
 theorem finiteIdele_exists_diagonal_conductor_normalization
     (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ) :
     ∃ k : Kˣ, FiniteAdeleRing.unitEmbedding R K k * a ∈
