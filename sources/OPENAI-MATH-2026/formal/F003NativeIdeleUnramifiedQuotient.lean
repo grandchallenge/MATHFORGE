@@ -1,6 +1,8 @@
 import Mathlib.NumberTheory.NumberField.HeckeLFunction
 import Mathlib.GroupTheory.QuotientGroup.Basic
 import Mathlib.RingTheory.DedekindDomain.Factorization
+import Mathlib.RingTheory.Ideal.Quotient.Operations
+import Mathlib.RingTheory.Localization.Integer
 import Mathlib.Topology.Algebra.Group.Subgroup
 import Mathlib.Topology.Algebra.Group.Units
 import Mathlib.Topology.Algebra.Group.Quotient
@@ -939,6 +941,102 @@ def normalizedIdeleRayEquiv (depth : HeightOneSpectrum R →₀ ℕ) :
       LocalCongruenceIdealRayQuotient (R := R) (K := K) depth :=
   QuotientGroup.quotientKerEquivOfSurjective _
     (normalizedIdeleRayHom_surjective depth)
+
+
+/-! ## Simultaneous approximation at finite places
+
+Use a common denominator for finitely many field targets, then the
+Chinese remainder theorem on independent prime powers. This proves
+simultaneous approximation in the actual completions, not merely density
+in each completion separately.
+-/
+
+open scoped WithZero
+open WithZero
+
+theorem finitePlace_approximate_field_targets
+    (S : Finset (HeightOneSpectrum R))
+    (t : S → K) (ε : S → ℤᵐ⁰) (hε : ∀ i, ε i ≠ 0) :
+    ∃ k : K, ∀ i : S, i.val.valuation K (k - t i) < ε i := by
+  classical
+  obtain ⟨d, hd⟩ := IsLocalization.exist_integer_multiples R⁰
+    (Finset.univ : Finset S) t
+  have hd0 : (d : R) ≠ 0 := nonZeroDivisors.ne_zero d.property
+  have hdK : algebraMap R K (d : R) ≠ 0 :=
+    fun h => hd0 ((IsFractionRing.injective R K) (h.trans (map_zero _).symm))
+  have hnum : ∀ i : S, ∃ b : R,
+      algebraMap R K b = algebraMap R K (d : R) * t i := by
+    intro i
+    obtain ⟨b, hb⟩ := hd i (Finset.mem_univ i)
+    exact ⟨b, by simpa [Algebra.smul_def] using hb⟩
+  choose b hb using hnum
+  have hden (i : S) : i.val.valuation K (algebraMap R K (d : R)) ≠ 0 :=
+    (Valuation.ne_zero_iff _).2 hdK
+  choose n hn using fun i : S =>
+    WithZero.exists_exp_neg_natCast_lt (mul_ne_zero (hε i) (hden i))
+  have hcop : Pairwise (fun i j : S =>
+      IsCoprime (i.val.asIdeal ^ n i) (j.val.asIdeal ^ n j)) := by
+    intro i j hij
+    exact i.val.isCoprime_pow_of_ne j.val (fun h => hij (Subtype.ext h)) _ _
+  obtain ⟨a, ha⟩ := Ideal.exists_forall_sub_mem_ideal hcop b
+  refine ⟨algebraMap R K a / algebraMap R K (d : R), ?_⟩
+  intro i
+  have hbound : i.val.valuation K (algebraMap R K (a - b i)) <
+      ε i * i.val.valuation K (algebraMap R K (d : R)) := by
+    rw [i.val.valuation_of_algebraMap]
+    exact ((i.val.intValuation_le_pow_iff_mem (a - b i) (n i)).2 (ha i)).trans_lt (hn i)
+  have he : (algebraMap R K a / algebraMap R K (d : R) - t i) *
+      algebraMap R K (d : R) = algebraMap R K (a - b i) := by
+    rw [map_sub, hb i]
+    field_simp
+    <;> ring
+  have hv := congrArg (i.val.valuation K) he
+  rw [map_mul] at hv
+  apply (lt_of_mul_lt_mul_right₀ (b := i.val.valuation K (algebraMap R K (d : R))) _ zero_le)
+  rw [hv]
+  exact hbound
+
+/-- A single-place open valuation ball meets the global field. -/
+theorem finitePlace_approximate_completion
+    (v : HeightOneSpectrum R) (x : v.adicCompletion K)
+    (ε : ℤᵐ⁰) (hε : ε ≠ 0) :
+    ∃ t : K, Valued.v (algebraMap K (v.adicCompletion K) t - x) < ε := by
+  obtain ⟨y, hy⟩ := v.valuedAdicCompletion_surjective K ε
+  let w : Valuation (v.adicCompletion K) ℤᵐ⁰ := Valued.v
+  have hopen : IsOpen {z : v.adicCompletion K | w (z - x) < ε} := by
+    rw [← hy]
+    simp only [← w.restrict_lt_iff]
+    exact (Valued.isOpen_ball (v.adicCompletion K) (w.restrict y)).preimage
+      (continuous_id.sub continuous_const)
+  have hnon : ({z : v.adicCompletion K | w (z - x) < ε} : Set _).Nonempty := by
+    refine ⟨x, ?_⟩
+    change w (x - x) < ε
+    rw [sub_self, map_zero]
+    exact hε.pos
+  exact (v.denseRange_algebraMap K).exists_mem_open hopen hnon
+
+/-- Simultaneous weak approximation for an arbitrary finite set of native
+finite places and arbitrary completion-valued targets. -/
+theorem finitePlace_simultaneous_approximation
+    (S : Finset (HeightOneSpectrum R))
+    (x : ∀ i : S, i.val.adicCompletion K)
+    (ε : S → ℤᵐ⁰) (hε : ∀ i, ε i ≠ 0) :
+    ∃ k : K, ∀ i : S,
+      Valued.v (algebraMap K (i.val.adicCompletion K) k - x i) < ε i := by
+  classical
+  choose t ht using fun i : S => finitePlace_approximate_completion i.val (x i) (ε i) (hε i)
+  obtain ⟨k, hk⟩ := finitePlace_approximate_field_targets S t ε hε
+  refine ⟨k, ?_⟩
+  intro i
+  let f := algebraMap K (i.val.adicCompletion K)
+  have he : Valued.v (f k - f (t i)) < ε i := by
+    rw [← map_sub, i.val.algebraMap_adicCompletion]
+    change Valued.v ((k - t i : K) : i.val.adicCompletion K) < ε i
+    rw [i.val.valuedAdicCompletion_eq_valuation']
+    exact hk i
+  have hsum : f k - x i = (f k - f (t i)) + (f (t i) - x i) := by ring
+  rw [hsum]
+  exact (Valued.v.map_add _ _).trans_lt (max_lt he (ht i))
 
 end
 
