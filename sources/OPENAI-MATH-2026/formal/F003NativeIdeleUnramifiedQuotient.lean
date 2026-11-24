@@ -611,7 +611,8 @@ def finiteIdeleIdealHom :
   map_one' := by
     apply (finiteIdeleFractionalIdeal_eq_one_iff (1 : (FiniteAdeleRing R K)ˣ)).mpr
     intro v
-    simp [finiteIdelePrimeExponent]
+    change - WithZero.log (Valued.v (1 : v.adicCompletion K)) = 0
+    simp
   map_mul' := finiteIdeleFractionalIdeal_mul
 
 /-- The codomain is precisely the group of nonzero fractional ideals,
@@ -656,7 +657,8 @@ theorem finiteIdeleFractionalIdeal_exists
     v.valuedAdicCompletion_surjective K (WithZero.exp (- FractionalIdeal.count K v I))
   let y : FiniteAdeleRing R K := ⟨x, by
     filter_upwards [FractionalIdeal.finite_factors I] with v hv
-    rw [mem_adicCompletionIntegers, hx v, hv, neg_zero, WithZero.exp_zero]⟩
+    change Valued.v (x v) ≤ 1
+    rw [hx v, hv, neg_zero, WithZero.exp_zero]⟩
   have hy : IsUnit y := by
     apply FiniteAdeleRing.isUnit_iff.mpr
     constructor
