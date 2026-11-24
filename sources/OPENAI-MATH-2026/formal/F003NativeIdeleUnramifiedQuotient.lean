@@ -992,7 +992,7 @@ theorem finitePlace_approximate_field_targets
     <;> ring
   have hv := congrArg (i.val.valuation K) he
   rw [map_mul] at hv
-  apply (lt_of_mul_lt_mul_right₀ (b := i.val.valuation K (algebraMap R K (d : R))) _ zero_le)
+  apply (mul_lt_mul_right₀ (hden i).pos).mp
   rw [hv]
   exact hbound
 
@@ -1004,8 +1004,14 @@ theorem finitePlace_approximate_completion
   obtain ⟨y, hy⟩ := v.valuedAdicCompletion_surjective K ε
   let w : Valuation (v.adicCompletion K) ℤᵐ⁰ := Valued.v
   have hopen : IsOpen {z : v.adicCompletion K | w (z - x) < ε} := by
-    rw [← hy]
-    simp only [← w.restrict_lt_iff]
+    have hs : {z : v.adicCompletion K | w (z - x) < ε} =
+        (fun z : v.adicCompletion K => z - x) ⁻¹' {z : v.adicCompletion K | w.restrict z < w.restrict y} := by
+      ext z
+      change w (z - x) < ε ↔ w.restrict (z - x) < w.restrict y
+      rw [w.restrict_lt_iff]
+      change w (z - x) < ε ↔ w (z - x) < Valued.v y
+      rw [hy]
+    rw [hs]
     exact (Valued.isOpen_ball (v.adicCompletion K) (w.restrict y)).preimage
       (continuous_id.sub continuous_const)
   have hnon : ({z : v.adicCompletion K | w (z - x) < ε} : Set _).Nonempty := by
@@ -1030,7 +1036,7 @@ theorem finitePlace_simultaneous_approximation
   intro i
   let f := algebraMap K (i.val.adicCompletion K)
   have he : Valued.v (f k - f (t i)) < ε i := by
-    rw [← map_sub, i.val.algebraMap_adicCompletion]
+    rw [← map_sub]
     change Valued.v ((k - t i : K) : i.val.adicCompletion K) < ε i
     rw [i.val.valuedAdicCompletion_eq_valuation']
     exact hk i
