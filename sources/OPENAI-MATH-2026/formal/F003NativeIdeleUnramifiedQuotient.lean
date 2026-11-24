@@ -1102,35 +1102,29 @@ theorem conductorLocalImage_of_small_sub_one
   · apply Units.ext
     change (e.val : v.adicCompletion K) = u.val
     rw [he]
-    rfl
 
 /-- Every native finite place admits a nonzero element of its local
-maximal ideal. The element is obtained from the surjective valuation. -/
+maximal ideal. Use the native existence of a valuation uniformizer. -/
+set_option maxHeartbeats 800000 in
 theorem exists_nonzero_local_maximal_ideal_element (v : HeightOneSpectrum R) :
     ∃ π : v.adicCompletionIntegers K,
       π ∈ IsLocalRing.maximalIdeal (v.adicCompletionIntegers K) ∧
         (π : v.adicCompletion K) ≠ 0 := by
   let w : Valuation (v.adicCompletion K) ℤᵐ⁰ := Valued.v
-  obtain ⟨π, hπ⟩ := v.valuedAdicCompletion_surjective K (WithZero.exp (-1))
-  have hlt : w π < 1 := by
-    change Valued.v π < 1
-    rw [hπ, ← WithZero.exp_zero]
-    exact WithZero.exp_lt_exp.mpr (by decide)
-  have hne : π ≠ 0 := by
-    intro h
-    rw [h, map_zero] at hπ
-    exact (by simp : WithZero.exp (-1 : ℤ) ≠ 0) hπ.symm
-  let p : v.adicCompletionIntegers K := ⟨π, hlt.le⟩
-  refine ⟨p, ?_, hne⟩
+  obtain ⟨π, hπ⟩ := w.exists_isUniformizer_of_isCyclic_of_nontrivial
+  let p : v.adicCompletionIntegers K := π
+  have hlt : w (p : v.adicCompletion K) < 1 := hπ.val_lt_one
+  refine ⟨p, ?_, hπ.ne_zero⟩
   rw [IsLocalRing.mem_maximalIdeal, mem_nonunits_iff]
   intro hp
-  have hone : w π = 1 :=
+  have hone : w (p : v.adicCompletion K) = 1 :=
     HeightOneSpectrum.adicCompletionIntegers.isUnit_iff_valued_eq_one.mp hp
   exact hlt.ne hone
 
 /-- Simultaneous weak approximation yields a single diagonal field unit
 normalizing every positive-depth conductor coordinate of any finite
 idèle. No congruence hypothesis on the original idèle is needed. -/
+set_option maxHeartbeats 800000 in
 theorem finiteIdele_exists_diagonal_conductor_normalization
     (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ) :
     ∃ k : Kˣ, FiniteAdeleRing.unitEmbedding R K k * a ∈
