@@ -992,9 +992,11 @@ theorem finitePlace_approximate_field_targets
     <;> ring
   have hv := congrArg (i.val.valuation K) he
   rw [map_mul] at hv
-  apply (mul_lt_mul_right₀ (hden i).pos).mp
-  rw [hv]
-  exact hbound
+  apply lt_of_not_ge
+  intro h
+  have hmul := mul_le_mul_of_nonneg_right h (zero_le : 0 ≤ i.val.valuation K (algebraMap R K (d : R)))
+  rw [hv] at hmul
+  exact (not_lt_of_ge hmul) hbound
 
 /-- A single-place open valuation ball meets the global field. -/
 theorem finitePlace_approximate_completion
