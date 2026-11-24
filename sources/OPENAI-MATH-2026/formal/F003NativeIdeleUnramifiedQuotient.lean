@@ -744,8 +744,8 @@ def coprimeIdealSubgroup (depth : HeightOneSpectrum R →₀ ℕ) :
     rw [FractionalIdeal.count_mul K v I.ne_zero J.ne_zero, hI v hv, hJ v hv, add_zero]
   inv_mem' := by
     intro I hI v hv
-    change FractionalIdeal.count K v I.val⁻¹ = 0
-    rw [FractionalIdeal.count_inv, hI v hv, neg_zero]
+    change FractionalIdeal.count K v ((I⁻¹ : (FractionalIdeal R⁰ K)ˣ).val) = 0
+    rw [Units.val_inv_eq_inv_val, FractionalIdeal.count_inv, hI v hv, neg_zero]
 
 /-- Coordinate evaluation on genuine finite idèle units. -/
 def finiteIdeleCoordinate (v : HeightOneSpectrum R) :
@@ -821,7 +821,8 @@ theorem conductorCoprimeIdealHom_surjective
     by_cases hv : depth v ≠ 0
     · have hi : FractionalIdeal.count K v I.val.val = 0 := I.property v hv
       simp [x, hv, hi]
-    · simp [x, hv, hz v]
+    · have hzero : depth v = 0 := not_ne_iff.mp hv
+      simp [x, hzero, hz v]
   let y : FiniteAdeleRing R K := ⟨x, by
     filter_upwards [FractionalIdeal.finite_factors I.val.val] with v hv
     change Valued.v (x v) ≤ 1
