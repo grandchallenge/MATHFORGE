@@ -560,6 +560,162 @@ theorem finiteIdeleFractionalIdeal_integral_count
   exact (Ideal.span_singleton_eq_bot.not.mpr hr)
 
 
+
+/-! ## The arithmetic exact sequence, not merely prime counts -/
+
+/-- Nonzero fractional ideals are determined by their actual prime counts. -/
+theorem fractionalIdeal_eq_of_primeCounts_eq
+    {I J : FractionalIdeal R⁰ K} (hI : I ≠ 0) (hJ : J ≠ 0)
+    (h : ∀ v : HeightOneSpectrum R,
+      FractionalIdeal.count K v I = FractionalIdeal.count K v J) : I = J := by
+  calc
+    I = ∏ᶠ v : HeightOneSpectrum R,
+        (v.asIdeal : FractionalIdeal R⁰ K) ^ FractionalIdeal.count K v I :=
+      (FractionalIdeal.finprod_heightOneSpectrum_factorization' K hI).symm
+    _ = ∏ᶠ v : HeightOneSpectrum R,
+        (v.asIdeal : FractionalIdeal R⁰ K) ^ FractionalIdeal.count K v J := by
+      apply finprod_congr
+      intro v
+      rw [h v]
+    _ = J := FractionalIdeal.finprod_heightOneSpectrum_factorization' K hJ
+
+theorem finiteIdelePrimeExponent_mul
+    (a b : (FiniteAdeleRing R K)ˣ) (v : HeightOneSpectrum R) :
+    finiteIdelePrimeExponent (a * b) v =
+      finiteIdelePrimeExponent a v + finiteIdelePrimeExponent b v := by
+  have ha : a.val v ≠ 0 := (FiniteAdeleRing.isUnit_iff.mp a.isUnit).1 v
+  have hb : b.val v ≠ 0 := (FiniteAdeleRing.isUnit_iff.mp b.isUnit).1 v
+  change - WithZero.log (Valued.v (a.val v * b.val v)) =
+    - WithZero.log (Valued.v (a.val v)) + - WithZero.log (Valued.v (b.val v))
+  rw [map_mul, WithZero.log_mul ((Valuation.ne_zero_iff _).2 ha)
+    ((Valuation.ne_zero_iff _).2 hb)]
+  exact neg_add _ _
+
+theorem finiteIdeleFractionalIdeal_mul
+    (a b : (FiniteAdeleRing R K)ˣ) :
+    finiteIdeleFractionalIdeal (a * b) =
+      finiteIdeleFractionalIdeal a * finiteIdeleFractionalIdeal b := by
+  apply fractionalIdeal_eq_of_primeCounts_eq
+    (finiteIdeleFractionalIdeal_ne_zero _) (mul_ne_zero
+      (finiteIdeleFractionalIdeal_ne_zero a) (finiteIdeleFractionalIdeal_ne_zero b))
+  intro v
+  rw [FractionalIdeal.count_mul K v (finiteIdeleFractionalIdeal_ne_zero a)
+    (finiteIdeleFractionalIdeal_ne_zero b)]
+  simp only [finiteIdeleFractionalIdeal_count]
+  exact finiteIdelePrimeExponent_mul a b v
+
+/-- Genuine arithmetic homomorphism from finite idèles. -/
+def finiteIdeleIdealHom :
+    (FiniteAdeleRing R K)ˣ →* FractionalIdeal R⁰ K where
+  toFun := finiteIdeleFractionalIdeal
+  map_one' := by
+    apply (finiteIdeleFractionalIdeal_eq_one_iff (1 : (FiniteAdeleRing R K)ˣ)).mpr
+    intro v
+    simp [finiteIdelePrimeExponent]
+  map_mul' := finiteIdeleFractionalIdeal_mul
+
+/-- The codomain is precisely the group of nonzero fractional ideals,
+represented by the units of the fractional-ideal monoid. -/
+def finiteIdeleIdealUnitHom :
+    (FiniteAdeleRing R K)ˣ →* (FractionalIdeal R⁰ K)ˣ :=
+  (finiteIdeleIdealHom (R := R) (K := K)).toHomUnits
+
+/-- The exact valuation-unit kernel: all local coordinates are units of
+their local integer rings, equivalently have multiplicative valuation 1. -/
+theorem finiteIdeleIdealUnitHom_mem_ker_iff
+    (a : (FiniteAdeleRing R K)ˣ) :
+    a ∈ (finiteIdeleIdealUnitHom (R := R) (K := K)).ker ↔
+      ∀ v : HeightOneSpectrum R, Valued.v (a.val v) = 1 := by
+  rw [MonoidHom.mem_ker]
+  constructor
+  · intro h v
+    have hI : finiteIdeleFractionalIdeal a = 1 :=
+      congrArg (fun u : (FractionalIdeal R⁰ K)ˣ => u.val) h
+    have hval : Valued.v (a.val v) ≠ 0 :=
+      (Valuation.ne_zero_iff _).2 ((FiniteAdeleRing.isUnit_iff.mp a.isUnit).1 v)
+    have hz := (finiteIdeleFractionalIdeal_eq_one_iff a).mp hI v
+    have hlog : WithZero.log (Valued.v (a.val v)) = 0 := by
+      change - WithZero.log (Valued.v (a.val v)) = 0 at hz
+      omega
+    rw [← WithZero.exp_log hval, hlog, WithZero.exp_zero]
+  · intro h
+    apply Units.ext
+    change finiteIdeleFractionalIdeal a = 1
+    apply (finiteIdeleFractionalIdeal_eq_one_iff a).mpr
+    intro v
+    simp [finiteIdelePrimeExponent, h v]
+
+/-- Every nonzero fractional ideal has a finite-idèle preimage: choose
+local coordinates of the prescribed valuations, and use the native
+restricted-product condition at the cofinally many zero exponents. -/
+theorem finiteIdeleFractionalIdeal_exists
+    (I : FractionalIdeal R⁰ K) (hI : I ≠ 0) :
+    ∃ a : (FiniteAdeleRing R K)ˣ, finiteIdeleFractionalIdeal a = I := by
+  classical
+  choose x hx using fun v : HeightOneSpectrum R =>
+    v.valuedAdicCompletion_surjective K (WithZero.exp (- FractionalIdeal.count K v I))
+  let y : FiniteAdeleRing R K := ⟨x, by
+    filter_upwards [FractionalIdeal.finite_factors I] with v hv
+    rw [mem_adicCompletionIntegers, hx v, hv, neg_zero, WithZero.exp_zero]⟩
+  have hy : IsUnit y := by
+    apply FiniteAdeleRing.isUnit_iff.mpr
+    constructor
+    · intro v
+      change x v ≠ 0
+      intro hz
+      have hv := hx v
+      rw [hz, map_zero] at hv
+      exact (by simp : WithZero.exp (- FractionalIdeal.count K v I) ≠ 0) hv.symm
+    · filter_upwards [FractionalIdeal.finite_factors I] with v hv
+      change Valued.v (x v) = 1
+      rw [hx v, hv, neg_zero, WithZero.exp_zero]
+  refine ⟨hy.unit, ?_⟩
+  apply fractionalIdeal_eq_of_primeCounts_eq
+    (finiteIdeleFractionalIdeal_ne_zero _) hI
+  intro v
+  rw [finiteIdeleFractionalIdeal_count, finiteIdelePrimeExponent, hy.unit_spec]
+  change - WithZero.log (Valued.v (x v)) = _
+  rw [hx v, WithZero.log_exp, neg_neg]
+
+theorem finiteIdeleIdealUnitHom_surjective :
+    Function.Surjective (finiteIdeleIdealUnitHom (R := R) (K := K)) := by
+  intro I
+  obtain ⟨a, ha⟩ := finiteIdeleFractionalIdeal_exists I.val I.ne_zero
+  refine ⟨a, ?_⟩
+  apply Units.ext
+  exact ha
+
+/-- Compatibility with every principal fractional ideal, including
+nonintegral diagonal elements. This is required to pass to class groups. -/
+theorem finiteIdeleFractionalIdeal_unitEmbedding (k : Kˣ) :
+    finiteIdeleFractionalIdeal (FiniteAdeleRing.unitEmbedding R K k) =
+      FractionalIdeal.spanSingleton R⁰ (k : K) := by
+  obtain ⟨r, d, hrd⟩ := IsLocalization.exists_mk'_eq R⁰ (k : K)
+  have hr : r ≠ 0 := by
+    intro hz
+    have he : (k : K) = 0 := by
+      rw [← hrd, hz, IsFractionRing.mk'_eq_div, map_zero, zero_div]
+    exact k.ne_zero he
+  have hd : (d : R) ≠ 0 := nonZeroDivisors.ne_zero d.property
+  have hI : FractionalIdeal.spanSingleton R⁰ (k : K) ≠ 0 :=
+    FractionalIdeal.spanSingleton_ne_zero_iff.mpr k.ne_zero
+  have hrep : FractionalIdeal.spanSingleton R⁰ (k : K) =
+      FractionalIdeal.spanSingleton R⁰ ((algebraMap R K) (d : R))⁻¹ *
+        (Ideal.span {r} : Ideal R) := by
+    rw [FractionalIdeal.coeIdeal_span_singleton, ← map_mul, ← hrd,
+      IsFractionRing.mk'_eq_div, div_eq_mul_inv, mul_comm]
+  apply fractionalIdeal_eq_of_primeCounts_eq
+    (finiteIdeleFractionalIdeal_ne_zero _) hI
+  intro v
+  rw [finiteIdeleFractionalIdeal_count, finiteIdelePrimeExponent,
+    FractionalIdeal.count_well_defined K v hI hrep]
+  change - WithZero.log (Valued.v ((k : K) : v.adicCompletion K)) = _
+  rw [v.valuedAdicCompletion_eq_valuation', ← hrd, v.valuation_of_mk',
+    v.intValuation_if_neg hr, v.intValuation_if_neg hd,
+    WithZero.log_div (by simp) (by simp), WithZero.log_exp, WithZero.log_exp]
+  omega
+
+
 end
 
 end GCL.OAI26.F003.NativeRaySkeleton
