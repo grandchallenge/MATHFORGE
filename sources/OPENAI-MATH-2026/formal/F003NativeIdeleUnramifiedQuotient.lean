@@ -1046,6 +1046,147 @@ theorem finitePlace_simultaneous_approximation
   rw [hsum]
   exact (Valued.v.map_add _ _).trans_lt (max_lt he (ht i))
 
+
+/-! ## Diagonal normalization at all conductor places
+
+A sufficiently small multiplicative error lies in the genuine principal
+congruence subgroup. Simultaneous approximation supplies a single nonzero
+field element multiplying any finite idèle into that subgroup at every
+positive-depth place. This does not yet compare the closed product kernel
+with the full idèle class quotient.
+-/
+
+/-- A sufficiently small error from 1 is a principal congruence unit.
+Only a nonzero element of the maximal ideal is needed for the bound,
+not an additional assumption that it generates that ideal. -/
+theorem conductorLocalImage_of_small_sub_one
+    (v : HeightOneSpectrum R) (n : ℕ)
+    (π : v.adicCompletionIntegers K)
+    (hπ : π ∈ IsLocalRing.maximalIdeal (v.adicCompletionIntegers K))
+    (hπ0 : (π : v.adicCompletion K) ≠ 0)
+    (u : (v.adicCompletion K)ˣ)
+    (hu : Valued.v (u.val - 1) <
+      Valued.v (π : v.adicCompletion K) ^ n) :
+    u ∈ conductorLocalImage v n := by
+  let w : Valuation (v.adicCompletion K) ℤᵐ⁰ := Valued.v
+  have hπle : w (π : v.adicCompletion K) ≤ 1 := π.property
+  have hsmall : w (u.val - 1) < 1 :=
+    hu.trans_le (pow_le_one₀ zero_le hπle)
+  have hunit : w u.val = 1 := by
+    have h := w.map_eq_of_sub_lt (x := 1) (y := u.val) (by simpa only [map_one] using hsmall)
+    simpa only [map_one] using h
+  let b : v.adicCompletionIntegers K := ⟨u.val, hunit.le⟩
+  have hb : IsUnit b :=
+    (HeightOneSpectrum.adicCompletionIntegers.isUnit_iff_valued_eq_one).2 hunit
+  let e := hb.unit
+  have he : e.val = b := hb.unit_spec
+  have hcval : w ((u.val - 1) / (π : v.adicCompletion K) ^ n) ≤ 1 := by
+    rw [map_div₀, map_pow, div_eq_mul_inv]
+    exact mul_inv_le_one_of_le₀ hu.le zero_le
+  let c : v.adicCompletionIntegers K :=
+    ⟨(u.val - 1) / (π : v.adicCompletion K) ^ n, hcval⟩
+  have hmul : b - 1 = c * π ^ n := by
+    apply Subtype.ext
+    change u.val - 1 = (u.val - 1) / (π : v.adicCompletion K) ^ n *
+      (π : v.adicCompletion K) ^ n
+    rw [div_mul_cancel₀ _ (pow_ne_zero _ hπ0)]
+  have hmem : b - 1 ∈ IsLocalRing.maximalIdeal (v.adicCompletionIntegers K) ^ n := by
+    rw [hmul]
+    exact Ideal.mul_mem_left _ _ (Ideal.pow_mem_pow hπ n)
+  refine ⟨⟨e, ?_⟩, ?_⟩
+  · rw [localPrincipalUnits, MonoidHom.mem_ker]
+    apply Units.ext
+    change Ideal.Quotient.mk _ e.val = 1
+    rw [he, ← map_one (Ideal.Quotient.mk (IsLocalRing.maximalIdeal (v.adicCompletionIntegers K) ^ n))]
+    exact Ideal.Quotient.eq.mpr hmem
+  · apply Units.ext
+    change (e.val : v.adicCompletion K) = u.val
+    rw [he]
+    rfl
+
+/-- Every native finite place admits a nonzero element of its local
+maximal ideal. The element is obtained from the surjective valuation. -/
+theorem exists_nonzero_local_maximal_ideal_element (v : HeightOneSpectrum R) :
+    ∃ π : v.adicCompletionIntegers K,
+      π ∈ IsLocalRing.maximalIdeal (v.adicCompletionIntegers K) ∧
+        (π : v.adicCompletion K) ≠ 0 := by
+  let w : Valuation (v.adicCompletion K) ℤᵐ⁰ := Valued.v
+  obtain ⟨π, hπ⟩ := v.valuedAdicCompletion_surjective K (WithZero.exp (-1))
+  have hlt : w π < 1 := by
+    change Valued.v π < 1
+    rw [hπ, ← WithZero.exp_zero]
+    exact WithZero.exp_lt_exp.mpr (by decide)
+  have hne : π ≠ 0 := by
+    intro h
+    rw [h, map_zero] at hπ
+    exact (by simp : WithZero.exp (-1 : ℤ) ≠ 0) hπ.symm
+  let p : v.adicCompletionIntegers K := ⟨π, hlt.le⟩
+  refine ⟨p, ?_, hne⟩
+  rw [IsLocalRing.mem_maximalIdeal, mem_nonunits_iff]
+  intro hp
+  have hone : w π = 1 :=
+    HeightOneSpectrum.adicCompletionIntegers.isUnit_iff_valued_eq_one.mp hp
+  exact hlt.ne hone
+
+/-- Simultaneous weak approximation yields a single diagonal field unit
+normalizing every positive-depth conductor coordinate of any finite
+idèle. No congruence hypothesis on the original idèle is needed. -/
+theorem finiteIdele_exists_diagonal_conductor_normalization
+    (depth : HeightOneSpectrum R →₀ ℕ) (a : (FiniteAdeleRing R K)ˣ) :
+    ∃ k : Kˣ, FiniteAdeleRing.unitEmbedding R K k * a ∈
+      conductorNormalizedIdeles depth := by
+  classical
+  by_cases hempty : depth.support = ∅
+  · refine ⟨1, ?_⟩
+    apply (mem_conductorNormalizedIdeles_iff depth _).mpr
+    intro v hv
+    have hm := Finsupp.mem_support_iff.mpr hv
+    rw [hempty] at hm
+    exact False.elim (Finset.notMem_empty _ hm)
+  · let S := depth.support
+    choose π hπ using fun v : HeightOneSpectrum R =>
+      exists_nonzero_local_maximal_ideal_element (K := K) v
+    let x (i : S) : i.val.adicCompletion K := (a.val i.val)⁻¹
+    let ε (i : S) : ℤᵐ⁰ :=
+      Valued.v (π i.val : i.val.adicCompletion K) ^ depth i.val /
+        Valued.v (a.val i.val)
+    have ha0 (v : HeightOneSpectrum R) : a.val v ≠ 0 :=
+      (FiniteAdeleRing.isUnit_iff.mp a.isUnit).1 v
+    have hv0 (v : HeightOneSpectrum R) : Valued.v (a.val v) ≠ 0 :=
+      (Valuation.ne_zero_iff _).2 (ha0 v)
+    have hπv (v : HeightOneSpectrum R) :
+        Valued.v (π v : v.adicCompletion K) ≠ 0 :=
+      (Valuation.ne_zero_iff _).2 (hπ v).2
+    have hε (i : S) : ε i ≠ 0 :=
+      div_ne_zero (pow_ne_zero _ (hπv i.val)) (hv0 i.val)
+    obtain ⟨k, hk⟩ := finitePlace_simultaneous_approximation S x ε hε
+    have hsmall (i : S) :
+        Valued.v (algebraMap K (i.val.adicCompletion K) k * a.val i.val - 1) <
+          Valued.v (π i.val : i.val.adicCompletion K) ^ depth i.val := by
+      have he : algebraMap K (i.val.adicCompletion K) k * a.val i.val - 1 =
+          (algebraMap K (i.val.adicCompletion K) k - x i) * a.val i.val := by
+        dsimp [x]
+        rw [sub_mul, inv_mul_cancel₀ (ha0 i.val)]
+      rw [he, map_mul]
+      have h := mul_lt_mul_of_pos_right (hk i) (hv0 i.val).pos
+      dsimp [ε] at h
+      rw [div_mul_cancel₀ _ (hv0 i.val)] at h
+      exact h
+    have hk0 : k ≠ 0 := by
+      intro hzero
+      obtain ⟨v, hv⟩ := Finset.nonempty_iff_ne_empty.mpr hempty
+      have h := hsmall ⟨v, hv⟩
+      have hle : Valued.v (π v : v.adicCompletion K) ≤ 1 := (π v).property
+      have hlt := h.trans_le (pow_le_one₀ zero_le hle)
+      rw [hzero, map_zero, zero_mul, zero_sub, Valuation.map_neg, map_one] at hlt
+      exact (lt_irrefl _ hlt)
+    refine ⟨Units.mk0 k hk0, ?_⟩
+    apply (mem_conductorNormalizedIdeles_iff depth _).mpr
+    intro v hv
+    apply conductorLocalImage_of_small_sub_one v (depth v) (π v) (hπ v).1 (hπ v).2
+    change Valued.v (algebraMap K (v.adicCompletion K) k * a.val v - 1) < _
+    exact hsmall ⟨v, Finsupp.mem_support_iff.mpr hv⟩
+
 end
 
 end GCL.OAI26.F003.NativeRaySkeleton
