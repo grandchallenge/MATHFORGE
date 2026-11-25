@@ -1,4 +1,4 @@
-name: OAI26 November matrix exponent hardened Comparator replay
+name: OAI26 November arithmetic hierarchy hardened Comparator replay
 on:
   workflow_dispatch:
 
@@ -6,7 +6,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: oai26-nov24-matrix-exponent-${{ github.ref }}
+  group: oai26-nov24-arithmetic-hierarchy-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -49,25 +49,25 @@ jobs:
           import json, os, re, hashlib
           from pathlib import Path
           root = Path("upstream/math")
-          config = root / "lean/ComparatorChallenges/MatrixExponent.json"
-          challenge = root / "lean/ComparatorChallenges/MatrixExponent.lean"
-          solution = root / "lean/OAI/LinearAlgebra/SpectralBooks/ExactExponent.lean"
+          config = root / "lean/ComparatorChallenges/ArithmeticHierarchy.json"
+          challenge = root / "lean/ComparatorChallenges/ArithmeticHierarchy.lean"
+          solution = root / "lean/OAI/Hierarchy/Strict.lean"
           manifest = root / "lean/lake-manifest.json"
-          for p, sha in [(config,"49267c30c0d7acad2931cb79a4521f790caa10e8"),
-                         (challenge,"3dad39587df3a08b3904bf258eae27b863553e4b"),
-                         (solution,"c0a1bc6519c86e87e9672b3cdf7b8e766acd3a37"),
+          for p, sha in [(config,"826e1a5af6e25a458cfb26c09580479b23b7cccf"),
+                         (challenge,"3d83fc143c44e8c8c01b163dcc84e898bc5aa01c"),
+                         (solution,"113ff541d3664db36bc20f3c477835f387ff785f"),
                          (manifest,"96a8aea368379c8c445bd622c6b98fde7659f45e")]:
               raw=p.read_bytes()
               assert hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()==sha, str(p)
           cfg = json.loads(config.read_text())
-          targets=["OAI.LinearAlgebra.SpectralBooks."+n for n in ("square_exponent","dual_exponent","rectangular_exponent")]
+          targets=["OAI.Hierarchy.Valiant.strict_inclusions"]
           assert cfg["theorem_names"]==targets
-          assert cfg["challenge_module"]=="ComparatorChallenges.MatrixExponent"
-          assert cfg["solution_module"]=="OAI.LinearAlgebra.SpectralBooks.ExactExponent"
+          assert cfg["challenge_module"]=="ComparatorChallenges.ArithmeticHierarchy"
+          assert cfg["solution_module"]=="OAI.Hierarchy.Strict"
           assert set(cfg["permitted_axioms"])=={"propext","Classical.choice","Quot.sound"}
           assert cfg["enable_nanoda"] is False
           out = Path("replay/comparator-indexed")
-          out.joinpath("selected-config.txt").write_text("ComparatorChallenges/MatrixExponent.json\n")
+          out.joinpath("selected-config.txt").write_text("ComparatorChallenges/ArithmeticHierarchy.json\n")
           out.joinpath("selected-declaration.txt").write_text("\n".join(targets)+"\n")
           out.joinpath("selected-identity.json").write_text(json.dumps({"config":cfg,"targets":targets},sort_keys=True,indent=2)+"\n")
           with out.joinpath("statement-sha256.txt").open("w") as f:
@@ -183,7 +183,7 @@ jobs:
               return int(p.read_text().strip()) if p.is_file() else None
           hard,diagnostic=code("hardened.exit"),code("diagnostic.exit")
           record={
-            "record_type":"GCL_OPENAI_MATH_NOV24_MATRIX_COMPARATOR_REPLAY/1",
+            "record_type":"GCL_OPENAI_MATH_NOV24_HIERARCHY_COMPARATOR_REPLAY/1",
             "gcl_head":os.environ.get("GITHUB_SHA"),
             "run_id":os.environ.get("GITHUB_RUN_ID"),
             "upstream_revision":os.environ.get("GCL_UPSTREAM_SHA"),
