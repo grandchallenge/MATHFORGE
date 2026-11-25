@@ -12,7 +12,7 @@ concurrency:
 jobs:
   comparator-indexed:
     runs-on: ubuntu-24.04
-    timeout-minutes: 120
+    timeout-minutes: 240
     env:
       GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
       GCL_UPSTREAM_SHA: "3344da59991ed94f9ba711217b29c1d760badfa6"
@@ -151,6 +151,7 @@ jobs:
           export GCL_COMPARATOR_BIN="/tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator"
           export GCL_COMPARATOR_CONFIG="$(cat "$GITHUB_WORKSPACE/replay/comparator-indexed/selected-config.txt")"
           systemd-run --user --wait --collect --pipe \
+            --unit=gcl-hierarchy-comparator --property=RuntimeMaxSec=180min \
             --property='RestrictAddressFamilies=~AF_UNIX' \
             -E "PATH=$PATH" -E "COMPARATOR_LEAN4EXPORT=$COMPARATOR_LEAN4EXPORT" \
             -E "COMPARATOR_LANDRUN=$COMPARATOR_LANDRUN" \
@@ -169,6 +170,7 @@ jobs:
         if: always()
         shell: bash
         run: |
+          systemctl --user stop gcl-hierarchy-comparator.service 2>/dev/null || true
           python3 - <<'PY'
           import hashlib, json, os
           from pathlib import Path
