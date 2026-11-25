@@ -1,27 +1,21 @@
-name: OAI Math WP01 indexed hardened Comparator replay
+name: OAI26 November matrix exponent hardened Comparator replay
 on:
   workflow_dispatch:
-    inputs:
-      corpus_index:
-        description: 'Zero-based pinned crosswalk index 0–199'
-        required: true
-        type: number
 
 permissions:
   contents: read
 
 concurrency:
-  group: oai26-wp01-comparator-${{ inputs.corpus_index }}-${{ github.ref }}
+  group: oai26-nov24-matrix-exponent-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   comparator-indexed:
     runs-on: ubuntu-24.04
-    timeout-minutes: 240
+    timeout-minutes: 120
     env:
       GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
-      GCL_CORPUS_INDEX: "${{ inputs.corpus_index }}"
-      GCL_UPSTREAM_SHA: "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+      GCL_UPSTREAM_SHA: "3344da59991ed94f9ba711217b29c1d760badfa6"
       GCL_COMPARATOR_SHA: "d03acab154d269c06e60e4de7e4cc85deebff94b"
       GCL_EXPORT_SHA: "076e8e57707e813375e8f9da8bf989799ace9680"
       GCL_LANDRUN_SHA: "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
@@ -36,7 +30,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: openai/math
-          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          ref: 3344da59991ed94f9ba711217b29c1d760badfa6
           path: upstream/math
           fetch-depth: 1
           sparse-checkout: lean
@@ -48,44 +42,36 @@ jobs:
           set -euo pipefail
           mkdir -p replay/comparator-indexed
           test "$(git -C upstream/math rev-parse HEAD)" = "$GCL_UPSTREAM_SHA"
-          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "45074722c918576d65b4c8be9686c76f508ba696"
+          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "ce9e13b482e0ca6a1ca030a4f15294aae7978107"
           test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
           sha256sum upstream/math/lean/lake-manifest.json > replay/comparator-indexed/lake-manifest-pre.sha256
           python3 - <<'PY'
           import json, os, re, hashlib
           from pathlib import Path
-          idx = int(os.environ["GCL_CORPUS_INDEX"])
-          assert 0 <= idx < 200
-          crosswalk = json.loads(Path("sources/OPENAI-MATH-2026/FORMALIZATION_CROSSWALK.json").read_text())
-          rows = sorted(crosswalk["main_results"], key=lambda x:x["declaration"].encode("utf-8"))
-          assert len(rows)==200 and len({r["declaration"] for r in rows})==200
-          row = rows[idx]
           root = Path("upstream/math")
-          config = root / row["comparator_config"]
-          solution = root / row["lean_source"]
-          assert config.is_file() and solution.is_file()
+          config = root / "lean/ComparatorChallenges/MatrixExponent.json"
+          challenge = root / "lean/ComparatorChallenges/MatrixExponent.lean"
+          solution = root / "lean/OAI/LinearAlgebra/SpectralBooks/ExactExponent.lean"
+          manifest = root / "lean/lake-manifest.json"
+          for p, sha in [(config,"49267c30c0d7acad2931cb79a4521f790caa10e8"),
+                         (challenge,"3dad39587df3a08b3904bf258eae27b863553e4b"),
+                         (solution,"c0a1bc6519c86e87e9672b3cdf7b8e766acd3a37"),
+                         (manifest,"96a8aea368379c8c445bd622c6b98fde7659f45e")]:
+              raw=p.read_bytes()
+              assert hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()==sha, str(p)
           cfg = json.loads(config.read_text())
-          ident = re.compile(r"[A-Za-z_][A-Za-z_0-9]*(?:\.[A-Za-z_][A-Za-z_0-9]*)*\Z")
-          assert ident.fullmatch(row["declaration"])
-          assert ident.fullmatch(cfg["challenge_module"]) and ident.fullmatch(cfg["solution_module"])
-          assert cfg["theorem_names"] and row["declaration"] in cfg["theorem_names"]
-          assert set(cfg["permitted_axioms"]) <= {"propext","Classical.choice","Quot.sound"}
-          # Respect the immutable upstream comparator configuration.  Some
-          # TraceIdealTransportSupport entries require Nanoda; rejecting them
-          # here would make the pinned corpus permanently non-replayable.
-          # Fail closed on absent, non-boolean or silently rewritten settings.
-          assert type(cfg.get("enable_nanoda")) is bool
-          challenge = root / "lean" / (cfg["challenge_module"].replace(".","/")+".lean")
-          assert challenge.is_file()
-          assert row["lean_source"].startswith("lean/OAI/") and row["comparator_config"].startswith("lean/ComparatorChallenges/")
-          target = "ComparatorChallenges/" + config.name
+          targets=["OAI.LinearAlgebra.SpectralBooks."+n for n in ("square_exponent","dual_exponent","rectangular_exponent")]
+          assert cfg["theorem_names"]==targets
+          assert cfg["challenge_module"]=="ComparatorChallenges.MatrixExponent"
+          assert cfg["solution_module"]=="OAI.LinearAlgebra.SpectralBooks.ExactExponent"
+          assert set(cfg["permitted_axioms"])=={"propext","Classical.choice","Quot.sound"}
+          assert cfg["enable_nanoda"] is False
           out = Path("replay/comparator-indexed")
-          out.joinpath("selected-config.txt").write_text(target+"\n")
-          out.joinpath("selected-index.txt").write_text(str(idx)+"\n")
-          out.joinpath("selected-declaration.txt").write_text(row["declaration"]+"\n")
-          out.joinpath("selected-identity.json").write_text(json.dumps({"index":idx,"crosswalk_row":row,"config":cfg},sort_keys=True,indent=2)+"\n")
+          out.joinpath("selected-config.txt").write_text("ComparatorChallenges/MatrixExponent.json\n")
+          out.joinpath("selected-declaration.txt").write_text("\n".join(targets)+"\n")
+          out.joinpath("selected-identity.json").write_text(json.dumps({"config":cfg,"targets":targets},sort_keys=True,indent=2)+"\n")
           with out.joinpath("statement-sha256.txt").open("w") as f:
-              for p in (challenge,config,solution):
+              for p in (challenge,config,solution,manifest):
                   f.write(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+str(p)+"\n")
           PY
 
@@ -175,14 +161,7 @@ jobs:
             > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.stdout_stderr.log" 2>&1
           hard_rc=$?
           echo "$hard_rc" > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.exit"
-          # If systemd user manager is unavailable, preserve a NON-CERTIFYING
-          # landrun-backed diagnostic result rather than pretending hardened execution.
-          if [ "$hard_rc" -ne 0 ]; then
-            lake env "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
-              > "$GITHUB_WORKSPACE/replay/comparator-indexed/diagnostic.stdout_stderr.log" 2>&1
-            diagnostic_rc=$?
-            echo "$diagnostic_rc" > "$GITHUB_WORKSPACE/replay/comparator-indexed/diagnostic.exit"
-          fi
+          # Single bounded run; diagnose failure before any retry.
           # Hardened Comparator acceptance alone is the success condition.
           exit "$hard_rc"
 
@@ -204,7 +183,7 @@ jobs:
               return int(p.read_text().strip()) if p.is_file() else None
           hard,diagnostic=code("hardened.exit"),code("diagnostic.exit")
           record={
-            "record_type":"GCL_OPENAI_MATH_COMPARATOR_REPLAY/1",
+            "record_type":"GCL_OPENAI_MATH_NOV24_MATRIX_COMPARATOR_REPLAY/1",
             "gcl_head":os.environ.get("GITHUB_SHA"),
             "run_id":os.environ.get("GITHUB_RUN_ID"),
             "upstream_revision":os.environ.get("GCL_UPSTREAM_SHA"),
@@ -213,7 +192,7 @@ jobs:
             "exporter_source_commit":os.environ.get("GCL_EXPORT_SHA"),
             "landrun_source_commit":os.environ.get("GCL_LANDRUN_SHA"),
             "target":(root/"selected-declaration.txt").read_text().strip(),
-            "corpus_index":int((root/"selected-index.txt").read_text().strip()),
+            "targets":(root/"selected-declaration.txt").read_text().splitlines(),
             "hardened_exit":hard,
             "diagnostic_exit":diagnostic,
             "comparator_hardened_accepted":hard==0,
