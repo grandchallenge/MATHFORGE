@@ -142,7 +142,7 @@ jobs:
         working-directory: upstream/math/lean
         shell: bash
         run: |
-          set +e
+          set -e
           export PATH="/tmp/gcl-comparator-tools/nanoda_lib/target/release:/tmp/gcl-comparator-tools/lean4export/.lake/build/bin:$(go env GOPATH)/bin:$PATH"
           export COMPARATOR_NANODA="/tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin"
           test -x "$COMPARATOR_NANODA" || exit 127
@@ -166,6 +166,7 @@ jobs:
             df -h .
             sha256sum "$real_landrun" "$COMPARATOR_LANDRUN"
           } > "$GITHUB_WORKSPACE/replay/comparator-indexed/resource-preflight.log"
+          set +e
           systemd-run --user --wait --collect --pipe \
             --unit=gcl-hierarchy-comparator --property=RuntimeMaxSec=330min \
             --property="CPUAffinity=$cpus" \
@@ -174,7 +175,7 @@ jobs:
             -E "COMPARATOR_LANDRUN=$COMPARATOR_LANDRUN" \
             -E "COMPARATOR_NANODA=$COMPARATOR_NANODA" \
             --working-directory="$(pwd)" \
-            /bin/bash -c 'set -e; taskset -pc $; "$COMPARATOR_LANDRUN" --ro / --rw /dev -ldd -add-exec -- /usr/bin/printenv LEAN_NUM_THREADS | grep -x 2; exec lake env "$1" "$2"' \
+            /bin/bash -c 'set -e; grep Cpus_allowed_list /proc/self/status; "$COMPARATOR_LANDRUN" --ro / --rw /dev -ldd -add-exec -- /usr/bin/printenv LEAN_NUM_THREADS | grep -x 2; exec lake env "$1" "$2"' \
             comparator "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
             > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.stdout_stderr.log" 2>&1
           hard_rc=$?
