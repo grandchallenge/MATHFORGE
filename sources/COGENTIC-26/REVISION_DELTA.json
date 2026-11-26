@@ -1,0 +1,45 @@
+{
+  "original": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+  "latest": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+  "changed": {
+    "cogentic_research_papers/edge_reconstruction/README.md": {
+      "before": "c3a316f5bacea30f3b17ae5d74ab6851f02c2687",
+      "after": "7be1da1d044784e39fb82cfe29edad8d40a35116"
+    },
+    "cogentic_research_papers/subadditive_prophet_inequalities/Subadditive_Prophet_Inequalities.pdf": {
+      "before": "9a43382537bba2b07435ca752093a257541791e4",
+      "after": "b7304c90b9c5127c7b74ca9121f685567cec5b8f"
+    },
+    "cogentic_research_papers/subadditive_prophet_inequalities/README.md": {
+      "before": "48a7413ad80469ede4b15aabf55b9fc7929c6824",
+      "after": "e3a900378fc58cfd178d36da009e0d397b3f94e5"
+    },
+    "cogentic_research_papers/bimatrix_nash_equilibrium/README.md": {
+      "before": "175681099b510795a0fc191aaa6222c9ad0a8035",
+      "after": "ead8b716e09c0cf5c82a426eab6c22c0bc1c8bac"
+    },
+    "cogentic_research_papers/bimatrix_nash_equilibrium/paper.pdf": {
+      "before": "ace37421def2812d90c437ad80d2cfaeb91f2294",
+      "after": "7dabb09caab0760638eb74ac0c25b861dcef5882"
+    },
+    "cogentic_research_papers/logrank_conjecture/README.md": {
+      "before": "d08c189255a9bbf27dcafbd3f416b14ad9d13a17",
+      "after": "0b5a8b3e2ba0c25779475572a3a7cd51d10a8aaf"
+    },
+    "cogentic_research_papers/deterministic_factoring_l34/README.md": {
+      "before": "0ace537853fa19ebe20edca585a27197d3f6a4a4",
+      "after": "69f78802a6192908a7572fbeba00fa2b2fd964b0"
+    },
+    "cogentic_research_papers/discrete_logarithm/README.md": {
+      "before": "31e23a13c4449208b7a40cdbf7c1cc7706e9a0a1",
+      "after": "eae99af4ffd7d798fe3831030c7367947f5d96ce"
+    },
+    "cogentic_research_papers/integer_factorization/README.md": {
+      "before": "6f5a38e10c3b1ee2d8508e7f37ced5f55c95c2c9",
+      "after": "f9dee368b5b73985a704851401c2b10e30cf2580"
+    }
+  },
+  "added": [],
+  "removed": [],
+  "claim_boundary": "Byte-level revision delta; no inference of mathematical equivalence."
+}

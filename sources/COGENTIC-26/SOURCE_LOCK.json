@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0",
+  "source": "https://github.com/google-research/google-research",
+  "revisions": [
+    "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+    "3f540f420bfae7e6ce48365a68d0ae003feb2f87"
+  ],
+  "claim_boundary": "Byte acquisition only. No theorem validation or certification.",
+  "files": [
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/README.md",
+      "git_blob_sha1": "53130e6df6b1a98945087fc96748bff57236f1aa",
+      "sha256": "88d49408819905d1675ab818acd17c193059ececb6ddbe18a429b7a5012a08e6",
+      "bytes": 2249,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/bimatrix_nash_equilibrium/README.md",
+      "git_blob_sha1": "175681099b510795a0fc191aaa6222c9ad0a8035",
+      "sha256": "e1f30b8e80f9d5e0f1b5205290503b83ba31145a9d2b3f41db13db440d443e3b",
+      "bytes": 2483,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/bimatrix_nash_equilibrium/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/bimatrix_nash_equilibrium/paper.pdf",
+      "git_blob_sha1": "ace37421def2812d90c437ad80d2cfaeb91f2294",
+      "sha256": "ed65664e8817e323a1613f95f4fc98689719c86fb2708974bb69cc1edc139485",
+      "bytes": 735435,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/bimatrix_nash_equilibrium/paper.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/ce_convex_games/CE_in_Convex_Games.pdf",
+      "git_blob_sha1": "44a1c377b5e2035b39e6ff9fd80b24ab6b3d6074",
+      "sha256": "9f937cc115aeddbabedc540ab0732f91318d0dbb0979cafef1d52918b37d1f5f",
+      "bytes": 480489,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/ce_convex_games/CE_in_Convex_Games.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/ce_convex_games/README.md",
+      "git_blob_sha1": "9370113d09be5a025b63e5b61cbd052d1b8294bd",
+      "sha256": "f96c1d09fa4f1bd599f91bef4206fe5dfa3fe71cd1cac8103719e601a27d4023",
+      "bytes": 1391,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/ce_convex_games/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/deterministic_factoring_l34/README.md",
+      "git_blob_sha1": "0ace537853fa19ebe20edca585a27197d3f6a4a4",
+      "sha256": "22ca183ec37ab19ecdee3798c38015620ea0c4ba6f86099ed56fea7a5f34738e",
+      "bytes": 3282,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/deterministic_factoring_l34/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/deterministic_factoring_l34/paper.pdf",
+      "git_blob_sha1": "973002e0eb92acf3964fc020ca52ba6f1ac384ac",
+      "sha256": "0ccf115516dab3cbeee15167f2dea62fcb29d03a19224cb4a9ae69a5ce402993",
+      "bytes": 1132128,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/deterministic_factoring_l34/paper.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/discrete_logarithm/README.md",
+      "git_blob_sha1": "31e23a13c4449208b7a40cdbf7c1cc7706e9a0a1",
+      "sha256": "a91d034d61490a0fab79e9c30400d8aec3a49232ad6584dc1ceadf89c23cad47",
+      "bytes": 2400,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/discrete_logarithm/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/discrete_logarithm/paper.pdf",
+      "git_blob_sha1": "aa05dcb57e15feedb1ec8bf72e6e1ac42a160e71",
+      "sha256": "fba12f4d5e98152d52226887c4af2606039725f898bffecbc8a4d91ccaf9d0d7",
+      "bytes": 892178,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/discrete_logarithm/paper.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/edge_reconstruction/README.md",
+      "git_blob_sha1": "c3a316f5bacea30f3b17ae5d74ab6851f02c2687",
+      "sha256": "8d35e88f2a230b4974272fee1244c788c9323046669f44d0d975a89ce140ef19",
+      "bytes": 2414,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/edge_reconstruction/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/edge_reconstruction/paper.pdf",
+      "git_blob_sha1": "14a020d1b5a184d1ae4acc41521808f3b39f3e96",
+      "sha256": "170b2fc1f241cc8325e0b5573d444e061b1b7bb8fb3083a3ac88cabd0ce4f196",
+      "bytes": 789868,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/edge_reconstruction/paper.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/fictitious_play_convergence/Fictitious_Play_Convergence.pdf",
+      "git_blob_sha1": "31fbaf122bc80e68e6d2f729ce4ab1c622e1aad9",
+      "sha256": "341d3948c3ff9048579f75e33dabb597d5923b2e73df42939cab449fade8049f",
+      "bytes": 607380,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/fictitious_play_convergence/Fictitious_Play_Convergence.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/fictitious_play_convergence/README.md",
+      "git_blob_sha1": "2750273cfc71d698d8f4fa35b37e6619c59b5bcb",
+      "sha256": "d6cc62242b5d39bbefbad6ef3736a560cf0f7de17ac75a263cbc61689ee902c7",
+      "bytes": 3595,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/fictitious_play_convergence/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/integer_factorization/README.md",
+      "git_blob_sha1": "6f5a38e10c3b1ee2d8508e7f37ced5f55c95c2c9",
+      "sha256": "01213d2cb85f4132e3e6b77882a4c4ecd620663daebc65309f1b153475f36b12",
+      "bytes": 2333,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/integer_factorization/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/integer_factorization/paper.pdf",
+      "git_blob_sha1": "19f36b2f189ed41ec8e112b92aa9b88a96c6bd1e",
+      "sha256": "9ac07593ca90c0f315af0b0214320823a43e7c905e6700948261ebb09a4d537d",
+      "bytes": 1072968,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/integer_factorization/paper.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/logrank_conjecture/README.md",
+      "git_blob_sha1": "d08c189255a9bbf27dcafbd3f416b14ad9d13a17",
+      "sha256": "3117cf429373ac2bda2322cf38144967584b97c18311aa71dbc7a4deb5f946ea",
+      "bytes": 2452,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/logrank_conjecture/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/logrank_conjecture/paper.pdf",
+      "git_blob_sha1": "2cd2ccbaa563485719aa5edd84efc08788aa9f90",
+      "sha256": "9c941a918c5e5cea1624adee676c010efb85b60b3cd77455640cd578f54f6bc9",
+      "bytes": 823350,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/logrank_conjecture/paper.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/subadditive_prophet_inequalities/README.md",
+      "git_blob_sha1": "48a7413ad80469ede4b15aabf55b9fc7929c6824",
+      "sha256": "18d3f15eefb5d6b5b29176774f2a0deace9043ac282082623cd538ab86c2a48e",
+      "bytes": 2226,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/subadditive_prophet_inequalities/README.md"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/subadditive_prophet_inequalities/Subadditive_Prophet_Inequalities.pdf",
+      "git_blob_sha1": "9a43382537bba2b07435ca752093a257541791e4",
+      "sha256": "ccaae3a13b5307bd9999f57b5abe9840f36b96533bd72de2de44e4ff15fb3e8f",
+      "bytes": 807446,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/subadditive_prophet_inequalities/Subadditive_Prophet_Inequalities.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/vc_sample_compression/Near_Quadratic_Sample_Compression.pdf",
+      "git_blob_sha1": "66940810177a642e7aa214fbfc821455158248a4",
+      "sha256": "ed69fd1b1ff7fe6486dfa63447bf00fe3bbec5893e2adf94702b8268dc13da45",
+      "bytes": 579302,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/vc_sample_compression/Near_Quadratic_Sample_Compression.pdf"
+    },
+    {
+      "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+      "path": "cogentic_research_papers/vc_sample_compression/README.md",
+      "git_blob_sha1": "6cf32d46712c987c869140a0f281055113a571fd",
+      "sha256": "b94054b5b936934a4a1988fa8da1eba885f5921fae341d708773d3f7367d2d02",
+      "bytes": 1615,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/vc_sample_compression/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/README.md",
+      "git_blob_sha1": "53130e6df6b1a98945087fc96748bff57236f1aa",
+      "sha256": "88d49408819905d1675ab818acd17c193059ececb6ddbe18a429b7a5012a08e6",
+      "bytes": 2249,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/bimatrix_nash_equilibrium/README.md",
+      "git_blob_sha1": "ead8b716e09c0cf5c82a426eab6c22c0bc1c8bac",
+      "sha256": "d9bea66d831838eb36088c81ed3cdae23856f7052d31872f4f2983bc2c3e66f6",
+      "bytes": 2579,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/bimatrix_nash_equilibrium/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/bimatrix_nash_equilibrium/paper.pdf",
+      "git_blob_sha1": "7dabb09caab0760638eb74ac0c25b861dcef5882",
+      "sha256": "32196e6a64d13fbd216c7e7353a3b44a46e8389eb3d15bad48ffb3dd926cc337",
+      "bytes": 736245,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/bimatrix_nash_equilibrium/paper.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/ce_convex_games/CE_in_Convex_Games.pdf",
+      "git_blob_sha1": "44a1c377b5e2035b39e6ff9fd80b24ab6b3d6074",
+      "sha256": "9f937cc115aeddbabedc540ab0732f91318d0dbb0979cafef1d52918b37d1f5f",
+      "bytes": 480489,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/ce_convex_games/CE_in_Convex_Games.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/ce_convex_games/README.md",
+      "git_blob_sha1": "9370113d09be5a025b63e5b61cbd052d1b8294bd",
+      "sha256": "f96c1d09fa4f1bd599f91bef4206fe5dfa3fe71cd1cac8103719e601a27d4023",
+      "bytes": 1391,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/ce_convex_games/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/deterministic_factoring_l34/README.md",
+      "git_blob_sha1": "69f78802a6192908a7572fbeba00fa2b2fd964b0",
+      "sha256": "ca9dab30f609066d77fd2cd5a8fb158c04f6e6611cb491b0d8541d3c01f8f59d",
+      "bytes": 3289,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/deterministic_factoring_l34/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/deterministic_factoring_l34/paper.pdf",
+      "git_blob_sha1": "973002e0eb92acf3964fc020ca52ba6f1ac384ac",
+      "sha256": "0ccf115516dab3cbeee15167f2dea62fcb29d03a19224cb4a9ae69a5ce402993",
+      "bytes": 1132128,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/deterministic_factoring_l34/paper.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/discrete_logarithm/README.md",
+      "git_blob_sha1": "eae99af4ffd7d798fe3831030c7367947f5d96ce",
+      "sha256": "c7e05a39198c0f1b9c9545c2437c052393854b0365c5aa569f6367f5b67979a4",
+      "bytes": 2465,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/discrete_logarithm/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/discrete_logarithm/paper.pdf",
+      "git_blob_sha1": "aa05dcb57e15feedb1ec8bf72e6e1ac42a160e71",
+      "sha256": "fba12f4d5e98152d52226887c4af2606039725f898bffecbc8a4d91ccaf9d0d7",
+      "bytes": 892178,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/discrete_logarithm/paper.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/edge_reconstruction/README.md",
+      "git_blob_sha1": "7be1da1d044784e39fb82cfe29edad8d40a35116",
+      "sha256": "c90353c7b7031fa9e8a2c9bef72003c976ff1d1323664eee0a548b6cf4f8c023",
+      "bytes": 2479,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/edge_reconstruction/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/edge_reconstruction/paper.pdf",
+      "git_blob_sha1": "14a020d1b5a184d1ae4acc41521808f3b39f3e96",
+      "sha256": "170b2fc1f241cc8325e0b5573d444e061b1b7bb8fb3083a3ac88cabd0ce4f196",
+      "bytes": 789868,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/edge_reconstruction/paper.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/fictitious_play_convergence/Fictitious_Play_Convergence.pdf",
+      "git_blob_sha1": "31fbaf122bc80e68e6d2f729ce4ab1c622e1aad9",
+      "sha256": "341d3948c3ff9048579f75e33dabb597d5923b2e73df42939cab449fade8049f",
+      "bytes": 607380,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/fictitious_play_convergence/Fictitious_Play_Convergence.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/fictitious_play_convergence/README.md",
+      "git_blob_sha1": "2750273cfc71d698d8f4fa35b37e6619c59b5bcb",
+      "sha256": "d6cc62242b5d39bbefbad6ef3736a560cf0f7de17ac75a263cbc61689ee902c7",
+      "bytes": 3595,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/fictitious_play_convergence/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/integer_factorization/README.md",
+      "git_blob_sha1": "f9dee368b5b73985a704851401c2b10e30cf2580",
+      "sha256": "e2a8087f532b5cb2da218b2a5a316292f6283353d791dbc2d8ff5e9dbf113104",
+      "bytes": 2381,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/integer_factorization/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/integer_factorization/paper.pdf",
+      "git_blob_sha1": "19f36b2f189ed41ec8e112b92aa9b88a96c6bd1e",
+      "sha256": "9ac07593ca90c0f315af0b0214320823a43e7c905e6700948261ebb09a4d537d",
+      "bytes": 1072968,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/integer_factorization/paper.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/logrank_conjecture/README.md",
+      "git_blob_sha1": "0b5a8b3e2ba0c25779475572a3a7cd51d10a8aaf",
+      "sha256": "0125de488c93f40c6a03471cf12333a481bf3087ddc0ef594ccb98ddf97660cd",
+      "bytes": 2514,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/logrank_conjecture/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/logrank_conjecture/paper.pdf",
+      "git_blob_sha1": "2cd2ccbaa563485719aa5edd84efc08788aa9f90",
+      "sha256": "9c941a918c5e5cea1624adee676c010efb85b60b3cd77455640cd578f54f6bc9",
+      "bytes": 823350,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/logrank_conjecture/paper.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/subadditive_prophet_inequalities/README.md",
+      "git_blob_sha1": "e3a900378fc58cfd178d36da009e0d397b3f94e5",
+      "sha256": "9d85c5ba6a6e173bc259691da2c69252a77e101ec4ed2cbadcdc4de8298484b8",
+      "bytes": 3020,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/subadditive_prophet_inequalities/README.md"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/subadditive_prophet_inequalities/Subadditive_Prophet_Inequalities.pdf",
+      "git_blob_sha1": "b7304c90b9c5127c7b74ca9121f685567cec5b8f",
+      "sha256": "f49ea5630c1aaead322a0b7f87ac145181af4e86c574df5965cf9e30ba7b31aa",
+      "bytes": 812579,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/subadditive_prophet_inequalities/Subadditive_Prophet_Inequalities.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/vc_sample_compression/Near_Quadratic_Sample_Compression.pdf",
+      "git_blob_sha1": "66940810177a642e7aa214fbfc821455158248a4",
+      "sha256": "ed69fd1b1ff7fe6486dfa63447bf00fe3bbec5893e2adf94702b8268dc13da45",
+      "bytes": 579302,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/vc_sample_compression/Near_Quadratic_Sample_Compression.pdf"
+    },
+    {
+      "revision": "3f540f420bfae7e6ce48365a68d0ae003feb2f87",
+      "path": "cogentic_research_papers/vc_sample_compression/README.md",
+      "git_blob_sha1": "6cf32d46712c987c869140a0f281055113a571fd",
+      "sha256": "b94054b5b936934a4a1988fa8da1eba885f5921fae341d708773d3f7367d2d02",
+      "bytes": 1615,
+      "url": "https://raw.githubusercontent.com/google-research/google-research/3f540f420bfae7e6ce48365a68d0ae003feb2f87/cogentic_research_papers/vc_sample_compression/README.md"
+    }
+  ]
+}
