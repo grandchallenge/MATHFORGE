@@ -1,235 +1,168 @@
-name: OAI26 November arithmetic hierarchy hardened Comparator replay
+name: OAI26 F379 split replay trusted challenge and checker
 on:
   workflow_dispatch:
-
 permissions:
   contents: read
-
 concurrency:
-  group: oai26-nov24-arithmetic-hierarchy-${{ github.ref }}
+  group: oai26-hierarchy-split-preparation
   cancel-in-progress: false
-
 jobs:
-  comparator-indexed:
+  prepare:
     runs-on: ubuntu-24.04
-    timeout-minutes: 360
     env:
-      GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
-      GCL_UPSTREAM_SHA: "3344da59991ed94f9ba711217b29c1d760badfa6"
-      GCL_COMPARATOR_SHA: "d03acab154d269c06e60e4de7e4cc85deebff94b"
-      GCL_EXPORT_SHA: "076e8e57707e813375e8f9da8bf989799ace9680"
-      GCL_LANDRUN_SHA: "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
-      GCL_NANODA_SHA: "8de7e0c4ed3052745a7f8725164efd9e76d84c56"
+      LEAN_NUM_THREADS: "4"
+      UPSTREAM: "3344da59991ed94f9ba711217b29c1d760badfa6"
+      COMPARATOR: "d03acab154d269c06e60e4de7e4cc85deebff94b"
+      EXPORTER: "076e8e57707e813375e8f9da8bf989799ace9680"
+      MATHLIB: "d13f23b723b8a846827a245b89c10fc7d3f11612"
     steps:
-      - name: Checkout GCL governed source lock
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          persist-credentials: false
-
-      - name: Checkout immutable upstream Lean corpus
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          repository: openai/math
-          ref: 3344da59991ed94f9ba711217b29c1d760badfa6
-          path: upstream/math
-          fetch-depth: 1
-          sparse-checkout: lean
-          persist-credentials: false
-
-      - name: Preflight exact source theorem and challenge
+      - name: Build exact checker with data-only entrypoint
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p replay/comparator-indexed
-          test "$(git -C upstream/math rev-parse HEAD)" = "$GCL_UPSTREAM_SHA"
-          test "$(git -C upstream/math rev-parse HEAD^{tree})" = "ce9e13b482e0ca6a1ca030a4f15294aae7978107"
-          test "$(cat upstream/math/lean/lean-toolchain)" = "leanprover/lean4:v4.34.1"
-          sha256sum upstream/math/lean/lake-manifest.json > replay/comparator-indexed/lake-manifest-pre.sha256
+          mkdir -p "$GITHUB_WORKSPACE/evidence" "$RUNNER_TEMP/split"
+          cd "$RUNNER_TEMP/split"
+          curl -fsSL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz -o elan.tar.gz
+          tar -xzf elan.tar.gz
+          ./elan-init -y --default-toolchain none
+          export PATH="$HOME/.elan/bin:$PATH"
+          elan toolchain install leanprover/lean4:v4.34.1
+          lean +leanprover/lean4:v4.34.1 --version | tee "$GITHUB_WORKSPACE/evidence/lean-version.txt"
+          git clone https://github.com/leanprover/comparator.git checker
+          git -C checker checkout --detach "$COMPARATOR"
+          test "$(git -C checker rev-parse HEAD)" = "$COMPARATOR"
+          cd checker
+          test "$(git hash-object Main.lean)" = 8560511ff73fbcd48e8d1abba2c22a976c52c393
+          printf 'leanprover/lean4:v4.34.1\n' > lean-toolchain
           python3 - <<'PY'
-          import json, os, re, hashlib
           from pathlib import Path
-          root = Path("upstream/math")
-          config = root / "lean/ComparatorChallenges/ArithmeticHierarchy.json"
-          challenge = root / "lean/ComparatorChallenges/ArithmeticHierarchy.lean"
-          solution = root / "lean/OAI/Hierarchy/Strict.lean"
-          manifest = root / "lean/lake-manifest.json"
-          for p, sha in [(config,"826e1a5af6e25a458cfb26c09580479b23b7cccf"),
-                         (challenge,"3d83fc143c44e8c8c01b163dcc84e898bc5aa01c"),
-                         (solution,"113ff541d3664db36bc20f3c477835f387ff785f"),
-                         (manifest,"96a8aea368379c8c445bd622c6b98fde7659f45e")]:
-              raw=p.read_bytes()
-              assert hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()==sha, str(p)
-          cfg = json.loads(config.read_text())
-          targets=["OAI.Hierarchy.Valiant.strict_inclusions"]
-          assert cfg["theorem_names"]==targets
-          assert cfg["challenge_module"]=="ComparatorChallenges.ArithmeticHierarchy"
-          assert cfg["solution_module"]=="OAI.Hierarchy.Strict"
-          assert set(cfg["permitted_axioms"])=={"propext","Classical.choice","Quot.sound"}
-          assert cfg["enable_nanoda"] is False
-          out = Path("replay/comparator-indexed")
-          out.joinpath("selected-config.txt").write_text("ComparatorChallenges/ArithmeticHierarchy.json\n")
-          out.joinpath("selected-declaration.txt").write_text("\n".join(targets)+"\n")
-          out.joinpath("selected-identity.json").write_text(json.dumps({"config":cfg,"targets":targets},sort_keys=True,indent=2)+"\n")
-          with out.joinpath("statement-sha256.txt").open("w") as f:
-              for p in (challenge,config,solution,manifest):
-                  f.write(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+str(p)+"\n")
+          p=Path("Main.lean")
+          orig=p.read_text()
+          marker="def main (args : List String) : IO Unit := do"
+          assert orig.count(marker)==1
+          prefix=orig[:orig.index(marker)]
+          new=prefix+"""def main (args : List String) : IO Unit := do
+            let [configPath, challengePath, solutionPath] := args |
+              throw <| IO.userError "Expected config, challenge export, solution export"
+            let content ← IO.FS.readFile configPath
+            let cfg : Comparator.Config ← IO.ofExcept <| Lean.FromJson.fromJson? <| ← IO.ofExcept <| Lean.Json.parse content
+            let challenge ← IO.FS.readFile challengePath
+            let solution ← IO.FS.readFile solutionPath
+            Comparator.M.run (Comparator.verifyMatch challenge solution) cfg
+            IO.println "GCL SPLIT REPLAY ACCEPTED"
+          """
+          Path("SplitReplay.lean").write_text(new)
+          assert Path("SplitReplay.lean").read_text().startswith(prefix)
+          p=Path("lakefile.toml")
+          s=p.read_text()
+          assert s.count('rev = "master"')==1
+          p.write_text(s.replace('rev = "master"', 'rev = "076e8e57707e813375e8f9da8bf989799ace9680"') + '\n[[lean_exe]]\nname = "splitReplay"\nroot = "SplitReplay"\n')
           PY
-
-      - name: Install fixed elan v1.4.2
+          lake update
+          test "$(git -C .lake/packages/lean4export rev-parse HEAD)" = "$EXPORTER"
+          lake build lean4export splitReplay
+          git diff --exit-code -- Main.lean Comparator.lean Comparator/
+          cp Main.lean SplitReplay.lean lakefile.toml lake-manifest.json "$GITHUB_WORKSPACE/evidence/"
+          cp .lake/build/bin/splitReplay "$GITHUB_WORKSPACE/evidence/"
+          ldd .lake/build/bin/splitReplay | tee "$GITHUB_WORKSPACE/evidence/checker-ldd.txt"
+          git rev-parse HEAD > "$GITHUB_WORKSPACE/evidence/comparator-commit.txt"
+          git -C .lake/packages/lean4export rev-parse HEAD > "$GITHUB_WORKSPACE/evidence/exporter-commit.txt"
+      - name: Independently construct original challenge export
         shell: bash
         run: |
           set -euo pipefail
-          curl --fail --location --silent --show-error \
-            https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz \
-            --output /tmp/elan.tar.gz
-          tar -xzf /tmp/elan.tar.gz -C /tmp
-          /tmp/elan-init -y --default-toolchain none
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-
-      - name: Build pinned landrun comparator and toolchain-matched exporter
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p replay/comparator-indexed /tmp/gcl-comparator-tools
-          {
-            go version
-            git clone https://github.com/leanprover/lean4export.git /tmp/gcl-comparator-tools/lean4export
-            git -C /tmp/gcl-comparator-tools/lean4export checkout --detach "$GCL_EXPORT_SHA"
-            test "$(git -C /tmp/gcl-comparator-tools/lean4export rev-parse HEAD)" = "$GCL_EXPORT_SHA"
-            cp upstream/math/lean/lean-toolchain /tmp/gcl-comparator-tools/lean4export/lean-toolchain
-            (cd /tmp/gcl-comparator-tools/lean4export && lake build lean4export)
-            git clone https://github.com/leanprover/comparator.git /tmp/gcl-comparator-tools/comparator
-            git -C /tmp/gcl-comparator-tools/comparator checkout --detach "$GCL_COMPARATOR_SHA"
-            test "$(git -C /tmp/gcl-comparator-tools/comparator rev-parse HEAD)" = "$GCL_COMPARATOR_SHA"
-            cp upstream/math/lean/lean-toolchain /tmp/gcl-comparator-tools/comparator/lean-toolchain
-            python3 - <<'PY'
-          from pathlib import Path
-          p = Path("/tmp/gcl-comparator-tools/comparator/lakefile.toml")
-          data = p.read_text()
-          assert 'rev = "master"' in data
-          p.write_text(data.replace('rev = "master"', 'rev = "076e8e57707e813375e8f9da8bf989799ace9680"'))
-          PY
-            (cd /tmp/gcl-comparator-tools/comparator && lake update && lake build comparator)
-            git clone https://github.com/ammkrn/nanoda_lib.git /tmp/gcl-comparator-tools/nanoda_lib
-            git -C /tmp/gcl-comparator-tools/nanoda_lib checkout --detach "$GCL_NANODA_SHA"
-            test "$(git -C /tmp/gcl-comparator-tools/nanoda_lib rev-parse HEAD)" = "$GCL_NANODA_SHA"
-            (cd /tmp/gcl-comparator-tools/nanoda_lib && cargo build --locked --release --bin nanoda_bin)
-            test -x /tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin
-            go install "github.com/zouuup/landrun/cmd/landrun@$GCL_LANDRUN_SHA"
-            test -x "$(go env GOPATH)/bin/landrun"
-            test -x /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export
-            test -x /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
-            sha256sum /tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin \
-              "$(go env GOPATH)/bin/landrun" \
-              /tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export \
-              /tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator
-          } > replay/comparator-indexed/toolchain-build.log 2>&1
-
-      - name: Prepare exact upstream Lake environment without source drift
-        working-directory: upstream/math/lean
-        shell: bash
-        run: |
-          set -euo pipefail
-          {
-            lake --version
-            lake update
-            test "$(sha256sum lake-manifest.json | cut -d ' ' -f1)" = "$(cut -d ' ' -f1 "$GITHUB_WORKSPACE/replay/comparator-indexed/lake-manifest-pre.sha256")"
-            lake exe cache get
-          } > "$GITHUB_WORKSPACE/replay/comparator-indexed/lake-environment.log" 2>&1
-          sha256sum lake-manifest.json > "$GITHUB_WORKSPACE/replay/comparator-indexed/lake-manifest-post.sha256"
-
-      - name: Comparator isolated execution and separately labelled lower-assurance diagnostic
-        working-directory: upstream/math/lean
-        shell: bash
-        run: |
-          set -e
-          export PATH="/tmp/gcl-comparator-tools/nanoda_lib/target/release:/tmp/gcl-comparator-tools/lean4export/.lake/build/bin:$(go env GOPATH)/bin:$PATH"
-          export COMPARATOR_NANODA="/tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin"
-          test -x "$COMPARATOR_NANODA" || exit 127
-          export COMPARATOR_LEAN4EXPORT="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export"
-          export COMPARATOR_LANDRUN="/tmp/gcl-comparator-tools/landrun-resource-wrapper"
-          export GCL_COMPARATOR_BIN="/tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator"
-          export GCL_COMPARATOR_CONFIG="$(cat "$GITHUB_WORKSPACE/replay/comparator-indexed/selected-config.txt")"
-          # Preserve the original pinned Comparator and landrun binaries. The
-          # wrapper passes only resource-control environment variables through
-          # landrun's existing allowlist; all original sandbox flags are retained.
-          real_landrun="$(go env GOPATH)/bin/landrun"
-          test -x "$real_landrun" || exit 127
-          printf '#!/bin/bash\nexec "%s" --env LEAN_NUM_THREADS --env GLIBC_TUNABLES "$@"\n' "$real_landrun" > "$COMPARATOR_LANDRUN"
-          chmod 755 "$COMPARATOR_LANDRUN"
-          cp "$COMPARATOR_LANDRUN" "$GITHUB_WORKSPACE/replay/comparator-indexed/landrun-resource-wrapper.sh"
-          cpus="$(python3 -c 'import os; a=sorted(os.sched_getaffinity(0)); assert a; print(" ".join(map(str,a[:2])))')"
-          export LEAN_NUM_THREADS=2
-          {
-            printf 'CPU affinity: %s\nLEAN_NUM_THREADS=%s\nGLIBC_TUNABLES=%s\n' "$cpus" "$LEAN_NUM_THREADS" "$GLIBC_TUNABLES"
-            free -h
-            df -h .
-            sha256sum "$real_landrun" "$COMPARATOR_LANDRUN"
-          } > "$GITHUB_WORKSPACE/replay/comparator-indexed/resource-preflight.log"
-          set +e
-          systemd-run --user --wait --collect --pipe \
-            --unit=gcl-hierarchy-comparator --property=RuntimeMaxSec=330min \
-            --property="CPUAffinity=$cpus" \
-            --property='RestrictAddressFamilies=~AF_UNIX' \
-            -E "PATH=$PATH" -E "LEAN_NUM_THREADS=2" -E "GLIBC_TUNABLES=$GLIBC_TUNABLES" -E "COMPARATOR_LEAN4EXPORT=$COMPARATOR_LEAN4EXPORT" \
-            -E "COMPARATOR_LANDRUN=$COMPARATOR_LANDRUN" \
-            -E "COMPARATOR_NANODA=$COMPARATOR_NANODA" \
-            --working-directory="$(pwd)" \
-            /bin/bash -c 'set -e; grep Cpus_allowed_list /proc/self/status; "$COMPARATOR_LANDRUN" --ro / --rw /dev -ldd -add-exec -- /usr/bin/printenv LEAN_NUM_THREADS | grep -x 2; exec lake env "$1" "$2"' \
-            comparator "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
-            > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.stdout_stderr.log" 2>&1
-          hard_rc=$?
-          echo "$hard_rc" > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.exit"
-          # Single bounded run; diagnose failure before any retry.
-          # Hardened Comparator acceptance alone is the success condition.
-          exit "$hard_rc"
-
-      - name: Retain exact result identity and bounded claims
-        if: always()
-        shell: bash
-        run: |
-          systemctl --user stop gcl-hierarchy-comparator.service 2>/dev/null || true
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd "$RUNNER_TEMP/split"
+          mkdir -p challenge/ComparatorChallenges
+          cd challenge
+          base="https://raw.githubusercontent.com/openai/math/$UPSTREAM/lean"
+          curl -fsSL "$base/lean-toolchain" -o lean-toolchain
+          curl -fsSL "$base/lake-manifest.json" -o original-manifest.json
+          curl -fsSL "$base/ComparatorChallenges/ArithmeticHierarchy.lean" -o ComparatorChallenges/ArithmeticHierarchy.lean
+          curl -fsSL "$base/ComparatorChallenges/ArithmeticHierarchy.json" -o ArithmeticHierarchy.json
+          test "$(git hash-object ComparatorChallenges/ArithmeticHierarchy.lean)" = 3d83fc143c44e8c8c01b163dcc84e898bc5aa01c
+          test "$(git hash-object ArithmeticHierarchy.json)" = 826e1a5af6e25a458cfb26c09580479b23b7cccf
+          echo 'b0848e3682e0e50761a717d4ea92a40321db8d695a22d3790b3e8b8b13814168  original-manifest.json' | sha256sum -c -
+          test "$(cat lean-toolchain)" = leanprover/lean4:v4.34.1
+          cat > lakefile.lean <<'LEAN'
+          import Lake
+          open Lake DSL
+          package GCLChallenge where
+            fixedToolchain := true
+            leanOptions := #[⟨`autoImplicit, false⟩]
+          require mathlib from git
+            "https://github.com/leanprover-community/mathlib4.git" @ "d13f23b723b8a846827a245b89c10fc7d3f11612"
+          lean_lib ComparatorChallenges where
+            globs := #[`ComparatorChallenges.+]
+          LEAN
+          lake update
           python3 - <<'PY'
-          import hashlib, json, os
+          import json
           from pathlib import Path
-          root=Path("replay/comparator-indexed")
-          files={}
-          for p in sorted(root.glob("*")):
-              if p.is_file():
-                  data=p.read_bytes()
-                  files[p.name]={"bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()}
-          def code(name):
-              p=root/name
-              return int(p.read_text().strip()) if p.is_file() else None
-          hard,diagnostic=code("hardened.exit"),code("diagnostic.exit")
-          record={
-            "record_type":"GCL_OPENAI_MATH_NOV24_HIERARCHY_COMPARATOR_REPLAY/1",
-            "gcl_head":os.environ.get("GITHUB_SHA"),
-            "run_id":os.environ.get("GITHUB_RUN_ID"),
-            "upstream_revision":os.environ.get("GCL_UPSTREAM_SHA"),
-            "lean_toolchain":"leanprover/lean4:v4.34.1",
-            "comparator_source_commit":os.environ.get("GCL_COMPARATOR_SHA"),
-            "exporter_source_commit":os.environ.get("GCL_EXPORT_SHA"),
-            "landrun_source_commit":os.environ.get("GCL_LANDRUN_SHA"),
-            "target":(root/"selected-declaration.txt").read_text().strip(),
-            "targets":(root/"selected-declaration.txt").read_text().splitlines(),
-            "hardened_exit":hard,
-            "diagnostic_exit":diagnostic,
-            "comparator_hardened_accepted":hard==0,
-            "diagnostic_not_certification":True,
-            "files":files,
-            "claim_boundary":"Comparator acceptance under the declared isolation policy verifies the exact pinned Lean challenge; it does not independently establish paper-to-formalization semantic correspondence, literary correctness, novel status, or MATHCERT certification."
-          }
-          (root/"REPLAY_RECEIPT.json").write_text(json.dumps(record,indent=2)+"\n")
+          def lock(p):
+              return {r['name']:(r['url'],r['rev']) for r in json.loads(Path(p).read_text())['packages']}
+          a,b=lock('original-manifest.json'),lock('lake-manifest.json')
+          assert set(b)=={'mathlib','plausible','LeanSearchClient','importGraph','proofwidgets','aesop','Qq','batteries','Cli'},b
+          assert all(a[k]==v for k,v in b.items()),(a,b)
+          print('Exact nine challenge dependency pins match original manifest')
           PY
-
-      - name: Retain comparator and infrastructure failure evidence
+          lake exe cache get
+          lake build ComparatorChallenges.ArithmeticHierarchy
+          exporter="$RUNNER_TEMP/split/checker/.lake/packages/lean4export/.lake/build/bin/lean4export"
+          primitives=(Quot Quot.mk Quot.lift Quot.ind propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam)
+          lake env "$exporter" ComparatorChallenges.ArithmeticHierarchy -- OAI.Hierarchy.Valiant.strict_inclusions "${primitives[@]}" > "$RUNNER_TEMP/split/challenge.ndjson"
+          gzip -1 -c "$RUNNER_TEMP/split/challenge.ndjson" > "$GITHUB_WORKSPACE/evidence/challenge.ndjson.gz"
+          cp ArithmeticHierarchy.json ComparatorChallenges/ArithmeticHierarchy.lean lakefile.lean lean-toolchain original-manifest.json "$GITHUB_WORKSPACE/evidence/"
+          cp lake-manifest.json "$GITHUB_WORKSPACE/evidence/challenge-manifest.json"
+          sha256sum "$RUNNER_TEMP/split/challenge.ndjson" | cut -d' ' -f1 > "$GITHUB_WORKSPACE/evidence/challenge-uncompressed.sha256"
+      - name: Positive and hostile proof controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd "$RUNNER_TEMP/split/challenge"
+          out="$GITHUB_WORKSPACE/evidence"
+          checker="$RUNNER_TEMP/split/checker/.lake/build/bin/splitReplay"
+          exporter="$RUNNER_TEMP/split/checker/.lake/packages/lean4export/.lake/build/bin/lean4export"
+          cat > ComparatorChallenges/ControlChallenge.lean <<'LEAN'
+          theorem gclSplitProbe (n : Nat) : n + 0 = n := by sorry
+          LEAN
+          cat > ComparatorChallenges/ControlValid.lean <<'LEAN'
+          theorem gclSplitProbe (n : Nat) : n + 0 = n := Nat.add_zero n
+          LEAN
+          cat > ComparatorChallenges/ControlMismatch.lean <<'LEAN'
+          theorem gclSplitProbe (n : Nat) : n = n := rfl
+          LEAN
+          cat > ComparatorChallenges/ControlForbidden.lean <<'LEAN'
+          axiom gclForbidden (n : Nat) : n + 0 = n
+          theorem gclSplitProbe (n : Nat) : n + 0 = n := gclForbidden n
+          LEAN
+          cat > Control.json <<'JSON'
+          {"challenge_module":"ComparatorChallenges.ControlChallenge","solution_module":"ComparatorChallenges.ControlValid","theorem_names":["gclSplitProbe"],"definition_names":[],"permitted_axioms":["propext","Quot.sound","Classical.choice"],"enable_nanoda":false}
+          JSON
+          primitives=(Quot Quot.mk Quot.lift Quot.ind propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam)
+          for v in Challenge Valid Mismatch Forbidden; do
+            lake build "ComparatorChallenges.Control$v"
+            lake env "$exporter" "ComparatorChallenges.Control$v" -- gclSplitProbe "${primitives[@]}" > "control-$v.ndjson"
+          done
+          lake env "$checker" Control.json control-Challenge.ndjson control-Valid.ndjson > "$out/control-valid.log" 2>&1
+          grep -F 'Lean default kernel accepts the solution' "$out/control-valid.log"
+          grep -F 'GCL SPLIT REPLAY ACCEPTED' "$out/control-valid.log"
+          if lake env "$checker" Control.json control-Challenge.ndjson control-Mismatch.ndjson > "$out/control-mismatch.log" 2>&1; then exit 1; fi
+          grep -F 'theorem statement do not match' "$out/control-mismatch.log"
+          if lake env "$checker" Control.json control-Challenge.ndjson control-Forbidden.ndjson > "$out/control-forbidden.log" 2>&1; then exit 1; fi
+          grep -F 'Illegal axiom detected' "$out/control-forbidden.log"
+          if lake env "$checker" ArithmeticHierarchy.json "$RUNNER_TEMP/split/challenge.ndjson" "$RUNNER_TEMP/split/challenge.ndjson" > "$out/control-original-sorry.log" 2>&1; then exit 1; fi
+          grep -F 'Illegal axiom detected' "$out/control-original-sorry.log"
+          cp ComparatorChallenges/Control*.lean Control.json control-*.ndjson "$out/"
+          printf '%s\n' 'All four checker controls passed. Original solution export not yet checked.' > "$out/preparation-status.txt"
+          cd "$out"
+          sha256sum * > SHA256SUMS
+      - name: Retain independent challenge and verifier bundle
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
-          name: openai-math-comparator-indexed
-          path: replay/comparator-indexed
+          name: oai26-hierarchy-split-checker
+          path: evidence/
           if-no-files-found: error
           retention-days: 30
-
-
