@@ -12,7 +12,7 @@ concurrency:
 jobs:
   comparator-indexed:
     runs-on: ubuntu-24.04
-    timeout-minutes: 240
+    timeout-minutes: 360
     env:
       GLIBC_TUNABLES: "glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1"
       GCL_UPSTREAM_SHA: "3344da59991ed94f9ba711217b29c1d760badfa6"
@@ -147,17 +147,34 @@ jobs:
           export COMPARATOR_NANODA="/tmp/gcl-comparator-tools/nanoda_lib/target/release/nanoda_bin"
           test -x "$COMPARATOR_NANODA" || exit 127
           export COMPARATOR_LEAN4EXPORT="/tmp/gcl-comparator-tools/lean4export/.lake/build/bin/lean4export"
-          export COMPARATOR_LANDRUN="$(go env GOPATH)/bin/landrun"
+          export COMPARATOR_LANDRUN="/tmp/gcl-comparator-tools/landrun-resource-wrapper"
           export GCL_COMPARATOR_BIN="/tmp/gcl-comparator-tools/comparator/.lake/build/bin/comparator"
           export GCL_COMPARATOR_CONFIG="$(cat "$GITHUB_WORKSPACE/replay/comparator-indexed/selected-config.txt")"
+          # Preserve the original pinned Comparator and landrun binaries. The
+          # wrapper passes only resource-control environment variables through
+          # landrun's existing allowlist; all original sandbox flags are retained.
+          real_landrun="$(go env GOPATH)/bin/landrun"
+          test -x "$real_landrun" || exit 127
+          printf '#!/bin/bash\nexec "%s" --env LEAN_NUM_THREADS --env GLIBC_TUNABLES "$@"\n' "$real_landrun" > "$COMPARATOR_LANDRUN"
+          chmod 755 "$COMPARATOR_LANDRUN"
+          cp "$COMPARATOR_LANDRUN" "$GITHUB_WORKSPACE/replay/comparator-indexed/landrun-resource-wrapper.sh"
+          cpus="$(python3 -c 'import os; a=sorted(os.sched_getaffinity(0)); assert a; print(" ".join(map(str,a[:2])))')"
+          export LEAN_NUM_THREADS=2
+          {
+            printf 'CPU affinity: %s\nLEAN_NUM_THREADS=%s\nGLIBC_TUNABLES=%s\n' "$cpus" "$LEAN_NUM_THREADS" "$GLIBC_TUNABLES"
+            free -h
+            df -h .
+            sha256sum "$real_landrun" "$COMPARATOR_LANDRUN"
+          } > "$GITHUB_WORKSPACE/replay/comparator-indexed/resource-preflight.log"
           systemd-run --user --wait --collect --pipe \
-            --unit=gcl-hierarchy-comparator --property=RuntimeMaxSec=180min \
+            --unit=gcl-hierarchy-comparator --property=RuntimeMaxSec=330min \
+            --property="CPUAffinity=$cpus" \
             --property='RestrictAddressFamilies=~AF_UNIX' \
-            -E "PATH=$PATH" -E "COMPARATOR_LEAN4EXPORT=$COMPARATOR_LEAN4EXPORT" \
+            -E "PATH=$PATH" -E "LEAN_NUM_THREADS=2" -E "GLIBC_TUNABLES=$GLIBC_TUNABLES" -E "COMPARATOR_LEAN4EXPORT=$COMPARATOR_LEAN4EXPORT" \
             -E "COMPARATOR_LANDRUN=$COMPARATOR_LANDRUN" \
             -E "COMPARATOR_NANODA=$COMPARATOR_NANODA" \
             --working-directory="$(pwd)" \
-            /bin/bash -c 'lake env "$1" "$2"' \
+            /bin/bash -c 'set -e; taskset -pc $; "$COMPARATOR_LANDRUN" --ro / --rw /dev -ldd -add-exec -- /usr/bin/printenv LEAN_NUM_THREADS | grep -x 2; exec lake env "$1" "$2"' \
             comparator "$GCL_COMPARATOR_BIN" "$GCL_COMPARATOR_CONFIG" \
             > "$GITHUB_WORKSPACE/replay/comparator-indexed/hardened.stdout_stderr.log" 2>&1
           hard_rc=$?
