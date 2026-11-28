@@ -1,0 +1,5 @@
+import Development.WeilBound.CoreStatements.PublishedTheorems.PoitouTateDuality.PoitouTateNineTerm.PoitouTateNormalisedHolds
+import Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.PoitouTateDualityOfNormalised
+#check PositivityTheory.Lit1.PTN.poitouTateNormalised_holds
+#print axioms PositivityTheory.Lit1.PTN.poitouTateNormalised_holds
+#print axioms GlobalTheory.PoitouTateConj.poitouTateDuality_of_normalised
