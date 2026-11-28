@@ -1,0 +1,2 @@
+import GroundTheory.ProfiniteCohomology.LocalTateDuality.MainDefs
+#print axioms GroundTheory.ProfCoh.localDualityHypotheses
