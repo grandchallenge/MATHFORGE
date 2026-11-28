@@ -1,0 +1,5 @@
+import CompanionTheory.AutomorphicTheory.PadicCyclotomicFields.GcohTop
+#check CompanionTheory.LocalTateOrthogonality.Gcoh.top_locfin
+#check CompanionTheory.LocalTateOrthogonality.Gcoh.top_tate
+#print axioms CompanionTheory.LocalTateOrthogonality.Gcoh.top_locfin
+#print axioms CompanionTheory.LocalTateOrthogonality.Gcoh.top_tate
