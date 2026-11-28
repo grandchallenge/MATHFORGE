@@ -1,0 +1,36 @@
+# RH-A26 D05: integral rank transfer and torsion counting frontier
+
+Conventional reconstruction; no independent certification or original Lean replay. Publisher archive SHA256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc. Source paths relative to AutomorphicVarieties. ReductionBoundsTorsion abbreviated RBT.
+
+- RBT/OddSpanRank/RankSpanLe.lean b20a1ff081fc606474fa19f0a9bffd34892783fab10297a9022ff5f49bdb443c
+- RBT/OddSpanRank/SBStarOddOf.lean 980f9a4bd085e643c9cbb305c76652eac5b6cb7847e0ae398ac33207e4009cc2
+- RBT/TorsionIntegers/Bridge.lean d3a55aef51cce670bbd00ffb55650aae58570574acc829a2715737bc321fdce3
+- RBT/TensorPrimeModuli/SBStarOf.lean 894b58da66a8adea3333baea334b12c50c5e66ecf8e455c2f1433cd76b1e58ae
+- ModularityArgument/ClassCounting/SUpperOf.lean f9f7ab63524d3e3e03245dedfceab68501c9380bb5da3f5a42bdd10b3c1d31f5
+- ModularityArgument/ClassCounting/LemmaKOfSteps.lean e402e7a22956f3184d3bcb49dae312179feb1913b2e9540f890ab13e94ac736c
+- ModularityArgument/ClassCounting/ExponentLe.lean 10ed5a7f49cecb84f763a6ebe6005df8d883309a9e513799d2b8ffb0ae862920
+- TorsionRankCounts/RankCountAlt.lean 3c022c186fdca39953edb4f48ff1a876d837e0201e585e9b39fd436b444282
+- TorsionRankCounts/BockAbs.lean c98b346d54f11cd7262c6818d826c96ccedfdc4b51cb2e8095702579c7b17328
+- TorsionRankCounts/PhiZSeq.lean fa86b60fa29366c600bbb8e4ce6e2beaf28b233c2b94067ea2267d983f84a9fe
+- TorsionRankCounts/TorsStab.lean 6accdccf61675dae91688691ee497837e4f6b589728397b23554ae978c6b49dc
+
+## Rank transfer and actual BOdd
+For abelian A, subset S, real cycle space C, maps theta:C->R tensor_Z A and T:C->R^m, assume ker T subset ker theta and every 1 tensor s for s in S lies in im theta. Then theta factors through im T, hence dim im theta <= m. The generator condition extends to span_Z S. Every integral independent family there remains real independent by flatness of R over Z (torsion-free over a PID), applied to the injection of the free module on that family into A. Hence rank_Z span S <= m, with no finite generation requirement.
+
+Let q=k+1 odd, q<r2(L), L totally complex, ell>0, n>=2q+4, M=ell^k*n. The source zSeq uses successive replication minus ell^(t+2) stabilization. The corresponding real chain zc remains a cycle by naturality of boundary. For any weight j family, inductively its evaluation equals the initial value times product over s=2..q of (ell^j-ell^s); hence zero for j=2..q, including ell=1. The weight-one component is one per place, not two: incompatible labels vanish; a full cycle has constant labels; conjugate its permutation to standard rotation, and alternating relabelling changes only sign. Reversing the ordered Hermitian product conjugates its trace. Reversal parity is (-1)^(q*(q-1)/2), killing imaginary alternation for even parity and real alternation for odd parity. Thus their sum spans the surviving line, even if zero at small rank. FFT supplies all invariant forms; Good gives boundary vanishing and the trace padding/replication identities transport over all ranks. This reconstructs SWtOdd using the prior FFT/AGood input.
+
+On the real span C of filtered cycles, all higher evaluations vanish by linearity. If Tz=0 but theta z nonzero, stabilize to the N supplied by SSurj; SStab preserves nonboundary. SSep produces a nonzero detecting cocycle; SSurj yields an invariant representative. SWtOdd and stabilization of the weight systems make every term of its evaluation zero, contradiction. SBridge is the natural real homology scalar extension: flatness preserves kernels/images of free bar chain differential and quotient, so cycles map onto R tensor integral homology with kernel boundaries; chain identification must agree with actual definitions. SBridge naturality proves theta(zc)=1 tensor zSeq by induction. Thus rank transfer applies with m=r2(L). TorsionIntegers/Bridge equates both source copies of lev and zSeq by recursive rank equality and heterogeneous equality of maps (same replication/stabilization); hence BStarOdd supplies actual BOdd. Integral stability imported via KStability remains an explicit outstanding source theorem, not proved by this linear algebra.
+
+## SUpper: two torsion factors
+Use Q=ell^nu, q=k+1, N*=2q+4. For finite set of values s=ell^k Phi_n(y) on modular cycles y, primitive family Phi preserves stabilization, scales by ell under block replication and kills boundaries. Choose common n>=N* and every witness rank, then stabilize all witnesses. Descend: reduce integral cycles modulo Q and apply Phi; integral boundaries reduce to modular boundaries, so evaluation factors through integral homology as phi_n, with the same primitive scaling by naturality. For any integral x, phi(zSeq(x))=ell^k U phi(x), U=product_(s=1..k)(1-ell^s) a unit mod Q, including empty product. Choose u=U^-1 modulo Q; ell^k phi(x)=phi(u zSeq(x)). Source uses geometric sum inverse of 1-ell*c. Do not cancel ell^k.
+
+Bock: lift modular cycle y to integral chain a; d a=Q w, so d w=0 by torsion-freeness of chain groups, Q[w]=0. Changing lift adds Q v, changing w by d v; hence beta(y)=[w] well defined additive. Kernel precisely reductions of integral cycles: if w=d v subtract Q v from a; converse immediate. Degree k=0 uses zero differential in degree one. Thus beta takes values in degree k torsion.
+
+For finite subset of image of a rank<=r subgroup J under map into Q-annihilated B, choose finitely many preimages generating J'<=J. J'/Tor is free of rank s<=r. Lift a basis; all images determined by s coefficients modulo Q and one element of ambient torsion. Count <=Q^r |Tor H|. No finite generation of J required. Apply to filtered subgroup at M=ell^k*n, r=r2(L), in beta=0 fiber. For all obstruction fibers choose representatives of distinct values, translate differences within each fiber into kernel; each fiber has same upper bound, at most |Tor H_k| fibers. Integral stability and torsion finiteness identify degree k and q torsion cardinalities at common stable N*. This gives exact SUpper:
+|S| <= Q^r2(L) tc(L,N*,k+1) tc(L,N*,k).
+Does not count all arbitrary modular homology classes or imply torsion small from rank alone.
+
+## Remaining geometric input: STors
+TorsStab consumes KStability at stable range and tors_le finiteness. Actual ExponentLe.torsAll claims C=24, 1<=N<=4E+6, m<=2E+1, E>=1, L totally complex:
+log tc(L,N,m) <= exp((2E*[L:Q])^24 log(2|disc L|)).
+STors is restriction to N=4E+6. Source HermiteNormalForms/Assembly.tors_le consumes equivariant augmented face exactness (sx_exact), finite orbit count A=orbBound, stabilizer bound s=3^(d*N), d=[L:Q]*N; KH.mainFace gives cardinal bound (m+2)^A*s^(m*A*s^m). Orbnum bounds A <= (2D*d)^(12*(m+1)*d^3*N), D=|disc L|. LogLeExp converts log bound <= exp(a+(m+1)*sigma+2m), with a=12*(m+1)*d^3*N log(2D*d), sigma=2*[L:Q]*N^2. ExponentLe compresses this exponent into (2E*[L:Q])^24 log(2D). Need independent verification of equivariant exactness, orbit representatives/height lattice bounds, stabilizer bound and torsion chain estimate; these are NOT consequences of BOdd. Also audit KStability imported theorem and Dedekind stable range. Subsequent SClass/SDetect/SFew/SCount/SSha/SLayer/SNum/SFinal consume SUpper and STors; no claim of LemmaK completion. Finite controls only, original replay/foundations open.
