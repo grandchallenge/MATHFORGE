@@ -1,0 +1,26 @@
+# RH-A26: original local duality replay and axiom audit (2026-11-28)
+
+Authority: MATHFORGE #577 external-source and semantic audit; no theorem certification or protected RH status change. Extends #641 and #642. Original publisher archive SHA256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc; Lean v4.33.1 compiler 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; Mathlib 0df444a360eaa60ab8c11dca51a86af692955474; original manifest lock SHA256 fee57ee9ed399d0a638ca955e5ad40a37a36eeb9b6dfd9f5964114fa7bbe4774. Nine dependency repositories exact revisions and tracked files clean (570150eca0ae459496caf37a1c542c03). Official dependency cache, not independently rebuilt dependencies. No changes to original source or compiler options. Private CHAD isolated workspace /tmp/rh-kernel-local-UK6Fp6; local execution OS-only, not independently authenticated.
+
+## Resumption and intermediate proof checks
+
+Prior 900s bounded build terminated normally at timeout code 124 with 250 original source modules compiled, no compilation error (607f86e09b954f3abdf45beb7fc6a6b7). Resumed exact same Lake target from retained artifacts with unchanged sources (1fa3eecd81ad491aab57284cf6005a7a). Recovered the transport/time budget limit, not a proof defect.
+
+The original FiniteVanishing module was compiled and actual declarations GroundTheory.ProfCoh.finite_cohomology_galois_top and GroundTheory.ProfCoh.subsingleton_cohomology_galois_top independently inspected with Lean #print axioms. Both depend only on propext, Classical.choice, Quot.sound (receipt 01e8fd44b04f4a3981a80ed0c098d684, exit 0). The actual GroundTheory.ProfCoh.localDualityHypotheses declaration in MainDefs has exactly the same three axioms (eea00977220a472e9986803c4f94164b, exit 0). This is the source's concrete local class-formation data, not an unproved extra input. These declarations are conditional on the standard field/typeclass assumptions in their types; no claim that hypotheses disappear.
+
+Two warning-bearing nonidentical artifacts CyclicSubtraction and LubinTateGroup accepted by local leanchecker (e895fa93896b4e5da168fcfd9ac90e25, exit 0). The latter contains the absolute local source path and warning texts in its serialized olean (c3734d0a25c54521b0f7affa2ec3535e). All observed differences so far are in warning-bearing modules. This is evidence of diagnostic metadata differences, not proof that every differing byte has been explained. Additional selected kernel replay passed for LubinTateReciprocity and its Descent, TwistedPoint, RootEval modules, plus LocalClassFormation.FiniteVanishing.Devissage (8b0effb7bf49445da12cfe5ce59c916f, exit 0). Prior five module checks from #642 remain distinct.
+
+## Next global target identity
+
+The exact normalized-to-conjugation bridge adds two modules to the previously scanned 1915-member global closure: PoitouTateDualityOfNormalised and CardH2GaussianField. Combined global closure 1917, local/global union 1927 (local 312, overlap 302). Both extra source hashes verified directly from the original tar, and all 1927 corresponding external compiled hashes match between independent published manifests. Receipt 63cd3b3f5abc4d46bbf9f3d9c2cfc8a6. 1615 additional source files staged in separate private directory; no disruption to local build and no claim of local global closure compilation.
+
+## Completed local target
+
+All 312/312 original closure modules compiled. Lake build, declaration audit and target leanchecker each exited 0 (ea30f72c386b4ae0bf02be17e13eae1b). Resumed build took 4:17.07, after the earlier 900s bounded attempt. Exact original declarations:
+- CompanionTheory.LocalTateOrthogonality.Gcoh.top_locfin : Formalism.GaloisCohomology.LocalFinitenessK
+- CompanionTheory.LocalTateOrthogonality.Gcoh.top_tate : Formalism.GaloisCohomology.LocalTateDualityK
+Both axiom sets are exactly propext, Classical.choice, Quot.sound. No sorryAx or additional axioms reported. Separate leanchecker of CompanionTheory.AutomorphicTheory.PadicCyclotomicFields.GcohTop exited 0. This is actual original-source local replay evidence, not independent certification, and not exhaustive leanchecker replay of every dependency.
+
+GcohTop.olean SHA256 8e6d855ab1f49a4918db03554c7c89fb879fe137415d3a17a03166985d292bd4, byte-identical with both external build manifests. Full local reconciliation: 280 exact compiled hashes (279 no warning, 1 warning), 32 differing hashes (all warning-bearing), zero nonidentical modules without recorded warning. All source hashes verified. Evidence does not assert the warning-associated differences have been exhaustively explained byte by byte. Receipt b0ac687a7050463381a896cad770a696. Retained TSV SHA256 e7b3c22be08b216e828a43534bca3bd1e264716f064d7e52b2eca89a3a1961ec. Private exact logs: local-axioms.log 9b06f7b732c7b708c5aad1813e88da8d85dfd3911888e05bbd07979d06c9736a; local-target-checker.log 155a2a564a0212149a484dec1eb309fdf84b25436490eff524a98347755b9d6d; local-build-3.log bef0d990a93aaf8db0e4980380be623359c4535e5c896f7ea0b8b5d59ba839db.
+
+Boundary: RH_A26_LOCAL_DUALITY_ORIGINAL_TARGET_REPLAY_AND_AXIOMS_PASS__GLOBAL_DUALITY_TARGET_REPLAY_OPEN. Next: original combined global duality target and its exact axiom audit, not a claim promotion. External full-proof evidence remains distinct.
