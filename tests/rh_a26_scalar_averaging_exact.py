@@ -4,7 +4,7 @@ from itertools import product
 
 def antiderivative(t):
     # periodic continuous tent f(t)=min(frac(t),1-frac(t)), mean 1/4
-    n=t//1;u=t-n
+    t=Q(t);n=t//1;u=t-n
     return Q(n,4)+(u*u/2 if u<=Q(1,2) else u-u*u/2-Q(1,4))
 
 def intervals():
@@ -28,7 +28,7 @@ def weighted():
             for t in product((-2,0,3),repeat=r):
                 c=Q(sum(a*b for a,b in zip(m,t)),sum(m))
                 p=[m[i]*(t[i]-c) for i in range(1,r)]
-                z=[-sum(p)/m[0]]+[p[i-1]/m[i] for i in range(1,r)]
+                z=[-sum(p,Q(0))/m[0]]+[p[i-1]/m[i] for i in range(1,r)]
                 assert sum(a*b for a,b in zip(m,z))==0
                 assert [x+c for x in z]==list(t)
                 n+=1
