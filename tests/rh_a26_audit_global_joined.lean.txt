@@ -1,0 +1,7 @@
+import Development.WeilBound.CoreStatements.PublishedTheorems.PoitouTateDuality.PoitouTateNineTerm.PoitouTateNormalisedHolds
+import Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.PoitouTateDualityOfNormalised
+#check (PositivityTheory.Lit1.PTN.poitouTateNormalised_holds : GlobalTheory.Published.PoitouTateNormalised)
+#check (GlobalTheory.PoitouTateConj.poitouTateDuality_of_normalised : GlobalTheory.Published.PoitouTateNormalised → GlobalTheory.Published.PoitouTateDuality)
+theorem gcl_original_poitou_tate_join : GlobalTheory.Published.PoitouTateDuality :=
+  GlobalTheory.PoitouTateConj.poitouTateDuality_of_normalised PositivityTheory.Lit1.PTN.poitouTateNormalised_holds
+#print axioms gcl_original_poitou_tate_join
